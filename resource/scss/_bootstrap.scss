@@ -1,0 +1,86 @@
+.btn {
+  border-radius: 0;
+
+  &:not(:disabled):not(.disabled):hover,
+  &:not(:disabled):not(.disabled):focus,
+  &:not(:disabled):not(.disabled):active:focus {
+    box-shadow: none;
+  }
+
+  &.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+
+    &:not(:disabled):not(.disabled):hover,
+    &:not(:disabled):not(.disabled):active {
+      background-color: darken($primary, 10%);
+      border-color: darken($primary, 10%);
+    }
+  }
+
+  &.btn-light {
+    background-color: transparent;
+    border-color: transparent;
+    color: $gray-600;
+
+    &:not(:disabled):not(.disabled):hover,
+    &:not(:disabled):not(.disabled):active {
+      background-color: transparent;
+      border-color: transparent;
+      color: $black;
+    }
+  }
+
+  &.btn-outline-primary {
+    color: $primary;
+  }
+}
+
+.input-group {
+  &.input-search {
+    position: relative;
+
+    .form-control {
+      background-color: $gray-200;
+      border-color: transparent;
+      border-radius: 0;
+
+      &:not(:disabled):not(.disabled):hover,
+      &:not(:disabled):not(.disabled):focus,
+      &:not(:disabled):not(.disabled):active {
+        border-color: $gray-400;
+        box-shadow: none;
+      }
+    }
+
+    .input-group-append {
+      bottom: 1px;
+      position: absolute;
+      right: 1px;
+      top: 1px;
+      z-index: 3;
+    }
+  }
+}
+
+.dropdown {
+  .dropdown-menu {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+  }
+}
+
+.nav {
+  &.nav-light {
+    .nav-link {
+      color: $gray-600;
+
+      &:not(:disabled):hover,
+      &:not(:disabled):active {
+        color: $black;
+      }
+    }
+  }
+}

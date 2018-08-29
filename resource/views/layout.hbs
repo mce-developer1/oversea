@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/static/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="navbar navbar-expand fixed-top app-header">
+      <a class="navbar-brand" href="/">
+        <img src="/static/images/mco_logo.gif"/>
+      </a>
+      <ul class="navbar-nav nav-main">
+        <li class="nav-item dropdown">
+          <button class="btn btn-light btn-small" type="button" data-toggle="dropdown">
+            <i class="fa fa-th"></i> Subjects
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">English</a>
+            <a class="dropdown-item" href="#">Humanities</a>
+            <a class="dropdown-item" href="#">Mathematics</a>
+            <a class="dropdown-item" href="#">Science</a>
+          </div>
+        </li>
+        <li class="nav-item search">
+          <div class="input-group input-search">
+            <input type="text" class="form-control" placeholder="Search for a resource to preview">
+            <div class="input-group-append">
+              <button class="btn btn-light" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-light btn-small" type="button">
+            Partner/Distributor
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-light btn-small" type="button">
+            Schools
+          </button>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-outline-secondary btn-sm" type="button">
+            Log In
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary btn-sm" type="button">
+            Sign Up
+          </button>
+        </li>
+        <li class="nav-item localize dropdown">
+          <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+            <i class="fa fa-globe"></i> English
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Bahasa Indonesia</a>
+            <a class="dropdown-item" href="#">Chinese</a>
+            <a class="dropdown-item" href="#">Spanish</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    {{{body}}}
+    <div class="app-footer">
+      <div class="copyright">
+        Copyright © 2018 Marshall Cavendish Education Pte. Ltd.
+      </div>
+      <ul class="nav nav-light">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            Data Protection and Privacy Statement
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            Terms & Conditions
+          </a>
+        </li>
+      </ul>
+    </div>
+    <script src="/static/jquery/jquery.js"></script>
+    <script src="/static/popper/popper.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
+    <script src="/static/javascripts/components.js"></script>
+    <script src="/static/javascripts/{{module}}.js"></script>
+  </body>
+</html>
