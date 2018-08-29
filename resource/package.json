@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "sass ./scss/style.scss ./public/stylesheets/style.css",
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
