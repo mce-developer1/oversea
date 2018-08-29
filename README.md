@@ -1,2 +1,1 @@
-# mceducation
-MCE git repository
+# MCE git repository
