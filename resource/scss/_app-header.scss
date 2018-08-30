@@ -18,27 +18,38 @@
       &.search {
         margin: 0 1rem;
         min-width: 280px;
-
-        .form-control {
-          font-size: .875rem;
-        }
-
-        .btn-light {
-          color: $primary;
-
-          &:not(:disabled):not(.disabled):hover,
-          &:not(:disabled):not(.disabled):active {
-            color: darken($primary, 10%);
-          }
-        }
       }
 
       &.localize {
-        margin-left: 2rem;
+        margin: 0 0 0 2rem;
       }
+    }
+  }
 
-      .btn {
-        font-size: .875rem;
+  .input-search {
+    &:hover {
+      .form-control {
+        border-color: transparent;
+      }
+    }
+
+    .form-control {
+      background-color: $gray-200;
+      border-color: transparent;
+
+      &:not(:disabled):not(.disabled):focus,
+      &:not(:disabled):not(.disabled):active {
+        background-color: transparent;
+        border-color: $primary;
+      }
+    }
+
+    .btn-light {
+      color: $primary;
+
+      &:not(:disabled):not(.disabled):hover,
+      &:not(:disabled):not(.disabled):active {
+        color: darken($primary, 8%);
       }
     }
   }

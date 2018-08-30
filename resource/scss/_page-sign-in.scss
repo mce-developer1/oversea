@@ -1,0 +1,111 @@
+.page-sign-in {
+  .app-content {
+    .nav {
+      background-color: $yellow;
+      justify-content: center;
+      padding: .5rem 2rem;
+
+      .nav-link {
+        color: $white;
+        font-size: 1.25rem;
+        padding: .5rem 1rem;
+        margin: 0 1rem;
+
+        i {
+          font-size: 2rem;
+          margin-right: .5rem;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .article-user-registration,
+    .article-distributor-registration,
+    .article-school-registration {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .article-resource-search {
+      background-image: url("../images/resources.jpg");
+      color: $white;
+      padding: 5rem;
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      .input-search {
+        max-width: 320px;
+      }
+    }
+
+    .article-resources {
+      .card {
+        margin: 0 1rem 1rem 0;
+        max-width: 240px;
+        min-width: 240px;
+      }
+    }
+
+    .article-user-registration {
+      background-image: url("../images/books.jpg");
+      color: $white;
+    }
+
+    .article-school-registration {
+      border-top: 1px solid $gray-400;
+    }
+
+    @media (min-width: 768px) {
+      .article-school-registration {
+        border-left: 1px solid $gray-400;
+        border-top: 0;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .nav {
+        padding: .5rem 8rem;
+      }
+
+      .article-resource-search {
+        padding: 5rem 8rem;
+      }
+
+      .article-resources,
+      .article-user-registration,
+      .article-distributor-registration,
+      .article-school-registration {
+        padding: 2rem 8rem;
+      }
+    }
+  }
+}
+
+.modal-sign-in,
+.modal-sign-up {
+  .modal-dialog {
+    max-width: 400px;
+
+    .modal-header {
+      .modal-title {
+        flex-grow: 1;
+        text-align: center;
+      }
+    }
+
+    .modal-body {
+      padding: 2rem 2rem 1rem;
+
+      .form-group {
+        text-align: center;
+
+        .fa-lock,
+        .fa-user {
+          font-size: 1.625rem;
+        }
+      }
+    }
+  }
+}

@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="/static/stylesheets/style.css" />
   </head>
-  <body>
+  <body class="page-{{module}}">
     <div class="navbar navbar-expand fixed-top app-header">
       <a class="navbar-brand" href="/">
         <img src="/static/images/mco_logo.gif"/>
       </a>
       <ul class="navbar-nav nav-main">
         <li class="nav-item dropdown">
-          <button class="btn btn-light btn-small" type="button" data-toggle="dropdown">
+          <button class="btn btn-light" type="button" data-toggle="dropdown">
             <i class="fa fa-th"></i> Subjects
           </button>
           <div class="dropdown-menu">
@@ -25,7 +25,7 @@
           </div>
         </li>
         <li class="nav-item search">
-          <div class="input-group input-search">
+          <div class="input-group append input-search">
             <input type="text" class="form-control" placeholder="Search for a resource to preview">
             <div class="input-group-append">
               <button class="btn btn-light" type="button">
@@ -35,29 +35,29 @@
           </div>
         </li>
         <li class="nav-item">
-          <button class="btn btn-light btn-small" type="button">
+          <button class="btn btn-light" type="button">
             Partner/Distributor
           </button>
         </li>
         <li class="nav-item">
-          <button class="btn btn-light btn-small" type="button">
+          <button class="btn btn-light" type="button">
             Schools
           </button>
         </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <button class="btn btn-outline-secondary btn-sm" type="button">
+          <button class="btn btn-outline-secondary btn-sign-in" type="button">
             Log In
           </button>
         </li>
         <li class="nav-item">
-          <button class="btn btn-primary btn-sm" type="button">
+          <button class="btn btn-primary btn-sign-up" type="button">
             Sign Up
           </button>
         </li>
         <li class="nav-item localize dropdown">
-          <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">
             <i class="fa fa-globe"></i> English
           </button>
           <div class="dropdown-menu dropdown-menu-right">
@@ -89,7 +89,6 @@
     <script src="/static/jquery/jquery.js"></script>
     <script src="/static/popper/popper.js"></script>
     <script src="/static/bootstrap/js/bootstrap.js"></script>
-    <script src="/static/javascripts/components.js"></script>
     <script src="/static/javascripts/{{module}}.js"></script>
   </body>
 </html>

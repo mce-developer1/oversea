@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', {
     title: 'Marshall Cavendish Education',
-    module: 'index'
+    module: 'sign-in'
   });
 });
 
