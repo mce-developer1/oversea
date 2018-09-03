@@ -9,4 +9,24 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* GET admin dashboard page. */
+router.get('/admin/dashboard', function(req, res, next) {
+  res.render('admin/dashboard', {
+    title: 'Marshall Cavendish Education',
+    module: 'dashboard',
+    loggedIn: true,
+    adminUser: true
+  });
+});
+
+/* GET admin dashboard page. */
+router.get('/admin/tools', function(req, res, next) {
+  res.render('admin/tools', {
+    title: 'Marshall Cavendish Education',
+    module: 'tools',
+    loggedIn: true,
+    adminUser: true
+  });
+});
+
 module.exports = router;

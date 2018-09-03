@@ -24,10 +24,30 @@ a {
   border-color: $primary;
   color: $white;
 
+  &:disabled,
+  &.disabled,
+  &:disabled:hover,
+  &.disabled:hover {
+    background-color: lighten($primary, 8%);
+    border-color: lighten($primary, 8%);
+  }
+
   &:not(:disabled):not(.disabled):hover,
   &:not(:disabled):not(.disabled):active {
     background-color: darken($primary, 8%);
     border-color: darken($primary, 8%);
+  }
+}
+
+.btn-success {
+  background-color: $green;
+  border-color: $green;
+  color: $white;
+
+  &:not(:disabled):not(.disabled):hover,
+  &:not(:disabled):not(.disabled):active {
+    background-color: darken($green, 8%);
+    border-color: darken($green, 8%);
   }
 }
 
@@ -45,7 +65,36 @@ a {
 }
 
 .btn-outline-primary {
+  border-color: $primary;
   color: $primary;
+
+  &:not(:disabled):not(.disabled):hover,
+  &:not(:disabled):not(.disabled):active {
+    background-color: $primary;
+    border-color: $primary;
+  }
+}
+
+.btn-date-range {
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: $white;
+  color: $gray-700;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+
+  &:not(:disabled):not(.disabled):hover,
+  &:not(:disabled):not(.disabled):active {
+    background-color: $white;
+    color: $gray-700;
+  }
+
+  .date-range {
+    flex-grow: 1;
+    text-align: left;
+  }
 }
 
 .input-group {
@@ -120,13 +169,49 @@ a {
   }
 }
 
+.form-control {
+  &.form-input,
+  &.form-select,
+  &.form-textarea {
+    border-radius: 0;
+
+    &:hover {
+      border-color: $gray-600;
+    }
+
+    &:not(:disabled):not(.disabled):focus,
+    &:not(:disabled):not(.disabled):active {
+      border-color: $gray-600;
+      box-shadow: none;
+    }
+  }
+}
+
 .dropdown {
   .dropdown-menu {
     border: 0;
     border-radius: 0;
     box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
-    max-height: 200px;
+    max-height: 320px;
     overflow-y: auto;
+
+    .dropdown-item {
+      padding: .5rem 1.5rem;
+
+      .fa {
+        font-size: 1.25rem;
+        vertical-align: middle;
+        width: 2rem;
+      }
+    }
+  }
+}
+
+.nav {
+  &nav-tabs {
+    .nav-link {
+
+    }
   }
 }
 

@@ -3,10 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -24,10 +20,12 @@ app.use('/static/jquery', express.static(path.join(__dirname, 'node_modules/jque
 app.use('/static/popper', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd')));
 app.use('/static/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use('/static/font-awesome', express.static(path.join(__dirname, 'node_modules/font-awesome')));
-app.use('/static/datatables.net', express.static(path.join(__dirname, 'node_modules/datatables.net')));
+app.use('/static/chart.js', express.static(path.join(__dirname, 'node_modules/chart.js/dist')));
+app.use('/static/moment', express.static(path.join(__dirname, 'node_modules/moment')));
+app.use('/static/daterangepicker', express.static(path.join(__dirname, 'node_modules/daterangepicker')));
+app.use('/static/datatables', express.static(path.join(__dirname, 'node_modules/datatables/media')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', require('./routes/index'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,3 +1,20 @@
 .article {
   padding: 1rem;
+
+  .header {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    h5 {
+      flex-grow: 1;
+    }
+
+    .btn {
+      margin-left: .5rem;
+    }
+  }
 }

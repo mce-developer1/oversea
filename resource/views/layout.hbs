@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-grid.css" />
     <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/static/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="/static/datatables/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="/static/stylesheets/style.css" />
   </head>
   <body class="page-{{module}}">
@@ -18,10 +20,17 @@
             <i class="fa fa-th"></i> Subjects
           </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">English</a>
-            <a class="dropdown-item" href="#">Humanities</a>
-            <a class="dropdown-item" href="#">Mathematics</a>
-            <a class="dropdown-item" href="#">Science</a>
+            <a class="dropdown-item" href="#">
+              English
+            </a>
+            <a class="dropdown-item" href="#">
+              Humanities</a>
+            <a class="dropdown-item" href="#">
+              Mathematics
+            </a>
+            <a class="dropdown-item" href="#">
+              Science
+            </a>
           </div>
         </li>
         <li class="nav-item search">
@@ -34,6 +43,18 @@
             </div>
           </div>
         </li>
+        {{#if loggedIn}}
+        <li class="nav-item">
+          <a class="btn btn-light" href="/admin/dashboard">
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-light" href="/admin/tools">
+            Tools
+          </a>
+        </li>
+        {{else}}
         <li class="nav-item">
           <button class="btn btn-light" type="button">
             Partner/Distributor
@@ -44,8 +65,25 @@
             Schools
           </button>
         </li>
+        {{/if}}
       </ul>
       <ul class="navbar-nav">
+        {{#if loggedIn}}
+        <li class="nav-item dropdown">
+          <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
+            <img src="/static/images/user.png"/>
+            {{#if adminUser}}School Admin{{/if}}
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-user-circle"></i> My Account
+            </a>
+            <a class="dropdown-item" href="#">
+              <i class="fa fa-sign-out"></i> Logout
+            </a>
+          </div>
+        </li>
+        {{else}}
         <li class="nav-item">
           <button class="btn btn-outline-secondary btn-sign-in" type="button">
             Log In
@@ -56,14 +94,21 @@
             Sign Up
           </button>
         </li>
+        {{/if}}
         <li class="nav-item localize dropdown">
           <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">
             <i class="fa fa-globe"></i> English
           </button>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#">Bahasa Indonesia</a>
-            <a class="dropdown-item" href="#">Chinese</a>
-            <a class="dropdown-item" href="#">Spanish</a>
+            <a class="dropdown-item" href="#">
+              Bahasa Indonesia
+            </a>
+            <a class="dropdown-item" href="#">
+              Chinese
+            </a>
+            <a class="dropdown-item" href="#">
+              Spanish
+            </a>
           </div>
         </li>
       </ul>
@@ -89,6 +134,10 @@
     <script src="/static/jquery/jquery.js"></script>
     <script src="/static/popper/popper.js"></script>
     <script src="/static/bootstrap/js/bootstrap.js"></script>
+    <script src="/static/chart.js/Chart.js"></script>
+    <script src="/static/moment/moment.js"></script>
+    <script src="/static/daterangepicker/daterangepicker.js"></script>
+    <script src="/static/datatables/js/jquery.dataTables.js"></script>
     <script src="/static/javascripts/{{module}}.js"></script>
   </body>
 </html>

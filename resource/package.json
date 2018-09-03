@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "chart.js": "^2.7.2",
     "cookie-parser": "~1.4.3",
+    "datatables": "^1.10.18",
+    "daterangepicker": "^3.0.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "font-awesome": "^4.7.0",

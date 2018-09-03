@@ -19,9 +19,23 @@ a:focus {
   border-color: #f15c25;
   color: #fff;
 }
+.btn-primary:disabled, .btn-primary.disabled, .btn-primary:disabled:hover, .btn-primary.disabled:hover {
+  background-color: #f3794b;
+  border-color: #f3794b;
+}
 .btn-primary:not(:disabled):not(.disabled):hover, .btn-primary:not(:disabled):not(.disabled):active {
   background-color: #df470e;
   border-color: #df470e;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+.btn-success:not(:disabled):not(.disabled):hover, .btn-success:not(:disabled):not(.disabled):active {
+  background-color: #208637;
+  border-color: #208637;
 }
 
 .btn-light {
@@ -36,7 +50,31 @@ a:focus {
 }
 
 .btn-outline-primary {
+  border-color: #f15c25;
   color: #f15c25;
+}
+.btn-outline-primary:not(:disabled):not(.disabled):hover, .btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: #f15c25;
+  border-color: #f15c25;
+}
+
+.btn-date-range {
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #fff;
+  color: #495057;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.btn-date-range:not(:disabled):not(.disabled):hover, .btn-date-range:not(:disabled):not(.disabled):active {
+  background-color: #fff;
+  color: #495057;
+}
+.btn-date-range .date-range {
+  flex-grow: 1;
+  text-align: left;
 }
 
 .input-group:hover .form-control {
@@ -87,12 +125,31 @@ a:focus {
   padding-right: 3rem;
 }
 
+.form-control.form-input, .form-control.form-select, .form-control.form-textarea {
+  border-radius: 0;
+}
+.form-control.form-input:hover, .form-control.form-select:hover, .form-control.form-textarea:hover {
+  border-color: #6c757d;
+}
+.form-control.form-input:not(:disabled):not(.disabled):focus, .form-control.form-input:not(:disabled):not(.disabled):active, .form-control.form-select:not(:disabled):not(.disabled):focus, .form-control.form-select:not(:disabled):not(.disabled):active, .form-control.form-textarea:not(:disabled):not(.disabled):focus, .form-control.form-textarea:not(:disabled):not(.disabled):active {
+  border-color: #6c757d;
+  box-shadow: none;
+}
+
 .dropdown .dropdown-menu {
   border: 0;
   border-radius: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  max-height: 200px;
+  max-height: 320px;
   overflow-y: auto;
+}
+.dropdown .dropdown-menu .dropdown-item {
+  padding: 0.5rem 1.5rem;
+}
+.dropdown .dropdown-menu .dropdown-item .fa {
+  font-size: 1.25rem;
+  vertical-align: middle;
+  width: 2rem;
 }
 
 .nav-light .nav-link {
@@ -113,7 +170,7 @@ a:focus {
 
 .card .ratings .fa-star,
 .card .ratings .fa-star-half-o {
-  color: #ffc107;
+  color: #fda316;
 }
 .card .ratings .fa-star-o {
   color: #ced4da;
@@ -124,8 +181,47 @@ a:focus {
   border-bottom: 0;
 }
 
+.dataTable {
+  border: 1px solid #ced4da;
+}
+.dataTable.no-footer {
+  border-bottom-color: #ced4da !important;
+}
+.dataTable thead tr {
+  background-color: #ced4da;
+}
+.dataTable thead tr th {
+  border-bottom: 0;
+  padding: 0.75rem 1rem;
+}
+.dataTable tbody tr td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e9ecef;
+}
+.dataTable tbody tr td.actions {
+  padding: 0.25rem 1rem;
+}
+.dataTable tbody tr td .btn-light {
+  font-size: 1.125rem;
+  padding: 0.125rem 0.5rem;
+}
+
 .article {
   padding: 1rem;
+}
+.article .header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.article .header h5 {
+  flex-grow: 1;
+}
+.article .header .btn {
+  margin-left: 0.5rem;
 }
 
 .app-header {
@@ -168,9 +264,17 @@ a:focus {
 .app-header .input-search .btn-light:not(:disabled):not(.disabled):hover, .app-header .input-search .btn-light:not(:disabled):not(.disabled):active {
   color: #df470e;
 }
+.app-header .btn-user {
+  padding: 0 0.75rem;
+}
+.app-header .btn-user img {
+  margin-right: 0.5rem;
+  max-height: 2.25rem;
+  max-width: 2.25rem;
+}
 
 .app-content {
-  background-color: #e9ecef;
+  background-color: #f8f9fa;
   margin-top: 64px;
 }
 
@@ -198,7 +302,7 @@ a:focus {
 }
 
 .page-sign-in .app-content .nav {
-  background-color: #ffc107;
+  background-color: #fda316;
   justify-content: center;
   padding: 0.5rem 2rem;
 }
@@ -208,7 +312,7 @@ a:focus {
   padding: 0.5rem 1rem;
   margin: 0 1rem;
 }
-.page-sign-in .app-content .nav .nav-link i {
+.page-sign-in .app-content .nav .nav-link .fa {
   font-size: 2rem;
   margin-right: 0.5rem;
   vertical-align: middle;
@@ -242,6 +346,23 @@ a:focus {
 .page-sign-in .app-content .article-school-registration {
   border-top: 1px solid #ced4da;
 }
+.page-sign-in .app-content .form-distributor-registration,
+.page-sign-in .app-content .form-school-registration {
+  padding: 2rem;
+}
+.page-sign-in .app-content .form-distributor-registration h2,
+.page-sign-in .app-content .form-school-registration h2 {
+  color: #f15c25;
+}
+.page-sign-in .app-content .form-distributor-registration .row.no-gutters,
+.page-sign-in .app-content .form-school-registration .row.no-gutters {
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+.page-sign-in .app-content .form-distributor-registration .row:not(.no-gutters),
+.page-sign-in .app-content .form-school-registration .row:not(.no-gutters) {
+  margin-bottom: 1rem;
+}
 @media (min-width: 768px) {
   .page-sign-in .app-content .article-school-registration {
     border-left: 1px solid #ced4da;
@@ -258,33 +379,219 @@ a:focus {
   .page-sign-in .app-content .article-resources,
 .page-sign-in .app-content .article-user-registration,
 .page-sign-in .app-content .article-distributor-registration,
-.page-sign-in .app-content .article-school-registration {
+.page-sign-in .app-content .article-school-registration,
+.page-sign-in .app-content .form-distributor-registration,
+.page-sign-in .app-content .form-school-registration {
     padding: 2rem 8rem;
   }
 }
 
 .modal-sign-in .modal-dialog,
-.modal-sign-up .modal-dialog {
+.modal-forgot-password .modal-dialog,
+.modal-sign-up .modal-dialog,
+.modal-registration-successful .modal-dialog {
   max-width: 400px;
 }
 .modal-sign-in .modal-dialog .modal-header .modal-title,
-.modal-sign-up .modal-dialog .modal-header .modal-title {
+.modal-forgot-password .modal-dialog .modal-header .modal-title,
+.modal-sign-up .modal-dialog .modal-header .modal-title,
+.modal-registration-successful .modal-dialog .modal-header .modal-title {
   flex-grow: 1;
   text-align: center;
 }
 .modal-sign-in .modal-dialog .modal-body,
-.modal-sign-up .modal-dialog .modal-body {
+.modal-forgot-password .modal-dialog .modal-body,
+.modal-sign-up .modal-dialog .modal-body,
+.modal-registration-successful .modal-dialog .modal-body {
   padding: 2rem 2rem 1rem;
 }
 .modal-sign-in .modal-dialog .modal-body .form-group,
-.modal-sign-up .modal-dialog .modal-body .form-group {
+.modal-forgot-password .modal-dialog .modal-body .form-group,
+.modal-sign-up .modal-dialog .modal-body .form-group,
+.modal-registration-successful .modal-dialog .modal-body .form-group {
   text-align: center;
 }
 .modal-sign-in .modal-dialog .modal-body .form-group .fa-lock,
 .modal-sign-in .modal-dialog .modal-body .form-group .fa-user,
+.modal-forgot-password .modal-dialog .modal-body .form-group .fa-lock,
+.modal-forgot-password .modal-dialog .modal-body .form-group .fa-user,
 .modal-sign-up .modal-dialog .modal-body .form-group .fa-lock,
-.modal-sign-up .modal-dialog .modal-body .form-group .fa-user {
+.modal-sign-up .modal-dialog .modal-body .form-group .fa-user,
+.modal-registration-successful .modal-dialog .modal-body .form-group .fa-lock,
+.modal-registration-successful .modal-dialog .modal-body .form-group .fa-user {
   font-size: 1.625rem;
+}
+
+.modal-forgot-password .form-reset-password-success .fa-check-circle,
+.modal-forgot-password .form-sign-up-success .fa-check-circle,
+.modal-forgot-password .form-registration-successful .fa-check-circle,
+.modal-sign-up .form-reset-password-success .fa-check-circle,
+.modal-sign-up .form-sign-up-success .fa-check-circle,
+.modal-sign-up .form-registration-successful .fa-check-circle,
+.modal-registration-successful .form-reset-password-success .fa-check-circle,
+.modal-registration-successful .form-sign-up-success .fa-check-circle,
+.modal-registration-successful .form-registration-successful .fa-check-circle {
+  color: #28a745;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+.page-dashboard .app-content .nav-tabs {
+  background-color: #fda316;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.page-dashboard .app-content .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+.page-dashboard .app-content .nav-tabs .nav-link {
+  border-color: transparent;
+  border-bottom-width: 4px;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+}
+.page-dashboard .app-content .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom-color: #f15c25;
+}
+.page-dashboard .app-content .nav-tabs .nav-link .fa {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.page-dashboard .app-content .article-dashboard {
+  background-color: #fda316;
+  padding: 3rem 2rem;
+}
+.page-dashboard .app-content .article-dashboard h1 {
+  color: #fff;
+}
+.page-dashboard .app-content .tab-pane {
+  padding: 2rem;
+}
+.page-dashboard .app-content .tab-pane .article {
+  padding: 0 1rem;
+}
+.page-dashboard .app-content .tab-pane .article h5 {
+  margin-bottom: 1.5rem;
+}
+.page-dashboard .app-content .tab-pane .article canvas {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+}
+.page-dashboard .app-content .tab-pane .form-filters h5 {
+  margin-bottom: 1.5rem;
+}
+.page-dashboard .app-content .tab-pane .form-filters .form-group.form-actions {
+  text-align: right;
+}
+.page-dashboard .app-content .tab-pane .form-filters .form-group .btn-primary {
+  padding: 0.375rem 1.25rem;
+}
+.page-dashboard .app-content .tab-pane-report .article-proficiency-report,
+.page-dashboard .app-content .tab-pane-report .article-login-report,
+.page-dashboard .app-content .tab-pane-report .article-usage-report {
+  max-width: 560px;
+  position: relative;
+}
+.page-dashboard .app-content .tab-pane-home.show {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+}
+.page-dashboard .app-content .tab-pane-home.show .article-login-trend,
+.page-dashboard .app-content .tab-pane-home.show .article-popular-channels {
+  max-width: 520px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .page-dashboard .app-content .tab-pane-home .article-login-trend,
+.page-dashboard .app-content .tab-pane-home .article-popular-channels {
+    width: 480px;
+  }
+}
+@media (min-width: 1200px) {
+  .page-dashboard .app-content .nav {
+    padding: 0 8rem;
+  }
+  .page-dashboard .app-content .article-dashboard {
+    padding: 3rem 8rem;
+  }
+  .page-dashboard .app-content .tab-pane {
+    padding: 2rem 8rem;
+  }
+  .page-dashboard .app-content .tab-pane-home .article-login-trend,
+.page-dashboard .app-content .tab-pane-home .article-popular-channels {
+    width: 520px;
+  }
+  .page-dashboard .app-content .tab-pane-report .article-proficiency-report,
+.page-dashboard .app-content .tab-pane-report .article-login-report,
+.page-dashboard .app-content .tab-pane-report .article-usage-report {
+    max-width: 640px;
+    padding: 0 0 0 8rem;
+  }
+}
+
+.page-tools .app-content .nav-tabs {
+  background-color: #fda316;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.page-tools .app-content .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+.page-tools .app-content .nav-tabs .nav-link {
+  border-color: transparent;
+  border-bottom-width: 4px;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+}
+.page-tools .app-content .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom-color: #f15c25;
+}
+.page-tools .app-content .nav-tabs .nav-link .fa {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.page-tools .app-content .article-tools {
+  background-color: #fda316;
+  padding: 3rem 2rem;
+}
+.page-tools .app-content .article-tools h1 {
+  color: #fff;
+}
+.page-tools .app-content .tab-pane {
+  padding: 2rem;
+}
+.page-tools .app-content .tab-pane .article {
+  padding: 0 1rem;
+}
+.page-tools .app-content .tab-pane .article h5 {
+  margin-bottom: 1.5rem;
+}
+.page-tools .app-content .tab-pane .form-filters h5 {
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 1200px) {
+  .page-tools .app-content .nav {
+    padding: 0 8rem;
+  }
+  .page-tools .app-content .article-tools {
+    padding: 3rem 8rem;
+  }
+  .page-tools .app-content .tab-pane {
+    padding: 2rem 8rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
