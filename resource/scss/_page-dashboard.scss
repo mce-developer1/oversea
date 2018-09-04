@@ -41,11 +41,19 @@
       }
     }
 
+    .article-resources {
+      .card {
+        max-width: 240px;
+        min-width: 240px;
+        padding: 0;
+      }
+    }
+
     .tab-pane {
       padding: 2rem;
 
       .article {
-        padding: 0 1rem;
+        padding: 0;
 
         h5 {
           margin-bottom: 1.5rem;

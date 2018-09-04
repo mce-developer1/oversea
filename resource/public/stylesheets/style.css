@@ -168,6 +168,10 @@ a:focus {
   flex-wrap: wrap;
 }
 
+.card {
+  margin: 0 1rem 1rem 0;
+  position: relative;
+}
 .card .ratings .fa-star,
 .card .ratings .fa-star-half-o {
   color: #fda316;
@@ -175,12 +179,41 @@ a:focus {
 .card .ratings .fa-star-o {
   color: #ced4da;
 }
+.card .status {
+  bottom: 0.5rem;
+  position: absolute;
+  right: 1rem;
+}
+.card .status.status-success {
+  color: #28a745;
+}
+.card .status.status-error {
+  color: #dc3545;
+}
+.card .status .fa {
+  font-size: 1.5rem;
+}
+.card .progress {
+  height: 3px;
+  margin: 1rem 0 0.25rem;
+}
+.card .progress .progress-bar {
+  background-color: #fda316;
+}
+.card .progress + .text-muted {
+  font-size: 0.875rem;
+}
 
 .modal .modal-header {
   background-color: #e9ecef;
   border-bottom: 0;
 }
 
+@media (min-width: 576px) {
+  .card-group .card {
+    margin-bottom: 1rem;
+  }
+}
 .dataTable {
   border: 1px solid #ced4da;
 }
@@ -219,6 +252,7 @@ a:focus {
 }
 .article .header h5 {
   flex-grow: 1;
+  min-height: 1.25rem;
 }
 .article .header .btn {
   margin-left: 0.5rem;
@@ -232,6 +266,8 @@ a:focus {
 .app-header .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .app-header .navbar-nav.nav-main {
   -ms-flex-positive: 1;
@@ -265,12 +301,20 @@ a:focus {
   color: #df470e;
 }
 .app-header .btn-user {
+  max-width: 12rem;
   padding: 0 0.75rem;
 }
 .app-header .btn-user img {
   margin-right: 0.5rem;
   max-height: 2.25rem;
   max-width: 2.25rem;
+  vertical-align: baseline;
+}
+.app-header .btn-user .user-name {
+  display: inline-block;
+  max-width: 5rem;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .app-content {
@@ -335,7 +379,6 @@ a:focus {
   max-width: 320px;
 }
 .page-sign-in .app-content .article-resources .card {
-  margin: 0 1rem 1rem 0;
   max-width: 240px;
   min-width: 240px;
 }
@@ -354,14 +397,14 @@ a:focus {
 .page-sign-in .app-content .form-school-registration h2 {
   color: #f15c25;
 }
+.page-sign-in .app-content .form-distributor-registration .row:not(.no-gutters),
+.page-sign-in .app-content .form-school-registration .row:not(.no-gutters) {
+  margin-bottom: 1rem;
+}
 .page-sign-in .app-content .form-distributor-registration .row.no-gutters,
 .page-sign-in .app-content .form-school-registration .row.no-gutters {
   margin-bottom: 0.5rem;
   margin-top: 2rem;
-}
-.page-sign-in .app-content .form-distributor-registration .row:not(.no-gutters),
-.page-sign-in .app-content .form-school-registration .row:not(.no-gutters) {
-  margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
   .page-sign-in .app-content .article-school-registration {
@@ -470,11 +513,16 @@ a:focus {
 .page-dashboard .app-content .article-dashboard h1 {
   color: #fff;
 }
+.page-dashboard .app-content .article-resources .card {
+  max-width: 240px;
+  min-width: 240px;
+  padding: 0;
+}
 .page-dashboard .app-content .tab-pane {
   padding: 2rem;
 }
 .page-dashboard .app-content .tab-pane .article {
-  padding: 0 1rem;
+  padding: 0;
 }
 .page-dashboard .app-content .tab-pane .article h5 {
   margin-bottom: 1.5rem;
@@ -590,6 +638,163 @@ a:focus {
     padding: 3rem 8rem;
   }
   .page-tools .app-content .tab-pane {
+    padding: 2rem 8rem;
+  }
+}
+
+.modal-confirm-deletion .modal-dialog,
+.modal-import-user .modal-dialog {
+  max-width: 400px;
+}
+.modal-confirm-deletion .modal-dialog .modal-header .modal-title,
+.modal-import-user .modal-dialog .modal-header .modal-title {
+  flex-grow: 1;
+  text-align: center;
+}
+.modal-confirm-deletion .modal-dialog .modal-body,
+.modal-import-user .modal-dialog .modal-body {
+  padding: 2rem 2rem 1rem;
+}
+.modal-confirm-deletion .modal-dialog .modal-body .form-group,
+.modal-import-user .modal-dialog .modal-body .form-group {
+  text-align: center;
+}
+.modal-confirm-deletion .modal-dialog .modal-body .form-group:first-child,
+.modal-import-user .modal-dialog .modal-body .form-group:first-child {
+  margin-bottom: 2rem;
+}
+.modal-confirm-deletion .modal-dialog .modal-body .form-group .btn,
+.modal-import-user .modal-dialog .modal-body .form-group .btn {
+  padding: 0.375rem 1.25rem;
+}
+
+.page-class .app-content .form-class-details {
+  padding: 2rem;
+}
+.page-class .app-content .form-class-details h2 {
+  color: #f15c25;
+  margin-bottom: 2rem;
+}
+.page-class .app-content .form-class-details .row:not(.no-gutters) {
+  margin-bottom: 1rem;
+}
+.page-class .app-content .form-class-details .row .user-table {
+  margin: 2rem 0;
+}
+.page-class .app-content .form-class-details .row .form-actions {
+  text-align: right;
+}
+@media (min-width: 1200px) {
+  .page-class .app-content .form-class-details {
+    padding: 2rem 8rem;
+  }
+}
+
+.modal-discard-changes .modal-dialog,
+.modal-changes-saved .modal-dialog {
+  max-width: 400px;
+}
+.modal-discard-changes .modal-dialog .modal-header .modal-title,
+.modal-changes-saved .modal-dialog .modal-header .modal-title {
+  flex-grow: 1;
+  text-align: center;
+}
+.modal-discard-changes .modal-dialog .modal-body,
+.modal-changes-saved .modal-dialog .modal-body {
+  padding: 2rem 2rem 1rem;
+}
+.modal-discard-changes .modal-dialog .modal-body .form-group,
+.modal-changes-saved .modal-dialog .modal-body .form-group {
+  text-align: center;
+}
+.modal-discard-changes .modal-dialog .modal-body .form-group:first-child,
+.modal-changes-saved .modal-dialog .modal-body .form-group:first-child {
+  margin-bottom: 2rem;
+}
+.modal-discard-changes .modal-dialog .modal-body .form-group .btn,
+.modal-changes-saved .modal-dialog .modal-body .form-group .btn {
+  padding: 0.375rem 1.25rem;
+}
+
+.modal-changes-saved .form-changes-saved .fa-check-circle {
+  color: #28a745;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+.page-user .app-content .form-user-details {
+  padding: 2rem;
+}
+.page-user .app-content .form-user-details h2 {
+  color: #f15c25;
+  margin-bottom: 2rem;
+}
+.page-user .app-content .form-user-details .row:not(.no-gutters) {
+  margin-bottom: 1rem;
+}
+.page-user .app-content .form-user-details .row .form-actions {
+  text-align: right;
+}
+@media (min-width: 1200px) {
+  .page-user .app-content .form-user-details {
+    padding: 2rem 8rem;
+  }
+}
+
+.page-subject .app-content .nav-tabs {
+  background-color: #fda316;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.page-subject .app-content .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+.page-subject .app-content .nav-tabs .nav-link {
+  border-color: transparent;
+  border-bottom-width: 4px;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+}
+.page-subject .app-content .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom-color: #f15c25;
+}
+.page-subject .app-content .nav-tabs .nav-link .fa {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.page-subject .app-content .article-subject {
+  background-color: #fda316;
+  padding: 3rem 2rem;
+}
+.page-subject .app-content .article-subject h1 {
+  color: #fff;
+}
+.page-subject .app-content .article-feature-resources .card,
+.page-subject .app-content .article-all-resources .card {
+  max-width: 240px;
+  min-width: 240px;
+  padding: 0;
+}
+.page-subject .app-content .tab-pane {
+  padding: 2rem;
+}
+.page-subject .app-content .tab-pane .article {
+  padding: 0;
+}
+@media (min-width: 1200px) {
+  .page-subject .app-content .nav {
+    padding: 0 8rem;
+  }
+  .page-subject .app-content .article-subject {
+    padding: 3rem 8rem;
+  }
+  .page-subject .app-content .tab-pane {
     padding: 2rem 8rem;
   }
 }

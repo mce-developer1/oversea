@@ -1,0 +1,100 @@
+<div class="app-content">
+  <form class="form-class-details">
+    <h2>Class Details</h2>
+    <div class="row">
+      <div class="col-md-2 col-lg-2 col-xl-2">
+        <label class="form-label">Class Name</label>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <input class="form-control form-input" type="text" value="1-Amazing">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-lg-2 col-xl-2">
+        <label class="form-label">Level</label>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <select class="form-control form-select">
+          <option>Primary 1</option>
+          <option>Primary 2</option>
+          <option>Primary 3</option>
+          <option>Primary 4</option>
+          <option>Primary 5</option>
+          <option>Primary 6</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <table class="user-table"></table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-10 col-xl-8 form-actions">
+        <button class="btn btn-outline-primary btn-cancel" type="button">
+          Cancel
+        </button>
+        <button class="btn btn-primary" type="button">
+          Register
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal modal-discard-changes fade" id="mdlDiscardChanges" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Discard Changes</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-discard-changes">
+          <div class="form-group">
+            <p>
+              Discard all changes made and return to main page?
+            </p>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="button">
+              OK
+            </button>
+            <button class="btn btn-outline-primary" type="button" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-changes-saved fade" id="mdlChangesSaved" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Changes Saved</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-changes-saved">
+          <div class="form-group">
+            <h5>
+              <i class="fa fa-check-circle"></i> Save Successful
+            </h5>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="button">
+              OK
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

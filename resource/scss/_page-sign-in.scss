@@ -42,7 +42,6 @@
 
     .article-resources {
       .card {
-        margin: 0 1rem 1rem 0;
         max-width: 240px;
         min-width: 240px;
       }
@@ -66,13 +65,13 @@
       }
 
       .row {
+        &:not(.no-gutters) {
+          margin-bottom: 1rem;
+        }
+
         &.no-gutters {
           margin-bottom: .5rem;
           margin-top: 2rem;
-        }
-
-        &:not(.no-gutters) {
-          margin-bottom: 1rem;
         }
       }
     }

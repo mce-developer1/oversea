@@ -107,11 +107,11 @@
             <div class="col-md-8 col-lg-9">
               <div class="article article-manage-user">
                 <div class="header">
-                  <h5>&nbsp;</h5>
-                  <button class="btn btn-success" type="button">
+                  <h5></h5>
+                  <button class="btn btn-success btn-import" type="button">
                     <i class="fa fa-upload"></i> Import
                   </button>
-                  <button class="btn btn-primary" type="button">
+                  <button class="btn btn-primary btn-create" type="button">
                     Create New
                   </button>
                 </div>
@@ -120,6 +120,63 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-confirm-deletion fade" id="mdlConfirmDeletion" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Deletion</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-confirm-deletion">
+          <div class="form-group">
+            <p>
+              Are you sure you want to proceed with deletion?
+            </p>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="button" data-dismiss="modal">
+              OK
+            </button>
+            <button class="btn btn-outline-primary" type="button" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-import-user fade" id="mdlImportUser" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create by Import</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-confirm-deletion">
+          <div class="form-group">
+            <button class="btn btn-outline-primary btn-block" type="button" data-dismiss="modal">
+              <i class="fa fa-download"></i> Download Template
+            </button>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="button" data-dismiss="modal">
+              <i class="fa fa-upload"></i> Upload Completed File
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

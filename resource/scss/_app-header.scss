@@ -6,6 +6,8 @@
   .navbar-nav {
     -ms-flex-direction: row;
     flex-direction: row;
+    -ms-flex-align: center;
+    align-items: center;
 
     &.nav-main {
       -ms-flex-positive: 1;
@@ -55,12 +57,21 @@
   }
 
   .btn-user {
+    max-width: 12rem;
     padding: 0 .75rem;
 
     img {
       margin-right: .5rem;
       max-height: 2.25rem;
       max-width: 2.25rem;
+      vertical-align: baseline;
+    }
+
+    .user-name {
+      display: inline-block;
+      max-width: 5rem;
+      white-space: normal;
+      word-wrap: break-word;
     }
   }
 }

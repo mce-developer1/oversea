@@ -1,4 +1,4 @@
-.page-tools {
+.page-subject {
   .app-content {
     .nav-tabs {
       background-color: $yellow;
@@ -32,7 +32,7 @@
       }
     }
 
-    .article-tools {
+    .article-subject {
       background-color: $yellow;
       padding: 3rem 2rem;
 
@@ -41,21 +41,20 @@
       }
     }
 
+    .article-feature-resources,
+    .article-all-resources {
+      .card {
+        max-width: 240px;
+        min-width: 240px;
+        padding: 0;
+      }
+    }
+
     .tab-pane {
       padding: 2rem;
 
       .article {
-        padding: 0 1rem;
-
-        h5 {
-          margin-bottom: 1.5rem;
-        }
-      }
-
-      .form-filters {
-        h5 {
-          margin-bottom: 1.5rem;
-        }
+        padding: 0;
       }
     }
 
@@ -64,42 +63,12 @@
         padding: 0 8rem;
       }
 
-      .article-tools {
+      .article-subject {
         padding: 3rem 8rem;
       }
 
       .tab-pane {
         padding: 2rem 8rem;
-      }
-    }
-  }
-}
-
-.modal-confirm-deletion,
-.modal-import-user {
-  .modal-dialog {
-    max-width: 400px;
-
-    .modal-header {
-      .modal-title {
-        flex-grow: 1;
-        text-align: center;
-      }
-    }
-
-    .modal-body {
-      padding: 2rem 2rem 1rem;
-
-      .form-group {
-        text-align: center;
-
-        &:first-child {
-          margin-bottom: 2rem;
-        }
-
-        .btn {
-          padding: .375rem 1.25rem;
-        }
       }
     }
   }
