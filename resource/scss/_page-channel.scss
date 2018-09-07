@@ -108,6 +108,10 @@
       padding: 0;
 
       table {
+        tr {
+          cursor: pointer;
+        }
+        
         td {
           &.success {
             color: $green;

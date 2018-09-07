@@ -912,6 +912,9 @@ a:focus {
   margin: 2rem;
   padding: 0;
 }
+.page-channel .app-content .article-content table tr {
+  cursor: pointer;
+}
 .page-channel .app-content .article-content table td.success {
   color: #28a745;
 }
