@@ -208,9 +208,32 @@ a {
 }
 
 .nav {
-  &nav-tabs {
-    .nav-link {
+  &.nav-side {
+    background-color: $white;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
 
+    .nav {
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+
+      .nav-link {
+        padding: .5rem 1rem .5rem 2rem;
+      }
+    }
+
+    .nav-link {
+      color: $gray-600;
+
+      &:not(.disabled):hover,
+      &:not(.disabled):active {
+        background-color: $gray-200;
+        color: $black;
+      }
     }
   }
 }

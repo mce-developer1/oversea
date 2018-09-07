@@ -76,6 +76,17 @@ router.get('/channel', function(req, res, next) {
   });
 });
 
+/* GET view resource page. */
+router.get('/channel/resource', function(req, res, next) {
+  res.render('channel/resource', {
+    layout: 'channel/resource_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'channel',
+    loggedIn: true,
+    adminUser: true
+  });
+});
+
 /* GET student dashboard page. */
 router.get('/student/dashboard', function(req, res, next) {
   res.render('student/dashboard', {

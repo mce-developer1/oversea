@@ -1,8 +1,27 @@
 <div class="app-content">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-dashboard">
-        <h1>Dashboard</h1>
+      <div class="article article-channel">
+        <div class="channel-image">
+          <img src="/static/images/channel.png"/>
+        </div>
+        <div class="channel-info">
+          <h1>Mathematics</h1>
+          <div class="status status-success">
+            <i class="fa fa-check-circle"></i>
+          </div>
+          <div class="ratings">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-half-o"></i>
+            <span>4.5</span>
+          </div>
+          <button class="btn btn-primary" type="button">
+            <i class="fa fa-list"></i> Table of Content
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -10,214 +29,146 @@
     <div class="col-sm">
       <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-            Home
+          <a class="nav-link active" data-toggle="tab" href="#primary1" role="tab">
+            Primary 1
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#proficiencyReport" role="tab">
-            Proficiency Report
+          <a class="nav-link" data-toggle="tab" href="#primary2" role="tab">
+            Primary 2
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#loginReport" role="tab">
-            Login Report
+          <a class="nav-link" data-toggle="tab" href="#primary3" role="tab">
+            Primary 3
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#usageReport" role="tab">
-            Usage Report
+          <a class="nav-link" data-toggle="tab" href="#primary4" role="tab">
+            Primary 4
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#primary5" role="tab">
+            Primary 5
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#primary6" role="tab">
+            Primary 6
           </a>
         </li>
       </ul>
     </div>
   </div>
   <div class="row no-gutters">
-    <div class="col-sm">
-      <div class="tab-content">
-        <div class="tab-pane tab-pane-home fade show active" id="home" role="tabpanel">
-          <div class="row">
-            <div class="col-md">
-              <div class="article article-login-trend">
-                <h5>Student Login Trend (Past 7 Days)</h5>
-                <canvas></canvas>
-              </div>
+    <div class="col-sm tab-content">
+      <div class="tab-pane fade show active" id="primary1" role="tabpanel">
+        <div class="row no-gutters">
+          <div class="col-md-4 col-lg-3 col-xl-3">
+            <nav class="nav nav-side">
+              <a class="nav-link" href="#">
+                eBooks
+              </a>
+              <a class="nav-link" href="#wholeNumbers" data-toggle="collapse">
+                Whole Numbers
+              </a>
+              <nav id="wholeNumbers" class="nav collapse">
+                <a class="nav-link" href="#unitPreparation">
+                  Unit Preparation
+                </a>
+                <a class="nav-link" href="#">
+                  Lesson 1
+                </a>
+                <a class="nav-link" href="#">
+                  Lesson 2
+                </a>
+                <a class="nav-link" href="#">
+                  Unit Summary
+                </a>
+              </nav>
+              <a class="nav-link" href="#">
+                Fractions
+              </a>
+              <a class="nav-link" href="#">
+                Decimals
+              </a>
+              <a class="nav-link" href="#">
+                Geometry
+              </a>
+              <a class="nav-link" href="#">
+                Time
+              </a>
+              <a class="nav-link" href="#">
+                Area and Perimeter
+              </a>
+              <a class="nav-link" href="#">
+                Rate
+              </a>
+              <a class="nav-link" href="#">
+                Tables and Graphs
+              </a>
+            </nav>
+          </div>
+          <div class="col-md-8 col-lg-9 col-xl-9">
+            <div class="article article-overview">
+              <p>
+                CIE Maths is a 2-level instructional package designed to meet the learning needs of pupils
+                who need greater support when learning Mathematics. This series offers a meaningful and
+                engaging learning experience, enabling pupils to view Mathematics as an active and
+                relevant subject.
+              </p>
             </div>
-            <div class="col-md">
-              <div class="article article-popular-channels">
-                <h5>Popular Channels (This Month)</h5>
-                <canvas></canvas>
-              </div>
+            <div class="article article-content d-none">
+              <table></table>
             </div>
           </div>
         </div>
-        <div class="tab-pane tab-pane-report fade" id="proficiencyReport" role="tabpanel">
-          <div class="row">
-            <div class="col-md-4 col-lg-3">
-              <form class="form-filters">
-                <h5>Filters</h5>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Level</option>
-                    <option>Primary 1</option>
-                    <option>Primary 2</option>
-                    <option>Primary 3</option>
-                    <option>Primary 4</option>
-                    <option>Primary 5</option>
-                    <option>Primary 6</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Channel</option>
-                    <option>Maths Works!</option>
-                    <option>My Pals Are Here! Maths</option>
-                    <option>My Pals Are Here! Science</option>
-                    <option>Take Off with English</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Topic</option>
-                    <option>Fractions</option>
-                    <option>Decimals</option>
-                    <option>Percentage</option>
-                    <option>Average</option>
-                    <option>Area Perimeter</option>
-                  </select>
-                </div>
-                <div class="form-group form-actions">
-                  <button class="btn btn-primary" type="button">
-                    Go
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="col-md-8 col-lg-9">
-              <div class="article article-proficiency-report">
-                <div class="header">
-                  <h5>Overall Proficiency Summary</h5>
-                  <button class="btn btn-success" type="button">
-                    <i class="fa fa-download"></i> Download CSV
-                  </button>
-                </div>
-                <canvas></canvas>
-                <p class="text-muted">
-                  Last Generated: 30 Aug 2018
-                </p>
-              </div>
-            </div>
+      </div>
+      <div class="tab-pane tab-pane-home fade" id="primary2" role="tabpanel">
+        <div class="row no-gutters">
+          <div class="col-md-4 col-lg-3 col-xl-3">
+            <nav class="nav nav-side">
+              <a class="nav-link" href="#">
+                eBooks
+              </a>
+              <a class="nav-link" href="#">
+                Addition
+              </a>
+              <a class="nav-link" href="#">
+                Subtraction
+              </a>
+              <a class="nav-link" href="#">
+                Multiplication
+              </a>
+              <a class="nav-link" href="#">
+                Division
+              </a>
+              <a class="nav-link" href="#">
+                Word Problems
+              </a>
+              <a class="nav-link" href="#">
+                Length
+              </a>
+              <a class="nav-link" href="#">
+                Mass
+              </a>
+              <a class="nav-link" href="#">
+                Money
+              </a>
+            </nav>
           </div>
-        </div>
-        <div class="tab-pane tab-pane-report fade" id="loginReport" role="tabpanel">
-          <div class="row">
-            <div class="col-md-4 col-lg-3">
-              <form class="form-filters">
-                <h5>Filters</h5>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Level</option>
-                    <option>Primary 1</option>
-                    <option>Primary 2</option>
-                    <option>Primary 3</option>
-                    <option>Primary 4</option>
-                    <option>Primary 5</option>
-                    <option>Primary 6</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Class</option>
-                    <option>P-6A</option>
-                    <option>P-6B</option>
-                    <option>P-6C</option>
-                    <option>P-6D</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <button class="btn btn-outline-secondary btn-block btn-date-range" type="button" data-toggle="dropdown">
-                    <span class="date-range">Select Duration</span>
-                    <i class="fa fa-calendar"></i>
-                  </button>
-                </div>
-                <div class="form-group form-actions">
-                  <button class="btn btn-primary" type="button">
-                    Go
-                  </button>
-                </div>
-              </form>
+          <div class="col-md-8 col-lg-9 col-xl-9">
+            <div class="article article-overview">
+              <p>
+                CIE Maths is a 2-level instructional package designed to meet the learning needs of pupils
+                who need greater support when learning Mathematics. This series offers a meaningful and
+                engaging learning experience, enabling pupils to view Mathematics as an active and
+                relevant subject.
+              </p>
             </div>
-            <div class="col-md-8 col-lg-9">
-              <div class="article article-login-report">
-                <div class="header">
-                  <h5>Overall Login Summary</h5>
-                  <button class="btn btn-success" type="button">
-                    <i class="fa fa-download"></i> Download CSV
-                  </button>
-                </div>
-                <canvas></canvas>
-                <p class="text-muted">
-                  Last Generated: 30 Aug 2018
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-pane tab-pane-report fade" id="usageReport" role="tabpanel">
-          <div class="row">
-            <div class="col-md-4 col-lg-3">
-              <form class="form-filters">
-                <h5>Filters</h5>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Level</option>
-                    <option>Primary 1</option>
-                    <option>Primary 2</option>
-                    <option>Primary 3</option>
-                    <option>Primary 4</option>
-                    <option>Primary 5</option>
-                    <option>Primary 6</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Channel</option>
-                    <option>Maths Works!</option>
-                    <option>My Pals Are Here! Maths</option>
-                    <option>My Pals Are Here! Science</option>
-                    <option>Take Off with English</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-select">
-                    <option>Select Topic</option>
-                    <option>Fractions</option>
-                    <option>Decimals</option>
-                    <option>Percentage</option>
-                    <option>Average</option>
-                    <option>Area Perimeter</option>
-                  </select>
-                </div>
-                <div class="form-group form-actions">
-                  <button class="btn btn-primary" type="button">
-                    Go
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div class="col-md-8 col-lg-9">
-              <div class="article article-usage-report">
-                <div class="header">
-                  <h5>Overall Usage Summary</h5>
-                  <button class="btn btn-success" type="button">
-                    <i class="fa fa-download"></i> Download CSV
-                  </button>
-                </div>
-                <canvas></canvas>
-                <p class="text-muted">
-                  Last Generated: 30 Aug 2018
-                </p>
-              </div>
+            <div class="article article-content d-none">
+              <table></table>
             </div>
           </div>
         </div>

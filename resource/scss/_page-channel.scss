@@ -1,6 +1,139 @@
 .page-channel {
+  .app-header {
+    .btn-close {
+      margin-left: 2rem;
+    }
+  }
+
   .app-content {
+    .nav-tabs {
+      background-color: $white;
+      padding: 0 2rem;
+
+      .nav-item {
+        margin-bottom: 0;
+      }
+
+      .nav-link {
+        border-color: transparent;
+        border-bottom-width: 4px;
+        border-bottom-color: transparent;
+        border-radius: 0;
+        color: $black;
+        font-size: 1.25rem;
+        padding: 1rem 1.5rem .5rem;
+        margin: 0;
+
+        &.active {
+          background-color: transparent;
+          border-bottom-color: $primary;
+        }
+
+        .fa {
+          font-size: 2rem;
+          margin-right: .5rem;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .article-channel {
+      background-color: $yellow;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 2rem;
+
+      .channel-image {
+        img {
+          max-width: 240px;
+        }
+      }
+
+      .channel-info {
+        flex-grow: 1;
+        margin-left: 2rem;
+        position: relative;
+
+        h1 {
+          color: $white;
+          display: inline-block;
+          margin-right: .5rem;
+        }
+
+        .status {
+          display: inline-block;
+
+          &.status-success {
+            color: $green;
+          }
+
+          &.status-error {
+            color: $red;
+          }
+
+          .fa {
+            font-size: 2rem;
+          }
+        }
+
+        .ratings {
+          color: $white;
+
+          .fa-star,
+          .fa-star-o,
+          .fa-star-half-o {
+            font-size: 1.25rem;
+          }
+        }
+
+        .btn-primary {
+          bottom: 0;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+
+    .article-overview {
+      background-color: $white;
+      color: $gray-600;
+      font-size: 1.25rem;
+      font-style: italic;
+      margin: 2rem;
+      padding: 2rem;
+    }
+
+    .article-content {
+      margin: 2rem;
+      padding: 0;
+
+      table {
+        td {
+          &.success {
+            color: $green;
+          }
+        }
+      }
+    }
+
+    .article-resource {
+      padding: 0;
+      margin: 0 2rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
     @media (min-width: 1200px) {
+      .article-overview,
+      .article-content {
+        margin: 3rem 4rem;
+      }
+
+      .article-resource {
+        margin: 0 8rem;
+      }
     }
   }
 }

@@ -58,8 +58,14 @@
       }
     }
 
+    .card-group {
+      .card {
+        cursor: pointer;
+      }
+    }
+
     @media (min-width: 1200px) {
-      .nav {
+      .nav-tabs {
         padding: 0 8rem;
       }
 

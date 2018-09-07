@@ -152,6 +152,30 @@ a:focus {
   width: 2rem;
 }
 
+.nav.nav-side {
+  background-color: #fff;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+}
+.nav.nav-side .nav {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.nav.nav-side .nav .nav-link {
+  padding: 0.5rem 1rem 0.5rem 2rem;
+}
+.nav.nav-side .nav-link {
+  color: #6c757d;
+}
+.nav.nav-side .nav-link:not(.disabled):hover, .nav.nav-side .nav-link:not(.disabled):active {
+  background-color: #e9ecef;
+  color: #000;
+}
+
 .nav-light .nav-link {
   color: #6c757d;
 }
@@ -514,6 +538,7 @@ a:focus {
   color: #fff;
 }
 .page-dashboard .app-content .article-resources .card {
+  cursor: pointer;
   max-width: 240px;
   min-width: 240px;
   padding: 0;
@@ -563,7 +588,7 @@ a:focus {
   }
 }
 @media (min-width: 1200px) {
-  .page-dashboard .app-content .nav {
+  .page-dashboard .app-content .nav-tabs {
     padding: 0 8rem;
   }
   .page-dashboard .app-content .article-dashboard {
@@ -631,7 +656,7 @@ a:focus {
   margin-bottom: 1.5rem;
 }
 @media (min-width: 1200px) {
-  .page-tools .app-content .nav {
+  .page-tools .app-content .nav-tabs {
     padding: 0 8rem;
   }
   .page-tools .app-content .article-tools {
@@ -787,8 +812,11 @@ a:focus {
 .page-subject .app-content .tab-pane .article {
   padding: 0;
 }
+.page-subject .app-content .card-group .card {
+  cursor: pointer;
+}
 @media (min-width: 1200px) {
-  .page-subject .app-content .nav {
+  .page-subject .app-content .nav-tabs {
     padding: 0 8rem;
   }
   .page-subject .app-content .article-subject {
@@ -796,6 +824,111 @@ a:focus {
   }
   .page-subject .app-content .tab-pane {
     padding: 2rem 8rem;
+  }
+}
+
+.page-channel .app-header .btn-close {
+  margin-left: 2rem;
+}
+.page-channel .app-content .nav-tabs {
+  background-color: #fff;
+  padding: 0 2rem;
+}
+.page-channel .app-content .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+.page-channel .app-content .nav-tabs .nav-link {
+  border-color: transparent;
+  border-bottom-width: 4px;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  color: #000;
+  font-size: 1.25rem;
+  padding: 1rem 1.5rem 0.5rem;
+  margin: 0;
+}
+.page-channel .app-content .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom-color: #f15c25;
+}
+.page-channel .app-content .nav-tabs .nav-link .fa {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.page-channel .app-content .article-channel {
+  background-color: #fda316;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+}
+.page-channel .app-content .article-channel .channel-image img {
+  max-width: 240px;
+}
+.page-channel .app-content .article-channel .channel-info {
+  flex-grow: 1;
+  margin-left: 2rem;
+  position: relative;
+}
+.page-channel .app-content .article-channel .channel-info h1 {
+  color: #fff;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.page-channel .app-content .article-channel .channel-info .status {
+  display: inline-block;
+}
+.page-channel .app-content .article-channel .channel-info .status.status-success {
+  color: #28a745;
+}
+.page-channel .app-content .article-channel .channel-info .status.status-error {
+  color: #dc3545;
+}
+.page-channel .app-content .article-channel .channel-info .status .fa {
+  font-size: 2rem;
+}
+.page-channel .app-content .article-channel .channel-info .ratings {
+  color: #fff;
+}
+.page-channel .app-content .article-channel .channel-info .ratings .fa-star,
+.page-channel .app-content .article-channel .channel-info .ratings .fa-star-o,
+.page-channel .app-content .article-channel .channel-info .ratings .fa-star-half-o {
+  font-size: 1.25rem;
+}
+.page-channel .app-content .article-channel .channel-info .btn-primary {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+.page-channel .app-content .article-overview {
+  background-color: #fff;
+  color: #6c757d;
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 2rem;
+  padding: 2rem;
+}
+.page-channel .app-content .article-content {
+  margin: 2rem;
+  padding: 0;
+}
+.page-channel .app-content .article-content table td.success {
+  color: #28a745;
+}
+.page-channel .app-content .article-resource {
+  padding: 0;
+  margin: 0 2rem;
+}
+.page-channel .app-content .article-resource img {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .page-channel .app-content .article-overview,
+.page-channel .app-content .article-content {
+    margin: 3rem 4rem;
+  }
+  .page-channel .app-content .article-resource {
+    margin: 0 8rem;
   }
 }
 
