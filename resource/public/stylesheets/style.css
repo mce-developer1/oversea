@@ -345,6 +345,33 @@ a:focus {
   background-color: #f8f9fa;
   margin-top: 64px;
 }
+.app-content .nav-tabs {
+  background-color: #fda316;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.app-content .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+.app-content .nav-tabs .nav-link {
+  border-color: transparent;
+  border-bottom-width: 4px;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+}
+.app-content .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom-color: #f15c25;
+}
+.app-content .nav-tabs .nav-link .fa {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
 
 .app-footer {
   border-top: 1px solid #ced4da;
@@ -503,33 +530,6 @@ a:focus {
   vertical-align: middle;
 }
 
-.page-dashboard .app-content .nav-tabs {
-  background-color: #fda316;
-  justify-content: center;
-  padding: 0 2rem;
-}
-.page-dashboard .app-content .nav-tabs .nav-item {
-  margin-bottom: 0;
-}
-.page-dashboard .app-content .nav-tabs .nav-link {
-  border-color: transparent;
-  border-bottom-width: 4px;
-  border-bottom-color: transparent;
-  border-radius: 0;
-  color: #fff;
-  font-size: 1.25rem;
-  padding: 0.5rem 1.5rem;
-  margin: 0;
-}
-.page-dashboard .app-content .nav-tabs .nav-link.active {
-  background-color: transparent;
-  border-bottom-color: #f15c25;
-}
-.page-dashboard .app-content .nav-tabs .nav-link .fa {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-}
 .page-dashboard .app-content .article-dashboard {
   background-color: #fda316;
   padding: 3rem 2rem;
@@ -609,33 +609,6 @@ a:focus {
   }
 }
 
-.page-tools .app-content .nav-tabs {
-  background-color: #fda316;
-  justify-content: center;
-  padding: 0 2rem;
-}
-.page-tools .app-content .nav-tabs .nav-item {
-  margin-bottom: 0;
-}
-.page-tools .app-content .nav-tabs .nav-link {
-  border-color: transparent;
-  border-bottom-width: 4px;
-  border-bottom-color: transparent;
-  border-radius: 0;
-  color: #fff;
-  font-size: 1.25rem;
-  padding: 0.5rem 1.5rem;
-  margin: 0;
-}
-.page-tools .app-content .nav-tabs .nav-link.active {
-  background-color: transparent;
-  border-bottom-color: #f15c25;
-}
-.page-tools .app-content .nav-tabs .nav-link .fa {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-}
 .page-tools .app-content .article-tools {
   background-color: #fda316;
   padding: 3rem 2rem;
@@ -766,33 +739,6 @@ a:focus {
   }
 }
 
-.page-subject .app-content .nav-tabs {
-  background-color: #fda316;
-  justify-content: center;
-  padding: 0 2rem;
-}
-.page-subject .app-content .nav-tabs .nav-item {
-  margin-bottom: 0;
-}
-.page-subject .app-content .nav-tabs .nav-link {
-  border-color: transparent;
-  border-bottom-width: 4px;
-  border-bottom-color: transparent;
-  border-radius: 0;
-  color: #fff;
-  font-size: 1.25rem;
-  padding: 0.5rem 1.5rem;
-  margin: 0;
-}
-.page-subject .app-content .nav-tabs .nav-link.active {
-  background-color: transparent;
-  border-bottom-color: #f15c25;
-}
-.page-subject .app-content .nav-tabs .nav-link .fa {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-}
 .page-subject .app-content .article-subject {
   background-color: #fda316;
   padding: 3rem 2rem;
@@ -832,29 +778,14 @@ a:focus {
 }
 .page-channel .app-content .nav-tabs {
   background-color: #fff;
-  padding: 0 2rem;
-}
-.page-channel .app-content .nav-tabs .nav-item {
-  margin-bottom: 0;
+  justify-content: flex-start;
 }
 .page-channel .app-content .nav-tabs .nav-link {
-  border-color: transparent;
-  border-bottom-width: 4px;
-  border-bottom-color: transparent;
-  border-radius: 0;
-  color: #000;
-  font-size: 1.25rem;
-  padding: 1rem 1.5rem 0.5rem;
-  margin: 0;
+  color: #6c757d;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
 }
 .page-channel .app-content .nav-tabs .nav-link.active {
-  background-color: transparent;
-  border-bottom-color: #f15c25;
-}
-.page-channel .app-content .nav-tabs .nav-link .fa {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
+  color: #000;
 }
 .page-channel .app-content .article-channel {
   background-color: #fda316;

@@ -8,31 +8,14 @@
   .app-content {
     .nav-tabs {
       background-color: $white;
-      padding: 0 2rem;
-
-      .nav-item {
-        margin-bottom: 0;
-      }
+      justify-content: flex-start;
 
       .nav-link {
-        border-color: transparent;
-        border-bottom-width: 4px;
-        border-bottom-color: transparent;
-        border-radius: 0;
-        color: $black;
-        font-size: 1.25rem;
-        padding: 1rem 1.5rem .5rem;
-        margin: 0;
+        color: $gray-600;
+        padding: 1rem 1.5rem .5rem 1.5rem;
 
         &.active {
-          background-color: transparent;
-          border-bottom-color: $primary;
-        }
-
-        .fa {
-          font-size: 2rem;
-          margin-right: .5rem;
-          vertical-align: middle;
+          color: $black;
         }
       }
     }
