@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+		<link rel="stylesheet" href="/material-icons/iconfont/material-icons.css" />
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+		<link rel="stylesheet" href="/stylesheets/theme/default.css" />
+		<script src="/jquery/dist/jquery.js"></script>
+		<script src="/popper.js/dist/umd/popper.js"></script>
+		<script src="/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="/datatables/media/js/jquery.dataTables.js"></script>
+  </head>
+  <body>
+		<div class="app-header">
+			<nav class="navbar navbar-company">
+				<div class="company-info">
+					<a class="navbar-brand" href="/">
+						<img alt="Marshall Cavendish Online" src="/images/mco_logo.gif">
+					</a>
+					<div class="navbar-text">
+						Edno Training - EDTGP (Pri)
+					</div>
+				</div>
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown dropdown-apps">
+						<button class="btn btn-icon" type="button" data-toggle="dropdown">
+							<span class="material-icons">apps</span>
+						</button>
+						<div class="dropdown-menu dropdown-menu-apps">
+							<div class="panel">
+								<h6 class="header">
+									Home
+								</h6>
+								<ul class="nav">
+									<li class="nav-item">
+										<a class="nav-link" href="#">My Assignments</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">National Library Board - eResources</a>
+									</li>
+								</ul>
+							</div>
+							<div class="panel">
+								<h6 class="header">
+									Collaboration
+								</h6>
+								<div class="panel-group">
+									<div class="panel">
+										<h6 class="header">
+											Blog
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">Blogs</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">My Blog</a>
+											</li>
+										</ul>
+									</div>
+									<div class="panel">
+										<h6 class="header">
+											E-Portfolio
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">My Portfolio</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Folio Bank</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Rubrics</a>
+											</li>
+										</ul>
+									</div>
+									<div class="panel">
+										<h6 class="header">
+											Podcast
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">Posted Podcasts</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">My Podcasts</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<h6 class="header">
+									My Tools
+								</h6>
+								<div class="panel-group">
+									<div class="panel">
+										<h6 class="header">
+											Test Builder
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="/tests">My Tests</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="/tests/track">Track Tests</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Test Bank</a>
+											</li>
+										</ul>
+									</div>
+									<div class="panel">
+										<h6 class="header">
+											Lesson Builder
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">My Lessons</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Track Lessons</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Lesson Bank</a>
+											</li>
+										</ul>
+									</div>
+									<div class="panel">
+										<h6 class="header">
+											Registration Form
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">My Forms</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Track Forms</a>
+											</li>
+										</ul>
+									</div>
+									<div class="panel">
+										<h6 class="header">
+											Rubrics
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">My Rubrics</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Rubric Bank</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel">
+								<h6 class="header">
+									School Admin
+								</h6>
+								<div class="panel-group">
+									<div class="panel">
+										<h6 class="header">
+											Badges
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">My Badges</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Award Badge</a>
+											</li>
+										</ul>
+									</div>
+									<div class="panel">
+										<h6 class="header">
+											Administration
+										</h6>
+										<ul class="nav">
+											<li class="nav-item">
+												<a class="nav-link" href="#">Login to Student Account</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Login to Teacher Account</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Reset Student Account</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Reset Teacher Account</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">User Admin</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<button class="btn btn-icon" type="button" data-toggle="dropdown">
+							<span class="material-icons">notifications</span>
+						</button>
+						<div class="dropdown-menu dropdown-menu-notifications">
+							<div class="panel">
+								<h6 class="header">
+									Notifications
+								</h6>
+								<div class="notifications">
+									<div class="list-group list-group-flush">
+										<a class="list-group-item list-group-item-action" href="#">
+											<div class="user-avatar">
+												<span class="material-icons">person</span>
+											</div>
+											<div class="notification">
+												<div class="notification-message">
+													<span class="user-name">Jessica Caruso</span>
+													assigned you a lesson to learn.
+												</div>
+												<div class="text-secondary date">
+													2 min ago
+												</div>
+											</div>
+										</a>
+										<a class="list-group-item list-group-item-action" href="#">
+											<div class="user-avatar">
+												<span class="material-icons">person</span>
+											</div>
+											<div class="notification">
+												<div class="notification-message">
+													<span class="user-name">Joel King</span>
+													assigned you a quiz to practice.
+												</div>
+												<div class="text-secondary date">
+													3 hours ago
+												</div>
+											</div>
+										</a>
+										<a class="list-group-item list-group-item-action" href="#">
+											<div class="user-avatar">
+												<span class="material-icons">person</span>
+											</div>
+											<div class="notification">
+												<div class="notification-message">
+													<span class="user-name">John Doe</span>
+													share a lesson to you to review.
+												</div>
+												<div class="text-secondary date">
+													5 hours ago
+												</div>
+											</div>
+										</a>
+										<a class="list-group-item list-group-item-action" href="#">
+											<div class="user-avatar">
+												<span class="material-icons">person</span>
+											</div>
+											<div class="notification">
+												<div class="notification-message">
+													<span class="user-name">Emily Carter</span>
+													share a quiz to you to review.
+												</div>
+												<div class="text-secondary date">
+													1 day ago
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<a class="btn btn-block" href="#">
+									View all notifications
+								</a>
+							</div>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<button class="btn btn-icon" type="button" data-toggle="dropdown">
+							<span class="material-icons">person</span>
+						</button>
+						<div class="dropdown-menu dropdown-menu-user">
+							<div class="panel">
+								<div class="user-info">
+									<div class="user-name">Yan Naung Soe</div>
+									<div class="user-email">naungsoe@mceducation.com</div>
+								</div>
+								<div class="list-group list-group-flush">
+									<a class="list-group-item list-group-item-action" href="#">
+										<span class="material-icons">person</span> Profile
+									</a>
+									<a class="list-group-item list-group-item-action" href="#">
+										<span class="material-icons">settings</span> Settings
+									</a>
+									<a class="list-group-item list-group-item-action" href="#">
+										<span class="material-icons">exit_to_app</span> Logout
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<nav class="navbar navbar-menu">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+							Home
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a class="dropdown-item" href="#">
+									<span class="item-text">My Assignments</span>
+								</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">
+									<span class="item-text">National Library Board - eResources</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+							Collaboration
+						</a>
+						<ul class="dropdown-menu">
+							<li class="dropright">
+								<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">
+									<span class="item-text">Blog</span>
+								</a>
+								<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">Blogs</span>
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">My Blog</span>
+											</a>
+										</li>
+								</ul>
+							</li>
+							<li class="dropright">
+								<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">
+									<span class="item-text">E-Portfolio</span>
+								</a>
+								<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">My Portfolio</span>
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">Folio Bank</span>
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">Rubrics</span>
+											</a>
+										</li>
+								</ul>
+							</li>
+							<li class="dropright">
+								<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">
+									<span class="item-text">Podcast</span>
+								</a>
+								<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">Posted Podcasts</span>
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">My Podcasts</span>
+											</a>
+										</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+							My Tools
+						</a>
+						<ul class="dropdown-menu">
+							<li class="dropright">
+								<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">
+									<span class="item-text">Test Builder</span>
+								</a>
+								<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="/tests">
+												<span class="item-text">My Tests</span>
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="/tests/track">
+												<span class="item-text">Track Tests</span>
+											</a>
+										</li>
+								</ul>
+							</li>
+							<li class="dropright">
+								<a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">
+									<span class="item-text">Lesson Builder</span>
+								</a>
+								<ul class="dropdown-menu">
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">My Lessons</span>
+											</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="#">
+												<span class="item-text">Track Lessons</span>
+											</a>
+										</li>
+								</ul>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">
+									<span class="item-text">School to Home Notes</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<main class="app-content">
+			{{{body}}}
+		</main>
+		<script>
+			$(document).ready( function () {
+				$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+					var $toggle = $(this);
+					var $parent = $toggle.offsetParent('.dropdown-menu');
+					
+					if (!$toggle.next().hasClass('show')) {
+						$toggle.parents('.dropdown-menu').first().find('.show').removeClass('show');
+					}
+					
+					$toggle.next('.dropdown-menu').toggleClass('show');
+					$toggle.parent('li').toggleClass('show');
+
+					$toggle.parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function ( e ) {
+						$('.dropdown-menu .show').removeClass('show');
+					});
+					
+					if (!$parent.parent().hasClass('navbar-nav')) {
+						$toggle.next().css({
+							'top': $toggle[0].offsetTop, 
+							'left': $parent.outerWidth() - 4
+						});
+					}
+					
+					return false;
+				});
+			});
+		</script>
+  </body>
+</html>

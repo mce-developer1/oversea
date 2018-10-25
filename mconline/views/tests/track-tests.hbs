@@ -1,0 +1,234 @@
+<div class="navpanel navpanel-side">
+	<div class="panel">
+		<h6 class="header">
+			Test Builder
+		</h6>
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link" href="/tests">
+					My Tests
+				</a>
+			</li
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Shared with Me
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Shared by Me
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" href="#">
+					Track by Tests
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Track by Groups
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Test Bank
+				</a>
+			</li>
+		</ul>
+	</div>
+	<form class="panel d-none">
+		<h4 class="header">
+			Search/Filter
+		</h4>
+		<div class="form-group">
+			<input class="form-control" type="text" placeholder="Search test...">
+		</div>
+		<div class="form-group">
+			<select class="form-control">
+				<option>All Subjects</option>
+				<option>Arts & Crafts</option>
+				<option>Chinese</option>
+				<option>English</option>
+				<option>Mathematics</option>
+				<option>Science</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<select class="form-control">
+				<option>All Levels</option>
+				<option>Primary 1</option>
+				<option>Primary 2</option>
+				<option>Primary 3</option>
+				<option>Primary 4</option>
+				<option>Primary 5</option>
+				<option>Primary 6</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<select class="form-control">
+				<option>All Streams</option>
+			</select>
+		</div>
+		<button type="submit" class="btn btn-secondary">
+			Search
+		</button>
+		<button type="submit" class="btn btn-link">
+			Reset
+		</button>
+	</form>
+</div>
+<div class="content content-main">
+	<div class="toolbar">
+		<div class="btn-actions">
+			<div class="btn-group">
+				<button type="button" class="btn btn-secondary">Create</button>
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">Test</a>
+					<a class="dropdown-item" href="#">Test from file</a>
+				</div>
+			</div>
+			<div class="btn-group">
+				<button type="button" class="btn btn-outline-secondary">Assign</button>
+			</div>
+			<div class="btn-group">
+				<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">Action</button>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="#">Edit</a>
+					<a class="dropdown-item" href="#">Duplicate</a>
+					<a class="dropdown-item" href="#">Delete</a>
+					<a class="dropdown-item" href="#">Share</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Export</a>
+					<a class="dropdown-item" href="#">Add to My Course</a>
+				</div>
+			</div>
+		</div>
+		<form class="form-search">
+			<div class="input-group">
+				<input class="form-control" type="text" placeholder="Search test...">
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button">
+						<span class="material-icons">search</span>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="content">
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="checkbox">
+						<input type="checkbox"/>
+					</th>
+					<th>Title</th>
+					<th>Subject</th>
+					<th>Level</th>
+					<th>Owner</th>
+					<th>Last Modified</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="checkbox"/>
+					</td>
+					<td>
+						<a href="#">P6 - 2 - Vocalbulary Cloze</a>
+					</td>
+					<td>English</td>
+					<td>Primary 6</td>
+					<td>6PEL</td>
+					<td>25 Jan 2018</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"/>
+					</td>
+					<td>
+						<a href="#">P6 - 1 - Vocalbulary Cloze</a>
+					</td>
+					<td>English</td>
+					<td>Primary 6</td>
+					<td>6PEL</td>
+					<td>20 Jan 2018</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"/>
+					</td>
+					<td>
+						<a href="#">P5 - 4 - Vocalbulary MCQ</a>
+					</td>
+					<td>English</td>
+					<td>Primary 5</td>
+					<td>5PEL</td>
+					<td>18 Jan 2018</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"/>
+					</td>
+					<td>
+						<a href="#">P5 - 4 - Punctuation MCQ</a>
+					</td>
+					<td>English</td>
+					<td>Primary 5</td>
+					<td>5PEL</td>
+					<td>18 Jan 2018</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"/>
+					</td>
+					<td>
+						<a href="#">P5 - 3 - Vocalbulary MCQ</a>
+					</td>
+					<td>English</td>
+					<td>Primary 5</td>
+					<td>5PEL</td>
+					<td>18 Jan 2018</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$.fn.dataTable.ext.classes.sWrapper = 'dataTables_wrapper table-wrapper';
+		$.fn.dataTable.ext.classes.sLength = 'dataTables_length length';
+		$.fn.dataTable.ext.classes.sInfo = 'dataTables_info info';
+		$.fn.dataTable.ext.classes.sPaging = 'dataTables_paginate paging paging_';
+		
+		$('.table').DataTable({
+			language: {
+				info: '_START_-_END_ of _TOTAL_',
+				infoEmpty: 'No records found.',
+				lengthMenu: 'Records per page _MENU_',
+				paginate: {
+					next: 'chevron_right',
+					previous: 'chevron_left'
+				}
+			},
+			columns: [
+				{ orderable: false },
+				null,
+				null,
+				null,
+				null,
+				null
+			],
+			dom: 'rt<"bottom"lip>',
+			order: [[5, 'desc']],
+			lengthMenu: [
+				[10, 20, 30, 50, 100],
+				[10, 20, 30, 50, 100]
+			],
+			pagingType: 'simple'
+		});
+	});
+</script>

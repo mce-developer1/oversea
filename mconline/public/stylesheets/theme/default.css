@@ -1,0 +1,15 @@
+a,
+a:hover {
+	color: #0088cc;
+}
+
+.panel .nav-link.active,
+.panel .nav-link.active:hover {
+	color: #f15c25;
+}
+
+@media (max-width: 991.98px) {
+	.app-content .navpanel-side .panel .nav-link.active {
+		color: #f15c25;
+	}
+}
