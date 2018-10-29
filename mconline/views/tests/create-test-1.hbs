@@ -1,4 +1,4 @@
-<main class="app-content">
+<div class="app-content">
 	<div class="panel panel-side">
 		<div class="header">
 			<h6 class="header-text">
@@ -16,14 +16,14 @@
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="/tests/create/2">
-					Step 2. Question Setup
+					Step 2. Questions Setup
 				</a>
 			</li>
 		</ul>
 	</div>
 	<div class="content content-main">
 		<div class="wizard-step">
-			<form class="form-horizontal">
+			<form>
 				<div class="form-group">
 					<label for="txtTitle">Title</label>
 					<input class="form-control" type="text" id="txtTitle" placeholder="Enter test title...">
@@ -76,10 +76,23 @@
 					<input class="form-control xsmall" type="text" id="txtPassingCriteria">
 				</div>
 			</form>
+			<hr/>
 			<div class="wizard-actions">
-				<button class="btn btn-secondary" type="button">Next</button>
 				<button class="btn btn-outline-secondary" type="button">Cancel</button>
+				<button class="btn btn-secondary" type="button">Next</button>
 			</div>
 		</div>
 	</div>
-</main>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('.wizard-actions .btn-outline-secondary').on('click', function(e) {
+			location.href = '/tests';
+		});
+
+		$('.wizard-actions .btn-secondary').on('click', function(e) {
+			location.href = '/tests/create/2';
+		});
+	});
+</script>

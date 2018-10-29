@@ -72,6 +72,11 @@ table.dataTable tbody td input[type="checkbox"] {
 	vertical-align: middle;
 }
 
+.mce-tinymce {
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
 .btn {
 	border-radius: 0;
 	line-height: normal;
@@ -88,12 +93,13 @@ table.dataTable tbody td input[type="checkbox"] {
 .btn-icon {
 	background-color: transparent;
 	border: 0;
+	color: #6c757d;
 	line-height: 1;
 	padding: 0;
 }
 
 .btn-icon .material-icons {
-	font-size: 2.25rem;
+	font-size: 2rem;
 }
 
 .dropdown-menu {
@@ -214,8 +220,8 @@ table.dataTable tbody td input[type="checkbox"] {
 }
 
 .wizard-step .form-group {
-	-webkit-align-items: center;
-  align-items: center;
+	-webkit-align-items: flex-start;
+  align-items: flex-start;
 	display: -ms-flexbox;
   display: flex;
 	-ms-flex-direction: row;
@@ -227,15 +233,25 @@ table.dataTable tbody td input[type="checkbox"] {
 }
 
 .wizard-step  .form-group .form-control {
-	max-width: 20rem;
+	width: 20rem;
 }
 
 .wizard-step  .form-group .form-control.xsmall {
 	max-width: 8rem;
 }
 
+.wizard-step  .form-group .form-control.textarea {
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+	max-height: 20rem;
+	overflow: auto;
+}
+
+.wizard-step .wizard-actions {
+	margin-top: 1.5rem;
+}
+
 .app-header {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 	display: -ms-flexbox;
   display: flex;
 	-ms-flex-direction: column;
@@ -243,11 +259,14 @@ table.dataTable tbody td input[type="checkbox"] {
 }
 
 .app-header .navbar-company {
+	-webkit-align-items: center;
+  align-items: center;
+	padding: 0.75rem 1rem;
 	position: relative;
 }
 
 .app-header .navbar-company .btn-icon .material-icons {
-	font-size: 2.25rem;
+	font-size: 2rem;
 }
 
 .app-header .navbar-company .dropdown-menu {
@@ -341,7 +360,7 @@ table.dataTable tbody td input[type="checkbox"] {
 }
 
 .app-header .navbar-company .dropdown-menu-user .user-info .user-name {
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	font-weight: 600;
 }
 
@@ -383,20 +402,23 @@ table.dataTable tbody td input[type="checkbox"] {
 }
 
 .app-header .company-info .btn-icon .material-icons {
-	font-size: 2.5rem;
+	font-size: 2rem;
 }
 
 .app-header .company-info .navbar-brand {
 	margin-left: .5rem;
-	margin-right: 1rem;
+	margin-right: 1.5rem;
 	padding: 0;
 }
 
 .app-header .company-info .navbar-text {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
+	font-weight: bold;
+	padding: 0;
 }
 
 .app-header .navbar-menu {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 	padding: 0 1rem;
 }
 
@@ -489,8 +511,13 @@ table.dataTable tbody td input[type="checkbox"] {
 	margin-bottom: .5rem;
 }
 
-.app-content .content-main .toolbar .btn-actions .btn-group {
+.app-content .content-main .toolbar .btn-actions .btn-group,
+.app-content .content-main .toolbar .btn-actions .btn {
 	margin-bottom: .5rem;
+}
+
+.app-content .content-main .toolbar .btn-actions .btn-group .btn {
+	margin-bottom: 0;
 }
 
 .app-content .content-main .toolbar .form-search {
@@ -584,6 +611,130 @@ table.dataTable tbody td input[type="checkbox"] {
 	cursor: pointer;
 }
 
+.app-content .wizard-step .test-info {
+	-webkit-align-items: center;
+  align-items: center;
+	display: -ms-flexbox;
+  display: flex;
+	-ms-flex-direction: row;
+  flex-direction: row;
+	margin-bottom: 1rem;
+}
+
+.app-content .wizard-step .test-info .test-title {
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+.app-content .wizard-step .test-info .test-title  a {
+	font-weight: normal;
+	margin-left: .5rem;
+}
+
+.app-content .wizard-step .section,
+.app-content .wizard-step .question {
+	margin: 0 -1.5rem;
+	padding: 1rem 1.5rem;
+}
+
+.app-content .wizard-step .section .section-header,
+.app-content .wizard-step .question .question-header {
+	-webkit-align-items: center;
+  align-items: center;
+	display: -ms-flexbox;
+  display: flex;
+	-ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.app-content .wizard-step .section .section-header .section-title,
+.app-content .wizard-step .question .question-header .question-title {
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+.app-content .wizard-step .section .section-header .section-actions,
+.app-content .wizard-step .question .question-header .question-actions {
+	cursor: default;
+}
+
+.app-content .wizard-step .section .section-header .btn-icon,
+.app-content .wizard-step .question .question-header .btn-icon,
+.app-content .wizard-step .question .question-options .btn-icon {
+	padding: .25rem;
+}
+.app-content .wizard-step .section .section-header .btn-icon .material-icons,
+.app-content .wizard-step .question .question-header .btn-icon .material-icons,
+.app-content .wizard-step .question .question-options .btn-icon .material-icons {
+	font-size: 1.75rem;
+}
+
+.app-content .wizard-step .question .question-body {
+	margin-bottom: 1rem;
+}
+
+.app-content .wizard-step .question .question-options {
+	display: -ms-flexbox;
+  display: flex;
+	-ms-flex-direction: column;
+  flex-direction: column;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+.app-content .wizard-step .question .question-option {
+	-webkit-align-items: flex-start;
+  align-items: flex-start;
+	display: -ms-flexbox;
+  display: flex;
+	-ms-flex-direction: row;
+  flex-direction: row;
+	margin-bottom: .5rem;
+	padding: .25rem 0;
+}
+
+.app-content .wizard-step .question .question-option-radio {
+	margin: .325rem .75rem .325rem 0;
+}
+
+.app-content .wizard-step .section-edit,
+.app-content .wizard-step .question-edit {
+ -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
+	box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+.app-content .wizard-step .question-edit .question-options-actions {
+	margin-top: 1rem;
+}
+
+.app-content .wizard-step .question-edit .question-option-actions {
+	margin-left: .5rem;
+}
+
+.app-content .wizard-step .section:not(.section-edit):hover,
+.app-content .wizard-step .question:not(.question-edit):hover {
+	background-color: #f0f2f4;
+	cursor: move;
+}
+
+.app-content .wizard-step .question:not(.question-edit) label:hover,
+.app-content .wizard-step .question:not(.question-edit) input:hover {
+	cursor: move;
+}
+
+.app-content .wizard-step .test-actions {
+	margin-top: 1rem;
+}
+
+.app-content .wizard-step .test-actions .btn-group,
+.app-content .wizard-step .test-actions .btn {
+	margin-top: .5rem;
+}
+
+.app-content .wizard-step .test-actions .btn-group .btn {
+	margin-top: 0;
+}
+
 @media (max-width: 991.98px) {
 	.app-header .company-info .navbar-text {
 		display: none;
@@ -610,6 +761,26 @@ table.dataTable tbody td input[type="checkbox"] {
 
 	.app-content .panel-side .nav-link {
 		max-width: 100%;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.wizard-step .form-group {
+		-webkit-align-items: flex-start;
+		align-items: flex-start;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	
+	.wizard-step .form-group label,
+	.wizard-step .form-group .form-control {
+		width: 100%;
+	}
+
+	.app-content .wizard-step .question .question-options {
+		width: 100%;
 	}
 }
 

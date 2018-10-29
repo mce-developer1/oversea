@@ -11,6 +11,7 @@
 		<script src="/jquery/dist/jquery.js"></script>
 		<script src="/popper.js/dist/umd/popper.js"></script>
 		<script src="/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="/tinymce/tinymce.js"></script>
 		<script src="/datatables/media/js/jquery.dataTables.js"></script>
   </head>
   <body>
@@ -21,7 +22,7 @@
 						<span class="material-icons">menu</span>
 					</button>
 					<a class="navbar-brand" href="/">
-						<img alt="Marshall Cavendish Online" src="/images/mco_logo.gif">
+						<img alt="Marshall Cavendish Online" src="/images/mce-white-logo.png">
 					</a>
 					<div class="navbar-text">
 						Edno Training - EDTGP (Pri)
@@ -470,17 +471,21 @@
 		{{{body}}}
 		<script>
 			$(document).ready( function () {
-				$('.btn-drawer').on('click', function(e) {
-					$('.drawer').addClass('show');
-				});
+				if ($('.drawer').length === 0) {
+					$('.btn-drawer').addClass('d-none');
+				} else {
+					$('.btn-drawer').on('click', function(e) {
+						$('.drawer').addClass('show');
+					});
 
-				$(document).on('click', function(e) {
-					if (!$(e.target).hasClass('.btn-drawer')
-							&& ($(e.target).closest('.btn-drawer').length === 0)
-							&& ($(e.target).closest('.drawer').length === 0)) {
-						$('.drawer').removeClass('show');
-					}
-				});
+					$(document).on('click', function(e) {
+						if (!$(e.target).hasClass('.btn-drawer')
+								&& ($(e.target).closest('.btn-drawer').length === 0)
+								&& ($(e.target).closest('.drawer').length === 0)) {
+							$('.drawer').removeClass('show');
+						}
+					});
+				}
 				
 				$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
 					var $toggle = $(this);

@@ -20,6 +20,15 @@ table.dataTable thead th {
 }
 
 .app-header {
+	background-color: #ee6123;
+}
+
+.app-header .navbar-company .btn-icon,
+.app-header .company-info .navbar-text {
+ color: #fff;
+}
+
+.app-header .navbar-menu {
 	background-color: #fff;
 }
 
