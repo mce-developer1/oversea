@@ -125,6 +125,7 @@ table.dataTable tbody td input[type="checkbox"] {
 }
 
 .form-control.select-control {
+	border: none;
 	padding: 0;
 	position: relative;
 }
@@ -149,8 +150,8 @@ table.dataTable tbody td input[type="checkbox"] {
 	-moz-appearance: none;
 	appearance: none;
 	background-color: #fff;
-	border: none;
-	padding: .4rem 2rem .4rem .75rem;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	padding: .325rem 2rem .325rem .75rem;
 	width: 100%;
 }
 
