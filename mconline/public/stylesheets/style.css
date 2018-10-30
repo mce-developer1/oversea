@@ -151,6 +151,7 @@ table.dataTable tbody td input[type="checkbox"] {
 	appearance: none;
 	background-color: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 0;
 	padding: .325rem 2rem .325rem .75rem;
 	width: 100%;
 }
