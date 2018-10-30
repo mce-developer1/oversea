@@ -240,6 +240,11 @@ table.dataTable tbody td input[type="checkbox"] {
 	max-width: 8rem;
 }
 
+.wizard-step  .form-group .form-control.block {
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
 .wizard-step  .form-group .form-control.textarea {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
@@ -634,7 +639,7 @@ table.dataTable tbody td input[type="checkbox"] {
 .app-content .wizard-step .section,
 .app-content .wizard-step .question {
 	margin: 0 -1.5rem;
-	padding: 1rem 1.5rem;
+	padding: 1.5rem;
 }
 
 .app-content .wizard-step .section .section-header,
