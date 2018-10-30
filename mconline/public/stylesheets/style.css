@@ -713,7 +713,7 @@ table.dataTable tbody td input[type="checkbox"] {
 
 .app-content .wizard-step .section:not(.section-edit):hover,
 .app-content .wizard-step .question:not(.question-edit):hover {
-	background-color: #f0f2f4;
+	background-color: #f8f9fa;
 	cursor: move;
 }
 
