@@ -124,6 +124,39 @@ table.dataTable tbody td input[type="checkbox"] {
 	padding: .325rem .75rem;
 }
 
+.form-control.select-control {
+	padding: 0;
+	position: relative;
+}
+
+.form-control.select-control:after {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	content: "";
+	border-top: .3em solid;
+	border-right: .3em solid transparent;
+	border-bottom: 0;
+	border-left: .3em solid transparent;
+	position:absolute;
+	top: .875rem;
+  right: .5rem;
+	pointer-events: none;
+}
+
+.form-control.select-control select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	padding: .4rem 2rem .4rem .75rem;
+	width: 100%;
+}
+
+.form-control.select-control select::-ms-expand {
+  display: none;
+}
+
 .input-group .btn {
 	padding: 0 .25rem;
 }
