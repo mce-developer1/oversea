@@ -50,7 +50,7 @@ table.dataTable thead th.sorting_desc:after {
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
 	position: absolute;
-	top: 1rem;
+	top: .875rem;
 	margin-left: .25rem;
 }
 
