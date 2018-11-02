@@ -310,7 +310,6 @@ table.dataTable tbody tr.parent td.control:before {
 }
 
 .app-header {
-	
 	display: -ms-flexbox;
   display: flex;
 	-ms-flex-direction: column;
@@ -327,6 +326,10 @@ table.dataTable tbody tr.parent td.control:before {
 }
 
 .app-header .navbar .company-info {
+	display: -ms-flexbox;
+  display: flex;
+	-ms-flex-direction: row;
+  flex-direction: row;
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
 }
@@ -360,7 +363,7 @@ table.dataTable tbody tr.parent td.control:before {
 	width: 90vw;
   max-height: 80vh;
 	overflow-y: auto;
-	right: -6rem;
+	right: -5.5rem;
 	left: auto;
 }
 
@@ -393,7 +396,7 @@ table.dataTable tbody tr.parent td.control:before {
 }
 
 .app-header .dropdown-notifications .dropdown-menu {
-	right: -3rem;
+	right: -2.75rem;
 	left: auto;
 	padding: 0;
 }
@@ -487,11 +490,12 @@ table.dataTable tbody tr.parent td.control:before {
 	padding: .5rem 1.5rem;
 }
 
-.app-content .navbar .navbar-text {
-	color: #6c757d;
+.app-content .navbar .breadcrumb {
+	background-color: transparent;
 	font-size: 1.125rem;
 	font-weight: bold;
-	margin: 0 1rem;
+	padding: .5rem 0;
+	margin-bottom: 0;
 }
 
 .app-content .panel-side {
@@ -501,7 +505,6 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-content .panel-side .header-text {
 	font-size: 1.125rem;
-	color: #6c757d;
 }
 
 .app-content .panel-side .nav {
@@ -763,14 +766,13 @@ table.dataTable tbody tr.parent td.control:before {
 @media (max-width: 991.98px) {
 	.drawer {
 		background-color: #fff;
-		border-right: 1px solid rgba(0, 0, 0, 0.15);
 		height: 100vh;
 		width: 20rem;
 		z-index: 980;
 		transition: .3s;
 		overflow-y: auto;
 		position: fixed;
-		top: 54px;
+		top: 0;
 		left: -20rem;
 	}
 
@@ -783,7 +785,7 @@ table.dataTable tbody tr.parent td.control:before {
 		content: '';
 		opacity: .5;
 		position: fixed;
-		top: 54px;
+		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
@@ -798,6 +800,10 @@ table.dataTable tbody tr.parent td.control:before {
 		-ms-flex-direction: column;
 		flex-direction: column;
 		padding: 0;
+	}
+
+	.app-content .drawer .company-info {
+		padding: .75rem 1rem;
 	}
 	
 	.app-content .panel-side {
@@ -852,6 +858,10 @@ table.dataTable tbody tr.parent td.control:before {
 
 	.app-content {
 		margin-top: 54px;
+	}
+
+	.app-content .drawer .company-info {
+		display: none;
 	}
 
 	.app-content .navbar {
