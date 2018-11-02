@@ -372,9 +372,11 @@
 				} else {
 					$('.btn-drawer').on('click', function(e) {
 						$('body').append('<div class="drawer-backdrop"/>');
+						$('body').addClass('drawer-shown');
 						$('.drawer').addClass('show');
 
 						$('.drawer-backdrop').on('click', function(e) {
+							$('body').removeClass('drawer-shown');
 							$('.drawer').removeClass('show');
 							$('.drawer-backdrop').off('click');
 							$('.drawer-backdrop').remove();
