@@ -1,47 +1,54 @@
 <div class="app-content app-content-fluid">
-	<div class="panel panel-side">
-		<div class="header">
-			<h6 class="header-text">
-				Test Builder
-			</h6>
-			<button class="btn btn-icon" type="button" data-toggle="collapse" data-target="#navSide">
-				<span class="material-icons">arrow_drop_down</span>
-			</button>
+	<div class="navbar">
+		<button class="btn btn-icon btn-drawer" type="button">
+			<span class="material-icons">menu</span>
+		</button>
+		<div class="navbar-text">
+			Test Builder
 		</div>
-		<ul class="nav collapse" id="navSide">
-			<li class="nav-item">
-				<a class="nav-link active" href="#">
-					My Tests
-				</a>
-			</li
-			<li class="nav-item">
-				<a class="nav-link" href="#">
-					Shared with Me
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">
-					Shared by Me
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/tests/track">
-					Track by Tests
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">
-					Track by Groups
-				</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">
-					Test Bank
-				</a>
-			</li>
-		</ul>
 	</div>
-	<div class="content content-main">
+	<div class="drawer">
+		<div class="panel panel-side">
+			<div class="header">
+				<h6 class="header-text">
+					Test Builder
+				</h6>
+			</div>
+			<ul class="nav" id="navSide">
+				<li class="nav-item">
+					<a class="nav-link active" href="#">
+						My Tests
+					</a>
+				</li
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Shared with Me
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Shared by Me
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Track by Tests
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Track by Groups
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">
+						Test Bank
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
 		<div class="toolbar">
 			<div class="btn-actions">
 				<div class="btn-group">
@@ -54,55 +61,55 @@
 						<a class="dropdown-item" href="#">Test from file</a>
 					</div>
 				</div>
-				<button class="btn btn-outline-secondary" type="button">Edit</button>
-				<button class="btn btn-outline-secondary" type="button">Duplicate</button>
-				<button class="btn btn-outline-secondary" type="button">Delete</button>
 				<button class="btn btn-outline-secondary" type="button">Assign</button>
-				<button class="btn btn-outline-secondary" type="button">Share</button>
-				<button class="btn btn-outline-secondary" type="button">Export</button>
-				<button class="btn btn-outline-secondary" type="button">Add to My Course</button>
+				<div class="btn-group">
+					<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown">Action</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Edit</a>
+						<a class="dropdown-item" href="#">Duplicate</a>
+						<a class="dropdown-item" href="#">Delete</a>
+						<a class="dropdown-item" href="#">Share</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Export</a>
+						<a class="dropdown-item" href="#">Add to My Course</a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<form class="filter-table">
 			<div class="input-group">
 				<input class="form-control" type="text" placeholder="Search test...">
 				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="button">
+					<button class="btn btn-icon" type="button">
 						<span class="material-icons">search</span>
 					</button>
 				</div>
 			</div>
-			<div class="form-control select-control">
-				<select>
-					<option>All Subjects</option>
-					<option>Arts & Crafts</option>
-					<option>Chinese</option>
-					<option>English</option>
-					<option>Mathematics</option>
-					<option>Science</option>
-				</select>
-			</div>
-			<div class="form-control select-control">
-				<select>
-					<option>All Levels</option>
-					<option>Primary 1</option>
-					<option>Primary 2</option>
-					<option>Primary 3</option>
-					<option>Primary 4</option>
-					<option>Primary 5</option>
-					<option>Primary 6</option>
-				</select>
-			</div>
-			<div class="form-control select-control">
-				<select>
-					<option>All Streams</option>
-				</select>
-			</div>
-			<button class="btn btn-icon" type="button">
+			<select class="form-control">
+				<option>All Subjects</option>
+				<option>Arts & Crafts</option>
+				<option>Chinese</option>
+				<option>English</option>
+				<option>Mathematics</option>
+				<option>Science</option>
+			</select>
+			<select class="form-control">
+				<option>All Levels</option>
+				<option>Primary 1</option>
+				<option>Primary 2</option>
+				<option>Primary 3</option>
+				<option>Primary 4</option>
+				<option>Primary 5</option>
+				<option>Primary 6</option>
+			</select>
+			<select class="form-control">
+				<option>All Streams</option>
+			</select>
+			<button class="btn btn-icon" type="button" title="Reset">
 				<span class="material-icons">replay</span>
 			</button>
 		</form>
-		<table class="table">
+		<table class="table" style="width: 100%;">
 			<thead>
 				<tr>
 					<th class="checkbox">
@@ -113,6 +120,7 @@
 					<th>Level</th>
 					<th>Owner</th>
 					<th>Last Modified</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -127,6 +135,7 @@
 					<td>Primary 6</td>
 					<td>6PEL</td>
 					<td>25 Jan 2018</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>
@@ -139,6 +148,7 @@
 					<td>Primary 6</td>
 					<td>6PEL</td>
 					<td>20 Jan 2018</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>
@@ -151,6 +161,7 @@
 					<td>Primary 5</td>
 					<td>5PEL</td>
 					<td>18 Jan 2018</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>
@@ -163,6 +174,7 @@
 					<td>Primary 5</td>
 					<td>5PEL</td>
 					<td>18 Jan 2018</td>
+					<td></td>
 				</tr>
 				<tr>
 					<td>
@@ -175,6 +187,7 @@
 					<td>Primary 5</td>
 					<td>5PEL</td>
 					<td>18 Jan 2018</td>
+					<td></td>
 				</tr>
 			</tbody>
 		</table>
@@ -183,11 +196,11 @@
 
 <script>
 	$(document).ready(function() {
-		$.fn.dataTable.ext.classes.sWrapper = 'dataTables_wrapper table-wrapper';
-		$.fn.dataTable.ext.classes.sLength = 'dataTables_length length';
-		$.fn.dataTable.ext.classes.sInfo = 'dataTables_info info';
-		$.fn.dataTable.ext.classes.sPaging = 'dataTables_paginate paging paging_';
-		
+		$('select').selectpicker({ width: 'auto' });
+		$('.btn[title]').tooltip({
+			delay: { show: 500, hide: 50 }
+		});
+
 		$('.table').DataTable({
 			language: {
 				info: '_START_-_END_ of _TOTAL_',
@@ -199,20 +212,23 @@
 				}
 			},
 			columns: [
-				{ orderable: false },
-				null,
-				null,
-				null,
-				null,
-				null
+				{ orderable: false, responsivePriority: 2 },
+				{ width: '30%', responsivePriority: 3 },
+				{ responsivePriority: 7 },
+				{ responsivePriority: 6 },
+				{ responsivePriority: 5 },
+				{ responsivePriority: 4 },
+				{ orderable: false, responsivePriority: 1 }
 			],
-			dom: 'rt<"bottom"lip>',
+			dom: 'rt<"bottom"ip>',
 			order: [[5, 'desc']],
-			lengthMenu: [
-				[10, 20, 30, 50, 100],
-				[10, 20, 30, 50, 100]
-			],
-			pagingType: 'simple'
+			pagingType: 'simple',
+			responsive: {
+				details: {
+					type: 'column',
+					target: 6
+        }
+			}
 		});
 	});
 </script>

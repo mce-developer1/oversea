@@ -23,20 +23,16 @@ table.dataTable thead th {
 	background-color: #ee6123;
 }
 
-.app-header .navbar-company .btn-icon,
-.app-header .company-info .navbar-text {
+.app-header .navbar .company-info .navbar-text,
+.app-header .navbar .navbar-nav .btn-icon {
  color: #fff;
-}
-
-.app-header .navbar-menu {
-	background-color: #fff;
 }
 
 .app-content .filter-table {
 	background-color: #f8f9fa;
 }
 
-.app-content .content-main {
+.app-content .content {
 	background-color: #fff;
 	padding: 1.5rem;
 }
@@ -44,5 +40,9 @@ table.dataTable thead th {
 @media (max-width: 991.98px) {
 	.app-content .panel-side {
 		background-color: #fff;
+	}
+
+	.app-content .panel-side .nav-link.active {
+		background-color: #f8f9fa;
 	}
 }
