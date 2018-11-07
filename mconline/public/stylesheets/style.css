@@ -76,6 +76,11 @@ table.dataTable tbody td input[type="checkbox"] {
 	vertical-align: middle;
 }
 
+table.dataTable tbody td.nowrap,
+table.dataTable tbody td .nowrap {
+	white-space: nowrap;
+}
+
 table.dataTable tbody td.child {
 	border-top: 0;
 }
@@ -104,7 +109,7 @@ table.dataTable tbody td.child .dtr-details li:first-child {
 table.dataTable tbody td.child .dtr-details li .dtr-title {
 	color: #6c757d;
 	font-weight: bold;
-	width: 8rem;
+	width: 12rem;
 }
 
 table.dataTable tbody td.child .dtr-details li .dtr-data {
@@ -264,12 +269,17 @@ table.dataTable tbody tr.parent td.control:before {
 	font-weight: bold;
 }
 
-.bs-tooltip-top .arrow::before {
-	border-top-color: #6c757d;
+.popover {
+	-webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
+	box-shadow: 0 2px 10px rgba(0,0,0,.2);
 }
 
 .tooltip .tooltip-inner {
 	background-color: #6c757d;
+}
+
+.bs-tooltip-top .arrow::before {
+	border-top-color: #6c757d;
 }
 
 .wizard-step .form-group {
@@ -637,6 +647,11 @@ table.dataTable tbody tr.parent td.control:before {
 .app-footer .copyright {
   color: #6c757d;
   padding: 0.5rem;
+}
+
+.app-footer .nav {
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 .app-content .wizard-step .test-info {

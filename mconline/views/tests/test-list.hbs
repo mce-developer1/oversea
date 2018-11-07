@@ -121,7 +121,8 @@
 					<th>Title</th>
 					<th>Subject</th>
 					<th>Level</th>
-					<th>Owner</th>
+					<th>Assigned To</th>
+					<th>Assignment Status</th>
 					<th>Last Modified</th>
 					<th></th>
 				</tr>
@@ -136,7 +137,12 @@
 					</td>
 					<td>English</td>
 					<td>Primary 6</td>
-					<td>6PEL</td>
+					<td>P6-A, P6-B</td>
+					<td>
+						<a href="#" data-toggle="popover" title="Assignment Period" 
+							data-content="01 Nov 2018 - 30 Nov 2018 &nbsp; &lt;a href=&quot;/assignement/edit&quot;&gt;Edit Assignment&lt;/a&gt;">Started</a>
+						<div>(Due on <span class="nowrap">30 Nov 2018</span>)</div>
+					</td>
 					<td>25 Jan 2018</td>
 					<td></td>
 				</tr>
@@ -149,7 +155,12 @@
 					</td>
 					<td>English</td>
 					<td>Primary 6</td>
-					<td>6PEL</td>
+					<td>P6-A, P6-B</td>
+					<td>
+						<a href="#" data-toggle="popover" title="Assignment Period" 
+							data-content="01 Jul 2018 - 30 Jul 2018 &nbsp; &lt;a href=&quot;/assignement/edit&quot;&gt;Extend Overdue&lt;/a&gt;"">Closed</a>
+						<div>(Due on <span class="nowrap">30 Jul 2018</span>)</div>
+					</td>
 					<td>20 Jan 2018</td>
 					<td></td>
 				</tr>
@@ -162,7 +173,8 @@
 					</td>
 					<td>English</td>
 					<td>Primary 5</td>
-					<td>5PEL</td>
+					<td></td>
+					<td></td>
 					<td>18 Jan 2018</td>
 					<td></td>
 				</tr>
@@ -175,7 +187,8 @@
 					</td>
 					<td>English</td>
 					<td>Primary 5</td>
-					<td>5PEL</td>
+					<td></td>
+					<td></td>
 					<td>18 Jan 2018</td>
 					<td></td>
 				</tr>
@@ -188,7 +201,8 @@
 					</td>
 					<td>English</td>
 					<td>Primary 5</td>
-					<td>5PEL</td>
+					<td></td>
+					<td></td>
 					<td>18 Jan 2018</td>
 					<td></td>
 				</tr>
@@ -204,7 +218,7 @@
 			delay: { show: 500, hide: 50 }
 		});
 
-		$('.table').DataTable({
+		var dataTable = $('.table').DataTable({
 			language: {
 				info: '_START_-_END_ of _TOTAL_',
 				infoEmpty: 'No records found.',
@@ -216,22 +230,39 @@
 			},
 			columns: [
 				{ orderable: false, responsivePriority: 1 },
-				{ width: '30%', responsivePriority: 2 },
-				{ responsivePriority: 6 },
-				{ responsivePriority: 5 },
+				{ responsivePriority: 2 },
 				{ responsivePriority: 4 },
+				{ className: 'nowrap', responsivePriority: 5 },
+				{ responsivePriority: 6 },
+				{ responsivePriority: 7 },
 				{ responsivePriority: 3 },
 				{ className: 'control', orderable: false, responsivePriority: 1 }
 			],
 			dom: 'rt<"bottom"ip>',
-			order: [[5, 'desc']],
+			order: [[6, 'desc']],
 			pagingType: 'simple',
 			responsive: {
 				details: {
 					type: 'column',
 					target: -1
         }
+			},
+			drawCallback: function(settings) {
+				$('[data-toggle="popover"]').popover({
+					html: true,
+					placement: 'top',
+					trigger: 'focus'
+				});
 			}
 		});
+		
+		dataTable.on('responsive-display', 
+			function (e, datatable, row, showHide, update) {
+				$('[data-toggle="popover"]').popover({
+					html: true,
+					placement: 'top',
+					trigger: 'focus'
+				});
+			});
 	});
 </script>

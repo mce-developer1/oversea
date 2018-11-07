@@ -1,37 +1,106 @@
-<div class="channel-content zoomIn">
-	<div class="header">
-		Choose a Theme:
+<div class="channel-content">
+	<div class="panel panel-themes">
+		<div class="panel-header">
+			Choose a Theme:
+		</div>
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Diversity" src="https://via.placeholder.com/32"/>
+					Diversity
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Cycles" src="https://via.placeholder.com/32"/>
+					Cycles
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Systems" src="https://via.placeholder.com/32"/>
+					Systems
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Interactions" src="https://via.placeholder.com/32"/>
+					Interactions
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Energy" src="https://via.placeholder.com/32"/>
+					Energy
+				</a>
+			</li>
+		</ul>
 	</div>
-	<ul class="nav">
-		<li class="nav-item">
-			<a class="nav-link" href="/theme">
-				<span class="material-icons">extension</span>
-				<span>Diversity</span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="/theme">
-				<span class="material-icons">extension</span>
-				<span>Cycles</span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="/theme">
-				<span class="material-icons">extension</span>
-				<span>Systems</span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="/theme">
-				<span class="material-icons">extension</span>
-				<span>Interactions</span>
-			</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="/theme">
-				<span class="material-icons">extension</span>
-				<span>Energy</span>
-			</a>
-		</li>
-	</ul>
+	<div class="panel panel-topics d-none">
+		<div class="panel-header">
+			Choose a Topic:
+		</div>
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Forces" src="https://via.placeholder.com/32"/>
+					Forces
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Living Together" src="https://via.placeholder.com/32"/>
+					Living Together
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Man's Impact on the Environment" src="https://via.placeholder.com/32"/>
+					Man's Impact on the Environment
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Food Chains and Food Webs" src="https://via.placeholder.com/32"/>
+					Food Chains and Food Webs
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					<img alt="Adaptations" src="https://via.placeholder.com/32"/>
+					Adaptations
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="panel panel-player d-none">
+		<object type="text/html"
+			data="/topic/">
+		</object>
+	</div>
 </div>
+<script>
+	var body = document.querySelector('body');
+	var themesPanel = document.querySelector('.panel-themes');
+	var themeLinks = themesPanel.querySelectorAll('.nav .nav-link');
+	var topicsPanel = document.querySelector('.panel-topics');
+	var topicLinks = topicsPanel.querySelectorAll('.nav .nav-link');
+	var playerPanel = document.querySelector('.panel-player');
+
+	themeLinks.forEach(function(themeLink) {
+		themeLink.addEventListener('click', function(e) {
+			e.preventDefault();
+			themesPanel.classList.add('d-none');
+			topicsPanel.classList.remove('d-none');
+		}, false);
+	});
+
+	topicLinks.forEach(function(topicLink) {
+		topicLink.addEventListener('click', function(e) {
+			e.preventDefault();
+			topicsPanel.classList.add('d-none');
+			body.classList.add('mode-player');
+			playerPanel.classList.remove('d-none');
+		}, false);
+	});
+</script>
