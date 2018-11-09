@@ -9,16 +9,9 @@ router.get('/', function(req, res, next) {
 	});
 });
 
-router.get('/topic', function(req, res, next) {
-  res.render('topic/index', {
-		layout: 'topic/player_layout',
-		title: 'Marshall Cavendish Education'
-	});
-});
-
-router.get('/topic/resource', function(req, res, next) {
-  res.render('topic/resource/index', {
-		layout: 'topic/resource/player_layout',
+router.get('/player', function(req, res, next) {
+  res.render('player/index', {
+		layout: 'player/player_layout',
 		title: 'Marshall Cavendish Education'
 	});
 });

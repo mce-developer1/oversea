@@ -7,31 +7,31 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Diversity" src="https://via.placeholder.com/32"/>
-					<span>Diversity</span>
+					Diversity
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Cycles" src="https://via.placeholder.com/32"/>
-					<span>Cycles</span>
+					Cycles
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Systems" src="https://via.placeholder.com/32"/>
-					<span>Systems</span>
+					Systems
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Interactions" src="https://via.placeholder.com/32"/>
-					<span>Interactions</span>
+					Interactions
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Energy" src="https://via.placeholder.com/32"/>
-					<span>Energy</span>
+					Energy
 				</a>
 			</li>
 		</ul>
@@ -44,36 +44,39 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Forces" src="https://via.placeholder.com/32"/>
-					<span>Forces</span>
+					Forces
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Living Together" src="https://via.placeholder.com/32"/>
-					<span>Living Together</span>
+					Living Together
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Man's Impact on the Environment" src="https://via.placeholder.com/32"/>
-					<span>Man's Impact on the Environment</span>
+					Man's Impact on the Environment
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Food Chains and Food Webs" src="https://via.placeholder.com/32"/>
-					<span>Food Chains and Food Webs</span>
+					Food Chains and Food Webs
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Adaptations" src="https://via.placeholder.com/32"/>
-					<span>Adaptations</span>
+					Adaptations
 				</a>
 			</li>
 		</ul>
 	</div>
 	<div class="panel panel-player d-none">
+		<button class="close" type="button">
+			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE5SURBVGhD7ZJbCsJADEW7Q5/gnjvtFkT8EF9LEDSBBLR2Rh2TmRRyIB+d0dxzaRvHcRzHSRFCWMNcYA5d1y3oWA3MgDliZtu2KzrOB5ZdYe40t77vN3QlDu7GDM7DEnSVDyw580IalRJDeRzIPtF1PrB4OVyMz5IlxuTpWeaTjQVIlNDc/YJGUDF5RjKwuDwjEVxNnvlHoLo8kyNiRp75RcicPPONmFl5JiVoXp6JiY6dmZNnIiWex648kyhhXx6ZdIGEPM/kvn98fjszVyImj+epO/p7Xb4RNFviFzFzJXKEzJT4R6R6CQmBaiUkg4uX0AgsVkIzSL1ECGGmGgDESmA2/SQfWLIbLpaUZ8ZKYDZd5wOL9k9LVeSZkRJ7usoHlsxxEcxW5JV+gD7ZLWaWyHMcx3GmTNM8AJFsAezBCaUeAAAAAElFTkSuQmCC"/>
+		</button>
 		<object id="player" type="text/html">
 		</object>
 	</div>
@@ -90,6 +93,7 @@
 	var topicsPanel = document.querySelector('.panel-topics');
 	var topicLinks = topicsPanel.querySelectorAll('.nav .nav-link');
 	var playerPanel = document.querySelector('.panel-player');
+	var closeBtn = playerPanel.querySelector('.close');
 	var player = playerPanel.querySelector('#player');
 
 	themeLinks.forEach(function(themeLink) {
@@ -108,9 +112,15 @@
 			topicsPanel.classList.add('d-none');
 			body.classList.add('mode-player');
 			playerPanel.classList.remove('d-none');
-			player.setAttribute('data', '/topic/?identifier=' + identifier);
+			player.setAttribute('data', '/player/?identifier=' + identifier);
 		}, false);
 	});
+	
+	closeBtn.addEventListener('click', function(e) {
+		body.classList.remove('mode-player');
+		topicsPanel.classList.remove('d-none');
+		playerPanel.classList.add('d-none');
+	}, false);
 
 	doSCOPackage();
 </script>

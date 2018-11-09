@@ -18,7 +18,7 @@ table.dataTable.no-footer {
 }
 
 table.dataTable thead th {
-	background-color:  #f8f9fa;
+	background-color:  #f3f2f1;
 	border-bottom: 0;
 	color: #6c757d;
 	white-space: nowrap;
@@ -194,12 +194,8 @@ table.dataTable tbody tr.parent td.control:before {
 
 .dropdown-menu .dropdown-item.active,
 .dropdown-menu .dropdown-item:active {
-	background-color: #f8f9fa;
+	background-color: #f3f2f1;
 	color: #212529;
-}
-
-.dropdown-menu .dropdown-item.active {
-	font-weight: bold;
 }
 
 .form-control {
@@ -260,12 +256,12 @@ table.dataTable tbody tr.parent td.control:before {
 }
 
 .panel .nav-link:hover {
-	background-color: #f8f9fa;
+	background-color: #f3f2f1;
 }
 
 .panel .nav-link.active,
 .panel .nav-link.active:hover {
-	background-color: #f8f9fa;
+	background-color: #f3f2f1;
 	font-weight: bold;
 }
 
@@ -562,7 +558,7 @@ table.dataTable tbody tr.parent td.control:before {
 }
 
 .app-content .filter-table {
-	background-color:  #f8f9fa;
+	background-color:  #f3f2f1;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-direction: row;

@@ -8,17 +8,16 @@
 <object id="player" type="text/html">
 </object>
 <div class="navbar">
+	<button class="toggle-menu" type="button">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB1SURBVGhD7dZLCoQwEAXAHG+8ej5XcBYeZDTgKhB0IzZMFbxdN7SYxUsAQCQ556WU8q21/iKl39Ra+5xnzh3D27gcKNt55lwfGpYi5foD+m86BtdhMULWW08IgP+mCz0bXejN6EIAXNOFno0u9GZ0IQAIJqUd2fROi0pfENQAAAAASUVORK5CYII="/>
+	</button>
 	<button class="arrow-left d-none" type="button">
-		<svg viewBox="0 0 574 1024" width="48px" height="45px">
-			<path d="M564 9q10 10 10 23t-10 23L82 512l482 457q10 10 10 23t-10 23q-10 9-24 9t-24-9L10 535Q0 525 0 512t10-23L516 9q10-9 24-9t24 9z"></path>
-		</svg>
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVGhD7dexCoJgFMVxK5p6g4bWhp4iCHqR9tZeImhpiqaafBM/FVxbmnuBoKXsCLcG0dbOlfOHi+J3B3+Dg5FSzZVl2bdbnwHQy7Jsm6bpA9dLCGFqR34yxBFTfgagkx37qAlhkIOt8Fd9D00IzDXP87GtcfcLgZnYGndCsCQES0KwJARLQrAkBEtCsNQJRBX+4nY1gD9EURQjQJ41xM0VoiqO44G9+BcC2AuzshU/4aXnmHsnMCGEhTCMCcOaMKwJw5owrAnDmjCsCcNaGwbXpa34qQVztmNfNWA2duSvJElmwOyBWGOG9lip/xdFbzd+6hwpdgZ2AAAAAElFTkSuQmCC"/>
 	</button>
 	<ul id="navigation" class="nav">
 	</ul>
 	<button class="arrow-right d-none" type="button">
-		<svg viewBox="0 0 574 1024" width="48px" height="45px">
-			<path d="M10 9Q0 19 0 32t10 23l482 457L10 969Q0 979 0 992t10 23q10 9 24 9t24-9l506-480q10-10 10-23t-10-23L58 9Q48 0 34 0T10 9z"></path>
-		</svg>
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVGhD7Zg7asNQEEUVcBPHOIvwFryAFFlIIOnSuE/pDWQNrr2FRJWF0AdUqHLnRdgpDJHvgxEIgVpz53EPDIinKc5BKoQSEQtd1z3YpV+qqtpg/sqyPGFe7NgXeZ4vEXHFdGEQci6K4tVu+6FpmicEXPoQ1zGQf4P8fxQxEP9QDCMQf1cMI4phRTGsKIYVxbCiGFYUw8pUTF3Xa1vxA+Q/hyE2O7vtAwjP8QR+RhFhtrbCD2SnIg5t2y5sjRvITkaEX022xg1kFUEBZEPE7yhAEXcHsnFHYJ5tjRuIKoICiCqCAogqggKIKoICiPqPCEB2P5D3GRG+kUYB/iICaZrO8FodXUf0IGSF+cZ8ZVn2aMdCxEeS3AChON3yi4AjBQAAAABJRU5ErkJggg=="/>
 	</button>
 </div>
 <script>
@@ -40,33 +39,32 @@
 	function loadManifest() {
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function() {
-			setTimeout(function() {
-				var progress = document.querySelector('#progress');
-				progress.classList.add('d-none');
-				renderNavigation(xhr.responseXML);
-				renderNavigation(xhr.responseXML);
-				renderNavigation(xhr.responseXML);
-				renderScrollable();
-			}, 1000);
+			var progress = document.querySelector('#progress');
+			progress.classList.add('d-none');
+			renderNavigation(xhr.responseXML);
 		}
 		xhr.onerror = function() {
 			dump('Error while getting imsmanifest.xml');
 		}
-		xhr.open('GET', 'imsmanifest.xml');
+		xhr.open('GET', '../imsmanifest.xml?t=' + (new Date()).getTime());
 		xhr.responseType = 'document';
 		xhr.send();
 	}
 
 	function renderNavigation(xmlDocument) {
+		var userType = getParameterByName('usertype');
 		var item = getItem(xmlDocument);
-		if ((item === null) || (item.isVisible === 'false')) return;
+		if ((item === null) || !item.isVisible) return;
 		var player = document.querySelector('#player');
 		player.setAttribute('data', item.items[0].resource.href);
-		var colorMap = { tutorial: 'ff0000', activity: '00ff00', quiz: '0000ff', unknown: '000000' };
+		var colorMap = { ebook: 'ffff00', tutorial: 'ff0000', activity: '00ff00', quiz: '0000ff', unknown: '000000' };
 		var navigation = document.querySelector('#navigation');
 		var fragment = document.createDocumentFragment();
+		item.items = item.items.concat(item.items);
+		item.items = item.items.concat(item.items);
 		item.items.forEach(function(childItem) {
-			if (childItem.isVisible === 'true') {
+			var isAccessible = (userType === 'student') ? !childItem.isTeacherResource : true;
+			if (childItem.isVisible && isAccessible) {
 				var navItem = document.createElement("li");
 				navItem.classList.add('nav-item');
 				var navLink = document.createElement("a");
@@ -86,6 +84,8 @@
 			}
 		});
 		navigation.appendChild(fragment);
+		renderToggleMenu();
+		renderScrollable();
 	}
 
 	function getItem(xmlDocument) {
@@ -103,14 +103,15 @@
 			childItems.push({
 				identifier: child.getAttribute('identifier'),
 				resource: getResource(xmlDocument, identifierRef),
-				isVisible: child.getAttribute('isvisible'),
+				isVisible: (child.getAttribute('isvisible') === 'true'),
+				isTeacherResource: (getParameterByName('hide', parameters) === 'student'),
 				objType: (getParameterByName('objtype', parameters) || 'unknown'),
 				title: title.textContent
 			});
 		});
 		return {
 			identifier: identifier,
-			isVisible: item.getAttribute('isvisible'),
+			isVisible: (item.getAttribute('isvisible') === 'true'),
 			items: childItems
 		};
 	}
@@ -121,8 +122,17 @@
 		return {
 			identifier: identifier,
 			type: resource.getAttribute('type'),
-			href: resource.getAttribute('href')
+			href: '../' + resource.getAttribute('href')
 		};
+	}
+
+	function renderToggleMenu() {
+		var menuWrapper = document.querySelector('.navbar');
+		var toggleMenu = menuWrapper.querySelector('.toggle-menu');
+		toggleMenu.addEventListener('click', function(e) {
+			if (menuWrapper.classList.contains('collpased')) menuWrapper.classList.remove('collpased');
+			else menuWrapper.classList.add('collpased');
+		}, false);
 	}
 
 	function renderScrollable() {
