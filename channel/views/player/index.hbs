@@ -55,8 +55,7 @@
 		var userType = getParameterByName('usertype');
 		var item = getItem(xmlDocument);
 		if ((item === null) || !item.isVisible) return;
-		var player = document.querySelector('#player');
-		player.setAttribute('data', item.items[0].resource.href);
+		renderResourceItem(item.items[0]);
 		var colorMap = { ebook: 'ffff00', tutorial: 'ff0000', activity: '00ff00', quiz: '0000ff', unknown: '000000' };
 		var navigation = document.querySelector('#navigation');
 		var fragment = document.createDocumentFragment();
@@ -72,7 +71,7 @@
 				navLink.setAttribute('href', childItem.resource.href);
 				navLink.addEventListener('click', function(e) {
 					e.preventDefault();
-					player.setAttribute('data', e.currentTarget.href);
+					renderResourceItem(childItem);
 				}, false);
 				var image = document.createElement("img");
 				image.setAttribute('title', childItem.title);
@@ -124,6 +123,16 @@
 			type: resource.getAttribute('type'),
 			href: '../' + resource.getAttribute('href')
 		};
+	}
+
+	function renderResourceItem(item) {
+		var player = document.querySelector('#player');
+		player.setAttribute('data', item.resource.href);
+		if (window.top.doSCOStart && window.top.doSCOLeave) {
+			if (window.currentItem) window.top.doSCOLeave(window.currentItem.identifier);
+			window.top.doSCOStart(item.identifier);
+			window.currentItem = item;
+		}
 	}
 
 	function renderToggleMenu() {
