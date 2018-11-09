@@ -1,0 +1,4 @@
+Qnum=2&Q=Which one of  the following groups can living things be classified into?&A=Animals, plants and flowers.&B=Micro-organisms and fungi.&C=Animals, plants, micro-organisms and fungi.&D=Animals, plants, micro-organisms and insects.&answer=c&show_ans=Animals, plants, micro-organisms and fungi.
+
+
+

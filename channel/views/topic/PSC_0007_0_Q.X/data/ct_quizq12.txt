@@ -1,0 +1,1 @@
+Qnum=12&Q=English, Arabic, Japanese and Mandarin can be classified as ______.&A=colours&B=people&C=places&D=languages&answer=d&show_ans=languages

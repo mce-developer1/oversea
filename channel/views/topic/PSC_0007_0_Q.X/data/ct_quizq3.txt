@@ -1,0 +1,4 @@
+Qnum=3&Q=Classification of things is useful because this allows us to ______.&A=solve problems easily&B=see things in an orderly way&C= put things into groups&D=handle things carefully&answer=b&show_ans=see things in an orderly way
+
+
+

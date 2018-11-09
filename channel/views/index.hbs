@@ -7,31 +7,31 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Diversity" src="https://via.placeholder.com/32"/>
-					Diversity
+					<span>Diversity</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Cycles" src="https://via.placeholder.com/32"/>
-					Cycles
+					<span>Cycles</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Systems" src="https://via.placeholder.com/32"/>
-					Systems
+					<span>Systems</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Interactions" src="https://via.placeholder.com/32"/>
-					Interactions
+					<span>Interactions</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Energy" src="https://via.placeholder.com/32"/>
-					Energy
+					<span>Energy</span>
 				</a>
 			</li>
 		</ul>
@@ -44,41 +44,45 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Forces" src="https://via.placeholder.com/32"/>
-					Forces
+					<span>Forces</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Living Together" src="https://via.placeholder.com/32"/>
-					Living Together
+					<span>Living Together</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Man's Impact on the Environment" src="https://via.placeholder.com/32"/>
-					Man's Impact on the Environment
+					<span>Man's Impact on the Environment</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Food Chains and Food Webs" src="https://via.placeholder.com/32"/>
-					Food Chains and Food Webs
+					<span>Food Chains and Food Webs</span>
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					<img alt="Adaptations" src="https://via.placeholder.com/32"/>
-					Adaptations
+					<span>Adaptations</span>
 				</a>
 			</li>
 		</ul>
 	</div>
 	<div class="panel panel-player d-none">
-		<object type="text/html"
-			data="/topic/">
+		<object id="player" type="text/html">
 		</object>
 	</div>
 </div>
+<script>
+	if (window.NodeList && !NodeList.prototype.forEach) {
+		NodeList.prototype.forEach = Array.prototype.forEach;
+	}
+</script>
 <script>
 	var body = document.querySelector('body');
 	var themesPanel = document.querySelector('.panel-themes');
@@ -86,6 +90,7 @@
 	var topicsPanel = document.querySelector('.panel-topics');
 	var topicLinks = topicsPanel.querySelectorAll('.nav .nav-link');
 	var playerPanel = document.querySelector('.panel-player');
+	var player = playerPanel.querySelector('#player');
 
 	themeLinks.forEach(function(themeLink) {
 		themeLink.addEventListener('click', function(e) {
@@ -95,12 +100,17 @@
 		}, false);
 	});
 
+	//\\SIN_LOCALSTG2\nres02\{CC81573D-02C4-4663-BAAB-217EA2A7374C}
+	var identifier = 'ITEM-FD367A8C-1FA5-67F1-389F-EB08459733CF';
 	topicLinks.forEach(function(topicLink) {
 		topicLink.addEventListener('click', function(e) {
 			e.preventDefault();
 			topicsPanel.classList.add('d-none');
 			body.classList.add('mode-player');
 			playerPanel.classList.remove('d-none');
+			player.setAttribute('data', '/topic/?identifier=' + identifier);
 		}, false);
 	});
+
+	doSCOPackage();
 </script>

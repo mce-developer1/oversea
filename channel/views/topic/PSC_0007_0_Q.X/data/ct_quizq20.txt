@@ -1,0 +1,3 @@
+Qnum=20&Q=The bracket fungus and toadstool are similar because they ______.&A=make their own food&B=feed on decaying things&C=find their own food&D=live without food&answer=b&show_ans=feed on decaying things
+
+

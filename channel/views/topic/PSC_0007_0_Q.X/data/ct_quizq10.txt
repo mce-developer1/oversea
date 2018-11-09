@@ -1,0 +1,2 @@
+Qnum=10&Q=Giraffes, snakes, beetles and hawks are classified as ______.&A=animals&B=plants&C=fungi &D=micro-organisms&answer=a&show_ans=animals
+

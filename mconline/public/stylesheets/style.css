@@ -40,20 +40,20 @@ table.dataTable thead th.sorting_desc {
 table.dataTable thead th.sorting_asc:after,
 table.dataTable thead th.sorting_desc:after {
 	font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.125rem;
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.125rem;
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: 'liga';
 	position: absolute;
 	top: .875rem;
 	margin-left: .25rem;
@@ -92,13 +92,13 @@ table.dataTable tbody td.child .dtr-details {
 
 table.dataTable tbody td.child .dtr-details li {
 	-webkit-align-content: flex-start;
-  align-content: flex-start;
+	align-content: flex-start;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 	margin-top: .75rem;
 }
 
@@ -121,20 +121,20 @@ table.dataTable tbody td.control:before {
 	color: #6c757d;
 	content: 'add_circle';
 	font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  display: inline-block;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1.5rem;
+	display: inline-block;
 	text-decoration: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: 'liga';
 }
 
 table.dataTable tbody tr.parent td.control:before {
@@ -220,13 +220,13 @@ table.dataTable tbody tr.parent td.control:before {
 
 .panel-group {
 	-webkit-align-content: flex-start;
-  align-content: flex-start;
+	align-content: flex-start;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .panel-group .panel {
@@ -235,11 +235,11 @@ table.dataTable tbody tr.parent td.control:before {
 
 .panel .header {
 	-webkit-align-items: center;
-  align-items: center;
+	align-items: center;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	margin: .5rem 1rem;
 }
 
@@ -282,13 +282,19 @@ table.dataTable tbody tr.parent td.control:before {
 	border-top-color: #6c757d;
 }
 
+.wizard-step {
+	background-color: #fff;
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+}
+
 .wizard-step .form-group {
 	-webkit-align-items: flex-start;
-  align-items: flex-start;
+	align-items: flex-start;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 }
 
 .wizard-step  .form-group label {
@@ -315,31 +321,27 @@ table.dataTable tbody tr.parent td.control:before {
 	overflow: auto;
 }
 
-.wizard-step .wizard-actions {
-	margin-top: 1.5rem;
-}
-
 .app-header {
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: column;
-  flex-direction: column;
+	flex-direction: column;
 }
 
 .app-header .navbar {
 	-webkit-align-items: center;
-  align-items: center;
+	align-items: center;
 	-ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+	flex-wrap: nowrap;
 	padding: 0.75rem 1rem;
 	position: relative;
 }
 
 .app-header .navbar .company-info {
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
 }
@@ -358,7 +360,7 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-header .navbar .navbar-nav {
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 }
 
 .app-header .navbar .navbar-nav > .nav-item {
@@ -371,7 +373,7 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-header .dropdown-apps .dropdown-menu {
 	width: 90vw;
-  max-height: 80vh;
+	max-height: 80vh;
 	overflow-y: auto;
 	right: -5.5rem;
 	left: auto;
@@ -379,13 +381,13 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-header .dropdown-apps .dropdown-menu.show {
 	-webkit-align-content: flex-start;
-  align-content: flex-start;
+	align-content: flex-start;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .app-header .dropdown-apps .dropdown-menu .panel {
@@ -398,7 +400,7 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-header .dropdown-apps .dropdown-menu .nav {
 	-ms-flex-direction: column;
-  flex-direction: column;
+	flex-direction: column;
 }
 
 .app-header .dropdown-apps .dropdown-menu .nav-link {
@@ -426,9 +428,9 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-header .dropdown-notifications .dropdown-menu .list-group-item {
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 }
 
 .app-header .dropdown-notifications .dropdown-menu .list-group-item .user-avatar {
@@ -467,11 +469,11 @@ table.dataTable tbody tr.parent td.control:before {
 .app-header .dropdown-user .dropdown-menu  .list-group-item {
 	border: 0;
 	-webkit-align-items: center;
-  align-items: center;
+	align-items: center;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 }
 
 .app-header .dropdown-user .dropdown-menu  .list-group-item .material-icons {
@@ -481,9 +483,9 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-content {
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	margin: 0 auto;
 	max-width: 1140px;
 	padding: 1.5rem 0;
@@ -496,7 +498,7 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-content .navbar {
 	-webkit-justify-content: flex-start;
-  justify-content: flex-start;
+	justify-content: flex-start;
 	padding: .5rem 1.5rem;
 }
 
@@ -519,9 +521,9 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-content .panel-side .nav {
 	-ms-flex-direction: column;
-  flex-direction: column;
+	flex-direction: column;
 	-webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+	flex-wrap: nowrap;
 }
 
 .app-content .content {
@@ -533,11 +535,11 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-content .content .toolbar {
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .app-content .content .toolbar .btn-actions {
@@ -562,13 +564,13 @@ table.dataTable tbody tr.parent td.control:before {
 .app-content .filter-table {
 	background-color:  #f8f9fa;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-justify-content: flex-start;
-  justify-content: flex-start;
+	justify-content: flex-start;
 	padding: .5rem 0 0 .5rem;
 }
 
@@ -587,15 +589,15 @@ table.dataTable tbody tr.parent td.control:before {
 
 .app-content .table-wrapper .bottom {
 	-webkit-justify-content: flex-end;
-  justify-content: flex-end;
+	justify-content: flex-end;
 	-webkit-align-items: center;
-  align-items: center;
+	align-items: center;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .app-content .table-wrapper .bottom .info {
@@ -605,20 +607,20 @@ table.dataTable tbody tr.parent td.control:before {
 .app-content .table-wrapper .bottom .paging .previous,
 .app-content .table-wrapper .bottom .paging .next {
 	font-family: "Material Icons";
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2rem;
-  display: inline-block;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 2rem;
+	display: inline-block;
 	text-decoration: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: 'liga';
 }
 
 .app-content .table-wrapper .bottom .paging .previous {
@@ -632,150 +634,26 @@ table.dataTable tbody tr.parent td.control:before {
 }
 
 .app-footer {
-  display: -ms-flexbox;
-  display: flex;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-justify-content: center;
-  justify-content: center;
+	justify-content: center;
 	-ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  font-size: 0.875rem;
-  padding: 0.5rem 1.5rem;
+	flex-direction: row;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	font-size: 0.875rem;
+	padding: 0.5rem 1.5rem;
 }
 
 .app-footer .copyright {
-  color: #6c757d;
-  padding: 0.5rem;
+	color: #6c757d;
+	padding: 0.5rem;
 }
 
 .app-footer .nav {
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.app-content .wizard-step .test-info {
-	-webkit-align-items: center;
-  align-items: center;
-	display: -ms-flexbox;
-  display: flex;
-	-ms-flex-direction: row;
-  flex-direction: row;
-	margin-bottom: 1rem;
-}
-
-.app-content .wizard-step .test-info .test-title {
-	-webkit-flex-grow: 1;
-	flex-grow: 1;
-}
-
-.app-content .wizard-step .test-info .test-title  a {
-	font-weight: normal;
-	margin-left: .5rem;
-}
-
-.app-content .wizard-step .section,
-.app-content .wizard-step .question {
-	margin: 0 -1.5rem;
-	padding: 1.5rem;
-}
-
-.app-content .wizard-step .section .section-header,
-.app-content .wizard-step .question .question-header {
-	-webkit-align-items: center;
-  align-items: center;
-	display: -ms-flexbox;
-  display: flex;
-	-ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.app-content .wizard-step .section .section-header .section-title,
-.app-content .wizard-step .question .question-header .question-title {
-	-webkit-flex-grow: 1;
-	flex-grow: 1;
-}
-
-.app-content .wizard-step .section .section-header .section-actions,
-.app-content .wizard-step .question .question-header .question-actions {
-	cursor: default;
-}
-
-.app-content .wizard-step .section .section-header .btn-icon,
-.app-content .wizard-step .question .question-header .btn-icon,
-.app-content .wizard-step .question .question-options .btn-icon {
-	padding: .25rem;
-}
-.app-content .wizard-step .section .section-header .btn-icon .material-icons,
-.app-content .wizard-step .question .question-header .btn-icon .material-icons,
-.app-content .wizard-step .question .question-options .btn-icon .material-icons {
-	font-size: 1.75rem;
-}
-
-.app-content .wizard-step .question .question-body {
-	margin-bottom: 1rem;
-}
-
-.app-content .wizard-step .question .question-options {
-	display: -ms-flexbox;
-  display: flex;
-	-ms-flex-direction: column;
-  flex-direction: column;
-	-webkit-flex-grow: 1;
-	flex-grow: 1;
-}
-
-.app-content .wizard-step .question .question-option {
-	-webkit-align-items: flex-start;
-  align-items: flex-start;
-	display: -ms-flexbox;
-  display: flex;
-	-ms-flex-direction: row;
-  flex-direction: row;
-	margin-bottom: .5rem;
-	padding: .25rem 0;
-}
-
-.app-content .wizard-step .question .question-option-radio {
-	margin: .325rem .75rem .325rem 0;
-}
-
-.app-content .wizard-step .section-edit,
-.app-content .wizard-step .question-edit {
-	-webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
-	box-shadow: 0 2px 10px rgba(0,0,0,.2);
-}
-
-.app-content .wizard-step .question-edit .question-options-actions {
-	margin-top: 1rem;
-}
-
-.app-content .wizard-step .question-edit .question-option-actions {
-	margin-left: .5rem;
-}
-
-.app-content .wizard-step .section:not(.section-edit):hover,
-.app-content .wizard-step .question:not(.question-edit):hover {
-	background-color: #f8f9fa;
-	cursor: move;
-}
-
-.app-content .wizard-step .question:not(.question-edit) label:hover,
-.app-content .wizard-step .question:not(.question-edit) input:hover {
-	cursor: move;
-}
-
-.app-content .wizard-step .test-actions {
-	margin-top: 1rem;
-}
-
-.app-content .wizard-step .test-actions .btn-group,
-.app-content .wizard-step .test-actions .btn {
-	margin-top: .5rem;
-}
-
-.app-content .wizard-step .test-actions .btn-group .btn {
-	margin-top: 0;
+	-webkit-justify-content: center;
+	justify-content: center;
 }
 
 @media (max-width: 991.98px) {
@@ -843,28 +721,16 @@ table.dataTable tbody tr.parent td.control:before {
 }
 
 @media (max-width: 575.98px) {
-	.wizard-step .form-group {
-		-webkit-align-items: flex-start;
-		align-items: flex-start;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-direction: column;
-		flex-direction: column;
-	}
 	
-	.wizard-step .form-group label,
-	.wizard-step .form-group .form-control {
-		width: 100%;
-	}
 }
 
 @media (min-width: 991.98px) {
 	.app-header {
 		position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 1030;
 	}
 
 	.app-header .navbar .company-info .btn-icon {

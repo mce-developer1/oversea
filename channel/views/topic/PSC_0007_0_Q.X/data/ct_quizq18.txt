@@ -1,0 +1,1 @@
+Qnum=18&Q=The leopard, cheetah and panther are grouped together according to their _____.&A=shape&B=appearance&C=gender&D=colour&answer=a&show_ans=shape

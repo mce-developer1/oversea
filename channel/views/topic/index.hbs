@@ -1,30 +1,202 @@
-<object type="text/html"
-	data="/topic/resource">
+<div id="progress" class="progress">
+	<div class="image">
+		<img alt="Adaptations" src="https://via.placeholder.com/160"/>
+	</div>
+	<div class="title">Loading...</div>
+	<div class="instructions">Good things come to those who wait! :)</div>
+</div>
+<object id="player" type="text/html">
 </object>
-<ul class="nav">
-	<li class="nav-item">
-		<a class="nav-link" href="#">
-			<img alt="Resource" src="https://via.placeholder.com/32.png/ffcc00"/>
-		</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="#">
-			<img alt="Resource" src="https://via.placeholder.com/32.png/ffcc00"/>
-		</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="#">
-			<img alt="Resource" src="https://via.placeholder.com/32.png/ffcc00"/>
-		</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="#">
-			<img alt="Resource" src="https://via.placeholder.com/32.png/ffcc00"/>
-		</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="#">
-			<img alt="Resource" src="https://via.placeholder.com/32.png/ffcc00"/>
-		</a>
-	</li>
-</ul>
+<div class="navbar">
+	<button class="arrow-left d-none" type="button">
+		<svg viewBox="0 0 574 1024" width="48px" height="45px">
+			<path d="M564 9q10 10 10 23t-10 23L82 512l482 457q10 10 10 23t-10 23q-10 9-24 9t-24-9L10 535Q0 525 0 512t10-23L516 9q10-9 24-9t24 9z"></path>
+		</svg>
+	</button>
+	<ul id="navigation" class="nav">
+	</ul>
+	<button class="arrow-right d-none" type="button">
+		<svg viewBox="0 0 574 1024" width="48px" height="45px">
+			<path d="M10 9Q0 19 0 32t10 23l482 457L10 969Q0 979 0 992t10 23q10 9 24 9t24-9l506-480q10-10 10-23t-10-23L58 9Q48 0 34 0T10 9z"></path>
+		</svg>
+	</button>
+</div>
+<script>
+	if (window.NodeList && !NodeList.prototype.forEach) {
+		NodeList.prototype.forEach = Array.prototype.forEach;
+	}
+
+	function getParameterByName(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
+</script>
+<script>
+	function loadManifest() {
+		var xhr = new XMLHttpRequest();
+		xhr.onload = function() {
+			setTimeout(function() {
+				var progress = document.querySelector('#progress');
+				progress.classList.add('d-none');
+				renderNavigation(xhr.responseXML);
+				renderNavigation(xhr.responseXML);
+				renderNavigation(xhr.responseXML);
+				renderScrollable();
+			}, 1000);
+		}
+		xhr.onerror = function() {
+			dump('Error while getting imsmanifest.xml');
+		}
+		xhr.open('GET', 'imsmanifest.xml');
+		xhr.responseType = 'document';
+		xhr.send();
+	}
+
+	function renderNavigation(xmlDocument) {
+		var item = getItem(xmlDocument);
+		if ((item === null) || (item.isVisible === 'false')) return;
+		var player = document.querySelector('#player');
+		player.setAttribute('data', item.items[0].resource.href);
+		var colorMap = { tutorial: 'ff0000', activity: '00ff00', quiz: '0000ff', unknown: '000000' };
+		var navigation = document.querySelector('#navigation');
+		var fragment = document.createDocumentFragment();
+		item.items.forEach(function(childItem) {
+			if (childItem.isVisible === 'true') {
+				var navItem = document.createElement("li");
+				navItem.classList.add('nav-item');
+				var navLink = document.createElement("a");
+				navLink.classList.add('nav-link');
+				navLink.setAttribute('href', childItem.resource.href);
+				navLink.addEventListener('click', function(e) {
+					e.preventDefault();
+					player.setAttribute('data', e.currentTarget.href);
+				}, false);
+				var image = document.createElement("img");
+				image.setAttribute('title', childItem.title);
+				var imageUrl =  'https://via.placeholder.com/48.png/';
+				image.setAttribute('src', imageUrl + colorMap[childItem.objType]);
+				navLink.appendChild(image);
+				navItem.appendChild(navLink);
+				fragment.appendChild(navItem);
+			}
+		});
+		navigation.appendChild(fragment);
+	}
+
+	function getItem(xmlDocument) {
+		var identifier = getParameterByName('identifier');
+		if ((identifier === null) || (identifier === '')) return null;
+		var selector = 'item[identifier="' + identifier + '"]';
+		var item = xmlDocument.querySelector(selector);
+		if (item === null) return null;
+		var childItems = [];
+		var children = item.querySelectorAll('item');
+		children.forEach(function(child) {
+			var identifierRef = child.getAttribute('identifierref');
+			var title = child.querySelector('title');
+			var parameters = child.getAttribute('parameters');
+			childItems.push({
+				identifier: child.getAttribute('identifier'),
+				resource: getResource(xmlDocument, identifierRef),
+				isVisible: child.getAttribute('isvisible'),
+				objType: (getParameterByName('objtype', parameters) || 'unknown'),
+				title: title.textContent
+			});
+		});
+		return {
+			identifier: identifier,
+			isVisible: item.getAttribute('isvisible'),
+			items: childItems
+		};
+	}
+
+	function getResource(xmlDocument, identifier) {
+		var selector = 'resource[identifier="' + identifier + '"]';
+		var resource = xmlDocument.querySelector(selector);
+		return {
+			identifier: identifier,
+			type: resource.getAttribute('type'),
+			href: resource.getAttribute('href')
+		};
+	}
+
+	function renderScrollable() {
+		var scrollDuration = 300;
+		var leftPaddle = document.querySelector('.arrow-left');
+		var rightPaddle = document.querySelector('.arrow-right');
+		var menuWrapper = document.querySelector('.navbar');
+		var menu = document.querySelector('.navbar .nav');
+		var itemsLength = menu.querySelectorAll('.nav-item').length;
+		var itemSize = menu.querySelector('.nav-item').offsetWidth;
+		var paddlesWidth = leftPaddle.offsetWidth + rightPaddle.offsetWidth;
+		var getMenuWrapperSize = function(e) {
+			return menuWrapper.offsetWidth;
+		}
+		var menuWrapperSize = getMenuWrapperSize();
+		var getMenuSize = function() {
+			return itemsLength * itemSize;
+		};
+		var menuSize = getMenuSize();
+		var getMenuPosition = function() {
+			return menu.scrollLeft;
+		};
+		var showHidePaddle = function() {
+			if (menuWrapperSize > (menuSize + paddlesWidth)) {
+				leftPaddle.classList.add('d-none');
+				rightPaddle.classList.add('d-none');
+			} else {
+				var menuPosition = getMenuPosition();
+				var menuEndOffset = menuSize - menu.offsetWidth;
+				if (menuPosition === 0) {
+					leftPaddle.classList.add('d-none');
+					rightPaddle.classList.remove('d-none');
+				} else if (menuPosition < menuEndOffset) {
+					leftPaddle.classList.remove('d-none');
+					rightPaddle.classList.remove('d-none');
+				} else if (menuPosition >= menuEndOffset) {
+					leftPaddle.classList.remove('d-none');
+					rightPaddle.classList.add('d-none');
+				}
+			}
+		};
+		var scrollMenu = function(scrollLeft) {
+			var direction = (menu.scrollLeft > scrollLeft) ? 'left' : 'right';
+			var distance = (menu.scrollLeft > scrollLeft) 
+				? (menu.scrollLeft - scrollLeft) : (scrollLeft - menu.scrollLeft);
+			var scrollAmount = 0;
+			var scrollTimer = setInterval(function() {
+				if (direction == 'left') menu.scrollLeft -= 10;
+				else menu.scrollLeft += 10;
+				scrollAmount += 10;
+				if (scrollAmount >= distance) {
+					showHidePaddle();
+					clearInterval(scrollTimer);
+				}
+			}, 25);
+		};
+		window.addEventListener('resize', function() {
+			menuWrapperSize = getMenuWrapperSize();
+			if (menuWrapperSize < (menuSize + paddlesWidth)) menu.classList.add('overflowed');
+			else menu.classList.remove('overflowed');
+			showHidePaddle();
+		}, false);
+		menu.addEventListener('scroll', function() {
+			showHidePaddle();
+		}, false);
+		rightPaddle.addEventListener('click', function(e) {
+			scrollMenu(menu.scrollLeft + (itemSize * 2));
+		}, false);
+		leftPaddle.addEventListener('click', function(e) {
+			scrollMenu(menu.scrollLeft - (itemSize * 2));
+		}, false);
+		if (menuWrapperSize < (menuSize + paddlesWidth)) menu.classList.add('overflowed');
+		showHidePaddle();
+	}
+
+	loadManifest();
+</script>

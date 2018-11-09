@@ -13,7 +13,7 @@ body {
 }
 
 .d-none {
-	display: none;
+	display: none !important;
 }
 
 .channel-header {
@@ -22,20 +22,27 @@ body {
 }
 
 .channel-header .navbar .navbar-text {
+		display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	font-size: 2rem;
 	font-weight: bold;
 	padding: 0 1rem;
 }
 
 .channel-header .navbar .navbar-text img {
+	margin-right: 1rem;
 	vertical-align: middle;
 }
 
 .channel-content {
 	-webkit-animation-duration: .6s;
-  animation-duration: .6s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+	animation-duration: .6s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 	padding: 2rem;
 }
 
@@ -50,13 +57,13 @@ body {
 
 .channel-content .panel .nav {
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-webkit-align-items: flex-start;
-  align-items: flex-start;
+	align-items: flex-start;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -69,9 +76,14 @@ body {
 .channel-content .panel .nav .nav-link {
 	background-color: #ffcc00;
 	color: #fff;
-	display: block;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	font-weight: bold;
-	min-width: 8rem;
+	min-width: 10rem;
 	padding: .5rem 1.25rem;
 	text-decoration: none;
 }
@@ -91,15 +103,15 @@ body {
 .channel-footer {
 	background-color: #99ccff;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-webkit-align-items: center;
-  align-items: center;
+	align-items: center;
 	-ms-flex-direction: row;
-  flex-direction: row;
+	flex-direction: row;
 	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-justify-content: space-between;
-  justify-content: space-between;
+	justify-content: space-between;
 	position: fixed;
 	right: 0;
 	bottom: 0;
@@ -149,21 +161,41 @@ body {
 	overflow: hidden;
 }
 
-.resource-player .nav {
-	background-color: #ddd;
+.resource-player .progress {
+	background-color: #fff;
 	display: -ms-flexbox;
-  display: flex;
+	display: flex;
 	-webkit-justify-content: center;
-  justify-content: center;
+	justify-content: center;
 	-webkit-align-items: center;
-  align-items: center;
-	-ms-flex-direction: row;
-  flex-direction: row;
-	-webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-	list-style-type: none;
-	margin: 0;
-	padding: .5rem 1rem;
+	align-items: center;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+}
+
+.resource-player .progress .image {
+	margin-bottom: 1rem;
+}
+
+.resource-player .progress .title {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.resource-player .progress .instructions {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.resource-player .navbar {
+	background-image: linear-gradient(rgba(255,255,255,.1), rgba(0,0,0,.6));
+	padding: .75rem 0;
 	position: fixed;
 	right: 0;
 	bottom: 0;
@@ -171,18 +203,63 @@ body {
 	z-index: 1030;
 }
 
-.resource-player .nav .nav-item {
-	
+.resource-player .navbar .arrow-left,
+.resource-player .navbar .arrow-right {
+	-webkit-appearance: none;
+  background-color: rgba(0,0,0,.1);
+  border: 0;
+  outline: 0;
+	padding: .875rem 0;
+	position: absolute;
+	top: 0;
 }
 
-.resource-player .nav .nav-link {
+.resource-player .navbar .arrow-left {
+	left: 0;
+}
+
+.resource-player .navbar .arrow-right {
+	right: 0;
+}
+
+.resource-player .navbar .nav {
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.resource-player .navbar .nav::-webkit-scrollbar {
+  display: none;
+}
+
+.resource-player .navbar .nav .nav-link {
 	display: block;
 	margin: 0 .5rem;
 	text-decoration: none;
 }
 
-.resource-player .nav .nav-link img {
+.resource-player .navbar .nav .nav-link img {
+	border-radius: 50%;
+	min-height: 3rem;
+	min-width: 3rem;
 	vertical-align: middle;
+}
+
+.resource-player .navbar .nav.overflowed {
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
 }
 
 .resource-player object {
