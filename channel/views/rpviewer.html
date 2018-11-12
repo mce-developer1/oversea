@@ -58,11 +58,11 @@
 					</li>
 				</ul>
 			</div>
-			<div class="panel panel-topics d-none">
+			<div class="panel panel-topics">
 				<div class="panel-header">
 					Choose a Topic:
 				</div>
-				<ul class="nav">
+				<ul class="nav collapsed">
 					<li class="nav-item">
 						<a class="nav-link" href="#">
 							<img alt="Forces" src="https://via.placeholder.com/32"/>
@@ -119,9 +119,11 @@
 		<script>
 			var body = document.querySelector('body');
 			var themesPanel = document.querySelector('.panel-themes');
-			var themeLinks = themesPanel.querySelectorAll('.nav .nav-link');
+			var themesNav = themesPanel.querySelector('.nav');
+			var themeLinks = themesNav.querySelectorAll('.nav-link');
 			var topicsPanel = document.querySelector('.panel-topics');
-			var topicLinks = topicsPanel.querySelectorAll('.nav .nav-link');
+			var topicsNav = topicsPanel.querySelector('.nav');
+			var topicLinks = topicsNav.querySelectorAll('.nav .nav-link');
 			var playerPanel = document.querySelector('.panel-player');
 			var closeBtn = playerPanel.querySelector('.close');
 			var player = playerPanel.querySelector('#player');
@@ -129,8 +131,8 @@
 			themeLinks.forEach(function(themeLink) {
 				themeLink.addEventListener('click', function(e) {
 					e.preventDefault();
-					themesPanel.classList.add('d-none');
-					topicsPanel.classList.remove('d-none');
+					topicsNav.classList.remove('collapsed');
+					themesNav.classList.add('collapsed');
 				}, false);
 			});
 
@@ -140,15 +142,17 @@
 			topicLinks.forEach(function(topicLink) {
 				topicLink.addEventListener('click', function(e) {
 					e.preventDefault();
+					themesPanel.classList.add('d-none');
 					topicsPanel.classList.add('d-none');
 					body.classList.add('mode-player');
 					playerPanel.classList.remove('d-none');
-					player.setAttribute('data', 'player/player.html?identifier=' + identifier);
+					player.setAttribute('data', '/player/?identifier=' + identifier + '&usertype=student');
 				}, false);
 			});
 			
 			closeBtn.addEventListener('click', function(e) {
 				body.classList.remove('mode-player');
+				themesPanel.classList.remove('d-none');
 				topicsPanel.classList.remove('d-none');
 				playerPanel.classList.add('d-none');
 			}, false);
