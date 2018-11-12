@@ -170,12 +170,12 @@
 				var menuWrapper = document.querySelector('.navbar');
 				var toggleMenu = menuWrapper.querySelector('.toggle-menu');
 				toggleMenu.addEventListener('click', function(e) {
-					if (menuWrapper.classList.contains('collpased')) menuWrapper.classList.remove('collpased');
-					else menuWrapper.classList.add('collpased');
+					if (menuWrapper.classList.contains('collapsed')) menuWrapper.classList.remove('collapsed');
+					else menuWrapper.classList.add('collapsed');
 				}, false);
 				var mouseLeaveMenu = function(delay) {
 					window.mouseLeveTimeout = setTimeout(function() {
-						if (!menuWrapper.classList.contains('collpased')) menuWrapper.classList.add('collpased');
+						if (!menuWrapper.classList.contains('collapsed')) menuWrapper.classList.add('collapsed');
 					}, isNaN(delay) ? 4000 : delay);
 				};
 				var mouseEnterMenu = function() {

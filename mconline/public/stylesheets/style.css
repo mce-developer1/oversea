@@ -658,6 +658,8 @@ table.dataTable tbody tr.parent td.control:before {
 		height: 100vh;
 		width: 20rem;
 		z-index: 980;
+		-webkit-transition: .3s;
+		-o-transition: .3s;
 		transition: .3s;
 		overflow-y: auto;
 		position: fixed;
