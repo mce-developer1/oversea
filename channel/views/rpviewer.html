@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-		<link rel="stylesheet" href="/stylesheets/style.css" />
-		<script src="/javascripts/ajax.js"></script>
-		<script src="/javascripts/Scorm/scorm_1.js?d=20160927"></script>
-		<script src="/javascripts/Scorm/APIAdapterf.js"></script>
-		<script src="/javascripts/Scorm/XPath_webkit.js"></script>
-		<script src="/javascripts/Scorm/xpathDOM.js"></script>
+    <title>Marshall Cavendish Education</title>
+		<link rel="stylesheet" href="../public/stylesheets/style.css" />
+		<script src="../public/javascripts/ajax.js"></script>
+		<script src="../public/javascripts/Scorm/scorm_1.js?d=20160927"></script>
+		<script src="../public/javascripts/Scorm/APIAdapterf.js"></script>
+		<script src="../public/javascripts/Scorm/XPath_webkit.js"></script>
+		<script src="../public/javascripts/Scorm/xpathDOM.js"></script>
   </head>
   <body>
 		<div class="channel-header">
@@ -105,10 +105,10 @@
 		</div>
 		<div class="channel-footer">
 			<div class="copyright">
-        Created with <img alt="Heart" src="/images/heart.png"/> by Marshall Cavendish Education
+        Created with <img alt="Heart" src="../public/images/heart.png"/> by Marshall Cavendish Education
       </div>
 			<div class="logo">
-				<img alt="Marshall Cavendish Education" src="/images/mce-logo.png"/>
+				<img alt="Marshall Cavendish Education" src="../public/images/mce-logo.png"/>
 			</div>
 		</div>
 		<script>
@@ -143,7 +143,7 @@
 					topicsPanel.classList.add('d-none');
 					body.classList.add('mode-player');
 					playerPanel.classList.remove('d-none');
-					player.setAttribute('data', '/player/?identifier=' + identifier + '&usertype=student');
+					player.setAttribute('data', 'player/player.html?identifier=' + identifier);
 				}, false);
 			});
 			

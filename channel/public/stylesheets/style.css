@@ -12,6 +12,10 @@ body {
 	margin: 0;
 }
 
+button {
+	cursor: pointer;
+}
+
 .d-none {
 	display: none !important;
 }
@@ -234,7 +238,7 @@ body {
 	background-color: rgba(255,255,255,.1);
 	padding: 0 .25rem;
 	top: -3.1875rem;
-	left: 45vw;
+	left: 0;
 }
 
 .resource-player .navbar .arrow-left,
