@@ -1,0 +1,50 @@
+.test-setup .section,
+.test-setup .question {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	margin: 0 -1.5rem;
+	padding: 1.5rem;
+}
+
+.test-setup .section .section-header,
+.test-setup .question .question-header,
+.test-setup .question .question-body {
+	margin-bottom: 1rem;
+}
+
+.test-setup .question .question-options {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-grow: 1;
+	flex-grow: 1;
+}
+
+.test-setup .question .question-options .question-option {
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+
+	margin-bottom: 1rem;
+}
+
+.test-setup .question .question-options .question-option .form-check-label {
+	color: #212529;
+}
+
+.test-setup .section-edit,
+.test-setup .question-edit {
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
+	box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+
+.test-setup .section:not(.section-edit):hover,
+.test-setup .question:not(.question-edit):hover {
+	background-color: #f7f7f9;
+}

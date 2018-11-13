@@ -131,8 +131,8 @@
 			themeLinks.forEach(function(themeLink) {
 				themeLink.addEventListener('click', function(e) {
 					e.preventDefault();
-					topicsNav.classList.remove('collapsed');
 					themesNav.classList.add('collapsed');
+					topicsNav.classList.remove('collapsed');
 				}, false);
 			});
 
@@ -146,7 +146,7 @@
 					topicsPanel.classList.add('d-none');
 					body.classList.add('mode-player');
 					playerPanel.classList.remove('d-none');
-					player.setAttribute('data', '/player/?identifier=' + identifier + '&usertype=student');
+					player.setAttribute('data', 'player/player.html?identifier=' + identifier);
 				}, false);
 			});
 			

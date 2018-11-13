@@ -11,6 +11,11 @@ table.dataTable thead th {
 	background-color: transparent;
 }
 
+.btn-link,
+.btn-link:hover {
+	color: #0088cc;
+}
+
 .panel .nav-link:hover {
 	background-color: #f3f2f1;
 }
