@@ -176,14 +176,14 @@
 				var mouseLeaveMenu = function(delay) {
 					window.mouseLeveTimeout = setTimeout(function() {
 						if (!menuWrapper.classList.contains('collapsed')) menuWrapper.classList.add('collapsed');
-					}, isNaN(delay) ? 4000 : delay);
+					}, isNaN(delay) ? 8000 : delay);
 				};
 				var mouseEnterMenu = function() {
 					if (window.mouseLeveTimeout) clearTimeout(window.mouseLeveTimeout);
 				};
 				menuWrapper.addEventListener('mouseenter', mouseEnterMenu, false);
 				menuWrapper.addEventListener('mouseleave', mouseLeaveMenu, false);
-				mouseLeaveMenu(4000);
+				mouseLeaveMenu(8000);
 			}
 
 			function renderScrollable() {
