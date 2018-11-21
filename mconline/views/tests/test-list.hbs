@@ -5,51 +5,44 @@
 			<li class="breadcrumb-item">My Tests</li>
 		</ol>
 	</div>
-	<div class="drawer">
-		<div class="company-info">
-			<a class="brand" href="/">
-				<img alt="Marshall Cavendish Online" src="/images/mce-white-logo.png">
-			</a>
+	<div class="panel panel-side">
+		<div class="header">
+			<h6 class="header-text">
+				Test Builder
+			</h6>
 		</div>
-		<div class="panel panel-side">
-			<div class="header">
-				<h6 class="header-text">
-					Test Builder
-				</h6>
-			</div>
-			<ul class="nav" id="navSide">
-				<li class="nav-item">
-					<a class="nav-link active" href="#">
-						My Tests
-					</a>
-				</li
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Shared with Me
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Shared by Me
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Track by Tests
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Track by Groups
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">
-						Test Bank
-					</a>
-				</li>
-			</ul>
-		</div>
+		<ul class="nav">
+			<li class="nav-item">
+				<a class="nav-link active" href="#">
+					My Tests
+				</a>
+			</li
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Shared with Me
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Shared by Me
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Track by Tests
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Track by Groups
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+					Test Bank
+				</a>
+			</li>
+		</ul>
 	</div>
 	<div class="content">
 		<div class="toolbar">
@@ -133,7 +126,7 @@
 						<input type="checkbox"/>
 					</td>
 					<td>
-						<a href="#">P6 - 2 - Vocalbulary Cloze</a>
+						<a href="#test">P6 - 2 - Vocalbulary Cloze</a>
 					</td>
 					<td>English</td>
 					<td>Primary 6</td>
@@ -158,7 +151,7 @@
 					<td>P6-A, P6-B</td>
 					<td>
 						<a href="#" data-toggle="popover" title="Assignment Period" 
-							data-content="01 Jul 2018 - 30 Jul 2018 &nbsp; &lt;a href=&quot;/assignement/edit&quot;&gt;Extend Overdue&lt;/a&gt;"">Closed</a>
+							data-content="01 Jul 2018 - 30 Jul 2018 &nbsp; &lt;a href=&quot;/assignement/edit&quot;&gt;Extend Overdue&lt;/a&gt;">Closed</a>
 						<div>(Due on <span class="nowrap">30 Jul 2018</span>)</div>
 					</td>
 					<td>20 Jan 2018</td>
@@ -243,6 +236,19 @@
 			pagingType: 'simple',
 			responsive: {
 				details: {
+					display: $.fn.dataTable.Responsive.display.modal(),
+					renderer: function (api, rowIdx, columns) {
+						var data = $.map(columns, function (col, i) {
+							if (col.data.match(/^<input[^>]*>$/)) return '';
+							var escapedData = col.data.replace(/href=\"[^\"]*/, '');
+							return '<tr data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
+									'<td>' + col.title + '</td> ' +
+									'<td>' + escapedData + '</td>' +
+								'</tr>';
+						}).join('');
+						if (!data) return false;
+						return $('<table class="dtr-details"/>').append(data);
+					},
 					type: 'column',
 					target: -1
         }
