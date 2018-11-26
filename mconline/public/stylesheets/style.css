@@ -124,14 +124,20 @@ div.dtr-modal .dtr-modal-display {
 	z-index: 102;
 }
 
-div.dtr-modal .dtr-modal-display .dtr-details tr td {
+div.dtr-modal .dtr-modal-display .dtr-details .dtr-column {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
 	padding: .75rem 0;
 }
 
-div.dtr-modal .dtr-modal-display .dtr-details tr td:first-child {
+div.dtr-modal .dtr-modal-display .dtr-details .dtr-column .dtr-column-label {
 	color: #212529;
 	font-weight: bold;
-	width: 10rem;
+	min-width: 12rem;
 }
 
 div.dtr-modal .dtr-modal-display .dtr-modal-close {
@@ -152,6 +158,10 @@ div.dtr-modal .dtr-modal-background {
 	bottom: 0;
 	left: 0;
 	z-index: 101;
+}
+
+div.sortable-placeholder {
+	border: 1px dashed rgba(0, 0, 0, 0.15);
 }
 
 *[data-toggle=collapse] {
@@ -203,6 +213,11 @@ div.dtr-modal .dtr-modal-background {
 	vertical-align: bottom;
 }
 
+.btn:focus {
+	box-shadow: none;
+	outline: none;
+}
+
 .btn-icon {
 	background-color: transparent;
 	border: 0;
@@ -213,6 +228,10 @@ div.dtr-modal .dtr-modal-background {
 
 .btn-icon .material-icons {
 	font-size: 2rem;
+}
+
+.btn-icon .btn-text {
+	line-height: 2;
 }
 
 .dropdown.bootstrap-select .btn {
@@ -335,14 +354,8 @@ div.dtr-modal .dtr-modal-background {
 	flex-grow: 1;
 }
 
-.wizard-step {
-	background-color: #fff;
-	padding: 1.5rem;
+.wizard-step .wizard-step-header {
 	margin-bottom: 1rem;
-}
-
-.wizard-step .step-header {
-	margin: 0 -1rem 1.5rem;
 }
 
 .wizard-step .form-group {
@@ -366,16 +379,16 @@ div.dtr-modal .dtr-modal-background {
 	max-width: 8rem;
 }
 
-.wizard-step  .form-group .form-control.block {
-	-webkit-flex-grow: 1;
-	flex-grow: 1;
-}
-
 .wizard-step  .form-check .form-control.textarea {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
 	max-height: 20rem;
 	overflow: auto;
+}
+
+.wizard-step .wizard-step-actions {
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	padding: 1rem 0 0 0;
 }
 
 .app-header {
@@ -664,7 +677,7 @@ div.dtr-modal .dtr-modal-background {
 	display: flex;
 	-ms-flex-direction: row;
 	flex-direction: row;
-	margin: 54px auto 0;
+	margin: 94px auto 0;
 	max-width: 960px;
 	padding: 1.5rem 0;
 }
@@ -684,8 +697,27 @@ div.dtr-modal .dtr-modal-background {
 	background-color: transparent;
 	font-size: 1.125rem;
 	font-weight: bold;
-	padding: .5rem 0;
+	padding: 0;
 	margin-bottom: 0;
+}
+
+.app-content .navbar .breadcrumb .breadcrumb-item {
+	padding: .5rem 0;
+}
+
+.app-content .navbar .breadcrumb .breadcrumb-item + .breadcrumb-item {
+	padding-left: .5rem;
+}
+
+.app-content .navbar .breadcrumb .breadcrumb-item.select {
+	position: relative;
+	width: 18rem;
+}
+
+.app-content .navbar .breadcrumb .breadcrumb-item.select .form-control {
+	position: absolute;
+	top: .15rem;
+	max-width: 16rem;
 }
 
 .app-content .panel-side {
@@ -852,6 +884,7 @@ div.dtr-modal .dtr-modal-background {
 	.app-content {
 		-ms-flex-direction: column;
 		flex-direction: column;
+		margin: 54px auto 0;
 		padding: 0;
 	}
 
@@ -877,7 +910,14 @@ div.dtr-modal .dtr-modal-background {
 }
 
 @media (max-width: 575.98px) {
-	
+	.wizard-step .form-group {
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.wizard-step .form-group .form-control:not(.xsmall) {
+		max-width: 100vw;
+	}
 }
 
 @media (min-width: 991.98px) {

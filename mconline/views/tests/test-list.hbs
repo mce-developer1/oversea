@@ -16,7 +16,7 @@
 				<a class="nav-link active" href="#">
 					My Tests
 				</a>
-			</li
+			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">
 					Shared with Me
@@ -240,14 +240,16 @@
 					renderer: function (api, rowIdx, columns) {
 						var data = $.map(columns, function (col, i) {
 							if (col.data.match(/^<input[^>]*>$/)) return '';
-							var escapedData = col.data.replace(/href=\"[^\"]*/, '');
-							return '<tr data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
-									'<td>' + col.title + '</td> ' +
-									'<td>' + escapedData + '</td>' +
-								'</tr>';
+							var escapedData = col.data.match(/^<a[^>]*data-toggle=\"popover\"/)
+								? col.data.replace(/href=\"[^\"]*\"/, '')
+								: col.data;
+							return '<div class="dtr-column">' 
+								+ '<div class="dtr-column-label">' + col.title + '</div>' 
+								+ '<div class="dtr-column-data">' + escapedData + '</div>' 
+								+ '</div>';
 						}).join('');
 						if (!data) return false;
-						return $('<table class="dtr-details"/>').append(data);
+						return $('<div class="dtr-details"/>').append(data);
 					},
 					type: 'column',
 					target: -1

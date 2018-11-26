@@ -46,6 +46,10 @@ table.dataTable thead th {
 	background-color: #f3f2f1;
 }
 
+.app-content .panel-side .nav-link:hover {
+	background-color: #e8e6e3;
+}
+
 .app-content .content {
 	background-color: #fff;
 }

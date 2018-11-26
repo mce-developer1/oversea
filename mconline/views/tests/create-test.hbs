@@ -1,286 +1,314 @@
-<div class="app-content test-setup">
-	<div class="accordion wizard" id="createTest">
-		<div class="wizard-step">
-			<div class="step-header">
-				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#testSetup">
+<div class="app-content create-test">
+	<div class="navbar">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Test Builder</li>
+			<li class="breadcrumb-item">Create Test</li>
+			<li class="breadcrumb-item select">
+				<select class="form-control">
+					<option value="#test-setup">Step 1. Test Setup</option>
+					<option value="#questions-setup">Step 2. Questions Setup</option>
+				</select>
+			</li>
+		</ol>
+	</div>
+	<div class="panel panel-side">
+		<div class="header">
+			<h6 class="header-text">
+				Create Test
+			</h6>
+		</div>
+		<ul class="nav" id=">
+			<li class="nav-item">
+				<a class="nav-link active" href="#test-setup">
 					Step 1. Test Setup
-				</button>
-			</div>
-			<div id="testSetup" class="collapse show" data-parent="#createTest">
-				<form class="step-content">
-					<div class="form-group">
-						<label for="txtTitle">Title</label>
-						<input class="form-control" type="text" id="txtTitle" placeholder="Enter test title...">
-					</div>
-					<div class="form-group">
-						<label for="selSubject">Subject</label>
-						<select class="form-control" id="selSubject">
-							<option>Select Subject</option>
-							<option>Arts & Crafts</option>
-							<option>Chinese</option>
-							<option>English</option>
-							<option>Mathematics</option>
-							<option>Science</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="selLevel">Level</label>
-						<select class="form-control" id="selLevel">
-							<option>Select Level</option>
-							<option>Primary 1</option>
-							<option>Primary 2</option>
-							<option>Primary 3</option>
-							<option>Primary 4</option>
-							<option>Primary 5</option>
-							<option>Primary 6</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="selSchool">School</label>
-						<select class="form-control" id="selSchool">
-							<option>Select school</option>
-							<option>Admiralty Primary School</option>
-							<option>Ai Tong School</option>
-							<option>Ang Mo Kio Primary School</option>
-							<option>Bedok Green Primary School</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="selYear">Year</label>
-						<select class="form-control" id="selYear">
-							<option>Select year</option>
-							<option>2018</option>
-							<option>2017</option>
-							<option>2016</option>
-							<option>2015</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="txtPassingCriteria">Passing Criteria (%)</label>
-						<input class="form-control xsmall" type="text" id="txtPassingCriteria">
-					</div>
-				</form>
-				<div class="step-actions">
-					<button class="btn btn-outline-secondary" type="button">Cancel</button>
-					<button class="btn btn-secondary" type="button">Next</button>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#questions-setup">
+					Step 2. Questions Setup
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="content wizard">
+		<div class="wizard-step test-setup">
+			<form class="wizard-step-content">
+				<div class="form-group">
+					<label for="txtTitle">Title</label>
+					<input class="form-control" type="text" id="txtTitle" placeholder="Enter test title...">
 				</div>
+				<div class="form-group">
+					<label for="selSubject">Subject</label>
+					<select class="form-control" id="selSubject">
+						<option>Select Subject</option>
+						<option>Arts & Crafts</option>
+						<option>Chinese</option>
+						<option>English</option>
+						<option>Mathematics</option>
+						<option>Science</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="selLevel">Level</label>
+					<select class="form-control" id="selLevel">
+						<option>Select Level</option>
+						<option>Primary 1</option>
+						<option>Primary 2</option>
+						<option>Primary 3</option>
+						<option>Primary 4</option>
+						<option>Primary 5</option>
+						<option>Primary 6</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="selSchool">School</label>
+					<select class="form-control" id="selSchool">
+						<option>Select school</option>
+						<option>Admiralty Primary School</option>
+						<option>Ai Tong School</option>
+						<option>Ang Mo Kio Primary School</option>
+						<option>Bedok Green Primary School</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="selYear">Year</label>
+					<select class="form-control" id="selYear">
+						<option>Select year</option>
+						<option>2018</option>
+						<option>2017</option>
+						<option>2016</option>
+						<option>2015</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="txtPassingCriteria">Passing Criteria (%)</label>
+					<input class="form-control xsmall" type="text" id="txtPassingCriteria">
+				</div>
+			</form>
+			<div class="wizard-step-actions">
+				<button class="btn btn-outline-secondary" type="button">Cancel</button>
+				<button class="btn btn-secondary" type="button">Next</button>
 			</div>
 		</div>
-		<div class="wizard-step">
-			<div class="step-header">
-				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#testSetup">
-					Step 2. Questions Setup
-				</button>
+		<div class="wizard-step d-none questions-setup">
+			<div class="wizard-step-header test-info">
+				<h6 class="test-title">
+					Test title
+					<a href="#">Preview</a>
+				</h6>
+				<div class="test-summary">
+					1 question, 1 point
+				</div>
 			</div>
-			<div id="testSetup" class="collapse" data-parent="#createTest">
-				<div class="step-content">
-					<div class="section">
-						<div class="section-header">
-							<h6 class="section-title">Section A</h6>
-							<div class="section-actions">
-							<button class="btn btn-icon" type="button" title="Edit">
-								<span class="material-icons">edit</span>
-							</button>
-							<button class="btn btn-icon" type="button" title="Delete">
-								<span class="material-icons">delete</span>
-							</button>
-							</div>
-						</div>
-						<div class="section-instructions">
-							Answer all questions.
-						</div>
+			<div class="wizard-step-content">
+				<div class="section sortable">
+					<button class="btn btn-icon btn-drag-handle" type="button" title="Move">
+						<span class="material-icons">drag_handle</span>
+					</button>
+					<div class="section-header">
+						<h6 class="section-title">Section A</h6>
 					</div>
-					<div class="question">
-						<div class="question-header">
-							<h6 class="question-title">Question 1</h6>
-							<div class="question-actions">
-								<button class="btn btn-icon" type="button" title="Edit">
-									<span class="material-icons">edit</span>
-								</button>
-								<button class="btn btn-icon" type="button" title="Delete">
-									<span class="material-icons">delete</span>
-								</button>
-							</div>
-						</div>
-						<div class="question-body">
-							Please place your garbage at the gate as the disposal truck will be ____ soon.
-						</div>
-						<div class="question-options">
-							<label class="form-check question-option">
-								<input class="form-check-input" type="radio" name="que1" disabled/>
-								<div class="form-check-label">
-									come
-								</div>
-							</label>
-							<label class="form-check question-option">
-								<input class="form-check-input" type="radio" name="que1" disabled/>
-								<div class="form-check-label">
-									came
-								</div>
-							</label>
-							<label class="form-check question-option">
-								<input class="form-check-input" type="radio" name="que1" disabled/>
-								<div class="form-check-label">
-									comes
-								</div>
-							</label>
-							<label class="form-check question-option">
-								<input class="form-check-input" type="radio" name="que1" checked disabled/>
-								<div class="form-check-label">
-									coming
-								</div>
-							</label>
-						</div>
+					<div class="section-instructions">
+						Answer all questions.
 					</div>
-					<div class="question question-edit">
-						<form>
-							<div class="form-group">
-								<label for="selSubject">Subject</label>
-								<select class="form-control" id="selSubject">
-									<option>Select Subject</option>
-									<option>Arts & Crafts</option>
-									<option>Chinese</option>
-									<option>English</option>
-									<option>Mathematics</option>
-									<option>Science</option>
-								</select>
+				</div>
+				<div class="section section-edit d-none">
+					<form>
+						<div class="form-group">
+							<label for="txtTitle">Title</label>
+							<input class="form-control" type="text" value="Section A" id="txtTitle"/>
+						</div>
+						<div class="form-group">
+							<label>Instructions</label>
+							<div class="form-control textarea">
+								Answer all questions.
 							</div>
-							<div class="form-group">
-								<label for="selLevel">Level</label>
-								<select class="form-control" id="selLevel">
-									<option>Select Level</option>
-									<option>Primary 1</option>
-									<option>Primary 2</option>
-									<option>Primary 3</option>
-									<option>Primary 4</option>
-									<option>Primary 5</option>
-									<option>Primary 6</option>
-								</select>
+						</div>
+					</form>
+					<div class="section-actions">
+						<button class="btn btn-secondary" type="button">
+							Done
+						</button>
+						<button class="btn btn-outline-secondary" type="button">
+							Cancel
+						</button>
+						<div class="separator"></div>
+						<button class="btn btn-icon" type="button" title="Delete">
+							<span class="material-icons">delete</span>
+						</button>
+					</div>
+				</div>
+				<div class="question sortable">
+					<button class="btn btn-icon btn-drag-handle" type="button" title="Move">
+						<span class="material-icons">drag_handle</span>
+					</button>
+					<div class="question-header">
+						<h6 class="question-title">Question 1</h6>
+					</div>
+					<div class="question-body">
+						Please place your garbage at the gate as the disposal truck will be ____ soon.
+					</div>
+					<div class="question-options">
+						<label class="form-check question-option">
+							<input class="form-check-input" type="radio" name="que1" disabled/>
+							<div class="form-check-label">
+								come
 							</div>
-							<div class="form-group">
-								<label for="selQueType">Question Type</label>
-								<select class="form-control" id="selQueType">
-									<option>Select Question Type</option>
-									<option>Single Response MCQ</option>
-									<option>Multiple Response MCQ</option>
-									<option>True/False Qn</option>
-									<option>Short-Ans Qn</option>
-									<option>Open-Ended Qn</option>
-								</select>
+						</label>
+						<label class="form-check question-option">
+							<input class="form-check-input" type="radio" name="que1" disabled/>
+							<div class="form-check-label">
+								came
 							</div>
-							<div class="form-group">
-								<label for="txtPoints">Points</label>
-								<input class="form-control xsmall" type="text" id="txtPoints" value="1">
+						</label>
+						<label class="form-check question-option">
+							<input class="form-check-input" type="radio" name="que1" disabled/>
+							<div class="form-check-label">
+								comes
 							</div>
-							<div class="form-group">
-								<label for="txtQueText">Question Text</label>
-								<div class="form-control textarea">
-									Please place your garbage at the gate as the disposal truck will be ____ soon.
-								</div>
+						</label>
+						<label class="form-check question-option">
+							<input class="form-check-input" type="radio" name="que1" checked disabled/>
+							<div class="form-check-label">
+								coming
 							</div>
-							<div class="form-group">
-								<label for="txtQueText">Answer</label>
-								<div class="question-options">
-									<div class="form-check question-option">
-										<input class="form-check-input" type="radio"/>
-										<div class="form-control textarea">
-											come
-										</div>
-										<div class="question-option-actions">
-											<button class="btn btn-icon" type="button" title="Remove">
-												<span class="material-icons">clear</span>
-											</button>
-										</div>
+						</label>
+					</div>
+				</div>
+				<div class="question question-edit d-none">
+					<form>
+						<div class="form-group">
+							<label for="selSubject">Subject</label>
+							<select class="form-control" id="selSubject">
+								<option>Select Subject</option>
+								<option>Arts & Crafts</option>
+								<option>Chinese</option>
+								<option>English</option>
+								<option>Mathematics</option>
+								<option>Science</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="selLevel">Level</label>
+							<select class="form-control" id="selLevel">
+								<option>Select Level</option>
+								<option>Primary 1</option>
+								<option>Primary 2</option>
+								<option>Primary 3</option>
+								<option>Primary 4</option>
+								<option>Primary 5</option>
+								<option>Primary 6</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="selQueType">Question Type</label>
+							<select class="form-control" id="selQueType">
+								<option>Select Question Type</option>
+								<option>Single Response MCQ</option>
+								<option>Multiple Response MCQ</option>
+								<option>True/False Qn</option>
+								<option>Short-Ans Qn</option>
+								<option>Open-Ended Qn</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="txtPoints">Points</label>
+							<input class="form-control xsmall" type="text" id="txtPoints" value="1">
+						</div>
+						<div class="form-group">
+							<label for="txtQueText">Question Text</label>
+							<div class="form-control textarea">
+								Please place your garbage at the gate as the disposal truck will be ____ soon.
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="txtQueText">Answer</label>
+							<div class="question-options">
+								<div class="form-check question-option">
+									<input class="form-check-input" type="radio" name="question"/>
+									<div class="form-control textarea">
+										come
 									</div>
-									<div class="form-check question-option">
-										<input class="form-check-input" type="radio"/>
-										<div class="form-control textarea">
-											came
-										</div>
-										<div class="question-option-actions">
-											<button class="btn btn-icon" type="button" title="Remove">
-												<span class="material-icons">clear</span>
-											</button>
-										</div>
-									</div>
-									<div class="form-check question-option">
-										<input class="form-check-input" type="radio"/>
-										<div class="form-control textarea">
-											comes
-										</div>
-										<div class="question-option-actions">
-											<button class="btn btn-icon" type="button" title="Remove">
-												<span class="material-icons">clear</span>
-											</button>
-										</div>
-									</div>
-									<div class="form-check question-option">
-										<input class="form-check-input" type="radio"/>
-										<div class="form-control textarea">
-											coming Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-										</div>
-										<div class="question-option-actions">
-											<button class="btn btn-icon" type="button" title="Remove">
-												<span class="material-icons">clear</span>
-											</button>
-										</div>
-									</div>
-									<div class="question-options-actions">
-										<button class="btn btn-outline-secondary" type="button">
-											Add Option
+									<div class="question-option-actions">
+										<button class="btn btn-icon" type="button" title="Remove">
+											<span class="material-icons">clear</span>
 										</button>
 									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label for="txtExplanation">Explanation</label>
-								<div class="form-control textarea">
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+								<div class="form-check question-option">
+									<input class="form-check-input" type="radio" name="question"/>
+									<div class="form-control textarea">
+										came
+									</div>
+									<div class="question-option-actions">
+										<button class="btn btn-icon" type="button" title="Remove">
+											<span class="material-icons">clear</span>
+										</button>
+									</div>
+								</div>
+								<div class="form-check question-option">
+									<input class="form-check-input" type="radio" name="question"/>
+									<div class="form-control textarea">
+										comes
+									</div>
+									<div class="question-option-actions">
+										<button class="btn btn-icon" type="button" title="Remove">
+											<span class="material-icons">clear</span>
+										</button>
+									</div>
+								</div>
+								<div class="form-check question-option">
+									<input class="form-check-input" type="radio" name="question"/>
+									<div class="form-control textarea">
+										coming
+									</div>
+									<div class="question-option-actions">
+										<button class="btn btn-icon" type="button" title="Remove">
+											<span class="material-icons">clear</span>
+										</button>
+									</div>
+								</div>
+								<div class="question-options-actions">
+									<button class="btn btn-outline-secondary" type="button">
+										Add Option
+									</button>
 								</div>
 							</div>
-							<div class="form-group">
-								<label for="txtTerms">Associated Terms</label>
-								<input class="form-control block" type="text" id="txtTerms" placeholder="Enter associated terms...">
-							</div>
-							<div class="form-group">
-								<label for="selDiffLevel">Difficulty Level</label>
-								<select class="form-control" id="selDiffLevel">
-									<option>Select Difficulty Level</option>
-									<option>1-Basic</option>
-									<option>2-Intermediate</option>
-									<option>3-Advanced</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="selSchool">School</label>
-								<select class="form-control" id="selSchool">
-									<option>Select school</option>
-									<option>Admiralty Primary School</option>
-									<option>Ai Tong School</option>
-									<option>Ang Mo Kio Primary School</option>
-									<option>Bedok Green Primary School</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label for="selYear">Year</label>
-								<select class="form-control" id="selYear">
-									<option>Select year</option>
-									<option>2018</option>
-									<option>2017</option>
-									<option>2016</option>
-									<option>2015</option>
-								</select>
-							</div>
-						</form>
-						<hr/>
-						<div class="question-actions">
-							<button class="btn btn-secondary" type="button">
-								Done
-							</button>
-							<button class="btn btn-outline-secondary" type="button">
-								Cancel
-							</button>
 						</div>
+						<div class="form-group">
+							<label>Explanation</label>
+							<div class="form-control textarea" placeholder="Enter explanation..."></div>
+						</div>
+						<div class="form-group">
+							<label for="txtTerms">Associated Terms</label>
+							<input class="form-control" type="text" id="txtTerms" placeholder="Enter associated terms...">
+						</div>
+						<div class="form-group">
+							<label for="selDiffLevel">Difficulty Level</label>
+							<select class="form-control" id="selDiffLevel">
+								<option>Select Difficulty Level</option>
+								<option>1-Basic</option>
+								<option>2-Intermediate</option>
+								<option>3-Advanced</option>
+							</select>
+						</div>
+						<div class="form-check">
+							<input type="checkbox" class="form-check-input" id="chkSaveCopy">
+							<label class="form-check-label" for="chkSaveCopy">Save a copy to My Questions</label>
+						</div>
+					</form>
+					<hr/>
+					<div class="question-actions">
+						<button class="btn btn-secondary" type="button">
+							Done
+						</button>
+						<button class="btn btn-outline-secondary" type="button">
+							Cancel
+						</button>
+						<div class="separator"></div>
+						<button class="btn btn-icon" type="button" title="Delete">
+							<span class="material-icons">delete</span>
+						</button>
 					</div>
 				</div>
 				<div class="test-actions">
@@ -309,8 +337,7 @@
 						Import Question
 					</button>
 				</div>
-				<hr/>
-				<div class="step-actions">
+				<div class="wizard-step-actions">
 					<button class="btn btn-outline-secondary" type="button">Back</button>
 					<button class="btn btn-secondary" type="button">Finish</button>
 				</div>
@@ -337,12 +364,73 @@
 			toolbar2: 'bullist numlist outdent indent | removeformat | help'
 		});
 
-		$('.wizard-actions .btn-outline-secondary').on('click', function(e) {
-			location.href = '/tests';
+		sortable('.questions-setup .wizard-step-content', {
+			forcePlaceholderSize: true,
+			handle: '.btn-drag-handle',
+			items: '.sortable'
 		});
 
-		$('.wizard-actions .btn-secondary').on('click', function(e) {
-			location.href = '/tests/create/2';
+		function showWizardSetup(wizardStep) {
+			if ($('.navbar select').selectpicker('val') !== wizardStep) {
+				$('.navbar select').selectpicker('val', wizardStep);
+			}
+			$('.panel-side .nav-link.active').removeClass('active');
+			$('.panel-side .nav-link[href="' + wizardStep + '"]').addClass('active');
+			switch (wizardStep) {
+				case '#test-setup':
+					$('.questions-setup').addClass('d-none');
+					$('.test-setup').removeClass('d-none');
+					break;
+				case '#questions-setup':
+					$('.test-setup').addClass('d-none');
+					$('.questions-setup').removeClass('d-none');
+					break;
+			}
+		}
+
+		$('.navbar select').on('changed.bs.select', function(e) {
+			showWizardSetup($(this).selectpicker('val'));
+		});
+
+		$('.panel-side .nav-link').on('click', function(e) {
+			e.preventDefault();
+			showWizardSetup($(this).attr('href'));
+		});
+
+		$('.test-setup .wizard-step-actions .btn-outline-secondary').on('click', function(e) {
+			location.href = '/tests';
+		});
+		$('.test-setup .wizard-step-actions .btn-secondary').on('click', function(e) {
+			showWizardSetup('#questions-setup');
+		});
+
+		$('.questions-setup .section:not(.section-edit)').on('click', function(e) {
+			$(this).addClass('d-none');
+			$('.questions-setup .section-edit').removeClass('d-none');
+			$('.questions-setup .question-edit').addClass('d-none');
+			$('.questions-setup .question:not(.question-edit)').removeClass('d-none');
+		});
+		$('.questions-setup .section-edit .section-actions .btn').on('click', function(e) {
+			$(this).closest('.section-edit').addClass('d-none');
+			$('.questions-setup .section:not(.section-edit)').removeClass('d-none');
+		});
+
+		$('.questions-setup .question:not(.question-edit)').on('click', function(e) {
+			$(this).addClass('d-none');
+			$('.questions-setup .question-edit').removeClass('d-none');
+			$('.questions-setup .section-edit').addClass('d-none');
+			$('.questions-setup .section:not(.section-edit)').removeClass('d-none');
+		});
+		$('.questions-setup .question-edit .question-actions .btn').on('click', function(e) {
+			$(this).closest('.question-edit').addClass('d-none');
+			$('.questions-setup .question:not(.question-edit)').removeClass('d-none');
+		});
+
+		$('.questions-setup .wizard-step-actions .btn-outline-secondary').on('click', function(e) {
+			showWizardSetup('#test-setup');
+		});
+		$('.questions-setup .wizard-step-actions .btn-secondary').on('click', function(e) {
+			location.href = '/tests';
 		});
 	});
 </script>
