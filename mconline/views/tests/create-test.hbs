@@ -112,7 +112,10 @@
 						Answer all questions.
 					</div>
 				</div>
-				<div class="section section-edit d-none">
+				<div class="section section-edit sortable d-none">
+					<button class="btn btn-icon btn-drag-handle" type="button" title="Move">
+						<span class="material-icons">drag_handle</span>
+					</button>
 					<form>
 						<div class="form-group">
 							<label for="txtTitle">Title</label>
@@ -133,6 +136,9 @@
 							Cancel
 						</button>
 						<div class="separator"></div>
+						<button class="btn btn-icon" type="button" title="Duplicate">
+							<span class="material-icons">content_copy</span>
+						</button>
 						<button class="btn btn-icon" type="button" title="Delete">
 							<span class="material-icons">delete</span>
 						</button>
@@ -175,7 +181,10 @@
 						</label>
 					</div>
 				</div>
-				<div class="question question-edit d-none">
+				<div class="question question-edit sortable d-none">
+					<button class="btn btn-icon btn-drag-handle" type="button" title="Move">
+						<span class="material-icons">drag_handle</span>
+					</button>
 					<form>
 						<div class="form-group">
 							<label for="selSubject">Subject</label>
@@ -306,6 +315,9 @@
 							Cancel
 						</button>
 						<div class="separator"></div>
+						<button class="btn btn-icon" type="button" title="Duplicate">
+							<span class="material-icons">content_copy</span>
+						</button>
 						<button class="btn btn-icon" type="button" title="Delete">
 							<span class="material-icons">delete</span>
 						</button>
@@ -319,7 +331,7 @@
 						<button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">
 							<span class="sr-only">Toggle Dropdown</span>
 						</button>
-						<div class="dropdown-menu">
+						<div class="dropdown-menu dropdown-menu-right">
 							<a class="dropdown-item" href="#">Single Response MCQ</a>
 							<a class="dropdown-item" href="#">Multiple Reponse MCQ</a>
 							<a class="dropdown-item" href="#">True/False Qn</a>

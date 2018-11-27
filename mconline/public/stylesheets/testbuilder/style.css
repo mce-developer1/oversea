@@ -18,7 +18,16 @@
 	-ms-flex-direction: column;
 	flex-direction: column;
 	margin: 0 -1.5rem;
-	padding: 1.5rem;
+	padding: 2rem 1.5rem 1.5rem;
+	position: relative;
+}
+
+.create-test .section .btn-drag-handle,
+.create-test .question .btn-drag-handle {
+	cursor: move;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1.125rem);
 }
 
 .create-test .section .section-header,
@@ -70,6 +79,7 @@
   -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
 	box-shadow: 0 2px 10px rgba(0,0,0,.2);
 	margin: .25rem -1.5rem;
+	padding: 2.5rem 1.5rem 1.5rem;
 }
 
 .create-test .section-edit .section-actions,
@@ -84,21 +94,20 @@
 	padding: 1rem 0 0 0;
 }
 
-.create-test .section-edit .section-actions .btn,
-.create-test .question-edit .question-actions .btn {
-	margin-right: .325rem;
+.create-test .section-edit .section-actions .btn + .btn,
+.create-test .question-edit .question-actions .btn + .btn {
+	margin-left: .325rem;
+}
+
+.create-test .section-edit .section-actions .btn-icon + .btn-icon,
+.create-test .question-edit .question-actions .btn-icon + .btn-icon {
+	margin-left: 1rem;
 }
 
 .create-test .section-edit .section-actions .separator,
 .create-test .question-edit .question-actions .separator {
 	-webkit-flex-grow: 1;
 	flex-grow: 1;
-}
-
-.create-test .section:not(.section-edit),
-.create-test .question:not(.question-edit) {
-	padding-top: 2rem;
-	position: relative;
 }
 
 .create-test .section:not(.section-edit):hover,
@@ -108,12 +117,7 @@
 
 .create-test .section:not(.section-edit)	.btn-drag-handle,
 .create-test .question:not(.question-edit) .btn-drag-handle {
-	color: #b3b3b3;
-	cursor: move;
 	display: none;
-	position: absolute;
-	top: 0;
-	left: calc(50% - 1.125rem);
 }
 
 .create-test .section:not(.section-edit):hover	.btn-drag-handle,
