@@ -70,6 +70,7 @@ table.dataTable thead th.sorting_desc:after {
 table.dataTable thead th,
 table.dataTable tbody td {
 	padding: .75rem;
+	word-break: break-word;
 }
 
 table.dataTable tbody td input[type="checkbox"] {
@@ -134,10 +135,14 @@ div.dtr-modal .dtr-modal-display .dtr-details .dtr-column {
 	padding: .75rem 0;
 }
 
+div.dtr-modal .dtr-modal-display .dtr-details .dtr-column .dtr-column-label,
+div.dtr-modal .dtr-modal-display .dtr-details .dtr-column .dtr-column-data {
+	min-width: 12rem;
+}
+
 div.dtr-modal .dtr-modal-display .dtr-details .dtr-column .dtr-column-label {
 	color: #212529;
 	font-weight: bold;
-	min-width: 12rem;
 }
 
 div.dtr-modal .dtr-modal-display .dtr-modal-close {
@@ -398,10 +403,9 @@ div.sortable-placeholder {
 	display: flex;
 	-ms-flex-direction: column;
 	flex-direction: column;
-	position: fixed;
+	position: -webkit-sticky;
+	position: sticky;
 	top: 0;
-	right: 0;
-	left: 0;
 	z-index: 1030;
 }
 
@@ -536,6 +540,7 @@ div.sortable-placeholder {
 .app-header .dropdown-user .dropdown-menu  .user-info .user-name {
 	font-size: 1.125rem;
 	font-weight: bold;
+	margin-bottom: .5rem;
 }
 
 .app-header .dropdown-user .dropdown-menu  .list-group {
@@ -553,7 +558,7 @@ div.sortable-placeholder {
 }
 
 .app-header .dropdown-user .dropdown-menu  .list-group-item .material-icons {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 	margin-right: .5rem;
 }
 
@@ -677,13 +682,13 @@ div.sortable-placeholder {
 	display: flex;
 	-ms-flex-direction: row;
 	flex-direction: row;
-	margin: 94px auto 0;
+	margin: 0 auto;
 	max-width: 1140px;
 	padding: 1.5rem 0;
 }
 
 .app-content-fluid {
-	margin: 94px 0 0;
+	margin: 0;
 	max-width: 100%;
 }
 
@@ -884,12 +889,8 @@ div.sortable-placeholder {
 	.app-content {
 		-ms-flex-direction: column;
 		flex-direction: column;
-		margin: 54px auto 0;
+		margin: 0 auto;
 		padding: 0;
-	}
-
-	.app-content-fluid {
-		margin: 54px 0 0;
 	}
 
 	.app-content .panel-side {
