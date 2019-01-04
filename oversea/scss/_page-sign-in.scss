@@ -1,0 +1,176 @@
+.app-content {
+  &.page-sign-in {
+    .nav {
+      @include justify-content(center);
+      background-color: $yellow;      
+      padding: .5rem 1.5rem;
+
+      .nav-link {
+        color: $white;
+        font-size: 1.25rem;
+        margin: 0 1rem;
+
+        .fa {
+          font-size: 2rem;
+          margin-right: .5rem;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .row-main {
+      background-image: url("../images/resources.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      .col-md {
+        @include display-flex(row);
+        @include justify-content(center);
+      }
+    }
+
+    .article-user-registration,
+    .article-distributor-registration,
+    .article-school-registration {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .article-resource-search {
+      @include align-self(center);
+      color: $white;
+      padding: 2rem;
+
+      p {
+        font-size: 1.25rem;
+      }
+    }
+
+    .article-resources {
+      .card {
+        max-width: 240px;
+        min-width: 240px;
+      }
+    }
+
+    .article-user-registration {
+      background-image: url("../images/books.jpg");
+      color: $white;
+    }
+
+    .article-school-registration {
+      border-top: 1px solid $gray-400;
+    }
+
+    .form-sign-in {
+      background-color: $white;
+      margin: 1.5rem;
+      padding: 1.5rem;
+      width: 260px;
+
+      .form-group-actions {
+        margin-bottom: 0;
+        text-align: center;
+
+        .btn-block {
+          margin-bottom: .5rem;
+        }
+      }
+    }
+
+    .form-distributor-registration,
+    .form-school-registration, {
+      padding: 2rem;
+
+      h2 {
+        color: $primary;
+      }
+
+      .row {
+        &:not(.no-gutters) {
+          margin-bottom: 1rem;
+        }
+
+        &.no-gutters {
+          margin-bottom: .5rem;
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .row-main {
+        .col-md {
+          @include justify-content(flex-start);
+        }
+
+        .col-md:not(:first-child) {
+          @include justify-content(flex-end);
+        }
+      }
+
+      .article-school-registration {
+        border-left: 1px solid $gray-400;
+        border-top: 0;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .nav {
+        padding: .5rem 8rem;
+      }
+
+      .article-resource-search {
+        padding: 4rem;
+      }
+
+      .article-resources,
+      .article-user-registration,
+      .article-distributor-registration,
+      .article-school-registration,
+      .form-distributor-registration,
+      .form-school-registration {
+        padding: 2rem 8rem;
+      }
+    }
+  }
+}
+
+.modal-forgot-password,
+.modal-registration-successful {
+  .modal-dialog {
+    max-width: 320px;
+
+    .modal-header {
+      .modal-title {
+        @include flex-grow(1);
+        text-align: center;
+      }
+    }
+
+    .modal-body {
+      padding: 2rem 2rem 1rem;
+
+      .form-group {
+        text-align: center;
+
+        .fa-lock,
+        .fa-user {
+          font-size: 1.625rem;
+        }
+      }
+    }
+  }
+}
+
+.modal-forgot-password,
+.modal-registration-successful {
+  .form-reset-password-success,
+  .form-registration-successful {
+    .fa-check-circle {
+      color: $green;
+      font-size: 2rem;
+      vertical-align: middle;
+    }
+  }
+}

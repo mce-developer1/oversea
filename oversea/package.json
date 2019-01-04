@@ -1,0 +1,27 @@
+{
+  "name": "resource",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "sass --watch ./scss/style.scss ./public/stylesheets/style.css",
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "bootstrap-select": "^1.13.5",
+    "chart.js": "^2.7.3",
+    "cookie-parser": "~1.4.3",
+    "datatables": "^1.10.18",
+    "daterangepicker": "^3.0.3",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "font-awesome": "^4.7.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "i18next": "^11.10.2",
+    "jquery": "^3.3.1",
+    "moment": "^2.23.0",
+    "morgan": "^1.9.1",
+    "popper.js": "^1.14.6"
+  }
+}

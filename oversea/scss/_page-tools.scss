@@ -1,0 +1,74 @@
+.page-tools {
+  .app-content {
+    .article-tools {
+      background-color: $yellow;
+      padding: 3rem 2rem;
+
+      h1 {
+        color: $white;
+      }
+    }
+
+    .tab-pane {
+      padding: 2rem;
+
+      .article {
+        padding: 0 1rem;
+
+        h5 {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      .form-filters {
+        h5 {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .nav-tabs {
+        padding: 0 8rem;
+      }
+
+      .article-tools {
+        padding: 3rem 8rem;
+      }
+
+      .tab-pane {
+        padding: 2rem 8rem;
+      }
+    }
+  }
+}
+
+.modal-confirm-deletion,
+.modal-import-user {
+  .modal-dialog {
+    max-width: 400px;
+
+    .modal-header {
+      .modal-title {
+        @include flex-grow(1);
+        text-align: center;
+      }
+    }
+
+    .modal-body {
+      padding: 2rem 2rem 1rem;
+
+      .form-group {
+        text-align: center;
+
+        &:first-child {
+          margin-bottom: 2rem;
+        }
+
+        .btn {
+          padding: .375rem 1.25rem;
+        }
+      }
+    }
+  }
+}

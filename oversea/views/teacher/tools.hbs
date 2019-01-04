@@ -1,0 +1,183 @@
+<div class="app-content">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-tools">
+        <h1>Admin Tools</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#manageContent" role="tab">
+            Manage Content
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#manageClass" role="tab">
+            Manage Class
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#manageUser" role="tab">
+            Manage User
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="tab-content">
+        <div class="tab-pane tab-pane-management fade show active" id="manageContent" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4 col-lg-3">
+              <form class="form-filters">
+                <h5>Filters</h5>
+                <div class="form-group">
+                  <select class="form-control form-select">
+                    <option>Purchased Titles Only</option>
+                    <option>All Titles</option>
+                    <option>Purchased Titles Only</option>
+                    <option>Non-Purchased Titles Only</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <select class="form-control form-select">
+                    <option>All Subjects</option>
+                    <option>Mathematics</option>
+                    <option>Science</option>
+                    <option>English</option>
+                    <option>Humanities</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-8 col-lg-9">
+              <div class="article article-manage-content">
+                <table></table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane tab-pane-management fade" id="manageClass" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4 col-lg-3">
+              <form class="form-filters">
+                <h5>Filters</h5>
+                <div class="form-group">
+                  <select class="form-control form-select">
+                    <option>Select Level</option>
+                    <option>Primary 1</option>
+                    <option>Primary 2</option>
+                    <option>Primary 3</option>
+                    <option>Primary 4</option>
+                    <option>Primary 5</option>
+                    <option>Primary 6</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-8 col-lg-9">
+              <div class="article article-manage-class">
+                <table></table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane tab-pane-management fade" id="manageUser" role="tabpanel">
+          <div class="row">
+            <div class="col-md-4 col-lg-3">
+              <form class="form-filters">
+                <h5>Filters</h5>
+                <div class="form-group">
+                  <select class="form-control form-select">
+                    <option>Select Level</option>
+                    <option>Primary 1</option>
+                    <option>Primary 2</option>
+                    <option>Primary 3</option>
+                    <option>Primary 4</option>
+                    <option>Primary 5</option>
+                    <option>Primary 6</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-8 col-lg-9">
+              <div class="article article-manage-user">
+                <div class="header">
+                  <h5></h5>
+                  <button class="btn btn-success btn-import" type="button">
+                    <i class="fa fa-upload"></i> Import
+                  </button>
+                  <button class="btn btn-primary btn-create" type="button">
+                    Create New
+                  </button>
+                </div>
+                <table></table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-confirm-deletion fade" id="mdlConfirmDeletion" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Deletion</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-confirm-deletion">
+          <div class="form-group">
+            <p>
+              Are you sure you want to proceed with deletion?
+            </p>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="button" data-dismiss="modal">
+              OK
+            </button>
+            <button class="btn btn-outline-primary" type="button" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-import-user fade" id="mdlImportUser" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create by Import</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-confirm-deletion">
+          <div class="form-group">
+            <button class="btn btn-outline-primary btn-block" type="button" data-dismiss="modal">
+              <i class="fa fa-download"></i> Download Template
+            </button>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="button" data-dismiss="modal">
+              <i class="fa fa-upload"></i> Upload Completed File
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

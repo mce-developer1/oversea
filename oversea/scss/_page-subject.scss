@@ -1,0 +1,49 @@
+.page-subject {
+  .app-content {
+    .article-subject {
+      background-color: $yellow;
+      padding: 3rem 2rem;
+
+      h1 {
+        color: $white;
+      }
+    }
+
+    .article-feature-resources,
+    .article-all-resources {
+      .card {
+        max-width: 240px;
+        min-width: 240px;
+        padding: 0;
+      }
+    }
+
+    .tab-pane {
+      padding: 2rem;
+
+      .article {
+        padding: 0;
+      }
+    }
+
+    .card-group {
+      .card {
+        cursor: pointer;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .nav-tabs {
+        padding: 0 8rem;
+      }
+
+      .article-subject {
+        padding: 3rem 8rem;
+      }
+
+      .tab-pane {
+        padding: 2rem 8rem;
+      }
+    }
+  }
+}
