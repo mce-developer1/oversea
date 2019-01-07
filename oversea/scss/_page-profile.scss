@@ -1,0 +1,21 @@
+.app-content {
+  &.page-profile {
+    .article-particulars {
+      background-color: $yellow;
+      padding: 1.5rem;
+
+      h1 {
+        color: $white;
+      }
+    }
+
+    .form-personal-particulars,
+    .form-change-password {
+      max-width: 320px;
+
+      .form-label {
+        display: block;
+      }
+    }
+  }
+}

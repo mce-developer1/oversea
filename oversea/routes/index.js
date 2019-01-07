@@ -15,8 +15,8 @@ router.get('/signout', function(req, res, next) {
   res.redirect('/');
 });
 
-/* GET teacher dashboard page. */
-router.get('/teacher/dashboard', function(req, res, next) {
+/* GET teacher home page. */
+router.get('/teacher/home', function(req, res, next) {
   res.render('student/home', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
@@ -59,25 +59,79 @@ router.get('/teacher/user', function(req, res, next) {
   });
 });
 
-/* GET view subject page. */
-router.get('/subject', function(req, res, next) {
-  res.render('subject/subject', {
+/* GET teacher update personal particulars page. */
+router.get('/teacher/profile/update_personal_particulars', function(req, res, next) {
+  res.render('profile/update_personal_particulars', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
-    module: 'subject',
+    module: 'profile',
     loggedIn: true,
     teacherUser: true
   });
 });
 
-/* GET student dashboard page. */
-router.get('/student/dashboard', function(req, res, next) {
+/* GET teacher change password page. */
+router.get('/teacher/profile/change_password', function(req, res, next) {
+  res.render('profile/change_password', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'profile',
+    loggedIn: true,
+    teacherUser: true
+  });
+});
+
+/* GET teacher reset student password page. */
+router.get('/teacher/profile/reset_student_password', function(req, res, next) {
+  res.render('profile/reset_student_password', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'profile',
+    loggedIn: true,
+    teacherUser: true
+  });
+});
+
+/* GET student home page. */
+router.get('/student/home', function(req, res, next) {
   res.render('student/home', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'home',
     loggedIn: true,
     studentUser: true
+  });
+});
+
+/* GET teacher update personal particulars page. */
+router.get('/student/profile/update_personal_particulars', function(req, res, next) {
+  res.render('profile/update_personal_particulars', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'profile',
+    loggedIn: true,
+    studentUser: true
+  });
+});
+
+/* GET student change password page. */
+router.get('/student/profile/change_password', function(req, res, next) {
+  res.render('profile/change_password', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'profile',
+    loggedIn: true,
+    studentUser: true
+  });
+});
+
+/* GET view subject page. */
+router.get('/subject', function(req, res, next) {
+  res.render('subject/subject', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'subject',
+    loggedIn: true
   });
 });
 

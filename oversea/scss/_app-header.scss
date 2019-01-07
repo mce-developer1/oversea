@@ -79,6 +79,8 @@
     }
 
     .user-name {
+      overflow: hidden;
+      max-height: 3rem;
       max-width: 5rem;
       white-space: normal;
       word-wrap: break-word;

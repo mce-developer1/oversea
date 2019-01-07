@@ -3,9 +3,9 @@ $(document).ready(function() {
     var username = $('.form-sign-in .input-username').val();
 
     if (/^student$/i.test(username)) {
-      location.href = '/student/dashboard';
+      location.href = '/student/home';
     } else if (/^teacher$/i.test(username)) {
-      location.href = '/teacher/dashboard';
+      location.href = '/teacher/home';
     }
   });
 

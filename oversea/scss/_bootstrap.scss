@@ -60,7 +60,7 @@ a {
   &:not(:disabled):not(.disabled):active {
     background-color: transparent;
     border-color: transparent;
-    color: $black;
+    color: $gray-900;
   }
 }
 
@@ -183,6 +183,10 @@ a {
   }
 }
 
+.form-text-red {
+  color: $red;   
+}
+
 .dropdown {
   &.bootstrap-select {
     .dropdown-toggle {
@@ -231,9 +235,6 @@ a {
 .nav {
   &.nav-side {
     @include flex-direction(column);
-    background-color: $white;
-    height: 100%;
-    padding: 1rem;
 
     .nav {
       @include flex-direction(column);
@@ -250,7 +251,11 @@ a {
       &:not(.disabled):hover,
       &:not(.disabled):active {
         background-color: $gray-200;
-        color: $black;
+        color: $gray-900;
+      }
+
+      &.active {
+        color: $gray-900;
       }
     }
   }
@@ -262,7 +267,7 @@ a {
 
     &:not(:disabled):not(.disabled):hover,
     &:not(:disabled):not(.disabled):active {
-      color: $black;
+      color: $gray-900;
     }
   }
 }

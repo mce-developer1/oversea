@@ -13,50 +13,64 @@
   </head>
   <body>
     <div class="navbar navbar-expand app-header">
-      <a class="navbar-brand" href="/">
-        <img src="/static/images/mco_logo.gif"/>
-      </a>
+      {{#unless loggedIn}}
+        <a class="navbar-brand" href="/">
+          <img src="/static/images/mco_logo.gif"/>
+        </a>
+      {{/unless}}
+      {{#if loggedIn}}
+        {{#if teacherUser}}
+          <a class="navbar-brand" href="/teacher/home">
+            <img src="/static/images/mco_logo.gif"/>
+          </a>
+        {{/if}}
+        {{#if studentUser}}
+          <a class="navbar-brand" href="/student/home">
+            <img src="/static/images/mco_logo.gif"/>
+          </a>
+        {{/if}}
+      {{/if}}
       <ul class="navbar-nav nav-main">
         {{#if loggedIn}}
           {{#unless loggedIn}}
-          <li class="nav-item dropdown">
-            <button class="btn btn-light" type="button" data-toggle="dropdown">
-              <i class="fa fa-th"></i> Subjects
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="/subject">
-                English
-              </a>
-              <a class="dropdown-item" href="/subject">
-                Humanities</a>
-              <a class="dropdown-item" href="/subject">
-                Mathematics
-              </a>
-              <a class="dropdown-item" href="/subject">
-                Science
-              </a>
-            </div>
-          </li>
-          <li class="nav-item search">
-            <div class="input-group append input-search">
-              <input type="text" class="form-control" placeholder="Search for a resource to preview">
-              <div class="input-group-append">
-                <button class="btn btn-light" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
+            <li class="nav-item dropdown">
+              <button class="btn btn-light" type="button" data-toggle="dropdown">
+                <i class="fa fa-th"></i> Subjects
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/subject">
+                  English
+                </a>
+                <a class="dropdown-item" href="/subject">
+                  Humanities</a>
+                <a class="dropdown-item" href="/subject">
+                  Mathematics
+                </a>
+                <a class="dropdown-item" href="/subject">
+                  Science
+                </a>
               </div>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-light" href="/admin/dashboard">
-              Dashboard
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-light" href="/admin/tools">
-              Tools
-            </a>
-          </li>
+            </li>
+            <li class="nav-item search">
+              <div class="input-group append input-search">
+                <input type="text" class="form-control" placeholder="Search for a resource to preview">
+                <div class="input-group-append">
+                  <button class="btn btn-light" type="button">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="/admin/home">
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-light" href="/admin/tools">
+                Tools
+              </a>
+            </li>
           {{/unless}}
         {{/if}}
       </ul>
@@ -71,9 +85,16 @@
             </span>
           </button>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#">
-              <i class="fa fa-user-circle"></i> My Profile
-            </a>
+            {{#if teacherUser}}
+              <a class="dropdown-item" href="/teacher/profile/update_personal_particulars">
+                <i class="fa fa-user-circle"></i> My Profile
+              </a>
+            {{/if}}
+            {{#if studentUser}}
+              <a class="dropdown-item" href="/student/profile/update_personal_particulars">
+                <i class="fa fa-user-circle"></i> My Profile
+              </a>
+            {{/if}}
             <a class="dropdown-item" href="/signout">
               <i class="fa fa-sign-out"></i> Logout
             </a>

@@ -1,0 +1,59 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-particulars">
+        <h1>My Profile</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article articlue-profile">
+        <div class="content">
+          <div class="sidebar">
+            <ul class="nav nav-side">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Update Personal Particulars</a>
+              </li>
+              <li class="nav-item">
+                {{#if teacherUser}}
+                  <a class="nav-link" href="/teacher/profile/change_password">Change Password</a>
+                {{/if}}
+                {{#if studentUser}}
+                  <a class="nav-link" href="/student/profile/change_password">Change Password</a>
+                {{/if}}
+              </li>
+              {{#if teacherUser}}
+                <li class="nav-item">
+                  <a class="nav-link" href="/teacher/profile/reset_student_password">Reset Student Password</a>
+                </li>
+              {{/if}}
+            </ul>
+          </div>
+          <div class="body">
+            <form class="form-personal-particulars">
+              <div class="form-group">
+                <label class="form-label" for="selGender">Gender</label>
+                <select class="form-control selectpicker" id="selGender">
+                  <option>Female</option>
+                  <option>Male</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="txtEmail">Email Address</label>
+                <input class="form-control form-input" type="text" id="txtEmail">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="txtMobile">Mobile Phone</label>
+                <input class="form-control form-input" type="text" id="txtMobile">
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary" type="button">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
