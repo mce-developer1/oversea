@@ -1,35 +1,18 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-particulars">
+      <div class="article article-profile">
         <h1>My Profile</h1>
       </div>
     </div>
   </div>
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article articlue-profile">
+      <div class="article article-update-personal-particulars">
+        <div class="header">
+          <h5>Update Personal Particulars</h5>
+        </div>
         <div class="content">
-          <div class="sidebar">
-            <ul class="nav nav-side">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Update Personal Particulars</a>
-              </li>
-              <li class="nav-item">
-                {{#if teacherUser}}
-                  <a class="nav-link" href="/teacher/profile/change_password">Change Password</a>
-                {{/if}}
-                {{#if studentUser}}
-                  <a class="nav-link" href="/student/profile/change_password">Change Password</a>
-                {{/if}}
-              </li>
-              {{#if teacherUser}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/teacher/profile/reset_student_password">Reset Student Password</a>
-                </li>
-              {{/if}}
-            </ul>
-          </div>
           <div class="body">
             <form class="form-personal-particulars">
               <div class="form-group">

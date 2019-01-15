@@ -1,0 +1,19 @@
+.app-content {
+  &.page-tracking {
+    .article-tracking {
+      background-color: $yellow;
+      padding: 1.5rem;
+
+      h1 {
+        color: $white;
+      }
+    }
+
+    .article-track-channel {
+      .table-track-channel {
+        margin: 0;
+        max-width: 56rem;
+      }
+    }
+  }
+}

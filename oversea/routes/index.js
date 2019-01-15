@@ -15,113 +15,166 @@ router.get('/signout', function(req, res, next) {
   res.redirect('/');
 });
 
-/* GET teacher home page. */
-router.get('/teacher/home', function(req, res, next) {
-  res.render('student/home', {
+/* GET home page. */
+router.get('/:userRole/home', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('home/home', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'home',
     loggedIn: true,
-    teacherUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
-/* GET teacher tools page. */
-router.get('/teacher/tools', function(req, res, next) {
+/* GET track resources page. */
+router.get('/:userRole/tracking/resources', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('tracking/resources', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'tracking',
+    loggedIn: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+
+/* GET tools page. */
+router.get('/:userRole/tools', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
   res.render('teacher/tools', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'tools',
     loggedIn: true,
-    teacherUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
-/* GET teacher view class page. */
-router.get('/teacher/class', function(req, res, next) {
+/* GET view class page. */
+router.get('/:userRole/class', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
   res.render('teacher/class', {
     layout: 'teacher/class_layout',
     title: 'Marshall Cavendish Education',
     module: 'class',
     loggedIn: true,
-    teacherUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
-/* GET teacher view user page. */
-router.get('/teacher/user', function(req, res, next) {
+/* GET view user page. */
+router.get('/:userRole/user', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
   res.render('teacher/user', {
     layout: 'teacher/user_layout',
     title: 'Marshall Cavendish Education',
     module: 'user',
     loggedIn: true,
-    teacherUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
-/* GET teacher update personal particulars page. */
-router.get('/teacher/profile/update_personal_particulars', function(req, res, next) {
+/* GET update personal particulars page. */
+router.get('/:userRole/profile/update_personal_particulars', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
   res.render('profile/update_personal_particulars', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'profile',
     loggedIn: true,
-    teacherUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
-/* GET teacher change password page. */
-router.get('/teacher/profile/change_password', function(req, res, next) {
+/* GET change password page. */
+router.get('/:userRole/profile/change_password', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
   res.render('profile/change_password', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'profile',
     loggedIn: true,
-    teacherUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
-/* GET teacher reset student password page. */
-router.get('/teacher/profile/reset_student_password', function(req, res, next) {
+/* GET reset student password page. */
+router.get('/:userRole/profile/reset_student_password', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
   res.render('profile/reset_student_password', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'profile',
     loggedIn: true,
-    teacherUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
-/* GET student home page. */
-router.get('/student/home', function(req, res, next) {
-  res.render('student/home', {
-    layout: 'layout',
-    title: 'Marshall Cavendish Education',
-    module: 'home',
-    loggedIn: true,
-    studentUser: true
-  });
-});
-
-/* GET teacher update personal particulars page. */
-router.get('/student/profile/update_personal_particulars', function(req, res, next) {
-  res.render('profile/update_personal_particulars', {
+/* GET reset student password page. */
+router.get('/:userRole/profile/reset_teacher_password', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('profile/reset_teacher_password', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'profile',
     loggedIn: true,
-    studentUser: true
-  });
-});
-
-/* GET student change password page. */
-router.get('/student/profile/change_password', function(req, res, next) {
-  res.render('profile/change_password', {
-    layout: 'layout',
-    title: 'Marshall Cavendish Education',
-    module: 'profile',
-    loggedIn: true,
-    studentUser: true
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
   });
 });
 
@@ -131,7 +184,8 @@ router.get('/subject', function(req, res, next) {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'subject',
-    loggedIn: true
+    loggedIn: true,
+    userRole: userRole
   });
 });
 

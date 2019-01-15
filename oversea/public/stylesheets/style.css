@@ -137,10 +137,6 @@ a:focus {
   box-shadow: none;
 }
 
-.form-text-red {
-  color: #dc3545;
-}
-
 .dropdown.bootstrap-select .dropdown-toggle {
   background-color: transparent;
   border-color: #ced4da;
@@ -196,6 +192,7 @@ a:focus {
 }
 .nav.nav-side .nav-link.active {
   color: #212529;
+  font-weight: bold;
 }
 
 .nav-light .nav-link {
@@ -253,6 +250,10 @@ a:focus {
 .modal .modal-header {
   background-color: #e9ecef;
   border-bottom: 0;
+}
+
+.table {
+  background-color: #fff;
 }
 
 @media (min-width: 576px) {
@@ -329,7 +330,6 @@ a:focus {
 .app-header .btn-user .user-name {
   overflow: hidden;
   max-height: 3rem;
-  max-width: 5rem;
   white-space: normal;
   word-wrap: break-word;
 }
@@ -391,7 +391,17 @@ a:focus {
 }
 
 .article {
-  padding: 1rem;
+  padding: 1.5rem;
+}
+.article.no-sidebar .content {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.article.no-sidebar .content .sidebar {
+  display: none;
+}
+.article.no-sidebar .content .body {
+  margin-left: 0;
 }
 .article .header {
   -webkit-align-items: flex-start;
@@ -421,8 +431,7 @@ a:focus {
   margin-bottom: 1rem;
 }
 .article .content .body {
-  margin-left: 1rem;
-  min-width: 320px;
+  min-width: 280px;
 }
 @media (min-width: 768px) {
   .article .content {
@@ -435,6 +444,7 @@ a:focus {
   .article .content .body {
     -ms-flex-positive: 1;
     flex-grow: 1;
+    margin-left: 1.5rem;
   }
 }
 
@@ -595,12 +605,16 @@ a:focus {
 .app-content.page-home .article-home h1 {
   color: #fff;
 }
+.app-content.page-home .article-resources .card-group {
+  margin: -0.5rem;
+}
 .app-content.page-home .article-resources .card-group .card {
   border: 1px solid #ced4da;
   border-radius: 0;
   cursor: pointer;
   max-width: 240px;
   min-width: 240px;
+  margin: 0.5rem;
   padding: 0;
 }
 .app-content.page-home .article-resources .card-group .card + .card {
@@ -678,20 +692,59 @@ a:focus {
   }
 }
 
-.app-content.page-profile .article-particulars {
+.app-content.page-tracking .article-tracking {
   background-color: #fda316;
   padding: 1.5rem;
 }
-.app-content.page-profile .article-particulars h1 {
+.app-content.page-tracking .article-tracking h1 {
   color: #fff;
 }
+.app-content.page-tracking .article-track-channel .table-track-channel {
+  margin: 0;
+  max-width: 56rem;
+}
+
+.app-content.page-profile .article-profile {
+  background-color: #fda316;
+  padding: 1.5rem;
+}
+.app-content.page-profile .article-profile h1 {
+  color: #fff;
+}
+.app-content.page-profile .article-update-personal-particulars .header h5,
+.app-content.page-profile .article-change-password .header h5,
+.app-content.page-profile .article-reset-student-password .header h5,
+.app-content.page-profile .article-reset-teacher-password .header h5 {
+  margin-bottom: 1rem;
+}
+.app-content.page-profile .article-update-personal-particulars .content .body {
+  margin-left: 0;
+}
 .app-content.page-profile .form-personal-particulars,
-.app-content.page-profile .form-change-password {
-  max-width: 320px;
+.app-content.page-profile .form-change-password,
+.app-content.page-profile .form-reset-student-password,
+.app-content.page-profile .form-reset-teacher-password {
+  max-width: 360px;
 }
 .app-content.page-profile .form-personal-particulars .form-label,
-.app-content.page-profile .form-change-password .form-label {
+.app-content.page-profile .form-change-password .form-label,
+.app-content.page-profile .form-reset-student-password .form-label,
+.app-content.page-profile .form-reset-teacher-password .form-label {
   display: block;
+}
+@media (max-width: 768px) {
+  .app-content.page-profile .article-change-password:not(.no-sidebar) .content .sidebar,
+.app-content.page-profile .article-reset-student-password .content .sidebar,
+.app-content.page-profile .article-reset-teacher-password .content .sidebar {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .app-content.page-profile .article-change-password:not(.no-sidebar) .header,
+.app-content.page-profile .article-reset-student-password .header,
+.app-content.page-profile .article-reset-teacher-password .header {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

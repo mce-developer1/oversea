@@ -6,6 +6,8 @@ $(document).ready(function() {
       location.href = '/student/home';
     } else if (/^teacher$/i.test(username)) {
       location.href = '/teacher/home';
+    } else if (/^admin$/i.test(username)) {
+      location.href = '/admin/home';
     }
   });
 

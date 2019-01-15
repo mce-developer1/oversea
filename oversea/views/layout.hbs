@@ -18,17 +18,10 @@
           <img src="/static/images/mco_logo.gif"/>
         </a>
       {{/unless}}
-      {{#if loggedIn}}
-        {{#if teacherUser}}
-          <a class="navbar-brand" href="/teacher/home">
-            <img src="/static/images/mco_logo.gif"/>
-          </a>
-        {{/if}}
-        {{#if studentUser}}
-          <a class="navbar-brand" href="/student/home">
-            <img src="/static/images/mco_logo.gif"/>
-          </a>
-        {{/if}}
+      {{#if loggedIn}}        
+        <a class="navbar-brand" href="/{{userRole}}/home">
+          <img src="/static/images/mco_logo.gif"/>
+        </a>
       {{/if}}
       <ul class="navbar-nav nav-main">
         {{#if loggedIn}}
@@ -80,21 +73,18 @@
           <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
             <img src="/static/images/user.png"/>
             <span class="user-name">
-              {{#if teacherUser}}Teacher{{/if}}
               {{#if studentUser}}Primary 1 Student{{/if}}
+              {{#if teacherUser}}Teacher{{/if}}
+              {{#if adminUser}}Admin{{/if}}
             </span>
           </button>
-          <div class="dropdown-menu dropdown-menu-right">
-            {{#if teacherUser}}
-              <a class="dropdown-item" href="/teacher/profile/update_personal_particulars">
-                <i class="fa fa-user-circle"></i> My Profile
-              </a>
-            {{/if}}
-            {{#if studentUser}}
-              <a class="dropdown-item" href="/student/profile/update_personal_particulars">
-                <i class="fa fa-user-circle"></i> My Profile
-              </a>
-            {{/if}}
+          <div class="dropdown-menu dropdown-menu-right">            
+            <a class="dropdown-item" href="/{{userRole}}/profile/update_personal_particulars">
+              <i class="fa fa-user-circle"></i> My Particulars
+            </a>
+            <a class="dropdown-item" href="/{{userRole}}/profile/change_password">
+              <i class="fa fa-key"></i> Change Password
+            </a>
             <a class="dropdown-item" href="/signout">
               <i class="fa fa-sign-out"></i> Logout
             </a>

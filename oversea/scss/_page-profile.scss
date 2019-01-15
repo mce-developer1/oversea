@@ -1,6 +1,6 @@
 .app-content {
-  &.page-profile {
-    .article-particulars {
+  &.page-profile, {
+    .article-profile {
       background-color: $yellow;
       padding: 1.5rem;
 
@@ -9,12 +9,55 @@
       }
     }
 
+    .article-update-personal-particulars,
+    .article-change-password,
+    .article-reset-student-password,
+    .article-reset-teacher-password {
+      .header {
+        h5 {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .article-update-personal-particulars {
+      .content {
+        .body {
+          margin-left: 0;
+        }
+      }
+    }
+
     .form-personal-particulars,
-    .form-change-password {
-      max-width: 320px;
+    .form-change-password,
+    .form-reset-student-password,
+    .form-reset-teacher-password {
+      max-width: 360px;
 
       .form-label {
         display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-change-password:not(.no-sidebar),
+      .article-reset-student-password,
+      .article-reset-teacher-password {
+        .content {
+          .sidebar {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .article-change-password:not(.no-sidebar),
+      .article-reset-student-password,
+      .article-reset-teacher-password {
+        .header {
+          display: none;
+        }
       }
     }
   }

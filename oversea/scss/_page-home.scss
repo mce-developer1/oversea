@@ -11,12 +11,15 @@
 
     .article-resources {
       .card-group {
+        margin: -.5rem;
+
         .card {
           border: 1px solid $gray-400;
           border-radius: 0;
           cursor: pointer;
           max-width: 240px;
           min-width: 240px;
+          margin: .5rem;
           padding: 0;
 
           + .card {
