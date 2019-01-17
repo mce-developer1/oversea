@@ -1,13 +1,15 @@
 @import "variables";
 @import "mixins";
 @import "bootstrap";
-//@import "datatables";
+@import "datatables";
+@import "app-container";
 @import "app-header";
 @import "app-content";
 @import "app-footer";
 @import "page-article";
 @import "page-sign-in";
 @import "page-home";
+@import "page-resources";
 @import "page-tracking";
 //@import "page-tools";
 //@import "page-class";

@@ -1,0 +1,414 @@
+.app-content {
+  &.page-resources {
+    .article-resources {
+      padding: 0 1.5rem;
+
+      .header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 4.5rem;
+
+        .navbar {
+          @include display-flex(row);
+          @include align-items(center);
+          @include flex-grow(1);
+          @include flex-wrap(nowrap);
+          background-color: $blue;
+          height: 4rem;
+          max-height: 4rem;
+          margin: 0 -1.5rem;
+          padding: .75rem 1.5rem;
+
+          .navbar-nav {
+            @include align-items(center);
+            @include flex-direction(row);
+
+            &:first-child {
+              margin-right: 1rem;
+            }
+
+            &.nav-main {
+              @include flex-grow(1);
+            }
+
+            .nav-item {
+              @include display-flex(row);
+              @include align-items(center);
+
+              .btn {
+                margin-left: 0;
+              }
+
+              .item-text {
+                color: $white;
+                font-size: 1.25rem;
+                width: 13.5rem;
+              }
+            }
+
+            .input-group {
+              position: relative;
+
+              &:hover {
+                .form-control {
+                  border-color: $white;
+                }
+              }
+              
+              .input-group-prepend,
+              .input-group-append {
+                position: absolute;
+                top: 1px;                
+                z-index: 5;
+
+                .btn-light {
+                  background-color: $white;
+                  margin-left: 0;
+                  padding: .325rem .75rem;
+                  
+                  &:hover {
+                    .fa {
+                      color: $gray-700;
+                    }
+                  }
+
+                  .fa {
+                    color: $gray-500;
+                    font-size: 1.375rem;
+                    vertical-align: top;
+                  }
+                }              
+              }
+
+              .input-group-prepend {
+                left: 1px;
+              }
+
+              .input-group-append {
+                right: 1px;
+              }
+
+              .form-control {
+                border-color: $white;
+                padding-left: 3rem;
+                padding-right: 3rem;
+                width: 20rem;
+              }
+            }
+              
+            .btn-light {
+              &:hover {
+                .fa {
+                  color: $white;
+                }
+              }
+
+              .fa {
+                color: $gray-300;
+                font-size: 1.685rem;
+                vertical-align: bottom;
+
+                &.fa-cloud,
+                &.fa-long-arrow-left {
+                  font-size: 2rem;
+                  width: 2.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .content {
+        .sidebar {
+          margin: 0;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 8.5rem;
+          
+          .resources {
+            .resource {
+              &.active {
+                > a {
+                  color: $primary;
+                  font-weight: bold;
+
+                  .fa {
+                    color: $gray-700;
+                  }
+
+                  .fa-folder,
+                  .fa-folder-open {
+                    color: $yellow;
+                  }
+                }
+              }
+
+              a {
+                @include display-flex(row);
+                @include align-items(center);
+                color: $gray-700;
+                padding: .5rem 1rem;
+                text-decoration: none;                
+
+                &:hover {
+                  background-color: $gray-200;
+                }
+
+                .fa {
+                  min-width: 1rem;
+                }
+
+                .fa-folder,
+                .fa-folder-open {
+                  color: $yellow;
+                  font-size: 1.5rem;
+                  min-width: 2rem;
+                }
+              }
+
+              > .resources {
+                > .resource {
+                  > a {
+                    padding-left: 2.5rem;
+                  }
+
+                  > .resources {
+                    > .resource {
+                      > a {
+                        padding-left: 4rem;
+                      }
+
+                      > .resources {
+                        > .resource {
+                          > a {
+                            padding-left: 5.5rem;
+                          }
+
+                          > .resources {
+                            > .resource {
+                              > a {
+                                padding-left: 7rem;
+                              }
+
+                              > .resources {
+                                > .resource {
+                                  > a {
+                                    padding-left: 8.5rem;
+                                  }
+
+                                  > .resources {
+                                    > .resource {
+                                      > a {
+                                        padding-left: 10rem;
+                                      }
+
+                                      > .resources {
+                                        > .resource {
+                                          > a {
+                                            padding-left: 11.5rem;
+                                          }
+
+                                          > .resources {
+                                            > .resource {
+                                              > a {
+                                                padding-left: 13rem;
+                                              }
+
+                                              > .resources {
+                                                > .resource {
+                                                  > a {
+                                                    padding-left: 14.5rem;
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .body {
+          .table {
+            @include user-select(none);
+
+            &.table-head {
+              margin-bottom: 0;
+              position: -webkit-sticky;
+              position: sticky;
+              top: 8.5rem;
+            }
+
+            a {
+              @include display-flex(row);
+              @include align-items(flex-start);
+              color: $gray-900;
+              text-decoration: none;
+
+              .fa {                
+                &.fa-folder {
+                  color: $yellow;
+                }
+
+                &.fa-file-word-o {
+                  color: $blue;
+                }
+
+                &.fa-file-excel-o {
+                  color: $green;
+                }
+
+                font-size: 1.5rem;
+                min-width: 2rem;
+              }              
+            }
+          }
+
+          .card-group {            
+            @include user-select(none);
+            padding: 1rem 0;
+
+            .card {
+              cursor: pointer;
+              max-width: 16rem;
+              min-width: 16rem;
+              margin: .5rem;
+              padding: 0;
+
+              .card-img-top {
+                padding: 1rem;
+                text-align: center;
+
+                .fa {
+                  font-size: 8rem;
+
+                  &.fa-folder {
+                    color: $yellow;
+                  }
+
+                  &.fa-file-word-o {
+                    color: $blue;
+                  }
+  
+                  &.fa-file-excel-o {
+                    color: $green;
+                  }
+                }
+              }
+
+              .card-body {
+                padding: 1rem;
+
+                .card-title {
+                  color: $gray-700;
+                }
+              }
+            }    
+          }
+        }
+      }
+
+      @media (max-width: 576px) {
+        .content {
+          .body {
+            .table-head,
+            .table-body {
+              tr {
+                th:nth-child(4),
+                th:nth-child(5),
+                td:nth-child(4),
+                td:nth-child(5) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          .body {
+            .table-head,
+            .table-body {
+              tr {
+                th:nth-child(2),
+                th:nth-child(3),
+                td:nth-child(2),
+                td:nth-child(3) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 992px) {
+        .header {
+          .navbar {
+            .navbar-nav {
+              &.nav-main {
+                display: none;
+              }
+
+              .nav-item-drawer {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .content {
+          .sidebar {
+            display: none;
+          }
+
+          .body {
+            margin: 0;
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        .header {
+          .navbar {
+            .navbar-nav {
+              &:not(.nav-main) {
+                .btn-search {
+                  display: none;
+                }
+              }
+              .nav-item-result {
+                display: none;
+              }              
+            }
+          }
+        }
+
+        .content {
+          .sidebar {            
+            height: calc(100vh - 11.5rem);
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: .5rem 0;
+          }
+        }
+      }
+    }
+  }
+}

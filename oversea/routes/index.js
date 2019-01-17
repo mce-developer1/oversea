@@ -24,8 +24,9 @@ router.get('/:userRole/home', function(req, res, next) {
   res.render('home/home', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
-    module: 'home',
+    module: 'home',    
     loggedIn: true,
+    mainPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,
@@ -44,6 +45,7 @@ router.get('/:userRole/tracking/resources', function(req, res, next) {
     title: 'Marshall Cavendish Education',
     module: 'tracking',
     loggedIn: true,
+    mainPage: true,    
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,
@@ -51,6 +53,25 @@ router.get('/:userRole/tracking/resources', function(req, res, next) {
   });
 });
 
+/* GET track resources page. */
+router.get('/:userRole/resources/resources', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('resources/resources', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'resources',
+    loggedIn: true,
+    mainPage: true,
+    portalPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
 
 /* GET tools page. */
 router.get('/:userRole/tools', function(req, res, next) {

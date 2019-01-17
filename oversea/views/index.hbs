@@ -1,375 +1,389 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters row-main">
-    <div class="col-md">
-      <div class="article article-resource-search">
-        <h1>Resources on demand</h1>
-        <p>
-          Teach. Learn. Inspire.<br/>
-          Explore thousands of resources.
-        </p>
+    <div class="col-sm">
+      <div class="row">
+        <div class="col-sm">
+          <div class="article article-mceducation">
+            <img src="/static/images/mce_logo_white.png"/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <div class="article article-sign-in">
+            <h1>Resources on demand</h1>
+            <p>
+              Teach. Learn. Inspire.<br/>
+              Explore thousands of resources.
+            </p>
+          </div>
+        </div>
+        <div class="col-md">
+          <form class="form-sign-in">
+            <div class="form-group">
+              <div class="input-group prepend">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-user"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control input-username" placeholder="Username">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group prepend">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-building"></i>
+                  </span>
+                </div>
+                <input type="text" class="form-control" placeholder="School">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group prepend">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                </div>
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group form-group-actions">
+              <button class="btn btn-primary btn-block" type="button">
+                Login
+              </button>
+              <a class="forgot-password" href="#">
+                Forgot Password?
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-book"></i> Quality Resources
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-user"></i> Insightful Educators
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="fa fa-headphones"></i> Great Support
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="col-md">
-      <form class="form-sign-in">
-        <div class="form-group">
-          <div class="input-group prepend">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                <i class="fa fa-user"></i>
-              </span>
-            </div>
-            <input type="text" class="form-control input-username" placeholder="Username">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group prepend">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                <i class="fa fa-building"></i>
-              </span>
-            </div>
-            <input type="text" class="form-control" placeholder="School">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group prepend">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                <i class="fa fa-lock"></i>
-              </span>
-            </div>
-            <input type="password" class="form-control" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group form-group-actions">
-          <button class="btn btn-primary btn-block" type="button">
-            Login
-          </button>
-          or
-          <a class="forgot-password" href="#">
-            Forgot Password?
-          </a>
-        </div>
-      </form>
-    </div>
   </div>
   <div class="row no-gutters">
     <div class="col-sm">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fa fa-book"></i> Quality Resources
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fa fa-user"></i> Insightful Educators
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fa fa-headphones"></i> Great Support
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row no-gutters">
-    <div class="col-sm">
-      <div class="article article-user-registration">
-        <h2>Learn anytime, anywhere</h2>
+      <div class="article article-study-resource">
+        <h2>Learn anytime, anywhere!</h2>
         <p>
-          Access learning resources on any device<br/>
-          Study at your own pace
+          Access learning resources on any device.<br/>
+          Study at your own pace.
         </p>
-        <button class="btn btn-primary btn-preview" type="button">
+        <button class="btn btn-primary" type="button">
           Click Here to Preview
         </button>
       </div>
     </div>
   </div>
-  <div class="row no-gutters">
-    <div class="col-md">
-      <div class="article article-distributor-registration">
-        <h5>Become a Partner/Distributor</h5>
-        <p>Empower your district schools</p>
-        <button class="btn btn-primary btn-register-distributor" type="button">
-          Contact Us
-        </button>
+  {{#if loggedIn}}
+    {{#unless loggedIn}}
+      <div class="row no-gutters">
+        <div class="col-md">
+          <div class="article article-distributor-registration">
+            <h5>Become a Partner/Distributor</h5>
+            <p>Empower your district schools</p>
+            <button class="btn btn-primary btn-register-distributor" type="button">
+              Contact Us
+            </button>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="article article-school-registration">
+            <h5>Sign Up your School</h5>
+            <p>Provide teachers & students access to over 20,000 resources</p>
+            <button class="btn btn-primary btn-register-school" type="button">
+              Contact Us
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md">
-      <div class="article article-school-registration">
-        <h5>Sign Up your School</h5>
-        <p>Provide teachers & students access to over 20,000 resources</p>
-        <button class="btn btn-primary btn-register-school" type="button">
-          Contact Us
-        </button>
+      <div class="row no-gutters">
+        <div class="col-sm">
+          <form class="form-distributor-registration d-none">
+            <h2 class="text-uppercase">Distributor Registration</h2>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Name</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-lg-4 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="First name">
+              </div>
+              <div class="col-md-4 col-lg-4 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="Last name">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Title / Position</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Your Title / Position">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Contact Details</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Primary Email Address">
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="Primary Phone Number">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Secondary Email Address">
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="Secondary Phone Number">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Location</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <select class="form-control selectpicker" data-container="body">
+                  <option>Select Country</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <select class="form-control selectpicker" data-container="body">
+                  <option>Select City</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <select class="form-control selectpicker" data-container="body">
+                  <option>Select District</option>
+                </select>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Company Name</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Company Name">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Company Address</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <textarea class="form-control form-textarea" placeholder="Company Address"></textarea>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Company Contact</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Phone Number">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">* I have read and agreed to the</label>
+                  <a href="#">
+                    Terms & Conditions
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <button class="btn btn-outline-primary btn-cancel" type="button">
+                  Cancel
+                </button>
+                <button class="btn btn-primary" type="button">
+                  Register
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="row no-gutters">
-    <div class="col-sm">
-      <form class="form-distributor-registration d-none">
-        <h2 class="text-uppercase">Distributor Registration</h2>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Name</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-lg-4 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="First name">
-          </div>
-          <div class="col-md-4 col-lg-4 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="Last name">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Title / Position</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-6 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Your Title / Position">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Contact Details</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Primary Email Address">
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="Primary Phone Number">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Secondary Email Address">
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="Secondary Phone Number">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Location</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <select class="form-control selectpicker" data-container="body">
-              <option>Select Country</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <select class="form-control selectpicker" data-container="body">
-              <option>Select City</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <select class="form-control selectpicker" data-container="body">
-              <option>Select District</option>
-            </select>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Company Name</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Company Name">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Company Address</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <textarea class="form-control form-textarea" placeholder="Company Address"></textarea>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Company Contact</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Phone Number">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label">* I have read and agreed to the</label>
-              <a href="#">
-                Terms & Conditions
-              </a>
+      <div class="row no-gutters">
+        <div class="col-sm">
+          <form class="form-school-registration d-none">
+            <h2 class="text-uppercase">School Registration</h2>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Name</h6>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <button class="btn btn-outline-primary btn-cancel" type="button">
-              Cancel
-            </button>
-            <button class="btn btn-primary" type="button">
-              Register
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row no-gutters">
-    <div class="col-sm">
-      <form class="form-school-registration d-none">
-        <h2 class="text-uppercase">School Registration</h2>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Name</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-lg-4 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="First name">
-          </div>
-          <div class="col-md-4 col-lg-4 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="Last name">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Title / Position</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-6 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Your Title / Position">
-            <small class="form-text text-muted">
-              Please can you provide your title or position within the school.
-            </small>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Contact Details</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Primary Email Address">
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="Primary Phone Number">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Secondary Email Address">
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3">
-            <input class="form-control form-input" type="text" placeholder="Secondary Phone Number">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>Your Location</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <select class="form-control selectpicker" data-container="body">
-              <option>Select Country</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <select class="form-control selectpicker" data-container="body">
-              <option>Select City</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <select class="form-control selectpicker" data-container="body">
-              <option>Select District</option>
-            </select>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>School Name</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Company Name">
-            <small class="form-text text-muted">
-              Please provide the full name of your school/education establishment.
-            </small>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>School Address</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <textarea class="form-control form-textarea" placeholder="Company Address"></textarea>
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <h6>School Contact</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-4">
-            <input class="form-control form-input" type="text" placeholder="Phone Number">
-          </div>
-        </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox">
-              <label class="form-check-label">* I have read and agreed to the</label>
-              <a href="#">
-                Terms & Conditions
-              </a>
+            <div class="row">
+              <div class="col-md-4 col-lg-4 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="First name">
+              </div>
+              <div class="col-md-4 col-lg-4 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="Last name">
+              </div>
             </div>
-          </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Title / Position</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-6 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Your Title / Position">
+                <small class="form-text text-muted">
+                  Please can you provide your title or position within the school.
+                </small>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Contact Details</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Primary Email Address">
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="Primary Phone Number">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Secondary Email Address">
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3">
+                <input class="form-control form-input" type="text" placeholder="Secondary Phone Number">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>Your Location</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <select class="form-control selectpicker" data-container="body">
+                  <option>Select Country</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <select class="form-control selectpicker" data-container="body">
+                  <option>Select City</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <select class="form-control selectpicker" data-container="body">
+                  <option>Select District</option>
+                </select>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>School Name</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Company Name">
+                <small class="form-text text-muted">
+                  Please provide the full name of your school/education establishment.
+                </small>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>School Address</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <textarea class="form-control form-textarea" placeholder="Company Address"></textarea>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <h6>School Contact</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-lg-4 col-xl-4">
+                <input class="form-control form-input" type="text" placeholder="Phone Number">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">* I have read and agreed to the</label>
+                  <a href="#">
+                    Terms & Conditions
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm">
+                <button class="btn btn-outline-primary btn-cancel" type="button">
+                  Cancel
+                </button>
+                <button class="btn btn-primary" type="button">
+                  Register
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="row no-gutters">
-          <div class="col-sm">
-            <button class="btn btn-outline-primary btn-cancel" type="button">
-              Cancel
-            </button>
-            <button class="btn btn-primary" type="button">
-              Register
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+      </div>
+    {{/unless}}
+  {{/if}}
 </div>
 
 <div class="modal modal-forgot-password fade" tabindex="-1" role="dialog" data-backdrop="static">

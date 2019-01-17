@@ -23,7 +23,7 @@ $(document).ready(function() {
   });
 
   $('.btn-register-distributor').on('click', function(e) {
-    $('.article-user-registration').addClass('d-none');
+    $('.article-study-resource').addClass('d-none');
     $('.article-distributor-registration').addClass('d-none');
     $('.article-school-registration').addClass('d-none');
     $('.form-distributor-registration').removeClass('d-none');
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   $('.form-distributor-registration .btn-cancel').on('click', function(e) {
     $('.form-distributor-registration').addClass('d-none');
-    $('.article-user-registration').removeClass('d-none');
+    $('.article-study-resource').removeClass('d-none');
     $('.article-distributor-registration').removeClass('d-none');
     $('.article-school-registration').removeClass('d-none');
   });
@@ -52,13 +52,13 @@ $(document).ready(function() {
       $('.form-school-registration').addClass('d-none');
     }
 
-    $('.article-user-registration').removeClass('d-none');
+    $('.article-study-resource').removeClass('d-none');
     $('.article-distributor-registration').removeClass('d-none');
     $('.article-school-registration').removeClass('d-none');
   });
 
   $('.btn-register-school').on('click', function(e) {
-    $('.article-user-registration').addClass('d-none');
+    $('.article-study-resource').addClass('d-none');
     $('.article-distributor-registration').addClass('d-none');
     $('.article-school-registration').addClass('d-none');
     $('.form-school-registration').removeClass('d-none');
@@ -67,7 +67,7 @@ $(document).ready(function() {
 
   $('.form-school-registration .btn-cancel').on('click', function(e) {
     $('.form-school-registration').addClass('d-none');
-    $('.article-user-registration').removeClass('d-none');
+    $('.article-study-resource').removeClass('d-none');
     $('.article-distributor-registration').removeClass('d-none');
     $('.article-school-registration').removeClass('d-none');
   });

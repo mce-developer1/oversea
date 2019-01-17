@@ -1,6 +1,8 @@
 .app-header {
   @include flex-direction(row);
   background-color: $white;
+  height: 4.5rem;
+  max-height: 4.5rem;
   padding: .5rem 1.5rem;
   position: -webkit-sticky;
   position: sticky;
