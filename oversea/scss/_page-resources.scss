@@ -3,10 +3,11 @@
     .article-resources {
       padding: 0 1.5rem;
 
-      .header {
+      .article-header {
         position: -webkit-sticky;
         position: sticky;
         top: 4.5rem;
+        z-index: 980;
 
         .navbar {
           @include display-flex(row);
@@ -89,7 +90,7 @@
               }
 
               .form-control {
-                border-color: $white;
+                border: 0;
                 padding-left: 3rem;
                 padding-right: 3rem;
                 width: 20rem;
@@ -119,8 +120,8 @@
         }
       }
 
-      .content {
-        .sidebar {
+      .article-content {
+        .article-sidebar {
           margin: 0;
           position: -webkit-sticky;
           position: sticky;
@@ -133,13 +134,9 @@
                   color: $primary;
                   font-weight: bold;
 
-                  .fa {
-                    color: $gray-700;
-                  }
-
                   .fa-folder,
                   .fa-folder-open {
-                    color: $yellow;
+                    color: $yellow;                    
                   }
                 }
               }
@@ -156,6 +153,8 @@
                 }
 
                 .fa {
+                  color: $gray-600;
+                  font-size: .75rem;
                   min-width: 1rem;
                 }
 
@@ -242,7 +241,7 @@
           }
         }
 
-        .body {
+        .article-body {
           .table {
             @include user-select(none);
 
@@ -251,6 +250,11 @@
               position: -webkit-sticky;
               position: sticky;
               top: 8.5rem;
+            }
+
+            th,
+            td {
+              padding: 1rem;
             }
 
             a {
@@ -281,6 +285,7 @@
           .card-group {            
             @include user-select(none);
             padding: 1rem 0;
+            margin: 0 -.5rem;
 
             .card {
               cursor: pointer;
@@ -323,8 +328,8 @@
       }
 
       @media (max-width: 576px) {
-        .content {
-          .body {
+        .article-content {
+          .article-body {
             .table-head,
             .table-body {
               tr {
@@ -341,8 +346,8 @@
       }
 
       @media (max-width: 768px) {
-        .content {
-          .body {
+        .article-content {
+          .article-body {
             .table-head,
             .table-body {
               tr {
@@ -359,7 +364,7 @@
       }
 
       @media (max-width: 992px) {
-        .header {
+        .article-header {
           .navbar {
             .navbar-nav {
               &.nav-main {
@@ -373,19 +378,19 @@
           }
         }
 
-        .content {
-          .sidebar {
+        .article-content {
+          .article-sidebar {
             display: none;
           }
 
-          .body {
+          .article-body {
             margin: 0;
           }
         }
       }
 
       @media (min-width: 992px) {
-        .header {
+        .article-header {
           .navbar {
             .navbar-nav {
               &:not(.nav-main) {
@@ -400,8 +405,8 @@
           }
         }
 
-        .content {
-          .sidebar {            
+        .article-content {
+          .article-sidebar {            
             height: calc(100vh - 11.5rem);
             overflow-x: hidden;
             overflow-y: auto;

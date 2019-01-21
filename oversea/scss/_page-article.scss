@@ -2,20 +2,20 @@
   padding: 1.5rem;
 
   &.no-sidebar {
-    .content {
+    .article-content {
       @include flex-direction(row);
 
-      .sidebar {
+      .article-sidebar {
         display: none;
       }
 
-      .body {
+      .article-body {
         margin-left: 0;
       }
     }
   }
 
-  .header {
+  .article-header {
     @include align-items(flex-start);
     @include display-flex(row);
     @include flex-wrap(wrap);
@@ -30,28 +30,28 @@
     }
   }
 
-  .content {
+  .article-content {
     @include display-flex(column);
 
-    .sidebar {
+    .article-sidebar {
       margin-bottom: 1rem;
     }
 
-    .body {      
+    .article-body {      
       min-width: 280px;
     }
   }
 
   @media (min-width: 768px) {
-    .content {
+    .article-content {
       @include flex-direction(row);
 
-      .sidebar {
+      .article-sidebar {
         min-width: 240px;
         width: 240px;
       }
 
-      .body {
+      .article-body {
         @include flex-grow(1);
         margin-left: 1.5rem;
       }

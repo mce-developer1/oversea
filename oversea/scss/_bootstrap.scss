@@ -354,21 +354,26 @@ a {
 .table {  
   background-color: $white;
 
-  th,
-  td {
-    padding: 1rem;
-  }
-
   thead {
     th {
       border-bottom-width: 1px;
       color: $gray-700;
+
+      &.sortable-column {
+        &:hover {
+          background-color: $gray-200;
+        }
+
+        .fa {
+          font-size: 1rem;
+          margin-left: .25rem;
+        }
+      }
     }
   }
 
   tbody {    
-    tr {      
-
+    tr {
       &.table-active {
         > th,
         > td {

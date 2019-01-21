@@ -13,17 +13,9 @@
     .article-change-password,
     .article-reset-student-password,
     .article-reset-teacher-password {
-      .header {
+      .article-header {
         h5 {
           margin-bottom: 1rem;
-        }
-      }
-    }
-
-    .article-update-personal-particulars {
-      .content {
-        .body {
-          margin-left: 0;
         }
       }
     }
@@ -43,8 +35,8 @@
       .article-change-password:not(.no-sidebar),
       .article-reset-student-password,
       .article-reset-teacher-password {
-        .content {
-          .sidebar {
+        .article-content {
+          .article-sidebar {
             display: none;
           }
         }
@@ -55,7 +47,7 @@
       .article-change-password:not(.no-sidebar),
       .article-reset-student-password,
       .article-reset-teacher-password {
-        .header {
+        .article-header {
           display: none;
         }
       }

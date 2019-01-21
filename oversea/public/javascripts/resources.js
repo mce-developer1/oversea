@@ -29,22 +29,27 @@ $(document).ready(function() {
     $container.find('.nav-item-result .item-text').text(search);
   });
 
+  $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
+    $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
+    $container.find('.nav-main').removeClass('d-block');
+  });
+
   $container.find('.btn-list-view').on('click', function(e) {
     $container.find('.btn-card-view').removeClass('d-none');
     $(this).addClass('d-none');
 
-    $container.find('.body .card-group').addClass('d-none');
-    $container.find('.body .table-head').removeClass('d-none');
-    $container.find('.body .table-body').removeClass('d-none');
+    $container.find('.article-body .card-group').addClass('d-none');
+    $container.find('.article-body .table-head').removeClass('d-none');
+    $container.find('.article-body .table-body').removeClass('d-none');
   });
 
   $container.find('.btn-card-view').on('click', function(e) {
     $container.find('.btn-list-view').removeClass('d-none');
     $(this).addClass('d-none');
 
-    $container.find('.body .table-head').addClass('d-none');
-    $container.find('.body .table-body').addClass('d-none');
-    $container.find('.body .card-group').removeClass('d-none');
+    $container.find('.article-body .table-head').addClass('d-none');
+    $container.find('.article-body .table-body').addClass('d-none');
+    $container.find('.article-body .card-group').removeClass('d-none');
   });
 
   $container.find('.table-body tr').on('click', function(e) {
