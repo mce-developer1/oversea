@@ -1,10 +1,21 @@
+.custom-checkbox {
+  .custom-control-label {
+    &::before {
+      height: 1.125rem;
+      width: 1.125rem;
+    }
+    &::after {
+      height: 1.125rem;
+      width: 1.125rem;
+    }
+  }
+}
+
 .article {
   padding: 1.5rem;
 
   &.no-sidebar {
     .article-content {
-      @include flex-direction(row);
-
       .article-sidebar {
         display: none;
       }
@@ -22,7 +33,8 @@
 
     h5 {
       @include flex-grow(1);
-      min-height: 1.25rem;
+      line-height: 1.75;
+      margin-bottom: 0;
     }
 
     .btn {
@@ -47,14 +59,31 @@
       @include flex-direction(row);
 
       .article-sidebar {
-        min-width: 240px;
-        width: 240px;
+        min-width: 18rem;
+        width: 18rem;
       }
 
       .article-body {
         @include flex-grow(1);
         margin-left: 1.5rem;
       }
+    }
+  }
+}
+
+.attribute-group {
+  @include display-flex(column);
+
+  .attribute {
+    @include display-flex(row);
+    @include align-items(flex-start);
+    padding: .5rem 0;
+    
+    .attribute-name {
+      color: $gray-700;
+      font-weight: bold;
+      min-width: 10rem;
+      width: 10rem;
     }
   }
 }

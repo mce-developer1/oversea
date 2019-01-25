@@ -22,6 +22,7 @@ app.use('/static/bootstrap', express.static(path.join(__dirname, 'node_modules/b
 app.use('/static/bootstrap-select', express.static(path.join(__dirname, 'node_modules/bootstrap-select/dist')));
 app.use('/static/font-awesome', express.static(path.join(__dirname, 'node_modules/font-awesome')));
 app.use('/static/chart.js', express.static(path.join(__dirname, 'node_modules/chart.js/dist')));
+app.use('/static/chartjs-plugin-datalabels', express.static(path.join(__dirname, 'node_modules/chartjs-plugin-datalabels/dist')));
 app.use('/static/moment', express.static(path.join(__dirname, 'node_modules/moment')));
 app.use('/static/daterangepicker', express.static(path.join(__dirname, 'node_modules/daterangepicker')));
 app.use('/static/datatables', express.static(path.join(__dirname, 'node_modules/datatables/media')));

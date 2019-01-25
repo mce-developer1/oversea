@@ -14,7 +14,7 @@
           @include align-items(center);
           @include flex-grow(1);
           @include flex-wrap(nowrap);
-          background-color: $blue;
+          background-color: $gray-300;
           height: 4rem;
           max-height: 4rem;
           margin: 0 -1.5rem;
@@ -26,10 +26,12 @@
 
             &:first-child {
               margin-right: 1rem;
+              width: 18.5rem;
             }
 
             &.nav-main {
               @include flex-grow(1);
+              position: relative;
             }
 
             .nav-item {
@@ -41,21 +43,14 @@
               }
 
               .item-text {
-                color: $white;
                 font-size: 1.25rem;
-                width: 13.5rem;
+                width: 14rem;
               }
             }
 
             .input-group {
               position: relative;
 
-              &:hover {
-                .form-control {
-                  border-color: $white;
-                }
-              }
-              
               .input-group-prepend,
               .input-group-append {
                 position: absolute;
@@ -90,29 +85,59 @@
               }
 
               .form-control {
-                border: 0;
                 padding-left: 3rem;
-                padding-right: 3rem;
-                width: 20rem;
+                padding-right: 5rem;
+                width: 30rem;
+              }
+            }
+
+            .dropdown-menu {
+              max-width: calc(30rem - 2px);
+              width: calc(30rem - 2px);
+              left: 1px;
+              top: calc(100% - 2px);
+
+              .form-advanced-search {
+                padding: 1rem 1.5rem;
+
+                .form-group {
+                  @include display-flex(row);
+                  @include align-items(center);
+
+                  &.form-group-actions {
+                    @include justify-content(flex-end);
+                  }
+
+                  .form-label {
+                    width: 20rem;
+                  }
+
+                  .form-input {
+                    width: calc(100% - 10px);
+                  }
+                }
               }
             }
               
             .btn-light {
               &:hover {
                 .fa {
-                  color: $white;
+                  color: $gray-700;
                 }
               }
 
               .fa {
-                color: $gray-300;
-                font-size: 1.685rem;
+                color: $gray-600;
+                font-size: 1.625rem;
                 vertical-align: bottom;
 
-                &.fa-cloud,
-                &.fa-long-arrow-left {
+                &.fa-cloud {
                   font-size: 2rem;
                   width: 2.5rem;
+                }
+
+                &.fa-long-arrow-left {
+                  font-size: 1.625rem;
                 }
               }
             }
@@ -255,15 +280,28 @@
             th,
             td {
               padding: 1rem;
+
+              .btn {
+                padding: .25rem;
+                margin: -.5rem 0;
+
+                .fa-info-circle {
+                  font-size: 1.375rem;
+                }
+              }
             }
 
             a {
               @include display-flex(row);
               @include align-items(flex-start);
               color: $gray-900;
-              text-decoration: none;
+              padding-left: 2.25rem;
+              position: relative;
 
-              .fa {                
+              .fa {
+                position: absolute;
+                left: 0;
+
                 &.fa-folder {
                   color: $yellow;
                 }
@@ -293,6 +331,7 @@
               min-width: 16rem;
               margin: .5rem;
               padding: 0;
+              position: relative;
 
               .card-img-top {
                 padding: 1rem;
@@ -321,6 +360,12 @@
                 .card-title {
                   color: $gray-700;
                 }
+
+                .custom-checkbox {
+                  position: absolute;
+                  top: .5rem;
+                  right: .5rem;
+                }
               }
             }    
           }
@@ -328,15 +373,34 @@
       }
 
       @media (max-width: 576px) {
+        .article-header {
+          .navbar {
+            padding: .75rem .5rem;
+
+            .navbar-nav {
+              .nav-item {
+                .item-text {
+                  width: 10rem;
+                }
+              }
+            }
+          }
+        }
+
         .article-content {
           .article-body {
             .table-head,
             .table-body {
+              colgroup:nth-child(5),
+              colgroup:nth-child(6) {
+                display: none;
+              }
+
               tr {
-                th:nth-child(4),
                 th:nth-child(5),
-                td:nth-child(4),
-                td:nth-child(5) {
+                th:nth-child(6),
+                td:nth-child(5),
+                td:nth-child(6) {
                   display: none;
                 }
               }
@@ -350,11 +414,16 @@
           .article-body {
             .table-head,
             .table-body {
+              colgroup:nth-child(3),
+              colgroup:nth-child(4) {
+                display: none;
+              }
+
               tr {
-                th:nth-child(2),
                 th:nth-child(3),
-                td:nth-child(2),
-                td:nth-child(3) {
+                th:nth-child(4),
+                td:nth-child(3),
+                td:nth-child(4) {
                   display: none;
                 }
               }
@@ -366,6 +435,8 @@
       @media (max-width: 992px) {
         .article-header {
           .navbar {
+            @include justify-content(space-between);
+
             .navbar-nav {
               &.nav-main {
                 display: none;
@@ -385,6 +456,24 @@
 
           .article-body {
             margin: 0;
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(7) {
+                display: none;
+              }
+
+              th:nth-child(7),
+              td:nth-child(7) {
+                display: none;
+              }
+            }
           }
         }
       }

@@ -20,37 +20,30 @@
               <img src="/static/images/mco_logo.gif"/>
             </a>
           {{/unless}}
-          {{#if loggedIn}}        
+          {{#if loggedIn}}
             <a class="navbar-brand" href="/{{userRole}}/home">
               <img src="/static/images/mco_logo.gif"/>
             </a>
           {{/if}}
           <ul class="navbar-nav nav-main">
             {{#if loggedIn}}
-              {{#if portalPage}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/{{userRole}}/home">
-                    My Library
-                  </a>
-                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/home">
+                  My Library
+                </a>
+              </li>
+              {{#unless studentUser}}
                 <li class="nav-item">
                   <a class="nav-link" href="/{{userRole}}/resources/resources">
                     My Resources
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/{{userRole}}/reports/reports">
-                    My Reports
-                  </a>
-                </li>
-              {{/if}}
-              {{#unless mainPage}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/{{userRole}}/home">
-                    Main Page
-                  </a>
-                </li>
               {{/unless}}
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/reports/reports">
+                  My Reports
+                </a>
+              </li>
               {{#unless loggedIn}}
                 <li class="nav-item dropdown">
                   <button class="btn btn-light" type="button" data-toggle="dropdown">
@@ -146,11 +139,11 @@
         </ul>
       </div>
     </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="/static/jquery/jquery.js"></script>
     <script src="/static/popper/popper.js"></script>
     <script src="/static/bootstrap/js/bootstrap.js"></script>
     <script src="/static/bootstrap-select/js/bootstrap-select.js"></script>
-    <script src="/static/chart.js/Chart.js"></script>
     <script src="/static/moment/moment.js"></script>
     <script src="/static/daterangepicker/daterangepicker.js"></script>
     <script src="/static/datatables/js/jquery.dataTables.js"></script>

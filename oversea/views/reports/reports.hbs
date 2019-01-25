@@ -5,16 +5,30 @@
         <div class="article-content">
           <div class="article-body">
             <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#usage">
-                  Usage Report
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#proficiency">
-                  Proficiency Report
-                </a>
-              </li>
+              {{#if studentUser}}
+                <li class="nav-item">
+                  <a class="nav-link" href="#usage">
+                    How Much I've Completed
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#proficiency">
+                    How Well I've Done
+                  </a>
+                </li>
+              {{/if}}
+              {{#unless studentUser}}              
+                <li class="nav-item">
+                  <a class="nav-link" href="#usage">
+                    Usage Report
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#proficiency">
+                    Mastery Report
+                  </a>
+                </li>
+              {{/unless}}
             </ul>
           </div>
         </div>
@@ -23,52 +37,188 @@
   </div>
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-usage-report d-none">
+      <div class="article article-report d-none">
         <div class="article-content">
           <div class="article-sidebar">
-            <form class="form-report-filters">
-              <div class="form-group">
-                <label class="form-label" for="selGrade">Grade</label>
-                <select class="form-control selectpicker" id="selGrade" data-container="article-body">
-                  <option>Grade 1</option>
-                  <option>Grade 2</option>
-                  <option>Grade 3</option>
-                  <option>Grade 4</option>
-                  <option>Grade 5</option>
-                  <option>Grade 6</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="selClass">Class</label>
-                <select class="form-control selectpicker" id="selClass" data-container="article-body">
-                  <option>P1-EN</option>
-                  <option>P1-HA</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="selChannel">Channel</label>
-                <select class="form-control selectpicker" id="selChannel" data-container="article-body">
-                  <option>Math Buddies</option>
-                  <option>Marshall Cavendish Maths</option>
-                  <option>Marshall Cavendish Science</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="selTopic">Topic</label>
-                <select class="form-control selectpicker" id="selTopic" data-container="article-body">
-                  <option>Numbers To 10</option>
-                  <option>Number Bonds</option>
-                  <option>Addition Within 10</option>
-                  <option>Subtraction Within 10</option>
-                  <option>Shapes And Patterns</option>
-                </select>
-              </div>
+            <div class="navbar">
+              <button class="btn btn-light" type="button">
+                <i class="fa fa-bars"></i>
+              </button>
+            </div>
+            <form class="form-filters">
+              {{#if studentUser}}
+                <div class="form-group">
+                  <label class="form-label" for="selReport">Report Type</label>
+                  <select class="form-control selectpicker" id="selReport" data-container=".article-sidebar">
+                    <option value="usage">How Much I've Completed</option>
+                    <option value="proficiency">How Well I've Done</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selChannel">Channel</label>
+                  <select class="form-control selectpicker" id="selChannel" data-container=".article-sidebar">
+                    <option>All</option>
+                    <option>Math Buddies</option>
+                    <option>Marshall Cavendish Maths</option>
+                    <option>Marshall Cavendish Science</option>
+                  </select>
+                </div>
+              {{/if}}
+              {{#unless studentUser}}
+                <div class="form-group">
+                  <label class="form-label" for="selReport">Report Type</label>
+                  <select class="form-control selectpicker" id="selReport" data-container=".article-sidebar">
+                    <option value="usage">Usage</option>
+                    <option value="proficiency">Mastery</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selGrade">Grade</label>
+                  <select class="form-control selectpicker" id="selGrade" data-container=".article-sidebar">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selClass">Class</label>
+                  <select class="form-control selectpicker" id="selClass" data-container=".article-sidebar">
+                    <option value="All">All</option>
+                    <option>P1-EN</option>
+                    <option>P1-HA</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selChannel">Channel</label>
+                  <select class="form-control selectpicker" id="selChannel" data-container=".article-sidebar">
+                    <option>Math Buddies</option>
+                    <option>Marshall Cavendish Maths</option>
+                    <option>Marshall Cavendish Science</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selTopic">Topic</label>
+                  <select class="form-control selectpicker" id="selTopic" data-container=".article-sidebar">
+                    <option>All</option>
+                    <option>Numbers To 10</option>
+                    <option>Number Bonds</option>
+                    <option>Addition Within 10</option>
+                    <option>Subtraction Within 10</option>
+                    <option>Shapes And Patterns</option>
+                  </select>
+                </div>
+              {{/unless}}
             </form>
           </div>
           <div class="article-body">
-            
+            <div class="article article-usage-report no-sidebar d-none">
+              <div class="article-header">
+                {{#if studentUser}}
+                  <button class="btn btn-light" type="button">
+                    <i class="fa fa-info-circle"></i>
+                  </button>
+                  <h5>How Much I've Completed</h5>                  
+                {{/if}}
+                {{#unless studentUser}}
+                  <button class="btn btn-light" type="button">
+                    <i class="fa fa-info-circle"></i>
+                  </button>
+                  <h5>Usage Summary</h5>
+                {{/unless}}
+              </div>
+              <div class="article-content">                
+                <div class="article-body">
+                  {{#if studentUser}}
+                    <p>
+                      All Channels for Primary Student 1
+                    </p>
+                    <div class="chart"></div>
+                  {{/if}}
+                  {{#unless studentUser}}
+                    <p>
+                      Grade 1, All Classes for Math Buddies, All Topics
+                    </p>
+                    <div class="chart"></div>
+                  {{/unless}}
+                </div>
+              </div>              
+            </div>
+            <div class="article article-proficiency-report no-sidebar d-none">
+              <div class="article-header">
+                {{#if studentUser}}
+                  <button class="btn btn-light" type="button">
+                    <i class="fa fa-info-circle"></i>
+                  </button>
+                  <h5>How Well I've Done</h5>
+                {{/if}}
+                {{#unless studentUser}}
+                  <button class="btn btn-light" type="button">
+                    <i class="fa fa-info-circle"></i>
+                  </button>
+                  <h5>Mastery Summary</h5>
+                {{/unless}}
+              </div>
+              <div class="article-content">                
+                <div class="article-body">
+                  {{#if studentUser}}
+                    <p>
+                      All Channels for Primary Student 1
+                    </p>
+                    <div class="chart"></div>
+                  {{/if}}
+                  {{#unless studentUser}}
+                    <p>
+                      Grade 1, All Classes for Math Buddies, All Topics
+                    </p>
+                    <div class="chart"></div>
+                  {{/unless}}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal modal-usage-summary fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Usage Summary</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Math Buddies, Aaron Tan
+        </p>        
+        <div class="chart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-proficiency-summary fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Mastery Summary</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Math Buddies, Aaron Tan
+        </p>        
+        <div class="chart"></div>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 .app-header {
   @include flex-direction(row);
   background-color: $white;
+  border-bottom: 2px solid $primary;
   height: 4.5rem;
   max-height: 4.5rem;
   padding: .5rem 1.5rem;

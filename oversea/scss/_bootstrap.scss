@@ -165,6 +165,12 @@ a {
   }
 }
 
+.form-group {
+  &.form-group-actions {
+    margin-bottom: 0;
+  }
+}
+
 .form-control {
   &.form-input,
   &.form-select,
@@ -349,6 +355,10 @@ a {
     background-color: $gray-200;
     border-bottom: 0;
   }
+
+  .modal-content {
+    border-radius: 0;
+  }
 }
 
 .table {  
@@ -356,6 +366,7 @@ a {
 
   thead {
     th {
+      border-top: 0;
       border-bottom-width: 1px;
       color: $gray-700;
 
@@ -381,6 +392,12 @@ a {
         }
       }
     }
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-dialog {
+    max-width: 960px;
   }
 }
 

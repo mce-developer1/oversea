@@ -30,8 +30,14 @@ $(document).ready(function() {
   });
 
   $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
+    $container.find('.nav-main .input-group .form-control').val("");
     $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
     $container.find('.nav-main').removeClass('d-block');
+  });
+
+  $container.find('.nav-main .input-group .btn-toggle').on('click', function(e) {
+    $container.find('.nav-main .nav-item.dropdown > .dropdown-menu').toggleClass('show');
+    $container.find('.nav-main .nav-item.dropdown').toggleClass('open');
   });
 
   $container.find('.btn-list-view').on('click', function(e) {
@@ -101,6 +107,23 @@ $(document).ready(function() {
       }
     }
     updateActionButtonsStyles();
+  });
+
+  $container.find('.table-body tr .btn').on('click', function(e) {
+    e.stopPropagation();
+
+    var $model = $('.modal-resource-details');
+    var $row = $(this).closest('tr');
+    $model.find('.modal-title').text($row.find('td:nth-child(2)').text());
+    $model.find('.attribute:nth-child(1) .attribute-value')
+      .text($row.find('td:nth-child(3)').text());
+    $model.find('.attribute:nth-child(2) .attribute-value')
+      .text($row.find('td:nth-child(4)').text());
+    $model.find('.attribute:nth-child(3) .attribute-value')
+      .text($row.find('td:nth-child(5)').text());
+    $model.find('.attribute:nth-child(4) .attribute-value')
+      .text($row.find('td:nth-child(6)').text());
+    $('.modal-resource-details').modal('show');
   });
 
   $container.find('.card-group .card').on('click', function(e) {
