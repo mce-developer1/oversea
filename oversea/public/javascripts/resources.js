@@ -30,14 +30,38 @@ $(document).ready(function() {
   });
 
   $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
-    $container.find('.nav-main .input-group .form-control').val("");
+    $container.find('.nav-main .input-group .form-control').val('');
     $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
     $container.find('.nav-main').removeClass('d-block');
   });
 
-  $container.find('.nav-main .input-group .btn-toggle').on('click', function(e) {
-    $container.find('.nav-main .nav-item.dropdown > .dropdown-menu').toggleClass('show');
-    $container.find('.nav-main .nav-item.dropdown').toggleClass('open');
+  $container.find('.nav-main .input-group .btn-toggle').click(function(e) {
+    e.stopPropagation();
+    $container.find('.nav-main .dialog').toggleClass('open');
+    $container.find('.nav-main .dialog .dialog-menu').toggleClass('show');
+  });
+
+  $(document).on('click', function(e) {
+    if (($(e.target).closest('.dialog-menu').length === 0)
+        && $container.find('.nav-main .dialog').hasClass('open')) {
+      $container.find('.nav-main .dialog').removeClass('open');
+      $container.find('.nav-main .dialog .dialog-menu').removeClass('show');
+    }
+  });
+
+  $container.find('.nav-main .dialog .dialog-menu .btn-primary').on('click', function(e) {
+    var selectedCurriculum = $('#selCurriculum').selectpicker('val');
+    var query = (selectedCurriculum === '') ? '' : 'curriculum:' + selectedCurriculum;
+
+    var selectedGrade = $('#selGrade').selectpicker('val');
+    query += (selectedGrade === '') ? '' : ' grade:' + selectedGrade;
+
+    var selectedSubject = $('#selSubjet').selectpicker('val');
+    query += (selectedSubject === '') ? '' : ' subject:' + selectedSubject;
+
+    var keyword = $(txtKeyword).val();
+    query += (query === '') ? keyword : ' ' + keyword;
+    $container.find('.nav-main .input-group .form-control').val(query);
   });
 
   $container.find('.btn-list-view').on('click', function(e) {

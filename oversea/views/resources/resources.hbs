@@ -19,7 +19,7 @@
               </li>
             </ul>
             <ul class="navbar-nav nav-main">
-              <li class="nav-item dropdown">
+              <li class="nav-item dialog">
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <button class="btn btn-light btn-search" type="button">
@@ -33,14 +33,14 @@
                     </button>
                     <button class="btn btn-light btn-toggle" type="button">
                       <i class="fa fa-caret-down"></i>
-                    </button>                    
+                    </button>
                   </div>
                 </div>
-                <div class="dropdown-menu dropdown-menu-right">
+                <div class="dialog-menu">
                   <form class="form-advanced-search">
                     <div class="form-group">
                       <label class="form-label" for="selCurriculum">Curriculum Standards</label>
-                      <select class="form-control selectpicker" id="selCurriculum" data-container="body">
+                      <select class="form-control selectpicker" id="selCurriculum">
                         <option>All</option>
                         <option>CAIE</option>
                         <option>SG</option>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group">
                       <label class="form-label" for="selGrade">Grade</label>
-                      <select class="form-control selectpicker" id="selGrade" data-container="body">
+                      <select class="form-control selectpicker" id="selGrade">
                         <option>All</option>
                         <option>1</option>
                         <option>2</option>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-group">
                       <label class="form-label" for="selSubjet">Subject</label>
-                      <select class="form-control selectpicker" id="selSubjet" data-container="body">
+                      <select class="form-control selectpicker" id="selSubjet">
                         <option>All</option>
                         <option>Chemistry</option>
                         <option>Mathematics</option>
@@ -69,15 +69,15 @@
                       </select>
                     </div>
                     <div class="form-group">
-                      <label class="form-label" for="selSubjet">Keyword</label>
-                      <input class="form-control form-input" type="text">
+                      <label class="form-label" for="txtKeyword">Keyword</label>
+                      <input class="form-control form-input" type="text" id="txtKeyword">
                     </div>
-                    <div class="form-group form-group-actions">                      
+                    <div class="form-group form-group-actions">
                       <button class="btn btn-light" type="button">Reset</button>
                       <button class="btn btn-primary" type="button">Search</button>
                     </div>
                   </form>
-                </div>         
+                </div>
               </li>
             </ul>
             <ul class="navbar-nav">

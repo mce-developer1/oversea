@@ -87,16 +87,11 @@
               .form-control {
                 padding-left: 3rem;
                 padding-right: 5rem;
-                width: 30rem;
+                width: 32rem;
               }
             }
 
-            .dropdown-menu {
-              max-width: calc(30rem - 2px);
-              width: calc(30rem - 2px);
-              left: 1px;
-              top: calc(100% - 2px);
-
+            .dialog-menu {
               .form-advanced-search {
                 padding: 1rem 1.5rem;
 

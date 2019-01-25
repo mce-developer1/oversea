@@ -343,6 +343,24 @@ a:focus {
   width: 1.125rem;
 }
 
+.dialog {
+  position: relative;
+}
+.dialog .dialog-menu {
+  background-color: #fff;
+  border: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  display: none;
+  padding: 0.5rem 0;
+  position: absolute;
+  top: 100%;
+  left: 1px;
+  right: 1px;
+}
+.dialog .dialog-menu.show {
+  display: block;
+}
+
 .article {
   padding: 1.5rem;
 }
@@ -897,18 +915,12 @@ a:focus {
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .form-control {
   padding-left: 3rem;
   padding-right: 5rem;
-  width: 30rem;
+  width: 32rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dropdown-menu {
-  max-width: calc(30rem - 2px);
-  width: calc(30rem - 2px);
-  left: 1px;
-  top: calc(100% - 2px);
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dropdown-menu .form-advanced-search {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search {
   padding: 1rem 1.5rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dropdown-menu .form-advanced-search .form-group {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -916,14 +928,14 @@ a:focus {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dropdown-menu .form-advanced-search .form-group.form-group-actions {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group.form-group-actions {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dropdown-menu .form-advanced-search .form-group .form-label {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group .form-label {
   width: 20rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dropdown-menu .form-advanced-search .form-group .form-input {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group .form-input {
   width: calc(100% - 10px);
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light:hover .fa {

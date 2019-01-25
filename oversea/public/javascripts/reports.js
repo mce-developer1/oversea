@@ -245,8 +245,10 @@ $(document).ready(function() {
 
     google.visualization.events.addListener(inlineChart, 'click', function(e) {
       var regex = /^[\#0-9a-zA-Z]+\#([0-9]+)$/;
-      var index = e.targetID.match(regex)[1];
-      var student = data[++index][0];
+      var matches = e.targetID.match(regex);
+      if (!matches) return;
+
+      var student = data[++matches[1]][0];
       $('.modal-usage-summary').modal('show');
       $('.modal-usage-summary').on('shown.bs.modal', function (e) {
         clearModalChart();
@@ -293,11 +295,6 @@ $(document).ready(function() {
     var element = $('.modal-usage-summary .chart').get(0);
     var chart = new google.visualization.BarChart(element);
     chart.draw(dataTable, options);
-
-    google.visualization.events.addListener(chart, 'click', function(e) {
-      var regex = /^[\#0-9a-zA-Z]+\#([0-9]+)$/;
-      var itemIndex = e.targetID.match(regex)[1];
-    });
   }
 
   function drawAllClassesProficiencyReport() {
@@ -382,8 +379,10 @@ $(document).ready(function() {
 
     google.visualization.events.addListener(inlineChart, 'click', function(e) {
       var regex = /^[\#0-9a-zA-Z]+\#([0-9]+)$/;
-      var index = e.targetID.match(regex)[1];
-      var student = data[++index][0];
+      var matches = e.targetID.match(regex);
+      if (!matches) return;
+
+      var student = data[++matches[1]][0];
       $('.modal-proficiency-summary').modal('show');
       $('.modal-proficiency-summary').on('shown.bs.modal', function (e) {
         clearModalChart();
@@ -430,11 +429,6 @@ $(document).ready(function() {
     var element = $('.modal-proficiency-summary .chart').get(0);
     var chart = new google.visualization.BarChart(element);
     chart.draw(dataTable, options);
-
-    google.visualization.events.addListener(chart, 'click', function(e) {
-      var regex = /^[\#0-9a-zA-Z]+\#([0-9]+)$/;
-      var itemIndex = e.targetID.match(regex)[1];
-    });
   }
 
   function initPage() {

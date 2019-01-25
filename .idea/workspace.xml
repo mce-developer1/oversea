@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ed50dba1-db9a-4047-af2e-fe8892d37b36" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resource/public/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/public/stylesheets/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/resource/public/stylesheets/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/scss/_bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resource/scss/_bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/scss/_page-channel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resource/scss/_page-channel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/scss/_page-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resource/scss/_page-dashboard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/scss/_page-subject.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resource/scss/_page-subject.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/scss/_page-tools.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resource/scss/_page-tools.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/views/channel/channel.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/resource/views/channel/channel.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/views/subject/subject.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/resource/views/subject/subject.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oversea/public/javascripts/reports.js" beforeDir="false" afterPath="$PROJECT_DIR$/oversea/public/javascripts/reports.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oversea/public/javascripts/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/oversea/public/javascripts/resources.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oversea/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/oversea/public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oversea/public/stylesheets/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/oversea/public/stylesheets/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oversea/scss/_components.scss" beforeDir="false" afterPath="$PROJECT_DIR$/oversea/scss/_components.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oversea/scss/_page-resources.scss" beforeDir="false" afterPath="$PROJECT_DIR$/oversea/scss/_page-resources.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oversea/views/resources/resources.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/oversea/views/resources/resources.hbs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,43 +21,47 @@
     <session id="-2005114006">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="13" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="hbs" value="4298" />
-          <entry key="js" value="2387" />
-          <entry key="scss" value="4351" />
+          <entry key="hbs" value="4563" />
+          <entry key="js" value="3093" />
+          <entry key="scss" value="5159" />
+          <entry key="www" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="2387" />
-          <entry key="PLAIN_TEXT" value="8649" />
+          <entry key="JavaScript" value="3093" />
+          <entry key="PLAIN_TEXT" value="9723" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="2" />
-          <entry key="hbs" value="17" />
-          <entry key="js" value="24" />
-          <entry key="scss" value="33" />
+          <entry key="css" value="3" />
+          <entry key="hbs" value="21" />
+          <entry key="js" value="28" />
+          <entry key="json" value="1" />
+          <entry key="scss" value="39" />
+          <entry key="www" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="2" />
-          <entry key="JavaScript" value="24" />
-          <entry key="PLAIN_TEXT" value="50" />
+          <entry key="CSS" value="3" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="28" />
+          <entry key="PLAIN_TEXT" value="61" />
         </counts>
       </usages-collector>
     </session>
@@ -67,92 +69,79 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/scss/_page-subject.scss">
+        <entry file="file://$PROJECT_DIR$/oversea/scss/_page-resources.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="5" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/scss/_bootstrap.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="232" column="36" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/views/subject/subject.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/views/channel/channel.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="113" column="48" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/views/layout.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+            <state relative-caret-position="286">
+              <caret line="292" column="30" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resource/scss/_page-channel.scss">
+        <entry file="file://$PROJECT_DIR$/oversea/scss/_app-footer.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+            <state relative-caret-position="309">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/scss/_app-footer.scss">
+        <entry file="file://$PROJECT_DIR$/oversea/public/javascripts/resources.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="750">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/scss/_app-header.scss">
+        <entry file="file://$PROJECT_DIR$/oversea/scss/_page-home.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+            <state relative-caret-position="373">
+              <caret line="50" column="39" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/scss/_page-tools.scss">
+        <entry file="file://$PROJECT_DIR$/oversea/public/javascripts/reports.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="309">
+              <caret line="497" column="63" lean-forward="true" selection-start-line="497" selection-start-column="6" selection-end-line="497" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resource/scss/_page-dashboard.scss">
+        <entry file="file://$PROJECT_DIR$/oversea/scss/_components.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="95" column="25" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="25" />
+            <state relative-caret-position="375">
+              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oversea/views/resources/resources.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="217" column="35" selection-start-line="217" selection-start-column="31" selection-end-line="217" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oversea/views/layout.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-695" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/oversea/views/index.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3149" />
           </provider>
         </entry>
       </file>
@@ -160,14 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>user-</find>
-      <find>sign-</find>
-      <find>btn-sign</find>
-      <find>input-</find>
-      <find>i {</find>
-      <find>.nav</find>
-      <find>$blue:</find>
-      <find>$red:</find>
       <find>fa-th</find>
       <find>display:</find>
       <find>flex-gr</find>
@@ -190,6 +171,14 @@
       <find>flex-direction:</find>
       <find>flex-wrap</find>
       <find>ratings</find>
+      <find>1140</find>
+      <find>:hover</find>
+      <find>:hov</find>
+      <find>border</find>
+      <find>ced4da</find>
+      <find>var regex = /^[\#0-9a-zA-Z]+\#([0-9]+)$/;</find>
+      <find>selCurriculum</find>
+      <find>.table</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -234,10 +223,18 @@
         <option value="$PROJECT_DIR$/resource/views/channel/channel.hbs" />
         <option value="$PROJECT_DIR$/resource/scss/_bootstrap.scss" />
         <option value="$PROJECT_DIR$/resource/scss/_page-channel.scss" />
+        <option value="$PROJECT_DIR$/mconline/bin/www" />
+        <option value="$PROJECT_DIR$/oversea/public/javascripts/reports.js" />
+        <option value="$PROJECT_DIR$/oversea/scss/_components.scss" />
+        <option value="$PROJECT_DIR$/oversea/public/javascripts/resources.js" />
+        <option value="$PROJECT_DIR$/oversea/scss/_page-home.scss" />
+        <option value="$PROJECT_DIR$/oversea/views/resources/resources.hbs" />
+        <option value="$PROJECT_DIR$/oversea/scss/_page-resources.scss" />
+        <option value="$PROJECT_DIR$/oversea/scss/_app-footer.scss" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
@@ -247,6 +244,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,91 +255,39 @@
             <path>
               <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
               <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="oversea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
               <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="datatables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="datatables" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="datatables" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="datatables" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="oversea" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
               <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="oversea" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="javascripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
               <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="oversea" type="462c0819:PsiDirectoryNode" />
               <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
               <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="oversea" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
               <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="oversea" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="channel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mceducation" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mceducation" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="subject" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -349,12 +295,11 @@
       </pane>
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="input-grou&#9;FILE&#9;file:///Users/administrator/Public/LMS/mceducation/resource/node_modules/bootstrap/scss/_input-group.scss&#10;variable &#9;ACTION&#9;XDebugger.SwitchWatchesInVariables&#10;_butto&#9;FILE&#9;file:///Users/administrator/Public/LMS/mceducation/resource/node_modules/bootstrap/scss/mixins/_buttons.scss&#10;_button&#9;FILE&#9;file:///Users/administrator/Public/LMS/mceducation/resource/node_modules/bootstrap/scss/_buttons.scss&#10;drop&#9;FILE&#9;file:///Users/administrator/Public/LMS/mceducation/resource/node_modules/bootstrap/js/src/dropdown.js" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536251344049" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548440308821" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
@@ -437,10 +382,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="800" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28183118" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3104435" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -467,94 +412,13 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.hbs" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/bootstrap/scss/_breadcrumb.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-28" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/bootstrap/js/src/dropdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="471" column="31" selection-start-line="471" selection-start-column="15" selection-end-line="471" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../mce/mconline/views/partials/app_header.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="22" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/bootstrap/scss/_buttons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="15" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/bootstrap/scss/mixins/_buttons.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" column="40" selection-start-line="79" selection-start-column="2" selection-end-line="79" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3298" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/bootstrap/scss/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="45" selection-start-line="45" selection-end-line="45" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/scss/_card.scss" />
-    <entry file="file://$PROJECT_DIR$/../mce/DEVELOPMENT.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="85" column="21" lean-forward="true" selection-start-line="85" selection-start-column="21" selection-end-line="85" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/bootstrap/scss/_input-group.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/public/javascripts/sign-in.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/routes/users.js" />
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/font-awesome/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="587" column="12" selection-start-line="587" selection-start-column="4" selection-end-line="587" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/scss/_filter.scss" />
-    <entry file="file://$PROJECT_DIR$/resource/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js" />
     <entry file="file://$PROJECT_DIR$/resource/scss/_article.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -707,27 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/scss/_page-dashboard.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="95" column="25" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/views/layout.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resource/scss/_page-tools.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resource/scss/_page-subject.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -735,12 +578,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resource/scss/_bootstrap.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="232" column="31" selection-start-line="232" selection-start-column="31" selection-end-line="232" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resource/views/subject/subject.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="660">
           <caret line="44" column="40" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/views/channel/channel.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" column="48" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/views/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resource/scss/_page-channel.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mconline/views/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7095">
+          <caret line="473" column="12" selection-start-line="473" selection-start-column="12" selection-end-line="473" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mconline/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10275">
+          <caret line="685" column="17" selection-start-line="685" selection-start-column="17" selection-end-line="685" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mconline/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mconline/app.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mconline/views/tests/create-test-2.hbs">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resource/scss/_app-footer.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -752,28 +646,101 @@
     <entry file="file://$PROJECT_DIR$/resource/scss/_app-header.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="27" lean-forward="true" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/scss/_bootstrap.scss">
+    <entry file="file://$PROJECT_DIR$/resource/scss/_page-tools.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="232" column="36" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
+        <state relative-caret-position="480">
+          <caret line="32" column="5" selection-start-line="2" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/views/channel/channel.hbs">
+    <entry file="file://$PROJECT_DIR$/resource/scss/_page-dashboard.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="113" column="48" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="48" />
+        <state relative-caret-position="1425">
+          <caret line="95" column="25" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resource/scss/_page-channel.scss">
+    <entry file="file://$PROJECT_DIR$/mconline/bin/www">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="92" column="31" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/scss/_bootstrap.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="98" column="12" selection-start-line="98" selection-start-column="6" selection-end-line="98" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/scss/_components.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/public/javascripts/reports.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="497" column="63" lean-forward="true" selection-start-line="497" selection-start-column="6" selection-end-line="497" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/views/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-695" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/views/index.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3149" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/scss/_page-home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="50" column="39" lean-forward="true" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/public/javascripts/resources.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/views/resources/resources.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="217" column="35" selection-start-line="217" selection-start-column="31" selection-end-line="217" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/scss/_page-resources.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="292" column="30" selection-start-line="292" selection-start-column="30" selection-end-line="292" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oversea/scss/_app-footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>
     </entry>
