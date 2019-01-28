@@ -51,17 +51,19 @@ $(document).ready(function() {
 
   $container.find('.nav-main .dialog .dialog-menu .btn-primary').on('click', function(e) {
     var selectedCurriculum = $('#selCurriculum').selectpicker('val');
-    var query = (selectedCurriculum === '') ? '' : 'curriculum:' + selectedCurriculum;
+    var query = (selectedCurriculum === 'All') ? '' : 'curriculum:' + selectedCurriculum;
 
     var selectedGrade = $('#selGrade').selectpicker('val');
-    query += (selectedGrade === '') ? '' : ' grade:' + selectedGrade;
+    query += (selectedGrade === 'All') ? '' : ' grade:' + selectedGrade;
 
     var selectedSubject = $('#selSubjet').selectpicker('val');
-    query += (selectedSubject === '') ? '' : ' subject:' + selectedSubject;
+    query += (selectedSubject === 'All') ? '' : ' subject:' + selectedSubject;
 
     var keyword = $(txtKeyword).val();
     query += (query === '') ? keyword : ' ' + keyword;
     $container.find('.nav-main .input-group .form-control').val(query);
+    $container.find('.nav-main .dialog').removeClass('open');
+    $container.find('.nav-main .dialog .dialog-menu').removeClass('show');
   });
 
   $container.find('.btn-list-view').on('click', function(e) {

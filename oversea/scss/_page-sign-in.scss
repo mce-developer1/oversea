@@ -4,25 +4,43 @@
 
     .nav {
       @include justify-content(center);
-      background-color: transparent;
+      background-color: rgba($white, .9);
       border-bottom: 4px solid $primary;
-      padding: .5rem 1.5rem;
+      padding: 0 1.5rem;
 
       .nav-link {
-        color: $white;
-        font-size: 1.25rem;
-        margin: 0 1rem;
+        @include display-flex(row);
+        @include align-items(center);
+        color: $primary;
 
-        .fa {
-          font-size: 2rem;
+        &:hover {
+          background-color: $gray-300;
+        }
+
+        .img {
+          background-repeat: no-repeat;
+          background-size: cover;
           margin-right: .5rem;
-          vertical-align: middle;
+          height: 2rem;
+          width: 2rem;
+
+          &.img-quality-resources {
+            background-image: url("../images/icon_main_quality_resources.png");
+          }
+
+          &.img-insightful-educators {
+            background-image: url("../images/icon_main_insightful_educators.png");
+          }
+
+          &.img-great-support {
+            background-image: url("../images/icon_main_great_support.png");
+          }
         }
       }
     }
 
     .row-main {
-      background-image: url("../images/resources.jpg");
+      background-image: url("../images/img_main_people.png");
       background-repeat: no-repeat;
       background-size: cover;
 
@@ -43,20 +61,24 @@
       text-align: center;
     }
 
-    .article-sign-in {
-      @include align-self(center);
+    .article-eduworld {
       color: $white;
-      padding: 2rem;
+      margin: 3rem 2rem;
+      padding: 0;
+
+      img {
+        margin-bottom: 2rem;
+        width: 20rem;
+      }
 
       p {
         font-size: 1.25rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin: 1rem;
       }
     }
 
     .article-study-resource {
-      background-image: url("../images/books.jpg");
+      background-image: url("../images/img_main_books.png");
       background-repeat: no-repeat;
       background-size: cover;
       padding: 3rem;
@@ -66,7 +88,6 @@
       }
 
       p {
-        font-size: 1.25rem;
         margin-top: 1rem;
         margin-bottom: 2rem;
       }
@@ -78,9 +99,17 @@
 
     .form-sign-in {
       background-color: $white;
-      margin: 2rem;
+      margin: 3rem 2rem;
       padding: 1.5rem;
       width: 260px;
+
+      .form-group {
+        .input-group-text {
+          .fa {
+            color: $gray-500;
+          }
+        }
+      }
 
       .form-group-actions {
         text-align: center;
@@ -120,7 +149,7 @@
 
     @media (min-width: 1200px) {
       .nav {
-        padding: .5rem 8rem;
+        padding: 0 8rem;
       }
 
       .article-study-resource,

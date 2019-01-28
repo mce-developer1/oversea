@@ -15,33 +15,26 @@
     <div class="app-container">
       {{#if loggedIn}}
         <div class="navbar navbar-expand app-header">
-          {{#unless loggedIn}}
-            <a class="navbar-brand" href="/">
-              <img src="/static/images/mco_logo.gif"/>
-            </a>
-          {{/unless}}
-          {{#if loggedIn}}
-            <a class="navbar-brand" href="/{{userRole}}/home">
-              <img src="/static/images/mco_logo.gif"/>
-            </a>
-          {{/if}}
+          <a class="navbar-brand" href="/{{userRole}}/home">
+            <img src="/static/images/logo_mceduworld.png"/>
+          </a>
           <ul class="navbar-nav nav-main">
             {{#if loggedIn}}
               <li class="nav-item">
-                <a class="nav-link" href="/{{userRole}}/home">
-                  My Library
+                <a class="nav-link {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
+                  <i class="img img-mylibaray"></i> My Library
                 </a>
-              </li>
+              </li>              
               {{#unless studentUser}}
                 <li class="nav-item">
-                  <a class="nav-link" href="/{{userRole}}/resources/resources">
-                    My Resources
+                  <a class="nav-link {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
+                    <i class="img img-myresources"></i> My Resources
                   </a>
                 </li>
               {{/unless}}
               <li class="nav-item">
-                <a class="nav-link" href="/{{userRole}}/reports/reports">
-                  My Reports
+                <a class="nav-link {{#if reportsPage}}active{{/if}}" href="/{{userRole}}/reports/reports">
+                  <i class="img img-myreports"></i> My Reports
                 </a>
               </li>
               {{#unless loggedIn}}
@@ -91,11 +84,21 @@
             <li class="nav-item dropdown">
               <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
                 <img src="/static/images/user.png"/>
-                <span class="user-name">
-                  {{#if studentUser}}Primary 1 Student{{/if}}
-                  {{#if teacherUser}}Teacher{{/if}}
-                  {{#if adminUser}}Admin{{/if}}
-                </span>
+                <div class="user-summary">
+                  <div class="user-info">
+                    I'm
+                    <span class="user-name text-truncate">
+                      {{#if studentUser}}Aaron Tan{{/if}}
+                      {{#if teacherUser}}Derrick Chua{{/if}}
+                      {{#if adminUser}}Ernest  Goh{{/if}}
+                    </span>
+                  </div>
+                  <div class="user-role">
+                    {{#if studentUser}}I study. :){{/if}}
+                    {{#if teacherUser}}I teach. :){{/if}}
+                    {{#if adminUser}}I administer. :){{/if}}
+                  </div>
+                </div>
               </button>
               <div class="dropdown-menu dropdown-menu-right">            
                 <a class="dropdown-item" href="/{{userRole}}/profile/update_personal_particulars">

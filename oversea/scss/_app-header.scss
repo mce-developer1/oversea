@@ -1,14 +1,23 @@
 .app-header {
   @include flex-direction(row);
   background-color: $white;
-  border-bottom: 2px solid $primary;
-  height: 4.5rem;
-  max-height: 4.5rem;
-  padding: .5rem 1.5rem;
+  border-bottom: 2px solid $accent;
+  height: 6rem;
+  max-height: 6rem;
+  padding: 0 1.5rem;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  .navbar-brand {
+    margin-right: 6rem;
+    padding: 0;
+    
+    img {
+      width: 12rem;
+    }
+  }
 
   .navbar-nav {
     @include align-items(center);
@@ -16,6 +25,61 @@
 
     &.nav-main {
       @include flex-grow(1);
+
+      .nav-item {
+        margin: 0;
+
+        .nav-link {
+          @include display-flex(column);
+          @include align-items(center);
+          color: $gray-500;
+          padding: .5rem 1rem;
+
+          &:hover {
+            background-color: $gray-300;
+            color: $gray-700;
+          }
+
+          &.active {
+            background-color: $accent;
+            color: $white;
+
+            .img {
+              &.img-mylibaray {
+                background-image: url("../images/icon_topnav_selected_mylibrary.png");
+              }
+
+              &.img-myresources {
+                background-image: url("../images/icon_topnav_selected_myresources.png");
+              }
+
+              &.img-myreports {
+                background-image: url("../images/icon_topnav_selected_myreports.png");
+              }
+            }
+          }
+
+          .img {
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: .325rem;
+            height: 3rem;
+            width: 3rem;
+
+            &.img-mylibaray {
+              background-image: url("../images/icon_topnav_mylibrary.png");
+            }
+
+            &.img-myresources {
+              background-image: url("../images/icon_topnav_myresources.png");
+            }
+
+            &.img-myreports {
+              background-image: url("../images/icon_topnav_myreports.png");
+            }
+          }
+        }
+      }
     }
 
     .nav-item {
@@ -69,23 +133,36 @@
   }
 
   .btn-user {
-    @include align-items(center);
     @include display-flex(row);
-    max-width: 12rem;
-    padding: 0 .75rem;
+    @include align-items(center);
+    padding: 0;
 
     img {
-      margin-right: .5rem;
-      max-height: 2.25rem;
-      max-width: 2.25rem;
+      margin-right: 1rem;
+      max-height: 4rem;
+      max-width: 4rem;
       vertical-align: baseline;
     }
 
-    .user-name {
-      overflow: hidden;
-      max-height: 3rem;
-      white-space: normal;
-      word-wrap: break-word;
+    .user-summary {
+      @include display-flex(column);
+      color: $gray-700;
+      
+      .user-name,
+      .user-role {
+        text-align: right;
+      }
+
+      .user-info {
+        @include display-flex(row);
+        @include align-items(center);
+
+        .user-name {
+          color: $primary;
+          margin-left: .25rem;
+          max-width: 10rem;
+        }
+      }
     }
   }
 }

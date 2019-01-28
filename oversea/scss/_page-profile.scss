@@ -1,12 +1,8 @@
 .app-content {
   &.page-profile, {
     .article-profile {
-      background-color: $yellow;
-      padding: 1.5rem;
-
-      h1 {
-        color: $white;
-      }
+      background-color: $gray-300;
+      padding: .75rem 1.5rem;
     }
 
     .article-update-personal-particulars,

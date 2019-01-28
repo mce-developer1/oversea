@@ -8,24 +8,24 @@
               {{#if studentUser}}
                 <li class="nav-item">
                   <a class="nav-link" href="#usage">
-                    How Much I've Completed
+                    <i class="img img-usage-report"></i> How Much I've Completed
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#proficiency">
-                    How Well I've Done
+                    <i class="img img-mastery-report"></i> How Well I've Done
                   </a>
                 </li>
               {{/if}}
               {{#unless studentUser}}              
                 <li class="nav-item">
                   <a class="nav-link" href="#usage">
-                    Usage Report
+                    <i class="img img-usage-report"></i> Usage Report
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#proficiency">
-                    Mastery Report
+                    <i class="img img-mastery-report"></i> Mastery Report
                   </a>
                 </li>
               {{/unless}}
@@ -42,7 +42,8 @@
           <div class="article-sidebar">
             <div class="navbar">
               <button class="btn btn-light" type="button">
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-chevron-left"></i>
+                <i class="fa fa-chevron-right"></i>
               </button>
             </div>
             <form class="form-filters">

@@ -44,6 +44,11 @@ $(document).ready(function() {
         gridlines: { count: 4 },
         minValue: 0,
         maxValue: 100
+      },
+      vAxis: {
+        textStyle: {
+          color: '#007bff'
+        }
       }
     };
 
@@ -82,6 +87,11 @@ $(document).ready(function() {
         gridlines: { count: 4 },
         minValue: 0,
         maxValue: 100
+      },
+      vAxis: {
+        textStyle: {
+          color: '#007bff'
+        }
       }
     };
 
@@ -117,6 +127,11 @@ $(document).ready(function() {
         gridlines: { count: 4 },
         minValue: 0,
         maxValue: 100
+      },
+      vAxis: {
+        textStyle: {
+          color: '#007bff'
+        }
       }
     };
 
@@ -155,6 +170,11 @@ $(document).ready(function() {
         gridlines: { count: 4 },
         minValue: 0,
         maxValue: 100
+      },
+      vAxis: {
+        textStyle: {
+          color: '#007bff'
+        }
       }
     };
     
@@ -193,12 +213,27 @@ $(document).ready(function() {
         gridlines: { count: 4 },
         minValue: 0,
         maxValue: 100
+      },
+      vAxis: {
+        textStyle: {
+          color: '#007bff'
+        }
       }
     };
 
     var element = $('.article-usage-report .chart').get(0);
     inlineChart = new google.visualization.BarChart(element);
     inlineChart.draw(dataTable, options);
+
+    google.visualization.events.addListener(inlineChart, 'click', function(e) {
+      var regex = /^[\#0-9a-zA-Z]+\#([0-9]+)$/;
+      var matches = e.targetID.match(regex);
+      if (!matches) return;
+
+      var student = data[++matches[1]][0];
+      clearInlineChart();
+      drawClassUsageReport(student);
+    });
   }
 
   function drawClassUsageReport() {
@@ -327,12 +362,27 @@ $(document).ready(function() {
         gridlines: { count: 4 },
         minValue: 0,
         maxValue: 100
+      },
+      vAxis: {
+        textStyle: {
+          color: '#007bff'
+        }
       }
     };
 
     var element = $('.article-proficiency-report .chart').get(0);
     inlineChart = new google.visualization.BarChart(element);
     inlineChart.draw(dataTable, options);
+
+    google.visualization.events.addListener(inlineChart, 'click', function(e) {
+      var regex = /^[\#0-9a-zA-Z]+\#([0-9]+)$/;
+      var matches = e.targetID.match(regex);
+      if (!matches) return;
+
+      var student = data[++matches[1]][0];
+      clearInlineChart();
+      drawClassProficiencyReport(student);
+    });
   }
 
   function drawClassProficiencyReport() {

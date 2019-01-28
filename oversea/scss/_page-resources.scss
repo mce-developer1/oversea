@@ -4,9 +4,11 @@
       padding: 0 1.5rem;
 
       .article-header {
+        height: 4rem;
+        max-height: 4rem;
         position: -webkit-sticky;
         position: sticky;
-        top: 4.5rem;
+        top: 6rem;
         z-index: 980;
 
         .navbar {
@@ -145,7 +147,7 @@
           margin: 0;
           position: -webkit-sticky;
           position: sticky;
-          top: 8.5rem;
+          top: 10rem;
           
           .resources {
             .resource {
@@ -269,7 +271,8 @@
               margin-bottom: 0;
               position: -webkit-sticky;
               position: sticky;
-              top: 8.5rem;
+              top: 10rem;
+              z-index: 970;
             }
 
             th,
@@ -491,7 +494,7 @@
 
         .article-content {
           .article-sidebar {            
-            height: calc(100vh - 11.5rem);
+            height: calc(100vh - 13rem);
             overflow-x: hidden;
             overflow-y: auto;
             padding: .5rem 0;

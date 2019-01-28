@@ -19,6 +19,12 @@
         background-color: $white;
         padding: .25rem .75rem;
       }
+
+      .dropdown-item {
+        .fa {
+          display: none;
+        }
+      }
     }
   }
 
