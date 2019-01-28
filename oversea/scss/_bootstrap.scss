@@ -225,6 +225,10 @@ a {
     .dropdown-item {
       padding: .5rem 1.5rem;
 
+      &:hover {
+        background-color: $gray-200;
+      }
+
       .fa {
         font-size: 1.25rem;
         vertical-align: middle;
