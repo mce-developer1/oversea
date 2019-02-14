@@ -10,7 +10,7 @@
   </div>
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-update-personal-particulars">
+      <div class="article article-update-personal-preferences">
         <div class="article-header">
           <h6>Update Personal Particulars</h6>
         </div>
@@ -18,29 +18,22 @@
           <div class="article-sidebar">
             <ul class="nav nav-side">              
               <li class="nav-item">
-                <a class="nav-link active" href="#">Update Personal Particulars</a>
+                <a class="nav-link" href="/{{userRole}}/profile/update_personal_particulars">Update Personal Particulars</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/{{userRole}}/profile/update_personal_preferences">Update Personal Preferences</a>
+                <a class="nav-link active" href="#">Update Personal Preferences</a>
               </li>
             </ul>
           </div>
           <div class="article-body">
-            <form class="form-personal-particulars">
+            <form class="form-personal-preferences">
               <div class="form-group">
-                <label class="form-label" for="selGender">Gender</label>
-                <select class="form-control selectpicker" id="selGender" data-container=".article-body">
-                  <option>Female</option>
-                  <option>Male</option>
+                <label class="form-label" for="selGender">Language</label>
+                <select class="form-control selectpicker" data-icon-base="fa">
+                  <option value="Bahasa Indonesia" data-icon="fa-globe">Bahasa Indonesia</option>
+                  <option value="Chinese" data-icon="fa-globe">Chinese</option>
+                  <option value="Spanish" data-icon="fa-globe">Spanish</option>
                 </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="txtEmail">Email Address</label>
-                <input class="form-control form-input" type="text" id="txtEmail">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="txtMobile">Mobile Phone</label>
-                <input class="form-control form-input" type="text" id="txtMobile">
               </div>
               <div class="form-group">
                 <button class="btn btn-primary" type="button">Save</button>

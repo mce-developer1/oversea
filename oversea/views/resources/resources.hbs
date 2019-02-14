@@ -73,7 +73,7 @@
                       <input class="form-control form-input" type="text" id="txtKeyword">
                     </div>
                     <div class="form-group form-group-actions">
-                      <button class="btn btn-light" type="button">Reset</button>
+                      <button class="btn btn-light" type="button">Reset</button> 
                       <button class="btn btn-primary" type="button">Search</button>
                     </div>
                   </form>
@@ -84,6 +84,11 @@
               <li class="nav-item">
                 <button class="btn btn-light btn-search" type="button" title="Search">
                   <i class="fa fa-search"></i>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-light btn-share d-none" type="button" title="Share">
+                  <i class="fa fa-share-alt"></i>
                 </button>
               </li>
               <li class="nav-item">
@@ -100,6 +105,19 @@
                 <button class="btn btn-light btn-card-view" type="button" title="Grid view">
                   <i class="fa fa-th-large"></i>
                 </button>
+              </li>
+              <li class="nav-item dropdown">
+                <button class="btn btn-light btn-more-actions" type="button" title="More actions" data-toggle="dropdown">
+                  <i class="fa fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a class="dropdown-item" href="#">
+                    <i class="fa fa-share-alt"></i> Share
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="fa fa-download"></i> Download
+                  </a>
+                </div>
               </li>
             </ul>
         </div>
@@ -372,7 +390,7 @@
                   <i class="fa fa-folder"></i>
                 </div>
                 <div class="card-body">
-                  <h6 class="card-title">Counting To 10</h6>
+                  <a class="card-link" href="#">Counting To 10</a>
                   <div class="text-muted">
                     29 Mar 2018
                   </div>
@@ -387,7 +405,7 @@
                   <i class="fa fa-folder"></i>
                 </div>
                 <div class="card-body">
-                  <h6 class="card-title">Comparing Numbers</h6>
+                  <a class="card-link" href="#">Comparing Numbers</a>
                   <div class="text-muted">
                     05 Dec 2006
                   </div>
@@ -402,7 +420,7 @@
                   <i class="fa fa-file-word-o"></i>
                 </div>
                 <div class="card-body">
-                  <h6 class="card-title">Making Number Patterns</h6>
+                  <a class="card-link" href="#">Making Number Patterns</a>
                   <div class="text-muted">
                     22 Jul 2015
                   </div>
@@ -417,7 +435,7 @@
                   <i class="fa fa-file-excel-o"></i>
                 </div>
                 <div class="card-body">
-                  <h6 class="card-title">Making Number Bonds</h6>
+                  <a class="card-link" href="#">Making Number Bonds</a>
                   <div class="text-muted">
                     17 Feb 2016
                   </div>
@@ -432,7 +450,7 @@
                   <i class="fa fa-file-zip-o"></i>
                 </div>
                 <div class="card-body">
-                  <h6 class="card-title">Making Addition Stories</h6>
+                  <a class="card-link" href="#">Making Addition Stories</a>
                   <div class="text-muted">
                     12 Nov 2014
                   </div>
@@ -450,12 +468,46 @@
   </div>
 </div>
 
+<div class="modal modal-resource-preview fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-preview" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <nav class="navbar">
+          <div class="navbar-text text-truncate">Resource title</div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn btn-light btn-share" type="button" title="Share">
+                <i class="fa fa-share-alt"></i>
+              </button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-light btn-download" type="button" title="Download">
+                <i class="fa fa-download"></i>
+              </button>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-item">
+              <button class="btn btn-light btn-close" type="button" title="Close" data-dismiss="modal">
+                <i class="fa fa-times"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="content">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/hE834L-rRtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p class="font-italic">Hmm... looks like this file doesn't have a preview that we can show you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal modal-resource-details fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Resource Details</h5>
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

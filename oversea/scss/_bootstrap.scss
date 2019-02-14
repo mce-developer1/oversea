@@ -62,6 +62,11 @@ a {
     border-color: transparent;
     color: $gray-900;
   }
+
+  &:not(:disabled):not(.disabled):active {
+    background-color: $gray-300;
+    border-color: $gray-300;
+  }
 }
 
 .btn-outline-primary {
@@ -208,6 +213,7 @@ a {
         margin-right: .5rem;
       }
     }
+
     .dropdown-menu {
       .dropdown-item {
         border-radius: 0;
@@ -223,10 +229,13 @@ a {
     overflow-y: auto;
 
     .dropdown-item {
+      color: $gray-700;
       padding: .5rem 1.5rem;
 
+      &:not(.selected):active,
       &:not(.selected):hover {
         background-color: $gray-200;
+        color: $gray-900;
       }
 
       .fa {
@@ -235,6 +244,14 @@ a {
         width: 2rem;
       }
     }
+  }
+}
+
+.navbar-nav,
+.nav {
+  .nav-divider {
+    border-right: 1px solid $gray-500;
+    margin: .325rem .5rem;
   }
 }
 
@@ -355,13 +372,86 @@ a {
 }
 
 .modal {
-  .modal-header {
-    background-color: $gray-200;
-    border-bottom: 0;
-  }
+  .modal-dialog {
+    &.modal-preview {
+      margin: 0;
+      max-width: 100vw;
+      
+      .modal-content {
+        background-color: transparent;
+        border: 0;
 
-  .modal-content {
-    border-radius: 0;
+        .modal-body {
+          padding: 0;
+
+          .navbar {
+            @include flex-wrap(none);
+            background-color: $gray-200;
+            height: 4rem;
+            width: 100vw;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            .navbar-text {
+              font-size: 1.25rem;
+              max-width: calc(100vw - 14rem);
+            }
+
+            .navbar-nav {
+              @include display-flex(row);
+              @include flex-wrap(none);
+
+              .nav-item {
+                .btn {
+                  &.btn-close {
+                    margin-left: 0;
+                  }
+
+                  margin-left: .5rem;
+                  padding: .325rem .5rem;
+
+                  .fa {
+                    font-size: 1.625rem;
+                  }
+                }
+              }
+            }
+          }
+
+          .content {
+            @include display-flex(column);
+            @include align-items(center);
+            @include justify-content(center);
+            min-height: calc(100vh - 4rem);
+            width: 100vw;
+
+            * {
+              font-size: 1.25rem;
+              max-width: 100%;
+              padding: 2rem;
+            }
+          }
+        }
+      }
+    }
+
+    .modal-content {
+      border-radius: 0;
+
+      .modal-header {
+        background-color: $gray-200;
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.modal-backdrop{
+  &.modal-backdrop-preview {
+    background-color: $gray-100;
+    opacity: 1;
   }
 }
 

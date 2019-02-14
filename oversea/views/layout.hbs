@@ -15,6 +15,9 @@
     <div class="app-container">
       {{#if loggedIn}}
         <div class="navbar navbar-expand app-header">
+          <button class="btn btn-light btn-menu" type="button" data-toggle="drawer" data-target=".drawer">
+            <i class="fa fa-bars"></i>
+          </button>
           <a class="navbar-brand" href="/{{userRole}}/home">
             <img src="/static/images/logo_mceduworld.png"/>
           </a>
@@ -24,7 +27,7 @@
                 <a class="nav-link {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
                   <i class="img img-mylibaray"></i> My Library
                 </a>
-              </li>              
+              </li>
               {{#unless studentUser}}
                 <li class="nav-item">
                   <a class="nav-link {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
@@ -37,6 +40,13 @@
                   <i class="img img-myreports"></i> My Reports
                 </a>
               </li>
+              {{#if adminUser}}
+                <li class="nav-item">
+                  <a class="nav-link {{#if adminPage}}active{{/if}}" href="/{{userRole}}/administration/administration">
+                    <i class="img img-myreports"></i> Administration
+                  </a>
+                </li>
+              {{/if}}
               {{#unless loggedIn}}
                 <li class="nav-item dropdown">
                   <button class="btn btn-light" type="button" data-toggle="dropdown">
@@ -81,7 +91,7 @@
           </ul>
           <ul class="navbar-nav">
             {{#if loggedIn}}
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown dropdown-user">
               <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
                 <img src="/static/images/user.png"/>
                 <div class="user-summary">
@@ -100,9 +110,28 @@
                   </div>
                 </div>
               </button>
-              <div class="dropdown-menu dropdown-menu-right">            
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="user-account">
+                  <img src="/static/images/user.png"/>
+                  <div class="user-summary">
+                    <div class="user-info d-block">
+                      I'm
+                      <span class="user-name text-truncate">
+                        {{#if studentUser}}Aaron Tan{{/if}}
+                        {{#if teacherUser}}Derrick Chua{{/if}}
+                        {{#if adminUser}}Ernest  Goh{{/if}}
+                      </span>
+                    </div>
+                    <div class="user-role">
+                      {{#if studentUser}}I study. :){{/if}}
+                      {{#if teacherUser}}I teach. :){{/if}}
+                      {{#if adminUser}}I administer. :){{/if}}
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/{{userRole}}/profile/update_personal_particulars">
-                  <i class="fa fa-user-circle"></i> My Particulars
+                  <i class="fa fa-user-circle"></i> About Me
                 </a>
                 <a class="dropdown-item" href="/{{userRole}}/profile/change_password">
                   <i class="fa fa-key"></i> Change Password
@@ -125,7 +154,7 @@
             <option value="Spanish" data-icon="fa-globe">Spanish</option>
           </select>
         {{/unless}}
-        <div class="copyright">
+        <div class="text-truncate copyright">
           Copyright © 2019 Marshall Cavendish Education Pte. Ltd.
         </div>
         <ul class="nav nav-light">
@@ -134,6 +163,7 @@
               Data Protection and Privacy Statement
             </a>
           </li>
+          <li class="nav-divider"></li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               Terms & Conditions
@@ -141,6 +171,43 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="drawer">
+      <nav class="navbar">
+        <a class="navbar-brand" href="/{{userRole}}/home">
+          <img src="/static/images/logo_mceduworld.png"/>
+        </a>
+        <div class="navbar-content">
+          <ul class="navbar-nav">
+            {{#if loggedIn}}
+              <li class="nav-item">
+                <a class="nav-link {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
+                  <i class="img img-mylibaray"></i> My Library
+                </a>
+              </li>
+              {{#unless studentUser}}
+                <li class="nav-item">
+                  <a class="nav-link {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
+                    <i class="img img-myresources"></i> My Resources
+                  </a>
+                </li>
+              {{/unless}}
+              <li class="nav-item">
+                <a class="nav-link {{#if reportsPage}}active{{/if}}" href="/{{userRole}}/reports/reports">
+                  <i class="img img-myreports"></i> My Reports
+                </a>
+              </li>
+              {{#if adminUser}}
+                <li class="nav-item">
+                  <a class="nav-link {{#if adminPage}}active{{/if}}" href="/{{userRole}}/administration/administration">
+                    <i class="img img-myreports"></i> Administration
+                  </a>
+                </li>
+              {{/if}}
+            {{/if}}
+          </ul>
+        </div>
+      </nav>
     </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="/static/jquery/jquery.js"></script>
@@ -150,6 +217,7 @@
     <script src="/static/moment/moment.js"></script>
     <script src="/static/daterangepicker/daterangepicker.js"></script>
     <script src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script src="/static/javascripts/application.js"></script>
     <script src="/static/javascripts/{{module}}.js"></script>
   </body>
 </html>

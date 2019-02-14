@@ -7,10 +7,18 @@ $(document).ready(function() {
       : ($container.find('.card-group .card-active').length > 0);
 
     if (resourcesSelected) {
+      if ($container.find('.btn-share').hasClass('d-none')) {
+        $container.find('.btn-share').removeClass('d-none');
+      }
+
       if ($container.find('.btn-download').hasClass('d-none')) {
         $container.find('.btn-download').removeClass('d-none');
       }
     } else {
+      if (!$container.find('.btn-share').hasClass('d-none')) {
+        $container.find('.btn-share').addClass('d-none');
+      }
+
       if (!$container.find('.btn-download').hasClass('d-none')) {
         $container.find('.btn-download').addClass('d-none');
       }
@@ -20,6 +28,15 @@ $(document).ready(function() {
   $container.find('.navbar-nav:not(.nav-main) .btn-search').on('click', function(e) {
     $container.find('.navbar-nav:not(.nav-main)').addClass('d-none');
     $container.find('.nav-main').addClass('d-block');
+  });
+
+  $(window).on('resize', function(e) {
+    if ($(window).width() > 992) {
+      if ($container.find('.nav-main').hasClass('d-block')) {
+        $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
+        $container.find('.nav-main').removeClass('d-block');
+      }
+    }
   });
 
   $container.find('.nav-main .input-group .btn-search').on('click', function(e) {
@@ -82,6 +99,21 @@ $(document).ready(function() {
     $container.find('.article-body .table-head').addClass('d-none');
     $container.find('.article-body .table-body').addClass('d-none');
     $container.find('.article-body .card-group').removeClass('d-none');
+  });
+
+  $container.find('.table-body tr a').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    $('.modal-resource-preview').on('show.bs.modal', function (e) {
+      setTimeout(function() {
+        $('.modal-backdrop.show').addClass('modal-backdrop-preview');
+      });
+    });
+    $('.modal-resource-preview').on('hide.bs.modal', function (e) {
+      $('.modal-resource-preview .content').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/hE834L-rRtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+    });
+    $('.modal-resource-preview').modal('show');
   });
 
   $container.find('.table-body tr').on('click', function(e) {

@@ -6,10 +6,6 @@
       .article-header {
         height: 4rem;
         max-height: 4rem;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 6rem;
-        z-index: 980;
 
         .navbar {
           @include display-flex(row);
@@ -40,10 +36,6 @@
               @include display-flex(row);
               @include align-items(center);
 
-              .btn {
-                margin-left: 0;
-              }
-
               .item-text {
                 font-size: 1.25rem;
                 width: 14rem;
@@ -61,6 +53,7 @@
 
                 .btn-light {
                   background-color: $white;
+                  border-color: $white;
                   margin-left: 0;
                   padding: .325rem .75rem;
                   
@@ -89,7 +82,7 @@
               .form-control {
                 padding-left: 3rem;
                 padding-right: 5rem;
-                width: 32rem;
+                width: 20rem;
               }
             }
 
@@ -123,6 +116,10 @@
                 }
               }
 
+              &.btn-more-actions {
+                padding: .325rem 1rem;
+              }
+
               .fa {
                 color: $gray-600;
                 font-size: 1.625rem;
@@ -145,9 +142,6 @@
       .article-content {
         .article-sidebar {
           margin: 0;
-          position: -webkit-sticky;
-          position: sticky;
-          top: 10rem;
           
           .resources {
             .resource {
@@ -269,10 +263,6 @@
 
             &.table-head {
               margin-bottom: 0;
-              position: -webkit-sticky;
-              position: sticky;
-              top: 10rem;
-              z-index: 970;
             }
 
             th,
@@ -280,7 +270,7 @@
               padding: 1rem;
 
               .btn {
-                padding: .25rem;
+                padding: .325rem;
                 margin: -.5rem 0;
 
                 .fa-info-circle {
@@ -355,8 +345,14 @@
               .card-body {
                 padding: 1rem;
 
-                .card-title {
+                .card-link {
                   color: $gray-700;
+                  display: inline-block;
+                  margin-bottom: .5rem;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
                 }
 
                 .custom-checkbox {
@@ -373,13 +369,22 @@
       @media (max-width: 576px) {
         .article-header {
           .navbar {
-            padding: .75rem .5rem;
+            padding: .75rem;
 
             .navbar-nav {
+              &:first-child {
+                width: 14rem;
+              }
+
               .nav-item {
                 .item-text {
                   width: 10rem;
                 }
+              }
+
+              .btn-share,
+              .btn-download {
+                display: none;
               }
             }
           }
@@ -458,6 +463,18 @@
         }
       }
 
+      @media (min-width: 576px) {
+        .article-header {
+          .navbar {
+            .navbar-nav {
+              .btn-more-actions {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
       @media (min-width: 768px) {
         .article-content {
           .article-body {
@@ -478,6 +495,11 @@
 
       @media (min-width: 992px) {
         .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 6rem;
+          z-index: 980;
+
           .navbar {
             .navbar-nav {
               &:not(.nav-main) {
@@ -487,17 +509,37 @@
               }
               .nav-item-result {
                 display: none;
-              }              
+              }
+
+              .input-group {
+                .form-control {
+                  width: 32rem;
+                }
+              }
             }
           }
         }
 
         .article-content {
-          .article-sidebar {            
+          .article-sidebar {
             height: calc(100vh - 13rem);
             overflow-x: hidden;
             overflow-y: auto;
             padding: .5rem 0;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10rem;
+          }
+
+          .article-body {
+            .table {
+              &.table-head {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 10rem;
+                z-index: 970;
+              }
+            }
           }
         }
       }

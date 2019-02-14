@@ -11,6 +11,118 @@
   }
 }
 
+.drawer {
+	background-color: #fff;
+	height: 100vh;
+	width: 18rem;
+	z-index: 1070;
+	-webkit-transition: left .35s;
+	-moz-transition: left .35s;
+	-o-transition: left .35s;
+	transition: left .35s;
+	position: fixed;
+	top: 0;
+  left: -18rem;
+  
+  &.show {
+    left: 0;
+  }
+
+  .navbar {
+    padding: 0;
+
+    .navbar-brand {
+      @include flex-grow(1);
+      border-bottom: 1px solid $gray-400;
+      height: 5rem;
+      max-height: 5rem;
+      margin-right: 0;
+      padding: .5rem 1rem;
+
+      img {
+        width: 10rem;
+      }
+    }
+
+    .navbar-content {
+      @include flex-grow(1);
+      height: calc(100vh - 5rem);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .navbar-nav {
+      @include display-flex(column);
+      @include flex-grow(1);
+
+      .nav-item {
+        margin: 0;
+
+        .nav-link {
+          @include display-flex(row);
+          @include align-items(center);
+          color: $gray-700;
+          padding: .5rem 1rem;
+
+          &:hover {
+            background-color: $gray-200;
+            color: $gray-900;
+          }
+
+          &.active {
+            background-color: $accent;
+            color: $white;
+
+            .img {              
+              &.img-mylibaray {
+                background-image: url("../images/icon_topnav_selected_mylibrary.png");
+              }
+
+              &.img-myresources {
+                background-image: url("../images/icon_topnav_selected_myresources.png");
+              }
+
+              &.img-myreports {
+                background-image: url("../images/icon_topnav_selected_myreports.png");
+              }
+            }
+          }
+
+          .img {
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: .75rem;
+            height: 2rem;
+            width: 2rem;
+
+            &.img-mylibaray {
+              background-image: url("../images/icon_topnav_mylibrary.png");
+            }
+
+            &.img-myresources {
+              background-image: url("../images/icon_topnav_myresources.png");
+            }
+
+            &.img-myreports {
+              background-image: url("../images/icon_topnav_myreports.png");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.drawer-backdrop {
+	background-color: rgba(0,0,0,.5);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+}
+
 .dialog {
   position: relative;
 
@@ -60,10 +172,15 @@
 
     h6 {
       margin-bottom: 0;
-    }
+    }    
 
     .btn {
+      &.dropdown-toggle {
+        margin-left: 0;
+      }
+
       margin-left: .5rem;
+      padding: .325rem .5rem;
     }
   }
 
@@ -76,6 +193,15 @@
 
     .article-body {      
       min-width: 280px;
+
+      .btn {
+        &.dropdown-toggle {
+          margin-left: 0;
+        }
+  
+        margin-left: .5rem;
+        padding: .325rem .5rem;
+      }
     }
   }
 
@@ -84,8 +210,8 @@
       @include flex-direction(row);
 
       .article-sidebar {
-        min-width: 18rem;
-        width: 18rem;
+        min-width: 16rem;
+        width: 16rem;
       }
 
       .article-body {

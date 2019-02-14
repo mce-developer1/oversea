@@ -11,22 +11,22 @@
             .nav-link {
               @include display-flex(column);
               @include align-items(center);
-              color: $gray-500;
+              color: $gray-700;
               font-size: 1.25rem;
-              margin: 2rem;
+              margin: 1rem;
               padding: 1rem;
 
               &:hover {
                 background-color: $gray-200;
-                color: $gray-700;
+                color: $gray-900;
               }
 
               .img {                
                 background-repeat: no-repeat;
                 background-size: cover;
                 margin-bottom: 1rem;
-                height: 12rem;
-                width: 12rem;
+                height: 8rem;
+                width: 8rem;
 
                 &.img-usage-report {
                   background-image: url("../images/icon_reports_usage.png");
@@ -62,12 +62,12 @@
       &.collapse-sidebar {
         .article-content {
           .article-sidebar {
-            margin-left: -19.5rem;
+            margin-left: -17.5rem;
 
             .navbar {
-              .btn {
-                left: 0;
+              width: 18.5rem;
 
+              .btn {
                 .fa-chevron-left {
                   display: none;
                 }
@@ -84,12 +84,6 @@
       .article-content {
         .article-sidebar {
           background-color: $white;
-          height: calc(100vh - 9rem);
-          margin: 0 0 0 -1.5rem;
-          position: -webkit-sticky;
-          position: sticky;
-          top: 6rem;
-          z-index: 980;
           -webkit-transition: margin-left .35s;
           -moz-transition: margin-left .35s;
           -o-transition: margin-left .35s;
@@ -99,18 +93,16 @@
             @include justify-content(flex-end);
             background-color: $accent;
             height: 3rem;
+            padding: .5rem 0;
 
-            .btn {
+            .btn-light {
               background-color: $accent;
+              border-color: $accent;
               height: 3rem;
               padding: .5rem .75rem;
-              position: fixed;
+              position: -webkit-sticky;
+              position: sticky;
               top: 6rem;
-              left: 14.5rem;
-              -webkit-transition: left .35s;
-              -moz-transition: left .35s;
-              -o-transition: left .35s;
-              transition: left .35s;
     
               &:hover {
                 .fa-chevron-left,
@@ -121,17 +113,14 @@
     
               .fa-chevron-left,
               .fa-chevron-right {
-                color: $gray-300;
+                color: $gray-200;
                 font-size: 1.5rem;
               }
             }
           }
 
           .form-filters {
-            height: calc(100vh - 12rem);
-            overflow-x: hidden;
-            overflow-y: auto;
-            padding: 1rem 1.5rem;
+            padding: 1rem;
           }
         }
 
@@ -161,6 +150,49 @@
               .article-body {
                 padding: 0;
               }
+            }
+          }
+
+          .navbar-report {
+            @include justify-content(flex-end);
+            max-width: 64rem;
+            padding: .5rem 0;
+
+            .btn-light {
+              .fa {
+                font-size: 1.625rem;
+              }
+            }
+          }
+        }
+
+        @media (max-width: 767.98px) {
+          .article-sidebar {
+            margin: 0 -1.5rem;
+
+            .navbar {
+              display: none;
+            }
+
+            .form-filters {
+              padding: 1rem 1.5rem;
+            }
+          }
+        }
+
+        @media (min-width: 768px) {
+          .article-sidebar {
+            height: calc(100vh - 9rem);
+            margin: 0 0 0 -1.5rem;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 6rem;
+            z-index: 980;
+
+            .form-filters {
+              height: calc(100vh - 12rem);
+              overflow-x: hidden;
+              overflow-y: auto;
             }
           }
         }

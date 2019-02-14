@@ -14,7 +14,7 @@
         color: $primary;
 
         &:hover {
-          background-color: $gray-300;
+          color: darken($primary, 8%);
         }
 
         .img {
@@ -36,6 +36,11 @@
             background-image: url("../images/icon_main_great_support.png");
           }
         }
+      }
+
+      .nav-divider {
+        border-right-color: $primary;
+        margin: .75rem .5rem;
       }
     }
 
@@ -136,6 +141,14 @@
         &.no-gutters {
           margin-bottom: .5rem;
           margin-top: 2rem;
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .nav {
+        .nav-divider {
+          display: none;
         }
       }
     }

@@ -1,17 +1,25 @@
 .app-header {
   @include flex-direction(row);
   background-color: $white;
-  border-bottom: 2px solid $accent;
+  border-bottom: 3px solid $accent;
   height: 6rem;
   max-height: 6rem;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
 
+  .btn-menu {
+    margin-right: 1rem;
+
+    .fa {
+      font-size: 1.625rem;      
+    }
+  }
+
   .navbar-brand {
-    margin-right: 4rem;
+    margin-right: 2.5rem;
     padding: 0;
     
     img {
@@ -32,12 +40,12 @@
         .nav-link {
           @include display-flex(column);
           @include align-items(center);
-          color: $gray-500;
+          color: $gray-700;
           padding: .5rem 1rem;
 
           &:hover {
             background-color: $gray-200;
-            color: $gray-700;
+            color: $gray-900;
           }
 
           &.active {
@@ -132,35 +140,118 @@
     }
   }
 
-  .btn-user {
-    @include display-flex(row);
-    @include align-items(center);
-    padding: 0;
-
-    img {
-      margin-right: 1rem;
-      max-height: 4rem;
-      max-width: 4rem;
-      vertical-align: baseline;
+  .dropdown-user {
+    .dropdown-menu {
+      min-width: 16rem;
     }
 
-    .user-summary {
-      @include display-flex(column);
-      color: $gray-700;
-      
-      .user-name,
-      .user-role {
-        text-align: right;
+    .btn-user,
+    .user-account {
+      @include display-flex(row);
+      @include align-items(center);
+      padding: 0;
+
+      img {
+        margin-right: 1rem;
+        max-height: 4rem;
+        max-width: 4rem;
+        vertical-align: baseline;
       }
 
-      .user-info {
-        @include display-flex(row);
-        @include align-items(center);
+      .user-summary {
+        @include display-flex(column);
+        color: $gray-700;
+        
+        .user-name,
+        .user-role {
+          text-align: right;
+        }
 
-        .user-name {
-          color: $primary;
-          margin-left: .25rem;
-          max-width: 10rem;
+        .user-info {
+          @include display-flex(row);
+          @include align-items(center);
+
+          .user-name {
+            color: $primary;
+            margin-left: .25rem;
+            max-width: 10rem;
+          }
+        }
+      }
+    }
+
+    .user-account {
+      padding: .5rem 1rem;
+
+      .user-summary {
+        @include flex-grow(1);
+
+        .user-info {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .navbar-nav {
+      &.nav-main {
+        .nav-item {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .dropdown-user {
+      .btn-user {
+        img {
+          margin-right: 0;
+        }
+
+        .user-summary {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .btn-menu {
+      display: none;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .dropdown-user {
+      .user-account {
+        display: none;
+      }
+
+      .dropdown-divider {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .app-header {
+    height: 5rem;
+    max-height: 5rem;
+
+    .navbar-brand {
+      img {
+        width: 10rem;
+      }
+    }
+
+    .dropdown-user {
+      .btn-user {
+        img {
+          height: 3rem;
+          width: 3rem;
         }
       }
     }
