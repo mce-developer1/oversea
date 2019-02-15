@@ -1,59 +1,150 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-profile">
+      <div class="article article-manage-form-class">
         <div class="article-header">
-          <h5>Administration</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row no-gutters">
-    <div class="col-sm">
-      <div class="article article-change-password {{#if studentUser}}no-sidebar{{/if}}">
-        <div class="article-header">
-          <h6>Change Password</h6>
+          <h6>Manage Form Class</h6>
         </div>
         <div class="article-content">
           <div class="article-sidebar">
-            <ul class="nav nav-side">              
+            <ul class="nav nav-side">
               <li class="nav-item">
-                <a class="nav-link active" href="#">Change Password</a>
+                <a class="nav-link" href="/{{userRole}}/administration/manage_user">Manage User Account</a>
               </li>
-              {{#if teacherUser}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/{{userRole}}/profile/reset_student_password">Reset Student Password</a>
-                </li>
-              {{/if}}
-              {{#if adminUser}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/{{userRole}}/profile/reset_student_password">Reset Student Password</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/{{userRole}}/profile/reset_teacher_password">Reset Teacher Password</a>
-                </li>
-              {{/if}}
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Manage Form Class</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">Manage School Group</a>
+              </li>
             </ul>
           </div>
           <div class="article-body">
-            <form class="form-change-password">
+            <nav class="navbar navbar-expand">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-light btn-create" type="button">
+                    <i class="fa fa-plus"></i> New
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-light btn-edit d-none" type="button" title="Edit">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-light btn-delete d-none" type="button" title="Delete">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <div class="table-form-class">
+              <table class="table" style="width: 100%;">
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Form Teacher</th>
+                  </tr>
+                </thead>
+                <tbody>                
+                  <tr>
+                    <td>
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" id="item0" name="group">
+                        <label class="custom-control-label" for="item0"></label>
+                      </div>
+                    </td>
+                    <td>P1-EN</td>
+                    <td>1</td>
+                    <td>Derrick Chua</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" id="item1" name="group">
+                        <label class="custom-control-label" for="item1"></label>
+                      </div>
+                    </td>
+                    <td>P1-HA</td>
+                    <td>1</td>
+                    <td>Ernest  Goh</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <form class="form-form-class d-none">
+              <h6>Create Form Class</h6>
               <div class="form-group">
-                <label class="form-label" for="txtCurrentPassword">Current Password</label>
-                <input class="form-control form-input" type="password" id="txtCurrentPassword">
+                <label class="form-label" for="txtName">Name</label>
+                <input class="form-control form-input" type="text" id="txtName">
               </div>
               <div class="form-group">
-                <label class="form-label" for="txtNewPassword">New Password</label>
-                <input class="form-control form-input" type="password" id="txtNewPassword">
-                <small class="form-text text-muted">
-                  Minimum 8 alphanumeric characters, containing at least 1 letter and 1 numeral and it must be different from the Login ID. Acceptable characters include a-z, 0-9 and symbols _ - . @
-                </small>
+                <label class="form-label" for="txtDescription">Description</label>
+                <textarea class="form-control form-input" id="txtDescription"></textarea>
               </div>
               <div class="form-group">
-                <label class="form-label" for="txtConfirmPassword">Confirm Password</label>
-                <input class="form-control form-input" type="password" id="txtConfirmPassword">
+                <label class="form-label" for="selGrade">Grade</label>
+                <select class="form-control selectpicker" id="selGrade" data-container=".article-body">
+                  <option>Primary 1</option>
+                  <option>Primary 2</option>
+                  <option>Primary 3</option>
+                  <option>Primary 4</option>
+                  <option>Primary 5</option>
+                  <option>Primary 6</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="selFormTeacher">Form Teacher</label>
+                  <select class="form-control selectpicker" id="selFormTeacher" data-container=".article-body">
+                    <option>Derrick Chua</option>
+                    <option>Ernest Goh</option>
+                  </select>
+                </div>
+                <div class="form-group col">
+                  <label class="form-label" for="selAssistTeacher">Assistant Teacher</label>
+                  <select class="form-control selectpicker" id="selAssistTeacher" data-container=".article-body">
+                    <option>Derrick Chua</option>
+                    <option>Ernest Goh</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="selStudents">Select Student(s)</label>
+                  <select class="form-control" id="selStudents" multiple>
+                    <option>Derrick Chua</option>
+                    <option>Ernest Goh</option>
+                  </select>
+                </div>
+                <div class="col">                  
+                  <button class="btn btn-light btn-create" type="button">
+                    <i class="fa fa-angle-right"></i>
+                  </button>
+                  <button class="btn btn-light btn-create" type="button">
+                    <i class="fa fa-angle-double-right"></i>
+                  </button>
+                  <button class="btn btn-light btn-create" type="button">
+                    <i class="fa fa-angle-left"></i>
+                  </button>
+                  <button class="btn btn-light btn-create" type="button">
+                    <i class="fa fa-angle-double-left"></i>
+                  </button>
+                </div>
+                <div class="form-group col">
+                  <label class="form-label" for="selSelectedStudents">Selected Student(s)</label>
+                  <select class="form-control" id="selSelectedStudents" multiple>
+                    <option>Derrick Chua</option>
+                    <option>Ernest Goh</option>
+                  </select>
+                </div>
               </div>
               <div class="form-group">
-                <button class="btn btn-primary" type="button">Save</button>
+                <button class="btn btn-primary btn-create" type="button">Create</button>
+                <button class="btn btn-light btn-cancel" type="button">Cancel</button>
               </div>
             </form>
           </div>

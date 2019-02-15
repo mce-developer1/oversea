@@ -21,6 +21,12 @@
           <a class="navbar-brand" href="/{{userRole}}/home">
             <img src="/static/images/logo_mceduworld.png"/>
           </a>
+          <div class="navbar-text">
+            {{#if homePage}}My Library{{/if}}
+            {{#if resourcesPage}}My Resources{{/if}}
+            {{#if reportsPage}}My Reports{{/if}}
+            {{#if adminPage}}Administration{{/if}}
+          </div>
           <ul class="navbar-nav nav-main">
             {{#if loggedIn}}
               <li class="nav-item">
@@ -147,16 +153,6 @@
       {{/if}}
       {{{body}}}
       <div class="app-footer">
-        {{#unless loggedIn}}
-          <select class="selectpicker" data-width="auto" data-icon-base="fa">
-            <option value="Bahasa Indonesia" data-icon="fa-globe">Bahasa Indonesia</option>
-            <option value="Chinese" data-icon="fa-globe">Chinese</option>
-            <option value="Spanish" data-icon="fa-globe">Spanish</option>
-          </select>
-        {{/unless}}
-        <div class="text-truncate copyright">
-          Copyright © 2019 Marshall Cavendish Education Pte. Ltd.
-        </div>
         <ul class="nav nav-light">
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -170,6 +166,12 @@
             </a>
           </li>
         </ul>
+        <div class="text-truncate copyright">
+          Copyright © 2019 Marshall Cavendish Education Pte. Ltd.
+        </div>
+        <a class="company-logo" href="http://www.mceducation.com">
+          <img src="/static/images/mce_logo_white.png"/>
+        </a>
       </div>
     </div>
     <div class="drawer">

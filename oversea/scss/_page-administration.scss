@@ -1,0 +1,118 @@
+.app-content {
+  &.page-administration {
+    .article-administration {
+      padding: 1.5rem;
+
+      .article-content {
+        .article-body {
+          .nav {
+            @include justify-content(center);
+
+            .nav-link {
+              @include display-flex(column);
+              @include align-items(center);
+              color: $gray-700;
+              font-size: 1.25rem;
+              margin: 1rem;
+              padding: 1rem;
+
+              &:hover {
+                background-color: $gray-200;
+                color: $gray-900;
+              }
+
+              .fa {                
+                font-size: 6rem;
+                margin-bottom: .5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .article-manage-form-class {
+      .article-header {
+        margin-bottom: 1rem;
+      }
+
+      .article-content {
+        .article-body {
+          .navbar {
+            @include justify-content(flex-end);
+            background-color: $gray-200;
+
+            .navbar-nav {
+              .btn-light {
+                @include display-flex(row);
+                @include align-items(center);
+
+                &.btn-create {
+                  font-size: 1.25rem;
+                  line-height: 1.25;
+
+                  .fa {
+                    margin-right: .5rem;
+                  }
+                }
+
+                .fa {
+                  font-size: 1.625rem;
+                }
+              }
+            }
+          }
+
+          .form-form-class {
+            h6 {
+              margin-bottom: 1rem;
+            }
+
+            .form-row {
+              margin: 0;
+
+              .form-group {
+                padding: 0;
+
+                +.form-group {
+                  margin-left: 1.5rem;
+                }
+              }
+            }
+
+            .form-group {
+              max-width: 30rem;
+              width: 30rem;
+
+              .btn {
+                margin-left: 0;
+
+                +.btn {
+                  margin-left: .5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-manage-form-class {
+        .article-content {
+          .article-sidebar {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      .article-manage-form-class {
+        .article-header {
+          display: none;
+        }
+      }
+    }
+  }
+}

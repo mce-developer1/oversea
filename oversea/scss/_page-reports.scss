@@ -106,13 +106,14 @@
     
               &:hover {
                 .fa-chevron-left,
-                .fa-chevron-right {
+                .fa-filter {
                   color: $white;
                 }
               }
     
               .fa-chevron-left,
-              .fa-chevron-right {
+              .fa-chevron-right,
+              .fa-filter {
                 color: $gray-200;
                 font-size: 1.5rem;
               }
@@ -165,13 +166,58 @@
             }
           }
         }
+      }
 
-        @media (max-width: 767.98px) {
+      @media (max-width: 767.98px) {
+        &.collapse-sidebar {
+          .article-content {
+            .article-sidebar {
+              height: 3rem;
+              margin: 0 -1.5rem;
+  
+              .navbar {
+                width: 100%;
+              }
+            }
+
+            .article-body {
+              padding-left: 0;
+            }
+          }
+        }
+
+        .article-content {
           .article-sidebar {
+            overflow: hidden;
             margin: 0 -1.5rem;
+            -webkit-transition: height .35s;
+            -moz-transition: height .35s;
+            -o-transition: height .35s;
+            transition: height .35s;
 
             .navbar {
-              display: none;
+              background-color: $gray-200;
+              border-color: $gray-200;
+
+              .btn-light {
+                background-color: $gray-200;
+                border-color: $gray-200;
+
+                &:hover {
+                  .fa-filter {
+                    color: $gray-900;
+                  }
+                }
+
+                .fa-chevron-left,
+                .fa-chevron-right {
+                  display: none;
+                }
+
+                .fa-filter {
+                  color: $gray-700;
+                }
+              }
             }
 
             .form-filters {
@@ -179,8 +225,10 @@
             }
           }
         }
+      }
 
-        @media (min-width: 768px) {
+      @media (min-width: 768px) {
+        .article-content {
           .article-sidebar {
             height: calc(100vh - 9rem);
             margin: 0 0 0 -1.5rem;
@@ -189,6 +237,14 @@
             top: 6rem;
             z-index: 980;
 
+            .navbar {
+              .btn-light {
+                .fa-filter {
+                  display: none;
+                }
+              }
+            }
+
             .form-filters {
               height: calc(100vh - 12rem);
               overflow-x: hidden;
@@ -196,7 +252,7 @@
             }
           }
         }
-      }     
+      }
     }
   }
 }

@@ -37,6 +37,12 @@
       .form-label {
         display: block;
       }
+
+      .form-group {
+        .btn {
+          margin-left: 0;          
+        }
+      }
     }
 
     @media (max-width: 768px) {

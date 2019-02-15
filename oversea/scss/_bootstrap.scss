@@ -216,6 +216,10 @@ a {
 
     .dropdown-menu {
       .dropdown-item {
+        &.selected {
+          color: $white;
+        }
+
         border-radius: 0;
       }
     }

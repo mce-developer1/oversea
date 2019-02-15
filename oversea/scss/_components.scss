@@ -1,3 +1,70 @@
+table.dataTable {
+  border: 0;
+
+  &.no-footer {
+    border-bottom: 1px solid $gray-300 !important;
+  }
+
+  thead {
+    tr {
+      th {
+        padding: .75rem 1rem;
+
+        &.sorting,
+        &.sorting_asc,
+        &.sorting_desc {
+          background-image: none;
+          cursor: pointer;
+          position: relative;
+
+          &:hover {
+            background-color: $gray-200;
+          }
+        }
+
+        &.sorting_asc:after,
+        &.sorting_desc:after {
+          font-family: 'FontAwesome';
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          margin-left: .25rem;
+        }
+
+        &.sorting_asc:after {
+          content: '\f175';
+        }
+        
+        &.sorting_desc:after {
+          content: '\f176';
+        }
+
+        background-color: $white;
+        border-bottom: 0;
+        color: $gray-700;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      td {
+        border-top: 1px solid $gray-300;
+        padding: .75rem 1rem;
+
+        &.nowrap,
+        .nowrap {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
 .custom-checkbox {
   .custom-control-label {
     &::before {
@@ -14,7 +81,7 @@
 .drawer {
 	background-color: #fff;
 	height: 100vh;
-	width: 18rem;
+	width: 16rem;
 	z-index: 1070;
 	-webkit-transition: left .35s;
 	-moz-transition: left .35s;

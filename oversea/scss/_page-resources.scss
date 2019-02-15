@@ -59,7 +59,7 @@
                   
                   &:hover {
                     .fa {
-                      color: $gray-700;
+                      color: $gray-900;
                     }
                   }
 
@@ -112,7 +112,7 @@
             .btn-light {
               &:hover {
                 .fa {
-                  color: $gray-700;
+                  color: $gray-900;
                 }
               }
 
@@ -121,7 +121,7 @@
               }
 
               .fa {
-                color: $gray-600;
+                color: $gray-700;
                 font-size: 1.625rem;
                 vertical-align: bottom;
 
@@ -366,6 +366,57 @@
         }
       }
 
+      @media (max-width: 992px) {
+        .article-header {
+          .navbar {
+            @include justify-content(space-between);
+
+            .navbar-nav {
+              &.nav-main {
+                display: none;
+              }
+
+              .nav-item-drawer {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .article-content {
+          .article-sidebar {
+            display: none;
+          }
+
+          .article-body {
+            margin: 0;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(3),
+              colgroup:nth-child(4) {
+                display: none;
+              }
+
+              tr {
+                th:nth-child(3),
+                th:nth-child(4),
+                td:nth-child(3),
+                td:nth-child(4) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
       @media (max-width: 576px) {
         .article-header {
           .navbar {
@@ -406,87 +457,6 @@
                 td:nth-child(6) {
                   display: none;
                 }
-              }
-            }
-          }
-        }
-      }
-
-      @media (max-width: 768px) {
-        .article-content {
-          .article-body {
-            .table-head,
-            .table-body {
-              colgroup:nth-child(3),
-              colgroup:nth-child(4) {
-                display: none;
-              }
-
-              tr {
-                th:nth-child(3),
-                th:nth-child(4),
-                td:nth-child(3),
-                td:nth-child(4) {
-                  display: none;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      @media (max-width: 992px) {
-        .article-header {
-          .navbar {
-            @include justify-content(space-between);
-
-            .navbar-nav {
-              &.nav-main {
-                display: none;
-              }
-
-              .nav-item-drawer {
-                display: none;
-              }
-            }
-          }
-        }
-
-        .article-content {
-          .article-sidebar {
-            display: none;
-          }
-
-          .article-body {
-            margin: 0;
-          }
-        }
-      }
-
-      @media (min-width: 576px) {
-        .article-header {
-          .navbar {
-            .navbar-nav {
-              .btn-more-actions {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-
-      @media (min-width: 768px) {
-        .article-content {
-          .article-body {
-            .table-head,
-            .table-body {
-              colgroup:nth-child(7) {
-                display: none;
-              }
-
-              th:nth-child(7),
-              td:nth-child(7) {
-                display: none;
               }
             }
           }
@@ -538,6 +508,36 @@
                 position: sticky;
                 top: 10rem;
                 z-index: 970;
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(7) {
+                display: none;
+              }
+
+              th:nth-child(7),
+              td:nth-child(7) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 576px) {
+        .article-header {
+          .navbar {
+            .navbar-nav {
+              .btn-more-actions {
+                display: none;
               }
             }
           }

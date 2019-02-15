@@ -2,6 +2,19 @@
   <div class="row no-gutters row-main">
     <div class="col-sm">
       <div class="row">
+        <div class="col-sm">
+          {{#unless loggedIn}}
+            <div class="navbar navbar-expand">
+              <select class="selectpicker" data-width="auto" data-icon-base="fa">
+                <option value="Bahasa Indonesia" data-icon="fa-globe">Bahasa Indonesia</option>
+                <option value="Chinese" data-icon="fa-globe">Chinese</option>
+                <option value="Spanish" data-icon="fa-globe">Spanish</option>
+              </select>
+            </div>
+          {{/unless}}
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md">
           <div class="article article-eduworld">
             <img src="/static/images/logo_mceduworld.png"/>

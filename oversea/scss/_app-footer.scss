@@ -12,28 +12,18 @@
   bottom: 0;
   z-index: 1000;
 
-  .dropdown {
-    margin-right: .5rem;
-
-    &.bootstrap-select {
-      .dropdown-toggle {
-        background-color: $white;
-        padding: .25rem .75rem;
-      }
-
-      .dropdown-item {
-        .fa {
-          display: none;
-        }
-      }
-    }
-  }
-
   .copyright {
     color: $gray-300;
     font-size: .875rem;
-    margin-right: auto;
+    margin-right: 1rem;
+    margin-left: auto;
     padding: .5rem;
+  }
+
+  .company-logo {
+    img {
+      width: 10rem;
+    }
   }
 
   .nav {
@@ -54,22 +44,14 @@
   }
 
   @media (max-width: 992px) {
-    .dropdown {
-      &.bootstrap-select {
-        margin-right: auto;
-      }
-    }
-
     .nav {
       display: none;
     }
   }
 
-  @media (max-width: 576px) {    
-    .dropdown {
-      &.bootstrap-select {
-        display: none;
-      }
+  @media (max-width: 576px) {
+    .company-logo {
+      display: none;
     }
   }
 }
