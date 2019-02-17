@@ -69,13 +69,39 @@
             }
 
             .form-row {
+              @include align-items(flex-end);
               margin: 0;
+
+              .col-auto {
+                width: 4rem;
+              }
 
               .form-group {
                 padding: 0;
 
                 +.form-group {
                   margin-left: 1.5rem;
+                }
+
+                .form-control[multiple] {
+                  height: 16rem;
+                }
+              }
+
+              .btn-group {
+                @include display-flex(column);
+                @include justify-content(center);
+                margin-bottom: 1rem;
+
+                .btn {
+
+                  +.btn {
+                    margin-top: .5rem;
+                  }
+
+                  .fa {
+                    font-size: 1.625rem;
+                  }
                 }
               }
             }

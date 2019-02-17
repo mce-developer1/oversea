@@ -374,7 +374,8 @@ a:focus {
   color: #495057;
 }
 .table thead th.sortable-column:hover {
-  background-color: #e9ecef;
+  background-color: #f8f9fa;
+  cursor: pointer;
 }
 .table thead th.sortable-column .fa {
   font-size: 1rem;
@@ -439,7 +440,8 @@ table.dataTable thead tr th.sorting, table.dataTable thead tr th.sorting_asc, ta
   position: relative;
 }
 table.dataTable thead tr th.sorting:hover, table.dataTable thead tr th.sorting_asc:hover, table.dataTable thead tr th.sorting_desc:hover {
-  background-color: #e9ecef;
+  background-color: #f8f9fa;
+  cursor: pointer;
 }
 table.dataTable thead tr th.sorting_asc:after, table.dataTable thead tr th.sorting_desc:after {
   font-family: "FontAwesome";
@@ -2010,13 +2012,36 @@ table.dataTable tbody tr td .nowrap {
   margin-bottom: 1rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row {
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
   margin: 0;
+}
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .col-auto {
+  width: 4rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .form-group {
   padding: 0;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .form-group + .form-group {
   margin-left: 1.5rem;
+}
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple] {
+  height: 16rem;
+}
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
+  margin-top: 0.5rem;
+}
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa {
+  font-size: 1.625rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group {
   max-width: 30rem;

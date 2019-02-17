@@ -470,7 +470,8 @@ a {
 
       &.sortable-column {
         &:hover {
-          background-color: $gray-200;
+          background-color: $gray-100;
+          cursor: pointer;
         }
 
         .fa {

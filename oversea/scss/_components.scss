@@ -18,7 +18,8 @@ table.dataTable {
           position: relative;
 
           &:hover {
-            background-color: $gray-200;
+            background-color: $gray-100;
+            cursor: pointer;
           }
         }
 
