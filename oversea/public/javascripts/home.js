@@ -1,4 +1,30 @@
 $(document).ready(function() {
+  $('#selGrade').on('changed.bs.select', function (e) {
+    $('.article-resources .article-body .loading-state').removeClass('d-none');
+    $('.article-resources .article-body .card-group').addClass('d-none');
+
+    setTimeout(function() {
+      $('.article-resources .article-body .loading-state').addClass('d-none');
+      $('.article-resources .article-body .card-group').removeClass('d-none');
+    }, 3500);
+  });
+
+  $('#selSubjet').on('changed.bs.select', function (e) {
+    $('.article-resources .article-body .loading-state').removeClass('d-none');
+    $('.article-resources .article-body .card-group').addClass('d-none');
+
+    setTimeout(function() {
+      $('.article-resources .article-body .loading-state').addClass('d-none');
+      $('.toast-stack').removeClass('d-none');
+      $('.toast-stack .toast').addClass('show');
+
+      setTimeout(function() {
+        $('.toast-stack').addClass('d-none');
+        $('.toast-stack .toast').removeClass('show');
+      }, 3500);
+    }, 1000);
+  });
+
   $('.article-resources .article-sidebar .navbar .btn').on('click', function(e) {
     if ($(window).width() < 768) {
       var height = $('.article-resources .article-sidebar').get(0).scrollHeight;

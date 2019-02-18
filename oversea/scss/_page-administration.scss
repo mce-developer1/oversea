@@ -73,7 +73,7 @@
               margin: 0;
 
               .col-auto {
-                width: 4rem;
+                min-width: 4rem;
               }
 
               .form-group {
@@ -94,13 +94,14 @@
                 margin-bottom: 1rem;
 
                 .btn {
+                  width: 2.5rem;
 
                   +.btn {
                     margin-top: .5rem;
                   }
 
                   .fa {
-                    font-size: 1.625rem;
+                    font-size: 1.25rem;
                   }
                 }
               }
@@ -108,7 +109,6 @@
 
             .form-group {
               max-width: 30rem;
-              width: 30rem;
 
               .btn {
                 margin-left: 0;
@@ -129,6 +129,44 @@
           .article-sidebar {
             display: none;
           }
+
+          .article-body {
+            .form-form-class {
+              .form-row {
+                @include align-items(flex-start);
+                @include flex-direction(column);
+
+                .col-auto {
+                  @include display-flex(row);
+                  @include align-items(center);
+                }
+
+                .btn-group {
+                  @include flex-direction(row);
+                  @include align-items(center);
+
+                  +.btn-group {
+                    margin-left: 1rem;
+                  }
+
+                  .btn {
+                    +.btn {
+                      margin-top: 0;
+                    }
+
+                    .fa {
+                      &.fa-angle-right,
+                      &.fa-angle-double-right,
+                      &.fa-angle-left,
+                      &.fa-angle-double-left {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -137,6 +175,27 @@
       .article-manage-form-class {
         .article-header {
           display: none;
+        }
+
+        .article-content {
+          .article-body {
+            .form-form-class {
+              .form-row {
+                .btn-group {
+                  .btn {
+                    .fa {
+                      &.fa-angle-down,
+                      &.fa-angle-double-down,
+                      &.fa-angle-up,
+                      &.fa-angle-double-up {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

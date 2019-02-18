@@ -1,6 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+/* GET error page. */
+router.get('/4[0-9]{2}', function(req, res, next) {
+  res.render('errors/404', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'error'
+  });
+});
+
 /* GET sign in page. */
 router.get('/', function(req, res, next) {
   res.render('index', {

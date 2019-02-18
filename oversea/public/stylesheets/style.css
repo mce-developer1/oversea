@@ -9,6 +9,10 @@ a:focus {
   outline: 0;
 }
 
+.toast {
+  border-radius: 0;
+}
+
 .btn {
   border-radius: 0;
 }
@@ -466,6 +470,61 @@ table.dataTable tbody tr td {
 table.dataTable tbody tr td.nowrap,
 table.dataTable tbody tr td .nowrap {
   white-space: nowrap;
+}
+
+.loading-state {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.empty-state {
+  padding: 1rem;
+  text-align: center;
+}
+
+.toast-stack {
+  position: fixed;
+  left: 1rem;
+  bottom: 4rem;
+  z-index: 1000;
+}
+.toast-stack .toast {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-align-items: center;
+  align-items: center;
+  max-width: 28rem;
+}
+.toast-stack .toast .toast-header {
+  border-bottom: 0;
+  padding: 0;
+}
+.toast-stack .toast .toast-header button.close {
+  padding: 0.5rem 0.75rem;
+}
+.toast-stack .toast .toast-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 1.125rem;
+}
+.toast-stack .toast .toast-body .fa.fa-exclamation-circle {
+  color: #dc3545;
+  font-size: 1.625rem;
+  margin-right: 0.5rem;
 }
 
 .custom-checkbox .custom-control-label::before {
@@ -1000,6 +1059,31 @@ table.dataTable tbody tr td .nowrap {
   .app-footer .company-logo {
     display: none;
   }
+}
+
+.app-content.page-error {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - 3rem);
+}
+.app-content.page-error .article-error .article-content .article-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.app-content.page-error .article-error .article-content .article-body .fa.fa-exclamation-circle {
+  font-size: 4rem;
+  margin-right: 1rem;
 }
 
 .app-content.page-sign-in {
@@ -2017,7 +2101,7 @@ table.dataTable tbody tr td .nowrap {
   margin: 0;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .col-auto {
-  width: 4rem;
+  min-width: 4rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .form-group {
   padding: 0;
@@ -2037,15 +2121,17 @@ table.dataTable tbody tr td .nowrap {
   justify-content: center;
   margin-bottom: 1rem;
 }
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn {
+  width: 2.5rem;
+}
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
   margin-top: 0.5rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa {
-  font-size: 1.625rem;
+  font-size: 1.25rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group {
   max-width: 30rem;
-  width: 30rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group .btn {
   margin-left: 0;
@@ -2057,9 +2143,41 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-administration .article-manage-form-class .article-content .article-sidebar {
     display: none;
   }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row {
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .col-auto {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group {
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group + .btn-group {
+    margin-left: 1rem;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
+    margin-top: 0;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-left, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-left {
+    display: none;
+  }
 }
 @media (min-width: 768px) {
   .app-content.page-administration .article-manage-form-class .article-header {
+    display: none;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-up, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-up {
     display: none;
   }
 }

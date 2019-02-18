@@ -45,7 +45,7 @@ $(document).ready(function() {
         barRect.setAttribute('x', parseFloat(x) + 20);
       }
 
-      var barRects = svg.querySelectorAll("rect[width='1'][fill='#000000']");
+      var barRects = svg.querySelectorAll("rect[width='1'][fill='#6c757d']");
       for (var i = 0; i < barRects.length; i++) {
         var barRect = barRects[i];
         var barRectX = parseFloat(barRect.getAttribute('x'));
@@ -111,7 +111,7 @@ $(document).ready(function() {
       fontSize: 13,      
       height: (data.length * 48),
       chartArea: { left: 180, height: '80%', width: '60%' },
-      bar: { groupWidth: '50%' },
+      bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
         textStyle: {
@@ -119,7 +119,7 @@ $(document).ready(function() {
         }
       },
       hAxis: {
-        gridlines: { count: 2, color: '#000000' },
+        gridlines: { count: 2, color: '#6c757d' },
         minorGridlines: { count: 0 },
         textStyle: {
           color: '#6c757d'
@@ -173,7 +173,7 @@ $(document).ready(function() {
       fontSize: 13,      
       height: (data.length * 48),
       chartArea: { left: 180, height: '80%', width: '60%' },
-      bar: { groupWidth: '50%' },
+      bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
         textStyle: {
@@ -181,7 +181,7 @@ $(document).ready(function() {
         }
       },
       hAxis: {
-        gridlines: { count: 2, color: '#000000' },
+        gridlines: { count: 2, color: '#6c757d' },
         minorGridlines: { count: 0 },
         textStyle: {
           color: '#6c757d'
@@ -221,7 +221,7 @@ $(document).ready(function() {
       fontSize: 13,      
       height: (data.length * 48),
       chartArea: { left: 180, height: '80%', width: '60%' },
-      bar: { groupWidth: '50%' },
+      bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
         textStyle: {
@@ -229,7 +229,7 @@ $(document).ready(function() {
         }
       },
       hAxis: {
-        gridlines: { count: 2, color: '#000000' },
+        gridlines: { count: 2, color: '#6c757d' },
         minorGridlines: { count: 0 },
         textStyle: {
           color: '#6c757d'
@@ -283,7 +283,7 @@ $(document).ready(function() {
       fontSize: 13,      
       height: (data.length * 48),
       chartArea: { left: 180, height: '80%', width: '60%' },
-      bar: { groupWidth: '50%' },
+      bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
         textStyle: {
@@ -291,7 +291,7 @@ $(document).ready(function() {
         }
       },
       hAxis: {
-        gridlines: { count: 2, color: '#000000' },
+        gridlines: { count: 2, color: '#6c757d' },
         minorGridlines: { count: 0 },
         textStyle: {
           color: '#6c757d'
