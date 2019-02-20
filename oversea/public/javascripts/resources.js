@@ -38,7 +38,18 @@ $(document).ready(function() {
     setTimeout(function() {
       $container.find('.article-body .loading-state').addClass('d-none');
       $container.find('.article-body .empty-state').removeClass('d-none');
-    }, 3500);
+    }, 5000);
+  });
+
+  $container.find('.nav-main .input-group .form-control').on('change', function(e) {
+    $container.find('.article-body .loading-state').removeClass('d-none');
+    $container.find('.article-body .table-head').addClass('d-none');
+    $container.find('.article-body .table-body').addClass('d-none');
+
+    setTimeout(function() {
+      $container.find('.article-body .loading-state').addClass('d-none');
+      $container.find('.article-body .empty-state').removeClass('d-none');
+    }, 5000);
   });
 
   $container.find('.navbar-nav.nav-main .btn-back').on('click', function(e) {

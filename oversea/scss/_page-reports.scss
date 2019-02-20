@@ -56,7 +56,8 @@
             .btn-light {
               background-color: $accent;
               border-color: $accent;
-              height: 3rem;
+              height: calc(3rem - 2px);
+              max-height: calc(3rem - 2px);
               padding: .5rem .75rem;
               position: -webkit-sticky;
               position: sticky;
@@ -131,7 +132,7 @@
           .article-content {
             .article-sidebar {
               height: 3rem;
-              margin: 0 -1.5rem;
+              margin: 0 -1rem;
   
               .navbar {
                 width: 100%;
@@ -139,15 +140,17 @@
             }
 
             .article-body {
-              padding-left: 0;
+              padding: 1rem 0;
             }
           }
         }
 
         .article-content {
+          margin: 0 -.5rem;
+
           .article-sidebar {
             overflow: hidden;
-            margin: 0 -1.5rem;
+            margin: 0 -1rem;
             -webkit-transition: height .35s;
             -moz-transition: height .35s;
             -o-transition: height .35s;
@@ -179,7 +182,7 @@
             }
 
             .form-filters {
-              padding: 1rem 1.5rem;
+              padding: 1rem;
             }
           }
         }

@@ -483,8 +483,9 @@ table.dataTable tbody tr td .nowrap {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-  width: 100%;
   height: 100%;
+  width: 100%;
+  padding: 1rem;
 }
 
 .empty-state {
@@ -1046,7 +1047,7 @@ table.dataTable tbody tr td .nowrap {
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
-  z-index: 1000;
+  z-index: 970;
 }
 .app-footer .copyright {
   color: #dee2e6;
@@ -1364,8 +1365,8 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light {
   background-color: #ff9900;
   border-color: #ff9900;
-  height: 3rem;
-  max-height: 3rem;
+  height: calc(3rem - 2px);
+  max-height: calc(3rem - 2px);
   padding: 0.5rem 0.75rem;
   position: -webkit-sticky;
   position: sticky;
@@ -1404,8 +1405,8 @@ table.dataTable tbody tr td .nowrap {
 }
 @media (max-width: 768px) {
   .app-content.page-home .article-resources .article-content .article-body .card-group .card {
-    max-width: 15rem;
-    min-width: 15rem;
+    max-width: calc(30vw - 1.5rem);
+    min-width: calc(30vw - 1.5rem);
   }
 }
 @media (max-width: 767.98px) {
@@ -1455,18 +1456,16 @@ table.dataTable tbody tr td .nowrap {
     padding: 1rem 0;
   }
   .app-content.page-home .article-resources .article-content .article-body .card-group .card {
-    max-width: 12rem;
-    min-width: 12rem;
     margin: 0.325rem;
   }
   .app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body {
     padding: 1rem;
   }
 }
-@media (min-width: 1200px) {
-  .app-content.page-home .article-resources.no-sidebar .article-content .article-body .card-group {
-    margin: 0 auto;
-    max-width: 82rem;
+@media (max-width: 576px) {
+  .app-content.page-home .article-resources .article-content .article-body .card-group .card {
+    max-width: calc(50vw - 1.5rem);
+    min-width: calc(50vw - 1.5rem);
   }
 }
 @media (min-width: 768px) {
@@ -1786,6 +1785,7 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-resources .article-resources .article-header .navbar {
     -webkit-justify-content: space-between;
     justify-content: space-between;
+    padding: 1rem;
   }
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav.nav-main {
     display: none;
@@ -1824,10 +1824,12 @@ table.dataTable tbody tr td .nowrap {
     display: none;
   }
 }
-@media (max-width: 576px) {
-  .app-content.page-resources .article-resources .article-header .navbar {
-    padding: 0.75rem;
+@media (max-width: 767.98px) {
+  .app-content.page-resources .article-resources .article-content {
+    margin: 0 -0.5rem;
   }
+}
+@media (max-width: 576px) {
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
   }
@@ -1943,7 +1945,8 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-reports .article-report .article-content .article-sidebar .navbar .btn-light {
   background-color: #ff9900;
   border-color: #ff9900;
-  height: 3rem;
+  height: calc(3rem - 2px);
+  max-height: calc(3rem - 2px);
   padding: 0.5rem 0.75rem;
   position: -webkit-sticky;
   position: sticky;
@@ -2000,17 +2003,20 @@ table.dataTable tbody tr td .nowrap {
 @media (max-width: 767.98px) {
   .app-content.page-reports .article-report.collapse-sidebar .article-content .article-sidebar {
     height: 3rem;
-    margin: 0 -1.5rem;
+    margin: 0 -1rem;
   }
   .app-content.page-reports .article-report.collapse-sidebar .article-content .article-sidebar .navbar {
     width: 100%;
   }
   .app-content.page-reports .article-report.collapse-sidebar .article-content .article-body {
-    padding-left: 0;
+    padding: 1rem 0;
+  }
+  .app-content.page-reports .article-report .article-content {
+    margin: 0 -0.5rem;
   }
   .app-content.page-reports .article-report .article-content .article-sidebar {
     overflow: hidden;
-    margin: 0 -1.5rem;
+    margin: 0 -1rem;
     -webkit-transition: height 0.35s;
     -moz-transition: height 0.35s;
     -o-transition: height 0.35s;
@@ -2035,7 +2041,7 @@ table.dataTable tbody tr td .nowrap {
     color: #495057;
   }
   .app-content.page-reports .article-report .article-content .article-sidebar .form-filters {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 }
 @media (min-width: 768px) {
@@ -2096,13 +2102,24 @@ table.dataTable tbody tr td .nowrap {
   font-size: 6rem;
   margin-bottom: 0.5rem;
 }
+.app-content.page-administration .article-manage-form-class {
+  padding: 0 1.5rem;
+}
 .app-content.page-administration .article-manage-form-class .article-header {
-  margin-bottom: 1rem;
+  background-color: #e9ecef;
+  height: 3.5rem;
+  max-height: 3.5rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-administration .article-manage-form-class .article-content .article-body {
+  margin: 0 auto;
+  max-width: 64rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
-  background-color: #e9ecef;
+  padding: 0.5rem 0;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light {
   display: -ms-flexbox;
@@ -2170,8 +2187,8 @@ table.dataTable tbody tr td .nowrap {
   margin-left: 0.5rem;
 }
 @media (max-width: 768px) {
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar {
-    display: none;
+  .app-content.page-administration .article-manage-form-class .article-content .article-body {
+    margin: 0;
   }
   .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row {
     -webkit-align-items: flex-start;
@@ -2204,9 +2221,6 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 @media (min-width: 768px) {
-  .app-content.page-administration .article-manage-form-class .article-header {
-    display: none;
-  }
   .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-up, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-up {
     display: none;
   }
@@ -2216,12 +2230,65 @@ table.dataTable tbody tr td .nowrap {
   background-color: #e9ecef;
   padding: 0.75rem 1.5rem;
 }
+.app-content.page-profile .article-update-personal-particulars,
+.app-content.page-profile .article-update-personal-preferences,
+.app-content.page-profile .article-change-password,
+.app-content.page-profile .article-reset-student-password,
+.app-content.page-profile .article-reset-teacher-password {
+  padding: 0 1.5rem;
+}
+.app-content.page-profile .article-update-personal-particulars.collapse-sidebar.collapse-sidebar .article-content .article-sidebar,
+.app-content.page-profile .article-update-personal-preferences.collapse-sidebar.collapse-sidebar .article-content .article-sidebar,
+.app-content.page-profile .article-change-password.collapse-sidebar.collapse-sidebar .article-content .article-sidebar,
+.app-content.page-profile .article-reset-student-password.collapse-sidebar.collapse-sidebar .article-content .article-sidebar,
+.app-content.page-profile .article-reset-teacher-password.collapse-sidebar.collapse-sidebar .article-content .article-sidebar {
+  height: 0;
+}
 .app-content.page-profile .article-update-personal-particulars .article-header,
 .app-content.page-profile .article-update-personal-preferences .article-header,
 .app-content.page-profile .article-change-password .article-header,
 .app-content.page-profile .article-reset-student-password .article-header,
 .app-content.page-profile .article-reset-teacher-password .article-header {
-  margin-bottom: 1rem;
+  background-color: #e9ecef;
+  height: 3.5rem;
+  max-height: 3.5rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-profile .article-update-personal-particulars .article-header .sidebar-toggle,
+.app-content.page-profile .article-update-personal-preferences .article-header .sidebar-toggle,
+.app-content.page-profile .article-change-password .article-header .sidebar-toggle,
+.app-content.page-profile .article-reset-student-password .article-header .sidebar-toggle,
+.app-content.page-profile .article-reset-teacher-password .article-header .sidebar-toggle {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  color: #212529;
+  font-size: 1.25rem;
+  font-weight: 500;
+  height: 3.5rem;
+  max-height: 3.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+.app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar,
+.app-content.page-profile .article-change-password .article-content .article-sidebar,
+.app-content.page-profile .article-reset-student-password .article-content .article-sidebar,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-sidebar {
+  margin-bottom: 0;
+  overflow: hidden;
+  -webkit-transition: height 0.35s;
+  -moz-transition: height 0.35s;
+  -o-transition: height 0.35s;
+  transition: height 0.35s;
 }
 .app-content.page-profile .article-update-personal-preferences .dropdown.bootstrap-select .dropdown-item .fa {
   display: none;
@@ -2247,22 +2314,70 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .form-reset-teacher-password .form-group .btn {
   margin-left: 0;
 }
-@media (max-width: 768px) {
-  .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
-.app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar,
-.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-sidebar,
-.app-content.page-profile .article-reset-student-password .article-content .article-sidebar,
-.app-content.page-profile .article-reset-teacher-password .article-content .article-sidebar {
-    display: none;
+@media (max-width: 767.98px) {
+  .app-content.page-profile .article-update-personal-particulars,
+.app-content.page-profile .article-update-personal-preferences,
+.app-content.page-profile .article-change-password:not(.no-sidebar),
+.app-content.page-profile .article-reset-student-password,
+.app-content.page-profile .article-reset-teacher-password {
+    padding: 0 1rem;
   }
-}
-@media (min-width: 768px) {
   .app-content.page-profile .article-update-personal-particulars .article-header,
 .app-content.page-profile .article-update-personal-preferences .article-header,
 .app-content.page-profile .article-change-password:not(.no-sidebar) .article-header,
 .app-content.page-profile .article-reset-student-password .article-header,
 .app-content.page-profile .article-reset-teacher-password .article-header {
+    margin: 0 -1rem;
+    padding: 0;
+  }
+  .app-content.page-profile .article-update-personal-particulars .article-header h5,
+.app-content.page-profile .article-update-personal-preferences .article-header h5,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-header h5,
+.app-content.page-profile .article-reset-student-password .article-header h5,
+.app-content.page-profile .article-reset-teacher-password .article-header h5 {
     display: none;
+  }
+  .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-sidebar,
+.app-content.page-profile .article-reset-student-password .article-content .article-sidebar,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-sidebar {
+    background-color: #ffffff;
+    margin: 0 -1rem;
+  }
+  .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):hover, .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):active,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):hover,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):active,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):hover,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):active,
+.app-content.page-profile .article-reset-student-password .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):hover,
+.app-content.page-profile .article-reset-student-password .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):active,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):hover,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-sidebar .nav .nav-item .nav-link:not(.disabled):active {
+    background-color: #f8f9fa;
+  }
+  .app-content.page-profile .article-update-personal-particulars .article-content .article-body,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-body,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-body,
+.app-content.page-profile .article-reset-student-password .article-content .article-body,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-body {
+    padding: 1rem 0;
+  }
+}
+@media (min-width: 768px) {
+  .app-content.page-profile .article-update-personal-particulars .article-header .sidebar-toggle,
+.app-content.page-profile .article-update-personal-preferences .article-header .sidebar-toggle,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-header .sidebar-toggle,
+.app-content.page-profile .article-reset-student-password .article-header .sidebar-toggle,
+.app-content.page-profile .article-reset-teacher-password .article-header .sidebar-toggle {
+    display: none;
+  }
+  .app-content.page-profile .article-update-personal-particulars .article-content,
+.app-content.page-profile .article-update-personal-preferences .article-content,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content,
+.app-content.page-profile .article-reset-student-password .article-content,
+.app-content.page-profile .article-reset-teacher-password .article-content {
+    padding: 1.5rem 0;
   }
 }
 

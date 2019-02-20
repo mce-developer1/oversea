@@ -10,8 +10,49 @@
     .article-change-password,
     .article-reset-student-password,
     .article-reset-teacher-password {
+      padding: 0 1.5rem;
+
+      &.collapse-sidebar {
+        &.collapse-sidebar {
+          .article-content {
+            .article-sidebar {
+              height: 0;
+            }
+          }
+        }
+      }
+
       .article-header {
-        margin-bottom: 1rem;
+        background-color: $gray-200;
+        height: 3.5rem;
+        max-height: 3.5rem;
+        margin: 0 -1.5rem;
+        padding: .75rem 1.5rem;
+
+        .sidebar-toggle {
+          @include display-flex(row);
+          @include align-items(center);
+          @include flex-grow(1);
+          @include justify-content(space-between);
+          color: $gray-900;
+          font-size: 1.25rem;
+          font-weight: 500;
+          height: 3.5rem;
+          max-height: 3.5rem;
+          padding: .75rem 1rem;
+          text-decoration: none;
+        }
+      }
+
+      .article-content {
+        .article-sidebar {
+          margin-bottom: 0;
+          overflow: hidden;
+          -webkit-transition: height .35s;
+          -moz-transition: height .35s;
+          -o-transition: height .35s;
+          transition: height .35s;
+        }
       }
     }
 
@@ -45,15 +86,42 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767.98px) {
       .article-update-personal-particulars,
       .article-update-personal-preferences,
       .article-change-password:not(.no-sidebar),
       .article-reset-student-password,
       .article-reset-teacher-password {
+        padding: 0 1rem;
+
+        .article-header {
+          margin: 0 -1rem;
+          padding: 0;
+
+          h5 {
+            display: none;
+          }
+        }
+
         .article-content {
           .article-sidebar {
-            display: none;
+            background-color: $white;
+            margin: 0 -1rem;
+
+            .nav {
+              .nav-item {
+                .nav-link {
+                  &:not(.disabled):hover,
+                  &:not(.disabled):active {
+                    background-color: $gray-100;
+                  }
+                }
+              }
+            }
+          }
+
+          .article-body {
+            padding: 1rem 0;
           }
         }
       }
@@ -66,7 +134,13 @@
       .article-reset-student-password,
       .article-reset-teacher-password {
         .article-header {
-          display: none;
+          .sidebar-toggle {
+            display: none;
+          }
+        }
+
+        .article-content {
+          padding: 1.5rem 0;
         }
       }
     }

@@ -374,6 +374,7 @@
         .article-header {
           .navbar {
             @include justify-content(space-between);
+            padding: 1rem;
 
             .navbar-nav {
               &.nav-main {
@@ -433,11 +434,15 @@
         }
       }
 
+      @media (max-width: 767.98px) {
+        .article-content {
+          margin: 0 -.5rem;
+        }
+      }
+
       @media (max-width: 576px) {
         .article-header {
           .navbar {
-            padding: .75rem;
-
             .navbar-nav {
               &:first-child {
                 width: 14rem;
