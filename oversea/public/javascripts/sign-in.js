@@ -13,13 +13,21 @@ $(document).ready(function() {
 
   $('.form-sign-in .forgot-password').on('click', function(e) {
     $('.modal-forgot-password .form-reset-password-success').addClass('d-none');
+    $('.modal-forgot-password .form-reset-password-error').addClass('d-none');
     $('.modal-forgot-password .form-reset-password').removeClass('d-none');
     $('.modal-forgot-password').modal('show');
   });
 
   $('.modal-forgot-password .btn-primary').on('click', function(e) {
+    var username = $('.modal-forgot-password .form-reset-password .input-username').val();
+    var school = $('.modal-forgot-password .form-reset-password .input-school').val();
     $('.modal-forgot-password .form-reset-password').addClass('d-none');
-    $('.modal-forgot-password .form-reset-password-success').removeClass('d-none');
+
+    if ((username !== '') && (school !== '')) {
+      $('.modal-forgot-password .form-reset-password-success').removeClass('d-none');
+    } else {
+      $('.modal-forgot-password .form-reset-password-error').removeClass('d-none');
+    }
   });
 
   $('.btn-register-distributor').on('click', function(e) {

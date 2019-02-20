@@ -41,6 +41,11 @@ $(document).ready(function() {
     }, 3500);
   });
 
+  $container.find('.navbar-nav.nav-main .btn-back').on('click', function(e) {
+    $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
+    $container.find('.nav-main').removeClass('d-block');
+  });
+
   $(window).on('resize', function(e) {
     if ($(window).width() > 992) {
       if ($container.find('.nav-main').hasClass('d-block')) {
@@ -59,8 +64,6 @@ $(document).ready(function() {
 
   $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
     $container.find('.nav-main .input-group .form-control').val('');
-    $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
-    $container.find('.nav-main').removeClass('d-block');
   });
 
   $container.find('.nav-main .input-group .btn-toggle').click(function(e) {

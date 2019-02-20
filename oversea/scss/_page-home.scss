@@ -3,16 +3,6 @@
     .article-resources {
       padding: 0 1.5rem;
 
-      &.no-sidebar {
-        .article-content {
-          .article-body {
-            .card-group {
-              @include justify-content(center);
-            }
-          }
-        }
-      }
-
       &:not(.collapse-sidebar) {
         .article-content {
           .article-sidebar {
@@ -61,7 +51,7 @@
             @include justify-content(flex-end);
             background-color: $accent;
             height: 3rem;
-            padding: .5rem 0;
+            padding: 0;
 
             .btn-light {
               background-color: $accent;
@@ -105,7 +95,7 @@
           .card-group {
             margin: -.5rem;
 
-            .card {          
+            .card {
               cursor: pointer;
               max-width: 16rem;
               min-width: 16rem;
@@ -116,12 +106,25 @@
         }
       }
 
+      @media (max-width: 768px) {
+        .article-content {
+          .article-body {
+            .card-group {
+              .card {
+                max-width: 15rem;
+                min-width: 15rem;
+              }
+            }
+          }
+        }
+      }
+
       @media (max-width: 767.98px) {
         &.collapse-sidebar {
           .article-content {
             .article-sidebar {
               height: 3rem;
-              margin: 0 -1.5rem;
+              margin: 0 -1rem;
   
               .navbar {
                 width: 100%;
@@ -135,9 +138,11 @@
         }
 
         .article-content {
+          margin: 0 -.5rem;
+
           .article-sidebar {
             overflow: hidden;
-            margin: 0 -1.5rem;
+            margin: 0 -1rem;
             -webkit-transition: height .35s;
             -moz-transition: height .35s;
             -o-transition: height .35s;
@@ -169,7 +174,36 @@
             }
 
             .form-filters {
-              padding: 1rem 1.5rem;
+              padding: 1rem;
+            }
+          }
+
+          .article-body {
+            padding: 1rem 0;
+
+            .card-group {
+              .card {
+                max-width: 12rem;
+                min-width: 12rem;
+                margin: .325rem;
+
+                .card-body {
+                  padding: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 1200px) {
+        &.no-sidebar {
+          .article-content {
+            .article-body {
+              .card-group {
+                margin: 0 auto;
+                max-width: 82rem;
+              }
             }
           }
         }

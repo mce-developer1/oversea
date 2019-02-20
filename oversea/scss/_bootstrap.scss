@@ -438,7 +438,6 @@ a {
             * {
               font-size: 1.25rem;
               max-width: 100%;
-              padding: 2rem;
             }
           }
         }
@@ -456,7 +455,7 @@ a {
   }
 }
 
-.modal-backdrop{
+.modal-backdrop {
   &.modal-backdrop-preview {
     background-color: $gray-100;
     opacity: 1;

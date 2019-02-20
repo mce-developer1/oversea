@@ -33,11 +33,7 @@
         @include display-flex(row);
         @include align-items(center);
         color: $primary;
-
-        &:hover {
-          color: darken($primary, 8%);
-        }
-
+        
         .img {
           background-repeat: no-repeat;
           background-size: cover;
@@ -82,7 +78,7 @@
 
     .article-study-resource,
     .article-distributor-registration,
-    .article-school-registration {
+    .article-school-registration {    
       padding: 2rem;
       text-align: center;
     }
@@ -123,6 +119,38 @@
       border-top: 1px solid $gray-400;
     }
 
+    .article-data-privacy,
+    .article-terms-of-use {
+      padding: 2rem;
+
+      .article-header {
+        margin-bottom: 1rem;
+      }
+
+      .article-content {
+        .article-body {
+          .table {
+            background-color: transparent;
+
+            tbody {
+              td {
+                border-top: 0;
+                padding: .25rem .5rem;
+
+                p {
+                  margin-bottom: 0;
+
+                  +p {
+                    margin-top: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     .form-sign-in {
       background-color: $white;
       margin: 3rem 2rem;
@@ -147,7 +175,7 @@
     }
 
     .form-distributor-registration,
-    .form-school-registration, {
+    .form-school-registration {
       padding: 2rem;
 
       h2 {
@@ -222,29 +250,20 @@
   .modal-dialog {
     max-width: 320px;
 
-    .modal-header {
-      .modal-title {
-        @include flex-grow(1);
-        text-align: center;
-      }
-    }
-
     .modal-body {
       padding: 2rem 2rem 1rem;
 
       .form-group {
         text-align: center;
 
-        .fa-lock,
-        .fa-user {
-          font-size: 1.625rem;
+        .fa {
+          color: $gray-500;
         }
       }
     }
   }
 }
 
-.modal-forgot-password,
 .modal-registration-successful {
   .form-reset-password-success,
   .form-registration-successful {

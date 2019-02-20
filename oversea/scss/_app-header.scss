@@ -113,6 +113,19 @@
           }
         }
       }
+
+      .btn-primary {
+        @include display-flex(row);
+        @include align-items(center);
+
+        .fa {
+          margin-right: .5rem;
+
+          &.fa-sign-in {
+            font-size: 1.625rem;
+          }
+        }
+      }
     }
   }
 
@@ -213,7 +226,15 @@
 
   @media (max-width: 767.98px) {
     .navbar-brand {
-      display: none;
+      &:not(d-block) {
+        display: none;
+      }
+
+      &.d-block {
+        img {
+          width: 12rem;
+        }
+      }
     }
 
     .navbar-nav {

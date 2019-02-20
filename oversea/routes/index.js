@@ -1,21 +1,32 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET error page. */
-router.get('/4[0-9]{2}', function(req, res, next) {
-  res.render('errors/404', {
-    layout: 'layout',
-    title: 'Marshall Cavendish Education',
-    module: 'error'
-  });
-});
-
 /* GET sign in page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'sign-in'
+  });
+});
+
+/* GET privacy page. */
+router.get('/privacy', function(req, res, next) {
+  res.render('privacy', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'sign-in',
+    infoPage: true
+  });
+});
+
+/* GET terms page. */
+router.get('/terms', function(req, res, next) {
+  res.render('terms', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'sign-in',
+    infoPage: true
   });
 });
 
@@ -289,6 +300,15 @@ router.get('/subject', function(req, res, next) {
     module: 'subject',
     loggedIn: true,
     userRole: userRole
+  });
+});
+
+/* GET 404 error page. */
+router.get('*', function(req, res){
+  res.render('errors/404', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'error'
   });
 });
 

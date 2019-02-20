@@ -628,30 +628,6 @@ $(document).ready(function() {
   }
 
   function initPage() {
-    $('.article-reports .nav .nav-link').on('click', function(e) {
-      e.preventDefault();
-
-      $('.article-reports').addClass('d-none');
-      $('.article-report').removeClass('d-none');
-      disconnectObserver();
-      clearInlineChart();
-
-      switch ($(this).attr('href')) {
-        case '#usage':
-          $('.article-usage-report').removeClass('d-none');
-          $('#selReport').selectpicker('val', 'usage');          
-          if (studentUser) drawStudentUsageReport();
-          else drawAllClassesUsageReport();
-          break;
-        case '#proficiency':          
-          $('.article-proficiency-report').removeClass('d-none');
-          $('#selReport').selectpicker('val', 'proficiency');
-          if (studentUser) drawStudentProficiencyReport();
-          else drawAllClassesProficiencyReport();
-          break;
-      }
-    });
-
     $('.article-report .article-sidebar .navbar .btn').on('click', function(e) {
       if ($(window).width() < 768) {
         var height = $('.article-report .article-sidebar').get(0).scrollHeight;
@@ -733,6 +709,16 @@ $(document).ready(function() {
           break;
       }
     });
+
+    setTimeout(function waitForVisualizationLib() {
+      if (google.visualization && google.visualization.arrayToDataTable) {
+        $('#selReport').selectpicker('val', 'proficiency');
+        if (studentUser) drawStudentProficiencyReport();
+        else drawAllClassesProficiencyReport();
+        return;
+      }
+      setTimeout(waitForVisualizationLib, 500);
+    }, 500);
   }
 
   if ($(window).width() < 768) {

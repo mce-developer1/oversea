@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/*$primary:       #f15c25 !default;*/
 html {
   font-size: 14px;
 }
@@ -354,7 +353,6 @@ a:focus {
 .modal .modal-dialog.modal-preview .modal-content .modal-body .content * {
   font-size: 1.25rem;
   max-width: 100%;
-  padding: 2rem;
 }
 .modal .modal-dialog .modal-content {
   border-radius: 0;
@@ -423,6 +421,10 @@ a:focus {
 .dataTable tbody tr td .btn-light {
   font-size: 1.125rem;
   padding: 0.125rem 0.5rem;
+}
+
+select.form-control {
+  border-radius: 0;
 }
 
 table.dataTable {
@@ -854,6 +856,20 @@ table.dataTable tbody tr td .nowrap {
 .app-header .navbar-nav .nav-item.localize .bootstrap-select .dropdown-menu .dropdown-item .fa {
   display: none;
 }
+.app-header .navbar-nav .nav-item .btn-primary {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-header .navbar-nav .nav-item .btn-primary .fa {
+  margin-right: 0.5rem;
+}
+.app-header .navbar-nav .nav-item .btn-primary .fa.fa-sign-in {
+  font-size: 1.625rem;
+}
 .app-header .input-search:hover .form-control {
   border-color: transparent;
 }
@@ -939,8 +955,11 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 @media (max-width: 767.98px) {
-  .app-header .navbar-brand {
+  .app-header .navbar-brand:not(d-block) {
     display: none;
+  }
+  .app-header .navbar-brand.d-block img {
+    width: 12rem;
   }
   .app-header .navbar-nav.nav-main .nav-item {
     display: none;
@@ -1119,9 +1138,6 @@ table.dataTable tbody tr td .nowrap {
   align-items: center;
   color: #ff6600;
 }
-.app-content.page-sign-in .nav .nav-link:hover {
-  color: #d65600;
-}
 .app-content.page-sign-in .nav .nav-link .img {
   background-repeat: no-repeat;
   background-size: cover;
@@ -1192,6 +1208,31 @@ table.dataTable tbody tr td .nowrap {
 }
 .app-content.page-sign-in .article-school-registration {
   border-top: 1px solid #ced4da;
+}
+.app-content.page-sign-in .article-data-privacy,
+.app-content.page-sign-in .article-terms-of-use {
+  padding: 2rem;
+}
+.app-content.page-sign-in .article-data-privacy .article-header,
+.app-content.page-sign-in .article-terms-of-use .article-header {
+  margin-bottom: 1rem;
+}
+.app-content.page-sign-in .article-data-privacy .article-content .article-body .table,
+.app-content.page-sign-in .article-terms-of-use .article-content .article-body .table {
+  background-color: transparent;
+}
+.app-content.page-sign-in .article-data-privacy .article-content .article-body .table tbody td,
+.app-content.page-sign-in .article-terms-of-use .article-content .article-body .table tbody td {
+  border-top: 0;
+  padding: 0.25rem 0.5rem;
+}
+.app-content.page-sign-in .article-data-privacy .article-content .article-body .table tbody td p,
+.app-content.page-sign-in .article-terms-of-use .article-content .article-body .table tbody td p {
+  margin-bottom: 0;
+}
+.app-content.page-sign-in .article-data-privacy .article-content .article-body .table tbody td p + p,
+.app-content.page-sign-in .article-terms-of-use .article-content .article-body .table tbody td p + p {
+  margin-top: 1rem;
 }
 .app-content.page-sign-in .form-sign-in {
   background-color: #ffffff;
@@ -1268,12 +1309,6 @@ table.dataTable tbody tr td .nowrap {
 .modal-registration-successful .modal-dialog {
   max-width: 320px;
 }
-.modal-forgot-password .modal-dialog .modal-header .modal-title,
-.modal-registration-successful .modal-dialog .modal-header .modal-title {
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  text-align: center;
-}
 .modal-forgot-password .modal-dialog .modal-body,
 .modal-registration-successful .modal-dialog .modal-body {
   padding: 2rem 2rem 1rem;
@@ -1282,15 +1317,11 @@ table.dataTable tbody tr td .nowrap {
 .modal-registration-successful .modal-dialog .modal-body .form-group {
   text-align: center;
 }
-.modal-forgot-password .modal-dialog .modal-body .form-group .fa-lock,
-.modal-forgot-password .modal-dialog .modal-body .form-group .fa-user,
-.modal-registration-successful .modal-dialog .modal-body .form-group .fa-lock,
-.modal-registration-successful .modal-dialog .modal-body .form-group .fa-user {
-  font-size: 1.625rem;
+.modal-forgot-password .modal-dialog .modal-body .form-group .fa,
+.modal-registration-successful .modal-dialog .modal-body .form-group .fa {
+  color: #adb5bd;
 }
 
-.modal-forgot-password .form-reset-password-success .fa-check-circle,
-.modal-forgot-password .form-registration-successful .fa-check-circle,
 .modal-registration-successful .form-reset-password-success .fa-check-circle,
 .modal-registration-successful .form-registration-successful .fa-check-circle {
   color: #28a745;
@@ -1300,10 +1331,6 @@ table.dataTable tbody tr td .nowrap {
 
 .app-content.page-home .article-resources {
   padding: 0 1.5rem;
-}
-.app-content.page-home .article-resources.no-sidebar .article-content .article-body .card-group {
-  -webkit-justify-content: center;
-  justify-content: center;
 }
 .app-content.page-home .article-resources:not(.collapse-sidebar) .article-content .article-sidebar .navbar .btn .fa-chevron-right {
   display: none;
@@ -1332,7 +1359,7 @@ table.dataTable tbody tr td .nowrap {
   justify-content: flex-end;
   background-color: #ff9900;
   height: 3rem;
-  padding: 0.5rem 0;
+  padding: 0;
 }
 .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light {
   background-color: #ff9900;
@@ -1375,10 +1402,16 @@ table.dataTable tbody tr td .nowrap {
   margin: 0.5rem;
   padding: 0;
 }
+@media (max-width: 768px) {
+  .app-content.page-home .article-resources .article-content .article-body .card-group .card {
+    max-width: 15rem;
+    min-width: 15rem;
+  }
+}
 @media (max-width: 767.98px) {
   .app-content.page-home .article-resources.collapse-sidebar .article-content .article-sidebar {
     height: 3rem;
-    margin: 0 -1.5rem;
+    margin: 0 -1rem;
   }
   .app-content.page-home .article-resources.collapse-sidebar .article-content .article-sidebar .navbar {
     width: 100%;
@@ -1386,9 +1419,12 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-home .article-resources.collapse-sidebar .article-content .article-body {
     padding-left: 0;
   }
+  .app-content.page-home .article-resources .article-content {
+    margin: 0 -0.5rem;
+  }
   .app-content.page-home .article-resources .article-content .article-sidebar {
     overflow: hidden;
-    margin: 0 -1.5rem;
+    margin: 0 -1rem;
     -webkit-transition: height 0.35s;
     -moz-transition: height 0.35s;
     -o-transition: height 0.35s;
@@ -1413,7 +1449,24 @@ table.dataTable tbody tr td .nowrap {
     color: #495057;
   }
   .app-content.page-home .article-resources .article-content .article-sidebar .form-filters {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
+  }
+  .app-content.page-home .article-resources .article-content .article-body {
+    padding: 1rem 0;
+  }
+  .app-content.page-home .article-resources .article-content .article-body .card-group .card {
+    max-width: 12rem;
+    min-width: 12rem;
+    margin: 0.325rem;
+  }
+  .app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body {
+    padding: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .app-content.page-home .article-resources.no-sidebar .article-content .article-body .card-group {
+    margin: 0 auto;
+    max-width: 82rem;
   }
 }
 @media (min-width: 768px) {
@@ -1511,6 +1564,10 @@ table.dataTable tbody tr td .nowrap {
   color: #adb5bd;
   font-size: 1.375rem;
   vertical-align: top;
+}
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light .fa.fa-long-arrow-left,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light .fa.fa-long-arrow-left {
+  font-size: 1.5rem;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend {
   left: 1px;
@@ -1736,6 +1793,12 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item-drawer {
     display: none;
   }
+  .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
   .app-content.page-resources .article-resources .article-content .article-sidebar {
     display: none;
   }
@@ -1805,6 +1868,9 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item-result {
     display: none;
   }
+  .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .form-control {
     width: 32rem;
   }
@@ -1842,42 +1908,6 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 
-.app-content.page-reports .article-reports {
-  padding: 1.5rem;
-}
-.app-content.page-reports .article-reports .article-content .article-body .nav {
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-.app-content.page-reports .article-reports .article-content .article-body .nav .nav-link {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  align-items: center;
-  color: #495057;
-  font-size: 1.25rem;
-  margin: 1rem;
-  padding: 1rem;
-}
-.app-content.page-reports .article-reports .article-content .article-body .nav .nav-link:hover {
-  background-color: #e9ecef;
-  color: #212529;
-}
-.app-content.page-reports .article-reports .article-content .article-body .nav .nav-link .img {
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 1rem;
-  height: 8rem;
-  width: 8rem;
-}
-.app-content.page-reports .article-reports .article-content .article-body .nav .nav-link .img.img-usage-report {
-  background-image: url("../images/icon_reports_usage.png");
-}
-.app-content.page-reports .article-reports .article-content .article-body .nav .nav-link .img.img-mastery-report {
-  background-image: url("../images/icon_reports_mastery.png");
-}
 .app-content.page-reports .article-report {
   padding: 0 1.5rem;
 }
@@ -1908,7 +1938,7 @@ table.dataTable tbody tr td .nowrap {
   justify-content: flex-end;
   background-color: #ff9900;
   height: 3rem;
-  padding: 0.5rem 0;
+  padding: 0;
 }
 .app-content.page-reports .article-report .article-content .article-sidebar .navbar .btn-light {
   background-color: #ff9900;

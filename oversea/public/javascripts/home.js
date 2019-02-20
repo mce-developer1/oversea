@@ -6,7 +6,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $('.article-resources .article-body .loading-state').addClass('d-none');
       $('.article-resources .article-body .card-group').removeClass('d-none');
-    }, 3500);
+    }, 5000);
   });
 
   $('#selSubjet').on('changed.bs.select', function (e) {
@@ -21,7 +21,7 @@ $(document).ready(function() {
       setTimeout(function() {
         $('.toast-stack').addClass('d-none');
         $('.toast-stack .toast').removeClass('show');
-      }, 3500);
+      }, 5000);
     }, 1000);
   });
 

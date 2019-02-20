@@ -13,6 +13,21 @@
   </head>
   <body>
     <div class="app-container">
+      {{#if infoPage}}
+        <div class="navbar navbar-expand app-header">
+          <a class="navbar-brand d-block" href="/">
+            <img src="/static/images/logo_mceduworld.png"/>
+          </a>
+          <ul class="navbar-nav nav-main"></ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn btn-primary" type="button">
+                <i class="fa fa-sign-in"></i> Login
+              </button>
+            </li>
+          </ul>
+        </div>
+      {{/if}}
       {{#if loggedIn}}
         <div class="navbar navbar-expand app-header">
           <button class="btn btn-light btn-menu" type="button" data-toggle="drawer" data-target=".drawer">
@@ -155,13 +170,13 @@
       <div class="app-footer">
         <ul class="nav nav-light">
           <li class="nav-item">
-            <a class="nav-link" href="/404">
-              Data Protection and Privacy Statement
+            <a class="nav-link" href="/privacy">
+              Data Protection & Privacy Statement
             </a>
           </li>
           <li class="nav-divider"></li>
           <li class="nav-item">
-            <a class="nav-link" href="/404">
+            <a class="nav-link" href="/terms">
               Terms & Conditions
             </a>
           </li>

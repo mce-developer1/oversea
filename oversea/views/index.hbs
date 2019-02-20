@@ -71,27 +71,27 @@
         <div class="col-sm">
           <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <div class="nav-link">
                 <i class="img img-quality-resources"></i> Quality Resources
-              </a>
+              </div>
             </li>
             <li class="nav-divider"></li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <div class="nav-link">
                 <i class="img img-insightful-educators"></i> Insightful Educators
-              </a>
+              </div>
             </li>
             <li class="nav-divider"></li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <div class="nav-link">
                 <i class="img img-great-support"></i> Great Support
-              </a>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </div>
-  </div>  
+  </div>
   <div class="row no-gutters">
     <div class="col-sm">
       <div class="article article-study-resource">
@@ -100,7 +100,7 @@
           Access learning resources on any device.<br/>
           Study at your own pace.
         </p>
-        <button class="btn btn-primary" type="button">
+        <button class="btn btn-primary d-none" type="button">
           Click Here to Preview
         </button>
       </div>
@@ -398,7 +398,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Forgot Password</h5>
+        <h5 class="modal-title">Reset Password</h5>
         <button type="button" class="close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -409,10 +409,20 @@
             <div class="input-group prepend">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fa fa-envelope"></i>
+                  <i class="fa fa-user"></i>
                 </span>
               </div>
-              <input type="text" class="form-control input-email" placeholder="E-mail">
+              <input type="text" class="form-control input-username" placeholder="Username">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group prepend">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="fa fa-building"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control input-school" placeholder="School">
             </div>
           </div>
           <div class="form-group">
@@ -423,16 +433,25 @@
         </form>
         <form class="form-reset-password-success d-none">
           <div class="form-group">
-            <h5>
-              <i class="fa fa-check-circle"></i> Reset Email Sent
-            </h5>
-            <p>
-              A password reset email has been sent to your email address.
-            </p>
+            <div class="text-dark">
+              The password reset email have been sent to your email address.
+            </div>
           </div>
           <div class="form-group">
             <button class="btn btn-primary btn-block" type="button" data-dismiss="modal">
-              OK
+              Close
+            </button>
+          </div>
+        </form>
+        <form class="form-reset-password-error d-none">
+          <div class="form-group">
+            <div class="text-danger">
+              You do not have a valid email address registered. Please approach your school teacher or administrator.
+            </div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="button" data-dismiss="modal">
+              Close
             </button>
           </div>
         </form>

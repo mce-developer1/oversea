@@ -1,47 +1,5 @@
 .app-content {
   &.page-reports {
-    .article-reports {
-      padding: 1.5rem;
-
-      .article-content {
-        .article-body {
-          .nav {
-            @include justify-content(center);
-
-            .nav-link {
-              @include display-flex(column);
-              @include align-items(center);
-              color: $gray-700;
-              font-size: 1.25rem;
-              margin: 1rem;
-              padding: 1rem;
-
-              &:hover {
-                background-color: $gray-200;
-                color: $gray-900;
-              }
-
-              .img {                
-                background-repeat: no-repeat;
-                background-size: cover;
-                margin-bottom: 1rem;
-                height: 8rem;
-                width: 8rem;
-
-                &.img-usage-report {
-                  background-image: url("../images/icon_reports_usage.png");
-                }
-
-                &.img-mastery-report {
-                  background-image: url("../images/icon_reports_mastery.png");
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
     .article-report {
       padding: 0 1.5rem;
 
@@ -93,7 +51,7 @@
             @include justify-content(flex-end);
             background-color: $accent;
             height: 3rem;
-            padding: .5rem 0;
+            padding: 0;
 
             .btn-light {
               background-color: $accent;
