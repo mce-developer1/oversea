@@ -1828,6 +1828,15 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-resources .article-resources .article-content {
     margin: 0 -0.5rem;
   }
+  .app-content.page-resources .article-resources .article-content .article-body .card-group {
+    padding: 0.675rem 0.25rem;
+  }
+  .app-content.page-resources .article-resources .article-content .article-body .card-group .card {
+    margin: 0.325rem;
+  }
+  .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body {
+    padding: 1rem;
+  }
 }
 @media (max-width: 576px) {
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav:first-child {
@@ -1855,6 +1864,10 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(5),
 .app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(6) {
     display: none;
+  }
+  .app-content.page-resources .article-resources .article-content .article-body .card-group .card {
+    max-width: calc(50vw - 1.5rem);
+    min-width: calc(50vw - 1.5rem);
   }
 }
 @media (min-width: 992px) {
@@ -2139,6 +2152,9 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light .fa {
   font-size: 1.625rem;
 }
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class {
+  padding: 1.5rem 0;
+}
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class h6 {
   margin-bottom: 1rem;
 }
@@ -2186,9 +2202,12 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group .btn + .btn {
   margin-left: 0.5rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .app-content.page-administration .article-manage-form-class .article-content .article-body {
     margin: 0;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class {
+    padding: 1rem 0;
   }
   .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row {
     -webkit-align-items: flex-start;

@@ -73,6 +73,8 @@
           }
 
           .form-form-class {
+            padding: 1.5rem 0;
+
             h6 {
               margin-bottom: 1rem;
             }
@@ -132,13 +134,15 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767.98px) {
       .article-manage-form-class {
         .article-content {
           .article-body {
             margin: 0;
 
             .form-form-class {
+              padding: 1rem 0;
+              
               .form-row {
                 @include align-items(flex-start);
                 @include flex-direction(column);

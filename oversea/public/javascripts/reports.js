@@ -628,25 +628,6 @@ $(document).ready(function() {
   }
 
   function initPage() {
-    $('.article-report .article-sidebar .navbar .btn').on('click', function(e) {
-      if ($(window).width() < 768) {
-        var height = $('.article-report .article-sidebar').get(0).scrollHeight;
-        $('.article-report .article-sidebar').css('height', height);
-      }
-  
-      var sidebarCollapsed = $('.article-report').hasClass('collapse-sidebar');
-      var delay = (($(window).width() < 768) && sidebarCollapsed) ? 350 : 0;
-      setTimeout(function waitBrowserReflow() {
-        $('.article-report .article-sidebar').css('height', '');
-  
-        if ($('.article-report').hasClass('collapse-sidebar')) {
-          $('.article-report').removeClass('collapse-sidebar')
-        } else {
-          $('.article-report').addClass('collapse-sidebar');
-        }
-      }, delay);
-    });
-
     $('#selReport').on('changed.bs.select', function (e) {
       var selectedClass = $('#selClass').selectpicker('val');
       var selectedChannel = $('#selChannel').selectpicker('val');

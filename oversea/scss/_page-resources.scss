@@ -437,6 +437,20 @@
       @media (max-width: 767.98px) {
         .article-content {
           margin: 0 -.5rem;
+
+          .article-body {
+            .card-group {
+              padding: .675rem .25rem;
+
+              .card {
+                margin: .325rem;
+
+                .card-body {
+                  padding: 1rem;
+                }
+              }
+            }
+          }
         }
       }
 
@@ -478,6 +492,13 @@
                 td:nth-child(6) {
                   display: none;
                 }
+              }
+            }
+
+            .card-group {
+              .card {
+                max-width: calc(50vw - 1.5rem);
+                min-width: calc(50vw - 1.5rem);
               }
             }
           }
