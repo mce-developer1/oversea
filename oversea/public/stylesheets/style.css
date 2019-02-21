@@ -135,6 +135,10 @@ a:focus {
   padding-right: 3rem;
 }
 
+.form-header {
+  margin-bottom: 1rem;
+}
+
 .form-group.form-group-actions {
   margin-bottom: 0;
 }
@@ -288,7 +292,7 @@ a:focus {
   margin: 1rem 0 0.25rem;
 }
 .card .progress .progress-bar {
-  background-color: #fda316;
+  background-color: #ff9900;
 }
 .card .progress + .text-muted {
   font-size: 0.875rem;
@@ -1365,16 +1369,8 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light {
   background-color: #ff9900;
   border-color: #ff9900;
-  height: calc(3rem - 2px);
-  max-height: calc(3rem - 2px);
+  height: 3rem;
   padding: 0.5rem 0.75rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 6rem;
-  -webkit-transition: left 0.35s;
-  -moz-transition: left 0.35s;
-  -o-transition: left 0.35s;
-  transition: left 0.35s;
 }
 .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light:hover .fa-chevron-left,
 .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light:hover .fa-chevron-right,
@@ -1402,6 +1398,11 @@ table.dataTable tbody tr td .nowrap {
   min-width: 16rem;
   margin: 0.5rem;
   padding: 0;
+}
+.app-content.page-home .article-resources .article-content .article-body .card-group .card .card-img-top {
+  height: 10rem;
+  max-height: 10rem;
+  padding: 1rem;
 }
 @media (max-width: 768px) {
   .app-content.page-home .article-resources .article-content .article-body .card-group .card {
@@ -1519,7 +1520,7 @@ table.dataTable tbody tr td .nowrap {
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
-  width: 18.5rem;
+  width: 16.5rem;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
@@ -1534,9 +1535,13 @@ table.dataTable tbody tr td .nowrap {
   -webkit-align-items: center;
   align-items: center;
 }
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
-  width: 14rem;
+  width: 12rem;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group {
   position: relative;
@@ -1793,6 +1798,9 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item-drawer {
     display: none;
   }
+  .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .item-text {
+    width: 40vw;
+  }
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
     display: none;
   }
@@ -1841,9 +1849,6 @@ table.dataTable tbody tr td .nowrap {
 @media (max-width: 576px) {
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
-  }
-  .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .item-text {
-    width: 10rem;
   }
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-share,
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-download {
@@ -1958,12 +1963,8 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-reports .article-report .article-content .article-sidebar .navbar .btn-light {
   background-color: #ff9900;
   border-color: #ff9900;
-  height: calc(3rem - 2px);
-  max-height: calc(3rem - 2px);
+  height: 3rem;
   padding: 0.5rem 0.75rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 6rem;
 }
 .app-content.page-reports .article-report .article-content .article-sidebar .navbar .btn-light:hover .fa-chevron-left,
 .app-content.page-reports .article-report .article-content .article-sidebar .navbar .btn-light:hover .fa-filter {
@@ -2155,9 +2156,6 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class {
   padding: 1.5rem 0;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class h6 {
-  margin-bottom: 1rem;
-}
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row {
   -webkit-align-items: flex-end;
   align-items: flex-end;
@@ -2269,33 +2267,23 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-student-password .article-header,
 .app-content.page-profile .article-reset-teacher-password .article-header {
   background-color: #e9ecef;
-  height: 3.5rem;
-  max-height: 3.5rem;
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
-.app-content.page-profile .article-update-personal-particulars .article-header .sidebar-toggle,
-.app-content.page-profile .article-update-personal-preferences .article-header .sidebar-toggle,
-.app-content.page-profile .article-change-password .article-header .sidebar-toggle,
-.app-content.page-profile .article-reset-student-password .article-header .sidebar-toggle,
-.app-content.page-profile .article-reset-teacher-password .article-header .sidebar-toggle {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  color: #212529;
-  font-size: 1.25rem;
-  font-weight: 500;
-  height: 3.5rem;
-  max-height: 3.5rem;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
+.app-content.page-profile .article-update-personal-particulars .article-header .btn-light,
+.app-content.page-profile .article-update-personal-preferences .article-header .btn-light,
+.app-content.page-profile .article-change-password .article-header .btn-light,
+.app-content.page-profile .article-reset-student-password .article-header .btn-light,
+.app-content.page-profile .article-reset-teacher-password .article-header .btn-light {
+  height: 3rem;
+  padding: 0.5rem 0.75rem;
+}
+.app-content.page-profile .article-update-personal-particulars .article-header .btn-light .fa.fa-caret-down,
+.app-content.page-profile .article-update-personal-preferences .article-header .btn-light .fa.fa-caret-down,
+.app-content.page-profile .article-change-password .article-header .btn-light .fa.fa-caret-down,
+.app-content.page-profile .article-reset-student-password .article-header .btn-light .fa.fa-caret-down,
+.app-content.page-profile .article-reset-teacher-password .article-header .btn-light .fa.fa-caret-down {
+  font-size: 1.325rem;
 }
 .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
 .app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar,
@@ -2346,6 +2334,9 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-change-password:not(.no-sidebar) .article-header,
 .app-content.page-profile .article-reset-student-password .article-header,
 .app-content.page-profile .article-reset-teacher-password .article-header {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    height: 3rem;
     margin: 0 -1rem;
     padding: 0;
   }
@@ -2384,11 +2375,11 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 @media (min-width: 768px) {
-  .app-content.page-profile .article-update-personal-particulars .article-header .sidebar-toggle,
-.app-content.page-profile .article-update-personal-preferences .article-header .sidebar-toggle,
-.app-content.page-profile .article-change-password:not(.no-sidebar) .article-header .sidebar-toggle,
-.app-content.page-profile .article-reset-student-password .article-header .sidebar-toggle,
-.app-content.page-profile .article-reset-teacher-password .article-header .sidebar-toggle {
+  .app-content.page-profile .article-update-personal-particulars .article-header .btn-light,
+.app-content.page-profile .article-update-personal-preferences .article-header .btn-light,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-header .btn-light,
+.app-content.page-profile .article-reset-student-password .article-header .btn-light,
+.app-content.page-profile .article-reset-teacher-password .article-header .btn-light {
     display: none;
   }
   .app-content.page-profile .article-update-personal-particulars .article-content,
@@ -2397,6 +2388,33 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-student-password .article-content,
 .app-content.page-profile .article-reset-teacher-password .article-content {
     padding: 1.5rem 0;
+  }
+  .app-content.page-profile .article-update-personal-particulars .article-content .article-body .form-personal-particulars .form-header,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-body .form-personal-preferences .form-header,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-body .form-change-password .form-header,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-body .form-reset-student-password .form-header,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-body .form-reset-teacher-password .form-header,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-body .form-personal-particulars .form-header,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-body .form-personal-preferences .form-header,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-body .form-change-password .form-header,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-body .form-reset-student-password .form-header,
+.app-content.page-profile .article-update-personal-preferences .article-content .article-body .form-reset-teacher-password .form-header,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-body .form-personal-particulars .form-header,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-body .form-personal-preferences .form-header,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-body .form-change-password .form-header,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-body .form-reset-student-password .form-header,
+.app-content.page-profile .article-change-password:not(.no-sidebar) .article-content .article-body .form-reset-teacher-password .form-header,
+.app-content.page-profile .article-reset-student-password .article-content .article-body .form-personal-particulars .form-header,
+.app-content.page-profile .article-reset-student-password .article-content .article-body .form-personal-preferences .form-header,
+.app-content.page-profile .article-reset-student-password .article-content .article-body .form-change-password .form-header,
+.app-content.page-profile .article-reset-student-password .article-content .article-body .form-reset-student-password .form-header,
+.app-content.page-profile .article-reset-student-password .article-content .article-body .form-reset-teacher-password .form-header,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-body .form-personal-particulars .form-header,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-body .form-personal-preferences .form-header,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-body .form-change-password .form-header,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-body .form-reset-student-password .form-header,
+.app-content.page-profile .article-reset-teacher-password .article-content .article-body .form-reset-teacher-password .form-header {
+    display: none;
   }
 }
 

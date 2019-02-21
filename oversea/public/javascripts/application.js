@@ -35,4 +35,12 @@ $(document).ready(function() {
       }
     }, delay);
   });
+
+  $(document).on('show.bs.modal', function (e) {
+    if ($(e.target).find('.modal-dialog').hasClass('modal-preview')) {
+      setTimeout(function() {
+        $('.modal-backdrop.show').addClass('modal-backdrop-preview');
+      });
+    }
+  });
 });

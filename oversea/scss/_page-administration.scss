@@ -75,10 +75,6 @@
           .form-form-class {
             padding: 1.5rem 0;
 
-            h6 {
-              margin-bottom: 1rem;
-            }
-
             .form-row {
               @include align-items(flex-end);
               margin: 0;

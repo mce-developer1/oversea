@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.form-sign-in .btn-primary').on('click', function(e) {
+  function redirectToHome(e) {
     var username = $('.form-sign-in .input-username').val();
 
     if (/^student$/i.test(username)) {
@@ -9,7 +9,10 @@ $(document).ready(function() {
     } else if (/^admin$/i.test(username)) {
       location.href = '/admin/home';
     }
-  });
+  }
+
+  $('.form-sign-in .btn-primary').on('click', redirectToHome);
+  $('.form-sign-in .input-username').on('change', redirectToHome);
 
   $('.form-sign-in .forgot-password').on('click', function(e) {
     $('.modal-forgot-password .form-reset-password-success').addClass('d-none');

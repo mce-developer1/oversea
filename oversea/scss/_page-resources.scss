@@ -24,7 +24,7 @@
 
             &:first-child {
               margin-right: 1rem;
-              width: 18.5rem;
+              width: 16.5rem;
             }
 
             &.nav-main {
@@ -36,9 +36,14 @@
               @include display-flex(row);
               @include align-items(center);
 
+              .btn-light {
+                margin-left: 0;
+                margin-right: .5rem;
+              }
+
               .item-text {
                 font-size: 1.25rem;
-                width: 14rem;
+                width: 12rem;
               }
             }
 
@@ -385,6 +390,12 @@
                 display: none;
               }
 
+              .nav-item {
+                .item-text {
+                  width: 40vw;
+                }
+              }
+
               .input-group {
                 .input-group-prepend {
                   .btn-search {
@@ -460,12 +471,6 @@
             .navbar-nav {
               &:first-child {
                 width: 14rem;
-              }
-
-              .nav-item {
-                .item-text {
-                  width: 10rem;
-                }
               }
 
               .btn-share,

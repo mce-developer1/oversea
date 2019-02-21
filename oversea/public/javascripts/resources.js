@@ -130,11 +130,6 @@ $(document).ready(function() {
     e.preventDefault();
     e.stopPropagation();
     
-    $('.modal-resource-preview').on('show.bs.modal', function (e) {
-      setTimeout(function() {
-        $('.modal-backdrop.show').addClass('modal-backdrop-preview');
-      });
-    });
     $('.modal-resource-preview').on('hide.bs.modal', function (e) {
       $('.modal-resource-preview .content').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/hE834L-rRtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
     });
