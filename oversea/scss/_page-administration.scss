@@ -132,7 +132,13 @@
 
     @media (max-width: 767.98px) {
       .article-manage-form-class {
+        .article-header {
+          padding: .75rem 1rem;
+        }
+
         .article-content {
+          margin: 0 -.5rem;
+
           .article-body {
             margin: 0;
 

@@ -308,6 +308,25 @@ router.get('/subject', function(req, res, next) {
   });
 });
 
+/* GET track resources page. */
+router.get('/:userRole/lessons/lessons', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('lessons/lessons', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'lessons',
+    loggedIn: true,
+    lessonsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET 404 error page. */
 router.get('*', function(req, res){
   res.render('errors/404', {

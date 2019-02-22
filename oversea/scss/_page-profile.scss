@@ -13,12 +13,16 @@
       padding: 0 1.5rem;
 
       &.collapse-sidebar {
-        &.collapse-sidebar {
-          .article-content {
-            .article-sidebar {
-              height: 0;
-            }
+        .article-content {
+          .article-sidebar {
+            height: 0;
           }
+        }
+      }
+
+      &.no-sidebar {
+        .article-header {
+          display: none;
         }
       }
 
@@ -84,20 +88,24 @@
     @media (max-width: 767.98px) {
       .article-update-personal-particulars,
       .article-update-personal-preferences,
-      .article-change-password:not(.no-sidebar),
+      .article-change-password,
       .article-reset-student-password,
       .article-reset-teacher-password {
         padding: 0 1rem;
+
+        &:not(.no-sidebar) {
+          .article-header {
+            h5 {
+              display: none;
+            }
+          }
+        }
 
         .article-header {
           @include justify-content(flex-end);
           height: 3rem;
           margin: 0 -1rem;
           padding: 0;
-
-          h5 {
-            display: none;
-          }
         }
 
         .article-content {
@@ -127,18 +135,10 @@
     @media (min-width: 768px) {
       .article-update-personal-particulars,
       .article-update-personal-preferences,
-      .article-change-password:not(.no-sidebar),
+      .article-change-password,
       .article-reset-student-password,
       .article-reset-teacher-password {
-        .article-header {
-          .btn-light {
-            display: none;
-          }
-        }
-
-        .article-content {
-          padding: 1.5rem 0;
-
+        &:not(.no-sidebar) {
           .article-body {
             .form-personal-particulars,
             .form-personal-preferences,
@@ -150,6 +150,16 @@
               }
             }
           }
+        }
+
+        .article-header {
+          .btn-light {
+            display: none;
+          }
+        }
+
+        .article-content {
+          padding: 1.5rem 0;
         }
       }
     }
