@@ -13,8 +13,8 @@
   .btn-menu {
     margin-right: 1rem;
 
-    .fa {
-      font-size: 1.625rem;      
+    .fas {
+      font-size: 1.5rem;      
     }
   }
 
@@ -107,7 +107,7 @@
 
         .bootstrap-select {
           .dropdown-menu {
-            .dropdown-item .fa {
+            .dropdown-item .fas {
               display: none;
             }
           }
@@ -118,11 +118,11 @@
         @include display-flex(row);
         @include align-items(center);
 
-        .fa {
+        .fas {
           margin-right: .5rem;
 
           &.fa-sign-in {
-            font-size: 1.625rem;
+            font-size: 1.5rem;
           }
         }
       }

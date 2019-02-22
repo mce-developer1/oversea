@@ -34,9 +34,9 @@ $(document).ready(function() {
           [ '1-Courage', 'P1', '22' ]
         ];
         var buttons = '<button class="btn btn-light btn-delete" type="button">'
-          + '<i class="fa fa-times"></i></button>'
+          + '<i class="fas fa-times"></i></button>'
           + '<button class="btn btn-light btn-view" type="button">'
-          + '<i class="fa fa-th-list"></i></button>';
+          + '<i class="fas fa-th-list"></i></button>';
 
         $('.article-manage-class table').dataTable({
           data: classData,
@@ -84,9 +84,9 @@ $(document).ready(function() {
           [ 'Cheryl Crow', 'P1', '1-Amazing', 'cherylcrow@sjijunior.edu.au' ]
         ];
         var buttons = '<button class="btn btn-light btn-delete" type="button">'
-          + '<i class="fa fa-times"></i></button>'
+          + '<i class="fas fa-times"></i></button>'
           + '<button class="btn btn-light btn-view" type="button">'
-          + '<i class="fa fa-th-list"></i></button>';
+          + '<i class="fas fa-th-list"></i></button>';
 
         $('.article-manage-user table').dataTable({
           data: classData,

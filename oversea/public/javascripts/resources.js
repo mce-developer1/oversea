@@ -32,6 +32,7 @@ $(document).ready(function() {
 
   $container.find('.navbar-nav.nav-main .btn-search').on('click', function(e) {
     $container.find('.article-body .loading-state').removeClass('d-none');
+    $container.find('.article-body .empty-state').addClass('d-none');
     $container.find('.article-body .table-head').addClass('d-none');
     $container.find('.article-body .table-body').addClass('d-none');
 

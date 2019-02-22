@@ -5,7 +5,7 @@ $(document).ready(function() {
     [ 'Cheryl Crow', 'cherylcrow@sjijunior.edu.au' ]
   ];
   var buttons = '<button class="btn btn-light btn-delete" type="button">'
-    + '<i class="fa fa-times"></i></button>';
+    + '<i class="fas fa-times"></i></button>';
 
   $('.form-class-details .user-table').dataTable({
     data: contentData,

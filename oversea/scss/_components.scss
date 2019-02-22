@@ -29,22 +29,23 @@ table.dataTable {
 
         &.sorting_asc:after,
         &.sorting_desc:after {
-          font-family: 'FontAwesome';
-          display: inline-block;
-          font: normal normal normal 14px/1 FontAwesome;
-          font-size: inherit;
+          font-family: 'Font Awesome 5 Free';          
+          font-size: 1.125rem;
+          font-style: normal;
+          font-variant: normal;
+          line-height: 1.125;
           text-rendering: auto;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
-          margin-left: .25rem;
+          margin-left: .5rem;
         }
 
         &.sorting_asc:after {
-          content: '\f175';
+          content: '\f309';
         }
         
         &.sorting_desc:after {
-          content: '\f176';
+          content: '\f30c';
         }
 
         background-color: $white;
@@ -109,10 +110,10 @@ table.dataTable {
       @include align-items(center);
       font-size: 1.125rem;
 
-      .fa {
+      .fas {
         &.fa-exclamation-circle {
           color: $red;
-          font-size: 1.625rem;
+          font-size: 1.5rem;
           margin-right: .5rem;
         }
       }

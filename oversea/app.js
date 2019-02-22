@@ -20,7 +20,7 @@ app.use('/static/jquery', express.static(path.join(__dirname, 'node_modules/jque
 app.use('/static/popper', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd')));
 app.use('/static/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 app.use('/static/bootstrap-select', express.static(path.join(__dirname, 'node_modules/bootstrap-select/dist')));
-app.use('/static/font-awesome', express.static(path.join(__dirname, 'node_modules/font-awesome')));
+app.use('/static/fontawesome-free', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free')));
 app.use('/static/chart.js', express.static(path.join(__dirname, 'node_modules/chart.js/dist')));
 app.use('/static/chartjs-plugin-datalabels', express.static(path.join(__dirname, 'node_modules/chartjs-plugin-datalabels/dist')));
 app.use('/static/moment', express.static(path.join(__dirname, 'node_modules/moment')));

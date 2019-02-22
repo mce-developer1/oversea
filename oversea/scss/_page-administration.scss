@@ -21,7 +21,7 @@
                 color: $gray-900;
               }
 
-              .fa {                
+              .fas {                
                 font-size: 6rem;
                 margin-bottom: .5rem;
               }
@@ -53,20 +53,13 @@
 
             .navbar-nav {
               .btn-light {
-                @include display-flex(row);
-                @include align-items(center);
-
                 &.btn-create {
                   font-size: 1.25rem;
                   line-height: 1.25;
-
-                  .fa {
-                    margin-right: .5rem;
-                  }
                 }
 
-                .fa {
-                  font-size: 1.625rem;
+                .fas {
+                  font-size: 1.5rem;
                 }
               }
             }
@@ -107,7 +100,7 @@
                     margin-top: .5rem;
                   }
 
-                  .fa {
+                  .fas {
                     font-size: 1.25rem;
                   }
                 }
@@ -167,7 +160,7 @@
                       margin-top: 0;
                     }
 
-                    .fa {
+                    .fas {
                       &.fa-angle-right,
                       &.fa-angle-double-right,
                       &.fa-angle-left,
@@ -192,7 +185,7 @@
               .form-row {
                 .btn-group {
                   .btn {
-                    .fa {
+                    .fas {
                       &.fa-angle-down,
                       &.fa-angle-double-down,
                       &.fa-angle-up,

@@ -37,6 +37,11 @@
               @include align-items(center);
 
               .btn-light {
+                &.btn-create {
+                  font-size: 1.25rem;
+                  line-height: 1.25;
+                }
+                
                 margin-left: 0;
                 margin-right: .5rem;
               }
@@ -63,16 +68,12 @@
                   padding: .325rem .75rem;
                   
                   &:hover {
-                    .fa {
+                    .fas {
                       color: $gray-900;
                     }
                   }
 
-                  .fa {
-                    &.fa-long-arrow-left {
-                      font-size: 1.5rem;
-                    }
-
+                  .fas {
                     color: $gray-500;
                     font-size: 1.375rem;
                     vertical-align: top;
@@ -120,7 +121,7 @@
               
             .btn-light {
               &:hover {
-                .fa {
+                .fas {
                   color: $gray-900;
                 }
               }
@@ -129,9 +130,9 @@
                 padding: .325rem 1rem;
               }
 
-              .fa {
+              .fas {
                 color: $gray-700;
-                font-size: 1.625rem;
+                font-size: 1.5rem;
                 vertical-align: bottom;
 
                 &.fa-cloud {
@@ -139,8 +140,8 @@
                   width: 2.5rem;
                 }
 
-                &.fa-long-arrow-left {
-                  font-size: 1.625rem;
+                &.fa-arrow-left {
+                  font-size: 1.5rem;
                 }
               }
             }
@@ -177,7 +178,7 @@
                   background-color: $gray-200;
                 }
 
-                .fa {
+                .fas {
                   color: $gray-600;
                   font-size: .75rem;
                   min-width: 1rem;
@@ -295,7 +296,7 @@
               padding-left: 2.25rem;
               position: relative;
 
-              .fa {
+              .fas {
                 position: absolute;
                 left: 0;
 
@@ -334,7 +335,7 @@
                 padding: 1rem;
                 text-align: center;
 
-                .fa {
+                .fas {
                   font-size: 8rem;
 
                   &.fa-folder {

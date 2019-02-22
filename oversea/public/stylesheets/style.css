@@ -165,7 +165,7 @@ a:focus {
   border-color: #495057;
   outline: 0 !important;
 }
-.dropdown.bootstrap-select .dropdown-toggle .filter-option-inner-inner .fa {
+.dropdown.bootstrap-select .dropdown-toggle .filter-option-inner-inner .fas {
   margin-right: 0.5rem;
 }
 .dropdown.bootstrap-select .dropdown-menu .dropdown-item {
@@ -189,9 +189,8 @@ a:focus {
   background-color: #e9ecef;
   color: #212529;
 }
-.dropdown .dropdown-menu .dropdown-item .fa {
-  font-size: 1.25rem;
-  vertical-align: middle;
+.dropdown .dropdown-menu .dropdown-item .fas {
+  font-size: 1.125rem;
   width: 2rem;
 }
 
@@ -284,7 +283,7 @@ a:focus {
 .card .status.status-error {
   color: #dc3545;
 }
-.card .status .fa {
+.card .status .fas {
   font-size: 1.5rem;
 }
 .card .progress {
@@ -339,8 +338,8 @@ a:focus {
 .modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav .nav-item .btn.btn-close {
   margin-left: 0;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav .nav-item .btn .fa {
-  font-size: 1.625rem;
+.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav .nav-item .btn .fas {
+  font-size: 1.5rem;
 }
 .modal .modal-dialog.modal-preview .modal-content .modal-body .content {
   display: -ms-flexbox;
@@ -383,8 +382,8 @@ a:focus {
   background-color: #f8f9fa;
   cursor: pointer;
 }
-.table thead th.sortable-column .fa {
-  font-size: 1rem;
+.table thead th.sortable-column .fas {
+  font-size: 1.125rem;
   margin-left: 0.25rem;
 }
 .table tbody tr.table-active > th,
@@ -454,20 +453,21 @@ table.dataTable thead tr th.sorting:hover, table.dataTable thead tr th.sorting_a
   cursor: pointer;
 }
 table.dataTable thead tr th.sorting_asc:after, table.dataTable thead tr th.sorting_desc:after {
-  font-family: "FontAwesome";
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.125rem;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1.125;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
 }
 table.dataTable thead tr th.sorting_asc:after {
-  content: "";
+  content: "";
 }
 table.dataTable thead tr th.sorting_desc:after {
-  content: "";
+  content: "";
 }
 table.dataTable tbody tr td {
   border-top: 1px solid #dee2e6;
@@ -528,9 +528,9 @@ table.dataTable tbody tr td .nowrap {
   align-items: center;
   font-size: 1.125rem;
 }
-.toast-stack .toast .toast-body .fa.fa-exclamation-circle {
+.toast-stack .toast .toast-body .fas.fa-exclamation-circle {
   color: #dc3545;
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   margin-right: 0.5rem;
 }
 
@@ -779,8 +779,8 @@ table.dataTable tbody tr td .nowrap {
 .app-header .btn-menu {
   margin-right: 1rem;
 }
-.app-header .btn-menu .fa {
-  font-size: 1.625rem;
+.app-header .btn-menu .fas {
+  font-size: 1.5rem;
 }
 .app-header .navbar-brand {
   margin-right: 2.5rem;
@@ -858,7 +858,7 @@ table.dataTable tbody tr td .nowrap {
 .app-header .navbar-nav .nav-item.localize {
   margin: 0 0 0 2rem;
 }
-.app-header .navbar-nav .nav-item.localize .bootstrap-select .dropdown-menu .dropdown-item .fa {
+.app-header .navbar-nav .nav-item.localize .bootstrap-select .dropdown-menu .dropdown-item .fas {
   display: none;
 }
 .app-header .navbar-nav .nav-item .btn-primary {
@@ -869,11 +869,11 @@ table.dataTable tbody tr td .nowrap {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-header .navbar-nav .nav-item .btn-primary .fa {
+.app-header .navbar-nav .nav-item .btn-primary .fas {
   margin-right: 0.5rem;
 }
-.app-header .navbar-nav .nav-item .btn-primary .fa.fa-sign-in {
-  font-size: 1.625rem;
+.app-header .navbar-nav .nav-item .btn-primary .fas.fa-sign-in {
+  font-size: 1.5rem;
 }
 .app-header .input-search:hover .form-control {
   border-color: transparent;
@@ -1023,7 +1023,7 @@ table.dataTable tbody tr td .nowrap {
   background-color: transparent;
   border-bottom-color: #ff6600;
 }
-.app-content .nav-tabs .nav-link .fa {
+.app-content .nav-tabs .nav-link .fas {
   font-size: 2rem;
   margin-right: 0.5rem;
   vertical-align: middle;
@@ -1105,7 +1105,7 @@ table.dataTable tbody tr td .nowrap {
   align-items: center;
   font-size: 2rem;
 }
-.app-content.page-error .article-error .article-content .article-body .fa.fa-exclamation-circle {
+.app-content.page-error .article-error .article-content .article-body .fas.fa-exclamation-circle {
   font-size: 4rem;
   margin-right: 1rem;
 }
@@ -1124,7 +1124,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-sign-in .navbar .dropdown.bootstrap-select .dropdown-toggle {
   background-color: #ffffff;
 }
-.app-content.page-sign-in .navbar .dropdown.bootstrap-select .dropdown-item .fa {
+.app-content.page-sign-in .navbar .dropdown.bootstrap-select .dropdown-item .fas {
   display: none;
 }
 .app-content.page-sign-in .nav {
@@ -1245,7 +1245,7 @@ table.dataTable tbody tr td .nowrap {
   padding: 1.5rem;
   width: 260px;
 }
-.app-content.page-sign-in .form-sign-in .form-group .input-group-text .fa {
+.app-content.page-sign-in .form-sign-in .form-group .input-group-text .fas {
   color: #adb5bd;
 }
 .app-content.page-sign-in .form-sign-in .form-group-actions {
@@ -1322,8 +1322,8 @@ table.dataTable tbody tr td .nowrap {
 .modal-registration-successful .modal-dialog .modal-body .form-group {
   text-align: center;
 }
-.modal-forgot-password .modal-dialog .modal-body .form-group .fa,
-.modal-registration-successful .modal-dialog .modal-body .form-group .fa {
+.modal-forgot-password .modal-dialog .modal-body .form-group .fas,
+.modal-registration-successful .modal-dialog .modal-body .form-group .fas {
   color: #adb5bd;
 }
 
@@ -1539,6 +1539,10 @@ table.dataTable tbody tr td .nowrap {
   margin-left: 0;
   margin-right: 0.5rem;
 }
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .btn-light.btn-create {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 12rem;
@@ -1559,19 +1563,15 @@ table.dataTable tbody tr td .nowrap {
   margin-left: 0;
   padding: 0.325rem 0.75rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light:hover .fa,
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light:hover .fa {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light:hover .fas,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light:hover .fas {
   color: #212529;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light .fa,
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light .fa {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light .fas,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light .fas {
   color: #adb5bd;
   font-size: 1.375rem;
   vertical-align: top;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light .fa.fa-long-arrow-left,
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light .fa.fa-long-arrow-left {
-  font-size: 1.5rem;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend {
   left: 1px;
@@ -1605,23 +1605,23 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group .form-input {
   width: calc(100% - 10px);
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light:hover .fa {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light:hover .fas {
   color: #212529;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light.btn-more-actions {
   padding: 0.325rem 1rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fa {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fas {
   color: #495057;
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   vertical-align: bottom;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fa.fa-cloud {
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fas.fa-cloud {
   font-size: 2rem;
   width: 2.5rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fa.fa-long-arrow-left {
-  font-size: 1.625rem;
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
 }
 .app-content.page-resources .article-resources .article-content .article-sidebar {
   margin: 0;
@@ -1648,7 +1648,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a:hover {
   background-color: #e9ecef;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a .fa {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a .fas {
   color: #6c757d;
   font-size: 0.75rem;
   min-width: 1rem;
@@ -1721,19 +1721,19 @@ table.dataTable tbody tr td .nowrap {
   padding-left: 2.25rem;
   position: relative;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fa {
+.app-content.page-resources .article-resources .article-content .article-body .table a .fas {
   position: absolute;
   left: 0;
   font-size: 1.5rem;
   min-width: 2rem;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fa.fa-folder {
+.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-folder {
   color: #fda316;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fa.fa-file-word-o {
+.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-word-o {
   color: #007bff;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fa.fa-file-excel-o {
+.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-excel-o {
   color: #28a745;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group {
@@ -1758,16 +1758,16 @@ table.dataTable tbody tr td .nowrap {
   padding: 1rem;
   text-align: center;
 }
-.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fa {
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas {
   font-size: 8rem;
 }
-.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fa.fa-folder {
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-folder {
   color: #fda316;
 }
-.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fa.fa-file-word-o {
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-word-o {
   color: #007bff;
 }
-.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fa.fa-file-excel-o {
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-excel-o {
   color: #28a745;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body {
@@ -2006,18 +2006,14 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body {
   padding: 0;
 }
-.app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-content .article-body .chart,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body .chart {
-  min-width: 40rem;
-}
 .app-content.page-reports .article-report .article-content .article-body .navbar-report {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
   max-width: 64rem;
   padding: 0.5rem 0;
 }
-.app-content.page-reports .article-report .article-content .article-body .navbar-report .btn-light .fa {
-  font-size: 1.625rem;
+.app-content.page-reports .article-report .article-content .article-body .navbar-report .btn-light .fas {
+  font-size: 1.5rem;
 }
 @media (max-width: 767.98px) {
   .app-content.page-reports .article-report.collapse-sidebar .article-content .article-sidebar {
@@ -2117,7 +2113,7 @@ table.dataTable tbody tr td .nowrap {
   background-color: #e9ecef;
   color: #212529;
 }
-.app-content.page-administration .article-administration .article-content .article-body .nav .nav-link .fa {
+.app-content.page-administration .article-administration .article-content .article-body .nav .nav-link .fas {
   font-size: 6rem;
   margin-bottom: 0.5rem;
 }
@@ -2140,23 +2136,12 @@ table.dataTable tbody tr td .nowrap {
   justify-content: flex-end;
   padding: 0.5rem 0;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-}
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light.btn-create {
   font-size: 1.25rem;
   line-height: 1.25;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light.btn-create .fa {
-  margin-right: 0.5rem;
-}
-.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light .fa {
-  font-size: 1.625rem;
+.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light .fas {
+  font-size: 1.5rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class {
   padding: 1.5rem 0;
@@ -2193,7 +2178,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
   margin-top: 0.5rem;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa {
+.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas {
   font-size: 1.25rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group {
@@ -2244,12 +2229,12 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
     margin-top: 0;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-left, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-left {
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-left, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-left {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-up, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fa.fa-angle-double-up {
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-down, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-up, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-up {
     display: none;
   }
 }
@@ -2296,11 +2281,11 @@ table.dataTable tbody tr td .nowrap {
   height: 3rem;
   padding: 0.5rem 0.75rem;
 }
-.app-content.page-profile .article-update-personal-particulars .article-header .btn-light .fa.fa-caret-down,
-.app-content.page-profile .article-update-personal-preferences .article-header .btn-light .fa.fa-caret-down,
-.app-content.page-profile .article-change-password .article-header .btn-light .fa.fa-caret-down,
-.app-content.page-profile .article-reset-student-password .article-header .btn-light .fa.fa-caret-down,
-.app-content.page-profile .article-reset-teacher-password .article-header .btn-light .fa.fa-caret-down {
+.app-content.page-profile .article-update-personal-particulars .article-header .btn-light .fas.fa-caret-down,
+.app-content.page-profile .article-update-personal-preferences .article-header .btn-light .fas.fa-caret-down,
+.app-content.page-profile .article-change-password .article-header .btn-light .fas.fa-caret-down,
+.app-content.page-profile .article-reset-student-password .article-header .btn-light .fas.fa-caret-down,
+.app-content.page-profile .article-reset-teacher-password .article-header .btn-light .fas.fa-caret-down {
   font-size: 1.325rem;
 }
 .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
@@ -2315,7 +2300,7 @@ table.dataTable tbody tr td .nowrap {
   -o-transition: height 0.35s;
   transition: height 0.35s;
 }
-.app-content.page-profile .article-update-personal-preferences .dropdown.bootstrap-select .dropdown-item .fa {
+.app-content.page-profile .article-update-personal-preferences .dropdown.bootstrap-select .dropdown-item .fas {
   display: none;
 }
 .app-content.page-profile .form-personal-particulars,

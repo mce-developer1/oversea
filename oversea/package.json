@@ -17,7 +17,6 @@
     "daterangepicker": "^3.0.3",
     "debug": "~2.6.9",
     "express": "^4.16.4",
-    "font-awesome": "^4.7.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "i18next": "^11.10.2",

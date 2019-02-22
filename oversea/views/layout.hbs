@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-grid.css" />
     <link rel="stylesheet" href="/static/bootstrap-select/css/bootstrap-select.css" />
-    <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/static/fontawesome-free/css/solid.css" />
+    <link rel="stylesheet" href="/static/fontawesome-free/css/fontawesome.css" />
     <link rel="stylesheet" href="/static/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="/static/datatables/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="/static/stylesheets/style.css" />
@@ -24,7 +25,7 @@
       {{#if loggedIn}}
         <div class="navbar navbar-expand app-header">
           <button class="btn btn-light btn-menu" type="button" data-toggle="drawer" data-target=".drawer">
-            <i class="fa fa-bars"></i>
+            <i class="fas fa-bars"></i>
           </button>
           <a class="navbar-brand" href="/{{userRole}}/home">
             <img src="/static/images/logo_mceduworld.png"/>
@@ -66,7 +67,7 @@
               {{#unless loggedIn}}
                 <li class="nav-item dropdown">
                   <button class="btn btn-light" type="button" data-toggle="dropdown">
-                    <i class="fa fa-th"></i> Subjects
+                    <i class="fas fa-th"></i> Subjects
                   </button>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="/subject">
@@ -87,7 +88,7 @@
                     <input type="text" class="form-control" placeholder="Search for a resource to preview">
                     <div class="input-group-append">
                       <button class="btn btn-light" type="button">
-                        <i class="fa fa-search"></i>
+                        <i class="fas fa-search"></i>
                       </button>
                     </div>
                   </div>
@@ -147,13 +148,13 @@
                 </div>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="/{{userRole}}/profile/update_personal_particulars">
-                  <i class="fa fa-user"></i> About Me
+                  <i class="fas fa-user"></i> About Me
                 </a>
                 <a class="dropdown-item" href="/{{userRole}}/profile/change_password">
-                  <i class="fa fa-key"></i> Change Password
+                  <i class="fas fa-key"></i> Change Password
                 </a>
                 <a class="dropdown-item" href="/signout">
-                  <i class="fa fa-sign-out"></i> Logout
+                  <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
               </div>
             </li>

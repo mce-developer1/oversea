@@ -217,7 +217,7 @@ a {
         outline: 0 !important;
       }
 
-      .filter-option-inner-inner .fa {
+      .filter-option-inner-inner .fas {
         margin-right: .5rem;
       }
     }
@@ -250,9 +250,8 @@ a {
         color: $gray-900;
       }
 
-      .fa {
-        font-size: 1.25rem;
-        vertical-align: middle;
+      .fas {
+        font-size: 1.125rem;
         width: 2rem;
       }
     }
@@ -364,7 +363,7 @@ a {
       color: $red;
     }
 
-    .fa {
+    .fas {
       font-size: 1.5rem;
     }
   }
@@ -424,8 +423,8 @@ a {
                   margin-left: .5rem;
                   padding: .325rem .5rem;
 
-                  .fa {
-                    font-size: 1.625rem;
+                  .fas {
+                    font-size: 1.5rem;
                   }
                 }
               }
@@ -481,8 +480,8 @@ a {
           cursor: pointer;
         }
 
-        .fa {
-          font-size: 1rem;
+        .fas {
+          font-size: 1.125rem;
           margin-left: .25rem;
         }
       }
