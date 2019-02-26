@@ -14,6 +14,10 @@ $(document).ready(function() {
       if ($container.find('.btn-download').hasClass('d-none')) {
         $container.find('.btn-download').removeClass('d-none');
       }
+
+      if ($container.find('.btn-more').hasClass('d-none')) {
+        $container.find('.btn-more').removeClass('d-none');
+      }
     } else {
       if (!$container.find('.btn-share').hasClass('d-none')) {
         $container.find('.btn-share').addClass('d-none');
@@ -21,6 +25,10 @@ $(document).ready(function() {
 
       if (!$container.find('.btn-download').hasClass('d-none')) {
         $container.find('.btn-download').addClass('d-none');
+      }
+
+      if (!$container.find('.btn-more').hasClass('d-none')) {
+        $container.find('.btn-more').addClass('d-none');
       }
     }
   }
@@ -56,6 +64,10 @@ $(document).ready(function() {
   $container.find('.navbar-nav.nav-main .btn-back').on('click', function(e) {
     $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
     $container.find('.nav-main').removeClass('d-block');
+  });
+
+  $container.find('.navbar-nav .btn-share').on('click', function(e) {
+    $('.modal-resource-share').modal('show');
   });
 
   $(window).on('resize', function(e) {

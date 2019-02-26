@@ -19,7 +19,6 @@
           padding: .75rem 1.5rem;
 
           .navbar-nav {
-            @include align-items(center);
             @include flex-direction(row);
 
             &:first-child {
@@ -42,8 +41,7 @@
                   line-height: 1.25;
                 }
                 
-                margin-left: 0;
-                margin-right: .5rem;
+                margin: 0 .25rem;
               }
 
               .item-text {
@@ -98,7 +96,7 @@
 
             .dialog-menu {
               .form-advanced-search {
-                padding: 1rem 1.5rem;
+                padding: 1rem;
 
                 .form-group {
                   @include display-flex(row);
@@ -109,11 +107,19 @@
                   }
 
                   .form-label {
-                    width: 20rem;
+                    width: 18rem;
                   }
 
                   .form-input {
-                    width: calc(100% - 10px);
+                    width: calc(100% - 1.25rem);
+                  }
+
+                  .btn {
+                    margin: 0;
+
+                    +.btn {
+                      margin-left: .5rem;
+                    }
                   }
                 }
               }
@@ -126,7 +132,7 @@
                 }
               }
 
-              &.btn-more-actions {
+              &.btn-more {
                 padding: .325rem 1rem;
               }
 
@@ -290,8 +296,6 @@
             }
 
             a {
-              @include display-flex(row);
-              @include align-items(flex-start);
               color: $gray-900;
               padding-left: 2.25rem;
               position: relative;
@@ -304,11 +308,11 @@
                   color: $yellow;
                 }
 
-                &.fa-file-word-o {
+                &.fa-file-word {
                   color: $blue;
                 }
 
-                &.fa-file-excel-o {
+                &.fa-file-excel {
                   color: $green;
                 }
 
@@ -342,11 +346,11 @@
                     color: $yellow;
                   }
 
-                  &.fa-file-word-o {
+                  &.fa-file-word {
                     color: $blue;
                   }
   
-                  &.fa-file-excel-o {
+                  &.fa-file-excel {
                     color: $green;
                   }
                 }
@@ -376,7 +380,7 @@
         }
       }
 
-      @media (max-width: 992px) {
+      @media (max-width: 991.98px) {
         .article-header {
           .navbar {
             @include justify-content(space-between);
@@ -447,6 +451,28 @@
       }
 
       @media (max-width: 767.98px) {
+        .article-header {
+          .navbar {
+            .navbar-nav {
+              .nav-divider {
+                display: none;
+              }
+
+              .nav-item {
+                &.dropdown {
+                  order: 1;
+                }
+
+                .btn-create,
+                .btn-share,
+                .btn-download {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
         .article-content {
           margin: 0 -.5rem;
 
@@ -472,11 +498,6 @@
             .navbar-nav {
               &:first-child {
                 width: 14rem;
-              }
-
-              .btn-share,
-              .btn-download {
-                display: none;
               }
             }
           }
@@ -537,7 +558,7 @@
                 }
 
                 .form-control {
-                  width: 32rem;
+                  width: 28rem;
                 }
               }
             }
@@ -585,18 +606,16 @@
           }
         }
       }
+    }
+  }
+}
 
-      @media (min-width: 576px) {
-        .article-header {
-          .navbar {
-            .navbar-nav {
-              .btn-more-actions {
-                display: none;
-              }
-            }
-          }
-        }
-      }
+.modal-resource-share {
+  .modal-body {
+    .help-text {
+      background-color: $gray-100;
+      margin-bottom: 1rem;
+      padding: 1rem;
     }
   }
 }

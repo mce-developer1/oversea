@@ -78,6 +78,16 @@ table.dataTable {
   height: 100%;
   width: 100%;
   padding: 1rem;
+
+  .spinner-border {
+    animation: spinner-border .75s linear infinite;
+    background-image: url("../images/icon_spinner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    height: 2rem;
+    width: 2rem;
+  }
 }
 
 .empty-state {
@@ -94,6 +104,7 @@ table.dataTable {
   .toast {
     @include display-flex(row-reverse);
     @include align-items(center);
+    background-color: $gray-600;
     max-width: 28rem;
 
     .toast-header {
@@ -101,6 +112,9 @@ table.dataTable {
       padding: 0;
 
       button.close {
+        color: $white;
+        background-color: $gray-600;
+        opacity: 1;
         padding: .5rem .75rem;
       }
     }
@@ -108,13 +122,35 @@ table.dataTable {
     .toast-body {
       @include display-flex(row);
       @include align-items(center);
-      font-size: 1.125rem;
+      @include flex-grow(1);
+      color: $white;
+      font-size: 1rem;
 
-      .fas {
-        &.fa-exclamation-circle {
-          color: $red;
-          font-size: 1.5rem;
-          margin-right: .5rem;
+      .img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+
+        &.img-toast-error {
+          background-image: url("../images/icon_toast_error.png");
+        }
+
+        &.img-toast-failed {
+          background-image: url("../images/icon_toast_failed.png");
+        }
+
+        &.img-toast-warning {
+          background-image: url("../images/icon_toast_warning.png");
+        }
+
+        &.img-toast-info {
+          background-image: url("../images/icon_toast_info.png");
+        }
+
+        &.img-toast-success {
+          background-image: url("../images/icon_toast_success.png");
         }
       }
     }
@@ -318,12 +354,15 @@ table.dataTable {
       min-width: 280px;
 
       .btn {
+        padding: .325rem .5rem;
+        
         &.dropdown-toggle {
           margin-left: 0;
         }
   
-        margin-left: .5rem;
-        padding: .325rem .5rem;
+        +.btn {
+          margin-left: .5rem;
+        }
       }
     }
   }
