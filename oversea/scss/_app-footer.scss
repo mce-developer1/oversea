@@ -7,10 +7,6 @@
   height: 3rem;
   max-height: 3rem;
   padding: .325rem 1.5rem;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  z-index: 970;
 
   .copyright {
     color: $gray-300;
@@ -53,5 +49,14 @@
     .company-logo {
       display: none;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .app-footer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 970;
   }
 }

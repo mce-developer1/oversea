@@ -202,6 +202,15 @@ a {
   }
 }
 
+.form-text {
+  .fas {
+    &.fa-exclamation {
+      display: inline-block;
+      margin-right: .25rem;
+    }
+  }
+}
+
 .dropdown {
   &.bootstrap-select {
     .dropdown-toggle {
@@ -224,10 +233,6 @@ a {
 
     .dropdown-menu {
       .dropdown-item {
-        &.selected {
-          color: $white;
-        }
-
         border-radius: 0;
       }
     }
@@ -241,18 +246,70 @@ a {
     overflow-y: auto;
 
     .dropdown-item {
-      color: $gray-700;
       padding: .5rem 1.5rem;
 
-      &:not(.selected):active,
-      &:not(.selected):hover {
+      &:hover,
+      &:focus {
         background-color: $gray-200;
         color: $gray-900;
+      }
+
+      &.active,
+      &:active {
+        background-color: $blue;
+        color: $white;
       }
 
       .fas {
         font-size: 1.125rem;
         width: 2rem;
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  @include display-flex(row);
+  @include align-items(center);
+  background-color: transparent;
+  border-radius: 0;
+  margin: 0;
+  padding: .5rem 0;
+
+  .breadcrumb-item {
+    +.breadcrumb-item {
+      padding-left: .25rem;
+
+      &:before {
+        content: '\f054';
+        font-family: 'Font Awesome 5 Free';          
+        font-size: .875rem;
+        font-style: normal;
+        font-variant: normal;
+        line-height: .875;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding-right: 0;
+      }      
+    }
+
+    &.active {
+      a {
+        color: $gray-700;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+
+    a {
+      padding: .5rem;
+
+      &:hover {
+        background-color: $gray-200;
+        text-decoration: none;
       }
     }
   }
@@ -308,6 +365,24 @@ a {
     &:not(:disabled):not(.disabled):hover,
     &:not(:disabled):not(.disabled):active {
       color: $gray-900;
+    }
+  }
+}
+
+.list-group {
+  @include display-flex(column);
+
+  .list-group-item {
+    @include display-flex(row);
+    @include align-items(center);
+    @include justify-content(space-between);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding: .5rem;
+
+    &:hover {
+      background-color: $gray-100;
     }
   }
 }
@@ -384,8 +459,6 @@ a {
 
 .modal {
   .modal-dialog {
-    max-width: 40rem;
-    
     &.modal-preview {
       margin: 0;
       max-width: 100vw;

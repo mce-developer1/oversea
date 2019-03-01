@@ -84,19 +84,6 @@
               </li>
             </ul>
             <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <button class="btn btn-light btn-create" type="button" data-toggle="dropdown">
-                  <i class="fas fa-plus"></i> New
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-folder-plus"></i> New Folder
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-upload"></i> Upload File
-                  </a>
-                </div>
-              </li>
               <li class="nav-item">
                 <button class="btn btn-light btn-share d-none" type="button" title="Share">
                   <i class="fas fa-share-alt"></i>
@@ -112,42 +99,42 @@
                   <i class="fas fa-ellipsis-v"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-folder-plus"></i> New Folder
+                  <a class="dropdown-item item-new-folder" href="#">
+                    <i class="fas fa-folder-plus"></i> New folder
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-upload"></i> Upload File
+                  <a class="dropdown-item item-upload-file" href="#">
+                    <i class="fas fa-upload"></i> Upload file
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-history"></i> Manage Revisions
+                  <div class="dropdown-divider divider-manage-revisions"></div>
+                  <a class="dropdown-item item-manage-revisions" href="#">
+                    <i class="fas fa-history"></i> Manage fevisions
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-folder"></i> Move
+                  <a class="dropdown-item item-move-to" href="#">
+                    <i class="fas fa-folder"></i> Move to
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-edit"></i> Edit
+                  <div class="dropdown-divider divider-edit-attributes"></div>
+                  <a class="dropdown-item item-edit-attributes" href="#">
+                    <i class="fas fa-edit"></i> Edit attributes
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-copy"></i> Duplicate
+                  <a class="dropdown-item item-make-copy" href="#">
+                    <i class="fas fa-copy"></i> Make a copy
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item item-delete" href="#">
                     <i class="fas fa-trash"></i> Delete
                   </a>
-                  <a class="dropdown-item" href="#">
-                    <i class="fas fa-trash"></i> Delete Forever
+                  <a class="dropdown-item item-delete-forever" href="#">
+                    <i class="fas fa-trash"></i> Delete forever
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">
+                  <div class="dropdown-divider divider-share"></div>
+                  <a class="dropdown-item item-share" href="#">
                     <i class="fas fa-share-alt"></i> Share
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item item-download" href="#">
                     <i class="fas fa-download"></i> Download
                   </a>
                 </div>
               </li>
-              <li class="nav-divider"></li>
+              <li class="nav-divider divider-search d-none"></li>
               <li class="nav-item">
                 <button class="btn btn-light btn-search" type="button" title="Search">
                   <i class="fas fa-search"></i>
@@ -276,6 +263,31 @@
               </div>
             </div>
             <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <nav class="navbar navbar-expand">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="#">Resource Bank</a>
+                </li>
+                <li class="breadcrumb-item active">
+                  <a href="#">Numbers To 10</a>
+                </li>
+              </ol>
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <button class="btn btn-primary btn-create" type="button" data-toggle="dropdown">
+                    <i class="fas fa-plus"></i> New
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item item-create-folder" href="#">
+                      <i class="fas fa-folder-plus"></i> New Folder
+                    </a>
+                    <a class="dropdown-item item-upload-file" href="#">
+                      <i class="fas fa-upload"></i> Upload File
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </nav>
             <table class="table table-head">
               <colgroup width="50px"></colgroup>
               <colgroup width="auto"></colgroup>
@@ -589,6 +601,56 @@
   </div>
 </div>
 
+<div class="modal modal-folder-create fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Folder</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-inline form-create-folder">
+          <div class="form-group">
+            <label for="txtName">Name</label>
+            <input class="form-control form-input" type="text" id="txtName" placeholder="Enter folder name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-file-edit fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Folder</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-edit-file">
+          <div class="form-group">
+            <label for="txtName">Name</label>
+            <input class="form-control form-input" type="text" id="txtName" placeholder="Enter folder name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal modal-resource-share fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -599,25 +661,221 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="help-text">
-          <p>Please select at least one user/group to share.</p>
-          <span class="text-muted">
-            To select users or groups, type user name or group name in the textbox below and click "Add" button or click on "Select from list" button and select users or groups from the popup list.
-          </span>
+        <nav class="navbar">
+          <h6>Share To</h6>
+        </nav>
+        <div class="list-users d-none">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="user-name">Aaron Tan</div>
+              <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                <option>Can view</option>
+                <option>Can edit</option>
+              </select>
+              <button class="btn btn-light" type="button" >
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+            <li class="list-group-item">
+              <div class="user-name">Arya Suman</div>
+              <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                <option>Can view</option>
+                <option>Can edit</option>
+              </select>
+              <button class="btn btn-light" type="button" >
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+            <li class="list-group-item">
+              <div class="user-name">Ashar Ahmad</div>
+              <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                <option>Can view</option>
+                <option>Can edit</option>
+              </select>
+              <button class="btn btn-light" type="button" >
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+            <li class="list-group-item">
+              <div class="user-name">Chua Chin Hui</div>
+              <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                <option>Can view</option>
+                <option>Can edit</option>
+              </select>
+              <button class="btn btn-light" type="button" >
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+            <li class="list-group-item">
+              <div class="user-name">Derrick Lee</div>
+              <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                <option>Can view</option>
+                <option>Can edit</option>
+              </select>
+              <button class="btn btn-light" type="button" >
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+          </ul>
         </div>
-        <form class="form-inline">
-          <div class="form-header">
-            <h6>Share To</h6>
-          </div>
+        <form class="form-add-user">
           <div class="form-group">
-            <input class="form-control form-input" type="text" id="txtUser" placeholder="Enter user name or group name...">
-            <button class="btn btn-outline-secondary" type="button" >Add</button>
+            <div class="input-group">
+              <input class="form-control form-input input-autocomplete" type="text" placeholder="Enter user name or group name...">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-add" type="button" >Add</button>
+              </div>
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary btn-select" type="button" >Select from list</button>
+              </div>
+            </div>            
+            <small class="form-text text-muted">
+              To select users or groups, type user name or group name in the textbox below and click "Add" button or click on "Select from list" button and select users or groups from the popup list.
+            </small>
+            <div class="form-text text-danger d-none">
+              Please select at least one user/group to share.
+            </div>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Share</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-user-select fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Select User(s)/Group(s)</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#groups" role="tab" data-toggle="tab">
+                    Select Group(s)
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#users" role="tab" data-toggle="tab">
+                    Select User(s)
+                  </a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="groups" role="tabpanel">
+                  <div class="list-groups">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <div class="group-name">P1-EA</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="group-name">P1-HA</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="group-name">P1-MA</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="group-name">P1-PA</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="group-name">P1-SA</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="group-name">P1-TA</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="group-name">P1-UA</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="tab-pane" id="users" role="tabpanel">
+                  <select class="form-control selectpicker" data-container=".modal-user-select">
+                    <option>P1-EA</option>
+                    <option>P1-HA</option>
+                    <option>P1-MA</option>
+                    <option>P1-PA</option>
+                    <option>P1-SA</option>
+                    <option>P1-TA</option>
+                    <option>P1-UA</option>
+                  </select>
+                  <div class="list-users">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <div class="user-name">Aaron Tan</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="user-name">Arya Suman</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="user-name">Ashar Ahmad</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="user-name">Chua Chin Hui</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="user-name">Derrick Lee</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="user-name">Nurulhuda bte Sazali</div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="user-name">Siow Poh Piah Irene</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <nav class="navbar">
+                <h6>Selected User(s)/Group(s)</h6>
+              </nav>
+              <div class="selected-users">
+                <ul class="list-group">
+                   <li class="list-group-item">
+                    <div class="user-name">Aaron Tan</div>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Arya Suman</div>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Ashar Ahmad</div>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Chua Chin Hui</div>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
     </div>
   </div>

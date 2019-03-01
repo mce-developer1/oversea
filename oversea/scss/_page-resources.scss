@@ -36,11 +36,6 @@
               @include align-items(center);
 
               .btn-light {
-                &.btn-create {
-                  font-size: 1.25rem;
-                  line-height: 1.25;
-                }
-                
                 margin: 0 .25rem;
               }
 
@@ -132,6 +127,16 @@
                 }
               }
 
+              &.btn-create {
+                font-size: 1.175rem;
+                font-weight: bold;
+                line-height: 1.175;
+
+                .fas {
+                  vertical-align: middle;
+                }
+              }
+
               &.btn-more {
                 padding: .325rem 1rem;
               }
@@ -139,7 +144,6 @@
               .fas {
                 color: $gray-700;
                 font-size: 1.5rem;
-                vertical-align: bottom;
 
                 &.fa-cloud {
                   font-size: 2rem;
@@ -274,6 +278,24 @@
         }
 
         .article-body {
+          .navbar {
+            @include justify-content(space-between);
+            padding: .75rem 0;
+            
+            .navbar-nav {
+              .nav-item {
+                .btn-light {
+                  margin: 0 .25rem;
+
+                  .fas {
+                    color: $gray-700;
+                    font-size: 1.5rem;
+                  }
+                }
+              }
+            }
+          }
+
           .table {
             @include user-select(none);
 
@@ -297,6 +319,7 @@
 
             a {
               color: $gray-900;
+              display: inline-block;
               padding-left: 2.25rem;
               position: relative;
 
@@ -477,6 +500,10 @@
           margin: 0 -.5rem;
 
           .article-body {
+            .navbar {
+              display: none;
+            }
+
             .card-group {
               padding: .675rem .25rem;
 
@@ -590,6 +617,25 @@
       }
 
       @media (min-width: 768px) {
+        .article-header {
+          .navbar {
+            .navbar-nav {
+              .nav-item {
+                &.dropdown {
+                  .item-new-folder,
+                  .item-upload-file,
+                  .item-share,
+                  .item-download,
+                  .divider-manage-revisions,
+                  .divider-share {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+
         .article-content {
           .article-body {
             .table-head,
@@ -610,12 +656,136 @@
   }
 }
 
+.modal-folder-create {
+  .modal-dialog {
+    max-width: 20rem;
+
+    .modal-body {
+      .form-create-folder {
+        .form-control {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
 .modal-resource-share {
-  .modal-body {
-    .help-text {
-      background-color: $gray-100;
-      margin-bottom: 1rem;
-      padding: 1rem;
+  .modal-dialog {
+    max-width: 40rem;
+
+    .modal-body {
+      .navbar {
+        padding: .75rem 0;
+
+        h6 {
+          margin: 0;
+        }
+      }
+
+      .list-users {
+        margin-bottom: 1rem;
+        max-height: 20rem;
+        overflow-y: auto;
+        
+        .list-group {
+          .list-group-item {
+            .user-name {
+              width: calc(100% - 12rem);
+            }
+          }
+        }
+      }
+
+      .form-add-user {
+        .form-group {
+          .input-group {
+            @include justify-content(flex-start);
+
+            .algolia-autocomplete,
+            .form-control,
+            .btn {
+              margin-right: .5rem;
+            }
+
+            .algolia-autocomplete {
+              @include flex-grow(1);
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .modal-body {
+        .form-add-user {
+          .form-control {
+            margin-bottom: .5rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-user-select {
+  .modal-dialog {
+    max-width: 40rem;
+
+    .modal-body {
+      .nav {
+        &.nav-tabs {
+          border-color: $white;
+
+          .nav-link {
+            border-color: $white;
+            font-weight: 500;
+            padding: .5rem .75rem;
+
+            &:hover {
+              background-color: $gray-100;
+            }
+          }
+        }
+      }
+
+      .tab-content {
+        .tab-pane {
+          .form-control {
+            margin-bottom: 1rem;
+          }
+
+          .list-groups,
+          .list-users {
+            height: 20rem;
+            overflow-y: auto;
+          }
+
+          .list-users {
+            height: 16.625rem;
+          }
+        }
+      }
+    }
+
+    .navbar {
+      padding: .75rem;
+
+      h6 {
+        margin-bottom: 0;
+      }
+    }
+
+    .selected-users {
+      height: 20rem;
+      overflow-y: auto;
+
+      .list-group {
+        .list-group-item {
+          padding: .0545rem .5rem;
+        }
+      }
     }
   }
 }

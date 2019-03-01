@@ -303,6 +303,45 @@ table.dataTable {
   }
 }
 
+.algolia-autocomplete {
+  .aa-input,
+  .aa-hint {
+    width: 100%;
+  }
+
+  .aa-hint {
+    color: $gray-700;
+  }
+
+  .aa-dropdown-menu {
+    background-color: $white;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);    
+    max-height: 320px;
+    overflow-y: auto;
+    width: 100%;
+
+    .aa-suggestion {
+      cursor: pointer;
+      padding: .5rem 1.5rem;
+
+      &.aa-cursor {
+        background-color: $blue;
+        color: $white;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      
+      em {
+        font-weight: bold;
+        font-style: normal;
+      }
+    }
+  }
+}
+
 .article {
   padding: 1.5rem;
 

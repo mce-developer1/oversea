@@ -18,6 +18,10 @@ $(document).ready(function() {
       if ($container.find('.btn-more').hasClass('d-none')) {
         $container.find('.btn-more').removeClass('d-none');
       }
+
+      if ($container.find('.divider-search').hasClass('d-none')) {
+        $container.find('.divider-search').removeClass('d-none');
+      }
     } else {
       if (!$container.find('.btn-share').hasClass('d-none')) {
         $container.find('.btn-share').addClass('d-none');
@@ -30,6 +34,10 @@ $(document).ready(function() {
       if (!$container.find('.btn-more').hasClass('d-none')) {
         $container.find('.btn-more').addClass('d-none');
       }
+
+      if (!$container.find('.divider-search').hasClass('d-none')) {
+        $container.find('.divider-search').addClass('d-none');
+      }
     }
   }
 
@@ -41,6 +49,7 @@ $(document).ready(function() {
   $container.find('.navbar-nav.nav-main .btn-search').on('click', function(e) {
     $container.find('.article-body .loading-state').removeClass('d-none');
     $container.find('.article-body .empty-state').addClass('d-none');
+    $container.find('.article-body .navbar').addClass('d-none');
     $container.find('.article-body .table-head').addClass('d-none');
     $container.find('.article-body .table-body').addClass('d-none');
 
@@ -68,6 +77,10 @@ $(document).ready(function() {
 
   $container.find('.navbar-nav .btn-share').on('click', function(e) {
     $('.modal-resource-share').modal('show');
+  });
+
+  $container.find('.dropdown-menu .item-create-folder').on('click', function(e) {
+    $('.modal-folder-create').modal('show');
   });
 
   $(window).on('resize', function(e) {
@@ -267,4 +280,85 @@ $(document).ready(function() {
     }
     updateActionButtonsStyles();
   });
+
+  $('.modal-resource-share .btn-primary').on('click', function(e) {
+    if ($('.modal-resource-share .list-users').hasClass('d-none')) {
+      $('.modal-resource-share .form-add-user .text-danger').removeClass('d-none');
+    } else {
+      $('.modal-resource-share .form-add-user .text-danger').addClass('d-none');
+    }
+  });
+
+  $('.modal-resource-share .form-add-user .btn-add').on('click', function(e) {
+    if ($('.modal-resource-share .list-users .list-group-item').length > 0) {
+      $('.modal-resource-share .list-users').removeClass('d-none');
+      $('.modal-resource-share .form-add-user .text-muted').addClass('d-none');
+    }
+  });
+
+  $('.modal-resource-share .form-add-user .btn-select').on('click', function(e) {
+    $('.modal-resource-share .modal-content').addClass('d-none');
+    $('.modal-user-select').on('hidden.bs.modal', function (e) {
+      $('.modal-resource-share .modal-content').removeClass('d-none');
+    });
+    $('.modal-user-select').modal('show');
+  });
+
+  $('.modal-resource-share .list-users .list-group-item .btn-light').on('click', function(e) {
+    if ($('.modal-resource-share .list-users .list-group-item').length === 1) {
+      $('.modal-resource-share .list-users').addClass('d-none');
+    }
+
+    $(this).closest('.list-group-item').remove();
+  });
+
+  $('.modal-resource-share .form-add-user .input-autocomplete').autocomplete({ hint: true, debug: true }, [{
+    displayKey: 'name',
+    source: function(query, callback) {
+      var records = [
+        { name: 'Aaron Tan' }, 
+        { name: 'Arya Suman' },
+        { name: 'Ashar Ahmad' }, 
+        { name: 'Chua Chin Hui' },
+        { name: 'Derrick Lee' }
+      ];
+      var pattern = new RegExp(query, 'i');
+      var hits = records.filter(function(record) {
+        return record.name.match(pattern);
+      });
+      hits.forEach(function(hit) {
+        var match = hit.name.match(pattern)[0];
+        var highlighted = '<em>' + match + '</em>';
+        hit.highlighted = hit.name.replace(match, highlighted);
+      });
+      callback(hits);
+    },
+    templates: {
+      suggestion: function(suggestion) {
+        return suggestion.highlighted;
+      }
+    }
+  }]);
+
+  $(document).on('keydown', '.dropdown-menu', function(e) {
+    console.log(this, e);
+  });
+
+  $(window).on('resize', function(e) {
+    if ($(window).width() < 768) {
+      if (!$('.btn-more').hasClass('d-block')) {
+        $('.btn-more').addClass('d-block');
+      }
+    } else if ($('.btn-more').hasClass('d-block')) {
+      $('.btn-more').removeClass('d-block');
+    }
+  });
+
+  if ($(window).width() < 768) {
+    if (!$('.btn-more').hasClass('d-block')) {
+      $('.btn-more').addClass('d-block');
+    }
+  } else if ($('.btn-more').hasClass('d-block')) {
+    $('.btn-more').removeClass('d-block');
+  }
 });

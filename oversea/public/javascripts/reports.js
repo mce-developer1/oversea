@@ -4,6 +4,16 @@ $(document).ready(function() {
   var inlineChart;
   var modalChart;
 
+  function getBarColor(percentage) {
+    if (percentage >= 91) return '#33cc99';
+    else if ((percentage >= 75) && (percentage <= 90)) return '#67cc72';
+    else if ((percentage >= 60) && (percentage <= 74)) return '#a8cc41';
+    else if ((percentage >= 50) && (percentage <= 59)) return '#e3cc15';
+    else if ((percentage >= 35) && (percentage <= 49)) return '#f4a000';
+    else if ((percentage >= 20) && (percentage <= 34)) return '#e76d00';
+    else return '#d93300';
+  }
+
   function disconnectObserver() {
     if (mutationObserver) {
       mutationObserver.disconnect();
@@ -28,53 +38,68 @@ $(document).ready(function() {
   function updateStudentReport(container, chart) {
     google.visualization.events.addListener(chart, 'ready', function() {
       var svg = container.getElementsByTagName('svg')[0];
-      var barRects = svg.querySelectorAll("rect[height='1']");
+      var barRects = svg.querySelectorAll("rect[width='1'][fill='#6c757d']");
+      var startX = 0;
       for (var i = 0; i < barRects.length; i++) {
         var barRect = barRects[i];
-        var x = (barRect.getAttribute('x') - 94);
-        var y = (barRect.getAttribute('y') - 14);
+        var barRectX = parseFloat(barRect.getAttribute('x'));
+        if (i > 0) barRect.setAttribute('x', (barRectX - 3));
+        else startX = barRectX;
+        barRect.setAttribute('width', 3);
+      }
+
+      var barRects = svg.querySelectorAll("rect[height='1']");
+      var imgWidth = 95, imgHeight = 28;
+      for (var i = 0; i < barRects.length; i++) {
+        var barRect = barRects[i];
+        var barRectX = parseFloat(barRect.getAttribute('x'));
+        var barRectY = parseFloat(barRect.getAttribute('y'));
+        if (barRectX < (startX + imgWidth)) continue;
+        var x = (barRectX - imgWidth + 1);
+        var y = (barRectY - (imgHeight / 2));
         var image = createImage({
           href: '/static/images/icon_reports_rocket.png',
           x: x,
           y: y,
-          width: 95,
-          height: 28
+          width: imgWidth,
+          height: imgHeight
         });
         if (barRect.parentElement) barRect.parentElement.appendChild(image);
         else if (barRect.parentNode) barRect.parentNode.appendChild(image);
         barRect.setAttribute('x', parseFloat(x) + 20);
       }
 
-      var barRects = svg.querySelectorAll("rect[width='1'][fill='#6c757d']");
-      for (var i = 0; i < barRects.length; i++) {
-        var barRect = barRects[i];
-        var barRectX = parseFloat(barRect.getAttribute('x'));
-        if (i > 0) barRect.setAttribute('x', (barRectX - 3));
-        barRect.setAttribute('width', 3);
-      }
-
-      if (mutationObserver) return;
+      if (mutationObserver || !MutationObserver) return;
       mutationObserver = new MutationObserver(function() {
         var svg = container.getElementsByTagName('svg')[0];
-        var barLabels = svg.querySelectorAll("text[text-anchor='end'][fill='#ffffff']");
+        var barLabels = svg.querySelectorAll("text[text-anchor='end']");
         for (var i = 0; i < barLabels.length; i++) {
           var barLabel = barLabels[i];
           var barLabelRect = barLabel.nextSibling;
+          if (!barLabelRect) continue;
           if (barLabel.getAttribute('data-x')) continue;
           if (barLabelRect.getAttribute('data-x')) continue;
           var barLabelX = parseFloat(barLabel.getAttribute('x'));
           var barLabelRectX = parseFloat(barLabelRect.getAttribute('x'));
+          var barLabelRectWidth = parseFloat(barLabelRect.getAttribute('width'));
           barLabel.setAttribute('data-x', barLabelX);
           barLabelRect.setAttribute('data-x', barLabelRectX);
-          if (barLabelX < 360) {
-            barLabel.setAttribute('x', (barLabelX + 70));
+          if (barLabelX < (startX + barLabelRectWidth + imgWidth)) {
+            barLabel.setAttribute('x', (barLabelX + barLabelRectWidth + 10));
             barLabel.setAttribute('fill', '#000000');
-            barLabelRect.setAttribute('x', (barLabelRectX + 70));
+            barLabelRect.setAttribute('x', (barLabelRectX + barLabelRectWidth + 10));
           } else {
-            barLabel.setAttribute('x', (barLabelX - 90));
+            barLabel.setAttribute('x', (barLabelX - imgWidth));
             barLabel.setAttribute('fill', '#ffffff');
-            barLabelRect.setAttribute('x', (barLabelRectX - 90));
+            barLabelRect.setAttribute('x', (barLabelRectX - imgWidth));
           }
+        }
+
+        var barLabels = svg.querySelectorAll("text[text-anchor='start']");
+        for (var i = 0; i < barLabels.length; i++) {
+          var barLabel = barLabels[i];
+          var barLabelX = parseFloat(barLabel.getAttribute('x'));
+          barLabel.setAttribute('fill', '#000000');
         }
       });
       mutationObserver.observe(container, {
@@ -99,10 +124,10 @@ $(document).ready(function() {
   function drawStudentUsageReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Math Buddies', 90, '#8cc432', 'Well done!'],
-      ['Marshall Cavendish Maths', 40, '#bf6692', 'Keep it up!'],
-      ['Marshall Cavendish Science', 70, '#ff8b1a', 'Almost there!'],
-      ['My Pals are here! Science', 80, '#53a7df', 'Almost there!']
+      ['Math Buddies', 95, getBarColor(95), 'Almost there!'],
+      ['Marshall Cavendish Maths', 80, getBarColor(80), 'Good Progress!'],
+      ['Marshall Cavendish Science', 70, getBarColor(70), 'Keep It Up!'],
+      ['My Pals are here! Science', 55, getBarColor(55), 'Almost there!']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -158,13 +183,13 @@ $(document).ready(function() {
   function drawStudentChannelUsageReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Numbers To 10', 70, '#8cc432', 'Almost there!'],
-      ['Number Bonds', 80, '#bf6692', 'Almost there!'],
-      ['Addition Within 10', 80, '#ff8b1a', 'Almost there!'],
-      ['Subtraction Within 10', 70, '#53a7df', 'Almost there!'],
-      ['Shapes And Patterns', 60, '#7a7aee', 'Keep it up!'],
-      ['Ordinal Numbers And Position', 80, '#609a9a', 'Almost there!'],
-      ['Numbers To 20', 60, '#e96968', 'Keep it up!']
+      ['Numbers To 10', 95, getBarColor(95), 'Keep It Up!'],
+      ['Number Bonds', 80, getBarColor(80), 'Almost there!'],
+      ['Addition Within 10', 70, getBarColor(70), 'Almost there!'],
+      ['Subtraction Within 10', 55, getBarColor(55), 'Keep It Up!'],
+      ['Shapes And Patterns', 40, getBarColor(40), 'Keep it up!'],
+      ['Ordinal Numbers And Position', 30, getBarColor(30), 'Almost there!'],
+      ['Numbers To 20', 10, getBarColor(10), 'Keep it up!']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -209,10 +234,10 @@ $(document).ready(function() {
   function drawStudentProficiencyReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Math Buddies', 80, '#8cc432', 'Almost there!'],
-      ['Marshall Cavendish Maths', 70, '#bf6692', 'Almost there!'],
-      ['Marshall Cavendish Science', 70, '#ff8b1a', 'Almost there!'],
-      ['My Pals are here! Science', 60, '#53a7df', 'Keep it up!']
+      ['Math Buddies', 95, getBarColor(95), 'Master'],
+      ['Marshall Cavendish Maths', 80, getBarColor(80), 'Expert'],
+      ['Marshall Cavendish Science', 70, getBarColor(70), 'Advanced'],
+      ['My Pals are here! Science', 55, getBarColor(55), 'Apprentice']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -268,13 +293,13 @@ $(document).ready(function() {
   function drawStudentChannelProficiencyReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Numbers To 10', 70, '#8cc432', 'Almost there!'],
-      ['Number Bonds', 80, '#bf6692', 'Almost there!'],
-      ['Addition Within 10', 80, '#ff8b1a', 'Almost there!'],
-      ['Subtraction Within 10', 70, '#53a7df', 'Almost there!'],
-      ['Shapes And Patterns', 60, '#7a7aee', 'Keep it up!'],
-      ['Ordinal Numbers And Position', 80, '#609a9a', 'Almost there!'],
-      ['Numbers To 20', 60, '#e96968', 'Keep it up!']
+      ['Numbers To 10', 95, getBarColor(95), 'Master'],
+      ['Number Bonds', 80, getBarColor(80), 'Expert'],
+      ['Addition Within 10', 70, getBarColor(70), 'Advanced'],
+      ['Subtraction Within 10', 55, getBarColor(55), 'Apprentice'],
+      ['Shapes And Patterns', 40, getBarColor(40), 'Novice'],
+      ['Ordinal Numbers And Position', 30, getBarColor(30), 'Learner'],
+      ['Numbers To 20', 10, getBarColor(10), 'Beginner']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -319,13 +344,13 @@ $(document).ready(function() {
   function drawAllClassesUsageReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['P1-EA', 90, '#8cc432', '90%'],
-      ['P1-HA', 50, '#bf6692', '50%'],
-      ['P1-MA', 70, '#ff8b1a', '70%'],
-      ['P1-PA', 80, '#53a7df', '80%'],
-      ['P1-SA', 60, '#7a7aee', '60%'],
-      ['P1-TA', 50, '#609a9a', '50%'],
-      ['P1-UA', 70, '#e96968', '70%']
+      ['P1-EA', 95, getBarColor(95), '95%'],
+      ['P1-HA', 80, getBarColor(80), '80%'],
+      ['P1-MA', 70, getBarColor(70), '70%'],
+      ['P1-PA', 55, getBarColor(55), '55%'],
+      ['P1-SA', 40, getBarColor(40), '40%'],
+      ['P1-TA', 30, getBarColor(30), '30%'],
+      ['P1-UA', 10, getBarColor(10), '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -376,13 +401,13 @@ $(document).ready(function() {
   function drawClassUsageReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Aaron Tan', 70, '#8cc432', '70%'],
-      ['Arya Suman', 80, '#bf6692', '80%'],
-      ['Ashar Ahmad', 80, '#ff8b1a', '80%'],
-      ['Chua Chin Hui', 70, '#53a7df', '70%'],
-      ['Derrick Lee', 60, '#7a7aee', '60%'],
-      ['Nurulhuda bte Sazali', 80, '#609a9a', '80%'],
-      ['Siow Poh Piah Irene', 60, '#e96968', '60%']
+      ['Aaron Tan', 95, getBarColor(95), '95%'],
+      ['Arya Suman', 80, getBarColor(80), '80%'],
+      ['Ashar Ahmad', 70, getBarColor(70), '70%'],
+      ['Chua Chin Hui', 55, getBarColor(55), '55%'],
+      ['Derrick Lee', 40, getBarColor(40), '40%'],
+      ['Nurulhuda bte Sazali', 30, getBarColor(30), '30%'],
+      ['Siow Poh Piah Irene', 10, getBarColor(10), '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -434,13 +459,13 @@ $(document).ready(function() {
   function drawClassStudentUsageReport(student) {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Numbers To 10', 70, '#8cc432', '70%'],
-      ['Number Bonds', 80, '#bf6692', '80%'],
-      ['Addition Within 10', 80, '#ff8b1a', '80%'],
-      ['Subtraction Within 10', 70, '#53a7df', '70%'],
-      ['Shapes And Patterns', 60, '#7a7aee', '60%'],
-      ['Ordinal Numbers And Position', 80, '#609a9a', '80%'],
-      ['Numbers To 20', 60, '#e96968', '60%']
+      ['Numbers To 10', 95, getBarColor(95), '95%'],
+      ['Number Bonds', 80, getBarColor(80), '80%'],
+      ['Addition Within 10', 70, getBarColor(70), '70%'],
+      ['Subtraction Within 10', 55, getBarColor(55), '55%'],
+      ['Shapes And Patterns', 40, getBarColor(40), '40%'],
+      ['Ordinal Numbers And Position', 30, getBarColor(30), '30%'],
+      ['Numbers To 20', 10, getBarColor(10), '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -475,13 +500,13 @@ $(document).ready(function() {
   function drawAllClassesProficiencyReport() {
     var data = [
       ['Element', 'Mastery', { role: 'style' }, { role: 'annotation' }],
-      ['P1-EA', 60, '#8cc432', '60%'],
-      ['P1-HA', 70, '#bf6692', '70%'],
-      ['P1-MA', 80, '#ff8b1a', '80%'],
-      ['P1-PA', 80, '#53a7df', '80%'],
-      ['P1-SA', 60, '#7a7aee', '60%'],
-      ['P1-TA', 50, '#609a9a', '50%'],
-      ['P1-UA', 60, '#e96968', '60%']
+      ['P1-EA', 95, getBarColor(95), '95%'],
+      ['P1-HA', 80, getBarColor(80), '80%'],
+      ['P1-MA', 70, getBarColor(70), '70%'],
+      ['P1-PA', 55, getBarColor(55), '55%'],
+      ['P1-SA', 40, getBarColor(40), '40%'],
+      ['P1-TA', 30, getBarColor(30), '30%'],
+      ['P1-UA', 10, getBarColor(10), '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -531,13 +556,13 @@ $(document).ready(function() {
   function drawClassProficiencyReport() {
     var data = [
       ['Element', 'Mastery', { role: 'style' }, { role: 'annotation' }],
-      ['Aaron Tan', 70, '#8cc432', '70%'],
-      ['Arya Suman', 80, '#bf6692', '80%'],
-      ['Ashar Ahmad', 80, '#ff8b1a', '80%'],
-      ['Chua Chin Hui', 70, '#53a7df', '70%'],
-      ['Derrick Lee', 60, '#7a7aee', '60%'],
-      ['Nurulhuda bte Sazali', 80, '#609a9a', '80%'],
-      ['Siow Poh Piah Irene', 60, '#e96968', '60%']
+      ['Aaron Tan', 95, getBarColor(95), '95%'],
+      ['Arya Suman', 80, getBarColor(80), '80%'],
+      ['Ashar Ahmad', 70, getBarColor(70), '70%'],
+      ['Chua Chin Hui', 55, getBarColor(55), '55%'],
+      ['Derrick Lee', 40, getBarColor(40), '40%'],
+      ['Nurulhuda bte Sazali', 30, getBarColor(30), '30%'],
+      ['Siow Poh Piah Irene', 10, getBarColor(10), '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -589,13 +614,13 @@ $(document).ready(function() {
   function drawClassStudentProficiencyReport(student) {
     var data = [
       ['Element', 'Mastery', { role: 'style' }, { role: 'annotation' }],
-      ['Numbers To 10', 70, '#8cc432', '70%'],
-      ['Number Bonds', 80, '#bf6692', '80%'],
-      ['Addition Within 10', 80, '#ff8b1a', '80%'],
-      ['Subtraction Within 10', 70, '#53a7df', '70%'],
-      ['Shapes And Patterns', 60, '#7a7aee', '60%'],
-      ['Ordinal Numbers And Position', 80, '#609a9a', '80%'],
-      ['Numbers To 20', 60, '#e96968', '60%']
+      ['Numbers To 10', 95, getBarColor(95), '95%'],
+      ['Number Bonds', 80, getBarColor(80), '80%'],
+      ['Addition Within 10', 70, getBarColor(70), '70%'],
+      ['Subtraction Within 10', 55, getBarColor(55), '55%'],
+      ['Shapes And Patterns', 40, getBarColor(40), '40%'],
+      ['Ordinal Numbers And Position', 30, getBarColor(30), '30%'],
+      ['Numbers To 20', 10, getBarColor(10), '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -701,6 +726,12 @@ $(document).ready(function() {
       setTimeout(waitForVisualizationLib, 500);
     }, 500);
   }
+
+  $('.btn-light[data-toggle="popover"]').popover({
+    container: 'body',
+    placement: 'top',
+    trigger: 'focus'
+  })
 
   if ($(window).width() < 768) {
     $('.article-report').addClass('collapse-sidebar');

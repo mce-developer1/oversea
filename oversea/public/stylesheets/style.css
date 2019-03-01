@@ -154,6 +154,11 @@ a:focus {
   box-shadow: none;
 }
 
+.form-text .fas.fa-exclamation {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
 .dropdown.bootstrap-select .dropdown-toggle {
   background-color: transparent;
   border-color: #ced4da;
@@ -171,9 +176,6 @@ a:focus {
 .dropdown.bootstrap-select .dropdown-menu .dropdown-item {
   border-radius: 0;
 }
-.dropdown.bootstrap-select .dropdown-menu .dropdown-item.selected {
-  color: #ffffff;
-}
 .dropdown .dropdown-menu {
   border: 0;
   border-radius: 0;
@@ -182,16 +184,60 @@ a:focus {
   overflow-y: auto;
 }
 .dropdown .dropdown-menu .dropdown-item {
-  color: #495057;
   padding: 0.5rem 1.5rem;
 }
-.dropdown .dropdown-menu .dropdown-item:not(.selected):active, .dropdown .dropdown-menu .dropdown-item:not(.selected):hover {
+.dropdown .dropdown-menu .dropdown-item:hover, .dropdown .dropdown-menu .dropdown-item:focus {
   background-color: #e9ecef;
   color: #212529;
+}
+.dropdown .dropdown-menu .dropdown-item.active, .dropdown .dropdown-menu .dropdown-item:active {
+  background-color: #007bff;
+  color: #ffffff;
 }
 .dropdown .dropdown-menu .dropdown-item .fas {
   font-size: 1.125rem;
   width: 2rem;
+}
+
+.breadcrumb {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 0;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+.breadcrumb .breadcrumb-item + .breadcrumb-item {
+  padding-left: 0.25rem;
+}
+.breadcrumb .breadcrumb-item + .breadcrumb-item:before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 0.875;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-right: 0;
+}
+.breadcrumb .breadcrumb-item.active a {
+  color: #495057;
+}
+.breadcrumb .breadcrumb-item.active a:hover {
+  background-color: transparent;
+}
+.breadcrumb .breadcrumb-item a {
+  padding: 0.5rem;
+}
+.breadcrumb .breadcrumb-item a:hover {
+  background-color: #e9ecef;
+  text-decoration: none;
 }
 
 .navbar-nav .nav-divider,
@@ -233,6 +279,30 @@ a:focus {
 }
 .nav-light .nav-link:not(:disabled):not(.disabled):hover, .nav-light .nav-link:not(:disabled):not(.disabled):active {
   color: #212529;
+}
+
+.list-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.list-group .list-group-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  padding: 0.5rem;
+}
+.list-group .list-group-item:hover {
+  background-color: #f8f9fa;
 }
 
 .card-group {
@@ -297,9 +367,6 @@ a:focus {
   font-size: 0.875rem;
 }
 
-.modal .modal-dialog {
-  max-width: 40rem;
-}
 .modal .modal-dialog.modal-preview {
   margin: 0;
   max-width: 100vw;
@@ -701,6 +768,37 @@ table.dataTable tbody tr td .nowrap {
   display: block;
 }
 
+.algolia-autocomplete .aa-input,
+.algolia-autocomplete .aa-hint {
+  width: 100%;
+}
+.algolia-autocomplete .aa-hint {
+  color: #495057;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  max-height: 320px;
+  overflow-y: auto;
+  width: 100%;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #007bff;
+  color: #ffffff;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion p {
+  margin: 0;
+  padding: 0;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
 .article {
   padding: 1.5rem;
 }
@@ -1086,10 +1184,6 @@ table.dataTable tbody tr td .nowrap {
   height: 3rem;
   max-height: 3rem;
   padding: 0.325rem 1.5rem;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  z-index: 970;
 }
 .app-footer .copyright {
   color: #dee2e6;
@@ -1123,6 +1217,14 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 
+@media (min-width: 768px) {
+  .app-footer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 970;
+  }
+}
 .app-content.page-error {
   display: -ms-flexbox;
   display: flex;
@@ -1573,10 +1675,6 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .btn-light.btn-create {
-  font-size: 1.25rem;
-  line-height: 1.25;
-}
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 12rem;
@@ -1648,13 +1746,20 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light:hover .fas {
   color: #212529;
 }
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light.btn-create {
+  font-size: 1.175rem;
+  font-weight: bold;
+  line-height: 1.175;
+}
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light.btn-create .fas {
+  vertical-align: middle;
+}
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fas {
   color: #495057;
   font-size: 1.5rem;
-  vertical-align: bottom;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fas.fa-cloud {
   font-size: 2rem;
@@ -1726,6 +1831,18 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 14.5rem;
 }
+.app-content.page-resources .article-resources .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-resources .article-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-resources .article-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-light .fas {
+  color: #495057;
+  font-size: 1.5rem;
+}
 .app-content.page-resources .article-resources .article-content .article-body .table {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1752,6 +1869,7 @@ table.dataTable tbody tr td .nowrap {
 }
 .app-content.page-resources .article-resources .article-content .article-body .table a {
   color: #212529;
+  display: inline-block;
   padding-left: 2.25rem;
   position: relative;
 }
@@ -1881,6 +1999,9 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-resources .article-resources .article-content {
     margin: 0 -0.5rem;
   }
+  .app-content.page-resources .article-resources .article-content .article-body .navbar {
+    display: none;
+  }
   .app-content.page-resources .article-resources .article-content .article-body .card-group {
     padding: 0.675rem 0.25rem;
   }
@@ -1952,6 +2073,14 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 @media (min-width: 768px) {
+  .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item.dropdown .item-new-folder,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item.dropdown .item-upload-file,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item.dropdown .item-share,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item.dropdown .item-download,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item.dropdown .divider-manage-revisions,
+.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .nav-item.dropdown .divider-share {
+    display: none;
+  }
   .app-content.page-resources .article-resources .article-content .article-body .table-head colgroup:nth-child(7),
 .app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(7) {
     display: none;
@@ -1964,10 +2093,87 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 
-.modal-resource-share .modal-body .help-text {
-  background-color: #f8f9fa;
+.modal-folder-create .modal-dialog {
+  max-width: 20rem;
+}
+.modal-folder-create .modal-dialog .modal-body .form-create-folder .form-control {
+  margin-left: 1rem;
+}
+
+.modal-resource-share .modal-dialog {
+  max-width: 40rem;
+}
+.modal-resource-share .modal-dialog .modal-body .navbar {
+  padding: 0.75rem 0;
+}
+.modal-resource-share .modal-dialog .modal-body .navbar h6 {
+  margin: 0;
+}
+.modal-resource-share .modal-dialog .modal-body .list-users {
   margin-bottom: 1rem;
-  padding: 1rem;
+  max-height: 20rem;
+  overflow-y: auto;
+}
+.modal-resource-share .modal-dialog .modal-body .list-users .list-group .list-group-item .user-name {
+  width: calc(100% - 12rem);
+}
+.modal-resource-share .modal-dialog .modal-body .form-add-user .form-group .input-group {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+.modal-resource-share .modal-dialog .modal-body .form-add-user .form-group .input-group .algolia-autocomplete,
+.modal-resource-share .modal-dialog .modal-body .form-add-user .form-group .input-group .form-control,
+.modal-resource-share .modal-dialog .modal-body .form-add-user .form-group .input-group .btn {
+  margin-right: 0.5rem;
+}
+.modal-resource-share .modal-dialog .modal-body .form-add-user .form-group .input-group .algolia-autocomplete {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+@media (max-width: 576px) {
+  .modal-resource-share .modal-dialog .modal-body .form-add-user .form-control {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+}
+
+.modal-user-select .modal-dialog {
+  max-width: 40rem;
+}
+.modal-user-select .modal-dialog .modal-body .nav.nav-tabs {
+  border-color: #ffffff;
+}
+.modal-user-select .modal-dialog .modal-body .nav.nav-tabs .nav-link {
+  border-color: #ffffff;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+}
+.modal-user-select .modal-dialog .modal-body .nav.nav-tabs .nav-link:hover {
+  background-color: #f8f9fa;
+}
+.modal-user-select .modal-dialog .modal-body .tab-content .tab-pane .form-control {
+  margin-bottom: 1rem;
+}
+.modal-user-select .modal-dialog .modal-body .tab-content .tab-pane .list-groups,
+.modal-user-select .modal-dialog .modal-body .tab-content .tab-pane .list-users {
+  height: 20rem;
+  overflow-y: auto;
+}
+.modal-user-select .modal-dialog .modal-body .tab-content .tab-pane .list-users {
+  height: 16.625rem;
+}
+.modal-user-select .modal-dialog .navbar {
+  padding: 0.75rem;
+}
+.modal-user-select .modal-dialog .navbar h6 {
+  margin-bottom: 0;
+}
+.modal-user-select .modal-dialog .selected-users {
+  height: 20rem;
+  overflow-y: auto;
+}
+.modal-user-select .modal-dialog .selected-users .list-group .list-group-item {
+  padding: 0.0545rem 0.5rem;
 }
 
 .app-content.page-reports .article-report {
@@ -2176,11 +2382,15 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light.btn-create {
-  font-size: 1.25rem;
+  font-size: 1.175rem;
+  font-weight: bold;
   line-height: 1.25;
+}
+.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light.btn-create .fas {
+  vertical-align: middle;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-light .fas {
   font-size: 1.5rem;
@@ -2189,8 +2399,8 @@ table.dataTable tbody tr td .nowrap {
   padding: 1.5rem 0;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row {
-  -webkit-align-items: flex-end;
-  align-items: flex-end;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
   margin: 0;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .col-auto {
@@ -2212,25 +2422,20 @@ table.dataTable tbody tr td .nowrap {
   flex-direction: column;
   -webkit-justify-content: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-top: 1.75rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn {
+  margin: 0.25rem 0.5rem;
   width: 2.5rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
-  margin-top: 0.5rem;
+  margin: 0.25rem 0.5rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas {
   font-size: 1.25rem;
 }
 .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group {
   max-width: 30rem;
-}
-.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group .btn {
-  margin-left: 0;
-}
-.app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-group .btn + .btn {
-  margin-left: 0.5rem;
 }
 @media (max-width: 767.98px) {
   .app-content.page-administration .article-manage-form-class .article-header {
@@ -2264,12 +2469,10 @@ table.dataTable tbody tr td .nowrap {
     flex-direction: row;
     -webkit-align-items: center;
     align-items: center;
+    margin: 0.5rem 0;
   }
   .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group + .btn-group {
-    margin-left: 1rem;
-  }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
-    margin-top: 0;
+    margin-left: 1.75rem;
   }
   .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-right, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-left, .app-content.page-administration .article-manage-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-left {
     display: none;

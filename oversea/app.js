@@ -26,6 +26,7 @@ app.use('/static/chartjs-plugin-datalabels', express.static(path.join(__dirname,
 app.use('/static/moment', express.static(path.join(__dirname, 'node_modules/moment')));
 app.use('/static/daterangepicker', express.static(path.join(__dirname, 'node_modules/daterangepicker')));
 app.use('/static/datatables', express.static(path.join(__dirname, 'node_modules/datatables/media')));
+app.use('/static/autocomplete.js', express.static(path.join(__dirname, 'node_modules/autocomplete.js/dist')));
 
 app.use('/', require('./routes/index'));
 

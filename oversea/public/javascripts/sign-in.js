@@ -2,6 +2,12 @@ $(document).ready(function() {
   function redirectToHome(e) {
     var username = $('.form-sign-in .input-username').val();
 
+    if (username === '') {
+      $('.form-sign-in .text-danger').removeClass('d-none');
+    } else {
+      $('.form-sign-in .text-danger').addClass('d-none');
+    }
+
     if (/^student$/i.test(username)) {
       location.href = '/student/home';
     } else if (/^teacher$/i.test(username)) {

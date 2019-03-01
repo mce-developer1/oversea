@@ -15,14 +15,14 @@
               {{#if studentUser}}
                 <div class="form-group">
                   <label class="form-label" for="selReport">Report Type</label>
-                  <select class="form-control selectpicker" id="selReport" data-container=".article-sidebar">
+                  <select class="form-control selectpicker" id="selReport" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option value="proficiency">How Well I've Done</option>
                     <option value="usage">How Much I've Completed</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="selChannel">Channel</label>
-                  <select class="form-control selectpicker" id="selChannel" data-container=".article-sidebar">
+                  <select class="form-control selectpicker" id="selChannel" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option>All</option>
                     <option>Math Buddies</option>
                     <option>Marshall Cavendish Maths</option>
@@ -33,14 +33,14 @@
               {{#unless studentUser}}
                 <div class="form-group">
                   <label class="form-label" for="selReport">Report Type</label>
-                  <select class="form-control selectpicker" id="selReport" data-container=".article-sidebar">
+                  <select class="form-control selectpicker" id="selReport" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option value="proficiency">Mastery</option>
                     <option value="usage">Usage</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="selGrade">Grade</label>
-                  <select class="form-control selectpicker" id="selGrade" data-container=".article-sidebar">
+                  <select class="form-control selectpicker" id="selGrade" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="selClass">Class</label>
-                  <select class="form-control selectpicker" id="selClass" data-container=".article-sidebar">
+                  <select class="form-control selectpicker" id="selClass" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option value="All">All</option>
                     <option>P1-EN</option>
                     <option>P1-HA</option>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="selChannel">Channel</label>
-                  <select class="form-control selectpicker" id="selChannel" data-container=".article-sidebar">
+                  <select class="form-control selectpicker" id="selChannel" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option>Math Buddies</option>
                     <option>Marshall Cavendish Maths</option>
                     <option>Marshall Cavendish Science</option>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="selTopic">Topic</label>
-                  <select class="form-control selectpicker" id="selTopic" data-container=".article-sidebar">
+                  <select class="form-control selectpicker" id="selTopic" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option>All</option>
                     <option>Numbers To 10</option>
                     <option>Number Bonds</option>
@@ -83,13 +83,13 @@
             <div class="article article-usage-report no-sidebar d-none">
               <div class="article-header">
                 {{#if studentUser}}
-                  <button class="btn btn-light" type="button">
+                  <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the usage of learning resources at Topic and Sub-Topic levels by displaying the percentage of resources that have been successfully completed.">
                     <i class="fas fa-info-circle"></i>
                   </button>
                   <h5>How Much I've Completed</h5>                  
                 {{/if}}
                 {{#unless studentUser}}
-                  <button class="btn btn-light" type="button">
+                  <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the usage of learning resources at Topic and Sub-Topic levels by displaying the percentage of resources that have been successfully completed.">
                     <i class="fas fa-info-circle"></i>
                   </button>
                   <h5>Usage Summary</h5>
@@ -115,13 +115,13 @@
             <div class="article article-proficiency-report no-sidebar">
               <div class="article-header">
                 {{#if studentUser}}
-                  <button class="btn btn-light" type="button">
+                  <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the mastery at Topic and Sub-Topic levels by displaying the average percentage score of quizzes that have been attempted and submitted.">
                     <i class="fas fa-info-circle"></i>
                   </button>
                   <h5>How Well I've Done</h5>
                 {{/if}}
                 {{#unless studentUser}}
-                  <button class="btn btn-light" type="button">
+                  <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the mastery at Topic and Sub-Topic levels by displaying the average percentage score of quizzes that have been attempted and submitted.">
                     <i class="fas fa-info-circle"></i>
                   </button>
                   <h5>Mastery Summary</h5>

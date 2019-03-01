@@ -49,13 +49,18 @@
 
           .navbar {
             @include justify-content(flex-end);
-            padding: 0.5rem 0;
+            padding: .75rem 0;
 
             .navbar-nav {
               .btn-light {
                 &.btn-create {
-                  font-size: 1.25rem;
+                  font-size: 1.175rem;
+                  font-weight: bold;
                   line-height: 1.25;
+
+                  .fas {
+                    vertical-align: middle;
+                  }
                 }
 
                 .fas {
@@ -69,7 +74,7 @@
             padding: 1.5rem 0;
 
             .form-row {
-              @include align-items(flex-end);
+              @include align-items(flex-start);
               margin: 0;
 
               .col-auto {
@@ -91,13 +96,14 @@
               .btn-group {
                 @include display-flex(column);
                 @include justify-content(center);
-                margin-bottom: 1rem;
+                margin-top: 1.75rem;
 
                 .btn {
+                  margin: .25rem .5rem;
                   width: 2.5rem;
 
                   +.btn {
-                    margin-top: .5rem;
+                    margin: .25rem .5rem;
                   }
 
                   .fas {
@@ -109,14 +115,6 @@
 
             .form-group {
               max-width: 30rem;
-
-              .btn {
-                margin-left: 0;
-
-                +.btn {
-                  margin-left: .5rem;
-                }
-              }
             }
           }
         }
@@ -150,16 +148,13 @@
                 .btn-group {
                   @include flex-direction(row);
                   @include align-items(center);
+                  margin: .5rem 0;
 
                   +.btn-group {
-                    margin-left: 1rem;
+                    margin-left: 1.75rem;
                   }
 
                   .btn {
-                    +.btn {
-                      margin-top: 0;
-                    }
-
                     .fas {
                       &.fa-angle-right,
                       &.fa-angle-double-right,
