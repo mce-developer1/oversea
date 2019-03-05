@@ -38,24 +38,36 @@ $(document).ready(function() {
   function updateStudentReport(container, chart) {
     google.visualization.events.addListener(chart, 'ready', function() {
       var svg = container.getElementsByTagName('svg')[0];
-      var barRects = svg.querySelectorAll("rect[width='1'][fill='#6c757d']");
-      var startX = 0;
+      var barRects = svg.querySelectorAll("rect[width='1'][fill='#333333']");
       for (var i = 0; i < barRects.length; i++) {
         var barRect = barRects[i];
-        var barRectX = parseFloat(barRect.getAttribute('x'));
-        if (i > 0) barRect.setAttribute('x', (barRectX - 3));
-        else startX = barRectX;
+        barRect.setAttribute('fill', '#6c757d');
         barRect.setAttribute('width', 3);
       }
 
+      barRects = svg.querySelectorAll("rect[width='1'][fill='#6c757d']");
+      var startX = 0, finishX = 0;
+      for (var i = 0; i < barRects.length; i++) {
+        var barRect = barRects[i];
+        var barRectX = parseFloat(barRect.getAttribute('x'));
+        if (i > 0) {
+          finishX = barRectX;
+          barRect.setAttribute('x', (barRectX - 3));
+          barRect.setAttribute('width', 3);
+        } else {
+          startX = barRectX;
+        }        
+      }
+
       var barRects = svg.querySelectorAll("rect[height='1']");
-      var imgWidth = 95, imgHeight = 28;
+      var imgWidth = 92, imgHeight = 28;
       for (var i = 0; i < barRects.length; i++) {
         var barRect = barRects[i];
         var barRectX = parseFloat(barRect.getAttribute('x'));
         var barRectY = parseFloat(barRect.getAttribute('y'));
-        if (barRectX < (startX + imgWidth)) continue;
-        var x = (barRectX - imgWidth + 1);
+        var x = (barRectX < (startX + imgWidth)) 
+          ? (barRectX - (barRectX - startX) + 1)
+          : (barRectX - imgWidth + 1);
         var y = (barRectY - (imgHeight / 2));
         var image = createImage({
           href: '/static/images/icon_reports_rocket.png',
@@ -80,14 +92,17 @@ $(document).ready(function() {
           if (barLabel.getAttribute('data-x')) continue;
           if (barLabelRect.getAttribute('data-x')) continue;
           var barLabelX = parseFloat(barLabel.getAttribute('x'));
+          if (barLabelX < startX) continue;
           var barLabelRectX = parseFloat(barLabelRect.getAttribute('x'));
           var barLabelRectWidth = parseFloat(barLabelRect.getAttribute('width'));
           barLabel.setAttribute('data-x', barLabelX);
           barLabelRect.setAttribute('data-x', barLabelRectX);
+          var availLabelWidth = (imgWidth - (barLabelX - startX)) + 10;
+          availLabelWidth = (availLabelWidth > 0) ? availLabelWidth : 10;
           if (barLabelX < (startX + barLabelRectWidth + imgWidth)) {
-            barLabel.setAttribute('x', (barLabelX + barLabelRectWidth + 10));
+            barLabel.setAttribute('x', (barLabelX + barLabelRectWidth + availLabelWidth));
             barLabel.setAttribute('fill', '#000000');
-            barLabelRect.setAttribute('x', (barLabelRectX + barLabelRectWidth + 10));
+            barLabelRect.setAttribute('x', (barLabelRectX + barLabelRectWidth + availLabelWidth));
           } else {
             barLabel.setAttribute('x', (barLabelX - imgWidth));
             barLabel.setAttribute('fill', '#ffffff');
@@ -98,7 +113,12 @@ $(document).ready(function() {
         var barLabels = svg.querySelectorAll("text[text-anchor='start']");
         for (var i = 0; i < barLabels.length; i++) {
           var barLabel = barLabels[i];
+          if (barLabel.getAttribute('data-x')) continue;
           var barLabelX = parseFloat(barLabel.getAttribute('x'));
+          if (barLabelX < startX) continue;
+          barLabel.setAttribute('data-x', barLabelX);
+          var availLabelWidth = (imgWidth - (barLabelX - startX)) + 10;
+          barLabel.setAttribute('x', (barLabelX + availLabelWidth));
           barLabel.setAttribute('fill', '#000000');
         }
       });
@@ -124,10 +144,10 @@ $(document).ready(function() {
   function drawStudentUsageReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Math Buddies', 95, getBarColor(95), 'Almost there!'],
-      ['Marshall Cavendish Maths', 80, getBarColor(80), 'Good Progress!'],
+      ['Math Buddies', 95, getBarColor(95), 'Success!'],
+      ['Marshall Cavendish Maths', 80, getBarColor(80), 'Almost There!'],
       ['Marshall Cavendish Science', 70, getBarColor(70), 'Keep It Up!'],
-      ['My Pals are here! Science', 55, getBarColor(55), 'Almost there!']
+      ['My Pals are here! Science', 55, getBarColor(55), 'Halfway There!']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -151,7 +171,7 @@ $(document).ready(function() {
         },
         ticks: [
           {v: 0, f: 'Start'},
-          {v: 100, f: 'Finish'}
+          {v: 101, f: 'Finish'}
         ],
         minValue: 0,
         maxValue: 100
@@ -183,13 +203,13 @@ $(document).ready(function() {
   function drawStudentChannelUsageReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Numbers To 10', 95, getBarColor(95), 'Keep It Up!'],
-      ['Number Bonds', 80, getBarColor(80), 'Almost there!'],
-      ['Addition Within 10', 70, getBarColor(70), 'Almost there!'],
-      ['Subtraction Within 10', 55, getBarColor(55), 'Keep It Up!'],
-      ['Shapes And Patterns', 40, getBarColor(40), 'Keep it up!'],
-      ['Ordinal Numbers And Position', 30, getBarColor(30), 'Almost there!'],
-      ['Numbers To 20', 10, getBarColor(10), 'Keep it up!']
+      ['Numbers To 10', 95, getBarColor(95), 'Success!'],
+      ['Number Bonds', 80, getBarColor(80), 'Almost There!'],
+      ['Addition Within 10', 70, getBarColor(70), 'Keep It Up!'],
+      ['Subtraction Within 10', 55, getBarColor(55), 'Halfway There!'],
+      ['Shapes And Patterns', 40, getBarColor(40), 'Good Progress!'],
+      ['Ordinal Numbers And Position', 30, getBarColor(30), 'You Can Do It!'],
+      ['Numbers To 20', 10, getBarColor(10), 'Just Getting Started']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -213,7 +233,7 @@ $(document).ready(function() {
         },
         ticks: [
           {v: 0, f: 'Start'},
-          {v: 100, f: 'Finish'}
+          {v: 101, f: 'Finish'}
         ],
         minValue: 0,
         maxValue: 100
@@ -261,7 +281,7 @@ $(document).ready(function() {
         },
         ticks: [
           {v: 0, f: 'Start'},
-          {v: 100, f: 'Finish'}
+          {v: 101, f: 'Finish'}
         ],
         minValue: 0,
         maxValue: 100
@@ -299,7 +319,7 @@ $(document).ready(function() {
       ['Subtraction Within 10', 55, getBarColor(55), 'Apprentice'],
       ['Shapes And Patterns', 40, getBarColor(40), 'Novice'],
       ['Ordinal Numbers And Position', 30, getBarColor(30), 'Learner'],
-      ['Numbers To 20', 10, getBarColor(10), 'Beginner']
+      ['Numbers To 20', 15, getBarColor(10), 'Beginner']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -323,7 +343,7 @@ $(document).ready(function() {
         },
         ticks: [
           {v: 0, f: 'Start'},
-          {v: 100, f: 'Finish'}
+          {v: 101, f: 'Finish'}
         ],
         minValue: 0,
         maxValue: 100

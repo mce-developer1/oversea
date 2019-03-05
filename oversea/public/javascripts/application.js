@@ -1,4 +1,26 @@
 $(document).ready(function() {
+  $(document).on('click', '[data-toggle="dialog"]', function(e) {
+    setTimeout(function() {
+      var dialog = $(e.target).closest('.dialog');
+      $(dialog).toggleClass('open');
+      $(dialog).find('.dialog-menu').toggleClass('show');
+    });
+  });
+
+  $(document).on('click', '[data-toggle="dropdown"]', function(e) {
+    if ( $('.dialog.open').length === 0) {
+      $('.dialog.open .dialog-menu').removeClass('show');
+      $('.dialog.open').removeClass('open');
+    }
+  })
+
+  $(document).on('click', function(e) {
+    if ($(e.target).closest('.dialog-menu').length === 0) {
+      $('.dialog.open .dialog-menu').removeClass('show');
+      $('.dialog.open').removeClass('open');
+    }
+  });
+
   $(document).on('click', '[data-toggle="drawer"]', function(e) {
     e.preventDefault();
 

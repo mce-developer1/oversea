@@ -83,6 +83,18 @@ $(document).ready(function() {
     $('.modal-folder-create').modal('show');
   });
 
+  $container.find('.dropdown-menu .item-edit-attributes').on('click', function(e) {
+    $('.modal-file-edit-attributes').modal('show');
+  });
+
+  $container.find('.dropdown-menu .item-delete').on('click', function(e) {
+    $('.modal-resource-delete-confirmation').modal('show');
+  });
+
+  $container.find('.dropdown-menu .item-move-to').on('click', function(e) {
+    $('.modal-resourve-move').modal('show');
+  });
+
   $(window).on('resize', function(e) {
     if ($(window).width() > 992) {
       if ($container.find('.nav-main').hasClass('d-block')) {
@@ -101,20 +113,6 @@ $(document).ready(function() {
 
   $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
     $container.find('.nav-main .input-group .form-control').val('');
-  });
-
-  $container.find('.nav-main .input-group .btn-toggle').click(function(e) {
-    e.stopPropagation();
-    $container.find('.nav-main .dialog').toggleClass('open');
-    $container.find('.nav-main .dialog .dialog-menu').toggleClass('show');
-  });
-
-  $(document).on('click', function(e) {
-    if (($(e.target).closest('.dialog-menu').length === 0)
-        && $container.find('.nav-main .dialog').hasClass('open')) {
-      $container.find('.nav-main .dialog').removeClass('open');
-      $container.find('.nav-main .dialog .dialog-menu').removeClass('show');
-    }
   });
 
   $container.find('.nav-main .dialog .dialog-menu .btn-primary').on('click', function(e) {
@@ -282,7 +280,7 @@ $(document).ready(function() {
   });
 
   $('.modal-resource-share .btn-primary').on('click', function(e) {
-    if ($('.modal-resource-share .list-users').hasClass('d-none')) {
+    if ($('.modal-resource-share .list-users-permissions').hasClass('d-none')) {
       $('.modal-resource-share .form-add-user .text-danger').removeClass('d-none');
     } else {
       $('.modal-resource-share .form-add-user .text-danger').addClass('d-none');
@@ -291,7 +289,7 @@ $(document).ready(function() {
 
   $('.modal-resource-share .form-add-user .btn-add').on('click', function(e) {
     if ($('.modal-resource-share .list-users .list-group-item').length > 0) {
-      $('.modal-resource-share .list-users').removeClass('d-none');
+      $('.modal-resource-share .list-users-permissions').removeClass('d-none');
       $('.modal-resource-share .form-add-user .text-muted').addClass('d-none');
     }
   });

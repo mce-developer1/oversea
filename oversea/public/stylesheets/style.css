@@ -302,7 +302,7 @@ a:focus {
   padding: 0.5rem;
 }
 .list-group .list-group-item:hover {
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
 }
 
 .card-group {
@@ -1804,31 +1804,31 @@ table.dataTable tbody tr td .nowrap {
   font-size: 1.5rem;
   min-width: 2rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > a {
   padding-left: 2.5rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > a {
   padding-left: 4rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 5.5rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 7rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 8.5rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 10rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 11.5rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 13rem;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
+.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
   padding-left: 14.5rem;
 }
 .app-content.page-resources .article-resources .article-content .article-body .navbar {
@@ -1840,8 +1840,7 @@ table.dataTable tbody tr td .nowrap {
   margin: 0 0.25rem;
 }
 .app-content.page-resources .article-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-light .fas {
-  color: #495057;
-  font-size: 1.5rem;
+  vertical-align: middle;
 }
 .app-content.page-resources .article-resources .article-content .article-body .table {
   -webkit-touch-callout: none;
@@ -1872,6 +1871,7 @@ table.dataTable tbody tr td .nowrap {
   display: inline-block;
   padding-left: 2.25rem;
   position: relative;
+  word-break: break-word;
 }
 .app-content.page-resources .article-resources .article-content .article-body .table a .fas {
   position: absolute;
@@ -1895,7 +1895,6 @@ table.dataTable tbody tr td .nowrap {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  padding: 1rem 0;
   margin: 0 -0.5rem;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card {
@@ -1923,12 +1922,19 @@ table.dataTable tbody tr td .nowrap {
   color: #28a745;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
   padding: 1rem;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .card-link {
   color: #495057;
   display: inline-block;
   margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .card-link:hover {
   text-decoration: underline;
@@ -2094,10 +2100,46 @@ table.dataTable tbody tr td .nowrap {
 }
 
 .modal-folder-create .modal-dialog {
-  max-width: 20rem;
+  max-width: 24rem;
 }
-.modal-folder-create .modal-dialog .modal-body .form-create-folder .form-control {
-  margin-left: 1rem;
+.modal-folder-create .modal-dialog .modal-body .form-create-folder .form-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.modal-folder-create .modal-dialog .modal-body .form-create-folder .form-group .form-label {
+  min-width: 6rem;
+  width: 6rem;
+}
+
+.modal-file-edit-attributes .modal-dialog {
+  max-width: 40rem;
+}
+@media (min-width: 768px) {
+  .modal-file-edit-attributes .modal-dialog .modal-body .form-edit-file-attributes .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-file-edit-attributes .modal-dialog .modal-body .form-edit-file-attributes .form-group .form-group {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .modal-file-edit-attributes .modal-dialog .modal-body .form-edit-file-attributes .form-group .form-label {
+    min-width: 14rem;
+    width: 14rem;
+  }
+}
+
+.modal-resource-delete-confirmation .modal-dialog {
+  max-width: 32rem;
 }
 
 .modal-resource-share .modal-dialog {
@@ -2109,13 +2151,30 @@ table.dataTable tbody tr td .nowrap {
 .modal-resource-share .modal-dialog .modal-body .navbar h6 {
   margin: 0;
 }
-.modal-resource-share .modal-dialog .modal-body .list-users {
+.modal-resource-share .modal-dialog .modal-body .list-users-permissions {
+  margin-bottom: 2rem;
+}
+.modal-resource-share .modal-dialog .modal-body .list-users-permissions h6 {
   margin-bottom: 1rem;
+}
+.modal-resource-share .modal-dialog .modal-body .list-users-permissions .list-users {
   max-height: 20rem;
   overflow-y: auto;
 }
-.modal-resource-share .modal-dialog .modal-body .list-users .list-group .list-group-item .user-name {
+.modal-resource-share .modal-dialog .modal-body .list-users-permissions .list-users .list-group .list-group-item.item-owner {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  padding: 0.75rem 0.5rem;
+}
+.modal-resource-share .modal-dialog .modal-body .list-users-permissions .list-users .list-group .list-group-item.item-owner .user-name {
+  width: calc(100% - 10rem);
+}
+.modal-resource-share .modal-dialog .modal-body .list-users-permissions .list-users .list-group .list-group-item .user-name {
   width: calc(100% - 12rem);
+}
+.modal-resource-share .modal-dialog .modal-body .form-add-user .form-group .form-label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 .modal-resource-share .modal-dialog .modal-body .form-add-user .form-group .input-group {
   -webkit-justify-content: flex-start;
@@ -2145,11 +2204,12 @@ table.dataTable tbody tr td .nowrap {
 }
 .modal-user-select .modal-dialog .modal-body .nav.nav-tabs .nav-link {
   border-color: #ffffff;
+  border-radius: 0;
   font-weight: 500;
   padding: 0.5rem 0.75rem;
 }
 .modal-user-select .modal-dialog .modal-body .nav.nav-tabs .nav-link:hover {
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
 }
 .modal-user-select .modal-dialog .modal-body .tab-content .tab-pane .form-control {
   margin-bottom: 1rem;
@@ -2306,6 +2366,10 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-reports .article-report .article-content .article-sidebar .form-filters {
     padding: 1rem;
   }
+  .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-content .article-body .chart,
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body .chart {
+    display: none;
+  }
 }
 @media (min-width: 768px) {
   .app-content.page-reports .article-report .article-content .article-sidebar {
@@ -2323,6 +2387,10 @@ table.dataTable tbody tr td .nowrap {
     height: calc(100vh - 12rem);
     overflow-x: hidden;
     overflow-y: auto;
+  }
+  .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-content .article-body .table,
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body .table {
+    display: none;
   }
 }
 
