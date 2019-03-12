@@ -7,6 +7,10 @@ $(document).ready(function() {
       : ($container.find('.card-group .card-active').length > 0);
 
     if (resourcesSelected) {
+      if ($container.find('.btn-edit').hasClass('d-none')) {
+        $container.find('.btn-edit').removeClass('d-none');
+      }
+
       if ($container.find('.btn-share').hasClass('d-none')) {
         $container.find('.btn-share').removeClass('d-none');
       }
@@ -23,6 +27,10 @@ $(document).ready(function() {
         $container.find('.divider-search').removeClass('d-none');
       }
     } else {
+      if (!$container.find('.btn-edit').hasClass('d-none')) {
+        $container.find('.btn-edit').addClass('d-none');
+      }
+
       if (!$container.find('.btn-share').hasClass('d-none')) {
         $container.find('.btn-share').addClass('d-none');
       }
@@ -41,12 +49,10 @@ $(document).ready(function() {
     }
   }
 
-  $container.find('.navbar-nav:not(.nav-main) .btn-search').on('click', function(e) {
-    $container.find('.navbar-nav:not(.nav-main)').addClass('d-none');
-    $container.find('.nav-main').addClass('d-block');
-  });
+  function searchLessons(e) {
+    var search = $container.find('.nav-main .input-group .aa-input').val();
+    if (search === '') return;
 
-  $container.find('.navbar-nav.nav-main .btn-search').on('click', function(e) {
     $container.find('.article-body .loading-state').removeClass('d-none');
     $container.find('.article-body .empty-state').addClass('d-none');
     $container.find('.article-body .navbar').addClass('d-none');
@@ -57,17 +63,47 @@ $(document).ready(function() {
       $container.find('.article-body .loading-state').addClass('d-none');
       $container.find('.article-body .empty-state').removeClass('d-none');
     }, 5000);
+  }
+
+  $container.find('.nav-main .input-group .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
+    displayKey: 'name',
+    source: function(query, callback) {
+      var records = [
+        { name: 'Counting To 10' }, 
+        { name: 'Comparing Numbers' },
+        { name: 'Making Number Patterns' }, 
+        { name: 'Making Number Bonds' },
+        { name: 'Making Addition Stories' },
+        { name: 'Making Subtraction Stories' },
+        { name: 'Making Fact Families' },
+        { name: 'Making Patterns With Shapes' }
+      ];
+      var pattern = new RegExp(query, 'i');
+      var hits = records.filter(function(record) {
+        return record.name.match(pattern);
+      });
+      hits.forEach(function(hit) {
+        var match = hit.name.match(pattern)[0];
+        var highlighted = '<em>' + match + '</em>';
+        hit.highlighted = hit.name.replace(match, highlighted);
+      });
+      callback(hits);
+    },
+    templates: {
+      suggestion: function(suggestion) {
+        return suggestion.highlighted;
+      }
+    }
+  }]);
+
+  $container.find('.navbar-nav:not(.nav-main) .btn-search').on('click', function(e) {
+    $container.find('.navbar-nav:not(.nav-main)').addClass('d-none');
+    $container.find('.nav-main').addClass('d-block');
   });
 
-  $container.find('.nav-main .input-group .form-control').on('change', function(e) {
-    $container.find('.article-body .loading-state').removeClass('d-none');
-    $container.find('.article-body .table-head').addClass('d-none');
-    $container.find('.article-body .table-body').addClass('d-none');
-
-    setTimeout(function() {
-      $container.find('.article-body .loading-state').addClass('d-none');
-      $container.find('.article-body .empty-state').removeClass('d-none');
-    }, 5000);
+  $container.find('.navbar-nav.nav-main .btn-search').on('click', searchLessons);
+  $container.find('.nav-main .input-group .aa-input').on('keypress', function(e) {
+    if (e.which === 13) searchLessons(e);
   });
 
   $container.find('.navbar-nav.nav-main .btn-back').on('click', function(e) {
@@ -75,44 +111,9 @@ $(document).ready(function() {
     $container.find('.nav-main').removeClass('d-block');
   });
 
-  $container.find('.navbar-nav .btn-share').on('click', function(e) {
-    $('.modal-resource-share').modal('show');
-  });
-
-  $container.find('.dropdown-menu .item-create-folder').on('click', function(e) {
-    $('.modal-folder-create').modal('show');
-  });
-
-  $container.find('.dropdown-menu .item-edit-attributes').on('click', function(e) {
-    $('.modal-file-edit-attributes').modal('show');
-  });
-
-  $container.find('.dropdown-menu .item-delete').on('click', function(e) {
-    $('.modal-resource-delete-confirmation').modal('show');
-  });
-
-  $container.find('.dropdown-menu .item-move-to').on('click', function(e) {
-    $('.modal-resourve-move').modal('show');
-  });
-
-  $(window).on('resize', function(e) {
-    if ($(window).width() > 992) {
-      if ($container.find('.nav-main').hasClass('d-block')) {
-        $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
-        $container.find('.nav-main').removeClass('d-block');
-      }
-    }
-  });
-
-  $container.find('.nav-main .input-group .btn-search').on('click', function(e) {
-    $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
-    $container.find('.nav-main').removeClass('d-block');
-    var search = $container.find('.nav-main .input-group .form-control').val();
-    $container.find('.nav-item-result .item-text').text(search);
-  });
-
   $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
-    $container.find('.nav-main .input-group .form-control').val('');
+    $container.find('.nav-main .input-group .aa-input').val('');
+    searchLessons(e);
   });
 
   $container.find('.nav-main .dialog .dialog-menu .btn-primary').on('click', function(e) {
@@ -127,9 +128,29 @@ $(document).ready(function() {
 
     var keyword = $(txtKeyword).val();
     query += (query === '') ? keyword : ' ' + keyword;
-    $container.find('.nav-main .input-group .form-control').val(query);
+    $container.find('.nav-main .input-group .aa-input').val(query);
     $container.find('.nav-main .dialog').removeClass('open');
     $container.find('.nav-main .dialog .dialog-menu').removeClass('show');
+  });
+
+  $container.find('.navbar-nav .btn-share').on('click', function(e) {
+    $('.modal-resource-share').modal('show');
+  });
+
+  $container.find('.dropdown-menu .item-new-folder').on('click', function(e) {
+    $('.modal-folder-create').modal('show');
+  });
+
+  $container.find('.dropdown-menu .item-edit-attributes').on('click', function(e) {
+    $('.modal-file-edit-attributes').modal('show');
+  });
+
+  $container.find('.dropdown-menu .item-delete').on('click', function(e) {
+    $('.modal-resource-delete-confirmation').modal('show');
+  });
+
+  $container.find('.dropdown-menu .item-move-to').on('click', function(e) {
+    $('.modal-resourve-move').modal('show');
   });
 
   $container.find('.btn-list-view').on('click', function(e) {
@@ -154,9 +175,9 @@ $(document).ready(function() {
     e.preventDefault();
     e.stopPropagation();
     
-    $('.modal-resource-preview').on('hide.bs.modal', function (e) {
-      $('.modal-resource-preview .content').html('<iframe width="560" height="315" src="https://www.youtube.com/embed/hE834L-rRtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-    });
+    var pdfPreview = '<iframe class="full" src="/viewers/pdf_viewer?file=/static/pdfs/teachers-portal-user-guide.pdf" frameborder="0" allowfullscreen></iframe>';
+    var noPreview = '<p class="font-italic">Hmm... looks like this file doesn\'t have a preview that we can show you.</p>';
+    $('.modal-resource-preview .modal-body .content').html(Math.round(Math.random()) ? pdfPreview : noPreview);
     $('.modal-resource-preview').modal('show');
   });
 
@@ -280,7 +301,7 @@ $(document).ready(function() {
   });
 
   $('.modal-resource-share .btn-primary').on('click', function(e) {
-    if ($('.modal-resource-share .list-users-permissions').hasClass('d-none')) {
+    if ($('.modal-resource-share .users-permissions').hasClass('d-none')) {
       $('.modal-resource-share .form-add-user .text-danger').removeClass('d-none');
     } else {
       $('.modal-resource-share .form-add-user .text-danger').addClass('d-none');
@@ -289,7 +310,7 @@ $(document).ready(function() {
 
   $('.modal-resource-share .form-add-user .btn-add').on('click', function(e) {
     if ($('.modal-resource-share .list-users .list-group-item').length > 0) {
-      $('.modal-resource-share .list-users-permissions').removeClass('d-none');
+      $('.modal-resource-share .users-permissions').removeClass('d-none');
       $('.modal-resource-share .form-add-user .text-muted').addClass('d-none');
     }
   });
@@ -310,7 +331,7 @@ $(document).ready(function() {
     $(this).closest('.list-group-item').remove();
   });
 
-  $('.modal-resource-share .form-add-user .input-autocomplete').autocomplete({ hint: true, debug: true }, [{
+  $('.modal-resource-share .form-add-user .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
     displayKey: 'name',
     source: function(query, callback) {
       var records = [
@@ -338,11 +359,14 @@ $(document).ready(function() {
     }
   }]);
 
-  $(document).on('keydown', '.dropdown-menu', function(e) {
-    console.log(this, e);
-  });
-
   $(window).on('resize', function(e) {
+    if ($(window).width() > 992) {
+      if ($container.find('.nav-main').hasClass('d-block')) {
+        $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
+        $container.find('.nav-main').removeClass('d-block');
+      }
+    }
+
     if ($(window).width() < 768) {
       if (!$('.btn-more').hasClass('d-block')) {
         $('.btn-more').addClass('d-block');

@@ -29,7 +29,7 @@
                       <i class="fas fa-arrow-left"></i>
                     </button>
                   </div>
-                  <input class="form-control form-input" type="text" placeholder="Search Bank">
+                  <input class="form-control form-input input-autocomplete" type="text" placeholder="Search entire bank">
                   <div class="input-group-append">
                     <button class="btn btn-light btn-clear" type="button">
                       <i class="fas fa-times"></i>
@@ -42,7 +42,7 @@
                 <div class="dialog-menu">
                   <form class="form-advanced-search">
                     <div class="form-group">
-                      <label class="form-label" for="selCurriculum">Curriculum Standards</label>
+                      <label class="form-label" for="selCurriculum">Curriculum</label>
                       <select class="form-control selectpicker" id="selCurriculum">
                         <option>All</option>
                         <option>CAIE</option>
@@ -84,6 +84,11 @@
               </li>
             </ul>
             <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-light btn-edit d-none" type="button" title="Edit">
+                  <i class="fas fa-edit"></i>
+                </button>
+              </li>
               <li class="nav-item">
                 <button class="btn btn-light btn-share d-none" type="button" title="Share">
                   <i class="fas fa-share-alt"></i>
@@ -266,22 +271,25 @@
             <nav class="navbar navbar-expand">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#">Resource Bank</a>
+                  <a href="#">Primary 1 Math Buddies</a>
                 </li>
                 <li class="breadcrumb-item active">
                   <a href="#">Numbers To 10</a>
                 </li>
               </ol>
               <ul class="navbar-nav">
-                <li class="nav-item">
-                  <button class="btn btn-light btn-create" type="button" data-toggle="dropdown">
-                    <i class="fas fa-plus"></i> Add Folder
+                <li class="nav-item dropdown">
+                  <button class="btn btn-primary btn-create" type="button" data-toggle="dropdown">
+                    <i class="fas fa-plus"></i> New
                   </button>
-                </li>
-                <li class="nav-item">
-                  <button class="btn btn-light btn-upload" type="button" data-toggle="dropdown">
-                    <i class="fas fa-upload"></i> Upload
-                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item item-new-folder" href="#">
+                      <i class="fas fa-folder-plus"></i> Folder
+                    </a>
+                    <a class="dropdown-item item-upload-file" href="#">
+                      <i class="fas fa-upload"></i> Upload file
+                    </a>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -346,7 +354,7 @@
                   <td> - </td>
                   <td> - </td>
                   <td>29 Mar 2018</td>
-                  <td>-</td>
+                  <td> - </td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -368,7 +376,7 @@
                   <td> - </td>
                   <td> - </td>
                   <td>05 Dec 2006</td>
-                  <td>-</td>
+                  <td> - </td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -390,7 +398,7 @@
                   <td> - </td>
                   <td> - </td>
                   <td>22 Jul 2015</td>
-                  <td>-</td>
+                  <td> - </td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -428,13 +436,79 @@
                   </td>
                   <td>
                     <a href="#">
-                      <i class="fas fa-file-archive"></i> Making Addition Stories
+                      <i class="fas fa-file-pdf"></i> Making Addition Stories
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>14 Nov 2014</td>
+                  <td>58 KB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item5"/>
+                      <label class="custom-control-label" for="item5"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-archive"></i> Making Subtraction Stories
                     </a>
                   </td>
                   <td> - </td>
                   <td> - </td>
                   <td>12 Nov 2014</td>
                   <td>882 KB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item6"/>
+                      <label class="custom-control-label" for="item6"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-powerpoint"></i> Making Fact Families
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>10 Sep 2014</td>
+                  <td>1 MB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item7"/>
+                      <label class="custom-control-label" for="item7"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-alt"></i> Making Patterns With Shapes
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>28 Nov 2014</td>
+                  <td>100 KB</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -553,8 +627,6 @@
           </ul>
         </nav>
         <div class="content">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/hE834L-rRtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <p class="font-italic">Hmm... looks like this file doesn't have a preview that we can show you.</p>
         </div>
       </div>
     </div>
@@ -599,7 +671,7 @@
 </div>
 
 <div class="modal modal-folder-create fade" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">New Folder</h5>
@@ -624,7 +696,7 @@
 </div>
 
 <div class="modal modal-file-edit-attributes fade" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Edit Attributes</h5>
@@ -741,7 +813,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Confirm</button>
+        <button type="button" class="btn btn-primary">OK</button>
       </div>
     </div>
   </div>
@@ -775,98 +847,108 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Share Resource(s)</h5>
+        <h5 class="modal-title">Share with others (2 items)</h5>
         <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="list-users-permissions d-none">
-          <h6>Who has access</h6>
-          <div class="list-users">
-            <ul class="list-group">
-              <li class="list-group-item item-owner">
-                <div class="user-name">
-                  {{#if studentUser}}Aaron Tan{{/if}}
-                  {{#if teacherUser}}Derrick Chua{{/if}}
-                  {{#if adminUser}}Ernest  Goh{{/if}}
-                  (you)
-                </div>
-                <div class="text-muted">Owner</div>
-              </li>
-              <li class="list-group-item">
-                <div class="user-name">Aaron Tan</div>
-                <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
-                  <option>Can view</option>
-                  <option>Can edit</option>
-                </select>
-                <button class="btn btn-light" type="button" >
-                  <i class="fas fa-times"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <div class="user-name">Arya Suman</div>
-                <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
-                  <option>Can view</option>
-                  <option>Can edit</option>
-                </select>
-                <button class="btn btn-light" type="button" >
-                  <i class="fas fa-times"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <div class="user-name">Ashar Ahmad</div>
-                <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
-                  <option>Can view</option>
-                  <option>Can edit</option>
-                </select>
-                <button class="btn btn-light" type="button" >
-                  <i class="fas fa-times"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <div class="user-name">Chua Chin Hui</div>
-                <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
-                  <option>Can view</option>
-                  <option>Can edit</option>
-                </select>
-                <button class="btn btn-light" type="button" >
-                  <i class="fas fa-times"></i>
-                </button>
-              </li>
-              <li class="list-group-item">
-                <div class="user-name">Derrick Lee</div>
-                <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
-                  <option>Can view</option>
-                  <option>Can edit</option>
-                </select>
-                <button class="btn btn-light" type="button" >
-                  <i class="fas fa-times"></i>
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <form class="form-add-user">
-          <div class="form-group">
-            <lable class="form-label">Add group or user</lable>
-            <div class="input-group">
-              <input class="form-control form-input input-autocomplete" type="text" placeholder="Enter user name or group name...">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary btn-add" type="button" >Add</button>
+        <div class="container">
+          <div class="row users-permissions d-none">
+            <div class="col">
+              <nav class="navbar">
+                <h6>Who has access</h6>
+              </nav>
+              <div class="list-users">
+                <ul class="list-group">
+                  <li class="list-group-item item-owner">
+                    <div class="user-name">
+                      {{#if studentUser}}Aaron Tan{{/if}}
+                      {{#if teacherUser}}Derrick Chua{{/if}}
+                      {{#if adminUser}}Ernest  Goh{{/if}}
+                      (you)
+                    </div>
+                    <div class="text-muted">Owner</div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Aaron Tan</div>
+                    <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                      <option>Can view</option>
+                      <option>Can edit</option>
+                    </select>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Arya Suman</div>
+                    <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                      <option>Can view</option>
+                      <option>Can edit</option>
+                    </select>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Ashar Ahmad</div>
+                    <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                      <option>Can view</option>
+                      <option>Can edit</option>
+                    </select>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Chua Chin Hui</div>
+                    <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                      <option>Can view</option>
+                      <option>Can edit</option>
+                    </select>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Derrick Lee</div>
+                    <select class="form-control selectpicker" data-width="auto" data-container=".modal-resource-share">
+                      <option>Can view</option>
+                      <option>Can edit</option>
+                    </select>
+                    <button class="btn btn-light" type="button" >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                </ul>
               </div>
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary btn-select" type="button" >Select from list</button>
-              </div>
-            </div>            
-            <small class="form-text text-muted">
-              To select groups or users, type group name or user name in the textbox below and click "Add" button or click on "Select from list" button and select users or groups from the popup list.
-            </small>
-            <div class="form-text text-danger d-none">
-              Please select at least one group/user to share.
             </div>
           </div>
-        </form>
+          <div class="row">
+            <div class="col">
+              <form class="form-add-user">
+                <div class="form-group">
+                  <lable class="form-label">Add group or user</lable>
+                  <div class="input-group">
+                    <input class="form-control form-input input-autocomplete" type="text" placeholder="Enter user name or group name...">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary btn-add" type="button" >Add</button>
+                    </div>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary btn-select" type="button" >Select from list</button>
+                    </div>
+                  </div>            
+                  <small class="form-text text-muted">
+                    To select groups or users, type group name or user name in the textbox below and click "Add" button or click on "Select from list" button and select users or groups from the popup list.
+                  </small>
+                  <div class="form-text text-danger d-none">
+                    Please select at least one group/user to share.
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
@@ -877,7 +959,7 @@
 </div>
 
 <div class="modal modal-user-select fade" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Select Group(s)/User(s)</h5>
@@ -888,7 +970,7 @@
       <div class="modal-body">
         <div class="container">
           <div class="row">
-            <div class="col-sm">
+            <div class="col-lg">
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" href="#groups" role="tab" data-toggle="tab">
@@ -906,25 +988,46 @@
                   <div class="list-groups">
                     <ul class="list-group">
                       <li class="list-group-item">
-                        <div class="group-name">P1-EA</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group0">
+                          <label class="custom-control-label" for="group0">P1-EA</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="group-name">P1-HA</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group1">
+                          <label class="custom-control-label" for="group1">P1-HA</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="group-name">P1-MA</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group2">
+                          <label class="custom-control-label" for="group2">P1-MA</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="group-name">P1-PA</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group3">
+                          <label class="custom-control-label" for="group3">P1-PA</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="group-name">P1-SA</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group4">
+                          <label class="custom-control-label" for="group4">P1-SA</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="group-name">P1-TA</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group5">
+                          <label class="custom-control-label" for="group5">P1-TA</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="group-name">P1-UA</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group6">
+                          <label class="custom-control-label" for="group6">P1-UA</label>
+                        </div>
                       </li>
                     </ul>
                   </div>
@@ -942,32 +1045,53 @@
                   <div class="list-users">
                     <ul class="list-group">
                       <li class="list-group-item">
-                        <div class="user-name">Aaron Tan</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="user0">
+                          <label class="custom-control-label" for="user0">Aaron Tan</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="user-name">Arya Suman</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="user1">
+                          <label class="custom-control-label" for="user1">Arya Suman</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="user-name">Ashar Ahmad</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="user2">
+                          <label class="custom-control-label" for="user2">Ashar Ahmad</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="user-name">Chua Chin Hui</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="user3">
+                          <label class="custom-control-label" for="user3">Chua Chin Hui</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="user-name">Derrick Lee</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="user4">
+                          <label class="custom-control-label" for="user4">Derrick Lee</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="user-name">Nurulhuda bte Sazali</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="user5">
+                          <label class="custom-control-label" for="user5">Nurulhuda bte Sazali</label>
+                        </div>
                       </li>
                       <li class="list-group-item">
-                        <div class="user-name">Siow Poh Piah Irene</div>
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="user6">
+                          <label class="custom-control-label" for="user6">Siow Poh Piah Irene</label>
+                        </div>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-sm">
+            <div class="col-lg">
               <nav class="navbar">
                 <h6>Selected User(s)/Group(s)</h6>
               </nav>
@@ -975,25 +1099,25 @@
                 <ul class="list-group">
                    <li class="list-group-item">
                     <div class="user-name">Aaron Tan</div>
-                    <button class="btn btn-light" type="button" >
+                    <button class="btn btn-light" type="button">
                       <i class="fas fa-times"></i>
                     </button>
                   </li>
                   <li class="list-group-item">
                     <div class="user-name">Arya Suman</div>
-                    <button class="btn btn-light" type="button" >
+                    <button class="btn btn-light" type="button">
                       <i class="fas fa-times"></i>
                     </button>
                   </li>
                   <li class="list-group-item">
                     <div class="user-name">Ashar Ahmad</div>
-                    <button class="btn btn-light" type="button" >
+                    <button class="btn btn-light" type="button">
                       <i class="fas fa-times"></i>
                     </button>
                   </li>
                   <li class="list-group-item">
                     <div class="user-name">Chua Chin Hui</div>
-                    <button class="btn btn-light" type="button" >
+                    <button class="btn btn-light" type="button">
                       <i class="fas fa-times"></i>
                     </button>
                   </li>

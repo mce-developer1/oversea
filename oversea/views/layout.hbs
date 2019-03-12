@@ -57,6 +57,13 @@
                   <i class="img img-myreports"></i> My Reports
                 </a>
               </li>
+              {{#unless studentUser}}
+                <li class="nav-item">
+                  <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/tools/tools">
+                    <i class="img img-myreports"></i> My Tools
+                  </a>
+                </li>
+              {{/unless}}
               {{#if adminUser}}
                 <li class="nav-item">
                   <a class="nav-link {{#if adminPage}}active{{/if}}" href="/{{userRole}}/administration/administration">
@@ -210,6 +217,13 @@
                   <i class="img img-myreports"></i> My Reports
                 </a>
               </li>
+              {{#unless studentUser}}
+                <li class="nav-item">
+                  <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/tools/tools">
+                    <i class="img img-myreports"></i> My Tools
+                  </a>
+                </li>
+              {{/unless}}
               {{#if adminUser}}
                 <li class="nav-item">
                   <a class="nav-link {{#if adminPage}}active{{/if}}" href="/{{userRole}}/administration/administration">

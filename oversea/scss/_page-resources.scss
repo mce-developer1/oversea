@@ -85,7 +85,6 @@
               .form-control {
                 padding-left: 3rem;
                 padding-right: 5rem;
-                width: 20rem;
               }
             }
 
@@ -102,11 +101,12 @@
                   }
 
                   .form-label {
-                    width: 18rem;
+                    min-width: 8rem;
+                    width: 8rem;
                   }
 
                   .form-input {
-                    width: calc(100% - 1.25rem);
+                    width: calc(100% - 1rem);
                   }
 
                   .btn {
@@ -124,16 +124,6 @@
               &:hover {
                 .fas {
                   color: $gray-900;
-                }
-              }
-
-              &.btn-create {
-                font-size: 1.175rem;
-                font-weight: bold;
-                line-height: 1.175;
-
-                .fas {
-                  vertical-align: middle;
                 }
               }
 
@@ -281,16 +271,10 @@
           .navbar {
             @include justify-content(space-between);
             padding: .75rem 0;
-            
-            .navbar-nav {
-              .nav-item {
-                .btn-light {
-                  margin: 0 .25rem;
 
-                  .fas {
-                    vertical-align: middle;
-                  }
-                }
+            .nav-item {
+              .btn {
+                margin-left: .5rem;
               }
             }
           }
@@ -331,12 +315,18 @@
                   color: $yellow;
                 }
 
-                &.fa-file-word {
+                &.fa-file-word,
+                &.fa-file-alt {
                   color: $blue;
                 }
 
                 &.fa-file-excel {
                   color: $green;
+                }
+
+                &.fa-file-powerpoint,
+                &.fa-file-pdf {
+                  color: $red;
                 }
 
                 font-size: 1.5rem;
@@ -433,6 +423,10 @@
                   }
                 }
 
+                .algolia-autocomplete {
+                  width: 100%;
+                }
+
                 .form-control {
                   padding-left: 3.5rem;
                 }
@@ -488,7 +482,7 @@
                   order: 1;
                 }
 
-                .btn-create,
+                .btn-edit,
                 .btn-share,
                 .btn-download {
                   display: none;
@@ -587,7 +581,7 @@
                 }
 
                 .form-control {
-                  width: 28rem;
+                  width: 24rem;
                 }
               }
             }
@@ -619,25 +613,6 @@
       }
 
       @media (min-width: 768px) {
-        .article-header {
-          .navbar {
-            .navbar-nav {
-              .nav-item {
-                &.dropdown {
-                  .item-new-folder,
-                  .item-upload-file,
-                  .item-share,
-                  .item-download,
-                  .divider-manage-revisions,
-                  .divider-share {
-                    display: none;
-                  }
-                }
-              }
-            }
-          }
-        }
-
         .article-content {
           .article-body {
             .table-head,
@@ -660,16 +635,14 @@
 
 .modal-folder-create {
   .modal-dialog {
-    max-width: 24rem;
-
     .modal-body {
       .form-create-folder {
         .form-group {
           @include display-flex(row);
+          margin-bottom: 0;
 
           .form-label {
-            min-width: 6rem;
-            width: 6rem;
+            margin-right: 1rem;
           }
         }
       }
@@ -679,8 +652,6 @@
 
 .modal-file-edit-attributes {
   .modal-dialog {
-    max-width: 40rem;
-
     @media (min-width: 768px) {
       .modal-body {
         .form-edit-file-attributes {
@@ -699,154 +670,6 @@
               width: 14rem;
             }
           }
-        }
-      }
-    }
-  }
-}
-
-.modal-resource-delete-confirmation {
-  .modal-dialog {
-    max-width: 32rem;
-  }
-}
-
-.modal-resource-share {
-  .modal-dialog {
-    max-width: 40rem;
-
-    .modal-body {
-      .navbar {
-        padding: .75rem 0;
-
-        h6 {
-          margin: 0;
-        }
-      }
-
-      .list-users-permissions {
-        margin-bottom: 2rem;
-
-        h6 {
-          margin-bottom: 1rem;
-        }
-
-        .list-users {
-          max-height: 20rem;
-          overflow-y: auto;
-          
-          .list-group {
-            .list-group-item {
-              &.item-owner {
-                @include justify-content(flex-start);
-                padding: .75rem .5rem;
-
-                .user-name {
-                  width: calc(100% - 10rem);
-                }
-              }
-
-              .user-name {
-                width: calc(100% - 12rem);
-              }
-            }
-          }
-        }
-      }
-
-      .form-add-user {
-        .form-group {
-          .form-label {
-            display: block;
-            margin-bottom: .5rem;
-          }
-
-          .input-group {
-            @include justify-content(flex-start);
-
-            .algolia-autocomplete,
-            .form-control,
-            .btn {
-              margin-right: .5rem;
-            }
-
-            .algolia-autocomplete {
-              @include flex-grow(1);
-            }
-          }
-        }
-      }
-    }
-
-    @media (max-width: 576px) {
-      .modal-body {
-        .form-add-user {
-          .form-control {
-            margin-bottom: .5rem;
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-
-.modal-user-select {
-  .modal-dialog {
-    max-width: 40rem;
-
-    .modal-body {
-      .nav {
-        &.nav-tabs {
-          border-color: $white;
-
-          .nav-link {
-            border-color: $white;
-            border-radius: 0;
-            font-weight: 500;
-            padding: .5rem .75rem;
-
-            &:hover {
-              background-color: $gray-200;
-            }
-          }
-        }
-      }
-
-      .tab-content {
-        .tab-pane {
-          .form-control {
-            margin-bottom: 1rem;
-          }
-
-          .list-groups,
-          .list-users {
-            height: 20rem;
-            overflow-y: auto;
-          }
-
-          .list-users {
-            height: 16.625rem;
-          }
-        }
-      }
-    }
-
-    .navbar {
-      padding: .75rem;
-
-      h6 {
-        margin-bottom: 0;
-      }
-    }
-
-    .selected-users {
-      height: 20rem;
-      overflow-y: auto;
-
-      .list-group {
-        .list-group-item {
-          padding: .0545rem .5rem;
         }
       }
     }

@@ -45,6 +45,7 @@
           @include display-flex(column);
           @include align-items(center);
           color: $gray-700;
+          min-width: 7rem;
           padding: .5rem 1rem;
 
           &:hover {

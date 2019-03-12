@@ -95,7 +95,85 @@ table.dataTable {
   text-align: center;
 }
 
+.input-group {
+  &.input-group-search {
+    position: relative;
+
+    .input-group-prepend,
+    .input-group-append {
+      position: absolute;
+      top: 1px;                
+      z-index: 5;
+
+      .btn-light {
+        background-color: $white !important;
+        border-color: $white !important;
+        margin-left: 0 !important;
+        padding: .325rem .75rem !important;
+        
+        &:hover {
+          .fas {
+            color: $gray-900 !important;
+          }
+        }
+
+        .fas {
+          color: $gray-500 !important;
+          font-size: 1.375rem !important;
+          vertical-align: top !important;
+        }
+      }              
+    }
+
+    .input-group-prepend {
+      left: 1px;
+    }
+
+    .input-group-append {
+      right: 1px;
+    }
+
+    .algolia-autocomplete {
+      width: 100%;
+    }
+
+    .form-control {
+      padding-left: 3rem;
+      padding-right: 5rem;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &.input-group-search {
+      .input-group-prepend {
+        .btn-search {
+          display: none;
+        }
+      }
+
+      .form-control {
+        padding-left: 3.5rem;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    &.input-group-search {
+      .input-group-prepend {
+        .btn-back {
+          display: none;
+        }
+      }
+
+      .form-control {
+        width: 24rem;
+      }
+    }
+  }
+}
+
 .toast-stack {
+  margin-right: 1rem;
   position: fixed;
   left: 1rem;
   bottom: 4rem;
@@ -130,6 +208,7 @@ table.dataTable {
         background-repeat: no-repeat;
         background-size: cover;
         height: 2rem;
+        min-width: 2rem;
         width: 2rem;
         margin-right: 1rem;
 
@@ -166,6 +245,121 @@ table.dataTable {
     &::after {
       height: 1.125rem;
       width: 1.125rem;
+    }
+  }
+}
+
+.tree {
+  &.tree-resources {
+    .resource {
+      &.active {
+        > a {
+          color: $primary;
+          font-weight: bold;
+
+          .fa-folder,
+          .fa-folder-open {
+            color: $yellow;                    
+          }
+        }
+      }
+
+      a {
+        @include display-flex(row);
+        @include align-items(center);
+        color: $gray-700;
+        padding: .5rem 1rem;
+        text-decoration: none;                
+
+        &:hover {
+          background-color: $gray-200;
+        }
+
+        .fas {
+          color: $gray-600;
+          font-size: .75rem;
+          min-width: 1rem;
+        }
+
+        .fa-folder,
+        .fa-folder-open {
+          color: $yellow;
+          font-size: 1.5rem;
+          min-width: 2rem;
+        }
+      }
+
+      .resources {
+        > .resource {
+          > a {
+            padding-left: 2.5rem;
+          }
+
+          > .resources {
+            > .resource {
+              > a {
+                padding-left: 4rem;
+              }
+
+              > .resources {
+                > .resource {
+                  > a {
+                    padding-left: 5.5rem;
+                  }
+
+                  > .resources {
+                    > .resource {
+                      > a {
+                        padding-left: 7rem;
+                      }
+
+                      > .resources {
+                        > .resource {
+                          > a {
+                            padding-left: 8.5rem;
+                          }
+
+                          > .resources {
+                            > .resource {
+                              > a {
+                                padding-left: 10rem;
+                              }
+
+                              > .resources {
+                                > .resource {
+                                  > a {
+                                    padding-left: 11.5rem;
+                                  }
+
+                                  > .resources {
+                                    > .resource {
+                                      > a {
+                                        padding-left: 13rem;
+                                      }
+
+                                      > .resources {
+                                        > .resource {
+                                          > a {
+                                            padding-left: 14.5rem;
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -299,6 +493,38 @@ table.dataTable {
 
     &.show {
       display: block;
+    }
+
+    &.dialog-menu-search {
+      .form-advanced-search {
+        padding: 1rem;
+
+        .form-group {
+          @include display-flex(row);
+          @include align-items(center);
+
+          &.form-group-actions {
+            @include justify-content(flex-end);
+          }
+
+          .form-label {
+            min-width: 8rem;
+            width: 8rem;
+          }
+
+          .form-input {
+            width: calc(100% - 1rem);
+          }
+
+          .btn {
+            margin: 0 !important;
+
+            +.btn {
+              margin-left: .5rem !important;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -434,8 +660,152 @@ table.dataTable {
     .attribute-name {
       color: $gray-700;
       font-weight: bold;
-      min-width: 10rem;
-      width: 10rem;
+      min-width: 12rem;
+      width: 12rem;
+    }
+  }
+}
+
+.modal-resource-share {
+  .modal-dialog {
+    .modal-body {
+      padding: 1rem 0;
+
+      .navbar {
+        padding: .75rem 0;
+
+        h6 {
+          margin: 0;
+        }
+      }
+
+      .users-permissions {
+        margin-bottom: 2rem;
+
+        .navbar {
+          padding: 1rem 0;
+
+          h6 {
+            margin-bottom: 0;
+          }
+        }
+
+        .list-users {
+          max-height: 20rem;
+          overflow-y: auto;
+          
+          .list-group {
+            .list-group-item {
+              &.item-owner {
+                @include justify-content(flex-start);
+                padding: .875rem .5rem;
+
+                .user-name {
+                  width: calc(100% - 10rem);
+                }
+              }
+
+              .user-name {
+                width: calc(100% - 12rem);
+              }
+            }
+          }
+        }
+      }
+
+      .form-add-user {
+        .form-group {
+          .form-label {
+            display: block;
+            margin-bottom: .5rem;
+          }
+
+          .input-group {
+            @include justify-content(flex-start);
+
+            .algolia-autocomplete,
+            .form-control,
+            .btn {
+              margin-right: .5rem;
+            }
+
+            .algolia-autocomplete {
+              @include flex-grow(1);
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .modal-body {
+        .form-add-user {
+          .form-control {
+            margin-bottom: .5rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-user-select {
+  .modal-dialog {
+    .modal-body {
+      padding: 1rem 0;
+
+      .tab-content {
+        .tab-pane {
+          .form-control {
+            margin-top: 1rem;
+          }
+
+          .list-groups,
+          .list-users {
+            height: 16rem;
+            margin-top: 1rem;
+            overflow-y: auto;
+
+            .list-group {
+              .list-group-item {
+                padding: .75rem .5rem;
+              }
+            }
+          }
+
+          .list-users {
+            height: 12.6rem;
+          }
+        }
+      }
+    }
+
+    .navbar {
+      padding: .675rem .5rem;
+
+      h6 {
+        margin-bottom: 0;
+      }
+    }
+
+    .selected-users {
+      max-height: 17rem;
+      overflow-y: auto;
+
+      .list-group {
+        .list-group-item {
+          padding: .25rem .5rem;
+        }
+      }
+    }
+
+    @media (max-width: 992px) {
+      .modal-body {
+        .tab-content {
+          margin-bottom: 1rem;
+        }
+      }
     }
   }
 }

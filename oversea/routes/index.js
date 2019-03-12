@@ -10,6 +10,15 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/reset_password', function(req, res, next) {
+  res.render('profile/reset_password', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'sign-in',
+    infoPage: true
+  });
+});
+
 /* GET privacy page. */
 router.get('/privacy', function(req, res, next) {
   res.render('privacy', {
@@ -149,16 +158,17 @@ router.get('/:userRole/administration/manage_form_class', function(req, res, nex
 });
 
 /* GET tools page. */
-router.get('/:userRole/tools', function(req, res, next) {
+router.get('/:userRole/tools/tools', function(req, res, next) {
   var userRole = req.params.userRole;
   var studentUser = (userRole === 'student');
   var teacherUser = (userRole === 'teacher');
   var adminUser = (userRole === 'admin');
-  res.render('teacher/tools', {
+  res.render('tools/tools', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'tools',
     loggedIn: true,
+    toolsPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,
@@ -308,7 +318,7 @@ router.get('/subject', function(req, res, next) {
   });
 });
 
-/* GET track resources page. */
+/* GET lessons page. */
 router.get('/:userRole/lessons/lessons', function(req, res, next) {
   var userRole = req.params.userRole;
   var studentUser = (userRole === 'student');
@@ -324,6 +334,34 @@ router.get('/:userRole/lessons/lessons', function(req, res, next) {
     studentUser: studentUser,
     teacherUser: teacherUser,
     adminUser: adminUser
+  });
+});
+
+/* GET lessons page. */
+router.get('/:userRole/lessons/create_lesson', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('lessons/create_lesson', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'lessons',
+    loggedIn: true,
+    lessonPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET pdf viewer page. */
+router.get('/viewers/pdf_viewer', function(req, res, next) {
+  res.render('viewers/pdf_viewer', {
+    layout: '',
+    title: 'Marshall Cavendish Education',
+    module: 'viewers'
   });
 });
 

@@ -56,6 +56,13 @@ $(document).ready(function() {
           barRect.setAttribute('width', 3);
         } else {
           startX = barRectX;
+          if (barRect.parentElement) {
+            var parentElement = barRect.parentElement.parentElement;
+            parentElement.appendChild(barRect.parentElement);
+          } else if (barRect.parentNode) {
+            var parentNode = barRect.parentNode.parentNode;
+            parentNode.appendChild(barRect.parentNode);
+          }
         }        
       }
 
@@ -64,6 +71,7 @@ $(document).ready(function() {
       for (var i = 0; i < barRects.length; i++) {
         var barRect = barRects[i];
         var barRectX = parseFloat(barRect.getAttribute('x'));
+        if (barRectX < (startX + 1)) continue;
         var barRectY = parseFloat(barRect.getAttribute('y'));
         var x = (barRectX < (startX + imgWidth)) 
           ? (barRectX - (barRectX - startX) + 1)
@@ -113,13 +121,33 @@ $(document).ready(function() {
         var barLabels = svg.querySelectorAll("text[text-anchor='start']");
         for (var i = 0; i < barLabels.length; i++) {
           var barLabel = barLabels[i];
+          var barLabelFill = barLabel.getAttribute('fill');
+          if (barLabelFill === '#000000') continue;
           if (barLabel.getAttribute('data-x')) continue;
           var barLabelX = parseFloat(barLabel.getAttribute('x'));
-          if (barLabelX < startX) continue;
           barLabel.setAttribute('data-x', barLabelX);
           var availLabelWidth = (imgWidth - (barLabelX - startX)) + 10;
-          barLabel.setAttribute('x', (barLabelX + availLabelWidth));
           barLabel.setAttribute('fill', '#000000');
+
+          if (barLabelX < (startX + availLabelWidth)) continue;
+          barLabel.setAttribute('x', (barLabelX + availLabelWidth));
+
+          var barLabelRects = [];
+          if (barRect.parentElement) {
+            var parentElement = barLabel.parentElement.parentElement;
+            barLabelRects = parentElement.querySelectorAll('rect');
+          } else if (barRect.parentNode) {
+            parentNode = barRect.parentNode.parentNode;
+            barLabelRects = parentNode.querySelectorAll('rect');
+          }
+
+          for (var j = 0; j < barLabelRects.length; j++) {
+            var barLabelRect = barLabelRects[i];
+            if (barLabelRect.getAttribute('data-x')) continue;
+            var barLabelRectX = parseFloat(barLabelRect.getAttribute('x'));
+            var availLabelWidth = (imgWidth - (barLabelRectX - startX)) + 10;
+            barLabelRect.setAttribute('x', (barLabelRectX + availLabelWidth));
+          }
         }
       });
       mutationObserver.observe(container, {
@@ -151,11 +179,12 @@ $(document).ready(function() {
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
+    var chartAreaLeft = ($(window).width() > 768) ? 180 : 140;
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -213,11 +242,12 @@ $(document).ready(function() {
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
+    var chartAreaLeft = ($(window).width() > 768) ? 180 : 140;
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -261,11 +291,12 @@ $(document).ready(function() {
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
+    var chartAreaLeft = ($(window).width() > 768) ? 180 : 140;
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -323,11 +354,12 @@ $(document).ready(function() {
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
+    var chartAreaLeft = ($(window).width() > 768) ? 180 : 140;
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -378,7 +410,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 80, height: '80%', width: '70%' },
+      chartArea: { left: 80, top: 16, height: '80%', width: '70%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -435,7 +467,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 160, height: '80%', width: '70%' },
+      chartArea: { left: 160, top: 16, height: '80%', width: '70%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -493,7 +525,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, height: '80%', width: '60%' },
+      chartArea: { left: 180, top: 16, height: '80%', width: '60%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -534,7 +566,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 80, height: '80%', width: '70%' },
+      chartArea: { left: 80, top: 16, height: '80%', width: '70%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -590,7 +622,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 160, height: '80%', width: '60%' },
+      chartArea: { left: 160, top: 16, height: '80%', width: '60%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -648,7 +680,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, height: '80%', width: '60%' },
+      chartArea: { left: 180, top: 16, height: '80%', width: '60%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -751,7 +783,7 @@ $(document).ready(function() {
     container: 'body',
     placement: 'top',
     trigger: 'focus'
-  })
+  });
 
   if ($(window).width() < 768) {
     $('.article-report').addClass('collapse-sidebar');

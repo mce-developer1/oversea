@@ -1,10 +1,13 @@
 $(document).ready(function() {
   $(document).on('click', '[data-toggle="dialog"]', function(e) {
-    setTimeout(function() {
-      var dialog = $(e.target).closest('.dialog');
-      $(dialog).toggleClass('open');
-      $(dialog).find('.dialog-menu').toggleClass('show');
-    });
+    var dialog = $(e.target).closest('.dialog');
+
+    if (dialog && !$(dialog).hasClass('open')) {
+      setTimeout(function() {
+        $(dialog).toggleClass('open');
+        $(dialog).find('.dialog-menu').toggleClass('show');
+      });
+    }
   });
 
   $(document).on('click', '[data-toggle="dropdown"]', function(e) {

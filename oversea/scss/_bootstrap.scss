@@ -190,7 +190,8 @@ a {
   &.form-textarea {
     border-radius: 0;
 
-    &:hover {
+    &:not(:disabled):hover,
+    &:not(:readonly):hover {
       border-color: $gray-700;
     }
 
@@ -211,7 +212,8 @@ a {
   }
 }
 
-.dropdown {
+.dropdown,
+.dropup {
   &.bootstrap-select {
     .dropdown-toggle {
       background-color: transparent;
@@ -310,6 +312,41 @@ a {
       &:hover {
         background-color: $gray-200;
         text-decoration: none;
+      }
+    }
+  }
+}
+
+.navbar {
+  &.navbar-pagination {
+    .navbar-nav {
+      @include align-items(center);
+      @include flex-wrap(wrap);
+
+      .nav-item {
+        +.nav-item {
+          margin-left: 1.5rem;
+        }
+
+        .bootstrap-select {
+          .dropdown-toggle {
+            border-color: transparent;
+
+            &:active {
+              background-color: $gray-200;
+            }
+          }
+        }
+
+        .btn-light {
+          padding: .325rem .5rem;
+
+          .fas {
+            color: $gray-700;
+            font-size: 1.25rem;
+            vertical-align: middle;
+          }
+        }
       }
     }
   }
@@ -512,10 +549,15 @@ a {
             @include justify-content(center);
             min-height: calc(100vh - 4rem);
             width: 100vw;
-
+            
             * {
               font-size: 1.25rem;
               max-width: 100%;
+            }
+
+            .full {
+              height: calc(100vh - 4rem);
+              width: 100vw;
             }
           }
         }
@@ -572,12 +614,6 @@ a {
         }
       }
     }
-  }
-}
-
-@media (min-width: 992px) {
-  .modal-dialog {
-    max-width: 960px;
   }
 }
 

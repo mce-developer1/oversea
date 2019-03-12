@@ -1,0 +1,24 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-tools no-sidebar">
+        <div class="article-content">
+          <div class="article-body">
+            <ul class="nav">              
+              <li class="nav-item">
+                <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/lessons/lessons">
+                  <i class="fas fa-chalkboard-teacher"></i> My Lessons
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/tests/tests">
+                  <i class="fas fa-clipboard-list"></i> My Tests
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

@@ -1,0 +1,435 @@
+.app-content {
+  &.page-lessons {
+    .article-lessons {
+      padding: 0 1.5rem;
+
+      .article-header {
+        height: 4rem;
+        max-height: 4rem;
+
+        .navbar {
+          @include display-flex(row);
+          @include align-items(center);
+          @include flex-grow(1);
+          @include flex-wrap(nowrap);
+          background-color: $gray-200;
+          height: 4rem;
+          max-height: 4rem;
+          margin: 0 -1.5rem;
+          padding: .75rem 1.5rem;
+
+          .navbar-nav {
+            @include flex-direction(row);
+
+            &:first-child {
+              margin-right: 1rem;
+              width: 16.5rem;
+            }
+
+            &.nav-main {
+              @include flex-grow(1);
+              position: relative;
+            }
+
+            .nav-item {
+              @include display-flex(row);
+              @include align-items(center);
+
+              .btn-light {
+                margin: 0 .25rem;
+              }
+
+              .item-text {
+                font-size: 1.25rem;
+                width: 12rem;
+              }
+            }
+
+            .btn-light {
+              &:hover {
+                .fas {
+                  color: $gray-900;
+                }
+              }
+
+              &.btn-more {
+                padding: .325rem 1rem;
+              }
+
+              .fas {
+                color: $gray-700;
+                font-size: 1.5rem;
+
+                &.fa-cloud {
+                  font-size: 2rem;
+                  width: 2.5rem;
+                }
+
+                &.fa-arrow-left {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .article-content {
+        .article-sidebar {
+          margin: 0;
+        }
+
+        .article-body {
+          .navbar {
+            &.navbar-pagination {
+              @include justify-content(flex-end);
+            }
+
+            @include justify-content(space-between);
+            padding: .75rem 0;
+          }
+
+          .table {
+            @include user-select(none);
+
+            &.table-head,
+            &.table-body {
+              margin-bottom: 0;
+            }
+
+            th,
+            td {
+              padding: 1rem;
+
+              .btn {
+                padding: .325rem;
+                margin: -.5rem 0;
+
+                .fa-info-circle {
+                  font-size: 1.375rem;
+                }
+              }
+            }
+
+            a {
+              color: $gray-900;
+              word-break: break-word; 
+            }
+          }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(3),
+              colgroup:nth-child(4) {
+                display: none;
+              }
+
+              th:nth-child(3),
+              th:nth-child(4),
+              td:nth-child(3),
+              td:nth-child(4) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .article-header {
+          .navbar {
+            @include justify-content(space-between);
+            padding: 1rem;
+
+            .navbar-nav {
+              &.nav-main {
+                display: none;
+              }
+
+              .nav-item-drawer {
+                display: none;
+              }
+
+              .nav-item {
+                .item-text {
+                  width: 40vw;
+                }
+              }
+
+              .input-group {
+                .input-group-prepend {
+                  .btn-search {
+                    display: none;
+                  }
+                }
+
+                .form-control {
+                  padding-left: 3.5rem;
+                }
+              }
+            }
+          }
+        }
+
+        .article-content {
+          .article-sidebar {
+            display: none;
+          }
+
+          .article-body {
+            margin: 0;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(5) {
+                display: none;
+              }
+
+              th:nth-child(5),
+              td:nth-child(5) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .article-header {
+          .navbar {
+            .navbar-nav {
+              .nav-divider {
+                display: none;
+              }
+
+              .nav-item {
+                &.dropdown {
+                  order: 1;
+                }
+
+                .btn-share,
+                .btn-edit {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+
+        .article-content {
+          margin: 0 -.5rem;
+
+          .article-body {
+            .navbar {
+              &:not(.navbar-pagination) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 576px) {
+        .article-header {
+          .navbar {
+            .navbar-nav {
+              &:first-child {
+                width: 14rem;
+              }
+            }
+          }
+        }
+
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(6),
+              colgroup:nth-child(7) {
+                display: none;
+              }
+
+              tr {
+                th:nth-child(6),
+                th:nth-child(7),
+                td:nth-child(6),
+                td:nth-child(7) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(8) {
+                display: none;
+              }
+
+              th:nth-child(8),
+              td:nth-child(8) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 6rem;
+          z-index: 980;
+
+          .navbar {
+            .navbar-nav {
+              &:not(.nav-main) {
+                .btn-search {
+                  display: none;
+                }
+              }
+              .nav-item-result {
+                display: none;
+              }
+
+              .input-group {
+                .input-group-prepend {
+                  .btn-back {
+                    display: none;
+                  }
+                }
+
+                .form-control {
+                  width: 24rem;
+                }
+              }
+            }
+          }
+        }
+
+        .article-content {
+          .article-sidebar {
+            height: calc(100vh - 13rem);
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: .5rem 0;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10rem;
+          }
+
+          .article-body {
+            .table {
+              &.table-head {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 10rem;
+                z-index: 970;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .article-create-lesson {
+      padding: 0 1.5rem;
+
+      .article-header {
+        height: 4rem;
+        max-height: 4rem;
+
+        .navbar {
+          @include display-flex(row);
+          @include align-items(center);
+          @include flex-grow(1);
+          @include flex-wrap(nowrap);
+          background-color: $gray-200;
+          height: 4rem;
+          max-height: 4rem;
+          margin: 0 -1.5rem;
+          padding: .75rem 1.5rem;
+
+          .navbar-nav {
+            @include flex-direction(row);
+
+            .nav-item {
+              @include display-flex(row);
+              @include align-items(center);
+
+              .btn-light {
+                margin: 0 .25rem;
+              }
+
+              .item-text {
+                font-size: 1.25rem;
+              }
+            }
+
+            .btn-light {
+              &:hover {
+                .fas {
+                  color: $gray-900;
+                }
+              }
+
+              .fas {
+                color: $gray-700;
+                font-size: 1.5rem;
+
+                &.fa-arrow-left {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .article-content {
+        .article-body {
+          margin: 0 auto;
+          max-width: 64rem;
+
+          .form-lesson-attributes {
+            padding: 1.5rem 0;
+
+            .form-group {
+              @include display-flex(row);
+              @include align-items(flex-start);
+              max-width: 36rem;
+    
+              .form-group {
+                @include flex-grow(1);
+                @include flex-wrap(wrap);
+                margin-bottom: 0;
+              }
+    
+              .form-label {
+                min-width: 10rem;
+                width: 10rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
