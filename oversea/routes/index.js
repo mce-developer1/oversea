@@ -119,25 +119,6 @@ router.get('/:userRole/reports/reports', function(req, res, next) {
   });
 });
 
-/* GET administration page. */
-router.get('/:userRole/administration/administration', function(req, res, next) {
-  var userRole = req.params.userRole;
-  var studentUser = (userRole === 'student');
-  var teacherUser = (userRole === 'teacher');
-  var adminUser = (userRole === 'admin');
-  res.render('administration/administration', {
-    layout: 'layout',
-    title: 'Marshall Cavendish Education',
-    module: 'administration',
-    loggedIn: true,
-    adminPage: true,
-    userRole: userRole,
-    studentUser: studentUser,
-    teacherUser: teacherUser,
-    adminUser: adminUser
-  });
-});
-
 /* GET manage form class page. */
 router.get('/:userRole/administration/manage_form_class', function(req, res, next) {
   var userRole = req.params.userRole;
@@ -149,26 +130,7 @@ router.get('/:userRole/administration/manage_form_class', function(req, res, nex
     title: 'Marshall Cavendish Education',
     module: 'administration',
     loggedIn: true,
-    adminPage: true,
-    userRole: userRole,
-    studentUser: studentUser,
-    teacherUser: teacherUser,
-    adminUser: adminUser
-  });
-});
-
-/* GET tools page. */
-router.get('/:userRole/tools/tools', function(req, res, next) {
-  var userRole = req.params.userRole;
-  var studentUser = (userRole === 'student');
-  var teacherUser = (userRole === 'teacher');
-  var adminUser = (userRole === 'admin');
-  res.render('tools/tools', {
-    layout: 'layout',
-    title: 'Marshall Cavendish Education',
-    module: 'tools',
-    loggedIn: true,
-    toolsPage: true,
+    formClassPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,
@@ -232,12 +194,12 @@ router.get('/:userRole/profile/update_personal_particulars', function(req, res, 
 });
 
 /* GET update personal preferences page. */
-router.get('/:userRole/profile/update_personal_preferences', function(req, res, next) {
+router.get('/:userRole/profile/update_personal_settings', function(req, res, next) {
   var userRole = req.params.userRole;
   var studentUser = (userRole === 'student');
   var teacherUser = (userRole === 'teacher');
   var adminUser = (userRole === 'admin');
-  res.render('profile/update_personal_preferences', {
+  res.render('profile/update_personal_settings', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'profile',
@@ -348,7 +310,7 @@ router.get('/:userRole/lessons/create_lesson', function(req, res, next) {
     title: 'Marshall Cavendish Education',
     module: 'lessons',
     loggedIn: true,
-    lessonPage: true,
+    lessonsPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,

@@ -74,13 +74,24 @@
     .form-reset-teacher-password {
       max-width: 24rem;
 
-      .form-label {
-        display: block;
-      }
-
       .form-group {
         .btn {
-          margin-left: 0;          
+          margin-left: 0;
+        }
+      }
+    }
+
+    .form-personal-preferences {
+      .form-group {
+        &.form-group-avatar {
+          position: relative;
+
+          img {
+            max-height: 4rem;
+            position: absolute;
+            top: calc(100% - 4rem);
+            left: calc(100% + 1.5rem);
+          }
         }
       }
     }
@@ -114,12 +125,10 @@
             margin: 0 -1rem;
 
             .nav {
-              .nav-item {
-                .nav-link {
-                  &:not(.disabled):hover,
-                  &:not(.disabled):active {
-                    background-color: $gray-100;
-                  }
+              .nav-link {
+                &:not(.disabled):hover,
+                &:not(.disabled):active {
+                  background-color: $gray-100;
                 }
               }
             }

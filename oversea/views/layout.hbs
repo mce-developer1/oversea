@@ -34,83 +34,168 @@
             {{#if homePage}}My Library{{/if}}
             {{#if resourcesPage}}My Resources{{/if}}
             {{#if reportsPage}}My Reports{{/if}}
-            {{#if adminPage}}Administration{{/if}}
+            {{#if lessonsPage}}Lesson Builder{{/if}}
+            {{#if userAccountPage}}Administration{{/if}}
+            {{#if formClassPage}}Administration{{/if}}
+            {{#if schoolGroupPage}}Administration{{/if}}
             {{#if profilePage}}About Me{{/if}}
             {{#if passwordPage}}Administration{{/if}}
           </div>
           <ul class="navbar-nav nav-main">
             {{#if loggedIn}}
               <li class="nav-item">
-                <a class="nav-link {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
-                  <i class="img img-mylibaray"></i> My Library
+                <a class="nav-link link-mylibrary {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
+                  <i class="img img-mylibrary"></i> My Library
                 </a>
               </li>
               {{#unless studentUser}}
                 <li class="nav-item">
-                  <a class="nav-link {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
+                  <a class="nav-link link-myresources {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
                     <i class="img img-myresources"></i> My Resources
                   </a>
                 </li>
-              {{/unless}}
-              <li class="nav-item">
-                <a class="nav-link {{#if reportsPage}}active{{/if}}" href="/{{userRole}}/reports/reports">
-                  <i class="img img-myreports"></i> My Reports
-                </a>
-              </li>
-              {{#unless studentUser}}
-                <li class="nav-item">
-                  <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/tools/tools">
+                <li class="nav-item dropdown">
+                  <a class="nav-link link-mytools" href="#" data-toggle="dropdown">
                     <i class="img img-myreports"></i> My Tools
                   </a>
+                  <div class="dropdown-menu">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/lessons/lessons">
+                          <i class="img img-myreports"></i> Lesson Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/tests/tests">
+                          <i class="img img-myreports"></i> Test Builder
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               {{/unless}}
+              <li class="nav-item dropdown">
+                <a class="nav-link link-myreports" href="#" data-toggle="dropdown">
+                  <i class="img img-myreports"></i> My Reports
+                </a>
+                <div class="dropdown-menu">
+                  <ul class="nav">
+                    {{#if studentUser}}
+                      <li class="nav-item">
+                        <a class="dropdown-item" href="/{{userRole}}/reports/reports?type=proficiency">
+                          <i class="img img-myreports"></i> How Well I've Done
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="dropdown-item" href="/{{userRole}}/reports/reports?type=usage">
+                          <i class="img img-myreports"></i> How Much I've Completed
+                        </a>
+                      </li>
+                    {{/if}}
+                    {{#unless studentUser}}
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=proficiency">
+                          <i class="img img-myreports"></i> Mastery Report
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=usage">
+                          <i class="img img-myreports"></i> Usage Report
+                        </a>
+                      </li>
+                    {{/unless}}
+                  </ul>
+                </div>
+              </li>
               {{#if adminUser}}
-                <li class="nav-item">
-                  <a class="nav-link {{#if adminPage}}active{{/if}}" href="/{{userRole}}/administration/administration">
+                <li class="nav-item dropdown">
+                  <a class="nav-link link-administration" href="#" data-toggle="dropdown">
                     <i class="img img-myreports"></i> Administration
                   </a>
+                  <div class="dropdown-menu">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
+                          <i class="img img-myreports"></i> Manage User Account
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
+                          <i class="img img-myreports"></i> Manage Form Class
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
+                          <i class="img img-myreports"></i> Manage School Group
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               {{/if}}
-              {{#unless loggedIn}}
-                <li class="nav-item dropdown">
-                  <button class="btn btn-light" type="button" data-toggle="dropdown">
-                    <i class="fas fa-th"></i> Subjects
-                  </button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/subject">
-                      English
-                    </a>
-                    <a class="dropdown-item" href="/subject">
-                      Humanities</a>
-                    <a class="dropdown-item" href="/subject">
-                      Mathematics
-                    </a>
-                    <a class="dropdown-item" href="/subject">
-                      Science
-                    </a>
-                  </div>
-                </li>
-                <li class="nav-item search">
-                  <div class="input-group append input-search">
-                    <input type="text" class="form-control" placeholder="Search for a resource to preview">
-                    <div class="input-group-append">
-                      <button class="btn btn-light" type="button">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="btn btn-light" href="/admin/home">
-                    Home
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="btn btn-light" href="/admin/tools">
-                    Tools
-                  </a>
-                </li>
-              {{/unless}}
+              <li class="nav-item dropdown">
+                <a class="nav-link link-more" href="#" data-toggle="dropdown">
+                  <i class="img img-myreports"></i> More
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-more">
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <div class="nav-text">
+                        <i class="img img-myreports"></i> My Reports
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/reports/reports?type=proficiency">
+                        <i class="img img-myreports"></i> Mastery Report
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/reports/reports?type=usage">
+                        <i class="img img-myreports"></i> Usage Report
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <div class="nav-text">
+                        <i class="img img-myreports"></i> School Matters
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/facility_booking/facility_booking">
+                        <i class="img img-myreports"></i> Facility Booking
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/mark_attendance/mark_attendance">
+                        <i class="img img-myreports"></i> Mark Attendance
+                      </a>
+                    </li>
+                  </ul>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <div class="nav-text">
+                        <i class="img img-myreports"></i> Administration
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
+                        <i class="img img-myreports"></i> Manage User Account
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
+                        <i class="img img-myreports"></i> Manage Form Class
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
+                        <i class="img img-myreports"></i> Manage School Group
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>              
             {{/if}}
           </ul>
           <ul class="navbar-nav">
@@ -154,15 +239,23 @@
                   </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/{{userRole}}/profile/update_personal_particulars">
-                  <i class="fas fa-user"></i> About Me
-                </a>
-                <a class="dropdown-item" href="/{{userRole}}/profile/change_password">
-                  <i class="fas fa-key"></i> Change Password
-                </a>
-                <a class="dropdown-item" href="/signout">
-                  <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+                <ul class="nav">
+                  <div class="nav-item">
+                    <a class="nav-link" href="/{{userRole}}/profile/update_personal_particulars">
+                      <i class="fas fa-user"></i> About Me
+                    </a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="/{{userRole}}/profile/change_password">
+                      <i class="fas fa-key"></i> Change Password
+                    </a>
+                  </div>
+                  <div class="nav-item">
+                    <a class="nav-link" href="/signout">
+                      <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                  </div>
+                </ul>
               </div>
             </li>
             {{/if}}
@@ -202,7 +295,7 @@
             {{#if loggedIn}}
               <li class="nav-item">
                 <a class="nav-link {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
-                  <i class="img img-mylibaray"></i> My Library
+                  <i class="img img-mylibrary"></i> My Library
                 </a>
               </li>
               {{#unless studentUser}}
@@ -218,17 +311,50 @@
                 </a>
               </li>
               {{#unless studentUser}}
-                <li class="nav-item">
-                  <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/tools/tools">
+                <li class="nav-item collapsible">
+                  <a class="nav-link collapsed" href="#tools" data-toggle="collapse">
                     <i class="img img-myreports"></i> My Tools
                   </a>
+                  <div class="collapse" id="tools">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/lessons/lessons">
+                          <i class="img img-myreports"></i> Lesson Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/tests/tests">
+                          <i class="img img-myreports"></i> Test Builder
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               {{/unless}}
               {{#if adminUser}}
-                <li class="nav-item">
-                  <a class="nav-link {{#if adminPage}}active{{/if}}" href="/{{userRole}}/administration/administration">
+                <li class="nav-item collapsible">
+                  <a class="nav-link collapsed" href="#administration" data-toggle="collapse">
                     <i class="img img-myreports"></i> Administration
                   </a>
+                  <div class="collapse" id="administration">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link {{#if userAccountPage}}active{{/if}}" href="/{{userRole}}/administration/manage_user_account">
+                          <i class="img img-myreports"></i> Manage User Account
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if formClassPage}}active{{/if}}" href="/{{userRole}}/administration/manage_form_class">
+                          <i class="img img-myreports"></i> Manage Form Class
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if schoolGroupPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school_group">
+                          <i class="img img-myreports"></i> Manage School Group
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               {{/if}}
             {{/if}}

@@ -770,9 +770,15 @@ $(document).ready(function() {
 
     setTimeout(function waitForVisualizationLib() {
       if (google.visualization && google.visualization.arrayToDataTable) {
-        $('#selReport').selectpicker('val', 'proficiency');
-        if (studentUser) drawStudentProficiencyReport();
-        else drawAllClassesProficiencyReport();
+        if (location.href.indexOf('type=proficiency') > -1) {
+          $('#selReport').selectpicker('val', 'proficiency');
+          if (studentUser) drawStudentProficiencyReport();
+          else drawAllClassesProficiencyReport();
+        } else {
+          $('#selReport').selectpicker('val', 'usage');
+          if (studentUser) drawStudentUsageReport();
+          else drawAllClassesUsageReport();
+        }
         return;
       }
       setTimeout(waitForVisualizationLib, 500);

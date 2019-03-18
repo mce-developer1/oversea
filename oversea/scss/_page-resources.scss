@@ -35,8 +35,18 @@
               @include display-flex(row);
               @include align-items(center);
 
+              &.nav-item-drawer {
+                .btn-light {
+                  padding: .25rem;
+
+                  img {
+                    width: 3rem;
+                  }
+                }  
+              }
+
               .btn-light {
-                margin: 0 .25rem;
+                margin: 0 .25rem;                
               }
 
               .item-text {
@@ -135,11 +145,6 @@
                 color: $gray-700;
                 font-size: 1.5rem;
 
-                &.fa-cloud {
-                  font-size: 2rem;
-                  width: 2.5rem;
-                }
-
                 &.fa-arrow-left {
                   font-size: 1.5rem;
                 }
@@ -158,7 +163,7 @@
               &.active {
                 > a {
                   color: $primary;
-                  font-weight: bold;
+                  font-weight: 500;
 
                   .fa-folder,
                   .fa-folder-open {
@@ -633,7 +638,7 @@
   }
 }
 
-.modal-folder-create {
+.modal-resource-folder-create {
   .modal-dialog {
     .modal-body {
       .form-create-folder {
@@ -650,7 +655,7 @@
   }
 }
 
-.modal-file-edit-attributes {
+.modal-resource-file-edit-attributes {
   .modal-dialog {
     @media (min-width: 768px) {
       .modal-body {

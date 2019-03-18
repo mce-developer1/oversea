@@ -1958,7 +1958,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   top: 27px;
 }
 #PDFBug button.active {
-  font-weight: bold;
+  font-weight: 500;
 }
 .debuggerShowText {
   background: none repeat scroll 0 0 yellow;
@@ -1973,7 +1973,7 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   white-space: pre;
 }
 #PDFBug .stats .title {
-    font-weight: bold;
+    font-weight: 500;
 }
 #PDFBug table {
   font-size: 10px;

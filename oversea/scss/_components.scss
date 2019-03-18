@@ -29,7 +29,7 @@ table.dataTable {
 
         &.sorting_asc:after,
         &.sorting_desc:after {
-          font-family: 'Font Awesome 5 Free';          
+          font-family: 'Font Awesome 5 Free';
           font-size: 1.125rem;
           font-style: normal;
           font-variant: normal;
@@ -249,13 +249,61 @@ table.dataTable {
   }
 }
 
+.custom-file {
+  .custom-file-label {
+    border-radius: 0;
+
+    &::after {
+      border-radius: 0;
+    }
+  }
+}
+
+.nav,
+.navbar-nav {
+  .nav-link {
+    &.active {
+      .img {
+        &.img-mylibrary {
+          background-image: url("../images/icon_topnav_selected_mylibrary.png");
+        }
+
+        &.img-myresources {
+          background-image: url("../images/icon_topnav_selected_myresources.png");
+        }
+
+        &.img-myreports {
+          background-image: url("../images/icon_topnav_selected_myreports.png");
+        }
+      }
+    }
+  }
+
+  .img {
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    &.img-mylibrary {
+      background-image: url("../images/icon_topnav_mylibrary.png");
+    }
+  
+    &.img-myresources {
+      background-image: url("../images/icon_topnav_myresources.png");
+    }
+  
+    &.img-myreports {
+      background-image: url("../images/icon_topnav_myreports.png");
+    }
+  }
+}
+
 .tree {
   &.tree-resources {
     .resource {
       &.active {
         > a {
           color: $primary;
-          font-weight: bold;
+          font-weight: 500;
 
           .fa-folder,
           .fa-folder-open {
@@ -269,23 +317,46 @@ table.dataTable {
         @include align-items(center);
         color: $gray-700;
         padding: .5rem 1rem;
-        text-decoration: none;                
+        position: relative;
+        text-decoration: none;
 
         &:hover {
           background-color: $gray-200;
+        }
+
+        &.expanded {
+          .fas {
+            &.fa-folder {
+              display: none;
+            }
+          }
+        }
+
+        &.collapsed {
+          .fas {
+            &.fa-folder-open {
+              display: none;
+            }
+          }
         }
 
         .fas {
           color: $gray-600;
           font-size: .75rem;
           min-width: 1rem;
-        }
 
-        .fa-folder,
-        .fa-folder-open {
-          color: $yellow;
-          font-size: 1.5rem;
-          min-width: 2rem;
+          &.fa-folder,
+          &.fa-folder-open {
+            color: $yellow;
+            font-size: 1.5rem;
+            min-width: 2rem;
+          }
+
+          &.fa-folder-plus {
+            color: $primary;
+            font-size: 1.5rem;
+            min-width: 2rem;
+          }
         }
       }
 
@@ -411,53 +482,78 @@ table.dataTable {
       .nav-item {
         margin: 0;
 
+        &.collapsible {
+          > .nav-link {
+            &:after {
+              color: $gray-600;
+              font-family: 'Font Awesome 5 Free';
+              font-size: .875rem;
+              font-style: normal;
+              font-variant: normal;
+              line-height: 1.125;
+              text-rendering: auto;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              margin-left: .5rem;
+              position: absolute;
+              right: .5rem;
+            }
+
+            &:not(.collapsed):after {
+              content: '\f077';
+            }
+
+            &.collapsed:after {
+              content: '\f078';
+            }
+          }
+        }
+
         .nav-link {
           @include display-flex(row);
           @include align-items(center);
           color: $gray-700;
-          padding: .5rem 1rem;
+          padding: .5rem 2rem .5rem 1rem;
+          position: relative;
 
           &:hover {
             background-color: $gray-200;
             color: $gray-900;
           }
 
-          &.active {
-            background-color: $accent;
-            color: $white;
-
-            .img {              
-              &.img-mylibaray {
-                background-image: url("../images/icon_topnav_selected_mylibrary.png");
-              }
-
-              &.img-myresources {
-                background-image: url("../images/icon_topnav_selected_myresources.png");
-              }
-
-              &.img-myreports {
-                background-image: url("../images/icon_topnav_selected_myreports.png");
-              }
+          &:not(.collapsed) {
+            .fa-chevron-down {
+              display: none;
             }
           }
 
+          &.collapsed {
+            .fa-chevron-up {
+              display: none;
+            }
+          }
+
+          &.active {
+            background-color: $accent;
+            color: $white;
+          }
+
           .img {
-            background-repeat: no-repeat;
-            background-size: cover;
             margin-right: .75rem;
+            min-height: 2rem;
             height: 2rem;
+            min-width: 2rem;
             width: 2rem;
+          }
+        }
 
-            &.img-mylibaray {
-              background-image: url("../images/icon_topnav_mylibrary.png");
-            }
+        .collapse,
+        .collapsing {
+          .nav {
+            @include flex-direction(column);
 
-            &.img-myresources {
-              background-image: url("../images/icon_topnav_myresources.png");
-            }
-
-            &.img-myreports {
-              background-image: url("../images/icon_topnav_myreports.png");
+            .nav-link {
+              padding: .5rem 1rem .5rem 2rem;
             }
           }
         }
@@ -561,7 +657,7 @@ table.dataTable {
       }
       
       em {
-        font-weight: bold;
+        font-weight: 500;
         font-style: normal;
       }
     }
@@ -572,12 +668,12 @@ table.dataTable {
   padding: 1.5rem;
 
   &.no-sidebar {
-    .article-content {
-      .article-sidebar {
+    > .article-content {
+      > .article-sidebar {
         display: none;
       }
 
-      .article-body {
+      > .article-body {
         margin-left: 0;
       }
     }
@@ -659,7 +755,7 @@ table.dataTable {
     
     .attribute-name {
       color: $gray-700;
-      font-weight: bold;
+      font-weight: 500;
       min-width: 12rem;
       width: 12rem;
     }

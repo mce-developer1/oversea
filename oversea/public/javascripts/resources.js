@@ -138,11 +138,11 @@ $(document).ready(function() {
   });
 
   $container.find('.dropdown-menu .item-new-folder').on('click', function(e) {
-    $('.modal-folder-create').modal('show');
+    $('.modal-resource-folder-create').modal('show');
   });
 
   $container.find('.dropdown-menu .item-edit-attributes').on('click', function(e) {
-    $('.modal-file-edit-attributes').modal('show');
+    $('.modal-resource-file-edit-attributes').modal('show');
   });
 
   $container.find('.dropdown-menu .item-delete').on('click', function(e) {

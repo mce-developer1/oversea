@@ -7334,7 +7334,7 @@ var PDFOutlineViewer = function () {
 
       var styleStr = '';
       if (bold) {
-        styleStr += 'font-weight: bold;';
+        styleStr += 'font-weight: 500;';
       }
       if (italic) {
         styleStr += 'font-style: italic;';
