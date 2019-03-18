@@ -2963,6 +2963,10 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td {
   padding: 1rem;
 }
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .dropdown,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .dropdown {
+  margin: -0.5rem 0;
+}
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .dropdown .btn-light.dropdown-toggle,
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .dropdown .btn-light.dropdown-toggle {
   margin: 0;
