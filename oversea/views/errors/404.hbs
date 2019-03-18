@@ -1,9 +1,8 @@
-<div class="app-content page-{{module}}">
-  <div class="article article-error">
+<div class="app-content page-{{module}} {{#unless loggedIn}}page-public{{/unless}}">
+  <div class="article article-error no-sidebar">
     <div class="article-content">
       <div class="article-body">
-        <i class="fas fa-exclamation-circle"></i>
-        Page not found!
+        <img src="/static/images/img_error_404.png">
       </div>
     </div>        
   </div>

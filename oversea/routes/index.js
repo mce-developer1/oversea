@@ -328,12 +328,35 @@ router.get('/viewers/pdf_viewer', function(req, res, next) {
 });
 
 /* GET 404 error page. */
-router.get('*', function(req, res){
-  res.render('errors/404', {
-    layout: 'layout',
-    title: 'Marshall Cavendish Education',
-    module: 'error'
-  });
+router.get('*', function(req, res) {
+  var url = req.originalUrl;
+  var loggedIn = (/^\/(admin|teacher|student)\//i).test(url);
+
+  if (loggedIn) {
+    var userRole = (/^\/(admin|teacher|student)\//i).exec(url)[1];
+    var studentUser = (userRole === 'student');
+    var teacherUser = (userRole === 'teacher');
+    var adminUser = (userRole === 'admin');
+    res.render('errors/404', {
+      layout: 'layout',
+      title: 'Marshall Cavendish Education',
+      module: 'error',
+      loggedIn: true,
+      errorPage: true,
+      userRole: userRole,
+      studentUser: studentUser,
+      teacherUser: teacherUser,
+      adminUser: adminUser
+    });
+  } else {
+    res.render('errors/404', {
+      layout: 'layout',
+      title: 'Marshall Cavendish Education',
+      module: 'error',
+      loggedIn: false,
+      errorPage: true
+    });
+  }
 });
 
 module.exports = router;

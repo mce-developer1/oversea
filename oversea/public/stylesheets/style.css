@@ -1618,10 +1618,9 @@ table.dataTable tbody tr td .nowrap {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+  min-height: calc(100vh - 9rem);
+}
+.app-content.page-error.page-public {
   min-height: calc(100vh - 3rem);
 }
 .app-content.page-error .article-error .article-content .article-body {
@@ -1629,13 +1628,11 @@ table.dataTable tbody tr td .nowrap {
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-  font-size: 2rem;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
-.app-content.page-error .article-error .article-content .article-body .fas.fa-exclamation-circle {
-  font-size: 4rem;
-  margin-right: 1rem;
+.app-content.page-error .article-error .article-content .article-body img {
+  max-width: 64rem;
 }
 
 .app-content.page-sign-in {
