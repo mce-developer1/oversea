@@ -1783,15 +1783,16 @@ table.dataTable tbody tr td .nowrap {
   text-align: right;
 }
 .app-content.page-sign-in .article-study-resource {
-  min-height: calc(100vh - 34.25rem);
+  min-height: calc(100vh - 34rem);
   padding: 3rem;
 }
 .app-content.page-sign-in .article-study-resource h2 {
   color: #ff6600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .app-content.page-sign-in .article-study-resource p {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  font-size: 1.25rem;
 }
 .app-content.page-sign-in .article-school-registration {
   border-top: 1px solid #ced4da;

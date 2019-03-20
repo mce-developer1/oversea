@@ -122,16 +122,17 @@
     }
 
     .article-study-resource {
-      min-height: calc(100vh - 34.25rem);
+      min-height: calc(100vh - 34rem);
       padding: 3rem;
 
       h2 {
         color: $primary;
+        font-size: 2rem;
+        margin-bottom: 1rem;
       }
 
       p {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
+        font-size: 1.25rem;
       }
     }
 
