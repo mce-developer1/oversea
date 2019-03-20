@@ -7,6 +7,11 @@
         .article-content {
           .article-body {
             min-height: calc(100vh - 6rem);
+
+            img {
+              max-height: calc(100vh - 6rem);
+              max-width: calc(100vw - 3rem);
+            }
           }
         }
       }
@@ -21,6 +26,7 @@
           min-height: calc(100vh - 12rem);
 
           img {
+            max-height: calc(100vh - 12rem);
             max-width: calc(100vw - 3rem);
           }
         }

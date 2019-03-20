@@ -1653,6 +1653,10 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-error.page-public .article-error .article-content .article-body {
   min-height: calc(100vh - 6rem);
 }
+.app-content.page-error.page-public .article-error .article-content .article-body img {
+  max-height: calc(100vh - 6rem);
+  max-width: calc(100vw - 3rem);
+}
 .app-content.page-error .article-error .article-content .article-body {
   display: -ms-flexbox;
   display: flex;
@@ -1665,6 +1669,7 @@ table.dataTable tbody tr td .nowrap {
   min-height: calc(100vh - 12rem);
 }
 .app-content.page-error .article-error .article-content .article-body img {
+  max-height: calc(100vh - 12rem);
   max-width: calc(100vw - 3rem);
 }
 @media (max-width: 576px) {
@@ -1829,7 +1834,7 @@ table.dataTable tbody tr td .nowrap {
   background-color: #ffffff;
   margin: 3rem 2rem;
   padding: 1.5rem;
-  width: 260px;
+  width: 20rem;
 }
 .app-content.page-sign-in .form-sign-in .form-group .input-group-text .fas {
   color: #adb5bd;
