@@ -17,7 +17,7 @@
       {{#if infoPage}}
         <div class="navbar navbar-expand app-header">
           <div class="navbar-brand d-block">
-            <img src="/static/images/logo_mceduworld.png"/>
+            <img src="/static/images/logo_mceduhub.png"/>
           </div>
           <ul class="navbar-nav nav-main"></ul>
         </div>
@@ -28,7 +28,7 @@
             <i class="fas fa-bars"></i>
           </button>
           <a class="navbar-brand" href="/{{userRole}}/home">
-            <img src="/static/images/logo_mceduworld.png"/>
+            <img src="/static/images/logo_mceduhub.png"/>
           </a>
           <div class="navbar-text">
             {{#if homePage}}My Library{{/if}}
@@ -110,23 +110,23 @@
               {{#if adminUser}}
                 <li class="nav-item dropdown">
                   <a class="nav-link link-administration" href="#" data-toggle="dropdown">
-                    <i class="img img-myreports"></i> Administration
+                    <i class="img img-administration"></i> Administration
                   </a>
                   <div class="dropdown-menu">
                     <ul class="nav">
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
-                          <i class="img img-myreports"></i> Manage User Account
+                          <i class="img img-administration"></i> Manage User Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
-                          <i class="img img-myreports"></i> Manage Form Class
+                          <i class="img img-administration"></i> Manage Form Class
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
-                          <i class="img img-myreports"></i> Manage School Group
+                          <i class="img img-administration"></i> Manage School Group
                         </a>
                       </li>
                     </ul>
@@ -175,22 +175,22 @@
                   <ul class="nav">
                     <li class="nav-item">
                       <div class="nav-text">
-                        <i class="img img-myreports"></i> Administration
+                        <i class="img img-administration"></i> Administration
                       </div>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
-                        <i class="img img-myreports"></i> Manage User Account
+                        <i class="img img-administration"></i> Manage User Account
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
-                        <i class="img img-myreports"></i> Manage Form Class
+                        <i class="img img-administration"></i> Manage Form Class
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
-                        <i class="img img-myreports"></i> Manage School Group
+                        <i class="img img-administration"></i> Manage School Group
                       </a>
                     </li>
                   </ul>
@@ -288,7 +288,7 @@
     <div class="drawer">
       <nav class="navbar">
         <a class="navbar-brand" href="/{{userRole}}/home">
-          <img src="/static/images/logo_mceduworld.png"/>
+          <img src="/static/images/logo_mceduhub.png"/>
         </a>
         <div class="navbar-content">
           <ul class="navbar-nav">
@@ -334,23 +334,23 @@
               {{#if adminUser}}
                 <li class="nav-item collapsible">
                   <a class="nav-link collapsed" href="#administration" data-toggle="collapse">
-                    <i class="img img-myreports"></i> Administration
+                    <i class="img img-administration"></i> Administration
                   </a>
                   <div class="collapse" id="administration">
                     <ul class="nav">
                       <li class="nav-item">
                         <a class="nav-link {{#if userAccountPage}}active{{/if}}" href="/{{userRole}}/administration/manage_user_account">
-                          <i class="img img-myreports"></i> Manage User Account
+                          <i class="img img-administration"></i> Manage User Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if formClassPage}}active{{/if}}" href="/{{userRole}}/administration/manage_form_class">
-                          <i class="img img-myreports"></i> Manage Form Class
+                          <i class="img img-administration"></i> Manage Form Class
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if schoolGroupPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school_group">
-                          <i class="img img-myreports"></i> Manage School Group
+                          <i class="img img-administration"></i> Manage School Group
                         </a>
                       </li>
                     </ul>
@@ -363,6 +363,7 @@
       </nav>
     </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/static/loglevel/loglevel.js"></script>
     <script src="/static/jquery/jquery.js"></script>
     <script src="/static/popper/popper.js"></script>
     <script src="/static/bootstrap/js/bootstrap.js"></script>

@@ -25,14 +25,14 @@
 
     .nav {
       @include justify-content(center);
-      background-color: rgba($white, .9);
+      background-color: rgba($black, .3);
       border-bottom: 4px solid $primary;
       padding: 0 1.5rem;
 
       .nav-link {
         @include display-flex(row);
         @include align-items(center);
-        color: $primary;
+        color: $white;
         
         .img {
           background-repeat: no-repeat;
@@ -56,19 +56,20 @@
       }
 
       .nav-divider {
-        border-right-color: $primary;
+        border-right-color: $white;
         margin: .75rem .5rem;
       }
     }
 
-    .row-main {
-      background-image: url("../images/img_main_people.png");
-      background-repeat: no-repeat;
-      background-size: cover;
+    .row {
+      &.row-main {
+        background-image: url("../images/img_main_header_photo.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
 
-      .col-md {
-        @include display-flex(row);
-        @include justify-content(center);
+        .col-md {
+          @include display-flex(row);
+        }
       }
     }
 
@@ -88,21 +89,40 @@
       margin: 3rem 2rem;
       padding: 0;
 
-      img {
-        margin-bottom: 2rem;
-        width: 20rem;
+      .article-header {
+        @include display-flex(column);
+        @include align-items(flex-end);
+        margin-bottom: 3rem;
+
+        img {
+          width: 20rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+          margin: 0;
+
+          span {
+            display: inline-block;
+            font-weight: 100;
+            margin: 0 .325rem;
+          }
+        }
       }
 
-      p {
-        font-size: 1.25rem;
-        margin: 1rem;
+      .article-content {
+        .article-body {
+          p {
+            font-size: 1.25rem;
+            margin: 1rem;
+            text-align: right;
+          }
+        }
       }
     }
 
     .article-study-resource {
-      background-image: url("../images/img_main_books.png");
-      background-repeat: no-repeat;
-      background-size: cover;
+      min-height: calc(100vh - 34.25rem);
       padding: 3rem;
 
       h2 {
@@ -226,18 +246,16 @@
       }
     }
 
-    @media (max-width: 1200px) {
-      .row-main {
-        .col-md {
-          @include justify-content(flex-end);
-        }
-      }
-    }
+    @media (max-width: 767.98px) {
+      .row {
+        &.row-main {
+          .col-md {
+            @include justify-content(center);
 
-    @media (max-width: 768px) {
-      .row-main {
-        .col-md {
-          @include justify-content(center);
+            &:first-child {
+              @include justify-content(center);
+            }
+          }
         }
       }
     }
@@ -250,7 +268,41 @@
       }
     }
 
+    @media (min-width: 768px) {
+      .row {
+        &.row-main {
+          .col-md {
+            @include justify-content(flex-end);
+
+            &:first-child {
+              @include justify-content(flex-start);
+            }
+          }
+        }
+      }
+    }
+
     @media (min-width: 1200px) {
+      .navbar {
+        .dropdown {
+          margin-right: 6.5rem;
+        }
+      }
+
+      .row {
+        &.row-main {
+          .col-md {
+            @include justify-content(flex-end);
+            margin-right: 6rem;
+
+            &:first-child {
+              @include justify-content(center);
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
       .nav {
         padding: 0 8rem;
       }
@@ -265,13 +317,6 @@
 
       .article-study-resource {
         padding: 3rem 8rem;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .article-school-registration {
-        border-left: 1px solid $gray-400;
-        border-top: 0;
       }
     }
   }

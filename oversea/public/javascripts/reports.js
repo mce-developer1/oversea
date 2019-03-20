@@ -184,7 +184,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -247,7 +247,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -296,7 +296,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -359,7 +359,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: chartAreaLeft, top: 16, height: '80%', width: '60%' },
+      chartArea: { left: chartAreaLeft, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -410,7 +410,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 80, top: 16, height: '80%', width: '70%' },
+      chartArea: { left: 80, top: 16, bottom: 32, height: '80%', width: '70%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -467,7 +467,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 160, top: 16, height: '80%', width: '70%' },
+      chartArea: { left: 160, top: 16, bottom: 32, height: '80%', width: '70%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -525,7 +525,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, top: 16, height: '80%', width: '60%' },
+      chartArea: { left: 180, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -566,7 +566,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 80, top: 16, height: '80%', width: '70%' },
+      chartArea: { left: 80, top: 16, bottom: 32, height: '80%', width: '70%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -622,7 +622,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 160, top: 16, height: '80%', width: '60%' },
+      chartArea: { left: 160, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {
@@ -680,7 +680,7 @@ $(document).ready(function() {
       fontName: 'Arial',
       fontSize: 13,      
       height: (data.length * 48),
-      chartArea: { left: 180, top: 16, height: '80%', width: '60%' },
+      chartArea: { left: 180, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: '50%' },
       legend: { position: 'none' },
       annotations: {

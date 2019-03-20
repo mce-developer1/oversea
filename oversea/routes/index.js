@@ -327,6 +327,13 @@ router.get('/viewers/pdf_viewer', function(req, res, next) {
   });
 });
 
+
+/* GET 404 error page. */
+router.post('/logging', function(req, res) {
+  console.log('loggin messages...');
+  res.send('{status: "OK"}');
+});
+
 /* GET 404 error page. */
 router.get('*', function(req, res) {
   var url = req.originalUrl;

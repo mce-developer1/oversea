@@ -131,6 +131,7 @@ $(document).ready(function() {
     $container.find('.nav-main .input-group .aa-input').val(query);
     $container.find('.nav-main .dialog').removeClass('open');
     $container.find('.nav-main .dialog .dialog-menu').removeClass('show');
+    log.trace("MY_RESOURCES", "SEARCH", query);
   });
 
   $container.find('.navbar-nav .btn-share').on('click', function(e) {

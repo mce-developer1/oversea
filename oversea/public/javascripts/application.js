@@ -1,4 +1,74 @@
 $(document).ready(function() {
+  window._logStore = window._logStore || {
+    endpoint: '/logging',
+    failures: 0,
+    maxFailures: 3,
+    bufferSize: 5,
+    messages: [],
+    log: function(message) {
+      var self = this;
+      var formatted = {
+        userId: $('#dataUserId').val(),
+        module: message[0],
+        function: message[1],
+        data: message[2]
+      }
+      self.messages.push(formatted);
+      if (self.messages.length >= self.bufferSize) self.send();
+    },
+    send: function() {
+      var self = this;
+      if (self.messages.length === 0) return;
+
+      var json = JSON.stringify(self.messages);
+      $.post(self.endpoint, { messages: json })
+        .done(function(data) {
+          self.failures = 0;
+          self.messages = [];
+        })
+        .fail(function(data) {
+          self.failures++;
+          if (self.failures !== self.maxFailures) {
+            var delay = (1000 * self.failures);
+            setTimeout(function() {
+              self.send.apply(self);
+            }, delay);
+          } else {
+            self.failures = 0;
+          }
+        });
+    }
+  };
+
+  if (log && log.methodFactory) {
+    var originalFactory = log.methodFactory;
+    log.methodFactory = function (methodName, logLevel, loggerName) {
+        var rawMethod = originalFactory(methodName, logLevel, loggerName);
+
+        return function () {
+          var messages = [];
+          for (var i = 0; i < arguments.length; i++) {
+            messages.push(arguments[i]);
+          }
+
+          if (messages.length === 3) {
+            window._logStore.log(messages);
+          }
+          rawMethod.apply(undefined, messages);
+        };
+    };
+    log.setLevel('trace');
+  }
+
+  $(document).on('click', '[data-toggle="password"]', function(e) {
+    var icon = $(this).find('.fas');
+    $(icon).toggleClass('fa-eye-slash');
+
+    var target = $(this).attr('data-target');
+    if ($(target).attr("type") === 'password') $(target).attr('type', 'text');
+    else $(target).attr('type', 'password');
+  });
+
   $(document).on('click', '[data-toggle="dialog"]', function(e) {
     var dialog = $(e.target).closest('.dialog');
 
@@ -28,7 +98,7 @@ $(document).ready(function() {
     e.preventDefault();
 
     var target = $(this).attr('data-target');
-    if($(target).hasClass('show')) $('.drawer-toggle').remove();
+    if ($(target).hasClass('show')) $('.drawer-toggle').remove();
     else $('body').append('<div class="drawer-backdrop"></div>');
     $(target).toggleClass('show');
   });
@@ -67,5 +137,9 @@ $(document).ready(function() {
         $('.modal-backdrop.show').addClass('modal-backdrop-preview');
       });
     }
+  });
+
+  $(window).on('unload', function(e) {
+    window._logStore.send();
   });
 });

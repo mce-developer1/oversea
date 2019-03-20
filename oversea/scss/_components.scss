@@ -22,7 +22,7 @@ table.dataTable {
           position: relative;
 
           &:hover {
-            background-color: $gray-100;
+            background-color: $gray-200;
             cursor: pointer;
           }
         }
@@ -275,6 +275,10 @@ table.dataTable {
         &.img-myreports {
           background-image: url("../images/icon_topnav_selected_myreports.png");
         }
+
+        &.img-administration {
+          background-image: url("../images/icon_topnav_selected_administration.png");
+        }
       }
     }
   }
@@ -293,6 +297,10 @@ table.dataTable {
   
     &.img-myreports {
       background-image: url("../images/icon_topnav_myreports.png");
+    }
+
+    &.img-administration {
+      background-image: url("../images/icon_topnav_administration.png");
     }
   }
 }

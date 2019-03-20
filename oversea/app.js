@@ -16,6 +16,7 @@ app.use(cookieParser());
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/scss', express.static(path.join(__dirname, 'scss')));
+app.use('/static/loglevel', express.static(path.join(__dirname, 'node_modules/loglevel/dist')));
 app.use('/static/jquery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 app.use('/static/popper', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd')));
 app.use('/static/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));

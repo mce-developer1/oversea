@@ -1,20 +1,37 @@
 .app-content {
   &.page-error {
     @include display-flex(column);
-    min-height: calc(100vh - 9rem);
 
     &.page-public {
-      min-height: calc(100vh - 3rem);
+      .article-error {
+        .article-content {
+          .article-body {
+            min-height: calc(100vh - 6rem);
+          }
+        }
+      }
     }
 
     .article-error {
       .article-content {
         .article-body {
           @include display-flex(row);
+          @include align-items(flex-start);
           @include justify-content(center);
+          min-height: calc(100vh - 12rem);
 
           img {
-            max-width: 64rem;
+            max-width: calc(100vw - 3rem);
+          }
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .article-error {
+        .article-content {
+          .article-body {
+            min-height: calc(100vh - 11rem);
           }
         }
       }
