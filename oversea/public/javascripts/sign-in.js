@@ -17,6 +17,33 @@ $(document).ready(function() {
     }
   }
 
+  $('.form-sign-in .input-school').autocomplete({ hint: true, debug: false }, [{
+    displayKey: 'name',
+    source: function(query, callback) {
+      var records = [
+        { name: 'EDLBP' }, 
+        { name: 'EDLBS' },
+        { name: 'EDTGP' }, 
+        { name: 'EDTGS' }
+      ];
+      var pattern = new RegExp(query, 'i');
+      var hits = records.filter(function(record) {
+        return record.name.match(pattern);
+      });
+      hits.forEach(function(hit) {
+        var match = hit.name.match(pattern)[0];
+        var highlighted = '<em>' + match + '</em>';
+        hit.highlighted = hit.name.replace(match, highlighted);
+      });
+      callback(hits);
+    },
+    templates: {
+      suggestion: function(suggestion) {
+        return suggestion.highlighted;
+      }
+    }
+  }]);
+
   $('.form-sign-in .btn-primary').on('click', redirectToHome);
   $('.form-sign-in .input-username').on('change', redirectToHome);
 

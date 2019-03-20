@@ -1840,6 +1840,9 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-sign-in .form-sign-in .form-group .input-group-text .fas {
   color: #adb5bd;
 }
+.app-content.page-sign-in .form-sign-in .form-group .algolia-autocomplete {
+  width: 100%;
+}
 .app-content.page-sign-in .form-sign-in .form-group-actions {
   text-align: center;
 }
