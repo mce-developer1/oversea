@@ -283,7 +283,7 @@ $(document).ready(function() {
 
   function drawStudentProficiencyReport() {
     var data = [
-      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
+      ['Element', 'Mastery', { role: 'style' }, { role: 'annotation' }],
       ['Math Buddies', 95, getBarColor(95), 'Master'],
       ['Marshall Cavendish Maths', 80, getBarColor(80), 'Expert'],
       ['Marshall Cavendish Science', 70, getBarColor(70), 'Advanced'],
@@ -343,7 +343,7 @@ $(document).ready(function() {
 
   function drawStudentChannelProficiencyReport() {
     var data = [
-      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
+      ['Element', 'Mastery', { role: 'style' }, { role: 'annotation' }],
       ['Numbers To 10', 95, getBarColor(95), 'Master'],
       ['Number Bonds', 80, getBarColor(80), 'Expert'],
       ['Addition Within 10', 70, getBarColor(70), 'Advanced'],
@@ -395,14 +395,14 @@ $(document).ready(function() {
 
   function drawAllClassesUsageReport() {
     var data = [
-      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['P1-EA', 95, getBarColor(95), '95%'],
-      ['P1-HA', 80, getBarColor(80), '80%'],
-      ['P1-MA', 70, getBarColor(70), '70%'],
-      ['P1-PA', 55, getBarColor(55), '55%'],
-      ['P1-SA', 40, getBarColor(40), '40%'],
-      ['P1-TA', 30, getBarColor(30), '30%'],
-      ['P1-UA', 10, getBarColor(10), '10%']
+      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }, { role: 'tooltip' }],
+      ['P1-EA', 95, getBarColor(95), '95%', '95%'],
+      ['P1-HA', 80, getBarColor(80), '80%', '80%'],
+      ['P1-MA', 70, getBarColor(70), '70%', '70%'],
+      ['P1-PA', 55, getBarColor(55), '55%', '55%'],
+      ['P1-SA', 40, getBarColor(40), '40%', '40%'],
+      ['P1-TA', 30, getBarColor(30), '30%', '30%'],
+      ['P1-UA', 10, getBarColor(10), '10%', '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -452,14 +452,14 @@ $(document).ready(function() {
 
   function drawClassUsageReport() {
     var data = [
-      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Aaron Tan', 95, getBarColor(95), '95%'],
-      ['Arya Suman', 80, getBarColor(80), '80%'],
-      ['Ashar Ahmad', 70, getBarColor(70), '70%'],
-      ['Chua Chin Hui', 55, getBarColor(55), '55%'],
-      ['Derrick Lee', 40, getBarColor(40), '40%'],
-      ['Nurulhuda bte Sazali', 30, getBarColor(30), '30%'],
-      ['Siow Poh Piah Irene', 10, getBarColor(10), '10%']
+      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }, { role: 'tooltip' }],
+      ['Aaron Tan', 95, getBarColor(95), '95%', '95%'],
+      ['Arya Suman', 80, getBarColor(80), '80%', '80%'],
+      ['Ashar Ahmad', 70, getBarColor(70), '70%', '70%'],
+      ['Chua Chin Hui', 55, getBarColor(55), '55%', '55%'],
+      ['Derrick Lee', 40, getBarColor(40), '40%', '40%'],
+      ['Nurulhuda bte Sazali', 30, getBarColor(30), '30%', '30%'],
+      ['Siow Poh Piah Irene', 10, getBarColor(10), '10%', '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -510,14 +510,14 @@ $(document).ready(function() {
 
   function drawClassStudentUsageReport(student) {
     var data = [
-      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Numbers To 10', 95, getBarColor(95), '95%'],
-      ['Number Bonds', 80, getBarColor(80), '80%'],
-      ['Addition Within 10', 70, getBarColor(70), '70%'],
-      ['Subtraction Within 10', 55, getBarColor(55), '55%'],
-      ['Shapes And Patterns', 40, getBarColor(40), '40%'],
-      ['Ordinal Numbers And Position', 30, getBarColor(30), '30%'],
-      ['Numbers To 20', 10, getBarColor(10), '10%']
+      ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }, { role: 'tooltip' }],
+      ['Numbers To 10', 95, getBarColor(95), '95%', '95%'],
+      ['Number Bonds', 80, getBarColor(80), '80%', '80%'],
+      ['Addition Within 10', 70, getBarColor(70), '70%', '70%'],
+      ['Subtraction Within 10', 55, getBarColor(55), '55%', '55%'],
+      ['Shapes And Patterns', 40, getBarColor(40), '40%', '40%'],
+      ['Ordinal Numbers And Position', 30, getBarColor(30), '30%', '30%'],
+      ['Numbers To 20', 10, getBarColor(10), '10%', '10%']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -527,7 +527,7 @@ $(document).ready(function() {
       height: (data.length * 48),
       chartArea: { left: 180, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: '50%' },
-      legend: { position: 'none' },
+      legend: { position: 'none' },      
       annotations: {
         textStyle: {
           color: 'white'

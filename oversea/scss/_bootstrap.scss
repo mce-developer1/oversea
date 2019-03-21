@@ -232,7 +232,7 @@ a {
 }
 
 .popover {
-  box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+  box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
 
   .popover-body {
     .assignment-period {
@@ -274,7 +274,7 @@ a {
   .dropdown-menu {
     border: 0;
     border-radius: 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+    box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
     max-height: 320px;
     overflow-y: auto;
 
@@ -470,10 +470,6 @@ a {
     border: 1px solid $gray-400;
     border-radius: 0;
 
-    &:hover {
-      background-color: $gray-100;
-    }
-
     &.card-active {
       background-color: $gray-200;
     }
@@ -591,6 +587,11 @@ a {
             * {
               font-size: 1.25rem;
               max-width: 100%;
+            }
+
+            p {
+              margin: 1rem;
+              text-align: center;
             }
 
             .full {

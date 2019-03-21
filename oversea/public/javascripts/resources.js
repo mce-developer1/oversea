@@ -131,7 +131,15 @@ $(document).ready(function() {
     $container.find('.nav-main .input-group .aa-input').val(query);
     $container.find('.nav-main .dialog').removeClass('open');
     $container.find('.nav-main .dialog .dialog-menu').removeClass('show');
-    log.trace("MY_RESOURCES", "SEARCH", query);
+    log.info("MY_RESOURCES", "SEARCH", query);
+  });
+
+  $container.find('.navbar-nav .btn-edit').on('click', function(e) {
+    if ($container.find('.table-body .table-active').find('.fa-folder').length === 1) {
+      $('.modal-resource-folder-edit').modal('show');
+    } else {
+      $('.modal-resource-file-edit-attributes').modal('show');
+    }
   });
 
   $container.find('.navbar-nav .btn-share').on('click', function(e) {
@@ -142,7 +150,7 @@ $(document).ready(function() {
     $('.modal-resource-folder-create').modal('show');
   });
 
-  $container.find('.dropdown-menu .item-edit-attributes').on('click', function(e) {
+  $container.find('.dropdown-menu .item-edit').on('click', function(e) {
     $('.modal-resource-file-edit-attributes').modal('show');
   });
 
@@ -336,11 +344,11 @@ $(document).ready(function() {
     displayKey: 'name',
     source: function(query, callback) {
       var records = [
-        { name: 'Aaron Tan' }, 
-        { name: 'Arya Suman' },
-        { name: 'Ashar Ahmad' }, 
-        { name: 'Chua Chin Hui' },
-        { name: 'Derrick Lee' }
+        { id: 1, name: 'Aaron Tan' }, 
+        { id: 2, name: 'Arya Suman' },
+        { id: 3, name: 'Ashar Ahmad' }, 
+        { id: 4, name: 'Chua Chin Hui' },
+        { id: 5, name: 'Derrick Lee' }
       ];
       var pattern = new RegExp(query, 'i');
       var hits = records.filter(function(record) {
@@ -358,7 +366,10 @@ $(document).ready(function() {
         return suggestion.highlighted;
       }
     }
-  }]);
+  }])
+  .on('autocomplete:selected', function(event, suggestion) {
+    log.info(suggestion);
+  });
 
   $(window).on('resize', function(e) {
     if ($(window).width() > 992) {

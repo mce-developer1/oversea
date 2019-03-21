@@ -329,6 +329,7 @@
                   color: $green;
                 }
 
+                &.fa-file-image,
                 &.fa-file-powerpoint,
                 &.fa-file-pdf {
                   color: $red;
@@ -362,13 +363,20 @@
                   &.fa-folder {
                     color: $yellow;
                   }
-
-                  &.fa-file-word {
+  
+                  &.fa-file-word,
+                  &.fa-file-alt {
                     color: $blue;
                   }
   
                   &.fa-file-excel {
                     color: $green;
+                  }
+  
+                  &.fa-file-image,
+                  &.fa-file-powerpoint,
+                  &.fa-file-pdf {
+                    color: $red;
                   }
                 }
               }
@@ -638,10 +646,12 @@
   }
 }
 
-.modal-resource-folder-create {
+.modal-resource-folder-create,
+.modal-resource-folder-edit {
   .modal-dialog {
     .modal-body {
-      .form-create-folder {
+      .form-create-folder,
+      .form-edit-folder {
         .form-group {
           @include display-flex(row);
           margin-bottom: 0;

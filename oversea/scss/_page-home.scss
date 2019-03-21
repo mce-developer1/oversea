@@ -94,6 +94,10 @@
               margin: .5rem;
               padding: 0;
 
+              &:active {
+                background-color: $gray-200;
+              }
+
               .card-img-top {
                 padding: 0 1.5rem;
               }

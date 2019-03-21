@@ -351,9 +351,7 @@ $(document).ready(function() {
   });
 
   $('.article-lesson-resources .article-body .btn-edit-folder').on('click', function(e) {
-    $('.modal-lesson-folder-create .modal-title').text('Edit Folder');
-    $('.modal-lesson-folder-create .btn-primary').text('Save');
-    $('.modal-lesson-folder-create').modal('show');
+    $('.modal-lesson-folder-edit').modal('show');
   });
 
   $('.article-lesson-resources .article-body .item-add-mylibrary').on('click', function(e) {

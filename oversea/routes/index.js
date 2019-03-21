@@ -106,12 +106,17 @@ router.get('/:userRole/reports/reports', function(req, res, next) {
   var studentUser = (userRole === 'student');
   var teacherUser = (userRole === 'teacher');
   var adminUser = (userRole === 'admin');
+  var reportType = req.query.type;
+  var proficiencyReport = (reportType === 'proficiency');
+  var usageReport = (reportType === 'usage');
   res.render('reports/reports', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'reports',
     loggedIn: true,
     reportsPage: true,
+    proficiencyReport: proficiencyReport,
+    usageReport: usageReport,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,
@@ -167,6 +172,25 @@ router.get('/:userRole/user', function(req, res, next) {
     title: 'Marshall Cavendish Education',
     module: 'user',
     loggedIn: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET update avatar page. */
+router.get('/:userRole/profile/update_profile_picture', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('profile/update_profile_picture', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'profile',
+    loggedIn: true,
+    profilePage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,

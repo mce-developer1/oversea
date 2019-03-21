@@ -381,10 +381,6 @@ a:focus {
   border: 1px solid #ced4da;
   border-radius: 0;
 }
-.card-group .card:hover,
-.card-group .card:only-child:hover {
-  background-color: #f8f9fa;
-}
 .card-group .card.card-active,
 .card-group .card:only-child.card-active {
   background-color: #e9ecef;
@@ -490,6 +486,10 @@ a:focus {
 .modal .modal-dialog.modal-preview .modal-content .modal-body .content *, .modal .modal-dialog.modal-resource-add .modal-content .modal-body .content * {
   font-size: 1.25rem;
   max-width: 100%;
+}
+.modal .modal-dialog.modal-preview .modal-content .modal-body .content p, .modal .modal-dialog.modal-resource-add .modal-content .modal-body .content p {
+  margin: 1rem;
+  text-align: center;
 }
 .modal .modal-dialog.modal-preview .modal-content .modal-body .content .full, .modal .modal-dialog.modal-resource-add .modal-content .modal-body .content .full {
   height: calc(100vh - 4rem);
@@ -1390,7 +1390,7 @@ table.dataTable tbody tr td .nowrap {
   flex-direction: row;
   -webkit-align-items: center;
   align-items: center;
-  padding: 0;
+  padding: 0.5rem;
 }
 .app-header .dropdown.dropdown-user .btn-user img,
 .app-header .dropdown.dropdown-user .user-account img {
@@ -1514,7 +1514,7 @@ table.dataTable tbody tr td .nowrap {
     display: none;
   }
   .app-header .navbar-brand.d-block img {
-    width: 12rem;
+    width: 10rem;
   }
   .app-header .navbar-nav.nav-main .nav-item {
     display: none;
@@ -1650,13 +1650,6 @@ table.dataTable tbody tr td .nowrap {
   -ms-flex-direction: column;
   flex-direction: column;
 }
-.app-content.page-error.page-public .article-error .article-content .article-body {
-  min-height: calc(100vh - 6rem);
-}
-.app-content.page-error.page-public .article-error .article-content .article-body img {
-  max-height: calc(100vh - 6rem);
-  max-width: calc(100vw - 3rem);
-}
 .app-content.page-error .article-error .article-content .article-body {
   display: -ms-flexbox;
   display: flex;
@@ -1783,7 +1776,7 @@ table.dataTable tbody tr td .nowrap {
   text-align: right;
 }
 .app-content.page-sign-in .article-study-resource {
-  min-height: calc(100vh - 34rem);
+  min-height: calc(100vh - 34.25rem);
   padding: 3rem;
 }
 .app-content.page-sign-in .article-study-resource h2 {
@@ -1837,44 +1830,17 @@ table.dataTable tbody tr td .nowrap {
   padding: 1.5rem;
   width: 20rem;
 }
-.app-content.page-sign-in .form-sign-in .form-group .input-group-text .fas {
-  color: #adb5bd;
-}
 .app-content.page-sign-in .form-sign-in .form-group .algolia-autocomplete {
   width: 100%;
+}
+.app-content.page-sign-in .form-sign-in .form-group .input-group-text .fas {
+  color: #adb5bd;
 }
 .app-content.page-sign-in .form-sign-in .form-group-actions {
   text-align: center;
 }
 .app-content.page-sign-in .form-sign-in .form-group-actions .btn-block {
   margin-bottom: 0.5rem;
-}
-.app-content.page-sign-in .form-reset-password {
-  max-width: 36rem;
-}
-.app-content.page-sign-in .form-reset-password .form-group {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-}
-.app-content.page-sign-in .form-reset-password .form-group.form-group-actions {
-  margin-left: 14rem;
-}
-.app-content.page-sign-in .form-reset-password .form-group .form-group {
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.app-content.page-sign-in .form-reset-password .form-group .form-label {
-  min-width: 14rem;
-  width: 14rem;
-}
-.app-content.page-sign-in .form-reset-password .form-group .form-text {
-  margin-top: 0;
 }
 .app-content.page-sign-in .form-distributor-registration,
 .app-content.page-sign-in .form-school-registration {
@@ -1951,13 +1917,19 @@ table.dataTable tbody tr td .nowrap {
 .modal-registration-successful .modal-dialog .modal-body {
   padding: 1.5rem 1.5rem 0.5rem;
 }
-.modal-forgot-password .modal-dialog .modal-body .form-group,
-.modal-registration-successful .modal-dialog .modal-body .form-group {
-  text-align: center;
+.modal-forgot-password .modal-dialog .modal-body .form-group .algolia-autocomplete,
+.modal-registration-successful .modal-dialog .modal-body .form-group .algolia-autocomplete {
+  width: 100%;
 }
-.modal-forgot-password .modal-dialog .modal-body .form-group .fas,
-.modal-registration-successful .modal-dialog .modal-body .form-group .fas {
+.modal-forgot-password .modal-dialog .modal-body .form-group .input-group-text .fas,
+.modal-registration-successful .modal-dialog .modal-body .form-group .input-group-text .fas {
   color: #adb5bd;
+}
+.modal-forgot-password .modal-dialog .modal-body .form-group .text-dark,
+.modal-forgot-password .modal-dialog .modal-body .form-group .text-danger,
+.modal-registration-successful .modal-dialog .modal-body .form-group .text-dark,
+.modal-registration-successful .modal-dialog .modal-body .form-group .text-danger {
+  text-align: center;
 }
 
 .modal-registration-successful .form-reset-password-success .fa-check-circle,
@@ -2031,6 +2003,9 @@ table.dataTable tbody tr td .nowrap {
   min-width: 16rem;
   margin: 0.5rem;
   padding: 0;
+}
+.app-content.page-home .article-resources .article-content .article-body .card-group .card:active {
+  background-color: #e9ecef;
 }
 .app-content.page-home .article-resources .article-content .article-body .card-group .card .card-img-top {
   padding: 0 1.5rem;
@@ -2371,7 +2346,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-excel {
   color: #28a745;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-powerpoint, .app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-pdf {
+.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-image, .app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-powerpoint, .app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-pdf {
   color: #dc3545;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group {
@@ -2401,11 +2376,14 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-folder {
   color: #fda316;
 }
-.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-word {
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-word, .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-alt {
   color: #007bff;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-excel {
   color: #28a745;
+}
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-image, .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-powerpoint, .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-img-top .fas.fa-file-pdf {
+  color: #dc3545;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body {
   display: -ms-flexbox;
@@ -2580,14 +2558,20 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 
-.modal-resource-folder-create .modal-dialog .modal-body .form-create-folder .form-group {
+.modal-resource-folder-create .modal-dialog .modal-body .form-create-folder .form-group,
+.modal-resource-folder-create .modal-dialog .modal-body .form-edit-folder .form-group,
+.modal-resource-folder-edit .modal-dialog .modal-body .form-create-folder .form-group,
+.modal-resource-folder-edit .modal-dialog .modal-body .form-edit-folder .form-group {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
   margin-bottom: 0;
 }
-.modal-resource-folder-create .modal-dialog .modal-body .form-create-folder .form-group .form-label {
+.modal-resource-folder-create .modal-dialog .modal-body .form-create-folder .form-group .form-label,
+.modal-resource-folder-create .modal-dialog .modal-body .form-edit-folder .form-group .form-label,
+.modal-resource-folder-edit .modal-dialog .modal-body .form-create-folder .form-group .form-label,
+.modal-resource-folder-edit .modal-dialog .modal-body .form-edit-folder .form-group .form-label {
   margin-right: 1rem;
 }
 
@@ -3425,6 +3409,7 @@ table.dataTable tbody tr td .nowrap {
   background-color: #e9ecef;
   padding: 0.75rem 1.5rem;
 }
+.app-content.page-profile .article-update-avatar,
 .app-content.page-profile .article-update-personal-particulars,
 .app-content.page-profile .article-update-personal-preferences,
 .app-content.page-profile .article-change-password,
@@ -3432,6 +3417,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-teacher-password {
   padding: 0 1.5rem;
 }
+.app-content.page-profile .article-update-avatar.collapse-sidebar .article-content .article-sidebar,
 .app-content.page-profile .article-update-personal-particulars.collapse-sidebar .article-content .article-sidebar,
 .app-content.page-profile .article-update-personal-preferences.collapse-sidebar .article-content .article-sidebar,
 .app-content.page-profile .article-change-password.collapse-sidebar .article-content .article-sidebar,
@@ -3439,6 +3425,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-teacher-password.collapse-sidebar .article-content .article-sidebar {
   height: 0;
 }
+.app-content.page-profile .article-update-avatar.no-sidebar .article-header,
 .app-content.page-profile .article-update-personal-particulars.no-sidebar .article-header,
 .app-content.page-profile .article-update-personal-preferences.no-sidebar .article-header,
 .app-content.page-profile .article-change-password.no-sidebar .article-header,
@@ -3446,6 +3433,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-teacher-password.no-sidebar .article-header {
   display: none;
 }
+.app-content.page-profile .article-update-avatar .article-header,
 .app-content.page-profile .article-update-personal-particulars .article-header,
 .app-content.page-profile .article-update-personal-preferences .article-header,
 .app-content.page-profile .article-change-password .article-header,
@@ -3455,6 +3443,7 @@ table.dataTable tbody tr td .nowrap {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
+.app-content.page-profile .article-update-avatar .article-header .btn-light,
 .app-content.page-profile .article-update-personal-particulars .article-header .btn-light,
 .app-content.page-profile .article-update-personal-preferences .article-header .btn-light,
 .app-content.page-profile .article-change-password .article-header .btn-light,
@@ -3463,6 +3452,7 @@ table.dataTable tbody tr td .nowrap {
   height: 3rem;
   padding: 0.5rem 0.75rem;
 }
+.app-content.page-profile .article-update-avatar .article-header .btn-light .fas.fa-caret-down,
 .app-content.page-profile .article-update-personal-particulars .article-header .btn-light .fas.fa-caret-down,
 .app-content.page-profile .article-update-personal-preferences .article-header .btn-light .fas.fa-caret-down,
 .app-content.page-profile .article-change-password .article-header .btn-light .fas.fa-caret-down,
@@ -3470,6 +3460,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-teacher-password .article-header .btn-light .fas.fa-caret-down {
   font-size: 1.325rem;
 }
+.app-content.page-profile .article-update-avatar .article-content .article-sidebar,
 .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
 .app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar,
 .app-content.page-profile .article-change-password .article-content .article-sidebar,
@@ -3509,21 +3500,24 @@ table.dataTable tbody tr td .nowrap {
   left: calc(100% + 1.5rem);
 }
 @media (max-width: 767.98px) {
-  .app-content.page-profile .article-update-personal-particulars,
+  .app-content.page-profile .article-update-avatar,
+.app-content.page-profile .article-update-personal-particulars,
 .app-content.page-profile .article-update-personal-preferences,
 .app-content.page-profile .article-change-password,
 .app-content.page-profile .article-reset-student-password,
 .app-content.page-profile .article-reset-teacher-password {
     padding: 0 1rem;
   }
-  .app-content.page-profile .article-update-personal-particulars:not(.no-sidebar) .article-header h5,
+  .app-content.page-profile .article-update-avatar:not(.no-sidebar) .article-header h5,
+.app-content.page-profile .article-update-personal-particulars:not(.no-sidebar) .article-header h5,
 .app-content.page-profile .article-update-personal-preferences:not(.no-sidebar) .article-header h5,
 .app-content.page-profile .article-change-password:not(.no-sidebar) .article-header h5,
 .app-content.page-profile .article-reset-student-password:not(.no-sidebar) .article-header h5,
 .app-content.page-profile .article-reset-teacher-password:not(.no-sidebar) .article-header h5 {
     display: none;
   }
-  .app-content.page-profile .article-update-personal-particulars .article-header,
+  .app-content.page-profile .article-update-avatar .article-header,
+.app-content.page-profile .article-update-personal-particulars .article-header,
 .app-content.page-profile .article-update-personal-preferences .article-header,
 .app-content.page-profile .article-change-password .article-header,
 .app-content.page-profile .article-reset-student-password .article-header,
@@ -3534,7 +3528,8 @@ table.dataTable tbody tr td .nowrap {
     margin: 0 -1rem;
     padding: 0;
   }
-  .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
+  .app-content.page-profile .article-update-avatar .article-content .article-sidebar,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar,
 .app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar,
 .app-content.page-profile .article-change-password .article-content .article-sidebar,
 .app-content.page-profile .article-reset-student-password .article-content .article-sidebar,
@@ -3542,7 +3537,9 @@ table.dataTable tbody tr td .nowrap {
     background-color: #ffffff;
     margin: 0 -1rem;
   }
-  .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar .nav .nav-link:not(.disabled):hover, .app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar .nav .nav-link:not(.disabled):active,
+  .app-content.page-profile .article-update-avatar .article-content .article-sidebar .nav .nav-link:not(.disabled):hover, .app-content.page-profile .article-update-avatar .article-content .article-sidebar .nav .nav-link:not(.disabled):active,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar .nav .nav-link:not(.disabled):hover,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-sidebar .nav .nav-link:not(.disabled):active,
 .app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar .nav .nav-link:not(.disabled):hover,
 .app-content.page-profile .article-update-personal-preferences .article-content .article-sidebar .nav .nav-link:not(.disabled):active,
 .app-content.page-profile .article-change-password .article-content .article-sidebar .nav .nav-link:not(.disabled):hover,
@@ -3553,7 +3550,8 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-teacher-password .article-content .article-sidebar .nav .nav-link:not(.disabled):active {
     background-color: #f8f9fa;
   }
-  .app-content.page-profile .article-update-personal-particulars .article-content .article-body,
+  .app-content.page-profile .article-update-avatar .article-content .article-body,
+.app-content.page-profile .article-update-personal-particulars .article-content .article-body,
 .app-content.page-profile .article-update-personal-preferences .article-content .article-body,
 .app-content.page-profile .article-change-password .article-content .article-body,
 .app-content.page-profile .article-reset-student-password .article-content .article-body,
@@ -3562,7 +3560,12 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 @media (min-width: 768px) {
-  .app-content.page-profile .article-update-personal-particulars:not(.no-sidebar) .article-body .form-personal-particulars .form-header,
+  .app-content.page-profile .article-update-avatar:not(.no-sidebar) .article-body .form-personal-particulars .form-header,
+.app-content.page-profile .article-update-avatar:not(.no-sidebar) .article-body .form-personal-preferences .form-header,
+.app-content.page-profile .article-update-avatar:not(.no-sidebar) .article-body .form-change-password .form-header,
+.app-content.page-profile .article-update-avatar:not(.no-sidebar) .article-body .form-reset-student-password .form-header,
+.app-content.page-profile .article-update-avatar:not(.no-sidebar) .article-body .form-reset-teacher-password .form-header,
+.app-content.page-profile .article-update-personal-particulars:not(.no-sidebar) .article-body .form-personal-particulars .form-header,
 .app-content.page-profile .article-update-personal-particulars:not(.no-sidebar) .article-body .form-personal-preferences .form-header,
 .app-content.page-profile .article-update-personal-particulars:not(.no-sidebar) .article-body .form-change-password .form-header,
 .app-content.page-profile .article-update-personal-particulars:not(.no-sidebar) .article-body .form-reset-student-password .form-header,
@@ -3589,14 +3592,16 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-profile .article-reset-teacher-password:not(.no-sidebar) .article-body .form-reset-teacher-password .form-header {
     display: none;
   }
-  .app-content.page-profile .article-update-personal-particulars .article-header .btn-light,
+  .app-content.page-profile .article-update-avatar .article-header .btn-light,
+.app-content.page-profile .article-update-personal-particulars .article-header .btn-light,
 .app-content.page-profile .article-update-personal-preferences .article-header .btn-light,
 .app-content.page-profile .article-change-password .article-header .btn-light,
 .app-content.page-profile .article-reset-student-password .article-header .btn-light,
 .app-content.page-profile .article-reset-teacher-password .article-header .btn-light {
     display: none;
   }
-  .app-content.page-profile .article-update-personal-particulars .article-content,
+  .app-content.page-profile .article-update-avatar .article-content,
+.app-content.page-profile .article-update-personal-particulars .article-content,
 .app-content.page-profile .article-update-personal-preferences .article-content,
 .app-content.page-profile .article-change-password .article-content,
 .app-content.page-profile .article-reset-student-password .article-content,

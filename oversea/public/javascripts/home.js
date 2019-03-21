@@ -16,17 +16,18 @@ $(document).ready(function() {
     setTimeout(function() {
       $('.article-resources .article-body .loading-state').addClass('d-none');
       $('.toast-stack').removeClass('d-none');
-      $('.toast-stack .toast').addClass('show');
+      $('.toast-stack .toast').toast('show');
 
       setTimeout(function() {
         $('.toast-stack').addClass('d-none');
-        $('.toast-stack .toast').removeClass('show');
+        $('.toast-stack .toast').toast('hide');
       }, 5000);
     }, 1000);
   });
 
   $('.article-resources .article-body .card-group .card').on('click', function(e) {
-    location.href = '/channel';
+    var userRole = $('#userRole').val();
+    location.href = '/' + userRole + '/channel';
   });
 
   if ($(window).width() < 768) {

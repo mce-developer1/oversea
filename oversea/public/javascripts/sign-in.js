@@ -18,22 +18,27 @@ $(document).ready(function() {
   }
 
   $('.form-sign-in .input-school').autocomplete({ hint: true, debug: false }, [{
-    displayKey: 'name',
+    displayKey: 'fullName',
     source: function(query, callback) {
       var records = [
-        { name: 'EDLBP' }, 
-        { name: 'EDLBS' },
-        { name: 'EDTGP' }, 
-        { name: 'EDTGS' }
+        { id: '1', name: 'EDLBP', fullName: 'Edno Primary' }, 
+        { id: '2', name: 'EDLBS', fullName: 'Edno Secondary' },
+        { id: '3', name: 'EDTGP', fullName: 'Edno Test Primary' }, 
+        { id: '4', name: 'EDTGS', fullName: 'Edno Test Secondary' }
       ];
       var pattern = new RegExp(query, 'i');
       var hits = records.filter(function(record) {
-        return record.name.match(pattern);
+        return (record.name.match(pattern)
+          || record.fullName.match(pattern));
       });
       hits.forEach(function(hit) {
-        var match = hit.name.match(pattern)[0];
-        var highlighted = '<em>' + match + '</em>';
-        hit.highlighted = hit.name.replace(match, highlighted);
+        if (pattern.test(hit.fullName)) {
+          var match = hit.fullName.match(pattern)[0];
+          var highlighted = '<em>' + match + '</em>';
+          hit.highlighted = hit.fullName.replace(match, highlighted);
+        } else {
+          hit.highlighted = hit.fullName;
+        }
       });
       callback(hits);
     },
@@ -42,10 +47,52 @@ $(document).ready(function() {
         return suggestion.highlighted;
       }
     }
-  }]);
+  }])
+  .on('autocomplete:selected', function(event, suggestion) {
+    log.info(suggestion);
+  });
 
+  $('.form-sign-in .input-school').autocomplete('val', 'EDTGP');
+  $('.form-sign-in .input-username').on('keypress', function(e) {
+    var keycode = (e.keyCode ? e.keyCode : e.which);
+    if (keycode === 13) redirectToHome(e);
+  });
   $('.form-sign-in .btn-primary').on('click', redirectToHome);
-  $('.form-sign-in .input-username').on('change', redirectToHome);
+
+  $('.form-reset-password .input-school').autocomplete({ hint: true, debug: true }, [{
+    displayKey: 'fullName',
+    source: function(query, callback) {
+      var records = [
+        { id: '1', name: 'EDLBP', fullName: 'Edno Primary' }, 
+        { id: '2', name: 'EDLBS', fullName: 'Edno Secondary' },
+        { id: '3', name: 'EDTGP', fullName: 'Edno Test Primary' }, 
+        { id: '4', name: 'EDTGS', fullName: 'Edno Test Secondary' }
+      ];
+      var pattern = new RegExp(query, 'i');
+      var hits = records.filter(function(record) {
+        return (record.name.match(pattern)
+          || record.fullName.match(pattern));
+      });
+      hits.forEach(function(hit) {
+        if (pattern.test(hit.fullName)) {
+          var match = hit.fullName.match(pattern)[0];
+          var highlighted = '<em>' + match + '</em>';
+          hit.highlighted = hit.fullName.replace(match, highlighted);
+        } else {
+          hit.highlighted = hit.fullName;
+        }
+      });
+      callback(hits);
+    },
+    templates: {
+      suggestion: function(suggestion) {
+        return suggestion.highlighted;
+      }
+    }
+  }])
+  .on('autocomplete:selected', function(event, suggestion) {
+    log.info(suggestion);
+  });
 
   $('.form-sign-in .forgot-password').on('click', function(e) {
     $('.modal-forgot-password .form-reset-password-success').addClass('d-none');
@@ -56,7 +103,7 @@ $(document).ready(function() {
 
   $('.modal-forgot-password .btn-primary').on('click', function(e) {
     var username = $('.modal-forgot-password .form-reset-password .input-username').val();
-    var school = $('.modal-forgot-password .form-reset-password .input-school').val();
+    var school = $('.modal-forgot-password .form-reset-password .input-school.aa-input').val();
     $('.modal-forgot-password .form-reset-password').addClass('d-none');
 
     if ((username !== '') && (school !== '')) {

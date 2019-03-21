@@ -1,22 +1,7 @@
 .app-content {
   &.page-error {
     @include display-flex(column);
-
-    &.page-public {
-      .article-error {
-        .article-content {
-          .article-body {
-            min-height: calc(100vh - 6rem);
-
-            img {
-              max-height: calc(100vh - 6rem);
-              max-width: calc(100vw - 3rem);
-            }
-          }
-        }
-      }
-    }
-
+    
     .article-error {
       .article-content {
         .article-body {

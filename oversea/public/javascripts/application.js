@@ -3,15 +3,17 @@ $(document).ready(function() {
     endpoint: '/logging',
     failures: 0,
     maxFailures: 3,
-    bufferSize: 5,
+    bufferSize: 1,
+    argumentsSize: 3,
     messages: [],
-    log: function(message) {
+    save: function() {
       var self = this;
+      if (arguments.length < self.argumentsSize) return;
+
       var formatted = {
-        userId: $('#dataUserId').val(),
-        module: message[0],
-        function: message[1],
-        data: message[2]
+        module: arguments[0].trim(),
+        action: arguments[1].trim(),
+        params: arguments[2].trim()
       }
       self.messages.push(formatted);
       if (self.messages.length >= self.bufferSize) self.send();
@@ -44,20 +46,13 @@ $(document).ready(function() {
     var originalFactory = log.methodFactory;
     log.methodFactory = function (methodName, logLevel, loggerName) {
         var rawMethod = originalFactory(methodName, logLevel, loggerName);
-
         return function () {
-          var messages = [];
-          for (var i = 0; i < arguments.length; i++) {
-            messages.push(arguments[i]);
-          }
-
-          if (messages.length === 3) {
-            window._logStore.log(messages);
-          }
-          rawMethod.apply(undefined, messages);
+          var logStore = window._logStore;
+          logStore.save.apply(logStore, arguments);
+          rawMethod.apply(undefined, arguments);
         };
     };
-    log.setLevel('trace');
+    log.setLevel('info');
   }
 
   $(document).on('click', '[data-toggle="password"]', function(e) {
