@@ -1,6 +1,7 @@
 .app-content {
   &.page-error {
     @include display-flex(column);
+    background-color: $white;
     
     .article-error {
       .article-content {
@@ -23,6 +24,11 @@
         .article-content {
           .article-body {
             min-height: calc(100vh - 11rem);
+            margin: -.5rem;
+
+            img {
+              max-width: calc(100vw - 2rem);
+            }
           }
         }
       }

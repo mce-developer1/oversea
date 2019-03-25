@@ -57,6 +57,10 @@ a:focus {
   background-color: #dee2e6;
   border-color: #dee2e6;
 }
+.btn-light.btn-handle:not(:disabled):not(.disabled):active {
+  background-color: transparent;
+  border-color: transparent;
+}
 
 .btn-outline-primary {
   border-color: #ff6600;
@@ -262,13 +266,12 @@ a:focus {
   -moz-osx-font-smoothing: grayscale;
   padding-right: 0;
 }
-.breadcrumb .breadcrumb-item.active a {
-  color: #495057;
-}
 .breadcrumb .breadcrumb-item.active a:hover {
   background-color: transparent;
+  cursor: default;
 }
 .breadcrumb .breadcrumb-item a {
+  color: #495057;
   padding: 0.5rem;
 }
 .breadcrumb .breadcrumb-item a:hover {
@@ -857,11 +860,6 @@ table.dataTable tbody tr td .nowrap {
 }
 .tree.tree-resources .resource a .fas.fa-folder, .tree.tree-resources .resource a .fas.fa-folder-open {
   color: #fda316;
-  font-size: 1.5rem;
-  min-width: 2rem;
-}
-.tree.tree-resources .resource a .fas.fa-folder-plus {
-  color: #ff6600;
   font-size: 1.5rem;
   min-width: 2rem;
 }
@@ -1649,6 +1647,7 @@ table.dataTable tbody tr td .nowrap {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
+  background-color: #ffffff;
 }
 .app-content.page-error .article-error .article-content .article-body {
   display: -ms-flexbox;
@@ -1668,11 +1667,15 @@ table.dataTable tbody tr td .nowrap {
 @media (max-width: 576px) {
   .app-content.page-error .article-error .article-content .article-body {
     min-height: calc(100vh - 11rem);
+    margin: -0.5rem;
+  }
+  .app-content.page-error .article-error .article-content .article-body img {
+    max-width: calc(100vw - 2rem);
   }
 }
 
 .app-content.page-sign-in {
-  min-height: auto;
+  min-height: calc(100vh - 3rem);
 }
 .app-content.page-sign-in .navbar {
   -webkit-justify-content: flex-end;
@@ -1776,7 +1779,6 @@ table.dataTable tbody tr td .nowrap {
   text-align: right;
 }
 .app-content.page-sign-in .article-study-resource {
-  min-height: calc(100vh - 34.25rem);
   padding: 3rem;
 }
 .app-content.page-sign-in .article-study-resource h2 {
@@ -2805,18 +2807,6 @@ table.dataTable tbody tr td .nowrap {
     display: none;
   }
 }
-@media (min-width: 1200px) {
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(8),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(8) {
-    display: none;
-  }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(8),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(8),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(8),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(8) {
-    display: none;
-  }
-}
 @media (min-width: 992px) {
   .app-content.page-lessons .article-lessons .article-header {
     position: -webkit-sticky;
@@ -2850,6 +2840,18 @@ table.dataTable tbody tr td .nowrap {
     position: sticky;
     top: 10rem;
     z-index: 970;
+  }
+}
+@media (min-width: 1200px) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(8),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(8) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(8),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(8),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(8),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(8) {
+    display: none;
   }
 }
 .app-content.page-lessons .article-create-lesson {
@@ -2935,6 +2937,11 @@ table.dataTable tbody tr td .nowrap {
 }
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .btn-light {
   margin: 0 0.25rem;
+}
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .fas.fa-folder-plus {
+  color: #ff6600;
+  font-size: 1.5rem;
+  min-width: 2rem;
 }
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
@@ -3034,6 +3041,10 @@ table.dataTable tbody tr td .nowrap {
   padding: 0.325rem;
   margin: -0.5rem 0;
 }
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light.btn-handle,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light.btn-handle {
+  padding: 0.25rem 0.5rem;
+}
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light .fa-eye,
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light .fa-eye-slash,
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light .fa-eye,
@@ -3063,6 +3074,14 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-lessons .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-lessons .article-create-lesson .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    z-index: 980;
   }
 }
 

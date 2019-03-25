@@ -13,6 +13,10 @@ $(document).ready(function() {
         $container.find('.btn-share').removeClass('d-none');
       }
 
+      if ($container.find('.btn-assign').hasClass('d-none')) {
+        $container.find('.btn-assign').removeClass('d-none');
+      }
+
       if ($container.find('.btn-more').hasClass('d-none')) {
         $container.find('.btn-more').removeClass('d-none');
       }      
@@ -23,6 +27,10 @@ $(document).ready(function() {
 
       if (!$container.find('.btn-share').hasClass('d-none')) {
         $container.find('.btn-share').addClass('d-none');
+      }
+
+      if (!$container.find('.btn-assign').hasClass('d-none')) {
+        $container.find('.btn-assign').addClass('d-none');
       }
 
       if (!$container.find('.btn-more').hasClass('d-none')) {
@@ -330,6 +338,17 @@ $(document).ready(function() {
     $('.article-create-lesson .navbar-nav .btn-close').removeClass('d-none');
     $('.article-create-lesson .form-lesson-attributes').addClass('d-none');
     $('.article-create-lesson .article-lesson-resources').removeClass('d-none');
+
+    var tree = $('.article-lesson-resources .tree-resources').get(0);
+    var sortable = Sortable.create(tree, {
+      animation: 350,
+      onStart: function(e) {
+        console.log(e.oldIndex, e.newIndex);
+      },
+      onSort: function(e) {
+        console.log(e.oldIndex, e.newIndex);
+      }
+    });
   });
 
   $('.article-lesson-resources .nav-main .nav-link').on('click', function(e) {
@@ -338,6 +357,18 @@ $(document).ready(function() {
     $('.article-lesson-resources .navbar:not(.nav-main) .btn-add-resource').removeClass('d-none');
     $('.article-lesson-resources .table-head').removeClass('d-none');
     $('.article-lesson-resources .table-body').removeClass('d-none');
+
+    var tbody = $('.article-lesson-resources .table-body tbody').get(0);
+    var sortable = Sortable.create(tbody, {
+      animation: 350,
+      handle: '.btn-handle',
+      onStart: function(e) {
+        console.log(e.oldIndex, e.newIndex);
+      },
+      onSort: function(e) {
+        console.log(e.oldIndex, e.newIndex);
+      }
+    });
   });
   
   $('.article-lesson-resources .article-sidebar .btn-edit-lesson').on('click', function(e) {

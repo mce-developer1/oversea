@@ -1,60 +1,4 @@
 $(document).ready(function() {
-  window._logStore = window._logStore || {
-    endpoint: '/logging',
-    failures: 0,
-    maxFailures: 3,
-    bufferSize: 1,
-    argumentsSize: 3,
-    messages: [],
-    save: function() {
-      var self = this;
-      if (arguments.length < self.argumentsSize) return;
-
-      var formatted = {
-        module: arguments[0].trim(),
-        action: arguments[1].trim(),
-        params: arguments[2].trim()
-      }
-      self.messages.push(formatted);
-      if (self.messages.length >= self.bufferSize) self.send();
-    },
-    send: function() {
-      var self = this;
-      if (self.messages.length === 0) return;
-
-      var json = JSON.stringify(self.messages);
-      $.post(self.endpoint, { messages: json })
-        .done(function(data) {
-          self.failures = 0;
-          self.messages = [];
-        })
-        .fail(function(data) {
-          self.failures++;
-          if (self.failures !== self.maxFailures) {
-            var delay = (1000 * self.failures);
-            setTimeout(function() {
-              self.send.apply(self);
-            }, delay);
-          } else {
-            self.failures = 0;
-          }
-        });
-    }
-  };
-
-  if (log && log.methodFactory) {
-    var originalFactory = log.methodFactory;
-    log.methodFactory = function (methodName, logLevel, loggerName) {
-        var rawMethod = originalFactory(methodName, logLevel, loggerName);
-        return function () {
-          var logStore = window._logStore;
-          logStore.save.apply(logStore, arguments);
-          rawMethod.apply(undefined, arguments);
-        };
-    };
-    log.setLevel('info');
-  }
-
   $(document).on('click', '[data-toggle="password"]', function(e) {
     var icon = $(this).find('.fas');
     $(icon).toggleClass('fa-eye-slash');
@@ -133,6 +77,62 @@ $(document).ready(function() {
       });
     }
   });
+
+	window._logStore = window._logStore || {
+    endpoint: '/logging',
+    failures: 0,
+    maxFailures: 3,
+    bufferSize: 1,
+    argumentsSize: 3,
+    logs: [],
+    save: function() {
+      var self = this;
+      if (arguments.length < self.argumentsSize) return;
+
+      var formatted = {
+        module: arguments[0].trim(),
+        action: arguments[1].trim(),
+        params: arguments[2].trim()
+      }
+      self.logs.push(formatted);
+      if (self.logs.length >= self.bufferSize) self.send();
+    },
+    send: function() {
+      var self = this;
+      if (self.logs.length === 0) return;
+
+      var json = JSON.stringify({ logs: self.logs });
+      $.post(self.endpoint, { data: json })
+        .done(function(data) {
+          self.failures = 0;
+          self.logs = [];
+        })
+        .fail(function(data) {
+          self.failures++;
+          if (self.failures !== self.maxFailures) {
+            var delay = (1000 * self.failures);
+            setTimeout(function() {
+              self.send.apply(self);
+            }, delay);
+          } else {
+            self.failures = 0;
+          }
+        });
+    }
+  };
+
+  if (log && log.methodFactory) {
+    var originalFactory = log.methodFactory;
+    log.methodFactory = function (methodName, logLevel, loggerName) {
+        var rawMethod = originalFactory(methodName, logLevel, loggerName);
+        return function () {
+          var logStore = window._logStore;
+          logStore.save.apply(logStore, arguments);
+          rawMethod.apply(undefined, arguments);
+        };
+    };
+    log.setLevel('info');
+  }
 
   $(window).on('unload', function(e) {
     window._logStore.send();

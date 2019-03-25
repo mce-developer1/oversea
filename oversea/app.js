@@ -29,6 +29,7 @@ app.use('/static/daterangepicker', express.static(path.join(__dirname, 'node_mod
 app.use('/static/datatables', express.static(path.join(__dirname, 'node_modules/datatables/media')));
 app.use('/static/autocomplete.js', express.static(path.join(__dirname, 'node_modules/autocomplete.js/dist')));
 app.use('/static/fine-uploader', express.static(path.join(__dirname, 'node_modules/fine-uploader/jquery.fine-uploader')));
+app.use('/static/sortablejs', express.static(path.join(__dirname, 'node_modules/sortablejs')));
 
 app.use('/', require('./routes/index'));
 

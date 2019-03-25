@@ -71,6 +71,13 @@ a {
     background-color: $gray-300;
     border-color: $gray-300;
   }
+
+  &.btn-handle {
+    &:not(:disabled):not(.disabled):active {
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
 }
 
 .btn-outline-primary {
@@ -329,15 +336,15 @@ a {
 
     &.active {
       a {
-        color: $gray-700;
-
         &:hover {
           background-color: transparent;
+          cursor: default;
         }
       }
     }
 
     a {
+      color: $gray-700;
       padding: .5rem;
 
       &:hover {

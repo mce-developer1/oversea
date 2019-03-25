@@ -278,24 +278,6 @@
         }
       }
 
-      @media (min-width: 1200px) {
-        .article-content {
-          .article-body {
-            .table-head,
-            .table-body {
-              colgroup:nth-child(8) {
-                display: none;
-              }
-
-              th:nth-child(8),
-              td:nth-child(8) {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-
       @media (min-width: 992px) {
         .article-header {
           position: -webkit-sticky;
@@ -347,6 +329,24 @@
                 position: sticky;
                 top: 10rem;
                 z-index: 970;
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(8) {
+                display: none;
+              }
+
+              th:nth-child(8),
+              td:nth-child(8) {
+                display: none;
               }
             }
           }
@@ -440,6 +440,14 @@
                   .btn-light {
                     margin: 0 .25rem;
                   }
+
+                  .fas {
+                    &.fa-folder-plus {
+                      color: $primary;
+                      font-size: 1.5rem;
+                      min-width: 2rem;
+                    }
+                  }
                 }
               }
 
@@ -513,7 +521,7 @@
 
                 .table {
                   @include user-select(none);
-      
+
                   &.table-head {
                     margin-bottom: 0;
                   }
@@ -536,6 +544,10 @@
                     .btn-light {
                       padding: .325rem;
                       margin: -.5rem 0;
+
+                      &.btn-handle {
+                        padding: .25rem .5rem;
+                      }
 
                       .fa-eye,
                       .fa-eye-slash {
@@ -580,6 +592,15 @@
           }
         }
       }
+
+      @media (min-width: 992px) {
+        .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 6rem;
+          z-index: 980;
+        }
+      }
     }
   }
 }
@@ -606,6 +627,6 @@
           }
         }
       }
-    }
+    }    
   }
 }
