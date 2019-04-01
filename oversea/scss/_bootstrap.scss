@@ -282,8 +282,6 @@ a {
     border: 0;
     border-radius: 0;
     box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
-    max-height: 320px;
-    overflow-y: auto;
 
     .dropdown-item {
       padding: .5rem 1.5rem;
@@ -571,14 +569,12 @@ a {
               @include display-flex(row);
               @include flex-wrap(none);
 
-              .nav-item {
-                .btn {
-                  margin: 0 .25rem;
-                  padding: .325rem .5rem;
+              .btn-light {
+                margin: 0 .25rem;
+                padding: .325rem .5rem;
 
-                  .fas {
-                    font-size: 1.5rem;
-                  }
+                .fas {
+                  font-size: 1.5rem;
                 }
               }
             }

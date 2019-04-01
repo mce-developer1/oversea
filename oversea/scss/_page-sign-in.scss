@@ -203,6 +203,33 @@
       }
     }
 
+    .form-reset-password {
+      max-width: 36rem;
+
+      .form-group {
+        @include display-flex(row);
+        @include align-items(flex-start);
+
+        &.form-group-actions {
+          margin-left: 14rem;
+        }
+
+        .form-group {
+          @include flex-grow(1);
+          @include flex-wrap(wrap);
+        }
+
+        .form-label {
+          min-width: 14rem;
+          width: 14rem;
+        }
+
+        .form-text {
+          margin-top: 0;
+        }
+      }
+    }
+
     .form-distributor-registration,
     .form-school-registration {
       padding: 2rem;
@@ -273,8 +300,8 @@
             margin-right: 6rem;
 
             &:first-child {
-              @include justify-content(center);
-              margin-right: 0;
+              @include justify-content(flex-start);
+              margin-left: 6rem;
             }
           }
         }

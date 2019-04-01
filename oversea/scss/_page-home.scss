@@ -57,7 +57,7 @@
               background-color: $accent;
               border-color: $accent;
               height: 3rem;
-              padding: .5rem .75rem;
+              padding: .5rem 1rem;
 
               &:hover {
                 .fa-chevron-left,
@@ -71,7 +71,15 @@
               .fa-chevron-right,
               .fa-filter {
                 color: $gray-200;
+              }
+
+              .fa-chevron-left,
+              .fa-chevron-right {
                 font-size: 1.5rem;
+              }
+
+              .fa-filter {
+                font-size: 1.25rem;
               }
             }
           }
@@ -102,6 +110,17 @@
                 padding: 0 1.5rem;
               }
             }
+          }
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .article-content {
+          .article-sidebar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 5rem;
+            z-index: 980;
           }
         }
       }
@@ -148,6 +167,27 @@
             -o-transition: height .35s;
             transition: height .35s;
 
+            &.dialog {
+              overflow: initial;
+
+             .dialog-menu {
+                margin: 0 .5rem;
+                padding-top: 1.5rem;
+
+                &.form-filters {
+                  .form-group {
+                    @include display-flex(row);
+                    @include align-items(flex-start);
+  
+                    .form-label {
+                      min-width: 8rem;
+                      width: 8rem;
+                    }
+                  }
+                }
+              }
+            }
+
             .navbar {
               background-color: $gray-200;
               border-color: $gray-200;
@@ -160,6 +200,10 @@
                   .fa-filter {
                     color: $gray-900;
                   }
+                }
+
+                .btn-toggle {
+                  display: none;
                 }
 
                 .fa-chevron-left,
@@ -210,18 +254,12 @@
       @media (min-width: 768px) {
         .article-content {
           .article-sidebar {
-            height: calc(100vh - 9rem);
+            height: calc(100vh - 8rem);
             margin: 0 0 0 -1.5rem;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 6rem;
-            z-index: 980;
-
+            
             .navbar {
-              .btn-light {
-                .fa-filter {
-                  display: none;
-                }
+              .btn-dialog {
+                display: none;
               }
             }
 
@@ -230,6 +268,18 @@
               overflow-x: hidden;
               overflow-y: auto;
             }
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        .article-content {
+          .article-sidebar {
+            height: calc(100vh - 9rem);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 6rem;
+            z-index: 980;
           }
         }
       }

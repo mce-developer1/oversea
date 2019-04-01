@@ -6,9 +6,11 @@
           {{#unless studentUser}}
             <div class="article-sidebar">
               <div class="navbar">
-                <button class="btn btn-light" type="button" data-toggle="sidebar" data-target=".article-resources">
+                <button class="btn btn-light btn-toggle" type="button" data-toggle="sidebar" data-target=".article-resources">
                   <i class="fas fa-chevron-left"></i>
                   <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="btn btn-light btn-dialog" type="button" data-toggle="dialog" data-target=".form-filters">
                   <i class="fas fa-filter"></i>
                 </button>
               </div>
@@ -36,7 +38,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label class="form-label" for="selCurriculum">Curriculum Standards</label>
+                  <label class="form-label" for="selCurriculum">Curriculum</label>
                   <select class="form-control selectpicker" id="selCurriculum" data-container=".article-sidebar">
                     <option>All</option>
                     <option>CAIE</option>

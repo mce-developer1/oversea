@@ -30,7 +30,19 @@ $(document).ready(function() {
     location.href = '/' + userRole + '/channel';
   });
 
+  $(window).on('resize', function(e) {
+    if ($(window).width() < 768) {
+      $('.article-resources .article-sidebar').addClass('dialog');
+      $('.article-resources .article-sidebar .form-filters').addClass('dialog-menu');
+    } else {
+      $('.article-resources .article-sidebar').removeClass('dialog');
+      $('.article-resources .article-sidebar .form-filters').removeClass('dialog-menu');
+    }
+  });
+
   if ($(window).width() < 768) {
     $('.article-resources').addClass('collapse-sidebar');
+    $('.article-resources .article-sidebar').addClass('dialog');
+    $('.article-resources .article-sidebar .form-filters').addClass('dialog-menu');
   }
 });

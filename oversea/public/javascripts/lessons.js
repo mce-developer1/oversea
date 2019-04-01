@@ -311,8 +311,8 @@ $(document).ready(function() {
         $('.article-create-lesson .article-header .btn-edit').removeClass('d-none');
       }
 
-      if ($('.article-create-lesson .article-header .btn-move').hasClass('d-none')) {
-        $('.article-create-lesson .article-header .btn-move').removeClass('d-none');
+      if ($('.article-create-lesson .article-header .btn-move-to').hasClass('d-none')) {
+        $('.article-create-lesson .article-header .btn-move-to').removeClass('d-none');
       }
 
       if ($('.article-create-lesson .article-header .divider-preview').hasClass('d-none')) {
@@ -323,8 +323,8 @@ $(document).ready(function() {
         $('.article-create-lesson .article-header .btn-edit').addClass('d-none');
       }
 
-      if (!$('.article-create-lesson .article-header .btn-move').hasClass('d-none')) {
-        $('.article-create-lesson .article-header .btn-move').addClass('d-none');
+      if (!$('.article-create-lesson .article-header .btn-move-to').hasClass('d-none')) {
+        $('.article-create-lesson .article-header .btn-move-to').addClass('d-none');
       }
 
       if (!$('.article-create-lesson .article-header .divider-preview').hasClass('d-none')) {
@@ -335,9 +335,14 @@ $(document).ready(function() {
 
   $('.form-lesson-attributes .btn-create').on('click', function(e) {
     $('.article-create-lesson .navbar-nav .btn-preview').removeClass('d-none');
+    $('.article-create-lesson .navbar-nav .divider-close').removeClass('d-none');
     $('.article-create-lesson .navbar-nav .btn-close').removeClass('d-none');
-    $('.article-create-lesson .form-lesson-attributes').addClass('d-none');
+    $('.article-create-lesson .form-lesson-attributes').addClass('d-none');    
     $('.article-create-lesson .article-lesson-resources').removeClass('d-none');
+
+    if ($(window).width() < 768) {
+      $('.article-create-lesson .btn-more').removeClass('d-none');
+    }
 
     var tree = $('.article-lesson-resources .tree-resources').get(0);
     var sortable = Sortable.create(tree, {
@@ -352,9 +357,10 @@ $(document).ready(function() {
   });
 
   $('.article-lesson-resources .nav-main .nav-link').on('click', function(e) {
-    $('.article-lesson-resources .nav-main').addClass('d-none');
+    $('.article-lesson-resources .nav-main').removeClass('show');
     $('.article-lesson-resources .navbar:not(.nav-main)').removeClass('d-none');
     $('.article-lesson-resources .navbar:not(.nav-main) .btn-add-resource').removeClass('d-none');
+    $('.article-lesson-resources .navbar:not(.nav-main) .btn-actions').removeClass('d-none');
     $('.article-lesson-resources .table-head').removeClass('d-none');
     $('.article-lesson-resources .table-body').removeClass('d-none');
 
@@ -375,9 +381,7 @@ $(document).ready(function() {
     $('.modal-lesson-edit-attributes').modal('show');
   });
 
-  $('.article-lesson-resources .article-sidebar .item-add-folder').on('click', function(e) {
-    $('.modal-lesson-folder-create .modal-title').text('New Folder');
-    $('.modal-lesson-folder-create .btn-primary').text('Create');
+  $('.article-lesson-resources .article-sidebar .btn-add-folder').on('click', function(e) {
     $('.modal-lesson-folder-create').modal('show');
   });
 
@@ -385,8 +389,12 @@ $(document).ready(function() {
     $('.modal-lesson-folder-edit').modal('show');
   });
 
+  $('.article-lesson-resources .article-body .item-add-resource').on('click', function(e) {
+    $('.article-lesson-resources .nav-main').collapse('show');
+  });
+
   $('.article-lesson-resources .article-body .item-add-mylibrary').on('click', function(e) {
-    $('.modal-lesson-resource-add').modal('show');
+    $('.modal-library-resource').modal('show');
   });
 
   $('.article-lesson-resources .table-body tr').on('click', function(e) {
@@ -460,19 +468,19 @@ $(document).ready(function() {
     }
 
     if ($(window).width() < 768) {
-      if (!$('.btn-more').hasClass('d-block')) {
-        $('.btn-more').addClass('d-block');
+      if ($('.article-lesson-resources').hasClass('d-none')) {
+        $('.article-create-lesson .btn-more').removeClass('d-block');
+      } else {
+        $('.article-create-lesson .btn-more').addClass('d-none');
       }
-    } else if ($('.btn-more').hasClass('d-block')) {
-      $('.btn-more').removeClass('d-block');
     }
   });
 
   if ($(window).width() < 768) {
-    if (!$('.btn-more').hasClass('d-block')) {
-      $('.btn-more').addClass('d-block');
+    if ($('.article-lesson-resources').hasClass('d-none')) {
+      $('.article-create-lesson .btn-more').removeClass('d-block');
+    } else {
+      $('.article-create-lesson .btn-more').addClass('d-none');
     }
-  } else if ($('.btn-more').hasClass('d-block')) {
-    $('.btn-more').removeClass('d-block');
   }
 });

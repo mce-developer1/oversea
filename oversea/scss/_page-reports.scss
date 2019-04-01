@@ -70,7 +70,15 @@
               .fa-chevron-right,
               .fa-filter {
                 color: $gray-200;
+              }
+
+              .fa-chevron-left,
+              .fa-chevron-right {
                 font-size: 1.5rem;
+              }
+
+              .fa-filter {
+                font-size: 1.25rem;
               }
             }
           }
@@ -120,6 +128,17 @@
                 font-size: 1.5rem;
               }
             }
+          }
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .article-content {
+          .article-sidebar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 5rem;
+            z-index: 980;
           }
         }
       }
@@ -201,12 +220,8 @@
       @media (min-width: 768px) {
         .article-content {
           .article-sidebar {
-            height: calc(100vh - 9rem);
+            height: calc(100vh - 8rem);
             margin: 0 0 0 -1.5rem;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 6rem;
-            z-index: 980;
 
             .navbar {
               .btn-light {
@@ -234,6 +249,18 @@
                 }
               }
             }
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        .article-content {
+          .article-sidebar {
+            height: calc(100vh - 9rem);
+            position: -webkit-sticky;
+            position: sticky;
+            top: 6rem;
+            z-index: 980;
           }
         }
       }

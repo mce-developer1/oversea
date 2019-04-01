@@ -42,7 +42,17 @@
                   img {
                     width: 3rem;
                   }
-                }  
+                }
+              }
+
+              &.nav-item-submodule {
+                .btn-light {
+                  font-size: 1.25rem;
+
+                  .fas {
+                    font-size: 1.25rem;
+                  }
+                }
               }
 
               .btn-light {
@@ -277,9 +287,9 @@
             @include justify-content(space-between);
             padding: .75rem 0;
 
-            .nav-item {
-              .btn {
-                margin-left: .5rem;
+            .navbar-nav {
+              .btn-primary {
+                margin-left: 1rem;
               }
             }
           }
@@ -410,6 +420,12 @@
 
       @media (max-width: 991.98px) {
         .article-header {
+          margin: 0 -.5rem;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 5rem;
+          z-index: 980;
+
           .navbar {
             @include justify-content(space-between);
             padding: 1rem;
@@ -419,14 +435,24 @@
                 display: none;
               }
 
-              .nav-item-drawer {
+              .nav-divider {
                 display: none;
               }
 
               .nav-item {
-                .item-text {
-                  width: 40vw;
+                &.dropdown {
+                  order: 1;
                 }
+
+                .btn-edit,
+                .btn-share,
+                .btn-download {
+                  display: none;
+                }
+              }
+
+              .nav-item-drawer {
+                display: none;
               }
 
               .input-group {
@@ -449,19 +475,21 @@
         }
 
         .article-content {
+          margin: 0 -.5rem;
+
           .article-sidebar {
             display: none;
           }
 
           .article-body {
             margin: 0;
-          }
-        }
-      }
 
-      @media (max-width: 768px) {
-        .article-content {
-          .article-body {
+            .navbar {
+              .breadcrumb {
+                display: none;
+              }
+            }
+
             .table-head,
             .table-body {
               colgroup:nth-child(3),
@@ -478,40 +506,6 @@
                 }
               }
             }
-          }
-        }
-      }
-
-      @media (max-width: 767.98px) {
-        .article-header {
-          .navbar {
-            .navbar-nav {
-              .nav-divider {
-                display: none;
-              }
-
-              .nav-item {
-                &.dropdown {
-                  order: 1;
-                }
-
-                .btn-edit,
-                .btn-share,
-                .btn-download {
-                  display: none;
-                }
-              }
-            }
-          }
-        }
-
-        .article-content {
-          margin: 0 -.5rem;
-
-          .article-body {
-            .navbar {
-              display: none;
-            }
 
             .card-group {
               padding: .675rem .25rem;
@@ -527,7 +521,7 @@
           }
         }
       }
-
+      
       @media (max-width: 576px) {
         .article-header {
           .navbar {
@@ -582,6 +576,8 @@
                   display: none;
                 }
               }
+
+              .nav-item-submodule,
               .nav-item-result {
                 display: none;
               }
@@ -613,21 +609,19 @@
           }
 
           .article-body {
-            .table {
-              &.table-head {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 10rem;
-                z-index: 970;
+            .navbar {
+              .navbar-text {
+                display: none;
               }
             }
-          }
-        }
-      }
 
-      @media (min-width: 768px) {
-        .article-content {
-          .article-body {
+            .table-head {
+              position: -webkit-sticky;
+              position: sticky;
+              top: 10rem;
+              z-index: 970;
+            }
+
             .table-head,
             .table-body {
               colgroup:nth-child(7) {

@@ -142,7 +142,7 @@ $(document).ready(function() {
           }
 
           for (var j = 0; j < barLabelRects.length; j++) {
-            var barLabelRect = barLabelRects[i];
+            var barLabelRect = barLabelRects[j];
             if (barLabelRect.getAttribute('data-x')) continue;
             var barLabelRectX = parseFloat(barLabelRect.getAttribute('x'));
             var availLabelWidth = (imgWidth - (barLabelRectX - startX)) + 10;
@@ -238,7 +238,9 @@ $(document).ready(function() {
       ['Subtraction Within 10', 55, getBarColor(55), 'Halfway There!'],
       ['Shapes And Patterns', 40, getBarColor(40), 'Good Progress!'],
       ['Ordinal Numbers And Position', 30, getBarColor(30), 'You Can Do It!'],
-      ['Numbers To 20', 10, getBarColor(10), 'Just Getting Started']
+      ['Numbers To 20', 5, getBarColor(10), 'Just Getting Started'],
+      ['Numbers To 20', 10, getBarColor(10), 'Just Getting Started'],
+      ['Numbers To 20', 15, getBarColor(10), 'Just Getting Started']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     

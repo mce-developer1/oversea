@@ -11,8 +11,19 @@
                 </button>
                 <span class="item-text text-truncate">Resource Bank</span>
               </li>
+              <li class="nav-item nav-item-submodule dropdown d-none">
+                <button class="btn btn-light" type="button" data-toggle="dropdown">
+                  My Resources <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/{{userRole}}/lessons/lessons">My Resources</a>
+                  <a class="dropdown-item" href="/{{userRole}}/lessons/share_with_me">Share with Me</a>
+                  <a class="dropdown-item" href="/{{userRole}}/lessons/share_by_me">Share by Me</a>
+                  <a class="dropdown-item" href="/{{userRole}}/lessons/lesson_bank">Resource Bank</a>
+                </div>
+              </li>
               <li class="nav-item nav-item-result">
-                <button class="btn btn-light" type="button">
+                <button class="btn btn-light btn-back" type="button">
                   <i class="fas fa-arrow-left"></i>
                 </button>
                 <span class="item-text text-truncate" title="Numbers To 10">Numbers To 10</span>
@@ -104,13 +115,6 @@
                   <i class="fas fa-ellipsis-v"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item item-new-folder" href="#">
-                    <i class="fas fa-folder-plus"></i> New folder
-                  </a>
-                  <a class="dropdown-item item-upload-file" href="#">
-                    <i class="fas fa-upload"></i> Upload file
-                  </a>
-                  <div class="dropdown-divider divider-manage-revisions"></div>
                   <a class="dropdown-item item-manage-revisions" href="#">
                     <i class="fas fa-history"></i> Manage fevisions
                   </a>
@@ -164,50 +168,104 @@
                 <a href="#" title="Primary 1 Math Buddies" class="expanded">
                   <i class="fas fa-chevron-down"></i>
                   <i class="fas fa-folder-open"></i>
-                  <span class="text-truncate">Primary 1 Math Buddies</span>
+                  <span class="text-truncate">My Resources</span>
                 </a>
                 <div class="resources show">
-                  <div class="resource active">
-                    <a href="#" title="Numbers To 10" class="collapsed">
+                  <div class="resource">
+                    <a href="#" title="Primary 1 Math Buddies" class="expanded">
                       <i class="fas fa-chevron-down"></i>
                       <i class="fas fa-folder-open"></i>
-                      <span class="text-truncate">Numbers To 10</span>
+                      <span class="text-truncate">Primary 1 Math Buddies</span>
                     </a>
                     <div class="resources show">
-                      <div class="resource">
-                        <a href="#" title="Counting To 10" class="collapsed">
-                          <i class="fas fa-chevron-right"></i>
-                          <i class="fas fa-folder"></i>
-                          <span class="text-truncate">Counting To 10</span>
+                      <div class="resource active">
+                        <a href="#" title="Numbers To 10" class="collapsed">
+                          <i class="fas fa-chevron-down"></i>
+                          <i class="fas fa-folder-open"></i>
+                          <span class="text-truncate">Numbers To 10</span>
                         </a>
-                        <div class="resources hide">
+                        <div class="resources show">
+                          <div class="resource">
+                            <a href="#" title="Counting To 10" class="collapsed">
+                              <i class="fas fa-chevron-right"></i>
+                              <i class="fas fa-folder"></i>
+                              <span class="text-truncate">Counting To 10</span>
+                            </a>
+                            <div class="resources hide">
+                            </div>
+                          </div>
+                          <div class="resource">
+                            <a href="#" title="Comparing Numbers" class="collapsed">
+                              <i class="fas fa-chevron-right"></i>
+                              <i class="fas fa-folder"></i>
+                              <span class="text-truncate">Comparing Numbers</span>
+                            </a>
+                            <div class="resources hide">                              
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="resource">
-                        <a href="#" title="Comparing Numbers" class="collapsed">
+                        <a href="#" title="Number Bonds" class="collapsed">
                           <i class="fas fa-chevron-right"></i>
                           <i class="fas fa-folder"></i>
-                          <span class="text-truncate">Comparing Numbers</span>
+                          <span class="text-truncate">Number Bonds</span>
                         </a>
-                        <div class="resources hide">                              
+                        <div class="resources hide">                      
+                        </div>
+                      </div>
+                      <div class="resource">
+                        <a href="#" title="Addition Within 10" class="collapsed">
+                          <i class="fas fa-chevron-right"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Addition Within 10</span>
+                        </a>
+                        <div class="resources hide">                      
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="resource">
-                    <a href="#" title="Number Bonds" class="collapsed">
+                    <a href="#" title="Primary 2 Math Buddies" class="collapsed">
                       <i class="fas fa-chevron-right"></i>
                       <i class="fas fa-folder"></i>
-                      <span class="text-truncate">Number Bonds</span>
+                      <span class="text-truncate">Primary 2 Math Buddies</span>
                     </a>
                     <div class="resources hide">                      
                     </div>
                   </div>
                   <div class="resource">
-                    <a href="#" title="Addition Within 10" class="collapsed">
+                    <a href="#" title="Primary 3 Math Buddies" class="collapsed">
                       <i class="fas fa-chevron-right"></i>
                       <i class="fas fa-folder"></i>
-                      <span class="text-truncate">Addition Within 10</span>
+                      <span class="text-truncate">Primary 3 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 4 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 4 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 5 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 5 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 6 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 6 Math Buddies</span>
                     </a>
                     <div class="resources hide">                      
                     </div>
@@ -215,46 +273,37 @@
                 </div>
               </div>
               <div class="resource">
-                <a href="#" title="Primary 2 Math Buddies" class="collapsed">
+                <a href="#" title="Share with Me" class="collapsed">
                   <i class="fas fa-chevron-right"></i>
                   <i class="fas fa-folder"></i>
-                  <span class="text-truncate">Primary 2 Math Buddies</span>
+                  <span class="text-truncate">Share with Me</span>
                 </a>
                 <div class="resources hide">                      
                 </div>
               </div>
               <div class="resource">
-                <a href="#" title="Primary 3 Math Buddies" class="collapsed">
+                <a href="#" title="Share by Me" class="collapsed">
                   <i class="fas fa-chevron-right"></i>
                   <i class="fas fa-folder"></i>
-                  <span class="text-truncate">Primary 3 Math Buddies</span>
+                  <span class="text-truncate">Share by Me</span>
                 </a>
                 <div class="resources hide">                      
                 </div>
               </div>
               <div class="resource">
-                <a href="#" title="Primary 4 Math Buddies" class="collapsed">
+                <a href="#" title="Resource Bank" class="collapsed">
                   <i class="fas fa-chevron-right"></i>
                   <i class="fas fa-folder"></i>
-                  <span class="text-truncate">Primary 4 Math Buddies</span>
+                  <span class="text-truncate">Resource Bank</span>
                 </a>
                 <div class="resources hide">                      
                 </div>
               </div>
               <div class="resource">
-                <a href="#" title="Primary 5 Math Buddies" class="collapsed">
+                <a href="#" title="Trash" class="collapsed">
                   <i class="fas fa-chevron-right"></i>
                   <i class="fas fa-folder"></i>
-                  <span class="text-truncate">Primary 5 Math Buddies</span>
-                </a>
-                <div class="resources hide">                      
-                </div>
-              </div>
-              <div class="resource">
-                <a href="#" title="Primary 6 Math Buddies" class="collapsed">
-                  <i class="fas fa-chevron-right"></i>
-                  <i class="fas fa-folder"></i>
-                  <span class="text-truncate">Primary 6 Math Buddies</span>
+                  <span class="text-truncate">Trash</span>
                 </a>
                 <div class="resources hide">                      
                 </div>
@@ -269,12 +318,16 @@
             </div>
             <div class="empty-state d-none">Oops, nothing to see here!</div>
             <nav class="navbar navbar-expand">
+              <div class="navbar-text">8 records found</div>
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#">Primary 1 Math Buddies</a>
+                  <a href="#" title="My Resources">My Resources</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a href="#" title="Primary 1 Math Buddies">Primary 1 Math Buddies</a>
                 </li>
                 <li class="breadcrumb-item active">
-                  <a href="#">Numbers To 10</a>
+                  <a href="#" title="Numbers To 10">Numbers To 10</a>
                 </li>
               </ol>
               <ul class="navbar-nav">

@@ -21,6 +21,7 @@
     "debug": "~2.6.9",
     "express": "^4.16.4",
     "hbs": "~4.0.1",
+    "html5sortable": "^0.9.10",
     "http-errors": "~1.6.2",
     "i18next": "^11.10.2",
     "jquery": "^3.3.1",

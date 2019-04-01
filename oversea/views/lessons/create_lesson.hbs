@@ -16,30 +16,9 @@
                 </button>
               </li>
               <li class="nav-item">
-                <button class="btn btn-light btn-move d-none" type="button" title="Move to">
+                <button class="btn btn-light btn-move-to d-none" type="button" title="Move to">
                   <i class="fas fa-folder"></i>
                 </button>
-              </li>
-              <li class="nav-item dropdown">
-                <button class="btn btn-light btn-more d-none" type="button" title="More actions" data-toggle="dropdown">
-                  <i class="fas fa-ellipsis-v"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item item-add-resource" href="#">
-                    <i class="fas fa-plus"></i> Add Resource
-                  </a>
-                  <div class="dropdown-divider divider-edit"></div>
-                  <a class="dropdown-item item-edit" href="#">
-                    <i class="fas fa-edit"></i> Edit
-                  </a>
-                  <a class="dropdown-item item-move" href="#">
-                    <i class="fas fa-copy"></i> Move to
-                  </a>
-                  <div class="dropdown-divider divider-close"></div>
-                  <a class="dropdown-item item-close" href="#">
-                    <i class="fas fa-times"></i> Close
-                  </a>
-                </div>
               </li>
               <li class="nav-divider divider-preview d-none"></li>
               <li class="nav-item">
@@ -47,7 +26,6 @@
                   <i class="fas fa-eye"></i>
                 </button>
               </li>
-              <li class="nav-divider divider-close"></li>
               <li class="nav-item">
                 <button class="btn btn-light btn-close d-none" type="button" title="Close">
                   <i class="fas fa-times"></i>
@@ -119,46 +97,53 @@
             <div class="article article-lesson-resources d-none">
               <div class="article-content">
                 <div class="article-sidebar">
-                  <nav class="navbar">
+                  <nav class="navbar navbar-expand">
                     <div class="navbar-text text-truncate" title="P1-Maths Addition">P1-Maths Addition</div>
                     <button class="btn btn-light btn-edit-lesson" type="button" title="Edit">
                       <i class="fas fa-edit"></i>
                     </button>
                   </nav>
-                  <div class="tree tree-resources">
-                    <div class="resource active">
-                      <a href="#" title="Counting To 10" class="expanded">
-                        <i class="fas fa-folder-open"></i>
-                        <i class="fas fa-folder"></i>
-                        <span class="text-truncate">Counting To 10</span>
-                      </a>
-                    </div>
-                    <div class="resource">
-                      <a href="#" title="Comparing Numbers" class="collapsed">
-                        <i class="fas fa-folder-open"></i>
-                        <i class="fas fa-folder"></i>
-                        <span class="text-truncate">Comparing Numbers</span>
-                      </a>
-                    </div>
-                    <div class="resource">
-                      <a href="#" title="Making Number Patterns" class="collapsed">
-                        <i class="fas fa-folder-open"></i>
-                        <i class="fas fa-folder"></i>
-                        <span class="text-truncate">Making Number Patterns</span>
-                      </a>
-                    </div>
-                  </div>
                   <nav class="navbar">
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-folder-plus"></i> Add Folder
+                    <button class="btn btn-outline-secondary btn-folders collapsed" type="button" data-toggle="collapse" href="#folders">
+                      <span class="text-view-folders">View folders</span>
+                      <span class="text-hide-folders">Hide folders</span>
+                      <i class="fas fa-caret-down"></i>
                     </button>
                   </nav>
+                  <div class="collapse collapse-folders" id="folders">
+                    <div class="tree tree-resources">
+                      <div class="resource active">
+                        <a href="#" title="Counting To 10" class="expanded">
+                          <i class="fas fa-folder-open"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Counting To 10</span>
+                        </a>
+                      </div>
+                      <div class="resource">
+                        <a href="#" title="Comparing Numbers" class="collapsed">
+                          <i class="fas fa-folder-open"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Comparing Numbers</span>
+                        </a>
+                      </div>
+                      <div class="resource">
+                        <a href="#" title="Making Number Patterns" class="collapsed">
+                          <i class="fas fa-folder-open"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Making Number Patterns</span>
+                        </a>
+                      </div>
+                    </div>
+                    <button class="btn btn-light btn-add-folder" type="button">
+                      <i class="fas fa-folder-plus"></i> Add Folder
+                    </button>
+                  </div>
                 </div>
-                <div class="article-body">                  
+                <div class="article-body">
                   <nav class="navbar navbar-expand">
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <div class="item-text text-truncate">Counting To 10</div>
+                        <div class="item-text text-truncate" title="Counting To 10">Counting To 10</div>
                         <button class="btn btn-light btn-edit-folder" type="button" title="Edit">
                           <i class="fas fa-edit"></i>
                         </button>
@@ -193,11 +178,28 @@
                           </a>
                         </div>
                       </li>
+                      <li class="nav-item dropdown">
+                        <button class="btn btn-primary btn-actions d-none" type="button" data-toggle="dropdown">
+                          Actions <i class="fas fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                          <a class="dropdown-item item-add-resource" href="#">
+                            <i class="fas fa-plus"></i> Add Resource
+                          </a>
+                          <div class="dropdown-divider divider-edit"></div>
+                          <a class="dropdown-item item-edit" href="#">
+                            <i class="fas fa-edit"></i> Edit
+                          </a>
+                          <a class="dropdown-item item-move-to" href="#">
+                            <i class="fas fa-copy"></i> Move to
+                          </a>
+                        </div>
+                      </li>
                     </ul>
                   </nav>
-                  <nav class="navbar nav-main">
+                  <nav class="navbar nav-main collapse show">
                     <div class="navbar-text">
-                      Your folder is empty. What would you like to add to the folder?
+                      What would you like to add to the folder?
                     </div>
                     <ul class="navbar-nav">
                       <li class="nav-item">
@@ -242,7 +244,7 @@
                     <colgroup width="50px"></colgroup>
                     <colgroup width="auto"></colgroup>
                     <colgroup width="160px"></colgroup>
-                    <colgroup width="120px"></colgroup>
+                    <colgroup width="100px"></colgroup>
                     <thead>
                       <tr>
                         <th>&nbsp;</th>
@@ -269,7 +271,7 @@
                     <colgroup width="50px"></colgroup>
                     <colgroup width="auto"></colgroup>
                     <colgroup width="160px"></colgroup>
-                    <colgroup width="120px"></colgroup>
+                    <colgroup width="100px"></colgroup>
                     <tbody>
                       <tr>
                         <td>
@@ -362,7 +364,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">New Folder</h5>
+        <h5 class="modal-title">Edit Attributes</h5>
         <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -441,7 +443,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-create-folder">
+        <form class="form-edit-folder">
           <div class="form-group">
             <label class="form-label" for="txtName">Name</label>
             <div class="form-group">
@@ -497,12 +499,21 @@
   </div>
 </div>
 
-<div class="modal modal-resource-add modal-lesson-resource-add fade" tabindex="-1" role="dialog" data-backdrop="static">
+<div class="modal modal-resource-add modal-library-resource fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-preview" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <nav class="navbar">
-          <div class="navbar-text text-truncate">My Library</div>
+          <div class="navbar-text text-truncate">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <div class="text-truncate">Add Resource</div>
+                </li>
+                <li class="breadcrumb-item">
+                  <div class="text-truncate">My Library</div>
+                </li>
+              </ol>
+          </div>
           <ul class="navbar-nav">
             <li class="nav-item">
               <button class="btn btn-light btn-close" type="button" title="Close" data-dismiss="modal">
@@ -512,6 +523,7 @@
           </ul>
         </nav>
         <div class="content">
+          <iframe class="full" src="/common/add_library_resources" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>

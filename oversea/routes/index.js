@@ -342,6 +342,15 @@ router.get('/:userRole/lessons/create_lesson', function(req, res, next) {
   });
 });
 
+/* GET add library resources page. */
+router.get('/common/add_library_resources', function(req, res, next) {
+  res.render('common/add_library_resources', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'common'
+  });
+});
+
 /* GET pdf viewer page. */
 router.get('/viewers/pdf_viewer', function(req, res, next) {
   res.render('viewers/pdf_viewer', {

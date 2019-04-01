@@ -228,30 +228,16 @@
           </ul>
           <ul class="navbar-nav">
             {{#if loggedIn}}
-            <li class="nav-item dropdown dropdown-user">
-              <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
-                <img src="/static/images/user.png"/>
-                <div class="user-summary">
-                  <div class="user-info">
-                    I'm
-                    <span class="user-name text-truncate">
-                      {{#if studentUser}}Aaron Tan{{/if}}
-                      {{#if teacherUser}}Derrick Chua{{/if}}
-                      {{#if adminUser}}Ernest  Goh{{/if}}
-                    </span>
-                  </div>
-                  <div class="user-role">
-                    {{#if studentUser}}I study. :){{/if}}
-                    {{#if teacherUser}}I teach. :){{/if}}
-                    {{#if adminUser}}I administer. :){{/if}}
-                  </div>
-                </div>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right">
-                <div class="user-account">
+              <li class="nav-item dropdown">
+                <button class="btn btn-light btn-notifications" type="button" data-toggle="dropdown">
+                  <i class="fas fa-bell"></i>
+                </button>
+              </li>
+              <li class="nav-item dropdown dropdown-user">
+                <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
                   <img src="/static/images/user.png"/>
                   <div class="user-summary">
-                    <div class="user-info d-block">
+                    <div class="user-info">
                       I'm
                       <span class="user-name text-truncate">
                         {{#if studentUser}}Aaron Tan{{/if}}
@@ -265,27 +251,46 @@
                       {{#if adminUser}}I administer. :){{/if}}
                     </div>
                   </div>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <div class="user-account">
+                    <img src="/static/images/user.png"/>
+                    <div class="user-summary">
+                      <div class="user-info d-block">
+                        I'm
+                        <span class="user-name text-truncate">
+                          {{#if studentUser}}Aaron Tan{{/if}}
+                          {{#if teacherUser}}Derrick Chua{{/if}}
+                          {{#if adminUser}}Ernest  Goh{{/if}}
+                        </span>
+                      </div>
+                      <div class="user-role">
+                        {{#if studentUser}}I study. :){{/if}}
+                        {{#if teacherUser}}I teach. :){{/if}}
+                        {{#if adminUser}}I administer. :){{/if}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <ul class="nav">
+                    <div class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/profile/update_personal_particulars">
+                        <i class="fas fa-user"></i> About Me
+                      </a>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/profile/change_password">
+                        <i class="fas fa-key"></i> Change Password
+                      </a>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="/signout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                      </a>
+                    </div>
+                  </ul>
                 </div>
-                <div class="dropdown-divider"></div>
-                <ul class="nav">
-                  <div class="nav-item">
-                    <a class="nav-link" href="/{{userRole}}/profile/update_personal_particulars">
-                      <i class="fas fa-user"></i> About Me
-                    </a>
-                  </div>
-                  <div class="nav-item">
-                    <a class="nav-link" href="/{{userRole}}/profile/change_password">
-                      <i class="fas fa-key"></i> Change Password
-                    </a>
-                  </div>
-                  <div class="nav-item">
-                    <a class="nav-link" href="/signout">
-                      <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
-                  </div>
-                </ul>
-              </div>
-            </li>
+              </li>
             {{/if}}
           </ul>
         </div>
@@ -353,12 +358,12 @@
                     {{/if}}
                     {{#unless studentUser}}
                       <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=proficiency">
+                        <a class="nav-link {{#if proficiencyReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=proficiency">
                           <i class="img img-myreports"></i> Mastery Report
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=usage">
+                        <a class="nav-link {{#if usageReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=usage">
                           <i class="img img-myreports"></i> Usage Report
                         </a>
                       </li>

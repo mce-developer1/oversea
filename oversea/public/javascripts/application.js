@@ -19,12 +19,14 @@ $(document).ready(function() {
     }
   });
 
-  $(document).on('click', '[data-toggle="dropdown"]', function(e) {
-    if ( $('.dialog.open').length === 0) {
-      $('.dialog.open .dialog-menu').removeClass('show');
-      $('.dialog.open').removeClass('open');
+  $(document).on('show.bs.dropdown', function(e) {
+    if ($(e.target).closest('.dialog-menu').length === 0) {
+      if ($('.dialog.open').length === 1) {
+        $('.dialog.open .dialog-menu').removeClass('show');
+        $('.dialog.open').removeClass('open');
+      }
     }
-  })
+  });
 
   $(document).on('click', function(e) {
     if ($(e.target).closest('.dialog-menu').length === 0) {
@@ -80,22 +82,38 @@ $(document).ready(function() {
 
 	window._logStore = window._logStore || {
     endpoint: '/logging',
-    failures: 0,
+    bufferSize: 5,
+    bufferTimeout: 3000,
     maxFailures: 3,
-    bufferSize: 1,
     argumentsSize: 3,
     logs: [],
     save: function() {
       var self = this;
       if (arguments.length < self.argumentsSize) return;
+      clearTimeout(self._bufferTimeout);
+
+      var params = arguments[2];
+      if (typeof params === 'object') {
+        params = $.param(params);
+      } else if (typeof params === 'string') {
+        params = params.trim();
+      }
 
       var formatted = {
         module: arguments[0].trim(),
         action: arguments[1].trim(),
-        params: arguments[2].trim()
+        params: params
       }
       self.logs.push(formatted);
-      if (self.logs.length >= self.bufferSize) self.send();
+
+      if (self.logs.length >= self.bufferSize) {
+        self.send();
+      } else {
+        self._bufferTimeout = setTimeout(function() {
+          delete self._bufferTimeout;
+          self.send();
+        }, self.bufferTimeout);
+      }
     },
     send: function() {
       var self = this;
@@ -104,18 +122,20 @@ $(document).ready(function() {
       var json = JSON.stringify({ logs: self.logs });
       $.post(self.endpoint, { data: json })
         .done(function(data) {
-          self.failures = 0;
+          self._failures = 0;
           self.logs = [];
         })
         .fail(function(data) {
-          self.failures++;
-          if (self.failures !== self.maxFailures) {
-            var delay = (1000 * self.failures);
+          self._failures = self._failures || 0;
+          self._failures++;
+
+          if (self._failures !== self.maxFailures) {
+            var delay = (1000 * self._failures);
             setTimeout(function() {
               self.send.apply(self);
             }, delay);
           } else {
-            self.failures = 0;
+            self._failures = 0;
           }
         });
     }
