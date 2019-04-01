@@ -2103,7 +2103,7 @@ table.dataTable tbody tr td .nowrap {
   .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light:hover .fa-filter {
     color: #212529;
   }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .btn-toggle {
+  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light.btn-toggle {
     display: none;
   }
   .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-chevron-left,

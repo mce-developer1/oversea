@@ -357,7 +357,7 @@ $(document).ready(function() {
   });
 
   $('.article-lesson-resources .nav-main .nav-link').on('click', function(e) {
-    $('.article-lesson-resources .nav-main').removeClass('show');
+    $('.article-lesson-resources .nav-main').addClass('d-none');
     $('.article-lesson-resources .navbar:not(.nav-main)').removeClass('d-none');
     $('.article-lesson-resources .navbar:not(.nav-main) .btn-add-resource').removeClass('d-none');
     $('.article-lesson-resources .navbar:not(.nav-main) .btn-actions').removeClass('d-none');
@@ -390,7 +390,7 @@ $(document).ready(function() {
   });
 
   $('.article-lesson-resources .article-body .item-add-resource').on('click', function(e) {
-    $('.article-lesson-resources .nav-main').collapse('show');
+    $('.article-lesson-resources .article-body .navbar.nav-main').removeClass('d-none');
   });
 
   $('.article-lesson-resources .article-body .item-add-mylibrary').on('click', function(e) {
