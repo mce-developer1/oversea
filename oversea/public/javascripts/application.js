@@ -53,23 +53,12 @@ $(document).ready(function() {
     e.preventDefault();
     
     var target = $(this).attr('data-target');
-
-    if ($(window).width() < 768) {
-      var height = $(target).find('.article-sidebar').get(0).scrollHeight;
-      $(target).find('.article-sidebar').css('height', height);
+    
+    if ($(target).hasClass('collapse-sidebar')) {
+      $(target).removeClass('collapse-sidebar')
+    } else {
+      $(target).addClass('collapse-sidebar');
     }
-
-    var sidebarCollapsed = $(target).hasClass('collapse-sidebar');
-    var delay = (($(window).width() < 768) && sidebarCollapsed) ? 350 : 0;
-    setTimeout(function waitBrowserReflow() {
-      $(target).find('.article-sidebar').css('height', '');
-
-      if ($(target).hasClass('collapse-sidebar')) {
-        $(target).removeClass('collapse-sidebar')
-      } else {
-        $(target).addClass('collapse-sidebar');
-      }
-    }, delay);
   });
 
   $(document).on('show.bs.modal', function (e) {

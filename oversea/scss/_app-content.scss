@@ -1,6 +1,6 @@
 .app-content {
   background-color: $gray-100;
-  min-height: calc(100vh - 9rem);
+  min-height: calc(100vh - 9rem);  
 
   .nav-tabs {
     @include justify-content(center);

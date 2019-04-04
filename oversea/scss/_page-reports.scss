@@ -165,12 +165,24 @@
           margin: 0 -.5rem;
 
           .article-sidebar {
-            overflow: hidden;
             margin: 0 -1rem;
-            -webkit-transition: height .35s;
-            -moz-transition: height .35s;
-            -o-transition: height .35s;
-            transition: height .35s;
+
+            &.dialog {
+              .form-filters {
+                margin: 0 .5rem;
+                width: calc(100% - 1rem);
+
+                .form-group {
+                  @include display-flex(row);
+                  @include align-items(flex-start);
+    
+                  .form-label {
+                    min-width: 8rem;
+                    width: 8rem;
+                  }
+                }
+              }
+            }
 
             .navbar {
               background-color: $gray-200;
@@ -184,6 +196,10 @@
                   .fa-filter {
                     color: $gray-900;
                   }
+                }
+
+                &.btn-toggle {
+                  display: none;
                 }
 
                 .fa-chevron-left,
@@ -225,6 +241,10 @@
 
             .navbar {
               .btn-light {
+                &.btn-dialog {
+                  display: none;
+                }
+
                 .fa-filter {
                   display: none;
                 }

@@ -102,7 +102,8 @@ table.dataTable {
     .input-group-prepend,
     .input-group-append {
       position: absolute;
-      top: 1px;                
+      top: 1px;
+      bottom: 1px;
       z-index: 5;
 
       .btn-light {
@@ -716,8 +717,16 @@ table.dataTable {
     .article-body {      
       min-width: 280px;
 
+      .btn-group {
+        .btn {
+          +.btn {
+            margin-left: 0;
+          }
+        }
+      }
+
       .btn {
-        padding: .325rem .5rem;
+        padding: .375rem .5rem;
         
         &.dropdown-toggle {
           margin-left: 0;

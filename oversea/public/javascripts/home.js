@@ -32,11 +32,15 @@ $(document).ready(function() {
 
   $(window).on('resize', function(e) {
     if ($(window).width() < 768) {
-      $('.article-resources .article-sidebar').addClass('dialog');
-      $('.article-resources .article-sidebar .form-filters').addClass('dialog-menu');
+      if (!$('.article-resources .article-sidebar').hasClass('dialog')) {
+        $('.article-resources .article-sidebar').addClass('dialog');
+        $('.article-resources .article-sidebar .form-filters').addClass('dialog-menu');
+      }
     } else {
-      $('.article-resources .article-sidebar').removeClass('dialog');
-      $('.article-resources .article-sidebar .form-filters').removeClass('dialog-menu');
+      if ($('.article-resources .article-sidebar').hasClass('dialog')) {
+        $('.article-resources .article-sidebar').removeClass('dialog');
+        $('.article-resources .article-sidebar .form-filters').removeClass('dialog-menu');
+      }
     }
   });
 

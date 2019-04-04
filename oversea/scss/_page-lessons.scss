@@ -780,3 +780,73 @@
     }    
   }
 }
+
+.modal-resource-type-select {
+  .modal-dialog {
+    .modal-body {
+      .navbar {
+        @include flex-direction(column);
+        @include flex-wrap(nowrap);
+        @include justify-content(space-between);
+        padding: .75rem 0;
+
+        .navbar-text {
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+          padding: .5rem 1rem;
+          text-align: center;
+        }
+
+        .navbar-nav {
+          @include flex-direction(row);
+          @include flex-wrap(wrap);
+          @include justify-content(center);
+          max-width: 36rem;
+
+          .nav-link {
+            @include display-flex(column);
+            @include align-items(center);
+            color: $gray-700;
+            font-size: .875rem;
+            margin: .5rem;
+            min-width: 7rem;
+            padding: .75rem 1rem;
+
+            &:hover {
+              background-color: $gray-200;
+            }
+
+            .img {
+              margin-bottom: .25rem;
+              height: 2.5rem;
+              width: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-resource-mylibrary-add,
+.modal-resource-myresources-add {
+  .modal-dialog {
+    .modal-body {
+      .navbar {
+        @include justify-content(space-between);
+        
+        .nav-divider {
+          border-right-color: $gray-600;
+          margin: .25rem 1rem;
+        }
+
+        .nav-item {
+          .item-text {
+            font-size: 1.25rem;
+            max-width: 12rem;
+          }          
+        }
+      }
+    }
+  }
+}

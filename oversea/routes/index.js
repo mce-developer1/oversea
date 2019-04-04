@@ -342,12 +342,21 @@ router.get('/:userRole/lessons/create_lesson', function(req, res, next) {
   });
 });
 
-/* GET add library resources page. */
-router.get('/common/add_library_resources', function(req, res, next) {
-  res.render('common/add_library_resources', {
+/* GET add mylibrary page. */
+router.get('/shared/add_mylibrary', function(req, res, next) {
+  res.render('shared/add_mylibrary', {
     layout: 'iframe_layout',
     title: 'Marshall Cavendish Education',
-    module: 'common'
+    module: 'shared'
+  });
+});
+
+/* GET add myresources page. */
+router.get('/shared/add_myresources', function(req, res, next) {
+  res.render('shared/add_myresources', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
   });
 });
 

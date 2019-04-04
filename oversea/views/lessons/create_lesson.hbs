@@ -151,32 +151,9 @@
                     </ul>
                     <ul class="navbar-nav">
                       <li class="nav-item dropdown">
-                        <button class="btn btn-primary btn-add-resource d-none" type="button" data-toggle="dropdown">
+                        <button class="btn btn-primary btn-add-resource d-none" type="button">
                           <i class="fas fa-plus"></i> Add Resource
                         </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                          <a class="dropdown-item item-add-mylibrary" href="#">
-                            <i class="img img-mylibrary"></i> My Library
-                          </a>
-                          <a class="dropdown-item item-add-myresource" href="#">
-                            <i class="img img-mylibrary"></i> My Resources
-                          </a>
-                          <a class="dropdown-item item-add-test" href="#">
-                            <i class="img img-mylibrary"></i> My Tests
-                          </a>
-                          <a class="dropdown-item item-add-myfile" href="#">
-                            <i class="img img-mylibrary"></i> My Files
-                          </a>
-                          <a class="dropdown-item item-add-weblink" href="#">
-                            <i class="img img-mylibrary"></i> Weblinks
-                          </a>
-                          <a class="dropdown-item item-add-google" href="#">
-                            <i class="img img-mylibrary"></i> Google
-                          </a>
-                          <a class="dropdown-item item-add-youtube" href="#">
-                            <i class="img img-mylibrary"></i> Youtube
-                          </a>
-                        </div>
                       </li>
                       <li class="nav-item dropdown">
                         <button class="btn btn-primary btn-actions d-none" type="button" data-toggle="dropdown">
@@ -203,37 +180,37 @@
                     </div>
                     <ul class="navbar-nav">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link link-add-mylibrary" href="#">
                           <i class="img img-mylibrary"></i> My Library
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
-                          <i class="img img-mylibrary"></i> My Resources
+                        <a class="nav-link link-add-myresources" href="#">
+                          <i class="img img-myresources"></i> My Resources
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link link-add-mytests" href="#">
                           <i class="img img-mylibrary"></i> My Tests
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link link-add-files" href="#">
                           <i class="img img-mylibrary"></i> My Files
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link link-add-weblinks" href="#">
                           <i class="img img-mylibrary"></i> Weblinks
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link link-add-google" href="#">
                           <i class="img img-mylibrary"></i> Google
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link link-add-youtube" href="#">
                           <i class="img img-mylibrary"></i> Youtube
                         </a>
                       </li>
@@ -499,21 +476,77 @@
   </div>
 </div>
 
-<div class="modal modal-resource-add modal-library-resource fade" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog modal-preview" role="document">
+<div class="modal modal-resource-type-select fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Resource</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
       <div class="modal-body">
         <nav class="navbar">
-          <div class="navbar-text text-truncate">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <div class="text-truncate">Add Resource</div>
-                </li>
-                <li class="breadcrumb-item">
-                  <div class="text-truncate">My Library</div>
-                </li>
-              </ol>
+          <div class="navbar-text">
+            What would you like to add to the folder?
           </div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link link-add-mylibrary" href="#">
+                <i class="img img-mylibrary"></i> My Library
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-add-myresources" href="#">
+                <i class="img img-myresources"></i> My Resources
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-add-mytests" href="#">
+                <i class="img img-mylibrary"></i> My Tests
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-add-files" href="#">
+                <i class="img img-mylibrary"></i> My Files
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-add-weblinks" href="#">
+                <i class="img img-mylibrary"></i> Weblinks
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-add-google" href="#">
+                <i class="img img-mylibrary"></i> Google
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-add-youtube" href="#">
+                <i class="img img-mylibrary"></i> Youtube
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-resource-mylibrary-add fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-add-resource" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="item-text text-truncate" title="P1-Maths Addition">P1-Maths Addition</div>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-item">
+              <div class="item-text text-truncate">Add Resource</div>
+            </li>
+          </ul>
           <ul class="navbar-nav">
             <li class="nav-item">
               <button class="btn btn-light btn-close" type="button" title="Close" data-dismiss="modal">
@@ -523,7 +556,37 @@
           </ul>
         </nav>
         <div class="content">
-          <iframe class="full" src="/common/add_library_resources" frameborder="0" allowfullscreen></iframe>
+          <iframe class="full" src="/shared/add_mylibrary" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-resource-myresources-add fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-add-resource" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="item-text text-truncate" title="P1-Maths Addition">P1-Maths Addition</div>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-item">
+              <div class="item-text text-truncate">Add Resource</div>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn btn-light btn-close" type="button" title="Close" data-dismiss="modal">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="content">
+          <iframe class="full" src="/shared/add_myresources" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>

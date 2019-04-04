@@ -160,10 +160,6 @@ $(document).ready(function() {
     $('.modal-lesson-delete-confirmation').modal('show');
   });
 
-  $container.find('.table-body2 tr a:not([data-toggle="popover"])').on('click', function(e) {
-    e.stopPropagation();
-  });
-
   $container.find('.table-body tr').on('click', function(e) {
     if (e.shiftKey) {
       e.preventDefault();
@@ -333,6 +329,15 @@ $(document).ready(function() {
     }
   }
 
+  function showFolderResources() {
+    $('.article-lesson-resources .nav-main').addClass('d-none');
+    $('.article-lesson-resources .navbar:not(.nav-main)').removeClass('d-none');
+    $('.article-lesson-resources .navbar:not(.nav-main) .btn-add-resource').removeClass('d-none');
+    $('.article-lesson-resources .navbar:not(.nav-main) .btn-actions').removeClass('d-none');
+    $('.article-lesson-resources .table-head').removeClass('d-none');
+    $('.article-lesson-resources .table-body').removeClass('d-none');
+  }
+
   $('.form-lesson-attributes .btn-create').on('click', function(e) {
     $('.article-create-lesson .navbar-nav .btn-preview').removeClass('d-none');
     $('.article-create-lesson .navbar-nav .divider-close').removeClass('d-none');
@@ -345,7 +350,7 @@ $(document).ready(function() {
     }
 
     var tree = $('.article-lesson-resources .tree-resources').get(0);
-    var sortable = Sortable.create(tree, {
+    var sortableTree = Sortable.create(tree, {
       animation: 350,
       onStart: function(e) {
         console.log(e.oldIndex, e.newIndex);
@@ -354,18 +359,9 @@ $(document).ready(function() {
         console.log(e.oldIndex, e.newIndex);
       }
     });
-  });
-
-  $('.article-lesson-resources .nav-main .nav-link').on('click', function(e) {
-    $('.article-lesson-resources .nav-main').addClass('d-none');
-    $('.article-lesson-resources .navbar:not(.nav-main)').removeClass('d-none');
-    $('.article-lesson-resources .navbar:not(.nav-main) .btn-add-resource').removeClass('d-none');
-    $('.article-lesson-resources .navbar:not(.nav-main) .btn-actions').removeClass('d-none');
-    $('.article-lesson-resources .table-head').removeClass('d-none');
-    $('.article-lesson-resources .table-body').removeClass('d-none');
 
     var tbody = $('.article-lesson-resources .table-body tbody').get(0);
-    var sortable = Sortable.create(tbody, {
+    var sortableTable = Sortable.create(tbody, {
       animation: 350,
       handle: '.btn-handle',
       onStart: function(e) {
@@ -389,12 +385,42 @@ $(document).ready(function() {
     $('.modal-lesson-folder-edit').modal('show');
   });
 
-  $('.article-lesson-resources .article-body .item-add-resource').on('click', function(e) {
-    $('.article-lesson-resources .article-body .navbar.nav-main').removeClass('d-none');
+  $('.article-lesson-resources .article-body .link-add-mylibrary').on('click', function(e) {
+    $('.modal-resource-mylibrary-add').on('hide.bs.modal', function (e) {
+      showFolderResources();
+    });
+    $('.modal-resource-mylibrary-add').modal('show');
   });
 
-  $('.article-lesson-resources .article-body .item-add-mylibrary').on('click', function(e) {
-    $('.modal-library-resource').modal('show');
+  $('.article-lesson-resources .article-body .link-add-myresources').on('click', function(e) {
+    $('.modal-resource-myresources-add').on('hide.bs.modal', function (e) {
+      showFolderResources();
+    });
+    $('.modal-resource-myresources-add').modal('show');
+  });
+
+  $('.article-lesson-resources .article-body .btn-add-resource').on('click', function(e) {
+    $('.modal-resource-type-select').modal('show');
+  });
+
+  $('.article-lesson-resources .article-body .item-add-resource').on('click', function(e) {
+    $('.modal-resource-type-select').modal('show');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-mylibrary').on('click', function(e) {
+    $('.modal-resource-mylibrary-add').on('hide.bs.modal', function (e) {
+      showFolderResources();
+    });
+    $('.modal-resource-type-select').modal('hide');
+    $('.modal-resource-mylibrary-add').modal('show');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-myresources').on('click', function(e) {
+    $('.modal-resource-myresources-add').on('hide.bs.modal', function (e) {
+      showFolderResources();
+    });
+    $('.modal-resource-type-select').modal('hide');
+    $('.modal-resource-myresources-add').modal('show');
   });
 
   $('.article-lesson-resources .table-body tr').on('click', function(e) {
@@ -466,21 +492,5 @@ $(document).ready(function() {
         $container.find('.nav-main').removeClass('d-block');
       }
     }
-
-    if ($(window).width() < 768) {
-      if ($('.article-lesson-resources').hasClass('d-none')) {
-        $('.article-create-lesson .btn-more').removeClass('d-block');
-      } else {
-        $('.article-create-lesson .btn-more').addClass('d-none');
-      }
-    }
   });
-
-  if ($(window).width() < 768) {
-    if ($('.article-lesson-resources').hasClass('d-none')) {
-      $('.article-create-lesson .btn-more').removeClass('d-block');
-    } else {
-      $('.article-create-lesson .btn-more').addClass('d-none');
-    }
-  }
 });

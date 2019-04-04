@@ -793,8 +793,24 @@ $(document).ready(function() {
     trigger: 'focus'
   });
 
+  $(window).on('resize', function(e) {
+    if ($(window).width() < 768) {
+      if (!$('.article-report .article-sidebar').hasClass('dialog')) {
+        $('.article-report .article-sidebar').addClass('dialog');
+        $('.article-report .article-sidebar .form-filters').addClass('dialog-menu');
+      }
+    } else {
+      if ($('.article-report .article-sidebar').hasClass('dialog')) {
+        $('.article-report .article-sidebar').removeClass('dialog');
+        $('.article-report .article-sidebar .form-filters').removeClass('dialog-menu');
+      }
+    }
+  });
+
   if ($(window).width() < 768) {
     $('.article-report').addClass('collapse-sidebar');
+    $('.article-report .article-sidebar').addClass('dialog');
+    $('.article-report .article-sidebar .form-filters').addClass('dialog-menu');
   }
 
   google.charts.load('current', {'packages':['corechart']});
