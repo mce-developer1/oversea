@@ -725,7 +725,7 @@ table.dataTable tbody tr td .nowrap {
   margin-right: 1rem;
   position: fixed;
   left: 1rem;
-  bottom: 4rem;
+  bottom: 1rem;
   z-index: 1000;
 }
 .toast-stack .toast {
@@ -3699,7 +3699,15 @@ table.dataTable tbody tr td .nowrap {
 .modal-resource-mylibrary-add .modal-dialog .modal-body .navbar .nav-item .item-text,
 .modal-resource-myresources-add .modal-dialog .modal-body .navbar .nav-item .item-text {
   font-size: 1.25rem;
-  max-width: 12rem;
+  max-width: 16rem;
+}
+@media (max-width: 576px) {
+  .modal-resource-mylibrary-add .modal-dialog .modal-body .navbar .nav-title,
+.modal-resource-mylibrary-add .modal-dialog .modal-body .navbar .nav-divider,
+.modal-resource-myresources-add .modal-dialog .modal-body .navbar .nav-title,
+.modal-resource-myresources-add .modal-dialog .modal-body .navbar .nav-divider {
+    display: none;
+  }
 }
 
 .app-content.page-reports .article-report {

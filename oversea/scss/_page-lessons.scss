@@ -777,7 +777,7 @@
           }
         }
       }
-    }    
+    }
   }
 }
 
@@ -843,8 +843,19 @@
         .nav-item {
           .item-text {
             font-size: 1.25rem;
-            max-width: 12rem;
+            max-width: 16rem;
           }          
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .modal-body {
+        .navbar {
+          .nav-title,
+          .nav-divider {
+            display: none;
+          }
         }
       }
     }

@@ -14,13 +14,15 @@ $(document).ready(function() {
     $('.article-resources .article-body .card-group').addClass('d-none');
 
     setTimeout(function() {
+      clearTimeout(window.toastTimeout);
+      delete window.toastTimeout;
+
       $('.article-resources .article-body .loading-state').addClass('d-none');
       $('.toast-stack').removeClass('d-none');
-      $('.toast-stack .toast').toast('show');
+      $('.toast-stack .toast').toast('dispose').toast('show');
 
-      setTimeout(function() {
+      window.toastTimeout = setTimeout(function() {
         $('.toast-stack').addClass('d-none');
-        $('.toast-stack .toast').toast('hide');
       }, 5000);
     }, 1000);
   });

@@ -1,6 +1,11 @@
 $(document).ready(function() {
   var $container = $('.article-resources');
 
+  function clearRecordsSelection() {
+    $container.find('.table-body .table-active').removeClass('table-active');
+    updateActionButtonsStyles();
+  }
+
   function updateActionButtonsStyles() {
     var resourcesSelected = ($container.find('.table-body .table-active').length > 0);
 
@@ -139,6 +144,19 @@ $(document).ready(function() {
     $container.find('.article-body .table-head').addClass('d-none');
     $container.find('.article-body .table-body').addClass('d-none');
     $container.find('.article-body .card-group').removeClass('d-none');
+  });
+
+  $container.find('.article-body .btn-add').on('click', function(e) {
+    clearRecordsSelection();
+    clearTimeout(window.toastTimeout);
+    delete window.toastTimeout;
+
+    $('.toast-stack').removeClass('d-none');
+    $('.toast-stack .toast').toast('dispose').toast('show');
+    
+    window.toastTimeout = setTimeout(function() {
+      $('.toast-stack').addClass('d-none');
+    }, 5000);
   });
 
   $container.find('.table-body tr').on('click', function(e) {
