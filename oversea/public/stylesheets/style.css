@@ -1656,7 +1656,7 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-shared {
   overflow-x: hidden;
   overflow-y: auto;
-  min-height: 100vh;
+  max-height: 100vh;
 }
 .app-content.page-shared .article-resources {
   padding: 0 1.5rem;
