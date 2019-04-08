@@ -360,6 +360,25 @@ router.get('/shared/add_myresources', function(req, res, next) {
   });
 });
 
+/* GET lessons page. */
+router.get('/:userRole/tests/tests', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('tests/tests', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'tests',
+    loggedIn: true,
+    testsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET pdf viewer page. */
 router.get('/viewers/pdf_viewer', function(req, res, next) {
   res.render('viewers/pdf_viewer', {
