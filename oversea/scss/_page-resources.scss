@@ -471,12 +471,10 @@
 
 .modal-resource-file-upload {
   .modal-dialog {
-    @media (min-width: 768px) {
-      .modal-body {
-        .file-upload {
-          @include justify-content(center);
-          min-height: 16rem;
-        }
+    .modal-body {
+      .file-upload {
+        @include justify-content(center);
+        min-height: calc(100vh - 24rem);
       }
     }
   }

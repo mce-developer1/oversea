@@ -189,7 +189,7 @@ $(document).ready(function() {
       url: "/shared/upload",
       uploadMultiple: false,
       parallelUploads: 1,
-      maxFiles: 10,
+      maxFiles: 5,
       maxfilesreached: function(files) {
         var maxFiles = dropzone.options.maxFiles;
         
@@ -198,14 +198,23 @@ $(document).ready(function() {
             dropzone.removeFile(files[i]);
           }
         }
+
+        if ($('.toast-stack').hasClass('d-none')) {
+          clearTimeout(window.toastTimeout);
+          delete window.toastTimeout;
+          
+          $('.toast-stack').removeClass('d-none');
+          $('.toast-stack .toast').toast('dispose').toast('show');
+    
+          window.toastTimeout = setTimeout(function() {
+            $('.toast-stack').addClass('d-none');
+          }, 5000);
+        }
       },
       processing: function(file) {
         if ($upload.find('.file-group').hasClass('d-none')) {
           $upload.find('.file-group').removeClass('d-none');
         }
-      },
-      error: function(file) {
-        console.log(file);
       },
       success: function(file) {
         console.log(file);
@@ -213,10 +222,6 @@ $(document).ready(function() {
     });
 
     $('.modal-resource-file-upload').on('click', '.btn-edit', function(e) {
-      $('.modal-resource-file-upload').removeClass('show');
-      $('.modal-resource-file-edit-attributes').on('hide.bs.modal', function (e) {
-        $('.modal-resource-file-upload').addClass('show');
-      });
       $('.modal-resource-file-edit-attributes').modal('show');
     });
     $('.modal-resource-file-upload').modal('show');
@@ -250,14 +255,23 @@ $(document).ready(function() {
             dropzone.removeFile(files[i]);
           }
         }
+
+        if ($('.toast-stack').hasClass('d-none')) {
+          clearTimeout(window.toastTimeout);
+          delete window.toastTimeout;
+          
+          $('.toast-stack').removeClass('d-none');
+          $('.toast-stack .toast').toast('dispose').toast('show');
+    
+          window.toastTimeout = setTimeout(function() {
+            $('.toast-stack').addClass('d-none');
+          }, 5000);
+        }
       },
       processing: function(file) {
         if ($upload.find('.file-group').hasClass('d-none')) {
           $upload.find('.file-group').removeClass('d-none');
         }
-      },
-      error: function(file) {
-        console.log(file);
       },
       success: function(file) {
         if (!$upload.find('.file-group').hasClass('d-none')) {
@@ -268,17 +282,7 @@ $(document).ready(function() {
     });
 
     $('.modal-resource-manage-revisions .list-group-item .btn-delete').on('click', function(e) {
-      $(this).addClass('d-none');
-      $(this).closest('.list-group-item').find('.btn-confirm').removeClass('d-none');
-      $(this).closest('.list-group-item').find('.btn-cancel').removeClass('d-none');
-    });
-    $('.modal-resource-manage-revisions .list-group-item .btn-confirm').on('click', function(e) {
-      $(this).closest('.list-group-item').remove();
-    });
-    $('.modal-resource-manage-revisions .list-group-item .btn-cancel').on('click', function(e) {
-      $(this).addClass('d-none');
-      $(this).closest('.list-group-item').find('.btn-confirm').addClass('d-none');
-      $(this).closest('.list-group-item').find('.btn-delete').removeClass('d-none');
+      $('.modal-resource-delete-confirmation').modal('show');
     });
     $('.modal-resource-manage-revisions').modal('show');
   });

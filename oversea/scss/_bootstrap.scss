@@ -568,6 +568,10 @@ a {
 }
 
 .modal {
+  &.modal-base {
+    z-index: 1030;
+  }
+
   .modal-dialog {
     &.modal-preview,
     &.modal-add-resource {
@@ -649,6 +653,10 @@ a {
 }
 
 .modal-backdrop {
+  &.modal-backdrop-base {
+    z-index: 1020;
+  }
+
   &.modal-backdrop-preview {
     background-color: $gray-100;
     opacity: 1;

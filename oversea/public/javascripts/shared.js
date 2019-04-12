@@ -26,8 +26,9 @@ $(document).ready(function() {
     var resourcesSelected = ($container.find('.table-body .table-active').length > 0);
 
     if (resourcesSelected) {
-      if ($container.find('.navbar .form-add-resource').hasClass('d-none')) {
-        $container.find('.navbar .form-add-resource').removeClass('d-none');
+      if ($container.find('.article-body .navbar .navbar-nav.nav-form').hasClass('d-none')) {
+        $container.find('.article-body .navbar .navbar-nav.nav-main').addClass('d-none');
+        $container.find('.article-body .navbar .navbar-nav.nav-form').removeClass('d-none');
       }
 
       if ($(window).width() < 992) {
@@ -40,8 +41,9 @@ $(document).ready(function() {
         }
       }
     } else {
-      if (!$container.find('.navbar .form-add-resource').hasClass('d-none')) {
-        $container.find('.navbar .form-add-resource').addClass('d-none');
+      if (!$container.find('.article-body .navbar .navbar-nav.nav-form').hasClass('d-none')) {
+        $container.find('.article-body .navbar .navbar-nav.nav-form').addClass('d-none');
+        $container.find('.article-body .navbar .navbar-nav.nav-main').removeClass('d-none');
       }
 
       if ($container.find('.navbar .navbar-text').hasClass('d-none')) {
@@ -169,6 +171,10 @@ $(document).ready(function() {
     $container.find('.article-body .table-head').addClass('d-none');
     $container.find('.article-body .table-body').addClass('d-none');
     $container.find('.article-body .card-group').removeClass('d-none');
+  });
+
+  $container.find('.article-body .btn-create').on('click', function(e) {
+    window.location = '/shared/create_test';
   });
 
   $container.find('.article-body .btn-add').on('click', function(e) {

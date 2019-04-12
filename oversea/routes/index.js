@@ -369,6 +369,16 @@ router.get('/shared/add_tests', function(req, res, next) {
   });
 });
 
+/* GET create test page. */
+router.get('/shared/create_test', function(req, res, next) {
+  res.render('shared/create_test', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
+
 /* GET add myfiles page. */
 router.get('/shared/add_files', function(req, res, next) {
   res.render('shared/add_files', {

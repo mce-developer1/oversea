@@ -155,9 +155,16 @@
             <div class="empty-state d-none">Oops, nothing to see here!</div>
             <nav class="navbar navbar-expand">
               <div class="navbar-text">8 records found</div>
-              <ul class="navbar-nav">
+              <ul class="navbar-nav nav-main">
                 <li class="nav-item">
-                  <form class="form-inline form-add-resource d-none">
+                  <button class="btn btn-primary btn-create" type="button">
+                    <i class="fas fa-plus"></i> New
+                  </button>
+                </li>
+              </ul>
+              <ul class="navbar-nav nav-form d-none">
+                <li class="nav-item">
+                  <form class="form-inline form-add-resource">
                     <label class="form-label">Add to</label>
                     <select class="form-control selectpicker" data-width="160">
                       <option selected>Counting To 10</option>

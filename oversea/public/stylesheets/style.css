@@ -462,6 +462,9 @@ a:focus {
   font-size: 0.875rem;
 }
 
+.modal.modal-base {
+  z-index: 1030;
+}
 .modal .modal-dialog.modal-preview, .modal .modal-dialog.modal-add-resource {
   margin: 0;
   max-width: 100vw;
@@ -535,6 +538,9 @@ a:focus {
   border-bottom: 0;
 }
 
+.modal-backdrop.modal-backdrop-base {
+  z-index: 1020;
+}
 .modal-backdrop.modal-backdrop-preview {
   background-color: #f8f9fa;
   opacity: 1;
@@ -758,7 +764,7 @@ table.dataTable tbody tr td .nowrap {
   position: fixed;
   left: 1rem;
   bottom: 1rem;
-  z-index: 1000;
+  z-index: 1070;
 }
 .toast-stack .toast {
   display: -ms-flexbox;
@@ -894,8 +900,8 @@ table.dataTable tbody tr td .nowrap {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
   background-color: #ffffff;
   border: 1px solid #ced4da;
   margin: 0.5rem;
@@ -903,9 +909,11 @@ table.dataTable tbody tr td .nowrap {
 }
 .file-upload .file-group .file-preview.file-preview-edit {
   position: relative;
-  padding-right: 3rem;
 }
-.file-upload .file-group .file-preview.file-preview-edit .btn-light {
+.file-upload .file-group .file-preview.file-preview-edit .file-details {
+  margin: 2rem 0 0.5rem;
+}
+.file-upload .file-group .file-preview.file-preview-edit .file-actions {
   position: absolute;
   top: 0;
   right: 0;
@@ -2529,9 +2537,120 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-shared .article-weblinks .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
+.app-content.page-shared .article-weblinks .article-content .article-body .weblink-group .weblink-details {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.app-content.page-shared .article-weblinks .article-content .article-body .form-add-weblink {
+  margin-top: 0.5rem;
+}
 .app-content.page-shared .article-weblinks .article-content .article-body .form-add-weblink .form-group {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   margin-right: 1rem;
+}
+.app-content.page-shared .article-weblinks .article-content .article-body .form-add-weblink .form-group .form-label {
+  margin-right: 0.5rem;
+}
+.app-content.page-shared .article-create-test {
+  padding: 0 1.5rem;
+}
+.app-content.page-shared .article-create-test .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-shared .article-create-test .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.25rem;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light:hover .fas {
+  color: #212529;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light .fas {
+  color: #495057;
+  font-size: 1.5rem;
+}
+.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-shared .article-create-test .article-content .article-body .form-test-attributes {
+  padding: 1.5rem 0;
+}
+.app-content.page-shared .article-create-test .article-content .article-body .form-test-attributes .form-group-actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+@media (min-width: 768px) {
+  .app-content.page-shared .article-create-test .article-content .article-body .form-test-attributes {
+    max-width: 48rem;
+  }
+  .app-content.page-shared .article-create-test .article-content .article-body .form-test-attributes .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .app-content.page-shared .article-create-test .article-content .article-body .form-test-attributes .form-group .form-group {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .app-content.page-shared .article-create-test .article-content .article-body .form-test-attributes .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-shared .article-create-test .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 980;
+  }
 }
 
 .app-content.page-error {
@@ -3429,12 +3548,10 @@ table.dataTable tbody tr td .nowrap {
   margin-right: 1rem;
 }
 
-@media (min-width: 768px) {
-  .modal-resource-file-upload .modal-dialog .modal-body .file-upload {
-    -webkit-justify-content: center;
-    justify-content: center;
-    min-height: 16rem;
-  }
+.modal-resource-file-upload .modal-dialog .modal-body .file-upload {
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - 24rem);
 }
 
 @media (min-width: 768px) {
@@ -3875,7 +3992,7 @@ table.dataTable tbody tr td .nowrap {
   justify-content: space-between;
   padding: 0.75rem 0;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main {
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-wrap: nowrap;
@@ -3883,13 +4000,13 @@ table.dataTable tbody tr td .nowrap {
   background-color: #ffffff;
   margin-bottom: 1rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-text {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-text {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
   text-align: center;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
@@ -3898,7 +4015,7 @@ table.dataTable tbody tr td .nowrap {
   justify-content: center;
   max-width: 36rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav .nav-link {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -3911,10 +4028,10 @@ table.dataTable tbody tr td .nowrap {
   min-width: 7rem;
   padding: 0.75rem 1rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link:hover {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav .nav-link:hover {
   background-color: #e9ecef;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link .img {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav .nav-link .img {
   margin-bottom: 0.25rem;
   height: 2.5rem;
   width: 2.5rem;

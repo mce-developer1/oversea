@@ -895,12 +895,133 @@
             }
           }
 
-          .form-add-weblink {
-            .form-group {
-              margin: 1rem 0;
-              margin-right: 1rem;
+          .weblink-group {
+            .weblink-details {
+              @include flex-grow(1);
             }
           }
+
+          .form-add-weblink {
+            margin-top: .5rem;
+
+            .form-group {
+              margin: .5rem 0;
+              margin-right: 1rem;
+
+              .form-label {
+                margin-right: .5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .article-create-test {
+      padding: 0 1.5rem;
+
+      .article-header {
+        height: 4rem;
+        max-height: 4rem;
+
+        .navbar {
+          @include display-flex(row);
+          @include align-items(center);
+          @include flex-grow(1);
+          @include flex-wrap(nowrap);
+          @include justify-content(space-between);
+          background-color: $gray-100;
+          border-bottom: 1px solid $gray-400;
+          height: 4rem;
+          max-height: 4rem;
+          margin: 0 -1.5rem;
+          padding: .75rem 1.5rem;
+
+          .navbar-nav {
+            @include flex-direction(row);
+
+            .nav-item {
+              @include display-flex(row);
+              @include align-items(center);
+
+              .btn-light {
+                margin: 0 .25rem;
+              }
+
+              .item-text {
+                font-size: 1.25rem;
+              }
+            }
+
+            .btn-light {
+              &:hover {
+                .fas {
+                  color: $gray-900;
+                }
+              }
+
+              &.btn-more {
+                padding: .325rem 1rem;
+              }
+
+              .fas {
+                color: $gray-700;
+                font-size: 1.5rem;
+
+                &.fa-arrow-left {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .article-content {
+        .article-body {
+          .form-test-attributes {
+            padding: 1.5rem 0;
+
+            .form-group-actions {
+              @include display-flex(row);
+              @include justify-content(flex-end);
+            }
+          }
+        }
+      }
+
+      @media (min-width: 768px) {        
+        .article-content {
+          .article-body {
+            .form-test-attributes {
+              max-width: 48rem;
+
+              .form-group {
+                @include display-flex(row);
+                @include align-items(flex-start);
+      
+                .form-group {
+                  @include flex-grow(1);
+                  @include flex-wrap(wrap);
+                  margin-bottom: 0;
+                }
+      
+                .form-label {
+                  min-width: 12rem;
+                  width: 12rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          z-index: 980;
         }
       }
     }

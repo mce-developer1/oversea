@@ -476,7 +476,7 @@
                   @include justify-content(space-between);
                   padding: .75rem 0;
 
-                  &.nav-main {
+                  &.navbar-main {
                     @include flex-direction(column);
                     @include flex-wrap(nowrap);
                     background-color: $white;

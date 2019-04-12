@@ -67,6 +67,19 @@ $(document).ready(function() {
         $('.modal-backdrop.show').addClass('modal-backdrop-preview');
       });
     }
+
+    if (($('.modal.show').length > 0)
+        && !$('.modal.show').hasClass('modal-base')) {
+      $('.modal.show').addClass('modal-base');
+    }
+
+    if (!$('.modal-backdrop.show').hasClass('modal-backdrop-base')) {
+      $('.modal-backdrop.show').addClass('modal-backdrop-base');
+    }
+  });
+
+  $(document).on('hide.bs.modal', function (e) {
+    $('.modal.modal-base').removeClass('modal-base');
   });
 
 	window._logStore = window._logStore || {
