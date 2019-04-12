@@ -37,7 +37,7 @@
                   </div>
                   <input class="form-control form-input input-autocomplete" type="text" placeholder="Search lessons">
                   <div class="input-group-append">
-                    <button class="btn btn-light btn-clear" type="button">
+                    <button class="btn btn-light btn-clear d-none" type="button">
                       <i class="fas fa-times"></i>
                     </button>
                     <button class="btn btn-light btn-toggle" type="button" data-toggle='dialog'>
@@ -47,6 +47,16 @@
                 </div>
                 <div class="dialog-menu dialog-menu-search">
                   <form class="form-advanced-search">
+                    <div class="form-group">
+                      <label class="form-label" for="selLocation">Location</label>
+                      <select class="form-control selectpicker" id="selLocation">
+                        <option>Anywhere</option>
+                        <option>My Lessons</option>
+                        <option>Shared with Me</option>
+                        <option>Shared by Me</option>
+                        <option>Lesson Bank</option>
+                      </select>
+                    </div>
                     <div class="form-group">
                       <label class="form-label" for="selCurriculum">Curriculum</label>
                       <select class="form-control selectpicker" id="selCurriculum">
@@ -254,9 +264,10 @@
                   <td> - </td>
                   <td>P1-EA</td>
                   <td>
-                    <a href="#" data-toggle="popover" data-title="Assignment Period" data-content="<div class='assignment-period'>01 Nov 2018 - 30 Nov 2018</div><a href='#'>Edit Assignment</a>">Started</a>
-						        <div>(Due on <span class="text-nowrap">30 Nov 2018</span>)</div>
-                  <td>29 Mar 2018</td>                  
+                    <a href="#" data-toggle="popover" data-title="Assignment Period" data-content="<div class='assignment-period'>01 Jan 2019 - 30 Nov 2019</div><a href='#'>Edit Assignment</a>">Started</a>
+						        <div>(Due on <span class="text-nowrap">30 Nov 2019</span>)</div>
+                  </td>
+                  <td>29 Mar 2018</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -279,7 +290,10 @@
                     P1-EA, P1-HA, 
                     <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
                   </td>
-                  <td> - </td>
+                  <td>
+                    <a href="#" data-toggle="popover" data-title="Assignment Period" data-content="<div class='assignment-period'>01 Jan 2019 - 30 Mar 2019</div><a href='#'>Edit Assignment</a>">Closed</a>
+						        <div>(Due on <span class="text-nowrap">30 Mar 2019</span>)</div>
+                  </td>
                   <td>05 Dec 2006</td>
                   <td>
                     <button class="btn btn-light" type="button">

@@ -323,7 +323,7 @@ router.get('/:userRole/lessons/lessons', function(req, res, next) {
   });
 });
 
-/* GET lessons page. */
+/* GET create lesson page. */
 router.get('/:userRole/lessons/create_lesson', function(req, res, next) {
   var userRole = req.params.userRole;
   var studentUser = (userRole === 'student');
@@ -343,8 +343,8 @@ router.get('/:userRole/lessons/create_lesson', function(req, res, next) {
 });
 
 /* GET add mylibrary page. */
-router.get('/shared/add_mylibrary', function(req, res, next) {
-  res.render('shared/add_mylibrary', {
+router.get('/shared/add_library_resources', function(req, res, next) {
+  res.render('shared/add_library_resources', {
     layout: 'iframe_layout',
     title: 'Marshall Cavendish Education',
     module: 'shared'
@@ -352,12 +352,46 @@ router.get('/shared/add_mylibrary', function(req, res, next) {
 });
 
 /* GET add myresources page. */
-router.get('/shared/add_myresources', function(req, res, next) {
-  res.render('shared/add_myresources', {
+router.get('/shared/add_resources', function(req, res, next) {
+  res.render('shared/add_resources', {
     layout: 'iframe_layout',
     title: 'Marshall Cavendish Education',
     module: 'shared'
   });
+});
+
+/* GET add mytests page. */
+router.get('/shared/add_tests', function(req, res, next) {
+  res.render('shared/add_tests', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
+/* GET add myfiles page. */
+router.get('/shared/add_files', function(req, res, next) {
+  res.render('shared/add_files', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
+/* GET add weblinks page. */
+router.get('/shared/add_weblinks', function(req, res, next) {
+  res.render('shared/add_weblinks', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
+/* GET upload page. */
+router.post('/shared/upload', function(req, res, next) {
+  setTimeout(function() {
+    res.send('{status: "OK"}');
+  }, 5000);
 });
 
 /* GET lessons page. */
@@ -367,6 +401,25 @@ router.get('/:userRole/tests/tests', function(req, res, next) {
   var teacherUser = (userRole === 'teacher');
   var adminUser = (userRole === 'admin');
   res.render('tests/tests', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'tests',
+    loggedIn: true,
+    testsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET create test page. */
+router.get('/:userRole/tests/create_test', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('tests/create_test', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'tests',

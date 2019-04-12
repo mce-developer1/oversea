@@ -110,13 +110,10 @@
             }
           }
 
-          .table {
+          .table-head,
+          .table-body {
             @include user-select(none);
-
-            &.table-head,
-            &.table-body {
-              margin-bottom: 0;
-            }
+            margin-bottom: 0;
 
             th,
             td {
@@ -323,13 +320,11 @@
           }
 
           .article-body {
-            .table {
-              &.table-head {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 10rem;
-                z-index: 970;
-              }
+            .table-head {
+              position: -webkit-sticky;
+              position: sticky;
+              top: 10rem;
+              z-index: 970;
             }
           }
         }
@@ -552,12 +547,10 @@
                   }
                 }
 
-                .table {
+                .table-head,
+                .table-body {
                   @include user-select(none);
-
-                  &.table-head {
-                    margin-bottom: 0;
-                  }
+                  margin-bottom: 0;
 
                   th,
                   td {
@@ -828,8 +821,7 @@
   }
 }
 
-.modal-resource-mylibrary-add,
-.modal-resource-myresources-add {
+.modal-resource-resource-add {
   .modal-dialog {
     .modal-body {
       .navbar {

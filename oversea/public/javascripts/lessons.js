@@ -76,6 +76,14 @@ $(document).ready(function() {
     }, 5000);
   }
 
+  $container.find('.nav-main .input-group .input-autocomplete').on('keyup', function(e) {
+    if ($(this).val().trim() !== '') {
+      $container.find('.nav-main .input-group .btn-clear').removeClass('d-none');
+    } else {
+      $container.find('.nav-main .input-group .btn-clear').addClass('d-none');
+    }
+  });
+
   $container.find('.nav-main .input-group .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
     displayKey: 'name',
     source: function(query, callback) {
@@ -123,6 +131,7 @@ $(document).ready(function() {
   });
 
   $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
+    $(this).addClass('d-none');
     $container.find('.nav-main .input-group .aa-input').val('');
     searchLessons(e);
   });
@@ -353,6 +362,7 @@ $(document).ready(function() {
     var sortableTree = Sortable.create(tree, {
       animation: 350,
       onStart: function(e) {
+        console.log(Sortable.utils);
         console.log(e.oldIndex, e.newIndex);
       },
       onSort: function(e) {
@@ -385,18 +395,32 @@ $(document).ready(function() {
     $('.modal-lesson-folder-edit').modal('show');
   });
 
-  $('.article-lesson-resources .article-body .link-add-mylibrary').on('click', function(e) {
-    $('.modal-resource-mylibrary-add').on('hide.bs.modal', function (e) {
+  function showAddResourceModal(srcUrl) {
+    $('.modal-resource-resource-add').find('iframe').attr('src', srcUrl);
+    $('.modal-resource-resource-add').on('hide.bs.modal', function (e) {
       showFolderResources();
     });
-    $('.modal-resource-mylibrary-add').modal('show');
+    $('.modal-resource-resource-add').modal('show');
+  }
+
+  $('.article-lesson-resources .article-body .link-add-library-resources').on('click', function(e) {
+    showAddResourceModal('/shared/add_library_resources');
   });
 
-  $('.article-lesson-resources .article-body .link-add-myresources').on('click', function(e) {
-    $('.modal-resource-myresources-add').on('hide.bs.modal', function (e) {
-      showFolderResources();
-    });
-    $('.modal-resource-myresources-add').modal('show');
+  $('.article-lesson-resources .article-body .link-add-resources').on('click', function(e) {
+    showAddResourceModal('/shared/add_resources');
+  });
+
+  $('.article-lesson-resources .article-body .link-add-tests').on('click', function(e) {
+    showAddResourceModal('/shared/add_tests');
+  });
+
+  $('.article-lesson-resources .article-body .link-add-files').on('click', function(e) {
+    showAddResourceModal('/shared/add_files');
+  });
+
+  $('.article-lesson-resources .article-body .link-add-weblinks').on('click', function(e) {
+    showAddResourceModal('/shared/add_weblinks');
   });
 
   $('.article-lesson-resources .article-body .btn-add-resource').on('click', function(e) {
@@ -407,20 +431,29 @@ $(document).ready(function() {
     $('.modal-resource-type-select').modal('show');
   });
 
-  $('.modal-resource-type-select .navbar .link-add-mylibrary').on('click', function(e) {
-    $('.modal-resource-mylibrary-add').on('hide.bs.modal', function (e) {
-      showFolderResources();
-    });
+  $('.modal-resource-type-select .navbar .link-add-library-resources').on('click', function(e) {
     $('.modal-resource-type-select').modal('hide');
-    $('.modal-resource-mylibrary-add').modal('show');
+    showAddResourceModal('/shared/add_library_resources');
   });
 
-  $('.modal-resource-type-select .navbar .link-add-myresources').on('click', function(e) {
-    $('.modal-resource-myresources-add').on('hide.bs.modal', function (e) {
-      showFolderResources();
-    });
+  $('.modal-resource-type-select .navbar .link-add-resources').on('click', function(e) {
     $('.modal-resource-type-select').modal('hide');
-    $('.modal-resource-myresources-add').modal('show');
+    showAddResourceModal('/shared/add_resources');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-tests').on('click', function(e) {
+    $('.modal-resource-type-select').modal('hide');
+    showAddResourceModal('/shared/add_tests');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-files').on('click', function(e) {
+    $('.modal-resource-type-select').modal('hide');
+    showAddResourceModal('/shared/add_files');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-weblinks').on('click', function(e) {
+    $('.modal-resource-type-select').modal('hide');
+    showAddResourceModal('/shared/add_weblinks');
   });
 
   $('.article-lesson-resources .table-body tr').on('click', function(e) {

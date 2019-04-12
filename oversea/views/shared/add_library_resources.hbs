@@ -1,0 +1,591 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-resources">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <img src="/static/images/icon_resourcebank_cloud.png">
+                </button>
+                <span class="item-text text-truncate">My Library</span>
+              </li>
+              <li class="nav-item nav-item-submodule dropdown d-none">
+                <button class="btn btn-light" type="button" data-toggle="dropdown">
+                  MC Online Resources <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">MC Online Resources</a>
+                  <a class="dropdown-item" href="#">Other Resources</a>
+                </div>
+              </li>
+              <li class="nav-item nav-item-result">
+                <button class="btn btn-light btn-back" type="button">
+                  <i class="fas fa-arrow-left"></i>
+                </button>
+                <span class="item-text text-truncate" title="Numbers To 10">Numbers To 10</span>
+              </li>
+            </ul>
+            <ul class="navbar-nav nav-main">
+              <li class="nav-item dialog">
+                <div class="input-group input-group-search">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light btn-search" type="button">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-light btn-back" type="button">
+                      <i class="fas fa-arrow-left"></i>
+                    </button>
+                  </div>
+                  <input class="form-control form-input input-autocomplete" type="text" placeholder="Search resources">
+                  <div class="input-group-append">
+                    <button class="btn btn-light btn-clear d-none" type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                    <button class="btn btn-light btn-toggle" type="button" data-toggle='dialog'>
+                      <i class="fas fa-caret-down"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="dialog-menu dialog-menu-search">
+                  <form class="form-advanced-search">
+                    <div class="form-group">
+                      <label class="form-label" for="selCurriculum">Curriculum</label>
+                      <select class="form-control selectpicker" id="selCurriculum">
+                        <option>All</option>
+                        <option>CAIE</option>
+                        <option>SG</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="selGrade">Grade</label>
+                      <select class="form-control selectpicker" id="selGrade">
+                        <option>All</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="selSubjet">Subject</label>
+                      <select class="form-control selectpicker" id="selSubjet">
+                        <option>All</option>
+                        <option>Chemistry</option>
+                        <option>Mathematics</option>
+                        <option>Physics</option>
+                        <option>Science</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="txtKeyword">Keyword</label>
+                      <input class="form-control form-input" type="text" id="txtKeyword">
+                    </div>
+                    <div class="form-group form-group-actions">
+                      <button class="btn btn-light" type="button">Reset</button> 
+                      <button class="btn btn-primary" type="button">Search</button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-light btn-search" type="button" title="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-light btn-list-view d-none" type="button" title="List view">
+                  <i class="fas fa-th-list"></i>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-light btn-card-view" type="button" title="Grid view">
+                  <i class="fas fa-th-large"></i>
+                </button>
+              </li>
+            </ul>
+        </div>
+        <div class="article-content">
+          <div class="article-sidebar">
+            <div class="tree tree-resources">
+              <div class="resource">
+                <a href="#" title="Primary 1 Math Buddies" class="expanded">
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-folder-open"></i>
+                  <span class="text-truncate">MC Online Resources</span>
+                </a>
+                <div class="resources show">
+                  <div class="resource">
+                    <a href="#" title="Primary 1 Math Buddies" class="expanded">
+                      <i class="fas fa-chevron-down"></i>
+                      <i class="fas fa-folder-open"></i>
+                      <span class="text-truncate">Primary 1 Math Buddies</span>
+                    </a>
+                    <div class="resources show">
+                      <div class="resource active">
+                        <a href="#" title="Numbers To 10" class="collapsed">
+                          <i class="fas fa-chevron-down"></i>
+                          <i class="fas fa-folder-open"></i>
+                          <span class="text-truncate">Numbers To 10</span>
+                        </a>
+                        <div class="resources show">
+                          <div class="resource">
+                            <a href="#" title="Counting To 10" class="collapsed">
+                              <i class="fas fa-chevron-right"></i>
+                              <i class="fas fa-folder"></i>
+                              <span class="text-truncate">Counting To 10</span>
+                            </a>
+                            <div class="resources hide">
+                            </div>
+                          </div>
+                          <div class="resource">
+                            <a href="#" title="Comparing Numbers" class="collapsed">
+                              <i class="fas fa-chevron-right"></i>
+                              <i class="fas fa-folder"></i>
+                              <span class="text-truncate">Comparing Numbers</span>
+                            </a>
+                            <div class="resources hide">                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="resource">
+                        <a href="#" title="Number Bonds" class="collapsed">
+                          <i class="fas fa-chevron-right"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Number Bonds</span>
+                        </a>
+                        <div class="resources hide">                      
+                        </div>
+                      </div>
+                      <div class="resource">
+                        <a href="#" title="Addition Within 10" class="collapsed">
+                          <i class="fas fa-chevron-right"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Addition Within 10</span>
+                        </a>
+                        <div class="resources hide">                      
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 2 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 2 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 3 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 3 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 4 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 4 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 5 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 5 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Primary 6 Math Buddies" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Primary 6 Math Buddies</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Other Resources" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Other Resources</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="article-body">
+            <div class="loading-state d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <nav class="navbar navbar-expand">
+              <div class="navbar-text">8 records found</div>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a class="text-truncate" href="#" title="MC Online Resources">MC Online Resources</a>
+                </li>
+                <li class="breadcrumb-item">
+                  <a class="text-truncate" href="#" title="Primary 1 Math Buddies">Primary 1 Math Buddies</a>
+                </li>
+                <li class="breadcrumb-item active">
+                  <a class="text-truncate" href="#" title="Numbers To 10">Numbers To 10</a>
+                </li>
+              </ol>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <form class="form-inline form-add-resource d-none">
+                    <label class="form-label">Add to</label>
+                    <select class="form-control selectpicker" data-width="160">
+                      <option selected>Counting To 10</option>
+                      <option>Comparing Numbers</option>
+                      <option>Making Number Patterns</option>
+                    </select>
+                    <button type="button" class="btn btn-primary btn-add">
+                      Add
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </nav>
+            <table class="table table-head">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="100px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="all"/>
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th class="sortable-column">
+                    Title <i class="fas fa-long-arrow-alt-down"></i>
+                  </th>
+                  <th class="sortable-column">
+                    Subject
+                  </th>
+                  <th class="sortable-column">
+                    Grade
+                  </th>
+                  <th class="sortable-column">
+                    Last Modified
+                  </th>
+                  <th class="sortable-column">
+                    File Size
+                  </th>
+                  <th>
+                    &nbsp;
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-body">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="100px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item0" disabled/>
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-folder"></i> Counting To 10
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>29 Mar 2018</td>
+                  <td> - </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item1" disabled/>
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-folder"></i> Comparing Numbers
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>05 Dec 2006</td>
+                  <td> - </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item2"/>
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-word"></i> Making Number Patterns
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>22 Jul 2015</td>
+                  <td> - </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item3"/>
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-excel"></i> Making Number Bonds
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>17 Feb 2016</td>
+                  <td>2 KB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-pdf"></i> Making Addition Stories
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>14 Nov 2014</td>
+                  <td>58 KB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item5"/>
+                      <label class="custom-control-label" for="item5"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-archive"></i> Making Subtraction Stories
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>12 Nov 2014</td>
+                  <td>882 KB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item6"/>
+                      <label class="custom-control-label" for="item6"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-powerpoint"></i> Making Fact Families
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>10 Sep 2014</td>
+                  <td>1 MB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item7"/>
+                      <label class="custom-control-label" for="item7"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">
+                      <i class="fas fa-file-alt"></i> Making Patterns With Shapes
+                    </a>
+                  </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>28 Nov 2014</td>
+                  <td>100 KB</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="card-group d-none">
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-folder"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Counting To 10</a>
+                  <div class="text-muted">
+                    29 Mar 2018
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="item00"/>
+                    <label class="custom-control-label" for="item00"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-folder"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Comparing Numbers</a>
+                  <div class="text-muted">
+                    05 Dec 2006
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="item01"/>
+                    <label class="custom-control-label" for="item01"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-file-word"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Making Number Patterns</a>
+                  <div class="text-muted">
+                    22 Jul 2015
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="item02"/>
+                    <label class="custom-control-label" for="item02"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-file-excel"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Making Number Bonds</a>
+                  <div class="text-muted">
+                    17 Feb 2016
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="item03"/>
+                    <label class="custom-control-label" for="item03"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-file-archive"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Making Addition Stories</a>
+                  <div class="text-muted">
+                    12 Nov 2014
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" id="item04"/>
+                    <label class="custom-control-label" for="item04"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>            
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-stack d-none">
+  <div class="toast" role="alert fade" data-delay="5000">
+    <div class="toast-header">
+      <button class="close" type="button" title="Close" data-dismiss="toast">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>    
+    <div class="toast-body">
+      <i class="img img-toast-success"></i>
+      Resources have been added to the "Counting To 10" folder.
+    </div>
+  </div>
+</div>

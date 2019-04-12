@@ -159,6 +159,9 @@ a:focus {
 .form-group.form-group-actions {
   margin-bottom: 0;
 }
+.form-group .form-label {
+  margin: 0.375rem 0;
+}
 
 .form-control.form-input, .form-control.form-select, .form-control.form-textarea {
   border-radius: 0;
@@ -169,6 +172,18 @@ a:focus {
 .form-control.form-input:not(:disabled):not(.disabled):focus, .form-control.form-input:not(:disabled):not(.disabled):active, .form-control.form-select:not(:disabled):not(.disabled):focus, .form-control.form-select:not(:disabled):not(.disabled):active, .form-control.form-textarea:not(:disabled):not(.disabled):focus, .form-control.form-textarea:not(:disabled):not(.disabled):active {
   border-color: #495057;
   box-shadow: none;
+}
+.form-control.form-input-xs {
+  width: 5rem;
+}
+.form-control.form-input-sm {
+  width: 10rem;
+}
+.form-control.form-input-md {
+  width: 20rem;
+}
+.form-control.form-input-lg {
+  width: 40rem;
 }
 
 .form-text .fas.fa-exclamation {
@@ -233,6 +248,7 @@ a:focus {
 }
 .dropdown .dropdown-menu .dropdown-item .fas,
 .dropup .dropdown-menu .dropdown-item .fas {
+  color: #495057;
   font-size: 1.125rem;
   width: 2rem;
 }
@@ -664,6 +680,22 @@ table.dataTable tbody tr td .nowrap {
   text-align: center;
 }
 
+.sortable-ghost.resource {
+  position: relative;
+}
+.sortable-ghost.resource::before {
+  border: 1px dashed #ced4da;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.sortable-ghost * {
+  visibility: hidden;
+}
+
 .input-group.input-group-search {
   position: relative;
 }
@@ -798,6 +830,139 @@ table.dataTable tbody tr td .nowrap {
 }
 .custom-file .custom-file-label::after {
   border-radius: 0;
+}
+
+.file-upload {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  border: 2px dashed #ced4da;
+  padding: 1rem;
+}
+.file-upload.file-upload-button {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+}
+.file-upload.file-upload-button .file-upload-control {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.file-upload.file-upload-button .file-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.file-upload.file-upload-button .file-group .file-preview {
+  margin: 0;
+}
+.file-upload .file-upload-control {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.file-upload .file-upload-control .upload-text {
+  font-size: 1.5rem;
+}
+.file-upload .file-upload-control .text-muted {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 1rem;
+}
+.file-upload .file-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.file-upload .file-group .file-preview {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+.file-upload .file-group .file-preview.file-preview-edit {
+  position: relative;
+  padding-right: 3rem;
+}
+.file-upload .file-group .file-preview.file-preview-edit .btn-light {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.file-upload .file-group .file-preview .file-details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  margin: 0.5rem 0;
+}
+.file-upload .file-group .file-preview .file-details img {
+  max-width: 4rem;
+  margin-right: 1rem;
+}
+.file-upload .file-group .file-preview .file-details .file-size strong {
+  font-weight: 400;
+}
+.file-upload .file-group .file-preview .file-progress {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #ced4da;
+  min-height: 0.25rem;
+  height: 0.25rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+.file-upload .file-group .file-preview .file-progress .progress-bar {
+  background-color: #ff9900;
+  display: inline-block;
+  min-height: 0.25rem;
+  height: 0.25rem;
+}
+.file-upload .file-group .file-preview .file-error-message {
+  color: #dc3545;
+}
+@media (max-width: 991.98px) {
+  .file-upload:not(.file-upload-button) .file-group .file-preview {
+    min-width: 22rem;
+    width: 22rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .file-upload:not(.file-upload-button) .file-group .file-preview {
+    min-width: 20rem;
+    width: 20rem;
+  }
+}
+@media (min-width: 992px) {
+  .file-upload:not(.file-upload-button) .file-group .file-preview {
+    min-width: 24rem;
+    width: 24rem;
+  }
 }
 
 .nav .nav-link.active .img.img-mylibrary,
@@ -1052,8 +1217,8 @@ table.dataTable tbody tr td .nowrap {
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search .form-group.form-group-actions {
   -webkit-justify-content: flex-end;
@@ -1369,7 +1534,7 @@ table.dataTable tbody tr td .nowrap {
   margin-right: 1rem;
 }
 .app-header .navbar-nav .btn-notifications .fas {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 .app-header .navbar-nav .btn-notifications .fas.fa-bell {
   color: #ff9900;
@@ -1402,8 +1567,8 @@ table.dataTable tbody tr td .nowrap {
 .app-header .dropdown.dropdown-user .btn-user img,
 .app-header .dropdown.dropdown-user .user-account img {
   margin-right: 1rem;
-  max-height: 4rem;
-  max-width: 4rem;
+  max-height: 3.5rem;
+  max-width: 3.5rem;
   vertical-align: baseline;
 }
 .app-header .dropdown.dropdown-user .btn-user .user-summary,
@@ -1517,9 +1682,6 @@ table.dataTable tbody tr td .nowrap {
   }
   .app-header .navbar-nav.nav-main .nav-item {
     display: none;
-  }
-  .app-header .navbar-nav .btn-notifications .fas {
-    font-size: 2rem;
   }
   .app-header .dropdown.dropdown-user .btn-user img {
     margin-right: 0;
@@ -1657,6 +1819,7 @@ table.dataTable tbody tr td .nowrap {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 100vh;
+  height: 100vh;
 }
 .app-content.page-shared .article-resources {
   padding: 0 1.5rem;
@@ -1753,53 +1916,67 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-shared .article-resources .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table {
+.app-content.page-shared .article-resources .article-content .article-body .table-head,
+.app-content.page-shared .article-resources .article-content .article-body .table-body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.app-content.page-shared .article-resources .article-content .article-body .table.table-head {
   margin-bottom: 0;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table th,
-.app-content.page-shared .article-resources .article-content .article-body .table td {
+.app-content.page-shared .article-resources .article-content .article-body .table-head th,
+.app-content.page-shared .article-resources .article-content .article-body .table-head td,
+.app-content.page-shared .article-resources .article-content .article-body .table-body th,
+.app-content.page-shared .article-resources .article-content .article-body .table-body td {
   padding: 1rem;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table th .btn,
-.app-content.page-shared .article-resources .article-content .article-body .table td .btn {
+.app-content.page-shared .article-resources .article-content .article-body .table-head th .btn,
+.app-content.page-shared .article-resources .article-content .article-body .table-head td .btn,
+.app-content.page-shared .article-resources .article-content .article-body .table-body th .btn,
+.app-content.page-shared .article-resources .article-content .article-body .table-body td .btn {
   padding: 0.325rem;
   margin: -0.5rem 0;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table th .btn .fa-info-circle,
-.app-content.page-shared .article-resources .article-content .article-body .table td .btn .fa-info-circle {
+.app-content.page-shared .article-resources .article-content .article-body .table-head th .btn .fa-info-circle,
+.app-content.page-shared .article-resources .article-content .article-body .table-head td .btn .fa-info-circle,
+.app-content.page-shared .article-resources .article-content .article-body .table-body th .btn .fa-info-circle,
+.app-content.page-shared .article-resources .article-content .article-body .table-body td .btn .fa-info-circle {
   font-size: 1.375rem;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table a {
+.app-content.page-shared .article-resources .article-content .article-body .table-head a,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a {
   color: #212529;
   display: inline-block;
   padding-left: 2.25rem;
   position: relative;
   word-break: break-word;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table a .fas {
+.app-content.page-shared .article-resources .article-content .article-body .table-head a .fas,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas {
   position: absolute;
   left: 0;
   font-size: 1.5rem;
   min-width: 2rem;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table a .fas.fa-folder {
+.app-content.page-shared .article-resources .article-content .article-body .table-head a .fas.fa-folder,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas.fa-folder {
   color: #fda316;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table a .fas.fa-file-word, .app-content.page-shared .article-resources .article-content .article-body .table a .fas.fa-file-alt {
+.app-content.page-shared .article-resources .article-content .article-body .table-head a .fas.fa-file-word, .app-content.page-shared .article-resources .article-content .article-body .table-head a .fas.fa-file-alt,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas.fa-file-word,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas.fa-file-alt {
   color: #007bff;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table a .fas.fa-file-excel {
+.app-content.page-shared .article-resources .article-content .article-body .table-head a .fas.fa-file-excel,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas.fa-file-excel {
   color: #28a745;
 }
-.app-content.page-shared .article-resources .article-content .article-body .table a .fas.fa-file-image, .app-content.page-shared .article-resources .article-content .article-body .table a .fas.fa-file-powerpoint, .app-content.page-shared .article-resources .article-content .article-body .table a .fas.fa-file-pdf {
+.app-content.page-shared .article-resources .article-content .article-body .table-head a .fas.fa-file-image, .app-content.page-shared .article-resources .article-content .article-body .table-head a .fas.fa-file-powerpoint, .app-content.page-shared .article-resources .article-content .article-body .table-head a .fas.fa-file-pdf,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas.fa-file-image,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas.fa-file-powerpoint,
+.app-content.page-shared .article-resources .article-content .article-body .table-body a .fas.fa-file-pdf {
   color: #dc3545;
 }
 .app-content.page-shared .article-resources .article-content .article-body .card-group {
@@ -1940,7 +2117,7 @@ table.dataTable tbody tr td .nowrap {
 }
 @media (max-width: 576px) {
   .app-content.page-shared .article-resources .article-header .navbar .navbar-nav:first-child {
-    width: 14rem;
+    max-width: 16.5rem;
   }
   .app-content.page-shared .article-resources .article-content .article-body .table-head colgroup:nth-child(5),
 .app-content.page-shared .article-resources .article-content .article-body .table-head colgroup:nth-child(6),
@@ -2011,6 +2188,350 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-shared .article-resources .article-content .article-body .table-body td:nth-child(7) {
     display: none;
   }
+}
+.app-content.page-shared .article-tests {
+  padding: 0 1.5rem;
+}
+.app-content.page-shared .article-tests .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+  font-size: 1.25rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+  font-size: 1.25rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.25rem;
+  width: 12rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light:hover .fas {
+  color: #212529;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light .fas {
+  color: #495057;
+  font-size: 1.5rem;
+}
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-shared .article-tests .article-content .article-sidebar {
+  margin: 0;
+}
+.app-content.page-shared .article-tests .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-shared .article-tests .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-shared .article-tests .article-content .article-body .navbar .navbar-nav .form-add-resource .form-label {
+  margin-right: 0.5rem;
+}
+.app-content.page-shared .article-tests .article-content .article-body .navbar .navbar-nav .form-add-resource .btn-primary {
+  margin-left: 0.5rem;
+}
+.app-content.page-shared .article-tests .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-shared .article-tests .article-content .article-body .table-head,
+.app-content.page-shared .article-tests .article-content .article-body .table-body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+}
+.app-content.page-shared .article-tests .article-content .article-body .table-head th,
+.app-content.page-shared .article-tests .article-content .article-body .table-head td,
+.app-content.page-shared .article-tests .article-content .article-body .table-body th,
+.app-content.page-shared .article-tests .article-content .article-body .table-body td {
+  padding: 1rem;
+}
+.app-content.page-shared .article-tests .article-content .article-body .table-head th .btn,
+.app-content.page-shared .article-tests .article-content .article-body .table-head td .btn,
+.app-content.page-shared .article-tests .article-content .article-body .table-body th .btn,
+.app-content.page-shared .article-tests .article-content .article-body .table-body td .btn {
+  padding: 0.325rem;
+  margin: -0.5rem 0;
+}
+.app-content.page-shared .article-tests .article-content .article-body .table-head th .btn .fa-info-circle,
+.app-content.page-shared .article-tests .article-content .article-body .table-head td .btn .fa-info-circle,
+.app-content.page-shared .article-tests .article-content .article-body .table-body th .btn .fa-info-circle,
+.app-content.page-shared .article-tests .article-content .article-body .table-body td .btn .fa-info-circle {
+  font-size: 1.375rem;
+}
+.app-content.page-shared .article-tests .article-content .article-body .table-head a,
+.app-content.page-shared .article-tests .article-content .article-body .table-body a {
+  color: #212529;
+  word-break: break-word;
+}
+@media (max-width: 991.98px) {
+  .app-content.page-shared .article-tests .article-header {
+    margin: 0 -0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 980;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav.nav-main {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-divider {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.dropdown {
+    order: 1;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .btn-share,
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .btn-edit,
+.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .btn-assign {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item-drawer {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
+  .app-content.page-shared .article-tests .article-content {
+    margin: 0 -0.5rem;
+  }
+  .app-content.page-shared .article-tests .article-content .article-sidebar {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .app-content.page-shared .article-tests .article-content .article-body .table-head colgroup:nth-child(3),
+.app-content.page-shared .article-tests .article-content .article-body .table-head colgroup:nth-child(4),
+.app-content.page-shared .article-tests .article-content .article-body .table-body colgroup:nth-child(3),
+.app-content.page-shared .article-tests .article-content .article-body .table-body colgroup:nth-child(4) {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-content .article-body .table-head th:nth-child(3),
+.app-content.page-shared .article-tests .article-content .article-body .table-head th:nth-child(4),
+.app-content.page-shared .article-tests .article-content .article-body .table-head td:nth-child(3),
+.app-content.page-shared .article-tests .article-content .article-body .table-head td:nth-child(4),
+.app-content.page-shared .article-tests .article-content .article-body .table-body th:nth-child(3),
+.app-content.page-shared .article-tests .article-content .article-body .table-body th:nth-child(4),
+.app-content.page-shared .article-tests .article-content .article-body .table-body td:nth-child(3),
+.app-content.page-shared .article-tests .article-content .article-body .table-body td:nth-child(4) {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 768px) {
+  .app-content.page-shared .article-tests .article-content .article-body .table-head colgroup:nth-child(6),
+.app-content.page-shared .article-tests .article-content .article-body .table-body colgroup:nth-child(6) {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-content .article-body .table-head th:nth-child(6),
+.app-content.page-shared .article-tests .article-content .article-body .table-head td:nth-child(6),
+.app-content.page-shared .article-tests .article-content .article-body .table-body th:nth-child(6),
+.app-content.page-shared .article-tests .article-content .article-body .table-body td:nth-child(6) {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-shared .article-tests .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 980;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item-submodule {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
+  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .input-group .form-control {
+    width: 24rem;
+  }
+  .app-content.page-shared .article-tests .article-content .article-sidebar {
+    height: calc(100vh - 4rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+  }
+  .app-content.page-shared .article-tests .article-content .article-body .table-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+    z-index: 970;
+  }
+}
+.app-content.page-shared .article-file-upload {
+  padding: 0 1.5rem;
+}
+.app-content.page-shared .article-file-upload .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-shared .article-file-upload .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-shared .article-file-upload .article-header .navbar .navbar-nav .item-text {
+  font-size: 1.25rem;
+  width: 12rem;
+}
+.app-content.page-shared .article-file-upload .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-shared .article-file-upload .article-content .article-body .navbar .navbar-nav .form-add-resource .form-label {
+  margin-right: 0.5rem;
+}
+.app-content.page-shared .article-file-upload .article-content .article-body .navbar .navbar-nav .form-add-resource .btn-primary {
+  margin-left: 0.5rem;
+}
+.app-content.page-shared .article-file-upload .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-shared .article-file-upload .article-content .article-body .file-upload {
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: calc(100vh - 10rem);
+}
+.app-content.page-shared .article-weblinks {
+  padding: 0 1.5rem;
+}
+.app-content.page-shared .article-weblinks .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-shared .article-weblinks .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-shared .article-weblinks .article-header .navbar .navbar-nav .item-text {
+  font-size: 1.25rem;
+  width: 12rem;
+}
+.app-content.page-shared .article-weblinks .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-shared .article-weblinks .article-content .article-body .navbar .navbar-nav .form-add-resource .form-label {
+  margin-right: 0.5rem;
+}
+.app-content.page-shared .article-weblinks .article-content .article-body .navbar .navbar-nav .form-add-resource .btn-primary {
+  margin-left: 0.5rem;
+}
+.app-content.page-shared .article-weblinks .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-shared .article-weblinks .article-content .article-body .form-add-weblink .form-group {
+  margin: 1rem 0;
+  margin-right: 1rem;
 }
 
 .app-content.page-error {
@@ -2593,70 +3114,6 @@ table.dataTable tbody tr td .nowrap {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group {
-  position: relative;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend,
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append {
-  position: absolute;
-  top: 1px;
-  z-index: 5;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light,
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  margin-left: 0;
-  padding: 0.325rem 0.75rem;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light:hover .fas,
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light:hover .fas {
-  color: #212529;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-light .fas,
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append .btn-light .fas {
-  color: #adb5bd;
-  font-size: 1.375rem;
-  vertical-align: top;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend {
-  left: 1px;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .input-group-append {
-  right: 1px;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .input-group .form-control {
-  padding-left: 3rem;
-  padding-right: 5rem;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search {
-  padding: 1rem;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group.form-group-actions {
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group .form-label {
-  min-width: 8rem;
-  width: 8rem;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group .form-input {
-  width: calc(100% - 1rem);
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group .btn {
-  margin: 0;
-}
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .dialog-menu .form-advanced-search .form-group .btn + .btn {
-  margin-left: 0.5rem;
-}
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light:hover .fas {
   color: #212529;
 }
@@ -2673,66 +3130,6 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-content .article-sidebar {
   margin: 0;
 }
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource.active > a {
-  color: #ff6600;
-  font-weight: 500;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource.active > a .fa-folder,
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource.active > a .fa-folder-open {
-  color: #fda316;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-  color: #495057;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a:hover {
-  background-color: #e9ecef;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a .fas {
-  color: #6c757d;
-  font-size: 0.75rem;
-  min-width: 1rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a .fa-folder,
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource a .fa-folder-open {
-  color: #fda316;
-  font-size: 1.5rem;
-  min-width: 2rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > a {
-  padding-left: 2.5rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > a {
-  padding-left: 4rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > a {
-  padding-left: 5.5rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
-  padding-left: 7rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
-  padding-left: 8.5rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
-  padding-left: 10rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
-  padding-left: 11.5rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
-  padding-left: 13rem;
-}
-.app-content.page-resources .article-resources .article-content .article-sidebar .resources .resource .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > .resources > .resource > a {
-  padding-left: 14.5rem;
-}
 .app-content.page-resources .article-resources .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
@@ -2741,53 +3138,67 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-resources .article-resources .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table {
+.app-content.page-resources .article-resources .article-content .article-body .table-head,
+.app-content.page-resources .article-resources .article-content .article-body .table-body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.app-content.page-resources .article-resources .article-content .article-body .table.table-head {
   margin-bottom: 0;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table th,
-.app-content.page-resources .article-resources .article-content .article-body .table td {
+.app-content.page-resources .article-resources .article-content .article-body .table-head th,
+.app-content.page-resources .article-resources .article-content .article-body .table-head td,
+.app-content.page-resources .article-resources .article-content .article-body .table-body th,
+.app-content.page-resources .article-resources .article-content .article-body .table-body td {
   padding: 1rem;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table th .btn,
-.app-content.page-resources .article-resources .article-content .article-body .table td .btn {
+.app-content.page-resources .article-resources .article-content .article-body .table-head th .btn,
+.app-content.page-resources .article-resources .article-content .article-body .table-head td .btn,
+.app-content.page-resources .article-resources .article-content .article-body .table-body th .btn,
+.app-content.page-resources .article-resources .article-content .article-body .table-body td .btn {
   padding: 0.325rem;
   margin: -0.5rem 0;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table th .btn .fa-info-circle,
-.app-content.page-resources .article-resources .article-content .article-body .table td .btn .fa-info-circle {
+.app-content.page-resources .article-resources .article-content .article-body .table-head th .btn .fa-info-circle,
+.app-content.page-resources .article-resources .article-content .article-body .table-head td .btn .fa-info-circle,
+.app-content.page-resources .article-resources .article-content .article-body .table-body th .btn .fa-info-circle,
+.app-content.page-resources .article-resources .article-content .article-body .table-body td .btn .fa-info-circle {
   font-size: 1.375rem;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a {
+.app-content.page-resources .article-resources .article-content .article-body .table-head a,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a {
   color: #212529;
   display: inline-block;
   padding-left: 2.25rem;
   position: relative;
   word-break: break-word;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fas {
+.app-content.page-resources .article-resources .article-content .article-body .table-head a .fas,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas {
   position: absolute;
   left: 0;
   font-size: 1.5rem;
   min-width: 2rem;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-folder {
+.app-content.page-resources .article-resources .article-content .article-body .table-head a .fas.fa-folder,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas.fa-folder {
   color: #fda316;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-word, .app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-alt {
+.app-content.page-resources .article-resources .article-content .article-body .table-head a .fas.fa-file-word, .app-content.page-resources .article-resources .article-content .article-body .table-head a .fas.fa-file-alt,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas.fa-file-word,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas.fa-file-alt {
   color: #007bff;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-excel {
+.app-content.page-resources .article-resources .article-content .article-body .table-head a .fas.fa-file-excel,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas.fa-file-excel {
   color: #28a745;
 }
-.app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-image, .app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-powerpoint, .app-content.page-resources .article-resources .article-content .article-body .table a .fas.fa-file-pdf {
+.app-content.page-resources .article-resources .article-content .article-body .table-head a .fas.fa-file-image, .app-content.page-resources .article-resources .article-content .article-body .table-head a .fas.fa-file-powerpoint, .app-content.page-resources .article-resources .article-content .article-body .table-head a .fas.fa-file-pdf,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas.fa-file-image,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas.fa-file-powerpoint,
+.app-content.page-resources .article-resources .article-content .article-body .table-body a .fas.fa-file-pdf {
   color: #dc3545;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group {
@@ -3019,6 +3430,14 @@ table.dataTable tbody tr td .nowrap {
 }
 
 @media (min-width: 768px) {
+  .modal-resource-file-upload .modal-dialog .modal-body .file-upload {
+    -webkit-justify-content: center;
+    justify-content: center;
+    min-height: 16rem;
+  }
+}
+
+@media (min-width: 768px) {
   .modal-resource-file-edit-attributes .modal-dialog .modal-body .form-edit-file-attributes .form-group {
     display: -ms-flexbox;
     display: flex;
@@ -3038,6 +3457,44 @@ table.dataTable tbody tr td .nowrap {
     min-width: 14rem;
     width: 14rem;
   }
+}
+
+.modal-resource-manage-revisions .modal-dialog .modal-body .file-group {
+  margin-top: 1rem;
+}
+.modal-resource-manage-revisions .modal-dialog .modal-body .file-group .list-group-item:hover {
+  background-color: transparent;
+}
+.modal-resource-manage-revisions .modal-dialog .modal-body .file-group .list-group-item .file-details {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.modal-resource-manage-revisions .modal-dialog .modal-body .file-group .list-group-item .file-details .file-modified-date {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+.modal-resource-manage-revisions .modal-dialog .modal-body .file-group .list-group-item .file-details .file-modified-date .user-name {
+  margin-right: 1.5rem;
+  max-width: 16rem;
+}
+
+.modal-resource-move-to .modal-dialog .modal-body .tree-resources {
+  border: 1px solid #ced4da;
+  margin-bottom: 1rem;
+  max-height: 20rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-resource-import-to .modal-dialog .modal-body .tree-resources {
+  border: 1px solid #ced4da;
+  max-height: 20rem;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .app-content.page-lessons .article-lessons {
@@ -3132,31 +3589,37 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-lessons .article-lessons .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
-.app-content.page-lessons .article-lessons .article-content .article-body .table {
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.app-content.page-lessons .article-lessons .article-content .article-body .table.table-head, .app-content.page-lessons .article-lessons .article-content .article-body .table.table-body {
   margin-bottom: 0;
 }
-.app-content.page-lessons .article-lessons .article-content .article-body .table th,
-.app-content.page-lessons .article-lessons .article-content .article-body .table td {
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head th,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head td,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body th,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body td {
   padding: 1rem;
 }
-.app-content.page-lessons .article-lessons .article-content .article-body .table th .btn,
-.app-content.page-lessons .article-lessons .article-content .article-body .table td .btn {
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head th .btn,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head td .btn,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body th .btn,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body td .btn {
   padding: 0.325rem;
   margin: -0.5rem 0;
 }
-.app-content.page-lessons .article-lessons .article-content .article-body .table th .btn .fa-info-circle,
-.app-content.page-lessons .article-lessons .article-content .article-body .table td .btn .fa-info-circle {
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head th .btn .fa-info-circle,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head td .btn .fa-info-circle,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body th .btn .fa-info-circle,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body td .btn .fa-info-circle {
   font-size: 1.375rem;
 }
-.app-content.page-lessons .article-lessons .article-content .article-body .table a {
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head a,
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body a {
   color: #212529;
   word-break: break-word;
 }
@@ -3285,7 +3748,7 @@ table.dataTable tbody tr td .nowrap {
     position: sticky;
     top: 10rem;
   }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table.table-head {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head {
     position: -webkit-sticky;
     position: sticky;
     top: 10rem;
@@ -3484,47 +3947,61 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .item-text {
   max-width: 12rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table.table-head {
   margin-bottom: 0;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td {
   padding: 1rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .dropdown,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .dropdown {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th .dropdown,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .dropdown,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .dropdown,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .dropdown {
   margin: -0.5rem 0;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .dropdown .btn-light.dropdown-toggle,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .dropdown .btn-light.dropdown-toggle {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th .dropdown .btn-light.dropdown-toggle,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .dropdown .btn-light.dropdown-toggle,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .dropdown .btn-light.dropdown-toggle,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .dropdown .btn-light.dropdown-toggle {
   margin: 0;
   padding: 0.375rem 0.5rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th .btn-light,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .btn-light,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .btn-light,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .btn-light {
   padding: 0.325rem;
   margin: -0.5rem 0;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light.btn-handle,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light.btn-handle {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th .btn-light.btn-handle,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .btn-light.btn-handle,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .btn-light.btn-handle,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .btn-light.btn-handle {
   margin: -0.5rem;
   padding: 0.25rem 0.5rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light .fa-eye,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light .fa-eye-slash,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light .fa-eye,
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light .fa-eye-slash {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th .btn-light .fa-eye,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th .btn-light .fa-eye-slash,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .btn-light .fa-eye,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .btn-light .fa-eye-slash,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .btn-light .fa-eye,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .btn-light .fa-eye-slash,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .btn-light .fa-eye,
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .btn-light .fa-eye-slash {
   font-size: 1.25rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table a:not(.dropdown-item) {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head a:not(.dropdown-item),
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body a:not(.dropdown-item) {
   color: #212529;
   word-break: break-word;
 }
@@ -3686,26 +4163,21 @@ table.dataTable tbody tr td .nowrap {
   width: 2.5rem;
 }
 
-.modal-resource-mylibrary-add .modal-dialog .modal-body .navbar,
-.modal-resource-myresources-add .modal-dialog .modal-body .navbar {
+.modal-resource-resource-add .modal-dialog .modal-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-.modal-resource-mylibrary-add .modal-dialog .modal-body .navbar .nav-divider,
-.modal-resource-myresources-add .modal-dialog .modal-body .navbar .nav-divider {
+.modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-divider {
   border-right-color: #6c757d;
   margin: 0.25rem 1rem;
 }
-.modal-resource-mylibrary-add .modal-dialog .modal-body .navbar .nav-item .item-text,
-.modal-resource-myresources-add .modal-dialog .modal-body .navbar .nav-item .item-text {
+.modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-item .item-text {
   font-size: 1.25rem;
   max-width: 16rem;
 }
 @media (max-width: 576px) {
-  .modal-resource-mylibrary-add .modal-dialog .modal-body .navbar .nav-title,
-.modal-resource-mylibrary-add .modal-dialog .modal-body .navbar .nav-divider,
-.modal-resource-myresources-add .modal-dialog .modal-body .navbar .nav-title,
-.modal-resource-myresources-add .modal-dialog .modal-body .navbar .nav-divider {
+  .modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-title,
+.modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-divider {
     display: none;
   }
 }
@@ -3802,31 +4274,37 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-tests .article-tests .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
-.app-content.page-tests .article-tests .article-content .article-body .table {
+.app-content.page-tests .article-tests .article-content .article-body .table-head,
+.app-content.page-tests .article-tests .article-content .article-body .table-body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.app-content.page-tests .article-tests .article-content .article-body .table.table-head, .app-content.page-tests .article-tests .article-content .article-body .table.table-body {
   margin-bottom: 0;
 }
-.app-content.page-tests .article-tests .article-content .article-body .table th,
-.app-content.page-tests .article-tests .article-content .article-body .table td {
+.app-content.page-tests .article-tests .article-content .article-body .table-head th,
+.app-content.page-tests .article-tests .article-content .article-body .table-head td,
+.app-content.page-tests .article-tests .article-content .article-body .table-body th,
+.app-content.page-tests .article-tests .article-content .article-body .table-body td {
   padding: 1rem;
 }
-.app-content.page-tests .article-tests .article-content .article-body .table th .btn,
-.app-content.page-tests .article-tests .article-content .article-body .table td .btn {
+.app-content.page-tests .article-tests .article-content .article-body .table-head th .btn,
+.app-content.page-tests .article-tests .article-content .article-body .table-head td .btn,
+.app-content.page-tests .article-tests .article-content .article-body .table-body th .btn,
+.app-content.page-tests .article-tests .article-content .article-body .table-body td .btn {
   padding: 0.325rem;
   margin: -0.5rem 0;
 }
-.app-content.page-tests .article-tests .article-content .article-body .table th .btn .fa-info-circle,
-.app-content.page-tests .article-tests .article-content .article-body .table td .btn .fa-info-circle {
+.app-content.page-tests .article-tests .article-content .article-body .table-head th .btn .fa-info-circle,
+.app-content.page-tests .article-tests .article-content .article-body .table-head td .btn .fa-info-circle,
+.app-content.page-tests .article-tests .article-content .article-body .table-body th .btn .fa-info-circle,
+.app-content.page-tests .article-tests .article-content .article-body .table-body td .btn .fa-info-circle {
   font-size: 1.375rem;
 }
-.app-content.page-tests .article-tests .article-content .article-body .table a {
+.app-content.page-tests .article-tests .article-content .article-body .table-head a,
+.app-content.page-tests .article-tests .article-content .article-body .table-body a {
   color: #212529;
   word-break: break-word;
 }
@@ -3955,7 +4433,7 @@ table.dataTable tbody tr td .nowrap {
     position: sticky;
     top: 10rem;
   }
-  .app-content.page-tests .article-tests .article-content .article-body .table.table-head {
+  .app-content.page-tests .article-tests .article-content .article-body .table-head {
     position: -webkit-sticky;
     position: sticky;
     top: 10rem;
@@ -3974,14 +4452,14 @@ table.dataTable tbody tr td .nowrap {
     display: none;
   }
 }
-.app-content.page-tests .article-create-lesson {
+.app-content.page-tests .article-create-test {
   padding: 0 1.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-header {
+.app-content.page-tests .article-create-test .article-header {
   height: 4rem;
   max-height: 4rem;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar {
+.app-content.page-tests .article-create-test .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4000,11 +4478,11 @@ table.dataTable tbody tr td .nowrap {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .nav-item {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4012,29 +4490,29 @@ table.dataTable tbody tr td .nowrap {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .nav-item .btn-light {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .btn-light:hover .fas {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light:hover .fas {
   color: #212529;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .btn-light.btn-more {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .btn-light .fas {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light .fas {
   color: #495057;
   font-size: 1.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .form-lesson-attributes {
+.app-content.page-tests .article-create-test .article-content .article-body .form-test-attributes {
   padding: 1.5rem 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group-actions {
+.app-content.page-tests .article-create-test .article-content .article-body .form-test-attributes .form-group-actions {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4042,47 +4520,47 @@ table.dataTable tbody tr td .nowrap {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources {
   padding: 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .navbar {
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
   padding: 0.5rem 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .navbar-text {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .navbar .navbar-text {
   font-weight: 500;
   max-width: calc(100% - 3rem);
   padding: 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .btn-folders:not(.collapsed) .text-view-folders {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .navbar .btn-folders:not(.collapsed) .text-view-folders {
   display: none;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .btn-folders.collapsed .text-hide-folders {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .navbar .btn-folders.collapsed .text-hide-folders {
   display: none;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .btn-light {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .navbar .btn-light {
   margin: 0 0.25rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse-folders .btn-light {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .collapse-folders .btn-light {
   margin: 0.5rem 0;
   padding: 0.325rem 0.75rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse-folders .btn-light .fas {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .collapse-folders .btn-light .fas {
   font-size: 1.5rem;
   min-width: 2rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse-folders .btn-light .fas.fa-folder-plus {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .collapse-folders .btn-light .fas.fa-folder-plus {
   color: #ff6600;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 0.75rem 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar.nav-main {
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-wrap: nowrap;
@@ -4090,13 +4568,13 @@ table.dataTable tbody tr td .nowrap {
   background-color: #ffffff;
   margin-bottom: 1rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-text {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar.nav-main .navbar-text {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
   text-align: center;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar.nav-main .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
@@ -4105,7 +4583,7 @@ table.dataTable tbody tr td .nowrap {
   justify-content: center;
   max-width: 36rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -4118,15 +4596,15 @@ table.dataTable tbody tr td .nowrap {
   min-width: 7rem;
   padding: 0.75rem 1rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link:hover {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link:hover {
   background-color: #e9ecef;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link .img {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar.nav-main .navbar-nav .nav-link .img {
   margin-bottom: 0.25rem;
   height: 2.5rem;
   width: 2.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4134,7 +4612,7 @@ table.dataTable tbody tr td .nowrap {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4142,109 +4620,123 @@ table.dataTable tbody tr td .nowrap {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item .img {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item .img {
   margin-bottom: 0;
   margin-right: 1rem;
   height: 1.5rem;
   width: 1.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-light {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar .navbar-nav .nav-item .item-text {
   max-width: 12rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table.table-head {
   margin-bottom: 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head th,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head td,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body th,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body td {
   padding: 1rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .dropdown,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .dropdown {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head th .dropdown,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head td .dropdown,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body th .dropdown,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body td .dropdown {
   margin: -0.5rem 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .dropdown .btn-light.dropdown-toggle,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .dropdown .btn-light.dropdown-toggle {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head th .dropdown .btn-light.dropdown-toggle,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head td .dropdown .btn-light.dropdown-toggle,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body th .dropdown .btn-light.dropdown-toggle,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body td .dropdown .btn-light.dropdown-toggle {
   margin: 0;
   padding: 0.375rem 0.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head th .btn-light,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head td .btn-light,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body th .btn-light,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body td .btn-light {
   padding: 0.325rem;
   margin: -0.5rem 0;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light.btn-handle,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light.btn-handle {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head th .btn-light.btn-handle,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head td .btn-light.btn-handle,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body th .btn-light.btn-handle,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body td .btn-light.btn-handle {
   margin: -0.5rem;
   padding: 0.25rem 0.5rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light .fa-eye,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table th .btn-light .fa-eye-slash,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light .fa-eye,
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table td .btn-light .fa-eye-slash {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head th .btn-light .fa-eye,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head th .btn-light .fa-eye-slash,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head td .btn-light .fa-eye,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head td .btn-light .fa-eye-slash,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body th .btn-light .fa-eye,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body th .btn-light .fa-eye-slash,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body td .btn-light .fa-eye,
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body td .btn-light .fa-eye-slash {
   font-size: 1.25rem;
 }
-.app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table a:not(.dropdown-item) {
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head a:not(.dropdown-item),
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-body a:not(.dropdown-item) {
   color: #212529;
   word-break: break-word;
 }
 @media (max-width: 992px) {
-  .app-content.page-tests .article-create-lesson .article-content .article-body .table-head colgroup:nth-child(4),
-.app-content.page-tests .article-create-lesson .article-content .article-body .table-body colgroup:nth-child(4) {
+  .app-content.page-tests .article-create-test .article-content .article-body .table-head colgroup:nth-child(4),
+.app-content.page-tests .article-create-test .article-content .article-body .table-body colgroup:nth-child(4) {
     display: none;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .table-head th:nth-child(4),
-.app-content.page-tests .article-create-lesson .article-content .article-body .table-head td:nth-child(4),
-.app-content.page-tests .article-create-lesson .article-content .article-body .table-body th:nth-child(4),
-.app-content.page-tests .article-create-lesson .article-content .article-body .table-body td:nth-child(4) {
+  .app-content.page-tests .article-create-test .article-content .article-body .table-head th:nth-child(4),
+.app-content.page-tests .article-create-test .article-content .article-body .table-head td:nth-child(4),
+.app-content.page-tests .article-create-test .article-content .article-body .table-body th:nth-child(4),
+.app-content.page-tests .article-create-test .article-content .article-body .table-body td:nth-child(4) {
     display: none;
   }
 }
 @media (max-width: 991.98px) {
-  .app-content.page-tests .article-create-lesson .article-header {
+  .app-content.page-tests .article-create-test .article-header {
     margin: 0 -0.5rem;
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     z-index: 980;
   }
-  .app-content.page-tests .article-create-lesson .article-content {
+  .app-content.page-tests .article-create-test .article-content {
     margin: 0 -0.5rem;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .form-lesson-attributes {
+  .app-content.page-tests .article-create-test .article-content .article-body .form-test-attributes {
     padding: 1rem 0;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content {
+  .app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content {
     margin: 0;
   }
 }
 @media (max-width: 767.98px) {
-  .app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .nav-divider {
+  .app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .nav-divider {
     display: none;
   }
-  .app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .nav-item .btn-edit,
-.app-content.page-tests .article-create-lesson .article-header .navbar .navbar-nav .nav-item .btn-move-to {
+  .app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .nav-item .btn-edit,
+.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .nav-item .btn-move-to {
     display: none;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-body .navbar .navbar-nav .btn-add-resource {
+  .app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-body .navbar .navbar-nav .btn-add-resource {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  .app-content.page-tests .article-create-lesson .article-content .article-body .form-lesson-attributes {
+  .app-content.page-tests .article-create-test .article-content .article-body .form-test-attributes {
     max-width: 48rem;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group {
+  .app-content.page-tests .article-create-test .article-content .article-body .form-test-attributes .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -4252,27 +4744,27 @@ table.dataTable tbody tr td .nowrap {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group .form-group {
+  .app-content.page-tests .article-create-test .article-content .article-body .form-test-attributes .form-group .form-group {
     -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 0;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group .form-label {
+  .app-content.page-tests .article-create-test .article-content .article-body .form-test-attributes .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar:not(.navbar-expand) {
+  .app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .navbar:not(.navbar-expand) {
     display: none;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse {
+  .app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-sidebar .collapse {
     display: block;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-actions {
+  .app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-actions {
     display: none;
   }
-  .app-content.page-tests .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head {
+  .app-content.page-tests .article-create-test .article-content .article-body .article-test-resources .article-content .article-body .table-head {
     position: -webkit-sticky;
     position: sticky;
     top: 10rem;
@@ -4280,7 +4772,7 @@ table.dataTable tbody tr td .nowrap {
   }
 }
 @media (min-width: 992px) {
-  .app-content.page-tests .article-create-lesson .article-header {
+  .app-content.page-tests .article-create-test .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
@@ -4289,7 +4781,7 @@ table.dataTable tbody tr td .nowrap {
 }
 
 @media (min-width: 768px) {
-  .modal-lesson-edit-attributes .modal-dialog .modal-body .form-edit-lesson-attributes .form-group {
+  .modal-test-edit-attributes .modal-dialog .modal-body .form-edit-test-attributes .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -4297,14 +4789,14 @@ table.dataTable tbody tr td .nowrap {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .modal-lesson-edit-attributes .modal-dialog .modal-body .form-edit-lesson-attributes .form-group .form-group {
+  .modal-test-edit-attributes .modal-dialog .modal-body .form-edit-test-attributes .form-group .form-group {
     -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 0;
   }
-  .modal-lesson-edit-attributes .modal-dialog .modal-body .form-edit-lesson-attributes .form-group .form-label {
+  .modal-test-edit-attributes .modal-dialog .modal-body .form-edit-test-attributes .form-group .form-label {
     min-width: 14rem;
     width: 14rem;
   }

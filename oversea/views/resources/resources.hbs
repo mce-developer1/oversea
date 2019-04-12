@@ -31,7 +31,7 @@
             </ul>
             <ul class="navbar-nav nav-main">
               <li class="nav-item dialog">
-                <div class="input-group">
+                <div class="input-group input-group-search">
                   <div class="input-group-prepend">
                     <button class="btn btn-light btn-search" type="button">
                       <i class="fas fa-search"></i>
@@ -42,7 +42,7 @@
                   </div>
                   <input class="form-control form-input input-autocomplete" type="text" placeholder="Search entire bank">
                   <div class="input-group-append">
-                    <button class="btn btn-light btn-clear" type="button">
+                    <button class="btn btn-light btn-clear d-none" type="button">
                       <i class="fas fa-times"></i>
                     </button>
                     <button class="btn btn-light btn-toggle" type="button" data-toggle='dialog'>
@@ -50,8 +50,18 @@
                     </button>
                   </div>
                 </div>
-                <div class="dialog-menu">
+                <div class="dialog-menu dialog-menu-search">
                   <form class="form-advanced-search">
+                    <div class="form-group">
+                      <label class="form-label" for="selLocation">Location</label>
+                      <select class="form-control selectpicker" id="selLocation">
+                        <option>Anywhere</option>
+                        <option>My Resources</option>
+                        <option>Shared with Me</option>
+                        <option>Shared by Me</option>
+                        <option>Resource Bank</option>
+                      </select>
+                    </div>
                     <div class="form-group">
                       <label class="form-label" for="selCurriculum">Curriculum</label>
                       <select class="form-control selectpicker" id="selCurriculum">
@@ -116,7 +126,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                   <a class="dropdown-item item-manage-revisions" href="#">
-                    <i class="fas fa-history"></i> Manage fevisions
+                    <i class="fas fa-history"></i> Manage revisions
                   </a>
                   <a class="dropdown-item item-move-to" href="#">
                     <i class="fas fa-folder"></i> Move to
@@ -131,9 +141,15 @@
                   <a class="dropdown-item item-delete" href="#">
                     <i class="fas fa-trash"></i> Delete
                   </a>
+                  <a class="dropdown-item item-restore" href="#">
+                    <i class="fas fa-trash-restore"></i> Restore
+                  </a>
                   <div class="dropdown-divider divider-share"></div>
                   <a class="dropdown-item item-share" href="#">
                     <i class="fas fa-share-alt"></i> Share
+                  </a>
+                  <a class="dropdown-item item-import-to" href="#">
+                    <i class="fas fa-file-import"></i> Import
                   </a>
                   <a class="dropdown-item item-download" href="#">
                     <i class="fas fa-download"></i> Download
@@ -160,7 +176,7 @@
         </div>
         <div class="article-content">
           <div class="article-sidebar">
-            <div class="resources">
+            <div class="tree tree-resources">
               <div class="resource">
                 <a href="#" title="Primary 1 Math Buddies" class="expanded">
                   <i class="fas fa-chevron-down"></i>
@@ -337,7 +353,7 @@
                       <i class="fas fa-folder-plus"></i> Folder
                     </a>
                     <a class="dropdown-item item-upload-file" href="#">
-                      <i class="fas fa-upload"></i> Upload file
+                      <i class="fas fa-upload"></i> Upload files
                     </a>
                   </div>
                 </li>
@@ -770,11 +786,39 @@
   </div>
 </div>
 
+<div class="modal modal-resource-file-upload fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Upload files</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="file-upload">
+          <div class="file-upload-control">
+            <div class="upload-text">Drag and drop files here</div>
+            <div class="text-muted">or</div>
+            <button class="btn btn-outline-secondary btn-upload" type="button">
+              Select files to upload
+            </button>
+          </div>
+          <div class="file-group d-none"></div>
+        </div>       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal modal-resource-file-edit-attributes fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Edit Attributes</h5>
+        <h5 class="modal-title">Edit attributes</h5>
         <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -817,23 +861,6 @@
                 <option>Physics</option>
                 <option>Science</option>
               </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Stream</label>
-            <div class="form-group">
-              <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" id="item0">
-                <label class="custom-control-label" for="item0">EM1</label>
-              </div>
-              <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" id="item1">
-                <label class="custom-control-label" for="item1">EM2</label>
-              </div>
-              <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" id="item2">
-                <label class="custom-control-label" for="item2">EM3</label>
-              </div>
             </div>
           </div>
           <div class="form-group">
@@ -908,21 +935,214 @@
   </div>
 </div>
 
-<div class="modal modal-resourve-move fade" tabindex="-1" role="dialog" data-backdrop="static">
+<div class="modal modal-resource-manage-revisions fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Move Resource(s)</h5>
+        <h5 class="modal-title">Manage revisions</h5>
         <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-move-resources">
-          <div class="form-group">
-            <label class="form-label">Resource(s)</label>            
+        <div class="file-upload file-upload-button">
+          <div class="file-upload-control">
+            <button class="btn btn-outline-secondary btn-upload" type="button">
+              Upload new version
+            </button>
           </div>
-        </form>
+          <div class="file-group d-none"></div>
+        </div>
+        <div class="file-group">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="file-details">
+                <a class="file-version" href="#">Current version</a>
+                <div class="file-modified-date">
+                  <div class="user-name text-truncate">10 Apr 2019</div>
+                  <div class="text-muted">Arya Suman</div>
+                </div>
+              </div>
+              <button class="btn btn-light btn-confirm d-none" type="button">
+                <i class="fas fa-check"></i>
+              </button>
+              <button class="btn btn-light btn-cancel d-none" type="button">
+                <i class="fas fa-times"></i>
+              </button>
+              <button class="btn btn-light btn-delete" type="button">
+                <i class="fas fa-trash"></i>
+              </button>
+            </li>
+            <li class="list-group-item">
+              <div class="file-details">
+                <a class="file-version" href="#">Version 2</a>
+                <div class="file-modified-date">
+                  <div class="user-name text-truncate">10 Apr 2019</div>
+                  <div class="text-muted">Arya Suman</div>
+                </div>
+              </div>
+              <button class="btn btn-light btn-confirm d-none" type="button">
+                <i class="fas fa-check"></i>
+              </button>
+              <button class="btn btn-light btn-cancel d-none" type="button">
+                <i class="fas fa-times"></i>
+              </button>
+              <button class="btn btn-light btn-delete" type="button">
+                <i class="fas fa-trash"></i>
+              </button>
+            </li>
+            <li class="list-group-item">
+              <div class="file-details">
+                <a class="file-version" href="#">Version 1</a>
+                <div class="file-modified-date">
+                  <div class="user-name text-truncate">10 Apr 2019</div>
+                  <div class="text-muted">Arya Suman</div>
+                </div>
+              </div>
+              <button class="btn btn-light btn-confirm d-none" type="button">
+                <i class="fas fa-check"></i>
+              </button>
+              <button class="btn btn-light btn-cancel d-none" type="button">
+                <i class="fas fa-times"></i>
+              </button>
+              <button class="btn btn-light btn-delete" type="button">
+                <i class="fas fa-trash"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-resource-move-to fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Move to folder (2 items)</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="tree tree-resources">
+          <div class="resource">
+            <a href="#" title="Primary 1 Math Buddies" class="expanded">
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-folder-open"></i>
+              <span class="text-truncate">My Resources</span>
+            </a>
+            <div class="resources show">
+              <div class="resource">
+                <a href="#" title="Primary 1 Math Buddies" class="expanded">
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-folder-open"></i>
+                  <span class="text-truncate">Primary 1 Math Buddies</span>
+                </a>
+                <div class="resources show">
+                  <div class="resource active">
+                    <a href="#" title="Numbers To 10" class="collapsed">
+                      <i class="fas fa-chevron-down"></i>
+                      <i class="fas fa-folder-open"></i>
+                      <span class="text-truncate">Numbers To 10</span>
+                    </a>
+                    <div class="resources show">
+                      <div class="resource">
+                        <a href="#" title="Counting To 10" class="collapsed">
+                          <i class="fas fa-chevron-right"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Counting To 10</span>
+                        </a>
+                        <div class="resources hide">
+                        </div>
+                      </div>
+                      <div class="resource">
+                        <a href="#" title="Comparing Numbers" class="collapsed">
+                          <i class="fas fa-chevron-right"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Comparing Numbers</span>
+                        </a>
+                        <div class="resources hide">                              
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Number Bonds" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Number Bonds</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Addition Within 10" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Addition Within 10</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 2 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 2 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 3 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 3 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 4 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 4 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 5 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 5 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 6 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 6 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input class="custom-control-input" type="checkbox" id="chkCopy"/>
+          <label class="custom-control-label" for="chkCopy">Create a copy in destination folder</label>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
@@ -1223,3 +1443,171 @@
     </div>
   </div>
 </div>
+
+<div class="modal modal-resource-import-to fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Import to folder (2 items)</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="tree tree-resources">
+          <div class="resource">
+            <a href="#" title="Primary 1 Math Buddies" class="expanded">
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-folder-open"></i>
+              <span class="text-truncate">My Resources</span>
+            </a>
+            <div class="resources show">
+              <div class="resource">
+                <a href="#" title="Primary 1 Math Buddies" class="expanded">
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-folder-open"></i>
+                  <span class="text-truncate">Primary 1 Math Buddies</span>
+                </a>
+                <div class="resources show">
+                  <div class="resource active">
+                    <a href="#" title="Numbers To 10" class="collapsed">
+                      <i class="fas fa-chevron-down"></i>
+                      <i class="fas fa-folder-open"></i>
+                      <span class="text-truncate">Numbers To 10</span>
+                    </a>
+                    <div class="resources show">
+                      <div class="resource">
+                        <a href="#" title="Counting To 10" class="collapsed">
+                          <i class="fas fa-chevron-right"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Counting To 10</span>
+                        </a>
+                        <div class="resources hide">
+                        </div>
+                      </div>
+                      <div class="resource">
+                        <a href="#" title="Comparing Numbers" class="collapsed">
+                          <i class="fas fa-chevron-right"></i>
+                          <i class="fas fa-folder"></i>
+                          <span class="text-truncate">Comparing Numbers</span>
+                        </a>
+                        <div class="resources hide">                              
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Number Bonds" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Number Bonds</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                  <div class="resource">
+                    <a href="#" title="Addition Within 10" class="collapsed">
+                      <i class="fas fa-chevron-right"></i>
+                      <i class="fas fa-folder"></i>
+                      <span class="text-truncate">Addition Within 10</span>
+                    </a>
+                    <div class="resources hide">                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 2 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 2 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 3 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 3 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 4 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 4 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 5 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 5 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+              <div class="resource">
+                <a href="#" title="Primary 6 Math Buddies" class="collapsed">
+                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-folder"></i>
+                  <span class="text-truncate">Primary 6 Math Buddies</span>
+                </a>
+                <div class="resources hide">                      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Import</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script id="previewEdit" type="text/x-template">
+  <div class="file-preview file-preview-edit">
+    <button class="btn btn-light btn-edit" type="button" title="Edit attributes">
+      <i class="fas fa-edit"></i>
+    </button>
+    <div class="file-details">
+      <img data-dz-thumbnail />
+      <div class="file-filename">
+        <span data-dz-name></span>
+        <div class="file-size text-muted" data-dz-size></div>
+      </div>
+    </div>
+    <div class="file-progress">
+      <div class="progress-bar" data-dz-uploadprogress></div>
+    </div>
+    <div class="file-error-message">
+      <span data-dz-errormessage></span>
+    </div>
+  </div>
+</script>
+
+<script id="preview" type="text/x-template">
+  <div class="file-preview">
+    <div class="file-details">
+      <img data-dz-thumbnail />
+      <div class="file-filename">
+        <span data-dz-name></span>
+        <div class="file-size text-muted" data-dz-size></div>
+      </div>
+    </div>
+    <div class="file-progress">
+      <div class="progress-bar" data-dz-uploadprogress></div>
+    </div>
+    <div class="file-error-message">
+      <span data-dz-errormessage></span>
+    </div>
+  </div>
+</script>
