@@ -906,17 +906,18 @@ table.dataTable tbody tr td .nowrap {
   border: 1px solid #ced4da;
   margin: 0.5rem;
   padding: 0.5rem 1rem;
-}
-.file-upload .file-group .file-preview.file-preview-edit {
   position: relative;
 }
-.file-upload .file-group .file-preview.file-preview-edit .file-details {
-  margin: 2rem 0 0.5rem;
+.file-upload .file-group .file-preview.no-actions .file-details {
+  margin: 0.5rem 0;
 }
-.file-upload .file-group .file-preview.file-preview-edit .file-actions {
+.file-upload .file-group .file-preview .file-actions {
   position: absolute;
   top: 0;
   right: 0;
+}
+.file-upload .file-group .file-preview .file-actions .btn {
+  padding: 0.375rem 0.75rem;
 }
 .file-upload .file-group .file-preview .file-details {
   display: -ms-flexbox;
@@ -925,7 +926,7 @@ table.dataTable tbody tr td .nowrap {
   flex-direction: row;
   -webkit-align-items: flex-start;
   align-items: flex-start;
-  margin: 0.5rem 0;
+  margin: 2rem 0 0.5rem;
 }
 .file-upload .file-group .file-preview .file-details img {
   max-width: 4rem;
@@ -951,25 +952,19 @@ table.dataTable tbody tr td .nowrap {
   min-height: 0.25rem;
   height: 0.25rem;
 }
-.file-upload .file-group .file-preview .file-error-message {
-  color: #dc3545;
+.file-upload .file-group .file-preview .file-message {
+  font-size: 0.875rem;
 }
 @media (max-width: 991.98px) {
   .file-upload:not(.file-upload-button) .file-group .file-preview {
-    min-width: 22rem;
-    width: 22rem;
-  }
-}
-@media (max-width: 767.98px) {
-  .file-upload:not(.file-upload-button) .file-group .file-preview {
     min-width: 20rem;
-    width: 20rem;
+    width: calc(100% - 1rem);
   }
 }
 @media (min-width: 992px) {
   .file-upload:not(.file-upload-button) .file-group .file-preview {
     min-width: 24rem;
-    width: 24rem;
+    width: calc(50% - 1.25rem);
   }
 }
 
@@ -3992,7 +3987,7 @@ table.dataTable tbody tr td .nowrap {
   justify-content: space-between;
   padding: 0.75rem 0;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu {
   -ms-flex-direction: column;
   flex-direction: column;
   -ms-flex-wrap: nowrap;
@@ -4000,13 +3995,13 @@ table.dataTable tbody tr td .nowrap {
   background-color: #ffffff;
   margin-bottom: 1rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-text {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu .navbar-text {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
   text-align: center;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex-wrap: wrap;
@@ -4015,7 +4010,7 @@ table.dataTable tbody tr td .nowrap {
   justify-content: center;
   max-width: 36rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav .nav-link {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu .navbar-nav .nav-link {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -4028,10 +4023,10 @@ table.dataTable tbody tr td .nowrap {
   min-width: 7rem;
   padding: 0.75rem 1rem;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav .nav-link:hover {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu .navbar-nav .nav-link:hover {
   background-color: #e9ecef;
 }
-.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-main .navbar-nav .nav-link .img {
+.app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu .navbar-nav .nav-link .img {
   margin-bottom: 0.25rem;
   height: 2.5rem;
   width: 2.5rem;

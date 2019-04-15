@@ -216,13 +216,26 @@ $(document).ready(function() {
           $upload.find('.file-group').removeClass('d-none');
         }
       },
+      error: function(file) {
+        var error = "Failed to upload the file.";
+        var $message = $(file.previewElement).find('.file-message');
+        $message.find('[data-dz-errormessage]').text(error);
+      },
       success: function(file) {
-        console.log(file);
+        $progress = $(file.previewElement).find('.file-progress');
+        $progress.addClass('d-none');
+        
+        var success = "Upload was successful."
+        var $message = $(file.previewElement).find('.file-message');
+        $message.find('[data-dz-successmessage]').text(success);
       }
     });
 
     $('.modal-resource-file-upload').on('click', '.btn-edit', function(e) {
       $('.modal-resource-file-edit-attributes').modal('show');
+    });
+    $('.modal-resource-file-upload').on('click', '.btn-delete', function(e) {
+      $('.modal-resource-delete-confirmation').modal('show');
     });
     $('.modal-resource-file-upload').modal('show');
   });
@@ -272,6 +285,11 @@ $(document).ready(function() {
         if ($upload.find('.file-group').hasClass('d-none')) {
           $upload.find('.file-group').removeClass('d-none');
         }
+      },
+      error: function(file) {
+        var error = "Failed to upload the file.";
+        var $message = $(file.previewElement).find('.file-message');
+        $message.find('[data-dz-errormessage]').text(error);
       },
       success: function(file) {
         if (!$upload.find('.file-group').hasClass('d-none')) {

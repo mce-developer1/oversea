@@ -339,10 +339,10 @@ $(document).ready(function() {
   }
 
   function showFolderResources() {
-    $('.article-lesson-resources .navbar-main').addClass('d-none');
-    $('.article-lesson-resources .navbar:not(.navbar-main)').removeClass('d-none');
-    $('.article-lesson-resources .navbar:not(.navbar-main) .btn-add-resource').removeClass('d-none');
-    $('.article-lesson-resources .navbar:not(.navbar-main) .btn-actions').removeClass('d-none');
+    $('.article-lesson-resources .navbar-menu').addClass('d-none');
+    $('.article-lesson-resources .navbar:not(.navbar-menu)').removeClass('d-none');
+    $('.article-lesson-resources .navbar:not(.navbar-menu) .btn-add-resource').removeClass('d-none');
+    $('.article-lesson-resources .navbar:not(.navbar-menu) .btn-actions').removeClass('d-none');
     $('.article-lesson-resources .table-head').removeClass('d-none');
     $('.article-lesson-resources .table-body').removeClass('d-none');
   }

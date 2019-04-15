@@ -293,19 +293,26 @@ $(document).ready(function() {
         }
       },
       processing: function(file) {
-        if ($container.find('.navbar .form-add-resource').hasClass('d-none')) {
-          $container.find('.navbar .form-add-resource').removeClass('d-none');
-        }
-
         if ($upload.find('.file-group').hasClass('d-none')) {
           $upload.find('.file-group').removeClass('d-none');
         }
       },
       error: function(file) {
-        console.log(file);
+        var error = "Failed to upload the file.";
+        var $message = $(file.previewElement).find('.file-message');
+        $message.find('[data-dz-errormessage]').text(error);
       },
       success: function(file) {
-        console.log(file);
+        if ($container.find('.navbar .nav-form').hasClass('d-none')) {
+          $container.find('.navbar .nav-form').removeClass('d-none');
+        }
+
+        $progress = $(file.previewElement).find('.file-progress');
+        $progress.addClass('d-none');
+
+        var success = "Upload was successful."
+        var $message = $(file.previewElement).find('.file-message');
+        $message.find('[data-dz-successmessage]').text(success);
       }
     });
   }

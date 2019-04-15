@@ -15,9 +15,9 @@
           <div class="article-body">
             <nav class="navbar navbar-expand">
               <div class="navbar-text">&nbsp;</div>
-              <ul class="navbar-nav">
+              <ul class="navbar-nav nav-form">
                 <li class="nav-item">
-                  <form class="form-inline form-add-resource d-none">
+                  <form class="form-inline form-add-resource">
                     <label class="form-label">Add to</label>
                     <select class="form-control selectpicker" data-width="160">
                       <option selected>Counting To 10</option>
@@ -64,6 +64,11 @@
 
 <script id="preview" type="text/x-template">
   <div class="file-preview">
+    <div class="file-actions">
+      <button class="btn btn-light btn-delete" type="button" title="Delete">
+        <i class="fas fa-trash"></i>
+      </button>
+    </div>
     <div class="file-details">
       <img data-dz-thumbnail />
       <div class="file-filename">
@@ -74,8 +79,9 @@
     <div class="file-progress">
       <div class="progress-bar" data-dz-uploadprogress></div>
     </div>  
-    <div class="file-error-message">
-      <span data-dz-errormessage></span>
+    <div class="file-message">
+      <span class="text-success" data-dz-successmessage></span>
+      <span class="text-danger" data-dz-errormessage></span>
     </div>
   </div>
 </script>

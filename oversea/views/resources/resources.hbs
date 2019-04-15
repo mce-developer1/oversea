@@ -1555,8 +1555,22 @@
   </div>
 </div>
 
+<div class="toast-stack d-none">
+  <div class="toast" role="alert fade" data-delay="5000">
+    <div class="toast-header">
+      <button class="close" type="button" title="Close" data-dismiss="toast">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      <i class="img img-toast-error"></i>
+      You cannot upload any more files.
+    </div>
+  </div>
+</div>
+
 <script id="previewEdit" type="text/x-template">
-  <div class="file-preview file-preview-edit">
+  <div class="file-preview">
     <div class="file-actions">
       <button class="btn btn-light btn-edit" type="button" title="Edit">
         <i class="fas fa-edit"></i>
@@ -1575,28 +1589,15 @@
     <div class="file-progress">
       <div class="progress-bar" data-dz-uploadprogress></div>
     </div>
-    <div class="file-error-message">
-      <span data-dz-errormessage></span>
+    <div class="file-message">
+      <span class="text-success" data-dz-successmessage></span>
+      <span class="text-danger" data-dz-errormessage></span>
     </div>
   </div>
 </script>
 
-<div class="toast-stack d-none">
-  <div class="toast" role="alert fade" data-delay="5000">
-    <div class="toast-header">
-      <button class="close" type="button" title="Close" data-dismiss="toast">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="toast-body">
-      <i class="img img-toast-error"></i>
-      You cannot upload any more files.
-    </div>
-  </div>
-</div>
-
 <script id="preview" type="text/x-template">
-  <div class="file-preview">
+  <div class="file-preview no-actions">
     <div class="file-details">
       <img data-dz-thumbnail />
       <div class="file-filename">
@@ -1607,8 +1608,9 @@
     <div class="file-progress">
       <div class="progress-bar" data-dz-uploadprogress></div>
     </div>
-    <div class="file-error-message">
-      <span data-dz-errormessage></span>
+    <div class="file-message">
+      <span class="text-success" data-dz-successmessage></span>
+      <span class="text-danger" data-dz-errormessage></span>
     </div>
   </div>
 </script>
