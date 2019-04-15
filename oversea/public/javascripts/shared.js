@@ -310,7 +310,7 @@ $(document).ready(function() {
         $progress = $(file.previewElement).find('.file-progress');
         $progress.addClass('d-none');
 
-        var success = "Upload was successful."
+        var success = "File uploaded successfully."
         var $message = $(file.previewElement).find('.file-message');
         $message.find('[data-dz-successmessage]').text(success);
       }
