@@ -316,6 +316,10 @@ $(document).ready(function() {
         $('.article-create-lesson .article-header .btn-edit').removeClass('d-none');
       }
 
+      if ($('.article-create-lesson .article-header .btn-delete').hasClass('d-none')) {
+        $('.article-create-lesson .article-header .btn-delete').removeClass('d-none');
+      }
+
       if ($('.article-create-lesson .article-header .btn-move-to').hasClass('d-none')) {
         $('.article-create-lesson .article-header .btn-move-to').removeClass('d-none');
       }
@@ -326,6 +330,10 @@ $(document).ready(function() {
     } else {
       if (!$('.article-create-lesson .article-header .btn-edit').hasClass('d-none')) {
         $('.article-create-lesson .article-header .btn-edit').addClass('d-none');
+      }
+
+      if (!$('.article-create-lesson .article-header .btn-delete').hasClass('d-none')) {
+        $('.article-create-lesson .article-header .btn-delete').addClass('d-none');
       }
 
       if (!$('.article-create-lesson .article-header .btn-move-to').hasClass('d-none')) {
@@ -381,6 +389,10 @@ $(document).ready(function() {
         console.log(e.oldIndex, e.newIndex);
       }
     });
+  });
+
+  $('.article-create-lesson .btn-move-to').on('click', function(e) {
+    $('.modal-lesson-resource-move-to').modal('show');
   });
   
   $('.article-lesson-resources .article-sidebar .btn-edit-lesson').on('click', function(e) {

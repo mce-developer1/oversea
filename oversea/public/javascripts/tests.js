@@ -352,34 +352,7 @@ $(document).ready(function() {
     $('.article-create-test .navbar-nav .divider-close').removeClass('d-none');
     $('.article-create-test .navbar-nav .btn-close').removeClass('d-none');
     $('.article-create-test .form-test-attributes').addClass('d-none');    
-    $('.article-create-test .article-test-resources').removeClass('d-none');
-
-    if ($(window).width() < 768) {
-      $('.article-create-test .btn-more').removeClass('d-none');
-    }
-
-    var tree = $('.article-test-resources .tree-resources').get(0);
-    var sortableTree = Sortable.create(tree, {
-      animation: 350,
-      onStart: function(e) {
-        console.log(e.oldIndex, e.newIndex);
-      },
-      onSort: function(e) {
-        console.log(e.oldIndex, e.newIndex);
-      }
-    });
-
-    var tbody = $('.article-test-resources .table-body tbody').get(0);
-    var sortableTable = Sortable.create(tbody, {
-      animation: 350,
-      handle: '.btn-handle',
-      onStart: function(e) {
-        console.log(e.oldIndex, e.newIndex);
-      },
-      onSort: function(e) {
-        console.log(e.oldIndex, e.newIndex);
-      }
-    });
+    $('.article-create-test .article-test-components').removeClass('d-none');
   });
   
   $('.article-test-resources .article-sidebar .btn-edit-test').on('click', function(e) {

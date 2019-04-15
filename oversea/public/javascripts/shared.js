@@ -307,9 +307,6 @@ $(document).ready(function() {
           $container.find('.navbar .nav-form').removeClass('d-none');
         }
 
-        $progress = $(file.previewElement).find('.file-progress');
-        $progress.addClass('d-none');
-
         var success = "File uploaded successfully."
         var $message = $(file.previewElement).find('.file-message');
         $message.find('[data-dz-successmessage]').text(success);

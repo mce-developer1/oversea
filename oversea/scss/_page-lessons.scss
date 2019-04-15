@@ -650,6 +650,7 @@
 
               .nav-item {
                 .btn-edit,
+                .btn-delete,
                 .btn-move-to {
                   display: none;
                 }
@@ -769,6 +770,19 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+.modal-lesson-resource-move-to {
+  .modal-dialog {
+    .modal-body {
+      .tree-resources {
+        border: 1px solid $gray-400;
+        max-height: 20rem;
+        overflow-x: hidden;
+        overflow-y: auto;
       }
     }
   }

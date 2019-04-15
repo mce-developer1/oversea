@@ -286,6 +286,12 @@ table.dataTable {
   border: 2px dashed $gray-400;
   padding: 1rem;
 
+  &:not(.file-upload-button) {
+    &.dz-drag-hover {
+      border: 2px dashed $gray-600;
+    }
+  }
+
   &.file-upload-button {
     display: inline-block;
     border: 0;
@@ -370,21 +376,22 @@ table.dataTable {
       .file-progress {
         @include display-flex(row);
         background-color: $gray-400;
-        min-height: .25rem;
-        height: .25rem;
-        margin-bottom: .5rem;
+        min-height: .3px;
+        height: 3px;
+        margin-bottom: .25rem;
         overflow: hidden;
 
         .progress-bar {
           background-color: $accent;
           display: inline-block;
-          min-height: .25rem;
-          height: .25rem;
+          min-height: 3px;
+          height: 3px;
         }
       }
 
       .file-message {
         font-size: .875rem;
+        margin-bottom: .25rem;
       }
     }
   }

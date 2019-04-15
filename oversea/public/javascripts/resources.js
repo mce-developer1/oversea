@@ -197,18 +197,18 @@ $(document).ready(function() {
           for (var i = maxFiles; i < files.length; i++) {
             dropzone.removeFile(files[i]);
           }
-        }
 
-        if ($('.toast-stack').hasClass('d-none')) {
-          clearTimeout(window.toastTimeout);
-          delete window.toastTimeout;
-          
-          $('.toast-stack').removeClass('d-none');
-          $('.toast-stack .toast').toast('dispose').toast('show');
-    
-          window.toastTimeout = setTimeout(function() {
-            $('.toast-stack').addClass('d-none');
-          }, 5000);
+          if ($('.toast-stack').hasClass('d-none')) {
+            clearTimeout(window.toastTimeout);
+            delete window.toastTimeout;
+            
+            $('.toast-stack').removeClass('d-none');
+            $('.toast-stack .toast').toast('dispose').toast('show');
+      
+            window.toastTimeout = setTimeout(function() {
+              $('.toast-stack').addClass('d-none');
+            }, 5000);
+          }
         }
       },
       processing: function(file) {
@@ -222,9 +222,6 @@ $(document).ready(function() {
         $message.find('[data-dz-errormessage]').text(error);
       },
       success: function(file) {
-        $progress = $(file.previewElement).find('.file-progress');
-        $progress.addClass('d-none');
-
         var success = "File uploaded successfully."
         var $message = $(file.previewElement).find('.file-message');
         $message.find('[data-dz-successmessage]').text(success);
@@ -267,18 +264,18 @@ $(document).ready(function() {
           for (var i = maxFiles; i < files.length; i++) {
             dropzone.removeFile(files[i]);
           }
-        }
 
-        if ($('.toast-stack').hasClass('d-none')) {
-          clearTimeout(window.toastTimeout);
-          delete window.toastTimeout;
-          
-          $('.toast-stack').removeClass('d-none');
-          $('.toast-stack .toast').toast('dispose').toast('show');
-    
-          window.toastTimeout = setTimeout(function() {
-            $('.toast-stack').addClass('d-none');
-          }, 5000);
+          if ($('.toast-stack').hasClass('d-none')) {
+            clearTimeout(window.toastTimeout);
+            delete window.toastTimeout;
+            
+            $('.toast-stack').removeClass('d-none');
+            $('.toast-stack .toast').toast('dispose').toast('show');
+      
+            window.toastTimeout = setTimeout(function() {
+              $('.toast-stack').addClass('d-none');
+            }, 5000);
+          }
         }
       },
       processing: function(file) {
