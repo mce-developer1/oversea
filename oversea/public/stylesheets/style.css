@@ -923,6 +923,9 @@ table.dataTable tbody tr td .nowrap {
 .file-upload .file-group .file-preview .file-actions .btn {
   padding: 0.375rem 0.75rem;
 }
+.file-upload .file-group .file-preview .file-actions .btn + .btn {
+  margin-left: 0;
+}
 .file-upload .file-group .file-preview .file-details {
   display: -ms-flexbox;
   display: flex;

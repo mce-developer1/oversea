@@ -156,6 +156,10 @@ $(document).ready(function() {
     log.setLevel('info');
   }
 
+  $(window).on('beforeunload', function(e) {
+    if (window._pageDirty) return '';
+  });
+
   $(window).on('unload', function(e) {
     window._logStore.send();
   });

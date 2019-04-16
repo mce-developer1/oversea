@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var pause = require('connect-pause');
+var multer  = require('multer');
+var upload = multer();
 
 /* GET sign in page. */
 router.get('/', function(req, res, next) {
@@ -398,10 +401,8 @@ router.get('/shared/add_weblinks', function(req, res, next) {
 });
 
 /* GET upload page. */
-router.post('/shared/upload', function(req, res, next) {
-  setTimeout(function() {
-    res.send('{status: "OK"}');
-  }, 5000);
+router.post('/shared/upload', pause(5000), upload.any(), function(req, res, next) {
+  res.send('{status: "OK"}');
 });
 
 /* GET lessons page. */

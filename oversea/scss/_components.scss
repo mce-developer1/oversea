@@ -353,6 +353,10 @@ table.dataTable {
 
         .btn {
           padding: .375rem .75rem;
+
+          +.btn {
+            margin-left: 0;
+          }
         }
       }
 

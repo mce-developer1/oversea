@@ -409,7 +409,18 @@ $(document).ready(function() {
 
   function showAddResourceModal(srcUrl) {
     $('.modal-resource-resource-add').find('iframe').attr('src', srcUrl);
-    $('.modal-resource-resource-add').on('hide.bs.modal', function (e) {
+    $('.modal-resource-resource-add .btn-close').on('click', function(e) {
+      if (window._pageDirty) {
+        $('.modal-resource-cancel-upload-confirmation .btn-primary').on('click', function(e) {
+          $('.modal-resource-cancel-upload-confirmation').modal('hide');
+          $('.modal-resource-resource-add').modal('hide');
+        });
+        $('.modal-resource-cancel-upload-confirmation').modal('show')
+      } else {
+        $('.modal-resource-resource-add').modal('hide');
+      }
+    });
+    $('.modal-resource-resource-add').on('hide.bs.modal', function(e) {
       showFolderResources();
     });
     $('.modal-resource-resource-add').modal('show');

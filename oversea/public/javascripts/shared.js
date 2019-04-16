@@ -293,8 +293,15 @@ $(document).ready(function() {
         }
       },
       processing: function(file) {
+        window._pageDirty = true;
+        window.top._pageDirty = true;
+
         if ($upload.find('.file-group').hasClass('d-none')) {
           $upload.find('.file-group').removeClass('d-none');
+        }
+
+        if (!$container.find('.navbar .nav-form').hasClass('d-none')) {
+          $container.find('.navbar .nav-form').addClass('d-none');
         }
       },
       error: function(file) {
@@ -303,14 +310,28 @@ $(document).ready(function() {
         $message.find('[data-dz-errormessage]').text(error);
       },
       success: function(file) {
-        if ($container.find('.navbar .nav-form').hasClass('d-none')) {
-          $container.find('.navbar .nav-form').removeClass('d-none');
-        }
+        window._pageDirty = false;
+        window.top._pageDirty = false;
 
         var success = "File uploaded successfully."
         var $message = $(file.previewElement).find('.file-message');
         $message.find('[data-dz-successmessage]').text(success);
+      },
+      complete: function(file) {
+        setTimeout(function waitNextFileUpload() {
+          if (window._pageDirty) return file;
+          if ($container.find('.navbar .nav-form').hasClass('d-none')) {
+            $container.find('.navbar .nav-form').removeClass('d-none');
+          }
+        });
       }
+    });
+
+    $('.article-file-upload .file-upload').on('click', '.btn-edit', function(e) {
+      $('.modal-file-edit-attributes').modal('show');
+    });
+    $('.article-file-upload .file-upload').on('click', '.btn-delete', function(e) {
+      $('.modal-file-delete-confirmation').modal('show');
     });
   }
 });
