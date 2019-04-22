@@ -642,11 +642,11 @@ a {
 
       &.modal-add-resource {
         &.modal-iframe {
-          &.navbar-static {
+          &.modal-muted {
             .modal-content {
               .modal-body {
                 .navbar {
-                  position: static;
+                  z-index: 1030;
                 }
               }
             }

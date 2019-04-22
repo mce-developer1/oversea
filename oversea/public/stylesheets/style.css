@@ -532,8 +532,8 @@ a:focus {
   min-height: calc(100vh - 7rem);
   width: calc(100vw - 3rem);
 }
-.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe.navbar-static .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe.navbar-static .modal-content .modal-body .navbar {
-  position: static;
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar {
+  z-index: 1030;
 }
 .modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .navbar {
   position: fixed;

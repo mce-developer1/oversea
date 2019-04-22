@@ -161,13 +161,13 @@ $(document).ready(function() {
     window.addEventListener("message", function(e) {
       switch (e.data) {
         case 'show.bs.modal':
-          if (!$('.modal.show .modal-iframe').hasClass('navbar-static')) {
-            $('.modal.show .modal-iframe').addClass('navbar-static');
+          if (!$('.modal.show .modal-iframe').hasClass('modal-muted')) {
+            $('.modal.show .modal-iframe').addClass('modal-muted');
           }
           break;
         case 'hidden.bs.modal':
-          if ($('.modal.show .modal-iframe').hasClass('navbar-static')) {
-            $('.modal.show .modal-iframe').removeClass('navbar-static');
+          if ($('.modal.show .modal-iframe').hasClass('modal-muted')) {
+            $('.modal.show .modal-iframe').removeClass('modal-muted');
           }
           break;
         default:
