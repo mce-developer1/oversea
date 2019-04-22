@@ -2,8 +2,9 @@
   &.page-shared {
     overflow-x: hidden;
     overflow-y: auto;
-    max-height: 100vh;
-    height: 100vh;
+    margin-top: 4rem;
+    max-height: calc(100vh - 4rem);
+    height: calc(100vh - 4rem);
 
     .article-resources {
       padding: 0 1.5rem;
@@ -839,8 +840,26 @@
           }
 
           .file-upload {
-            min-height: calc(100vh - 10rem);
+            min-height: calc(100vh - 13.5rem);
           }
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          z-index: 980;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 0;
+          z-index: 980;
         }
       }
     }

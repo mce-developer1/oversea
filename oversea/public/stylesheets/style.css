@@ -3,6 +3,10 @@ html {
   font-size: 14px;
 }
 
+body {
+  background-color: transparent;
+}
+
 a:focus {
   box-shadow: none;
   outline: 0;
@@ -514,7 +518,7 @@ a:focus {
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
-  min-height: calc(100vh - 4rem);
+  height: calc(100vh - 4rem);
   width: 100vw;
 }
 .modal .modal-dialog.modal-preview .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .content .full {
@@ -527,6 +531,33 @@ a:focus {
   margin: 1.5rem;
   min-height: calc(100vh - 7rem);
   width: calc(100vw - 3rem);
+}
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe.navbar-static .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe.navbar-static .modal-content .modal-body .navbar {
+  position: static;
+}
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+}
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content {
+  height: 100vh;
+  width: 100vw;
+}
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content .full {
+  background-color: transparent;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
 }
 .modal .modal-dialog.modal-preview.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-preview .modal-content .modal-body .content {
   -webkit-justify-content: center;
@@ -873,6 +904,7 @@ table.dataTable tbody tr td .nowrap {
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
   border: 2px dashed #ced4da;
+  margin-bottom: 1.5rem;
   padding: 1rem;
 }
 .file-upload:not(.file-upload-button).dz-drag-hover {
@@ -891,6 +923,7 @@ table.dataTable tbody tr td .nowrap {
   flex-direction: row;
   -webkit-align-items: flex-start;
   align-items: flex-start;
+  margin: 0;
 }
 .file-upload.file-upload-button .file-upload-control .upload-text,
 .file-upload.file-upload-button .file-upload-control .text-muted {
@@ -913,6 +946,7 @@ table.dataTable tbody tr td .nowrap {
   flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
+  margin: 1.5rem;
 }
 .file-upload .file-upload-control .upload-text {
   font-size: 1.5rem;
@@ -1007,7 +1041,6 @@ table.dataTable tbody tr td .nowrap {
 }
 @media (max-width: 767.98px) {
   .file-upload:not(.file-upload-button) {
-    margin-top: 1rem;
     border: 0;
     padding: 0;
   }
@@ -1018,6 +1051,7 @@ table.dataTable tbody tr td .nowrap {
     flex-direction: column;
     -webkit-align-items: center;
     align-items: center;
+    margin: 0;
   }
   .file-upload:not(.file-upload-button) .file-upload-control .upload-text,
 .file-upload:not(.file-upload-button) .file-upload-control .text-muted {
@@ -1965,8 +1999,9 @@ table.dataTable tbody tr td .nowrap {
 .app-content.page-shared {
   overflow-x: hidden;
   overflow-y: auto;
-  max-height: 100vh;
-  height: 100vh;
+  margin-top: 4rem;
+  max-height: calc(100vh - 4rem);
+  height: calc(100vh - 4rem);
 }
 .app-content.page-shared .article-resources {
   padding: 0 1.5rem;
@@ -2633,7 +2668,23 @@ table.dataTable tbody tr td .nowrap {
   margin-left: 1rem;
 }
 .app-content.page-shared .article-file-upload .article-content .article-body .file-upload {
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 13.5rem);
+}
+@media (max-width: 991.98px) {
+  .app-content.page-shared .article-file-upload .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 980;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-shared .article-file-upload .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 980;
+  }
 }
 .app-content.page-shared .article-weblinks {
   padding: 0 1.5rem;

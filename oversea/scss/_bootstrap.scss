@@ -2,6 +2,10 @@ html {
   font-size: 14px;
 }
 
+body {
+  background-color: transparent;
+}
+
 a {
   &:focus {
     box-shadow: none;
@@ -617,7 +621,7 @@ a {
           .content {
             @include display-flex(column);
             @include align-items(center);
-            min-height: calc(100vh - 4rem);
+            height: calc(100vh - 4rem);
             width: 100vw;
 
             .full {
@@ -630,6 +634,51 @@ a {
                 margin: 1.5rem;
                 min-height: calc(100vh - 7rem);
                 width: calc(100vw - 3rem);
+              }
+            }
+          }
+        }
+      }
+
+      &.modal-add-resource {
+        &.modal-iframe {
+          &.navbar-static {
+            .modal-content {
+              .modal-body {
+                .navbar {
+                  position: static;
+                }
+              }
+            }
+          }
+
+          .modal-content {
+            .modal-body {
+              .navbar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1050;
+              }
+
+              .content {
+                height: 100vh;
+                width: 100vw;
+
+                .full {
+                  background-color: transparent;
+                  overflow-x: hidden;
+                  overflow-y: auto;
+                  height: 100vh;
+                  width: 100vw;
+                  position: fixed;
+                  top: 0;
+                  right: 0;
+                  bottom: 0;
+                  left: 0;
+                  z-index: 1030;
+                }
               }
             }
           }

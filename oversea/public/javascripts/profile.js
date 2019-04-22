@@ -42,20 +42,23 @@ $(document).ready(function() {
       parallelUploads: 1,
       maxFiles: 1,
       maxFilesize: .25,
-      maxfilesreached: function(files) {
-        var maxFiles = dropzone.options.maxFiles;
-
-        if (files.length > maxFiles) {
-          for (var i = maxFiles; i < files.length; i++) {
-            dropzone.removeFile(files[i]);
-          }
-        }
-      },
       addedfile: function(file) {
         var maxFiles = dropzone.options.maxFiles;
 
         if (dropzone.files.length > maxFiles) {
           dropzone.removeFile(dropzone.files[0]);
+
+          if ($('.toast-stack').hasClass('d-none')) {
+            clearTimeout(window.toastTimeout);
+            delete window.toastTimeout;
+            
+            $('.toast-stack').removeClass('d-none');
+            $('.toast-stack .toast').toast('dispose').toast('show');
+      
+            window.toastTimeout = setTimeout(function() {
+              $('.toast-stack').addClass('d-none');
+            }, 5000);
+          }
         }
         
         var previewTemplate = this.options.previewTemplate;
@@ -188,14 +191,9 @@ $(document).ready(function() {
     var $image = $container.find('.form-profile-picture .image-cropper img');
     const cropper = new Cropper($image.get(0), {
       aspectRatio: 1 / 1,
+      zoomable: false,
       crop: function(e) {
-        console.log(event.detail.x);
-        console.log(event.detail.y);
-        console.log(event.detail.width);
-        console.log(event.detail.height);
-        console.log(event.detail.rotate);
-        console.log(event.detail.scaleX);
-        console.log(event.detail.scaleY);
+        console.log(event.detail);
       }
     });
   }

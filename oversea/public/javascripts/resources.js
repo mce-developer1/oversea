@@ -294,19 +294,6 @@ $(document).ready(function() {
       $('.modal-file-remove-confirmation').modal('show');
     });
 
-    $('.modal-resource-resource-add .btn-close').on('click', function(e) {
-      if (window._pageDirty) {
-        $('.modal-file-cancel-upload-confirmation .btn-primary').on('click', function(e) {
-          $('.modal-file-cancel-upload-confirmation').modal('hide');
-          $('.modal-resource-resource-add').modal('hide');
-          
-        });
-        $('.modal-file-cancel-upload-confirmation').modal('show');
-      } else {
-        $('.modal-resource-resource-add').modal('hide');
-      }
-    });
-
     $('.modal-resource-resource-add').on('keydown', function(e) {
       if ((e.which == 27) && window._pageDirty) {
         e.which = Number.NaN;
@@ -317,6 +304,7 @@ $(document).ready(function() {
         });
       }
     });
+
     $('.modal-resource-resource-add .btn-close').on('click', function(e) {
       if (window._pageDirty) {
         e.stopPropagation();
@@ -324,6 +312,8 @@ $(document).ready(function() {
           $('.modal-resource-resource-add').modal('hide');
           removeAllDropZoneFiles();
         });
+      } else {
+        removeAllDropZoneFiles();
       }
     });
     $('.modal-resource-resource-add').modal('show');
@@ -353,13 +343,11 @@ $(document).ready(function() {
       parallelUploads: 1,
       maxFiles: 1,
       maxFilesize: .25,
-      maxfilesreached: function(files) {
+      addedfile: function(file) {
         var maxFiles = dropzone.options.maxFiles;
-        
-        if (files.length > maxFiles) {
-          for (var i = maxFiles; i < files.length; i++) {
-            dropzone.removeFile(files[i]);
-          }
+
+        if (dropzone.files.length > maxFiles) {
+          dropzone.removeFile(dropzone.files[0]);
 
           if ($('.toast-stack').hasClass('d-none')) {
             clearTimeout(window.toastTimeout);
@@ -373,8 +361,7 @@ $(document).ready(function() {
             }, 5000);
           }
         }
-      },
-      addedfile: function(file) {
+
         var previewTemplate = this.options.previewTemplate;
         var previewElement = $(previewTemplate).get(0);
         var $details = $(previewElement).find('.file-details');
@@ -388,7 +375,11 @@ $(document).ready(function() {
         $(previewElement).find('.file-uuid').val(file.upload.uuid);
 
         file.previewElement = previewElement;
-        $upload.find('.file-group').append(previewElement);        
+        $upload.find('.file-group').append(previewElement);
+
+        if (!$upload.find('.file-upload-control').hasClass('d-none')) {
+          $upload.find('.file-upload-control').addClass('d-none');
+        }
 
         if ($upload.find('.file-group').hasClass('d-none')) {
           $upload.find('.file-group').removeClass('d-none');
@@ -398,6 +389,10 @@ $(document).ready(function() {
         if (dropzone.files && (dropzone.files.length > 0)) {
           $(file.previewElement).remove();
           return;
+        }
+
+        if ($upload.find('.file-upload-control').hasClass('d-none')) {
+          $upload.find('.file-upload-control').removeClass('d-none');
         }
         
         if (!$upload.find('.file-group').hasClass('d-none')) {
@@ -440,6 +435,10 @@ $(document).ready(function() {
         var success = 'File uploaded successfully.';
         success = '<i class="fas fa-check"></i> ' + success;
         $message.find('.text-success').html(success);
+
+        if ($upload.find('.file-upload-control').hasClass('d-none')) {
+          $upload.find('.file-upload-control').removeClass('d-none');
+        }
 
         if (!$upload.find('.file-group').hasClass('d-none')) {
           $upload.find('.file-group').addClass('d-none');
@@ -666,10 +665,6 @@ $(document).ready(function() {
   });
 
   $('.modal-resource-share .form-add-user .btn-select').on('click', function(e) {
-    $('.modal-resource-share .modal-content').addClass('d-none');
-    $('.modal-user-select').on('hidden.bs.modal', function(e) {
-      $('.modal-resource-share .modal-content').removeClass('d-none');
-    });
     $('.modal-user-select').modal('show');
   });
 

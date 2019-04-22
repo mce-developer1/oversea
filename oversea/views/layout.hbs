@@ -189,6 +189,11 @@
                         </div>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/announcements/announcements">
+                          <i class="img img-myreports"></i> Announcements
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/facility_booking/facility_booking">
                           <i class="img img-myreports"></i> Facility Booking
                         </a>
@@ -388,6 +393,30 @@
                       <li class="nav-item">
                         <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/tests/tests">
                           <i class="img img-myreports"></i> Test Builder
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item collapsible">
+                  <a class="nav-link collapsed" href="#matters" data-toggle="collapse">
+                    <i class="img img-myreports"></i> School Matters
+                  </a>
+                  <div class="collapse" id="matters">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link {{#if announcementsPage}}active{{/if}}" href="/{{userRole}}/announcements/announcements">
+                          <i class="img img-myreports"></i> Announcements
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if facilityBookingPage}}active{{/if}}" href="/{{userRole}}/facility_booking/facility_booking">
+                          <i class="img img-myreports"></i> Facility Booking
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if markAttendancePage}}active{{/if}}" href="/{{userRole}}/mark_attendance/mark_attendance">
+                          <i class="img img-myreports"></i> Mark Attendance
                         </a>
                       </li>
                     </ul>

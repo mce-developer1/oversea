@@ -129,6 +129,12 @@ $(document).ready(function() {
     }
   });
 
+  $(document).on('shown.bs.modal', function (e) {
+    if ((window != window.top) && window.top.postMessage) {
+      window.top.postMessage('shown.bs.modal', '*');
+    }
+  });
+
   $(document).on('hide.bs.modal', function (e) {
     if ($('.modal.show.modal-base').length > 0) {
       $('.modal.show.modal-base').removeClass('modal-base');
@@ -145,16 +151,24 @@ $(document).ready(function() {
         $('body').addClass('modal-open');
       }
     }
+
+    if ((window != window.top) && window.top.postMessage) {
+      window.top.postMessage('hidden.bs.modal', '*');
+    }
   });
 
   if (window === window.top) {
     window.addEventListener("message", function(e) {
       switch (e.data) {
         case 'show.bs.modal':
-          $('.modal.show .btn-close').addClass('d-none');
+          if (!$('.modal.show .modal-iframe').hasClass('navbar-static')) {
+            $('.modal.show .modal-iframe').addClass('navbar-static');
+          }
           break;
-        case 'hide.bs.modal':
-          $('.modal.show .btn-close').removeClass('d-none');
+        case 'hidden.bs.modal':
+          if ($('.modal.show .modal-iframe').hasClass('navbar-static')) {
+            $('.modal.show .modal-iframe').removeClass('navbar-static');
+          }
           break;
         default:
           break;
