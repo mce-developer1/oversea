@@ -30,6 +30,7 @@ app.use('/static/datatables', express.static(path.join(__dirname, 'node_modules/
 app.use('/static/autocomplete.js', express.static(path.join(__dirname, 'node_modules/autocomplete.js/dist')));
 app.use('/static/dropzone', express.static(path.join(__dirname, 'node_modules/dropzone/dist')));
 app.use('/static/sortablejs', express.static(path.join(__dirname, 'node_modules/sortablejs')));
+app.use('/static/cropperjs', express.static(path.join(__dirname, 'node_modules/cropperjs/dist')));
 
 app.use('/', require('./routes/index'));
 

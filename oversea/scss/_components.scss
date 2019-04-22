@@ -71,6 +71,39 @@ table.dataTable {
   }
 }
 
+.fas {
+  &.fa-folder,
+  &.fa-folder-open {
+    color: $yellow;
+  }
+
+  &.fa-file-word,
+  &.fa-file-alt {
+    color: darken($blue, 8%);
+  }
+
+  &.fa-file-excel {
+    color: darken($green, 8%);
+  }
+
+  &.fa-file-image,
+  &.fa-file-powerpoint,
+  &.fa-file-pdf {
+    color: darken($red, 8%);
+  }
+
+  &.fa-file-audio,
+  &.fa-file-video {
+    color: darken($red, 8%);
+  }
+
+  &.fa-file,
+  &.fa-file-code,
+  &.fa-file-archive {
+    color: darken($red, 8%);
+  }
+}
+
 .loading-state {
   @include display-flex(column);
   @include align-items(center);
@@ -282,24 +315,31 @@ table.dataTable {
 
 .file-upload {
   @include display-flex(column);
-  @include align-items(center);
+  @include align-items(flex-start);
+  @include justify-content(flex-start);
   border: 2px dashed $gray-400;
   padding: 1rem;
 
   &:not(.file-upload-button) {
     &.dz-drag-hover {
-      border: 2px dashed $gray-600;
+      border-color: $gray-600;
     }
   }
 
   &.file-upload-button {
-    display: inline-block;
+    display: block;
     border: 0;
+    margin-bottom: 1rem;
     padding: 0;
 
     .file-upload-control {
       @include display-flex(row);
       @include align-items(flex-start);
+
+      .upload-text,
+      .text-muted {
+        display: none;
+      }
     }
 
     .file-group {
@@ -318,18 +358,20 @@ table.dataTable {
 
     .upload-text {
       font-size: 1.5rem;
+      margin-bottom: .5rem;
     }
   
     .text-muted {
       font-size: 1.25rem;
-      margin: .5rem 0 1rem;
+      margin-bottom: 1rem;
     }
   }
 
   .file-group {
     @include display-flex(row);
     @include flex-wrap(wrap);
-    margin-top: 1.5rem;        
+    margin-top: 1.5rem;
+    max-width: 100%;
 
     .file-preview {
       @include display-flex(column);
@@ -339,13 +381,7 @@ table.dataTable {
       margin: .5rem;
       padding: .5rem 1rem;
       position: relative;
-
-      &.no-actions {
-        .file-details {
-          margin: .5rem 0;
-        }
-      }
-
+      
       .file-actions {
         position: absolute;
         top: 0;
@@ -363,16 +399,25 @@ table.dataTable {
       .file-details {
         @include display-flex(row);
         @include align-items(flex-start);
-        margin: 2rem 0 .5rem;
+        margin: 1.5rem 0 .5rem;
 
-        img {
-          max-width: 4rem;
-          margin-right: 1rem;
+        .file-thumbnail {
+          margin-top: .25rem;
+          min-width: 2.75rem;
+          width: 2.75rem;
+
+          .fas {
+            font-size: 2.5rem;
+          }
         }
 
-        .file-size {
-          strong {
-            font-weight: 400;
+        .file-filename {
+          @include flex-grow(1);
+
+          .file-size {
+            strong {
+              font-weight: 400;
+            }
           }
         }
       }
@@ -382,7 +427,7 @@ table.dataTable {
         background-color: $gray-400;
         min-height: .3px;
         height: 3px;
-        margin-bottom: .25rem;
+        margin: .5rem 0;
         overflow: hidden;
 
         .progress-bar {
@@ -395,27 +440,57 @@ table.dataTable {
 
       .file-message {
         font-size: .875rem;
-        margin-bottom: .25rem;
-      }
-    }
-  }
 
-  @media (max-width: 991.98px) {
-    &:not(.file-upload-button) {
-      .file-group {
-        .file-preview {
-          min-width: 20rem;
-          width: calc(100% - 1rem);
+        .text-success,
+        .text-danger {
+          .fas {
+            display: inline-block;
+            margin-right: .125rem;
+          }
         }
       }
     }
   }
 
-  @media (min-width: 992px) {
+  @media (max-width: 767.98px) {
     &:not(.file-upload-button) {
+      margin-top: 1rem;
+      border: 0;
+      padding: 0;
+
+      .file-upload-control {
+        @include display-flex(column);
+        @include align-items(center);
+    
+        .upload-text,
+        .text-muted {
+          display: none;
+        }
+      }
+
+      .file-group {
+        @include flex-direction(column);
+        margin-top: 1rem;
+        min-width: 100%;
+        width: 100%;
+
+        .file-preview {
+          margin: .5rem 0;
+          min-width: 20rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &:not(.file-upload-button) {
+      @include align-items(center);
+      @include justify-content(center);
+
       .file-group {
         .file-preview {
-          min-width: 24rem;
+          min-width: 20rem;
           width: calc(50% - 1.25rem);
         }
       }
@@ -513,13 +588,11 @@ table.dataTable {
         }
 
         .fas {
-          color: $gray-600;
           font-size: .75rem;
           min-width: 1rem;
 
           &.fa-folder,
           &.fa-folder-open {
-            color: $yellow;
             font-size: 1.5rem;
             min-width: 2rem;
           }
@@ -1074,6 +1147,86 @@ table.dataTable {
       .modal-body {
         .tab-content {
           margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.modal-resource-type-select {
+  .modal-dialog {
+    .modal-body {
+      .navbar {
+        @include flex-direction(column);
+        @include flex-wrap(nowrap);
+        @include justify-content(space-between);
+        padding: .75rem 0;
+
+        .navbar-text {
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+          padding: .5rem 1rem;
+          text-align: center;
+        }
+
+        .navbar-nav {
+          @include flex-direction(row);
+          @include flex-wrap(wrap);
+          @include justify-content(center);
+          max-width: 36rem;
+
+          .nav-link {
+            @include display-flex(column);
+            @include align-items(center);
+            color: $gray-700;
+            font-size: .875rem;
+            margin: .5rem;
+            min-width: 7rem;
+            padding: .75rem 1rem;
+
+            &:hover {
+              background-color: $gray-200;
+            }
+
+            .img {
+              margin-bottom: .25rem;
+              height: 2.5rem;
+              width: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-resource-resource-add {
+  .modal-dialog {
+    .modal-body {
+      .navbar {
+        @include justify-content(space-between);
+        
+        .nav-divider {
+          border-right-color: $gray-600;
+          margin: .25rem 1rem;
+        }
+
+        .nav-item {
+          .item-text {
+            font-size: 1.25rem;
+            max-width: 16rem;
+          }          
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .modal-body {
+        .navbar {
+          .nav-title,
+          .nav-divider {
+            display: none;
+          }
         }
       }
     }

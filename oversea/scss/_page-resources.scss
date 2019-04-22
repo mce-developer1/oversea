@@ -133,31 +133,11 @@
               word-break: break-word;
 
               .fas {
-                position: absolute;
-                left: 0;
-
-                &.fa-folder {
-                  color: $yellow;
-                }
-
-                &.fa-file-word,
-                &.fa-file-alt {
-                  color: $blue;
-                }
-
-                &.fa-file-excel {
-                  color: $green;
-                }
-
-                &.fa-file-image,
-                &.fa-file-powerpoint,
-                &.fa-file-pdf {
-                  color: $red;
-                }
-
                 font-size: 1.5rem;
                 min-width: 2rem;
-              }              
+                position: absolute;
+                left: 0;
+              }
             }
           }
 
@@ -179,25 +159,6 @@
 
                 .fas {
                   font-size: 8rem;
-
-                  &.fa-folder {
-                    color: $yellow;
-                  }
-  
-                  &.fa-file-word,
-                  &.fa-file-alt {
-                    color: $blue;
-                  }
-  
-                  &.fa-file-excel {
-                    color: $green;
-                  }
-  
-                  &.fa-file-image,
-                  &.fa-file-powerpoint,
-                  &.fa-file-pdf {
-                    color: $red;
-                  }
                 }
               }
 
@@ -469,17 +430,6 @@
   }
 }
 
-.modal-resource-file-upload {
-  .modal-dialog {
-    .modal-body {
-      .file-upload {
-        @include justify-content(center);
-        min-height: calc(100vh - 24rem);
-      }
-    }
-  }
-}
-
 .modal-resource-file-edit-attributes {
   .modal-dialog {
     @media (min-width: 768px) {
@@ -509,7 +459,7 @@
 .modal-resource-manage-revisions {
   .modal-dialog {
     .modal-body {
-      .file-group {
+      .version-group {
         margin-top: 1rem;
 
         .list-group-item {
@@ -543,7 +493,8 @@
       .tree-resources {
         border: 1px solid $gray-400;
         margin-bottom: 1rem;
-        max-height: 20rem;
+        max-height: 18rem;
+        min-height: 18rem;
         overflow-x: hidden;
         overflow-y: auto;
       }
@@ -556,7 +507,8 @@
     .modal-body {
       .tree-resources {
         border: 1px solid $gray-400;
-        max-height: 20rem;
+        max-height: 18rem;
+        min-height: 18rem;
         overflow-x: hidden;
         overflow-y: auto;
       }

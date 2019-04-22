@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var pause = require('connect-pause');
 var multer  = require('multer');
 var upload = multer();
 
@@ -401,7 +400,7 @@ router.get('/shared/add_weblinks', function(req, res, next) {
 });
 
 /* GET upload page. */
-router.post('/shared/upload', pause(5000), upload.any(), function(req, res, next) {
+router.post('/shared/upload', upload.any(), function(req, res, next) {
   res.send('{status: "OK"}');
 });
 

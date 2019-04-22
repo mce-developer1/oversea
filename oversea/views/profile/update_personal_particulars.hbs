@@ -3,16 +3,37 @@
     <div class="col-sm">
       <div class="article article-update-personal-particulars">
         <div class="article-header">
-          <h5>About Me</h5>
-          <button class="btn btn-light" data-toggle="sidebar" data-target=".article-update-personal-particulars">
-            <i class="fas fa-caret-down"></i>
-          </button>
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <i class="fas fa-user-cog"></i>
+                </button>
+                <span class="item-text text-truncate">About Me</span>
+              </li>
+              <li class="nav-item nav-item-submodule dropdown">
+                <button class="btn btn-light" type="button" data-toggle="dropdown">
+                  Update Personal Particulars <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/{{userRole}}/profile/update_profile_picture">Update Profile Picture</a>
+                  <a class="dropdown-item" href="/{{userRole}}/profile/update_personal_particulars">Update Personal Particulars</a>
+                  <a class="dropdown-item" href="/{{userRole}}/profile/update_personal_settings">Update Personal Settings</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
         </div>
         <div class="article-content">
           <div class="article-sidebar">
-            <ul class="nav nav-side">              
+            <ul class="nav nav-side">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link" href="/{{userRole}}/profile/update_profile_picture">
+                  Update Profile Picture
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/{{userRole}}/profile/update_personal_particulars">
                   Update Personal Particulars
                 </a>
               </li>
@@ -25,9 +46,6 @@
           </div>
           <div class="article-body">
             <form class="form-personal-particulars">
-              <div class="form-header">
-                <h6>Update Personal Particulars</h6>
-              </div>
               <div class="form-group">
                 <label class="form-label" for="selGender">Gender</label>
                 <select class="form-control selectpicker" id="selGender" data-container=".article-body">

@@ -107,6 +107,8 @@
 
             .navbar-nav {
               .form-add-resource {
+                @include flex-wrap(nowrap);
+                
                 .form-label {
                   margin-right: .5rem;
                 }
@@ -837,7 +839,6 @@
           }
 
           .file-upload {
-            @include justify-content(center);
             min-height: calc(100vh - 10rem);
           }
         }

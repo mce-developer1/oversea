@@ -81,7 +81,7 @@
   </div>
 </div>
 
-<div class="modal modal-file-delete-confirmation fade" tabindex="-1" role="dialog" data-backdrop="static">
+<div class="modal modal-file-remove-confirmation fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -91,7 +91,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete the file?</p>
+        <p>Are you sure you want to remove the file?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
@@ -126,18 +126,20 @@
       </button>
     </div>
     <div class="file-details">
-      <img data-dz-thumbnail />
+      <div class="file-thumbnail">
+      </div>
       <div class="file-filename">
-        <span data-dz-name></span>
-        <div class="file-size text-muted" data-dz-size></div>
+        <div class="file-name"></div>
+        <div class="file-size text-muted"></div>
       </div>
     </div>
     <div class="file-progress">
-      <div class="progress-bar" data-dz-uploadprogress></div>
+      <div class="progress-bar"></div>
     </div>  
     <div class="file-message">
-      <span class="text-success" data-dz-successmessage></span>
-      <span class="text-danger" data-dz-errormessage></span>
+      <div class="text-success"></div>
+      <div class="text-danger"></div>
     </div>
+    <input class="file-uuid" type="hidden" />
   </div>
 </script>

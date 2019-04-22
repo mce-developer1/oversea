@@ -4,9 +4,20 @@ $(document).ready(function() {
   if ($container.length === 0) $container = $('.article-tests');
   if ($container.length === 0) $container = $('.article-file-upload');
 
-  function clearDropZoneFiles() {
+  function removeAllDropZoneFiles() {
     if (dropzone && dropzone.removeAllFiles) {
-      dropzone.removeAllFiles();
+      dropzone.removeAllFiles(true);
+    }
+  }
+
+  function removeDropZoneFile(uuid) {
+    if (dropzone && dropzone.removeFile) {
+      for (var i = 0; i < dropzone.files.length; i++) {
+        if (dropzone.files[i].upload.uuid === uuid) {
+          dropzone.removeFile(dropzone.files[i]);
+          break;
+        }
+      }
     }
   }
 
@@ -178,7 +189,7 @@ $(document).ready(function() {
   });
 
   $container.find('.article-body .btn-add').on('click', function(e) {
-    clearDropZoneFiles();
+    removeAllDropZoneFiles();
     clearRecordsSelection();
     clearTimeout(window.toastTimeout);
     delete window.toastTimeout;
@@ -271,6 +282,29 @@ $(document).ready(function() {
     $('.modal-resource-details').modal('show');
   });
 
+  function updateUploadFormStyles() {
+    if (window._pageDirty) return;
+    if (!dropzone) return;
+
+    var uploadedFiles = [];
+
+    for (var i = 0; i < dropzone.files.length; i++) {
+      if (dropzone.files[i].status === 'success') {
+        uploadedFiles.push(dropzone.files[i]);
+      }
+    }
+
+    if (uploadedFiles.length > 0) {
+      if ($container.find('.navbar .nav-form').hasClass('d-none')) {
+        $container.find('.navbar .nav-form').removeClass('d-none');
+      }
+    } else {
+      if (!$container.find('.navbar .nav-form').hasClass('d-none')) {
+        $container.find('.navbar .nav-form').addClass('d-none');
+      }
+    }
+  }
+
   if ($('.article-file-upload .file-upload').length === 1) {
     var $upload = $('.article-file-upload .file-upload');
     destroyDropZone();
@@ -280,50 +314,77 @@ $(document).ready(function() {
       previewTemplate: $('#preview').html(),
       clickable: '.file-upload .btn-upload',
       url: "/shared/upload",
-      uploadMultiple: true,
+      chunking: true,
+      chunkSize: 500,
+      retryChunks: true,
+      retryChunksLimit: 3,
       parallelUploads: 1,
-      maxFiles: 5,
-      maxfilesreached: function(files) {
-        var maxFiles = dropzone.options.maxFiles;
-        
-        if (files.length > maxFiles) {
-          for (var i = maxFiles; i < files.length; i++) {
-            dropzone.removeFile(files[i]);
-          }
+      maxFilesize: .25,
+      addedfile: function(file) {
+        var previewTemplate = this.options.previewTemplate;
+        var previewElement = $(previewTemplate).get(0);
+        var $details = $(previewElement).find('.file-details');
+        var fileIcon = window.Utils.getFileIcon(file);
+        $details.find('.file-thumbnail').append(fileIcon);
+        $details.find('.file-thumbnail').attr('title', file.name);
+
+        var $filename = $details.find('.file-filename');
+        $filename.find('.file-name').html(file.name);
+        $filename.find('.file-size').html(this.filesize(file.size));
+        $(previewElement).find('.file-uuid').val(file.upload.uuid);
+
+        file.previewElement = previewElement;
+        $upload.find('.file-group').append(previewElement);        
+
+        if ($upload.find('.file-group').hasClass('d-none')) {
+          $upload.find('.file-group').removeClass('d-none');
         }
       },
       processing: function(file) {
         window._pageDirty = true;
         window.top._pageDirty = true;
-
-        if ($upload.find('.file-group').hasClass('d-none')) {
-          $upload.find('.file-group').removeClass('d-none');
-        }
-
-        if (!$container.find('.navbar .nav-form').hasClass('d-none')) {
-          $container.find('.navbar .nav-form').addClass('d-none');
-        }
+      },
+      uploadprogress: function(file, progress) {
+        if ((progress === 100) || window._progressTimeout) return;
+        if (!window._pageDirty) window._pageDirty = true;
+        if (!window.top._pageDirty) window.top._pageDirty = true;
+        window._progressTimeout = setTimeout(function() {
+          var $progress = $(file.previewElement).find('.file-progress');
+          var style = 'width: ' + progress + '%;';
+          $progress.find('.progress-bar').attr('style', style);
+          delete window._progressTimeout;
+        }, 100);
       },
       error: function(file) {
-        var error = "Failed to upload the file.";
+        var $actions = $(file.previewElement).find('.file-actions');
+        $actions.find('.btn-edit').addClass('d-none');
+        $(file.previewElement).addClass('file-preview-error');
+
         var $message = $(file.previewElement).find('.file-message');
-        $message.find('[data-dz-errormessage]').text(error);
+        var error = 'Failed to upload the file.';
+        var maxFilesize = this.options.maxFilesize;
+        
+        if (file.size > (maxFilesize * 1024 * 1024)) {
+          error = 'File size excceeds the limit of ' + maxFilesize + 'MB.'
+        }
+
+        error = '<i class="fas fa-exclamation"></i> ' + error;
+        $message.find('.text-danger').html(error);
       },
       success: function(file) {
-        window._pageDirty = false;
-        window.top._pageDirty = false;
-
-        var success = "File uploaded successfully."
         var $message = $(file.previewElement).find('.file-message');
-        $message.find('[data-dz-successmessage]').text(success);
+        var success = 'File uploaded successfully.';
+        success = '<i class="fas fa-check"></i> ' + success;
+        $message.find('.text-success').html(success);
+
+        setTimeout(updateUploadFormStyles, 100);
       },
       complete: function(file) {
-        setTimeout(function waitNextFileUpload() {
-          if (window._pageDirty) return file;
-          if ($container.find('.navbar .nav-form').hasClass('d-none')) {
-            $container.find('.navbar .nav-form').removeClass('d-none');
-          }
-        });
+        var $progress = $(file.previewElement).find('.file-progress');
+        if (!$progress.hasClass('d-none')) $progress.addClass('d-none');
+        
+        window._pageDirty = false;
+        window.top._pageDirty = false;
       }
     });
 
@@ -331,7 +392,20 @@ $(document).ready(function() {
       $('.modal-file-edit-attributes').modal('show');
     });
     $('.article-file-upload .file-upload').on('click', '.btn-delete', function(e) {
-      $('.modal-file-delete-confirmation').modal('show');
+      var $file = $(this).closest('.file-preview');
+      var uuid = $file.find('.file-uuid').val();
+
+      if ($file.hasClass('file-preview-error')) {
+        removeDropZoneFile(uuid);
+        return;
+      }
+
+      $('.modal-file-remove-confirmation .btn-primary').on('click', function(e) {
+        $('.modal-file-remove-confirmation').modal('hide');
+        removeDropZoneFile(uuid);
+        setTimeout(updateUploadFormStyles, 100);
+      });
+      $('.modal-file-remove-confirmation').modal('show');
     });
   }
 });

@@ -409,21 +409,35 @@ $(document).ready(function() {
 
   function showAddResourceModal(srcUrl) {
     $('.modal-resource-resource-add').find('iframe').attr('src', srcUrl);
-    $('.modal-resource-resource-add .btn-close').on('click', function(e) {
-      if (window._pageDirty) {
-        $('.modal-resource-cancel-upload-confirmation .btn-primary').on('click', function(e) {
-          $('.modal-resource-cancel-upload-confirmation').modal('hide');
+    $('.modal-resource-resource-add').on('keydown', function(e) {
+      if ((e.which == 27) && window._pageDirty) {
+        e.which = Number.NaN;
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
           $('.modal-resource-resource-add').modal('hide');
         });
-        $('.modal-resource-cancel-upload-confirmation').modal('show')
-      } else {
-        $('.modal-resource-resource-add').modal('hide');
+      }
+    });
+    $('.modal-resource-resource-add .btn-close').on('click', function(e) {
+      if (window._pageDirty) {
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-resource-resource-add').modal('hide');
+        });
       }
     });
     $('.modal-resource-resource-add').on('hide.bs.modal', function(e) {
       showFolderResources();
     });
     $('.modal-resource-resource-add').modal('show');
+  }
+
+  function showCancelUploadConfirmationModal(confirmCallback) {
+    $('.modal-file-cancel-upload-confirmation .btn-primary').on('click', function(e) {
+      $('.modal-file-cancel-upload-confirmation').modal('hide');
+      if (confirmCallback) confirmCallback.apply(null, arguments);
+    });
+    $('.modal-file-cancel-upload-confirmation').modal('show');
   }
 
   $('.article-lesson-resources .article-body .link-add-library-resources').on('click', function(e) {

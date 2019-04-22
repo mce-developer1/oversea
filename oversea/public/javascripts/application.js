@@ -1,3 +1,55 @@
+window.Utils = {
+  getFileIcon: function(file) {
+    var $icon = $('<i class="fas"></i>');
+    
+    switch (file.type) {
+      case 'image/jpeg':
+      case 'image/png':
+        $icon.addClass('fa-file-image');
+        break;
+      case 'text/html':
+      case 'text/css':
+      case 'text/javascript':
+        $icon.addClass('fa-file-code');
+        break;
+      case 'text/csv':
+        $icon.addClass('fa-file-csv');
+        break;
+      case 'audio/mp3':
+      case 'audio/ogg':
+      case 'audio/webm':
+        $icon.addClass('fa-file-audio');
+        break;
+      case 'video/mp4':
+      case 'video/ogg':
+      case 'video/webm':
+        $icon.addClass('fa-file-video');
+        break;
+      case 'application/word':
+      case 'application/msword':
+      case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+        $icon.addClass('fa-file-word');
+        break;
+      case 'application/excel':
+      case 'application/vnd.ms-excel':
+      case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+        $icon.addClass('fa-file-excel');
+        break;
+      case 'application/pdf':
+        $icon.addClass('fa-file-pdf');
+        break;
+      case 'application/zip':
+        $icon.addClass('fa-file-archive');
+        break;
+      default:
+        $icon.addClass('fa-file');
+        break;
+    }
+
+    return $icon;
+  }
+};
+
 $(document).ready(function() {
   $(document).on('click', '[data-toggle="password"]', function(e) {
     var icon = $(this).find('.fas');
@@ -62,25 +114,53 @@ $(document).ready(function() {
   });
 
   $(document).on('show.bs.modal', function (e) {
-    if ($(e.target).find('.modal-dialog').hasClass('modal-preview')) {
-      setTimeout(function() {
-        $('.modal-backdrop.show').addClass('modal-backdrop-preview');
-      });
-    }
-
-    if (($('.modal.show').length > 0)
-        && !$('.modal.show').hasClass('modal-base')) {
-      $('.modal.show').addClass('modal-base');
+    if ($('.modal.show').length > 0) {
+      if (!$('.modal.show').hasClass('modal-base')) {
+        $('.modal.show').addClass('modal-base');
+      }
     }
 
     if (!$('.modal-backdrop.show').hasClass('modal-backdrop-base')) {
       $('.modal-backdrop.show').addClass('modal-backdrop-base');
     }
+
+    if ((window != window.top) && window.top.postMessage) {
+      window.top.postMessage('show.bs.modal', '*');
+    }
   });
 
   $(document).on('hide.bs.modal', function (e) {
-    $('.modal.modal-base').removeClass('modal-base');
+    if ($('.modal.show.modal-base').length > 0) {
+      $('.modal.show.modal-base').removeClass('modal-base');
+    }
+
+    if ((window != window.top) && window.top.postMessage) {
+      window.top.postMessage('hide.bs.modal', '*');
+    }
   });
+
+  $(document).on('hidden.bs.modal', function (e) {
+    if ($('.modal.show').length > 0) {
+      if (!$('body').hasClass('modal-open')) {
+        $('body').addClass('modal-open');
+      }
+    }
+  });
+
+  if (window === window.top) {
+    window.addEventListener("message", function(e) {
+      switch (e.data) {
+        case 'show.bs.modal':
+          $('.modal.show .btn-close').addClass('d-none');
+          break;
+        case 'hide.bs.modal':
+          $('.modal.show .btn-close').removeClass('d-none');
+          break;
+        default:
+          break;
+      }
+    }, false);
+  }
 
 	window._logStore = window._logStore || {
     endpoint: '/logging',
@@ -157,7 +237,7 @@ $(document).ready(function() {
   }
 
   $(window).on('beforeunload', function(e) {
-    if (window._pageDirty) return '';
+    if (window._pageDirty) return 'Changes you made may not be saved.';
   });
 
   $(window).on('unload', function(e) {
