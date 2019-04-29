@@ -216,6 +216,19 @@ a {
   .form-label {
     margin: .375rem 0;
   }
+
+  .form-check {
+    margin-bottom: .5rem;
+  }
+
+  .checkbox-group {
+    @include display-flex(row);
+    @include flex-wrap(wrap);
+    
+    .form-check {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .form-control {
@@ -485,6 +498,25 @@ a {
 .list-group {
   @include display-flex(column);
 
+  &.list-group-bubble {
+    @include display-flex(row);
+    @include align-items(flex-start);
+    @include flex-wrap(wrap);
+    background-color: $white;
+    padding: .25rem;
+
+    .list-group-item {
+      background-color: $gray-100;
+      border: 0;
+      margin: .25rem;
+      padding: 0;
+
+      .item-text {
+        padding: .5rem;
+      }
+    }
+  }
+
   .list-group-item {
     @include display-flex(row);
     @include align-items(center);
@@ -731,6 +763,7 @@ a {
       border-top: 0;
       border-bottom-width: 1px;
       color: $gray-700;
+      padding: 1rem;
 
       &.sortable-column {
         &:hover {
@@ -760,6 +793,8 @@ a {
       }
 
       td {
+        padding: 1rem;
+        
         .btn-light {
           &:hover {
             opacity: 1;

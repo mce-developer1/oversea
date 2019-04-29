@@ -42,11 +42,11 @@ $(document).ready(function() {
       parallelUploads: 1,
       maxFiles: 1,
       maxFilesize: .25,
-      addedfile: function(file) {
+      maxfilesreached: function() {
         var maxFiles = dropzone.options.maxFiles;
 
         if (dropzone.files.length > maxFiles) {
-          dropzone.removeFile(dropzone.files[0]);
+          removeAllDropZoneFiles();
 
           if ($('.toast-stack').hasClass('d-none')) {
             clearTimeout(window.toastTimeout);
@@ -60,7 +60,8 @@ $(document).ready(function() {
             }, 5000);
           }
         }
-        
+      },
+      addedfile: function(file) {
         var previewTemplate = this.options.previewTemplate;
         var previewElement = $(previewTemplate).get(0);
         var $details = $(previewElement).find('.file-details');

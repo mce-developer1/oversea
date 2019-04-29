@@ -331,7 +331,7 @@ $(document).ready(function() {
     var $upload = $('.modal-resource-manage-revisions .file-upload');
     destroyDropZone();
 
-    dropzone = new Dropzone($upload.get(0), {
+    dropzone = new Dropzone($upload.find('.file-dropzone').get(0), {
       previewsContainer: $upload.find('.file-group').get(0),
       previewTemplate: $('#preview').html(),
       clickable: $upload.find('.btn-upload').get(0),
@@ -347,7 +347,7 @@ $(document).ready(function() {
         var maxFiles = dropzone.options.maxFiles;
 
         if (dropzone.files.length > maxFiles) {
-          dropzone.removeFile(dropzone.files[0]);
+          //dropzone.removeFile(dropzone.files[0]);
 
           if ($('.toast-stack').hasClass('d-none')) {
             clearTimeout(window.toastTimeout);
@@ -360,6 +360,8 @@ $(document).ready(function() {
               $('.toast-stack').addClass('d-none');
             }, 5000);
           }
+
+          return;
         }
 
         var previewTemplate = this.options.previewTemplate;
@@ -430,7 +432,7 @@ $(document).ready(function() {
         error = '<i class="fas fa-exclamation"></i> ' + error;
         $message.find('.text-danger').html(error);
       },
-      success: function(file) {
+      success: function(file) {console.log('success');
         var $message = $(file.previewElement).find('.file-message');
         var success = 'File uploaded successfully.';
         success = '<i class="fas fa-check"></i> ' + success;
@@ -473,13 +475,18 @@ $(document).ready(function() {
       $('.modal-resource-delete-confirmation').modal('show');
     });
     $('.modal-resource-manage-revisions').on('keydown', function(e) {
-      if ((e.which == 27) && window._pageDirty) {
-        e.which = Number.NaN;
-        e.stopPropagation();
-        showCancelUploadConfirmationModal(function() {
-          $('.modal-resource-manage-revisions').modal('hide');
-          removeAllDropZoneFiles();
-        });
+      if (e.which == 27) {
+        if (window._pageDirty) {
+          e.which = Number.NaN;
+          e.stopPropagation();
+          showCancelUploadConfirmationModal(function() {
+            $('.modal-resource-manage-revisions').modal('hide');
+            removeAllDropZoneFiles();
+            dropzone.destroy();
+          });
+        } else {
+          dropzone.destroy();
+        }
       }
     });
     $('.modal-resource-manage-revisions .btn-close').on('click', function(e) {
@@ -488,7 +495,10 @@ $(document).ready(function() {
         showCancelUploadConfirmationModal(function() {
           $('.modal-resource-manage-revisions').modal('hide');
           removeAllDropZoneFiles();
+          dropzone.destroy();
         });
+      } else {
+        dropzone.destroy();
       }
     });
     $('.modal-resource-manage-revisions').modal('show');

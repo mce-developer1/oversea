@@ -442,6 +442,25 @@ router.get('/:userRole/tests/create_test', function(req, res, next) {
   });
 });
 
+/* GET announcements page. */
+router.get('/:userRole/announcements/announcements', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('announcements/announcements', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'announcements',
+    loggedIn: true,
+    announcementsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET pdf viewer page. */
 router.get('/viewers/pdf_viewer', function(req, res, next) {
   res.render('viewers/pdf_viewer', {
@@ -451,11 +470,29 @@ router.get('/viewers/pdf_viewer', function(req, res, next) {
   });
 });
 
-
-/* GET 404 error page. */
+/* GET logging page. */
 router.post('/logging', function(req, res) {
   console.log('loggin messages...');
   res.send('{status: "OK"}');
+});
+
+/* GET legacy page. */
+router.get('/:userRole/legacy/legacy', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('legacy/legacy', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'legacy',
+    loggedIn: true,
+    legacyPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
 });
 
 /* GET 404 error page. */

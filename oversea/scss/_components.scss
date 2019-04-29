@@ -2,75 +2,6 @@ select.form-control {
   border-radius: 0;
 }
 
-table.dataTable {
-  border: 0;
-
-  &.no-footer {
-    border-bottom: 1px solid $gray-300 !important;
-  }
-
-  thead {
-    tr {
-      th {
-        padding: .75rem 1rem;
-
-        &.sorting,
-        &.sorting_asc,
-        &.sorting_desc {
-          background-image: none;
-          cursor: pointer;
-          position: relative;
-
-          &:hover {
-            background-color: $gray-200;
-            cursor: pointer;
-          }
-        }
-
-        &.sorting_asc:after,
-        &.sorting_desc:after {
-          font-family: 'Font Awesome 5 Free';
-          font-size: 1.125rem;
-          font-style: normal;
-          font-variant: normal;
-          line-height: 1.125;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          margin-left: .5rem;
-        }
-
-        &.sorting_asc:after {
-          content: '\f309';
-        }
-        
-        &.sorting_desc:after {
-          content: '\f30c';
-        }
-
-        background-color: $white;
-        border-bottom: 0;
-        color: $gray-700;
-        white-space: nowrap;
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      td {
-        border-top: 1px solid $gray-300;
-        padding: .75rem 1rem;
-
-        &.nowrap,
-        .nowrap {
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-}
-
 .fas {
   &.fa-folder,
   &.fa-folder-open {
@@ -162,7 +93,7 @@ table.dataTable {
       .btn-light {
         background-color: $white !important;
         border-color: $white !important;
-        margin-left: 0 !important;
+        margin: 1px !important;
         padding: .325rem .75rem !important;
         
         &:hover {
@@ -175,6 +106,11 @@ table.dataTable {
           color: $gray-500 !important;
           font-size: 1.375rem !important;
           vertical-align: top !important;
+
+          &.fa-times {
+            font-size: 1.125rem !important;
+            line-height: 1.325 !important;
+          }
         }
       }              
     }
@@ -867,6 +803,129 @@ table.dataTable {
   }
 }
 
+.dataTables_wrapper {
+  .dataTables_scrollBody {
+    border-bottom: 0 !important;
+
+    .dataTable {
+      thead {
+        tr {
+          th {
+            &.sorting_asc:after,
+            &.sorting_desc:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }    
+  }
+
+  .dataTable {
+    border: 0;
+
+    &.no-footer {
+      border-bottom: 1px solid $gray-300 !important;
+    }
+
+    thead {
+      tr {
+        th {
+          padding: 1rem;
+
+          &.sorting,
+          &.sorting_asc,
+          &.sorting_desc {
+            background-image: none;
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+              background-color: $gray-200;
+              cursor: pointer;
+            }
+          }
+
+          &.sorting_asc:after,
+          &.sorting_desc:after {
+            font-family: 'Font Awesome 5 Free';
+            font-size: 1.125rem;
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1.125;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-left: .5rem;
+          }
+
+          &.sorting_asc:after {
+            content: '\f309';
+          }
+          
+          &.sorting_desc:after {
+            content: '\f30c';
+          }
+
+          background-color: $white;
+          border-bottom: 0;
+          color: $gray-700;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          border-top: 1px solid $gray-300;
+          padding: 1rem;
+
+          &.nowrap,
+          .nowrap {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
+}
+
+.daterangepicker {
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
+  margin-top: 0;
+  min-width: 280px;
+
+  &::before,
+  &::after {
+    content: none;
+  }
+
+  .drp-calendar {
+    min-width: 280px;
+
+    .calendar-table {
+      padding-right: 8px;
+
+      th,
+      td {
+        height: 30px;
+        min-width: 36px;
+        width: 36px;
+      }
+    }
+  }
+
+  .drp-buttons {
+    .btn {
+      font-weight: normal;
+      padding: 0.325rem 0.5rem;
+    }
+  }
+}
+
 .algolia-autocomplete {
   .aa-input,
   .aa-hint {
@@ -1069,14 +1128,12 @@ table.dataTable {
           .input-group {
             @include justify-content(flex-start);
 
-            .algolia-autocomplete,
-            .form-control,
-            .btn {
-              margin-right: .5rem;
-            }
-
             .algolia-autocomplete {
               @include flex-grow(1);
+            }
+
+            .btn {
+              margin-left: .5rem;
             }
           }
         }
@@ -1086,9 +1143,17 @@ table.dataTable {
     @media (max-width: 576px) {
       .modal-body {
         .form-add-user {
-          .form-control {
-            margin-bottom: .5rem;
-            width: 100%;
+          .form-group {
+            .input-group {
+              .algolia-autocomplete {
+                min-width: 100%;
+                width: 100%;
+              }
+
+              .btn {
+                margin: .5rem .5rem .5rem 0;
+              }
+            }
           }
         }
       }

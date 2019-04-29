@@ -47,11 +47,12 @@
             {{#if reportsPage}}My Reports{{/if}}
             {{#if lessonsPage}}Lesson Builder{{/if}}
             {{#if testsPage}}Test Builder{{/if}}
-            {{#if userAccountPage}}Administration{{/if}}
-            {{#if formClassPage}}Administration{{/if}}
-            {{#if schoolGroupPage}}Administration{{/if}}
+            {{#if announcementsPage}}Announcements{{/if}}
             {{#if profilePage}}About Me{{/if}}
-            {{#if passwordPage}}Administration{{/if}}
+            {{#if passwordPage}}User Administration{{/if}}
+            {{#if formClassPage}}Manage Form Class{{/if}}
+            {{#if legacyPage}}Legacy Page{{/if}}
+            {{#if errorPage}}Page Not Found{{/if}}
           </div>
           <ul class="navbar-nav nav-main">
             {{#if loggedIn}}
@@ -80,6 +81,11 @@
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/tests/tests">
                           <i class="img img-myreports"></i> Test Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-myreports"></i> School To Home Notes
                         </a>
                       </li>
                     </ul>
@@ -119,6 +125,32 @@
                   </ul>
                 </div>
               </li>
+              {{#unless studentUser}}
+                <li class="nav-item dropdown">
+                  <a class="nav-link link-schoolmatters" href="#" data-toggle="dropdown">
+                    <i class="img img-myreports"></i> School Matters
+                  </a>
+                  <div class="dropdown-menu">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/announcements/announcements">
+                          <i class="img img-myreports"></i> Announcements
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/facility_booking/facility_booking">
+                          <i class="img img-myreports"></i> Facility Booking
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/mark_attendance/mark_attendance">
+                          <i class="img img-myreports"></i> Mark Attendance
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              {{/unless}}
               {{#if adminUser}}
                 <li class="nav-item dropdown">
                   <a class="nav-link link-administration" href="#" data-toggle="dropdown">
@@ -395,6 +427,11 @@
                           <i class="img img-myreports"></i> Test Builder
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-myreports"></i> School To Home Notes
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </li>
@@ -468,6 +505,7 @@
     <script src="/static/dropzone/dropzone.js"></script>
     <script src="/static/sortablejs/sortable.js"></script>
     <script src="/static/cropperjs/cropper.js"></script>
+    <script src="/static/tinymce/tinymce.js"></script>
     <script src="/static/javascripts/application.js"></script>
     <script src="/static/javascripts/{{module}}.js"></script>
   </body>

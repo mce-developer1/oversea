@@ -157,6 +157,26 @@ $(document).ready(function() {
     }
   });
 
+  if (Dropzone && Dropzone.prototype) {
+    var initProxied = Dropzone.prototype.defaultOptions.init;
+    Dropzone.prototype.defaultOptions.init = function() {
+      var cancelEventHandler = function(e) {
+        return false;
+      };
+
+      var destroyProxied = this.destroy;
+      this.destroy = function() {
+        $(document).off('dragover', cancelEventHandler);
+        $(document).off('drop', cancelEventHandler);
+        destroyProxied.apply(this, [].slice.call(arguments));
+      };
+
+      $(document).on('dragover', cancelEventHandler);
+      $(document).on('drop', cancelEventHandler);
+      initProxied.apply(this, [].slice.call(arguments));
+    };
+  }
+
   if (window === window.top) {
     window.addEventListener("message", function(e) {
       switch (e.data) {

@@ -27,19 +27,23 @@ $(document).ready(function() {
     updateActionButtonsStyles();
   });
 
-  $container.find('.navbar .btn-create').on('click', function(e) {
-    $container.find('.navbar').addClass('d-none');
-    $container.find('.table-form-class').addClass('d-none');
-    $container.find('.form-form-class').removeClass('d-none');
+  $container.find('.article-body .navbar .btn-create').on('click', function(e) {
+    $('.article-manage-form-class').addClass('d-none');
+    $('.article-create-form-class').removeClass('d-none');
+    $('.app-container').scrollTop(0);
   });
 
-  $container.find('.form-form-class .btn-create').on('click', function(e) {
-    $container.find('.form-form-class').addClass('d-none');
-    $container.find('.navbar').removeClass('d-none');
-    $container.find('.table-form-class').removeClass('d-none');
+  $('.article-create-form-class .form-form-class .btn-create').on('click', function(e) {
+    $('.article-create-form-class').addClass('d-none');
+    $('.article-manage-form-class').removeClass('d-none');
+    $('.app-container').scrollTop(0);
   });
 
   var dataTable = $('.table').DataTable({
+    scrollY: '100%',
+    scrollCollapse: true,
+    fixedHeader: true,
+    paging: false,
     language: {
       infoEmpty: 'No groups found.',
     },

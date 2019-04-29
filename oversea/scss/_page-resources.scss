@@ -113,8 +113,6 @@
 
             th,
             td {
-              padding: 1rem;
-
               .btn {
                 padding: .325rem;
                 margin: -.5rem 0;
@@ -461,6 +459,9 @@
     .modal-body {
       .version-group {
         margin-top: 1rem;
+        max-height: 20rem;
+        overflow-x: hidden;
+        overflow-y: auto;        
 
         .list-group-item {
           &:hover {
@@ -470,13 +471,33 @@
           .file-details {
             @include flex-grow(1);
             
+            .file-version {
+              @include display-flex(row);
+              @include align-items(center);
+              @include flex-wrap(wrap);
+
+              .version-number{
+                margin-right: 1rem;
+              }
+
+              .file-name {
+                font-size: .875rem;
+                max-width: 16rem;
+              }
+            }
+
             .file-modified-date {
               @include display-flex(row);
+              @include align-items(center);
+              @include flex-wrap(wrap);
               font-size: .875rem;
               margin-top: .25rem;
 
+              .modified-date {
+                margin-right: 1rem;
+              }
+
               .user-name {
-                margin-right: 1.5rem;
                 max-width: 16rem;
               }
             }

@@ -31,6 +31,7 @@ app.use('/static/autocomplete.js', express.static(path.join(__dirname, 'node_mod
 app.use('/static/dropzone', express.static(path.join(__dirname, 'node_modules/dropzone/dist')));
 app.use('/static/sortablejs', express.static(path.join(__dirname, 'node_modules/sortablejs')));
 app.use('/static/cropperjs', express.static(path.join(__dirname, 'node_modules/cropperjs/dist')));
+app.use('/static/tinymce', express.static(path.join(__dirname, 'node_modules/tinymce')));
 
 app.use('/', require('./routes/index'));
 
