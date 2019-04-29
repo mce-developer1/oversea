@@ -5204,18 +5204,6 @@ select.form-control {
 .app-content.page-announcements .article-announcements .article-content .article-body .table-body td .btn .fa-info-circle {
   font-size: 1.375rem;
 }
-@media (max-width: 1199.98px) {
-  .app-content.page-announcements .article-announcements .article-content .article-body .table-head colgroup:nth-child(3),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(3) {
-    display: none;
-  }
-  .app-content.page-announcements .article-announcements .article-content .article-body .table-head th:nth-child(3),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-head td:nth-child(3),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body th:nth-child(3),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body td:nth-child(3) {
-    display: none;
-  }
-}
 @media (max-width: 991.98px) {
   .app-content.page-announcements .article-announcements .article-header {
     margin: 0 -0.5rem;
@@ -5240,22 +5228,26 @@ select.form-control {
   .app-content.page-announcements .article-announcements .article-content .article-body {
     margin: 0;
   }
+  .app-content.page-announcements .article-announcements .article-content .article-body .table-head colgroup:nth-child(3),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(3) {
+    display: none;
+  }
+  .app-content.page-announcements .article-announcements .article-content .article-body .table-head th:nth-child(3),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-head td:nth-child(3),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body th:nth-child(3),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body td:nth-child(3) {
+    display: none;
+  }
 }
 @media (max-width: 767.98px) {
   .app-content.page-announcements .article-announcements .article-content .article-body .table-head colgroup:nth-child(4),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-head colgroup:nth-child(6),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(4),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(6) {
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(4) {
     display: none;
   }
   .app-content.page-announcements .article-announcements .article-content .article-body .table-head th:nth-child(4),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-head th:nth-child(6),
 .app-content.page-announcements .article-announcements .article-content .article-body .table-head td:nth-child(4),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-head td:nth-child(6),
 .app-content.page-announcements .article-announcements .article-content .article-body .table-body th:nth-child(4),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body th:nth-child(6),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body td:nth-child(4),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body td:nth-child(6) {
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body td:nth-child(4) {
     display: none;
   }
 }
@@ -5296,16 +5288,14 @@ select.form-control {
     top: 10rem;
     z-index: 970;
   }
-}
-@media (min-width: 1200px) {
-  .app-content.page-announcements .article-announcements .article-content .article-body .table-head colgroup:nth-child(7),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(7) {
+  .app-content.page-announcements .article-announcements .article-content .article-body .table-head colgroup:nth-child(6),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(6) {
     display: none;
   }
-  .app-content.page-announcements .article-announcements .article-content .article-body .table-head th:nth-child(7),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-head td:nth-child(7),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body th:nth-child(7),
-.app-content.page-announcements .article-announcements .article-content .article-body .table-body td:nth-child(7) {
+  .app-content.page-announcements .article-announcements .article-content .article-body .table-head th:nth-child(6),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-head td:nth-child(6),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body th:nth-child(6),
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body td:nth-child(6) {
     display: none;
   }
 }

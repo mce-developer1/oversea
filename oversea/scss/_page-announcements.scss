@@ -127,24 +127,6 @@
         }
       }
 
-      @media (max-width: 1199.98px) {
-        .article-content {
-          .article-body {
-            .table-head,
-            .table-body {
-              colgroup:nth-child(3) {
-                display: none;
-              }
-
-              th:nth-child(3),
-              td:nth-child(3) {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-
       @media (max-width: 991.98px) {
         .article-header {
           margin: 0 -.5rem;
@@ -173,6 +155,18 @@
 
           .article-body {
             margin: 0;
+
+            .table-head,
+            .table-body {
+              colgroup:nth-child(3) {
+                display: none;
+              }
+
+              th:nth-child(3),
+              td:nth-child(3) {
+                display: none;
+              }
+            }
           }
         }
       }
@@ -182,15 +176,12 @@
           .article-body {
             .table-head,
             .table-body {
-              colgroup:nth-child(4),
-              colgroup:nth-child(6) {
+              colgroup:nth-child(4) {
                 display: none;
               }
 
               th:nth-child(4),
-              th:nth-child(6),
-              td:nth-child(4),
-              td:nth-child(6) {
+              td:nth-child(4) {
                 display: none;
               }
             }
@@ -250,21 +241,15 @@
               top: 10rem;
               z-index: 970;
             }
-          }
-        }
-      }
 
-      @media (min-width: 1200px) {
-        .article-content {
-          .article-body {
             .table-head,
             .table-body {
-              colgroup:nth-child(7) {
+              colgroup:nth-child(6) {
                 display: none;
               }
 
-              th:nth-child(7),
-              td:nth-child(7) {
+              th:nth-child(6),
+              td:nth-child(6) {
                 display: none;
               }
             }

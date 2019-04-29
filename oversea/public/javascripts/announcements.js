@@ -138,7 +138,7 @@ $(document).ready(function() {
     });
   });
 
-  $('.article-create-form-class .form-form-class .btn-create').on('click', function(e) {
+  $('.article-create-announcement .form-announcement .btn-create').on('click', function(e) {
     $('.article-create-announcement').addClass('d-none');
     $('.article-announcements').removeClass('d-none');
     $('.app-container').scrollTop(0);
