@@ -62,7 +62,7 @@ $(document).ready(function() {
       minYear: 2019,
       maxYear: 2019,
       locale: {
-        format: 'DD/MM/YYYY',
+        format: 'DD MMM YYYY',
         separator: ' - '
       }
     });
