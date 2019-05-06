@@ -113,75 +113,99 @@
                     </ul>
                   </nav>
                   <div class="list-components">
-                    <ul class="list-group">
-                      <li class="list-group-item">
-                        <div class="section-summary default-section-summary">
-                          <div class="section-title">Section A</div>
-                          <div class="section-description">
-                              <p>Answer all questions.</p>
+                    <div class="component component-section">
+                      <div class="section-summary default-section-summary">
+                        <div class="section-title">Section A</div>
+                        <div class="section-description">
+                            <p>Answer all questions.</p>
+                        </div>
+                        <div class="section-actions">
+                          <button class="btn btn-light btn-handle" type="button" title="Move">
+                            <i class="fas fa-grip-horizontal"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="section-edit d-none">
+                        <form class="form-edit-section">
+                          <div class="form-group">
+                            <label class="form-label" for="txtTitle">Title</label>
+                            <div class="form-group">
+                              <input class="form-control form-input" type="text" value="Section A" id="txtTitle">
+                            </div>
                           </div>
-                          <div class="section-actions">
-                            <button class="btn btn-light btn-drag" type="button" title="Move">
-                              <i class="fas fa-grip-horizontal"></i>
+                          <div class="form-group">
+                            <label class="form-label">Description</label>
+                            <div class="form-group">
+                              <div class="form-control form-textarea"></div>
+                            </div>
+                          </div>
+                          <div class="form-group form-group-actions">
+                            <button class="btn btn-outline-secondary btn-done" type="button" title="Move">
+                              Done
                             </button>
                           </div>
+                        </form>
+                        <div class="section-actions">
+                          <button class="btn btn-light btn-handle" type="button" title="Move">
+                            <i class="fas fa-grip-horizontal"></i>
+                          </button>
                         </div>
-                      </li>
-                      <li class="list-group-item">
-                        <div class="question-summary">
-                          <div class="question-title">Question <span class="question-number">1</span></div>
-                          <div class="question-text">
-                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                          </div>
-                          <div class="question-answers">
-                            <div class="answer-details">
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="mcq1" name="mcq" class="custom-control-input" checked>
-                                <label class="custom-control-label" for="mcq1">
-                                  <p>Option 1</p>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="answer-details">
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="mcq2" name="mcq" class="custom-control-input">
-                                <label class="custom-control-label" for="mcq2">
-                                  <p>Option 2</p>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="answer-details">
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="mcq3" name="mcq" class="custom-control-input">
-                                <label class="custom-control-label" for="mcq3">
-                                  <p>Option 3</p>
-                                </label>
-                              </div>
-                            </div>
-                            <div class="answer-details">
-                              <div class="custom-control custom-radio">
-                                <input type="radio" id="mcq4" name="mcq" class="custom-control-input">
-                                <label class="custom-control-label" for="mcq4">
-                                  <p>Option 4</p>
-                                </label>
-                              </div>
+                      </div>
+                    </div>
+                    <div class="component">
+                      <div class="question-summary">
+                        <div class="question-title">Question <span class="question-number">1</span></div>
+                        <div class="question-text">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        </div>
+                        <div class="question-answers">
+                          <div class="answer-details">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="mcq1" name="mcq" class="custom-control-input" checked>
+                              <label class="custom-control-label" for="mcq1">
+                                <p>Option 1</p>
+                              </label>
                             </div>
                           </div>
-                          <div class="question-score">1 pts</div>
-                          <div class="question-actions">
-                            <button class="btn btn-light btn-drag" type="button" title="Move">
-                              <i class="fas fa-grip-horizontal"></i>
-                            </button>
+                          <div class="answer-details">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="mcq2" name="mcq" class="custom-control-input">
+                              <label class="custom-control-label" for="mcq2">
+                                <p>Option 2</p>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="answer-details">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="mcq3" name="mcq" class="custom-control-input">
+                              <label class="custom-control-label" for="mcq3">
+                                <p>Option 3</p>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="answer-details">
+                            <div class="custom-control custom-radio">
+                              <input type="radio" id="mcq4" name="mcq" class="custom-control-input">
+                              <label class="custom-control-label" for="mcq4">
+                                <p>Option 4</p>
+                              </label>
+                            </div>
                           </div>
                         </div>
-                      </li>
-                    </ul>
+                        <div class="question-score">1 pts</div>
+                        <div class="question-actions">
+                          <button class="btn btn-light btn-drag" type="button" title="Move">
+                            <i class="fas fa-grip-horizontal"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <nav class="navbar navbar-expand">
                     <ul class="navbar-nav">
                       <li class="nav-item dropup">
                         <button class="btn btn-primary btn-add-question" type="button" data-toggle="dropdown">
-                          Add Question <i class="fas fa-caret-up"></i>
+                          <i class="fas fa-plus"></i> Add Question
                         </button>
                         <div class="dropdown-menu">
                           <a class="dropdown-item" href="#">
@@ -199,16 +223,15 @@
                           <a class="dropdown-item" href="#">
                             Open-Ended Qn
                           </a>
+                          <div class="dropdown-divider" href="#"></div>
+                          <a class="dropdown-item" href="#">
+                            From Question Bank 
+                          </a>
                         </div>
                       </li>
                       <li class="nav-item">
                         <button class="btn btn-outline-secondary btn-add-section" type="button">
                           Add Section
-                        </button>
-                      </li>
-                      <li class="nav-item">
-                        <button class="btn btn-outline-secondary btn-import-question" type="button">
-                          Import Question
                         </button>
                       </li>
                     </ul>
@@ -281,9 +304,9 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="txtSynopsis">Synopsis</label>
+            <label class="form-label" for="txtPassingCriteria">Passing Criteria (%)</label>
             <div class="form-group">
-              <textarea class="form-control form-input" id="txtSynopsis"></textarea>
+              <input class="form-control form-input form-input-sm" type="text" id="txtPassingCriteria">
             </div>
           </div>
         </form>

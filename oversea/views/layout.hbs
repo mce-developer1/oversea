@@ -47,11 +47,11 @@
             {{#if reportsPage}}My Reports{{/if}}
             {{#if lessonsPage}}Lesson Builder{{/if}}
             {{#if testsPage}}Test Builder{{/if}}
-            {{#if notificationsPage}}School Matters{{/if}}
+            {{#if notificationsPage}}Notifications{{/if}}
             {{#if announcementsPage}}Announcements{{/if}}
             {{#if profilePage}}About Me{{/if}}
             {{#if passwordPage}}User Administration{{/if}}
-            {{#if formClassPage}}Administration{{/if}}
+            {{#if formClassPage}}Manage Form Class{{/if}}
             {{#if legacyPage}}Legacy Page{{/if}}
             {{#if errorPage}}Page Not Found{{/if}}
           </div>
@@ -306,14 +306,23 @@
               <li class="nav-item dropdown dropdown-notifications">
                 <button class="btn btn-light btn-notifications" type="button" data-toggle="dropdown">
                   <i class="fas fa-bell"></i>
-                  <span class="badge badge-primary">4</span>
+                  <span class="badge badge-dark">4</span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <ul class="nav">
-                    <li class="nav-item">
-                      <div class="nav-text">Notifications</div>
-                    </li>
-                  </ul>
+                  <nav class="navbar navbar-expand">
+                    <ul class="navbar-nav nav-main">
+                      <li class="nav-item">
+                        <div class="nav-text">Notifications</div>
+                      </li>
+                    </ul>
+                    <ul class="navbar-nav nav-light">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                          Mark all as read
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
                   <div class="list-notifications">
                     <div class="list-group list-group-flush">
                       <a class="list-group-item list-group-item-action" href="#">

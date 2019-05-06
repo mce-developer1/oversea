@@ -1141,55 +1141,106 @@ select.form-control {
   }
 }
 
-.section-summary {
-  @include display-flex(column);
-  @include flex-grow(1);
-  padding: 2rem 1.5rem 1rem;
-  position: relative;
+.list-components {
+  background-color: $white;
 
-  .section-title {
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
+  .component {
+    &.component-section {
+      .section-summary,
+      .section-edit {
+        @include display-flex(column);
+        @include flex-grow(1);
+        padding: 2rem 1.5rem 1rem;
+        position: relative;
 
-  .section-actions {
-    @include display-flex(row);
-    @include justify-content(center);
-    position: absolute;
-    top: 0;
-    left: calc(50% - 4rem);
-    width: 8rem;
+        .section-actions {
+          @include display-flex(row);
+          @include justify-content(center);
+          position: absolute;
+          top: 0;
+          left: calc(50% - 4rem);
+          width: 8rem;
 
-    .btn-drag {
-      .fas {
-        font-size: 1.375rem;
+          .btn-handle {
+            cursor: move;
+
+            .fas {
+              color: $gray-600;
+              font-size: 1.375rem;
+            }
+          }
+        }
+      }
+
+      .section-summary {
+        &:hover {
+          background-color: darken($gray-100, 2%);
+        }
+
+        .section-title {
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+      }
+
+      .section-edit {
+        background-color: $white;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        padding: 2.5rem 1.5rem 1rem;
+
+        .form-edit-section {
+          .form-group {
+            @include display-flex(row);
+            @include align-items(flex-start);
+
+            &.form-group-actions {
+              border-top: 1px solid $gray-400;
+              padding-top: 1rem;
+            }
+
+            .form-group {
+              @include flex-grow(1);
+              @include flex-wrap(wrap);
+              margin-bottom: 0;
+            }
+
+            .form-label {
+              min-width: 12rem;
+              width: 12rem;
+            }
+          }
+        }
       }
     }
-  }
-}
 
-.question-summary {
-  @include display-flex(column);
-  @include flex-grow(1);
-  padding: 2rem 1.5rem 1rem;
-  position: relative;
-  
-  .question-title {
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
+    &.component-question {
+      .question-summary {
+        @include display-flex(column);
+        @include flex-grow(1);
+        padding: 2rem 1.5rem 1rem;
+        position: relative;
+        
+        .question-title {
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
 
-  .question-actions {
-    @include display-flex(row);
-    @include justify-content(center);
-    position: absolute;
-    top: 0;
-    left: calc(50% - 4rem);
-    width: 8rem;
+        .question-actions {
+          @include display-flex(row);
+          @include justify-content(center);
+          position: absolute;
+          top: 0;
+          left: calc(50% - 4rem);
+          width: 8rem;
 
-    .btn-light {
-      .fas {
-        font-size: 1.375rem;
+          .btn-handle {
+            cursor: move;
+
+            .fas {
+              font-size: 1.375rem;
+            }
+          }
+        }
       }
     }
   }

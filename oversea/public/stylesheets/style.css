@@ -1630,7 +1630,11 @@ select.form-control {
   font-size: 1.375rem;
 }
 
-.section-summary {
+.list-components {
+  background-color: #ffffff;
+}
+.list-components .component.component-section .section-summary,
+.list-components .component.component-section .section-edit {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -1640,11 +1644,8 @@ select.form-control {
   padding: 2rem 1.5rem 1rem;
   position: relative;
 }
-.section-summary .section-title {
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-.section-summary .section-actions {
+.list-components .component.component-section .section-summary .section-actions,
+.list-components .component.component-section .section-edit .section-actions {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -1656,11 +1657,51 @@ select.form-control {
   left: calc(50% - 4rem);
   width: 8rem;
 }
-.section-summary .section-actions .btn-drag .fas {
+.list-components .component.component-section .section-summary .section-actions .btn-handle,
+.list-components .component.component-section .section-edit .section-actions .btn-handle {
+  cursor: move;
+}
+.list-components .component.component-section .section-summary .section-actions .btn-handle .fas,
+.list-components .component.component-section .section-edit .section-actions .btn-handle .fas {
+  color: #6c757d;
   font-size: 1.375rem;
 }
-
-.question-summary {
+.list-components .component.component-section .section-summary:hover {
+  background-color: #f2f4f6;
+}
+.list-components .component.component-section .section-summary .section-title {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.list-components .component.component-section .section-edit {
+  background-color: #ffffff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding: 2.5rem 1.5rem 1rem;
+}
+.list-components .component.component-section .section-edit .form-edit-section .form-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.list-components .component.component-section .section-edit .form-edit-section .form-group.form-group-actions {
+  border-top: 1px solid #ced4da;
+  padding-top: 1rem;
+}
+.list-components .component.component-section .section-edit .form-edit-section .form-group .form-group {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+.list-components .component.component-section .section-edit .form-edit-section .form-group .form-label {
+  min-width: 12rem;
+  width: 12rem;
+}
+.list-components .component.component-question .question-summary {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -1670,11 +1711,11 @@ select.form-control {
   padding: 2rem 1.5rem 1rem;
   position: relative;
 }
-.question-summary .question-title {
+.list-components .component.component-question .question-summary .question-title {
   font-weight: 500;
   margin-bottom: 1rem;
 }
-.question-summary .question-actions {
+.list-components .component.component-question .question-summary .question-actions {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -1686,7 +1727,10 @@ select.form-control {
   left: calc(50% - 4rem);
   width: 8rem;
 }
-.question-summary .question-actions .btn-light .fas {
+.list-components .component.component-question .question-summary .question-actions .btn-handle {
+  cursor: move;
+}
+.list-components .component.component-question .question-summary .question-actions .btn-handle .fas {
   font-size: 1.375rem;
 }
 
@@ -1943,18 +1987,21 @@ select.form-control {
   top: calc(100% + 1px + .5rem);
   right: -4rem;
 }
-.app-header .dropdown.dropdown-notifications .dropdown-menu .nav {
+.app-header .dropdown.dropdown-notifications .dropdown-menu .navbar {
+  padding: 0.25rem 0.75rem;
+}
+.app-header .dropdown.dropdown-notifications .dropdown-menu .navbar .navbar-nav.nav-light .nav-link:hover {
+  text-decoration: underline;
+}
+.app-header .dropdown.dropdown-notifications .dropdown-menu .navbar .navbar-nav .nav-text {
+  font-weight: 500;
+}
+.app-header .dropdown.dropdown-notifications .dropdown-menu .nav.nav-light {
   max-width: 100%;
   width: 100%;
 }
 .app-header .dropdown.dropdown-notifications .dropdown-menu .nav.nav-light .nav-link:hover {
   text-decoration: underline;
-}
-.app-header .dropdown.dropdown-notifications .dropdown-menu .nav .nav-text {
-  -webkit-justify-content: center;
-  justify-content: center;
-  font-size: 1.125rem;
-  font-weight: 500;
 }
 .app-header .dropdown.dropdown-notifications .dropdown-menu .list-notifications {
   border-top: 1px solid #ced4da;
@@ -1967,8 +2014,8 @@ select.form-control {
   padding: 0.5rem 0.75rem;
 }
 .app-header .dropdown.dropdown-notifications .dropdown-menu .list-notifications .list-group .list-group-item .notification {
-  max-width: 18rem;
-  width: 18rem;
+  max-width: 20rem;
+  width: 20rem;
 }
 .app-header .dropdown.dropdown-user .dropdown-menu {
   min-width: 16rem;
@@ -4754,6 +4801,7 @@ select.form-control {
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .btn-light.btn-handle,
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .btn-light.btn-handle,
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .btn-light.btn-handle {
+  cursor: move;
   margin: -0.5rem;
   padding: 0.25rem 0.5rem;
 }
@@ -5272,9 +5320,6 @@ select.form-control {
 .app-content.page-tests .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-primary,
 .app-content.page-tests .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-outline-secondary {
   margin-right: 0.5rem;
-}
-.app-content.page-tests .article-create-test .article-content .article-body .article-test-components .list-group .list-group-item {
-  padding: 0;
 }
 @media (max-width: 991.98px) {
   .app-content.page-tests .article-create-test .article-header {
