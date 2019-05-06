@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var $container = $('.article-announcements');
+  var editor;
 
   function updateActionButtonsStyles() {
     var announcementsSelected = ($container.find('.table-body .table-active').length > 0);
@@ -27,6 +28,75 @@ $(document).ready(function() {
         $container.find('.btn-delete').addClass('d-none');
       }
     }
+  }
+
+  function initAnnouncementForm() {
+    tinymce.init({
+      selector: '.article-create-announcement .form-announcement .form-textarea',
+      min_height: 160,
+      max_height: 320,
+      menubar: false,
+      statusbar: false,
+      plugins: ['autoresize', 'link', 'image', 'media', 'lists', 'table'],
+      toolbar: [
+        'undo redo',
+        'fontsizeselect',
+        'bold italic underline forecolor backcolor',
+        'link image media',
+        'alignleft aligncenter alignright alignjustify',
+        'bullist numlist outdent indent',
+        'table'
+      ],
+      toolbar_drawer: 'sliding',
+      mobile: {
+        plugins: ['autoresize', 'lists'],
+        toolbar: [
+          'bold italic underline forecolor bullist numlist'
+        ],
+        toolbar_drawer: 'sliding'
+      }
+    });
+
+    $('#txtPeriod').daterangepicker({
+      parentEl: '.article-create-announcement',
+      minYear: 2019,
+      maxYear: 2019,
+      locale: {
+        format: 'DD/MM/YYYY',
+        separator: ' - '
+      }
+    });
+
+    $('.article-create-announcement .form-announcement .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
+      displayKey: 'name',
+      source: function(query, callback) {
+        var records = [
+          { id: 1, name: 'Aaron Tan' }, 
+          { id: 2, name: 'Arya Suman' },
+          { id: 3, name: 'Ashar Ahmad' }, 
+          { id: 4, name: 'Chua Chin Hui' },
+          { id: 5, name: 'Derrick Lee' }
+        ];
+        var pattern = new RegExp(query, 'i');
+        var hits = records.filter(function(record) {
+          return record.name.match(pattern);
+        });
+        hits.forEach(function(hit) {
+          var match = hit.name.match(pattern)[0];
+          var highlighted = '<em>' + match + '</em>';
+          hit.highlighted = hit.name.replace(match, highlighted);
+        });
+        callback(hits);
+      },
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion.highlighted;
+        }
+      }
+    }])
+    .on('autocomplete:selected', function(event, suggestion) {
+      log.info(suggestion);
+    });
   }
 
   $container.find('.table-body tr').on('click', function(e) {
@@ -85,50 +155,6 @@ $(document).ready(function() {
     $('.article-create-announcement').removeClass('d-none');
     $('.app-container').scrollTop(0);
 
-    tinymce.init({
-      selector: '#txtMessage',
-      height: 240,
-      menubar: false,
-      statusbar: false,
-      toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help'
-    });
-
-    $('#txtPeriod').daterangepicker({
-      minYear: 2019,
-      maxYear: 2019
-    });
-
-    $('.article-create-announcement .form-announcement .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
-      displayKey: 'name',
-      source: function(query, callback) {
-        var records = [
-          { id: 1, name: 'Aaron Tan' }, 
-          { id: 2, name: 'Arya Suman' },
-          { id: 3, name: 'Ashar Ahmad' }, 
-          { id: 4, name: 'Chua Chin Hui' },
-          { id: 5, name: 'Derrick Lee' }
-        ];
-        var pattern = new RegExp(query, 'i');
-        var hits = records.filter(function(record) {
-          return record.name.match(pattern);
-        });
-        hits.forEach(function(hit) {
-          var match = hit.name.match(pattern)[0];
-          var highlighted = '<em>' + match + '</em>';
-          hit.highlighted = hit.name.replace(match, highlighted);
-        });
-        callback(hits);
-      },
-      templates: {
-        suggestion: function(suggestion) {
-          return suggestion.highlighted;
-        }
-      }
-    }])
-    .on('autocomplete:selected', function(event, suggestion) {
-      log.info(suggestion);
-    });
-
     $('.article-create-announcement .form-announcement .btn-add').on('click', function(e) {
       $('.article-create-announcement .form-announcement .list-users').removeClass('d-none');
     });
@@ -143,4 +169,6 @@ $(document).ready(function() {
     $('.article-announcements').removeClass('d-none');
     $('.app-container').scrollTop(0);
   });
+
+  initAnnouncementForm();
 });

@@ -1,7 +1,7 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-manage-form-class">
+      <div class="article article-manage-form-class no-sidebar">
         <div class="article-header">
           <nav class="navbar navbar-expand">
             <ul class="navbar-nav">
@@ -12,60 +12,12 @@
                 <span class="item-text text-truncate">Manage Form Class</span>
               </li>
               <li class="nav-item nav-item-submodule dropdown">
-                <button class="btn btn-light" type="button" data-toggle="dropdown">
-                  All Classes <i class="fas fa-caret-down"></i>
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">All Classes</a>
-                  <a class="dropdown-item" href="#">Grade 1</a>
-                  <a class="dropdown-item" href="#">Grade 2</a>
-                  <a class="dropdown-item" href="#">Grade 3</a>
-                  <a class="dropdown-item" href="#">Grade 4</a>
-                  <a class="dropdown-item" href="#">Grade 5</a>
-                  <a class="dropdown-item" href="#">Grade 6</a>
-                </div>
-              </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <button class="btn btn-light btn-edit d-none" type="button" title="Edit">
-                  <i class="fas fa-edit"></i>
-                </button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-light btn-delete d-none" type="button" title="Delete">
-                  <i class="fas fa-trash"></i>
-                </button>
+                <span class="item-text text-truncate">Manage Form Class</span>
               </li>
             </ul>
           </nav>
         </div>
         <div class="article-content">
-          <div class="article-sidebar">
-            <ul class="nav nav-side">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">All Classes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Grade 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Grade 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Grade 3</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Grade 4</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Grade 5</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Grade 6</a>
-              </li>
-            </ul>
-          </div>
           <div class="article-body">
             <nav class="navbar navbar-expand">
               <div class="navbar-text">&nbsp;</div>
@@ -73,6 +25,16 @@
                 <li class="nav-item">
                   <button class="btn btn-primary btn-create" type="button">
                     <i class="fas fa-plus"></i> New
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-secondary btn-edit d-none" type="button" title="Edit">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-secondary btn-delete d-none" type="button" title="Delete">
+                    <i class="fas fa-trash"></i> Delete
                   </button>
                 </li>
               </ul>
@@ -84,6 +46,7 @@
                   <th>Name</th>
                   <th>Grade</th>
                   <th>Form Teacher</th>
+                  <th>Assistant Teacher</th>
                 </tr>
               </thead>
               <tbody>                
@@ -97,6 +60,7 @@
                   <td>P1-EA</td>
                   <td>1</td>
                   <td>Derrick Chua</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
                   <td>
@@ -108,6 +72,7 @@
                   <td>P1-HA</td>
                   <td>1</td>
                   <td>Derrick Chua</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
                   <td>
@@ -119,6 +84,7 @@
                   <td>P1-MA</td>
                   <td>1</td>
                   <td>Derrick Chua</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
                   <td>
@@ -130,6 +96,7 @@
                   <td>P1-PA</td>
                   <td>1</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
                 <tr>
                   <td>
@@ -141,6 +108,7 @@
                   <td>P1-SA</td>
                   <td>1</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
                 <tr>
                   <td>
@@ -152,6 +120,7 @@
                   <td>P1-TA</td>
                   <td>1</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
                 <tr>
                   <td>
@@ -163,6 +132,7 @@
                   <td>P1-UA</td>
                   <td>1</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
                 <tr>
                   <td>
@@ -174,6 +144,7 @@
                   <td>P2-EA</td>
                   <td>2</td>
                   <td>Derrick Chua</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
                   <td>
@@ -185,6 +156,7 @@
                   <td>P2-HA</td>
                   <td>2</td>
                   <td>Derrick Chua</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
                   <td>
@@ -196,6 +168,7 @@
                   <td>P2-MA</td>
                   <td>2</td>
                   <td>Derrick Chua</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
                   <td>
@@ -207,6 +180,7 @@
                   <td>P2-PA</td>
                   <td>2</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
                 <tr>
                   <td>
@@ -218,6 +192,7 @@
                   <td>P2-SA</td>
                   <td>2</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
                 <tr>
                   <td>
@@ -229,6 +204,7 @@
                   <td>P2-TA</td>
                   <td>2</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
                 <tr>
                   <td>
@@ -240,6 +216,7 @@
                   <td>P2-UA</td>
                   <td>2</td>
                   <td>Ernest  Goh</td>
+                  <td>Gary Lim</td>
                 </tr>
               </tbody>
             </table>
@@ -362,8 +339,8 @@
                 </div>
               </div>
               <div class="form-group form-group-actions">
-                <button class="btn btn-light btn-cancel" type="button">Cancel</button>
                 <button class="btn btn-primary btn-create" type="button">Create</button>
+                <button class="btn btn-light btn-cancel" type="button">Cancel</button>
               </div>
             </form>
           </div>

@@ -416,6 +416,39 @@
               @include justify-content(flex-end);
             }
           }
+
+          .article-test-components {
+            margin: 0 auto;
+            max-width: 64rem;
+            padding: 0;
+
+            .navbar {
+              @include justify-content(space-between);
+              padding: .75rem 0;
+
+              .navbar-nav {
+                .nav-item {
+                  @include display-flex(row);
+                  @include align-items(center);
+
+                  .item-text {
+                    margin: 0 .25rem;
+                  }
+
+                  .btn-primary,
+                  .btn-outline-secondary {
+                    margin-right: .5rem;
+                  }
+                }
+              }
+            }
+
+            .list-group {
+              .list-group-item {
+                padding: 0;
+              }
+            }
+          }
         }
       }
 
@@ -434,6 +467,12 @@
           .article-body {
             .form-test-attributes {
               padding: 1rem 0;
+            }
+
+            .article-test-components {
+              .article-content {
+                margin: 0;
+              }
             }
           }
         }

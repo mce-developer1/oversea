@@ -13,6 +13,14 @@ a {
   }
 }
 
+.badge {
+  padding: .25rem .375rem;
+
+  &.badge-primary {
+    background-color: $primary;
+  }
+}
+
 .toast {
   border-radius: 0;
 }
@@ -506,10 +514,15 @@ a {
     padding: .25rem;
 
     .list-group-item {
-      background-color: $gray-100;
+      @include user-select(none);
+      background-color: $gray-200;
       border: 0;
       margin: .25rem;
       padding: 0;
+
+      &:hover {
+        background-color: $gray-200;
+      }
 
       .item-text {
         padding: .5rem;
@@ -527,7 +540,7 @@ a {
     padding: .5rem;
 
     &:hover {
-      background-color: $gray-200;
+      background-color: $gray-100;
     }
   }
 }

@@ -92,6 +92,12 @@
         .article-body {
           padding: 1.5rem 0;
 
+          .navbar {
+            @include justify-content(space-between);
+            margin-bottom: .5rem;
+            padding: 0;
+          }
+
           .card-group {
             margin: -.5rem;
 
@@ -264,6 +270,12 @@
               overflow-x: hidden;
               overflow-y: auto;
             }
+          }
+        }
+
+        .article-body {
+          .navbar {
+            display: none;
           }
         }
       }

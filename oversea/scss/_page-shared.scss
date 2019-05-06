@@ -112,6 +112,7 @@
                 
                 .form-label {
                   margin-right: .5rem;
+                  margin-bottom: 0;
                 }
 
                 .btn-primary {
@@ -575,6 +576,7 @@
               .form-add-resource {
                 .form-label {
                   margin-right: .5rem;
+                  margin-bottom: 0;
                 }
 
                 .btn-primary {
@@ -711,6 +713,22 @@
             }
           }
         }
+
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(5) {
+                display: none;
+              }
+
+              th:nth-child(5),
+              td:nth-child(5) {
+                display: none;
+              }
+            }
+          }
+        }
       }
 
       @media (min-width: 768px) {
@@ -826,6 +844,7 @@
               .form-add-resource {
                 .form-label {
                   margin-right: .5rem;
+                  margin-bottom: 0;
                 }
 
                 .btn-primary {
@@ -902,6 +921,7 @@
               .form-add-resource {
                 .form-label {
                   margin-right: .5rem;
+                  margin-bottom: 0;
                 }
 
                 .btn-primary {

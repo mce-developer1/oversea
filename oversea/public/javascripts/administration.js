@@ -47,11 +47,25 @@ $(document).ready(function() {
     language: {
       infoEmpty: 'No groups found.',
     },
-    columnDefs: [{
-      orderable: false,
-      width: 24,
-      targets: 0
-    }],
+    columnDefs: [
+      {
+        orderable: false,
+        width: 24,
+        targets: 0
+      },
+      {
+        width: 120,
+        targets: 2
+      },
+      {
+        width: 170,
+        targets: 3
+      },
+      {
+        width: 170,
+        targets: 4
+      }
+    ],
     dom: 'rt<"bottom">',
     order: [[1, 'asc']]
   });

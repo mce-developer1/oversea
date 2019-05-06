@@ -308,45 +308,6 @@ $(document).ready(function() {
     }
   }]);
 
-  function updateComponentsActionButtonsStyles() {
-    var componentsSelected = ($('.article-test-resources .table-body .table-active').length > 0);
-
-    if (componentsSelected) {
-      if ($('.article-create-test .article-header .btn-edit').hasClass('d-none')) {
-        $('.article-create-test .article-header .btn-edit').removeClass('d-none');
-      }
-
-      if ($('.article-create-test .article-header .btn-move-to').hasClass('d-none')) {
-        $('.article-create-test .article-header .btn-move-to').removeClass('d-none');
-      }
-
-      if ($('.article-create-test .article-header .divider-preview').hasClass('d-none')) {
-        $('.article-create-test .article-header .divider-preview').removeClass('d-none');
-      }
-    } else {
-      if (!$('.article-create-test .article-header .btn-edit').hasClass('d-none')) {
-        $('.article-create-test .article-header .btn-edit').addClass('d-none');
-      }
-
-      if (!$('.article-create-test .article-header .btn-move-to').hasClass('d-none')) {
-        $('.article-create-test .article-header .btn-move-to').addClass('d-none');
-      }
-
-      if (!$('.article-create-test .article-header .divider-preview').hasClass('d-none')) {
-        $('.article-create-test .article-header .divider-preview').addClass('d-none');
-      }
-    }
-  }
-
-  function showFolderResources() {
-    $('.article-test-resources .nav-main').addClass('d-none');
-    $('.article-test-resources .navbar:not(.nav-main)').removeClass('d-none');
-    $('.article-test-resources .navbar:not(.nav-main) .btn-add-resource').removeClass('d-none');
-    $('.article-test-resources .navbar:not(.nav-main) .btn-actions').removeClass('d-none');
-    $('.article-test-resources .table-head').removeClass('d-none');
-    $('.article-test-resources .table-body').removeClass('d-none');
-  }
-
   $('.form-test-attributes .btn-create').on('click', function(e) {
     $('.article-create-test .navbar-nav .btn-preview').removeClass('d-none');
     $('.article-create-test .navbar-nav .divider-close').removeClass('d-none');
@@ -367,93 +328,12 @@ $(document).ready(function() {
     $('.modal-test-folder-edit').modal('show');
   });
 
-  $('.article-test-resources .article-body .link-add-mylibrary').on('click', function(e) {
-    $('.modal-resource-mylibrary-add').on('hide.bs.modal', function (e) {
-      showFolderResources();
-    });
-    $('.modal-resource-mylibrary-add').modal('show');
-  });
-
-  $('.article-test-resources .article-body .link-add-myresources').on('click', function(e) {
-    $('.modal-resource-myresources-add').on('hide.bs.modal', function (e) {
-      showFolderResources();
-    });
-    $('.modal-resource-myresources-add').modal('show');
-  });
-
   $('.article-test-resources .article-body .btn-add-resource').on('click', function(e) {
     $('.modal-resource-type-select').modal('show');
   });
 
   $('.article-test-resources .article-body .item-add-resource').on('click', function(e) {
     $('.modal-resource-type-select').modal('show');
-  });
-
-  $('.modal-resource-type-select .navbar .link-add-mylibrary').on('click', function(e) {
-    $('.modal-resource-mylibrary-add').on('hide.bs.modal', function (e) {
-      showFolderResources();
-    });
-    $('.modal-resource-type-select').modal('hide');
-    $('.modal-resource-mylibrary-add').modal('show');
-  });
-
-  $('.modal-resource-type-select .navbar .link-add-myresources').on('click', function(e) {
-    $('.modal-resource-myresources-add').on('hide.bs.modal', function (e) {
-      showFolderResources();
-    });
-    $('.modal-resource-type-select').modal('hide');
-    $('.modal-resource-myresources-add').modal('show');
-  });
-
-  $('.article-test-resources .table-body tr').on('click', function(e) {
-    if (e.shiftKey) {
-      e.preventDefault();
-
-      if ($(this).parent().find('.table-active-first').length > 0) {
-        $(this).parent().find(':not(.table-active-first)').removeClass('table-active');
-        if ($(this).siblings('.table-active-first').index() < $(this).index()) {
-          var $nextSibling = $(this).siblings('.table-active-first').next();
-          while (($nextSibling.index() > -1) && ($nextSibling.index() <= $(this).index())) {
-            $nextSibling.addClass('table-active');
-            $nextSibling = $nextSibling.next();
-          };
-        } else {
-          var $prevSibling = $(this).siblings('.table-active-first').prev();
-          while ($prevSibling.index() >= $(this).index()) {
-            $prevSibling.addClass('table-active');
-            $prevSibling = $prevSibling.prev();
-          };
-        }
-        updateComponentsActionButtonsStyles();
-        return;
-      }
-    }
-
-    if ($(this).siblings('.table-active').length > 0) {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
-
-      if ($(this).hasClass('table-active')) {      
-        if (!$(this).hasClass('table-active-first')) {
-          $(this).addClass('table-active-first');
-        }
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
-    } else {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
-
-      if ($(this).hasClass('table-active')) {      
-        $(this).removeClass('table-active');
-        $(this).removeClass('table-active-first');
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
-    }
-    updateComponentsActionButtonsStyles();
   });
 
   $('a[data-toggle="popover"]').on('click', function(e) {

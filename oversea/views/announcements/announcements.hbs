@@ -70,11 +70,24 @@
               <colgroup width="60px"></colgroup>
               <thead>
                 <tr>
-                  <th>&nbsp;</th>
-                  <th>Title</th>
-                  <th>Owner</th>
-                  <th>Start Date</th>
-                  <th>End Date</th>
+                  <th class="sortable-column">
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="all">
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th class="sortable-column">
+                    Title <i class="fas fa-long-arrow-alt-down"></i>
+                  </th>
+                  <th class="sortable-column">
+                    Owner
+                  </th>
+                  <th class="sortable-column">
+                    Start Date
+                  </th>
+                  <th class="sortable-column">
+                    End Date
+                  </th>
                   <th>&nbsp;</th>
                 </tr>
               </thead>
@@ -90,30 +103,13 @@
                 <tr>
                   <td>
                     <div class="custom-control custom-checkbox">
-                      <input class="custom-control-input" type="checkbox" id="item2">
-                      <label class="custom-control-label" for="item2"></label>
-                    </div>
-                  </td>
-                  <td>Results of Chinese Challenge</td>
-                  <td>Ernest  Goh</td>
-                  <td>26 Apr 2019</td>
-                  <td>31 May 2019</td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-checkbox">
                       <input class="custom-control-input" type="checkbox" id="item0">
                       <label class="custom-control-label" for="item0"></label>
                     </div>
                   </td>
-                  <td>Poetry Contest</td>
-                  <td>Ernest  Goh</td>
-                  <td>25 Apr 2019</td>
+                  <td>Results of Chinese Challenge</td>
+                  <td>Derrick Chua</td>
+                  <td>26 Apr 2019</td>
                   <td>31 May 2019</td>
                   <td>
                     <button class="btn btn-light" type="button">
@@ -126,6 +122,23 @@
                     <div class="custom-control custom-checkbox">
                       <input class="custom-control-input" type="checkbox" id="item1">
                       <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>Poetry Contest</td>
+                  <td>Derrick Chua</td>
+                  <td>25 Apr 2019</td>
+                  <td>31 May 2019</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item2">
+                      <label class="custom-control-label" for="item2"></label>
                     </div>
                   </td>
                   <td>Art Contest</td>
@@ -141,8 +154,8 @@
                 <tr>
                   <td>
                     <div class="custom-control custom-checkbox">
-                      <input class="custom-control-input" type="checkbox" id="item2">
-                      <label class="custom-control-label" for="item2"></label>
+                      <input class="custom-control-input" type="checkbox" id="item3">
+                      <label class="custom-control-label" for="item3"></label>
                     </div>
                   </td>
                   <td>Grade 7 Orientation Programme</td>
@@ -157,6 +170,29 @@
                 </tr>
               </tbody>
             </table>
+            <nav class="navbar navbar-expand navbar-pagination">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <label class="text-muted" for="selLimit">Records per page:</label>
+                  <select class="selectpicker" id="selLimit" data-width="fit">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>50</option>
+                    <option>100</option>
+                  </select>
+                </li>
+                <li class="nav-item text-muted">1 - 4 of 4</li>
+                <li class="nav-item">
+                  <button class="btn btn-light" type="button" title="Previous" data-toggle="dropdown" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="btn btn-light" type="button" title="Next" data-toggle="dropdown">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -176,13 +212,22 @@
               <div class="form-group">
                 <label class="form-label" for="txtTitle">Title</label>
                 <div class="form-group">
-                  <input class="form-control form-input" type="text" id="txtTitle">
+                  <input class="form-control form-input" type="text" id="txtTitle" value="Results of Chinese Challenge">
                 </div>
               </div>
               <div class="form-group">
-                <label class="form-label" for="txtMessage">Message</label>
+                <label class="form-label">Message</label>
                 <div class="form-group">
-                  <textarea class="form-control form-textarea" id="txtMessage"></textarea>
+                  <div class="form-control form-textarea">
+                    <p>Congratulations to the following top 5 scorers!</p>
+                    <ol>
+                      <li>Chua Chin Hui</li>
+                      <li>Derrick Lee</li>
+                      <li>Siow Poh Piah Irene</li>
+                      <li>Tang Zi Hao</li>
+                      <li>Lei Jian</li>
+                    </ol>
+                  </div>
                 </div>
               </div>
               <div class="form-group">
@@ -254,7 +299,7 @@
                   <div class="form-check">
                     <div class="form-check-input custom-control custom-checkbox">
                       <input class="custom-control-input" type="checkbox" id="email">
-                      <label class="custom-control-label" for="email">Send email to all recipients</label>
+                      <label class="custom-control-label" for="email">Send Mobile App notification</label>
                     </div>
                   </div>
                   <div class="form-check">

@@ -51,6 +51,14 @@ window.Utils = {
 };
 
 $(document).ready(function() {
+  $('.app-header .list-notifications').on('click', '.list-group-item-action', function(e) {
+    $('.modal-notification-view').modal('show');
+  });
+
+  $('.app-header .btn-notifications').on('click', function(e) {
+    $('.app-header .btn-notifications .badge').remove();
+  });
+
   $(document).on('click', '[data-toggle="password"]', function(e) {
     var icon = $(this).find('.fas');
     $(icon).toggleClass('fa-eye-slash');

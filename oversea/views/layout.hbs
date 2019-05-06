@@ -47,10 +47,11 @@
             {{#if reportsPage}}My Reports{{/if}}
             {{#if lessonsPage}}Lesson Builder{{/if}}
             {{#if testsPage}}Test Builder{{/if}}
+            {{#if notificationsPage}}School Matters{{/if}}
             {{#if announcementsPage}}Announcements{{/if}}
             {{#if profilePage}}About Me{{/if}}
             {{#if passwordPage}}User Administration{{/if}}
-            {{#if formClassPage}}Manage Form Class{{/if}}
+            {{#if formClassPage}}Administration{{/if}}
             {{#if legacyPage}}Legacy Page{{/if}}
             {{#if errorPage}}Page Not Found{{/if}}
           </div>
@@ -81,6 +82,11 @@
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/tests/tests">
                           <i class="img img-myreports"></i> Test Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/questions/questions">
+                          <i class="img img-myreports"></i> Question Builder
                         </a>
                       </li>
                       <li class="nav-item">
@@ -121,17 +127,27 @@
                           <i class="img img-myreports"></i> Usage Report
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
+                          <i class="img img-myreports"></i> Login Report
+                        </a>
+                      </li>
                     {{/unless}}
                   </ul>
                 </div>
               </li>
-              {{#unless studentUser}}
-                <li class="nav-item dropdown">
-                  <a class="nav-link link-schoolmatters" href="#" data-toggle="dropdown">
-                    <i class="img img-myreports"></i> School Matters
-                  </a>
-                  <div class="dropdown-menu">
-                    <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link link-schoolmatters" href="#" data-toggle="dropdown">
+                  <i class="img img-myreports"></i> School Matters
+                </a>
+                <div class="dropdown-menu">
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/notifications/notifications">
+                        <i class="img img-myreports"></i> Notifications
+                      </a>
+                    </li>
+                    {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/announcements/announcements">
                           <i class="img img-myreports"></i> Announcements
@@ -147,10 +163,10 @@
                           <i class="img img-myreports"></i> Mark Attendance
                         </a>
                       </li>
-                    </ul>
-                  </div>
-                </li>
-              {{/unless}}
+                    {{/unless}}
+                  </ul>
+                </div>
+              </li>
               {{#if adminUser}}
                 <li class="nav-item dropdown">
                   <a class="nav-link link-administration" href="#" data-toggle="dropdown">
@@ -173,11 +189,16 @@
                           <i class="img img-administration"></i> Manage School Group
                         </a>
                       </li>
+                      <li class="nav-item d-none">
+                        <a class="nav-link" href="/{{userRole}}/administration/access_levels">
+                          <i class="img img-administration"></i> Access Levels
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </li>
               {{/if}}
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown dropdown-more">
                 <a class="nav-link link-more" href="#" data-toggle="dropdown">
                   <i class="img img-myreports"></i> More
                 </a>
@@ -211,15 +232,25 @@
                           <i class="img img-myreports"></i> Usage Report
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
+                          <i class="img img-myreports"></i> Login Report
+                        </a>
+                      </li>
                     {{/unless}}
                   </ul>
-                  {{#unless studentUser}}
-                    <ul class="nav">
-                      <li class="nav-item">
-                        <div class="nav-text">
-                          <i class="img img-myreports"></i> School Matters
-                        </div>
-                      </li>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <div class="nav-text">
+                        <i class="img img-myreports"></i> School Matters
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/notifications/notifications">
+                        <i class="img img-myreports"></i> Notifications
+                      </a>
+                    </li>
+                    {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/announcements/announcements">
                           <i class="img img-myreports"></i> Announcements
@@ -235,42 +266,122 @@
                           <i class="img img-myreports"></i> Mark Attendance
                         </a>
                       </li>
+                    {{/unless}}
+                  </ul>
+                  {{#if adminUser}}
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <div class="nav-text">
+                          <i class="img img-administration"></i> Administration
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
+                          <i class="img img-administration"></i> Manage User Account
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
+                          <i class="img img-administration"></i> Manage Form Class
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
+                          <i class="img img-administration"></i> Manage School Group
+                        </a>
+                      </li>
+                      <li class="nav-item d-none">
+                        <a class="nav-link" href="/{{userRole}}/administration/access_levels">
+                          <i class="img img-administration"></i> Access Levels
+                        </a>
+                      </li>
                     </ul>
-                    {{#if adminUser}}
-                      <ul class="nav">
-                        <li class="nav-item">
-                          <div class="nav-text">
-                            <i class="img img-administration"></i> Administration
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
-                            <i class="img img-administration"></i> Manage User Account
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
-                            <i class="img img-administration"></i> Manage Form Class
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
-                            <i class="img img-administration"></i> Manage School Group
-                          </a>
-                        </li>
-                      </ul>
-                    {{/if}}
-                  {{/unless}}
+                  {{/if}}
                 </div>
               </li>              
             {{/if}}
           </ul>
           <ul class="navbar-nav">
             {{#if loggedIn}}
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown dropdown-notifications">
                 <button class="btn btn-light btn-notifications" type="button" data-toggle="dropdown">
                   <i class="fas fa-bell"></i>
+                  <span class="badge badge-primary">4</span>
                 </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <div class="nav-text">Notifications</div>
+                    </li>
+                  </ul>
+                  <div class="list-notifications">
+                    <div class="list-group list-group-flush">
+                      <a class="list-group-item list-group-item-action" href="#">
+                        <div class="notification">
+                          <img src="/static/images/user.png">
+                          <div class="notification-body">
+                            <div class="notification-text">
+                              <span class="user-name">Derrick Chua</span>
+                              sent you an announcement.
+                            </div>
+                            <div class="text-muted">
+                              2 min ago
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item list-group-item-action" href="#">
+                        <div class="notification">
+                          <img src="/static/images/user.png">
+                          <div class="notification-body">
+                            <div class="notification-text">
+                              <span class="user-name">Joel King</span>
+                              assigned you a lesson to learn.
+                            </div>
+                            <div class="text-muted">
+                              3 hours ago
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item list-group-item-action" href="#">
+                        <div class="notification">
+                          <img src="/static/images/user.png">
+                          <div class="notification-body">
+                            <div class="notification-text">
+                              <span class="user-name">John Doe</span>
+                              share a lesson to you to review.
+                            </div>
+                            <div class="text-muted">
+                              5 hours ago
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                      <a class="list-group-item list-group-item-action" href="#">
+                        <div class="notification">
+                          <img src="/static/images/user.png">
+                          <div class="notification-body">
+                            <div class="notification-text">
+                              <span class="user-name">Emily Carter</span>
+                              share a quiz to you to review.
+                            </div>
+                            <div class="text-muted">
+                              1 day ago
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <ul class="nav nav-light">
+                    <li class="nav-item">
+                      <a class="nav-link d-block text-center" href="/{{userRole}}/notifications/notifications">
+                        View all notifications
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </li>
               <li class="nav-item dropdown dropdown-user">
                 <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
@@ -377,6 +488,37 @@
                   </a>
                 </li>
               {{/unless}}
+              {{#unless studentUser}}
+                <li class="nav-item collapsible">
+                  <a class="nav-link collapsed" href="#tools" data-toggle="collapse">
+                    <i class="img img-myreports"></i> My Tools
+                  </a>
+                  <div class="collapse" id="tools">
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/lessons/lessons">
+                          <i class="img img-myreports"></i> Lesson Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/tests/tests">
+                          <i class="img img-myreports"></i> Test Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/questions/questions">
+                          <i class="img img-myreports"></i> Question Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-myreports"></i> School To Home Notes
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              {{/unless}}
               <li class="nav-item collapsible">
                 <a class="nav-link collapsed" href="#reports" data-toggle="collapse">
                   <i class="img img-myreports"></i> My Reports
@@ -406,41 +548,27 @@
                           <i class="img img-myreports"></i> Usage Report
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if loginReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=login">
+                          <i class="img img-myreports"></i> Login Report
+                        </a>
+                      </li>
                     {{/unless}}
                   </ul>
                 </div>
               </li>
-              {{#unless studentUser}}
-                <li class="nav-item collapsible">
-                  <a class="nav-link collapsed" href="#tools" data-toggle="collapse">
-                    <i class="img img-myreports"></i> My Tools
-                  </a>
-                  <div class="collapse" id="tools">
-                    <ul class="nav">
-                      <li class="nav-item">
-                        <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/lessons/lessons">
-                          <i class="img img-myreports"></i> Lesson Builder
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/tests/tests">
-                          <i class="img img-myreports"></i> Test Builder
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
-                          <i class="img img-myreports"></i> School To Home Notes
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="nav-item collapsible">
-                  <a class="nav-link collapsed" href="#matters" data-toggle="collapse">
-                    <i class="img img-myreports"></i> School Matters
-                  </a>
-                  <div class="collapse" id="matters">
-                    <ul class="nav">
+              <li class="nav-item collapsible">
+                <a class="nav-link collapsed" href="#matters" data-toggle="collapse">
+                  <i class="img img-myreports"></i> School Matters
+                </a>
+                <div class="collapse" id="matters">
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link {{#if notificationsPage}}active{{/if}}" href="/{{userRole}}/notifications/notifications">
+                        <i class="img img-myreports"></i> Notifications
+                      </a>
+                    </li>
+                    {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link {{#if announcementsPage}}active{{/if}}" href="/{{userRole}}/announcements/announcements">
                           <i class="img img-myreports"></i> Announcements
@@ -456,10 +584,10 @@
                           <i class="img img-myreports"></i> Mark Attendance
                         </a>
                       </li>
-                    </ul>
-                  </div>
-                </li>
-              {{/unless}}
+                    {{/unless}}
+                  </ul>
+                </div>
+              </li>
               {{#if adminUser}}
                 <li class="nav-item collapsible">
                   <a class="nav-link collapsed" href="#administration" data-toggle="collapse">
@@ -482,6 +610,11 @@
                           <i class="img img-administration"></i> Manage School Group
                         </a>
                       </li>
+                      <li class="nav-item d-none">
+                        <a class="nav-link {{#if accessLevelsPage}}active{{/if}}" href="/{{userRole}}/administration/access_levels">
+                          <i class="img img-administration"></i> Access Levels
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </li>
@@ -491,7 +624,33 @@
         </div>
       </nav>
     </div>
+
+    <div class="modal modal-notification-view fade" tabindex="-1" role="dialog" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Results of Chinese Challenge</h5>
+            <button type="button" class="close" title="Close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Congratulations to the following top 5 scorers!</p>
+            <ol>
+              <ol>
+                <li>Chua Chin Hui</li>
+                <li>Derrick Lee</li>
+                <li>Siow Poh Piah Irene</li>
+                <li>Tang Zi Hao</li>
+                <li>Lei Jian</li>
+              </ol>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
     <input id="userRole" type="hidden" value="{{userRole}}">
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="/static/loglevel/loglevel.js"></script>
     <script src="/static/jquery/jquery.js"></script>

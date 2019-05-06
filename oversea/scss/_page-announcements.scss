@@ -100,6 +100,10 @@
             @include justify-content(space-between);
             padding: .75rem 0;
 
+            &.navbar-pagination {
+              @include justify-content(flex-end);
+            }
+
             .navbar-nav {
               .btn-primary {
                 margin-left: 1rem;
@@ -306,7 +310,7 @@
       .article-content {
         .article-body {
           .form-announcement {
-            padding: 1rem 0;
+            padding: 1.5rem 0;
 
             .form-group {
               &.form-group-actions {
@@ -355,6 +359,10 @@
 
           .article-body {
             margin: 0;
+
+            .form-announcement {
+              padding: 1rem 0;
+            }
           }
         }
       }
@@ -385,7 +393,6 @@
           .article-body {
             .form-announcement {
               max-width: 48rem;
-              padding: 1.5rem 0;
 
               .form-group {
                 @include display-flex(row);

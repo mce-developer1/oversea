@@ -891,6 +891,12 @@ select.form-control {
   }
 }
 
+.tox-tinymce,
+.tinymce-outer-container,
+.tinymce-mobile-outer-container {
+  width: 100% !important;
+}
+
 .daterangepicker {
   border: 0;
   border-radius: 0;
@@ -911,16 +917,42 @@ select.form-control {
 
       th,
       td {
+        border-radius: 0;
         height: 30px;
         min-width: 36px;
         width: 36px;
+
+        &.active {
+          &:not(.off) {
+            background-color: $blue;
+          }
+
+          &:hover {
+            background-color: $blue;
+          }
+        }
+
+        &.available {
+          &.in-range {
+            &:not(.off) {
+              background-color: lighten($blue, 40%);
+            }
+          }
+
+          &.start-date,
+          &.end-date {
+            &:not(.off) {
+              background-color: $blue;
+            }
+          }
+        }
       }
     }
   }
 
   .drp-buttons {
     .btn {
-      font-weight: normal;
+      font-weight: 400;
       padding: 0.325rem 0.5rem;
     }
   }
@@ -1067,6 +1099,89 @@ select.form-control {
       font-weight: 500;
       min-width: 12rem;
       width: 12rem;
+    }
+  }
+}
+
+.list-notifications {
+  .list-group {
+    .list-group-item {
+      padding: .75rem 1rem;
+
+      .notification {
+        @include display-flex(row);
+        @include align-items(flex-start);
+
+        img {
+          margin-top: .25rem;
+          margin-right: 1rem;
+          max-height: 2.5rem;
+          max-width: 2.5rem;
+          vertical-align: baseline;
+        }
+
+        .notification-body {
+          .notification-text {
+            .user-name {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-summary {
+  @include display-flex(column);
+  @include flex-grow(1);
+  padding: 2rem 1.5rem 1rem;
+  position: relative;
+
+  .section-title {
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-actions {
+    @include display-flex(row);
+    @include justify-content(center);
+    position: absolute;
+    top: 0;
+    left: calc(50% - 4rem);
+    width: 8rem;
+
+    .btn-drag {
+      .fas {
+        font-size: 1.375rem;
+      }
+    }
+  }
+}
+
+.question-summary {
+  @include display-flex(column);
+  @include flex-grow(1);
+  padding: 2rem 1.5rem 1rem;
+  position: relative;
+  
+  .question-title {
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .question-actions {
+    @include display-flex(row);
+    @include justify-content(center);
+    position: absolute;
+    top: 0;
+    left: calc(50% - 4rem);
+    width: 8rem;
+
+    .btn-light {
+      .fas {
+        font-size: 1.375rem;
+      }
     }
   }
 }
