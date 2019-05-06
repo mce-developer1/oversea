@@ -1609,6 +1609,8 @@ select.form-control {
   flex-direction: row;
   -webkit-align-items: flex-start;
   align-items: flex-start;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 .list-notifications .list-group .list-group-item .notification img {
   margin-top: 0.25rem;
@@ -1616,6 +1618,10 @@ select.form-control {
   max-height: 2.5rem;
   max-width: 2.5rem;
   vertical-align: baseline;
+}
+.list-notifications .list-group .list-group-item .notification .notification-body {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 .list-notifications .list-group .list-group-item .notification .notification-body .notification-text .user-name {
   font-weight: 500;
@@ -1937,6 +1943,9 @@ select.form-control {
 .app-header .dropdown.dropdown-notifications .dropdown-menu .nav {
   max-width: 100%;
   width: 100%;
+}
+.app-header .dropdown.dropdown-notifications .dropdown-menu .nav.nav-light .nav-link:hover {
+  text-decoration: underline;
 }
 .app-header .dropdown.dropdown-notifications .dropdown-menu .nav .nav-text {
   -webkit-justify-content: center;

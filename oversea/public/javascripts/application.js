@@ -56,7 +56,9 @@ $(document).ready(function() {
   });
 
   $('.app-header .btn-notifications').on('click', function(e) {
-    $('.app-header .btn-notifications .badge').remove();
+    setTimeout(function waitDropdownTrigger() {
+      $('.app-header .btn-notifications .badge').remove();
+    });
   });
 
   $(document).on('click', '[data-toggle="password"]', function(e) {

@@ -1111,6 +1111,7 @@ select.form-control {
       .notification {
         @include display-flex(row);
         @include align-items(flex-start);
+        @include flex-grow(1);
 
         img {
           margin-top: .25rem;
@@ -1121,6 +1122,8 @@ select.form-control {
         }
 
         .notification-body {
+          @include flex-grow(1);
+
           .notification-text {
             .user-name {
               font-weight: 500;

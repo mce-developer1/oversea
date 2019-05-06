@@ -41,7 +41,7 @@ $(document).ready(function() {
 
   var dataTable = $('.table').DataTable({
     scrollY: '100%',
-    scrollCollapse: true,
+    scrollX: true,
     fixedHeader: true,
     paging: false,
     language: {

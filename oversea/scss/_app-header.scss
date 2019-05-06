@@ -100,6 +100,14 @@
           max-width: 100%;
           width: 100%;
 
+          &.nav-light {
+            .nav-link {
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
           .nav-text {
             @include justify-content(center);
             font-size: 1.125rem;
