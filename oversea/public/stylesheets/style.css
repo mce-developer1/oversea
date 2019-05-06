@@ -1626,6 +1626,9 @@ select.form-control {
 .list-notifications .list-group .list-group-item .notification .notification-body .notification-text .user-name {
   font-weight: 500;
 }
+.list-notifications .list-group .list-group-item .notification .btn-light .fas {
+  font-size: 1.375rem;
+}
 
 .section-summary {
   display: -ms-flexbox;
