@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var $container = $('.article-update-profile-picture');
   var dropzone;
+  var cropper;
 
   function removeAllDropZoneFiles() {
     if (dropzone && dropzone.removeAllFiles) {
@@ -103,10 +104,6 @@ $(document).ready(function() {
           return;
         }
 
-        if ($upload.hasClass('file-upload-button')) {
-          $upload.removeClass('file-upload-button');
-        }
-
         if ($upload.find('.file-upload-control').hasClass('d-none')) {
           $upload.find('.file-upload-control').removeClass('d-none');
         }
@@ -146,7 +143,15 @@ $(document).ready(function() {
         error = '<i class="fas fa-exclamation"></i> ' + error;
         $message.find('.text-danger').html(error);
       },
-      success: function(file) {
+      chunksUploaded: function(file, done) {
+        done();
+      },
+      success: function(file, response) {
+        if (!response && file.xhr && file.xhr.response) {
+          response = $.parseJSON(file.xhr.response);
+          console.log(response);
+        }
+
         var $message = $(file.previewElement).find('.file-message');
         var success = 'File uploaded successfully.';
         success = '<i class="fas fa-check"></i> ' + success;
@@ -163,6 +168,7 @@ $(document).ready(function() {
         $container.find('.form-profile-picture .image-cropper').removeClass('d-none');
         $container.find('.form-profile-picture .form-group-actions').removeClass('d-none');
         initProfilePictureCropper();
+        removeAllDropZoneFiles();
       },
       complete: function(file) {
         var $progress = $(file.previewElement).find('.file-progress');
@@ -186,11 +192,14 @@ $(document).ready(function() {
       });
       $('.modal-file-remove-confirmation').modal('show');
     });
+
+    initProfilePictureCropper();
   }
 
   function initProfilePictureCropper() {
     var $image = $container.find('.form-profile-picture .image-cropper img');
-    const cropper = new Cropper($image.get(0), {
+    if (cropper && cropper.destroy) cropper.destroy();
+    cropper = new Cropper($image.get(0), {
       aspectRatio: 1 / 1,
       zoomable: false,
       crop: function(e) {

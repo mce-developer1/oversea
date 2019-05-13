@@ -5693,51 +5693,28 @@ select.form-control {
 .app-content.page-questions .article-questions .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
-.app-content.page-questions .article-questions .article-content .article-body .table-head,
-.app-content.page-questions .article-questions .article-content .article-body .table-body {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin-bottom: 0;
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
 }
-.app-content.page-questions .article-questions .article-content .article-body .table-head th .btn,
-.app-content.page-questions .article-questions .article-content .article-body .table-head td .btn,
-.app-content.page-questions .article-questions .article-content .article-body .table-body th .btn,
-.app-content.page-questions .article-questions .article-content .article-body .table-body td .btn {
-  padding: 0.325rem;
-  margin: -0.5rem 0;
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component:hover {
+  background-color: #f8f9fa;
 }
-.app-content.page-questions .article-questions .article-content .article-body .table-head th .btn .fa-info-circle,
-.app-content.page-questions .article-questions .article-content .article-body .table-head td .btn .fa-info-circle,
-.app-content.page-questions .article-questions .article-content .article-body .table-body th .btn .fa-info-circle,
-.app-content.page-questions .article-questions .article-content .article-body .table-body td .btn .fa-info-circle {
-  font-size: 1.375rem;
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component.component-active {
+  background-color: #e9ecef;
 }
-.app-content.page-questions .article-questions .article-content .article-body .table-head a,
-.app-content.page-questions .article-questions .article-content .article-body .table-body a {
-  color: #212529;
-  word-break: break-word;
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component + .component {
+  border-top: 1px solid #ced4da;
 }
-@media (max-width: 1200px) {
-  .app-content.page-questions .article-questions .article-content .article-body .table-head colgroup:nth-child(3),
-.app-content.page-questions .article-questions .article-content .article-body .table-head colgroup:nth-child(4),
-.app-content.page-questions .article-questions .article-content .article-body .table-body colgroup:nth-child(3),
-.app-content.page-questions .article-questions .article-content .article-body .table-body colgroup:nth-child(4) {
-    display: none;
-  }
-  .app-content.page-questions .article-questions .article-content .article-body .table-head th:nth-child(3),
-.app-content.page-questions .article-questions .article-content .article-body .table-head th:nth-child(4),
-.app-content.page-questions .article-questions .article-content .article-body .table-head td:nth-child(3),
-.app-content.page-questions .article-questions .article-content .article-body .table-head td:nth-child(4),
-.app-content.page-questions .article-questions .article-content .article-body .table-body th:nth-child(3),
-.app-content.page-questions .article-questions .article-content .article-body .table-body th:nth-child(4),
-.app-content.page-questions .article-questions .article-content .article-body .table-body td:nth-child(3),
-.app-content.page-questions .article-questions .article-content .article-body .table-body td:nth-child(4) {
-    display: none;
-  }
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component > .custom-control {
+  margin: 1rem;
+}
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component .question-summary {
+  padding: 1rem;
 }
 @media (max-width: 991.98px) {
   .app-content.page-questions .article-questions .article-header {
@@ -5762,8 +5739,7 @@ select.form-control {
     order: 1;
   }
   .app-content.page-questions .article-questions .article-header .navbar .navbar-nav .nav-item .btn-share,
-.app-content.page-questions .article-questions .article-header .navbar .navbar-nav .nav-item .btn-edit,
-.app-content.page-questions .article-questions .article-header .navbar .navbar-nav .nav-item .btn-assign {
+.app-content.page-questions .article-questions .article-header .navbar .navbar-nav .nav-item .btn-edit {
     display: none;
   }
   .app-content.page-questions .article-questions .article-header .navbar .navbar-nav .nav-item-drawer {
@@ -5785,37 +5761,9 @@ select.form-control {
     margin: 0;
   }
 }
-@media (max-width: 768px) {
-  .app-content.page-questions .article-questions .article-content .article-body .table-head colgroup:nth-child(5),
-.app-content.page-questions .article-questions .article-content .article-body .table-body colgroup:nth-child(5) {
-    display: none;
-  }
-  .app-content.page-questions .article-questions .article-content .article-body .table-head th:nth-child(5),
-.app-content.page-questions .article-questions .article-content .article-body .table-head td:nth-child(5),
-.app-content.page-questions .article-questions .article-content .article-body .table-body th:nth-child(5),
-.app-content.page-questions .article-questions .article-content .article-body .table-body td:nth-child(5) {
-    display: none;
-  }
-}
 @media (max-width: 576px) {
   .app-content.page-questions .article-questions .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
-  }
-  .app-content.page-questions .article-questions .article-content .article-body .table-head colgroup:nth-child(6),
-.app-content.page-questions .article-questions .article-content .article-body .table-head colgroup:nth-child(7),
-.app-content.page-questions .article-questions .article-content .article-body .table-body colgroup:nth-child(6),
-.app-content.page-questions .article-questions .article-content .article-body .table-body colgroup:nth-child(7) {
-    display: none;
-  }
-  .app-content.page-questions .article-questions .article-content .article-body .table-head tr th:nth-child(6),
-.app-content.page-questions .article-questions .article-content .article-body .table-head tr th:nth-child(7),
-.app-content.page-questions .article-questions .article-content .article-body .table-head tr td:nth-child(6),
-.app-content.page-questions .article-questions .article-content .article-body .table-head tr td:nth-child(7),
-.app-content.page-questions .article-questions .article-content .article-body .table-body tr th:nth-child(6),
-.app-content.page-questions .article-questions .article-content .article-body .table-body tr th:nth-child(7),
-.app-content.page-questions .article-questions .article-content .article-body .table-body tr td:nth-child(6),
-.app-content.page-questions .article-questions .article-content .article-body .table-body tr td:nth-child(7) {
-    display: none;
   }
 }
 @media (min-width: 992px) {
@@ -5846,33 +5794,15 @@ select.form-control {
     position: sticky;
     top: 10rem;
   }
-  .app-content.page-questions .article-questions .article-content .article-body .table-head {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 10rem;
-    z-index: 970;
-  }
 }
-@media (min-width: 1200px) {
-  .app-content.page-questions .article-questions .article-content .article-body .table-head colgroup:nth-child(8),
-.app-content.page-questions .article-questions .article-content .article-body .table-body colgroup:nth-child(8) {
-    display: none;
-  }
-  .app-content.page-questions .article-questions .article-content .article-body .table-head th:nth-child(8),
-.app-content.page-questions .article-questions .article-content .article-body .table-head td:nth-child(8),
-.app-content.page-questions .article-questions .article-content .article-body .table-body th:nth-child(8),
-.app-content.page-questions .article-questions .article-content .article-body .table-body td:nth-child(8) {
-    display: none;
-  }
-}
-.app-content.page-questions .article-create-test {
+.app-content.page-questions .article-create-question {
   padding: 0 1.5rem;
 }
-.app-content.page-questions .article-create-test .article-header {
+.app-content.page-questions .article-create-question .article-header {
   height: 4rem;
   max-height: 4rem;
 }
-.app-content.page-questions .article-create-test .article-header .navbar {
+.app-content.page-questions .article-create-question .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -5891,11 +5821,11 @@ select.form-control {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav .nav-item {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -5903,29 +5833,29 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav .nav-item .btn-light {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav .btn-light:hover .fas {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light:hover .fas {
   color: #212529;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav .btn-light.btn-more {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav .btn-light .fas {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light .fas {
   color: #495057;
   font-size: 1.5rem;
 }
-.app-content.page-questions .article-create-test .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
-.app-content.page-questions .article-create-test .article-content .article-body .form-test-attributes {
+.app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes {
   padding: 1.5rem 0;
 }
-.app-content.page-questions .article-create-test .article-content .article-body .form-test-attributes .form-group-actions {
+.app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group-actions {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -5933,17 +5863,17 @@ select.form-control {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-.app-content.page-questions .article-create-test .article-content .article-body .article-test-components {
+.app-content.page-questions .article-create-question .article-content .article-body .article-test-components {
   margin: 0 auto;
   max-width: 64rem;
   padding: 0;
 }
-.app-content.page-questions .article-create-test .article-content .article-body .article-test-components .navbar {
+.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 0.75rem 0;
 }
-.app-content.page-questions .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item {
+.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -5951,36 +5881,36 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-questions .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .item-text {
   margin: 0 0.25rem;
 }
-.app-content.page-questions .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-primary,
-.app-content.page-questions .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-outline-secondary {
+.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-primary,
+.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-outline-secondary {
   margin-right: 0.5rem;
 }
 @media (max-width: 991.98px) {
-  .app-content.page-questions .article-create-test .article-header {
+  .app-content.page-questions .article-create-question .article-header {
     margin: 0 -0.5rem;
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     z-index: 980;
   }
-  .app-content.page-questions .article-create-test .article-content {
+  .app-content.page-questions .article-create-question .article-content {
     margin: 0 -0.5rem;
   }
-  .app-content.page-questions .article-create-test .article-content .article-body .form-test-attributes {
+  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes {
     padding: 1rem 0;
   }
-  .app-content.page-questions .article-create-test .article-content .article-body .article-test-components .article-content {
+  .app-content.page-questions .article-create-question .article-content .article-body .article-test-components .article-content {
     margin: 0;
   }
 }
 @media (min-width: 768px) {
-  .app-content.page-questions .article-create-test .article-content .article-body .form-test-attributes {
+  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes {
     max-width: 50rem;
   }
-  .app-content.page-questions .article-create-test .article-content .article-body .form-test-attributes .form-group {
+  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -5988,20 +5918,20 @@ select.form-control {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .app-content.page-questions .article-create-test .article-content .article-body .form-test-attributes .form-group .form-group {
+  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group .form-group {
     -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 0;
   }
-  .app-content.page-questions .article-create-test .article-content .article-body .form-test-attributes .form-group .form-label {
+  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
   }
 }
 @media (min-width: 992px) {
-  .app-content.page-questions .article-create-test .article-header {
+  .app-content.page-questions .article-create-question .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;

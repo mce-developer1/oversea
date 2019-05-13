@@ -407,7 +407,7 @@ $(document).ready(function() {
     toggleComponentMode($component)
   });
 
-  $('.article-test-components .list-components').on('click', '.question-summary .custom-control', function(e) {
+  $('.article-test-components .list-components').on('click', '.question-summary .custom-control-input', function(e) {
     e.preventDefault();
     e.stopPropagation();
   });

@@ -401,7 +401,7 @@ router.get('/shared/add_weblinks', function(req, res, next) {
 
 /* GET upload page. */
 router.post('/shared/upload', upload.any(), function(req, res, next) {
-  res.send('{status: "OK"}');
+  res.send('{"status": "OK"}');
 });
 
 /* GET tests page. */
