@@ -404,7 +404,7 @@ router.post('/shared/upload', upload.any(), function(req, res, next) {
   res.send('{status: "OK"}');
 });
 
-/* GET lessons page. */
+/* GET tests page. */
 router.get('/:userRole/tests/tests', function(req, res, next) {
   var userRole = req.params.userRole;
   var studentUser = (userRole === 'student');
@@ -433,6 +433,63 @@ router.get('/:userRole/tests/create_test', function(req, res, next) {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'tests',
+    loggedIn: true,
+    testsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET questions page. */
+router.get('/:userRole/questions/questions', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('questions/questions', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'questions',
+    loggedIn: true,
+    testsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET create question page. */
+router.get('/:userRole/questions/create_question', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('questions/create_question', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'questions',
+    loggedIn: true,
+    testsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET assignment page. */
+router.get('/:userRole/assignments/assignment', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('assignments/assignment', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'assignments',
     loggedIn: true,
     testsPage: true,
     userRole: userRole,

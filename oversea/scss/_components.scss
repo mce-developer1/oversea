@@ -60,7 +60,8 @@ select.form-control {
 }
 
 .sortable-ghost {
-  &.resource {
+  &.resource,
+  &.component {
     position: relative;
     
     &::before {
@@ -895,6 +896,23 @@ select.form-control {
 .tinymce-outer-container,
 .tinymce-mobile-outer-container {
   width: 100% !important;
+
+  &.tox-tinymce-inline {
+    box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
+    z-index: 1000;
+  }
+
+  .tox-tbtn {
+    &:disabled {
+      svg {
+        fill: $gray-500 !important;
+      }
+    }
+
+    svg {
+      fill: $gray-700 !important;
+    }
+  }
 }
 
 .daterangepicker {
@@ -1142,10 +1160,23 @@ select.form-control {
 }
 
 .list-components {
-  background-color: $white;
+  margin-bottom: 1rem;
 
   .component {
+    background-color: $white;
+
     &.component-section {
+      &.component-section-default {
+        .section-summary,
+        .section-edit {
+          .section-actions {
+            .btn-handle {
+              display: none;
+            }
+          }
+        }
+      }
+
       .section-summary,
       .section-edit {
         @include display-flex(column);
@@ -1173,40 +1204,64 @@ select.form-control {
       }
 
       .section-summary {
-        &:hover {
-          background-color: darken($gray-100, 2%);
+        &:not(:hover) {
+          .section-actions {
+            display: none;
+          }
         }
 
         .section-title {
           font-weight: 500;
           margin-bottom: 1rem;
         }
+
+        .section-description {
+          p {
+            line-height: 2;
+          }
+        }
       }
 
       .section-edit {
         background-color: $white;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-        padding: 2.5rem 1.5rem 1rem;
+        padding: 3rem 1.5rem 1rem;
 
         .form-edit-section {
           .form-group {
-            @include display-flex(row);
-            @include align-items(flex-start);
-
             &.form-group-actions {
+              @include display-flex(row);
+              @include align-items(center);
               border-top: 1px solid $gray-400;
               padding-top: 1rem;
-            }
 
-            .form-group {
-              @include flex-grow(1);
-              @include flex-wrap(wrap);
-              margin-bottom: 0;
+              .btn-light {
+                .fas {
+                  font-size: 1.375rem;
+                }
+              }
             }
 
             .form-label {
-              min-width: 12rem;
-              width: 12rem;
+              min-width: 10rem;
+              width: 10rem;
+            }
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        .section-edit {
+          .form-edit-section {
+            .form-group {
+              @include display-flex(row);
+              @include align-items(flex-start);
+
+              .form-group {
+                @include flex-grow(1);
+                @include flex-wrap(wrap);
+                margin-bottom: 0;
+              }
             }
           }
         }
@@ -1214,16 +1269,12 @@ select.form-control {
     }
 
     &.component-question {
-      .question-summary {
+      .question-summary,
+      .question-edit {
         @include display-flex(column);
         @include flex-grow(1);
         padding: 2rem 1.5rem 1rem;
-        position: relative;
-        
-        .question-title {
-          font-weight: 500;
-          margin-bottom: 1rem;
-        }
+        position: relative;        
 
         .question-actions {
           @include display-flex(row);
@@ -1237,10 +1288,192 @@ select.form-control {
             cursor: move;
 
             .fas {
+              color: $gray-600;
               font-size: 1.375rem;
             }
           }
         }
+      }
+
+      .question-summary {
+        &:not(:hover) {
+          .question-actions {
+            display: none;
+          }
+        }
+
+        .question-title {
+          font-weight: 500;
+          margin-bottom: 1rem;
+        }
+
+        .question-text {
+          .form-control {
+            &.form-input {
+              display: inline-block;
+              margin: .25rem 0;
+            }
+          }
+
+          p {
+            line-height: 2;
+          }
+        }
+
+        .question-score {
+          position: absolute;
+          top: 2rem;
+          right: 1.5rem;
+        }
+      }
+
+      .question-edit {
+        background-color: $white;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        padding: 3rem 1.5rem 1rem;
+
+        .form-edit-question {
+          .form-group {
+            &.form-group-actions {
+              @include display-flex(row);
+              @include align-items(center);
+              border-top: 1px solid $gray-400;
+              padding-top: 1rem;
+
+              .btn-light {
+                .fas {
+                  font-size: 1.375rem;
+                }
+              }
+            }
+
+            .form-label {
+              min-width: 10rem;
+              width: 10rem;
+            }
+
+            .btn-generate-answers {
+              margin-bottom: 1rem;
+            }
+
+            .question-answers {
+              width: 100%;
+
+              .answer-details {
+                @include display-flex(row);
+                @include align-items(flex-start);
+                margin-bottom: 1rem;
+
+                .btn-light {
+                  margin-left: .5rem;
+
+                  .fas {
+                    font-size: 1.375rem;
+                  }
+                }
+              }
+
+              .btn-add-option {
+                margin-left: 1.5rem;
+              }
+            }
+
+            .question-answers-options {
+              width: 100%;
+
+              .custom-checkbox {
+                +.custom-checkbox {
+                  margin-top: 1rem;
+                }
+              }
+            }
+
+            .question-optonal-fields {
+              @include flex-grow(1);
+
+              .nav {
+                @include justify-content(center);
+
+                .nav-item {
+                  .link-show-fields,
+                  .link-hide-fields {
+                    color: $gray-700;
+
+                    .fas {
+                      &.fa-chevron-down,
+                      &.fa-chevron-up {
+                        font-size: .75rem;
+                        margin-left: .25rem;
+                      }
+                    }
+                  }
+
+                  .link-show-fields {
+                    &:not(.collapsed) {
+                      display: none;
+                    }
+                  }
+
+                  .link-hide-fields {
+                    &.collapsed {
+                      display: none;
+                    }
+                  }
+                }
+              }
+
+              .collapse-fields {
+                > .form-group {
+                  margin-bottom: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        .question-edit {
+          .form-edit-question {
+            .form-row {
+              .form-group {
+                +.form-group {
+                  max-width: 20rem;
+
+                  .form-label {
+                    margin: 0.375rem .5rem;
+                    text-align: right;
+                  }
+                }
+              }
+            }
+
+            .form-group {
+              @include display-flex(row);
+              @include align-items(flex-start);
+
+              .form-group {
+                @include flex-grow(1);
+                @include flex-wrap(wrap);
+                margin-bottom: 0;
+
+                .question-attributes {
+                  .form-group {
+                    +.form-group {
+                      margin-top: 1rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    +.component {
+      &.component-section {
+        margin-top: 2rem;
       }
     }
   }
@@ -1443,7 +1676,8 @@ select.form-control {
   }
 }
 
-.modal-resource-resource-add {
+.modal-resource-resource-add,
+.modal-resource-assign {
   .modal-dialog {
     .modal-body {
       .navbar {

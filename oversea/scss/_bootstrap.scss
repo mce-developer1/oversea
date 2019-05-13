@@ -19,6 +19,11 @@ a {
   &.badge-primary {
     background-color: $primary;
   }
+
+  &.badge-light {
+    background-color: transparent;
+    color: $gray-600;
+  }
 }
 
 .toast {
@@ -71,6 +76,14 @@ a {
   background-color: transparent;
   border-color: transparent;
   color: $gray-700;
+
+  &:disabled,
+  &.disabled,
+  &:disabled:hover,
+  &.disabled:hover {
+    background-color: transparent;
+    border-color: transparent;
+  }
 
   &:not(:disabled):not(.disabled):hover,
   &:not(:disabled):not(.disabled):active {
@@ -245,8 +258,7 @@ a {
   &.form-textarea {
     border-radius: 0;
 
-    &:not(:disabled):hover,
-    &:not(:readonly):hover {
+    &:not(:disabled):hover {
       border-color: $gray-700;
     }
 
@@ -255,22 +267,32 @@ a {
       border-color: $gray-700;
       box-shadow: none;
     }
+
+    &[readonly]:hover {
+      border-color: $gray-400;
+    }
   }
 
   &.form-input-xs {
-    width: 5rem;
+    max-width: 5rem;
   }
 
   &.form-input-sm {
-    width: 10rem;
+    max-width: 10rem;
   }
 
   &.form-input-md {
-    width: 20rem;
+    max-width: 20rem;
   }
 
   &.form-input-lg {
-    width: 40rem;
+    max-width: 40rem;
+  }
+
+  &.form-textarea {
+    overflow: auto;
+    max-height: 20rem;
+    height: auto;
   }
 }
 
@@ -315,6 +337,8 @@ a {
     }
 
     .dropdown-menu {
+      z-index: 970;
+
       .dropdown-item {
         border-radius: 0;
       }
@@ -622,7 +646,8 @@ a {
 
   .modal-dialog {
     &.modal-preview,
-    &.modal-add-resource {
+    &.modal-add-resource,
+    &.modal-assign-resource {
       margin: 0;
       max-width: 100vw;
       
@@ -685,7 +710,8 @@ a {
         }
       }
 
-      &.modal-add-resource {
+      &.modal-add-resource,
+      &.modal-assign-resource {
         &.modal-iframe {
           &.modal-muted {
             .modal-content {

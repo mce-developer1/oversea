@@ -1,4 +1,46 @@
 window.Utils = {
+  initTextEditor: function(target) {
+    var options = { toolbar_drawer: 'sliding' };
+    if (tinymce.Env.desktop) options = {};
+    tinymce.init($.extend(options, {
+      target: target,
+      min_height: 80,
+      max_height: 320,
+      autoresize_bottom_margin: 20,
+      inline: tinymce.Env.desktop,
+      menubar: false,
+      statusbar: false,
+      plugins: ['autoresize', 'link', 'image', 'media', 'lists', 'table'],
+      toolbar: [
+        'undo redo',
+        'fontsizeselect',
+        'bold italic underline',
+        'forecolor backcolor',
+        'link image media',
+        'alignleft aligncenter alignright alignjustify',
+        'bullist numlist outdent indent',
+        'table'
+      ],
+      mobile: {
+        toolbar: [
+          'bold italic underline forecolor bullist numlist'
+        ]
+      },
+      init_instance_callback: function (editor) {
+        editor.on('focus', function (e) {
+          if (tinymce.Env.desktop) {
+            var toolbarWidth = $(editor.contentAreaContainer).width() + 'px';
+            $(editor.editorContainer).css({ maxWidth: toolbarWidth });
+          }
+        });
+      }
+    }));
+  },
+  destroyTextEditor: function(target) {
+    var editor = tinymce.get(target.id);
+    if (editor.isDirty()) editor.save();
+    tinymce.remove(editor);
+  },
   getFileIcon: function(file) {
     var $icon = $('<i class="fas"></i>');
     

@@ -314,34 +314,78 @@ $(document).ready(function() {
     $('.article-create-test .navbar-nav .btn-close').removeClass('d-none');
     $('.article-create-test .form-test-attributes').addClass('d-none');    
     $('.article-create-test .article-test-components').removeClass('d-none');
-  });
 
-  function initAnnouncementForm() {
-    tinymce.init({
-      selector: '.article-test-components .form-textarea',
-      min_height: 160,
-      max_height: 320,
-      menubar: false,
-      statusbar: false,
-      plugins: ['autoresize', 'link', 'image', 'media', 'lists', 'table'],
-      toolbar: [
-        'undo redo',
-        'fontsizeselect',
-        'bold italic underline forecolor backcolor',
-        'link image media',
-        'alignleft aligncenter alignright alignjustify',
-        'bullist numlist outdent indent',
-        'table'
-      ],
-      toolbar_drawer: 'sliding',
-      mobile: {
-        plugins: ['autoresize', 'lists'],
-        toolbar: [
-          'bold italic underline forecolor bullist numlist'
-        ],
-        toolbar_drawer: 'sliding'
+    var list = $('.article-test-components .list-components').get(0);
+    var sortableList = Sortable.create(list, {
+      animation: 350,
+      scroll: true,
+      bubbleScroll: true,
+      handle: '.btn-handle',
+      onStart: function(e) {
+        console.log(e.oldIndex, e.newIndex);
+      },
+      onSort: function(e) {
+        console.log(e.oldIndex, e.newIndex);
+      },
+      onMove: function(e) {
+        return !$(e.related).hasClass('component-section-default');
       }
     });
+  });
+
+  $('.article-create-test .btn-close').on('click', function(e) {
+    var url = window.location.pathname;
+    window.location = url.replace('/create_test', '/tests');
+  });
+
+  function toggleComponentMode($component) {
+    if ($component.hasClass('component-section')) {
+      if ($component.hasClass('component-editing')) {
+        $component.find('.form-textarea').each(function(index, textarea) {
+          window.Utils.destroyTextEditor(textarea);
+        });
+        $component.find('.section-summary').removeClass('d-none');
+        $component.find('.section-edit').addClass('d-none');
+        $component.removeClass('component-editing');
+      } else {
+        $component.siblings('.component-editing').each(function(index, component) {
+          toggleComponentMode($(component));
+        });
+        $component.find('.form-textarea').each(function(index, textarea) {
+          window.Utils.initTextEditor(textarea);
+        });
+        $component.find('.section-summary').addClass('d-none');
+        $component.find('.section-edit').removeClass('d-none');
+        $component.addClass('component-editing');
+        scrollToComponent($component);
+      }
+    } else {
+      if ($component.hasClass('component-editing')) {
+        $component.find('.form-textarea').each(function(index, textarea) {
+          window.Utils.destroyTextEditor(textarea);
+        });
+        $component.find('.question-summary').removeClass('d-none');
+        $component.find('.question-edit').addClass('d-none');
+        $component.removeClass('component-editing');
+      } else {
+        $component.siblings('.component-editing').each(function(index, component) {
+          toggleComponentMode($(component));
+        });
+        $component.find('.form-textarea').each(function(index, textarea) {
+          window.Utils.initTextEditor(textarea);
+        });
+        $component.find('.question-summary').addClass('d-none');
+        $component.find('.question-edit').removeClass('d-none');
+        $component.addClass('component-editing');
+        scrollToComponent($component);
+      }
+    }    
+  }
+
+  function scrollToComponent($component) {
+    var positionTop = $component.position().top;
+    var scrollTop = (positionTop > 80) ? (positionTop - 80) : 0;
+    $('.app-container').scrollTop(scrollTop);
   }
   
   $('.article-test-components .navbar .btn-edit-test').on('click', function(e) {
@@ -350,24 +394,32 @@ $(document).ready(function() {
 
   $('.article-test-components .list-components').on('click', '.section-summary', function(e) {
     var $component = $(this).closest('.component');
-
-    if (!$component.find('.section-summary').hasClass('d-none')) {
-      $component.find('.section-summary').addClass('d-none');
-      $component.find('.section-edit').removeClass('d-none');
-    }
-  });
-
-  $('.article-test-components .list-components').on('click', '.section-summary .btn-handle', function(e) {
-    e.stopPropagation();
+    toggleComponentMode($component);
   });
 
   $('.article-test-components .list-components').on('click', '.section-edit .btn-done', function(e) {
     var $component = $(this).closest('.component');
+    toggleComponentMode($component);
+  });
 
-    if ($component.parent().find('.section-summary').hasClass('d-none')) {
-      $component.find('.section-summary').removeClass('d-none');
-      $component.find('.section-edit').addClass('d-none');
-    }
+  $('.article-test-components .list-components').on('click', '.question-summary', function(e) {
+    var $component = $(this).closest('.component');
+    toggleComponentMode($component)
+  });
+
+  $('.article-test-components .list-components').on('click', '.question-summary .custom-control', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  $('.article-test-components .list-components').on('click', '.question-edit .btn-done', function(e) {
+    var $component = $(this).closest('.component');
+    toggleComponentMode($component)
+  });
+
+  $('.article-test-components .list-components').on('click', '.question-edit .btn-generate-answers', function(e) {
+    var $form = $(this).closest('.form-edit-question');
+    $form.find('.question-answers').removeClass('d-none');
   });
 
   $(window).on('resize', function(e) {
@@ -378,6 +430,4 @@ $(document).ready(function() {
       }
     }
   });
-
-  initAnnouncementForm();
 });

@@ -68,7 +68,7 @@
       position: relative;
 
       .fas {
-        font-size: 2rem;
+        font-size: 1.75rem;
 
         &.fa-bell {
           color: $accent;
@@ -97,6 +97,7 @@
         right: -4rem;
 
         .navbar {
+          @include justify-content(space-between);
           padding: .25rem .75rem;
 
           .navbar-nav {
@@ -137,6 +138,16 @@
           .list-group {
             .list-group-item {
               padding: .5rem .75rem;
+
+              &.active {
+                background-color: lighten($blue, 48%);
+                border-color: $gray-400;
+                color: $gray-700;
+
+                &:hover {
+                  background-color: $gray-100;
+                }
+              }
 
               .notification {
                 max-width: 20rem;
@@ -262,7 +273,7 @@
 
           .img {
             margin-bottom: 0;
-            margin-right: 1rem;
+            margin-right: .75rem;
             height: 1.5rem;
             width: 1.5rem;
           }

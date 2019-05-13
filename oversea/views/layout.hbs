@@ -62,12 +62,12 @@
                   <i class="img img-mylibrary"></i> My Library
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link link-myresources {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
+                  <i class="img img-myresources"></i> My Resources
+                </a>
+              </li>
               {{#unless studentUser}}
-                <li class="nav-item">
-                  <a class="nav-link link-myresources {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
-                    <i class="img img-myresources"></i> My Resources
-                  </a>
-                </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link link-mytools" href="#" data-toggle="dropdown">
                     <i class="img img-myreports"></i> My Tools
@@ -310,7 +310,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                   <nav class="navbar navbar-expand">
-                    <ul class="navbar-nav nav-main">
+                    <ul class="navbar-nav">
                       <li class="nav-item">
                         <div class="nav-text">Notifications</div>
                       </li>
@@ -325,7 +325,7 @@
                   </nav>
                   <div class="list-notifications">
                     <div class="list-group list-group-flush">
-                      <a class="list-group-item list-group-item-action" href="#">
+                      <a class="list-group-item list-group-item-action active" href="#">
                         <div class="notification">
                           <img src="/static/images/user.png">
                           <div class="notification-body">
@@ -339,7 +339,7 @@
                           </div>
                         </div>
                       </a>
-                      <a class="list-group-item list-group-item-action" href="#">
+                      <a class="list-group-item list-group-item-action active" href="#">
                         <div class="notification">
                           <img src="/static/images/user.png">
                           <div class="notification-body">
@@ -490,13 +490,11 @@
                   <i class="img img-mylibrary"></i> My Library
                 </a>
               </li>
-              {{#unless studentUser}}
-                <li class="nav-item">
-                  <a class="nav-link {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
-                    <i class="img img-myresources"></i> My Resources
-                  </a>
-                </li>
-              {{/unless}}
+              <li class="nav-item">
+                <a class="nav-link {{#if resourcesPage}}active{{/if}}" href="/{{userRole}}/resources/resources">
+                  <i class="img img-myresources"></i> My Resources
+                </a>
+              </li>
               {{#unless studentUser}}
                 <li class="nav-item collapsible">
                   <a class="nav-link collapsed" href="#tools" data-toggle="collapse">

@@ -31,30 +31,8 @@ $(document).ready(function() {
   }
 
   function initAnnouncementForm() {
-    tinymce.init({
-      selector: '.article-create-announcement .form-announcement .form-textarea',
-      min_height: 160,
-      max_height: 320,
-      menubar: false,
-      statusbar: false,
-      plugins: ['autoresize', 'link', 'image', 'media', 'lists', 'table'],
-      toolbar: [
-        'undo redo',
-        'fontsizeselect',
-        'bold italic underline forecolor backcolor',
-        'link image media',
-        'alignleft aligncenter alignright alignjustify',
-        'bullist numlist outdent indent',
-        'table'
-      ],
-      toolbar_drawer: 'sliding',
-      mobile: {
-        plugins: ['autoresize', 'lists'],
-        toolbar: [
-          'bold italic underline forecolor bullist numlist'
-        ],
-        toolbar_drawer: 'sliding'
-      }
+    $('.article-create-announcement .form-announcement .form-textarea').each(function(index, textarea) {
+      window.Utils.initTextEditor(textarea);
     });
 
     $('#txtPeriod').daterangepicker({
