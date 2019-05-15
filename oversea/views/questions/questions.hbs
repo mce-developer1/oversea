@@ -44,51 +44,102 @@
                     </button>
                   </div>
                 </div>
-                <div class="dialog-menu dialog-menu-search">
+                <div class="dialog-menu dialog-menu-search dialog-menu-lg">
                   <form class="form-advanced-search">
-                    <div class="form-group">
-                      <label class="form-label" for="selLocation">Location</label>
-                      <select class="form-control selectpicker" id="selLocation">
-                        <option>Anywhere</option>
-                        <option>My Questions</option>
-                        <option>Shared with Me</option>
-                        <option>Shared by Me</option>
-                        <option>Question Bank</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label" for="selCurriculum">Curriculum</label>
-                      <select class="form-control selectpicker" id="selCurriculum">
-                        <option>All</option>
-                        <option>CAIE</option>
-                        <option>SG</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label" for="selGrade">Grade</label>
-                      <select class="form-control selectpicker" id="selGrade">
-                        <option>All</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label" for="selSubjet">Subject</label>
-                      <select class="form-control selectpicker" id="selSubjet">
-                        <option>All</option>
-                        <option>Chemistry</option>
-                        <option>Mathematics</option>
-                        <option>Physics</option>
-                        <option>Science</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label" for="txtKeyword">Keyword</label>
-                      <input class="form-control form-input" type="text" id="txtKeyword">
+                    <div class="form-row">
+                      <div class="col-lg">
+                        <div class="form-group">
+                          <label class="form-label" for="selLocation">Location</label>
+                          <select class="form-control selectpicker" id="selLocation">
+                            <option>Anywhere</option>
+                            <option>My Questions</option>
+                            <option>Shared with Me</option>
+                            <option>Shared by Me</option>
+                            <option>Question Bank</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selCurriculum">Curriculum</label>
+                          <select class="form-control selectpicker" id="selCurriculum">
+                            <option>All</option>
+                            <option>CAIE</option>
+                            <option>SG</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selGrade">Grade</label>
+                          <select class="form-control selectpicker" id="selGrade">
+                            <option>All</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selStream">Stream</label>
+                          <select class="form-control selectpicker" id="selStream">
+                            <option>All</option>
+                            <option>Standard</option>
+                            <option>Foundation</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selSubjet">Subject</label>
+                          <select class="form-control selectpicker" id="selSubjet">
+                            <option>All</option>
+                            <option>Chemistry</option>
+                            <option>Mathematics</option>
+                            <option>Physics</option>
+                            <option>Science</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg">
+                        <div class="form-group">
+                          <label class="form-label" for="selType">Question Type</label>
+                          <select class="form-control selectpicker" id="selType">
+                            <option value="ALL" selected>All</option>
+                            <option value="MCQ">Single Response MCQ</option>
+                            <option value="MRQ">Multiple Reponse MCQ</option>
+                            <option value="TFQ">True/False Qn</option>
+                            <option value="FIB">Short-Ans Qn</option>
+                            <option value="ESSAY">Open-Ended Qn</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selTopic">Topic</label>
+                          <select class="form-control selectpicker" id="selTopic">
+                            <option value="ALL" selected>All</option>
+                            <option>Numbers To 10</option>
+                            <option>Number Bonds</option>
+                            <option>Addition Within 10</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selSubtopic">Subtopic</label>
+                          <select class="form-control selectpicker" id="selSubtopic">
+                            <option value="ALL" selected>All</option>
+                            <option>Counting To 10</option>
+                            <option>Comparing Numbers</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selDifficulty">Difficulty</label>
+                          <select class="form-control selectpicker" id="selDifficulty">
+                            <option value="ALL" selected>All</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="txtKeyword">Keyword</label>
+                          <input class="form-control form-input" type="text" id="txtKeyword">
+                        </div>
+                      </div>
                     </div>
                     <div class="form-group form-group-actions">
                       <button class="btn btn-light" type="button">Reset</button> 
@@ -196,50 +247,582 @@
               </ul>
             </nav>
             <div class="list-components">
+              <div class="component component-toolbar">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="all" class="custom-control-input">
+                  <label class="custom-control-label" for="all">Select All</label>
+                </div>
+              </div>
               <div class="component component-question">
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" id="item0" class="custom-control-input">
                   <label class="custom-control-label" for="item0"></label>
                 </div>
                 <div class="question-summary">
-                  <div class="question-title">Question <span class="question-number">1</span></div>
+                  <div class="question-title">
+                    Single Response MCQ
+                    <span class="badge badge-light" title="Shared">
+                      <i class="fas fa-user-friends"></i>
+                    </span>
+                  </div>
                   <div class="question-text">
                     <p>
                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
                       Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                     </p>
                   </div>
-                  <div class="question-answers">
-                    <div class="answer-details">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="mcq1" name="mcq" class="custom-control-input" checked>
-                        <label class="custom-control-label" for="mcq1">
-                          <p>Option 1</p>
-                        </label>
+                  <div class="collapse collapse-attributes" id="collapse1">
+                    <div class="question-answers">
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq1" name="mcq" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="mcq1">
+                            <p>Option 1</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq2" name="mcq" class="custom-control-input">
+                          <label class="custom-control-label" for="mcq2">
+                            <p>Option 2</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq3" name="mcq" class="custom-control-input">
+                          <label class="custom-control-label" for="mcq3">
+                            <p>Option 3</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq4" name="mcq" class="custom-control-input">
+                          <label class="custom-control-label" for="mcq4">
+                            <p>Option 4</p>
+                          </label>
+                        </div>
                       </div>
                     </div>
-                    <div class="answer-details">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="mcq2" name="mcq" class="custom-control-input">
-                        <label class="custom-control-label" for="mcq2">
-                          <p>Option 2</p>
-                        </label>
+                    <div class="question-attributes">
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Grade</div>
+                          <div class="attribute-value">1</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Stream</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subject</div>
+                          <div class="attribute-value">English</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">School</div>
+                          <div class="attribute-value">RESP</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Year</div>
+                          <div class="attribute-value">2019</div>
+                        </div>
+                      </div>
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Topic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subtopic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Learning Objective</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Keywords</div>
+                          <div class="attribute-value">ipsum, dolor, sit, amet</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Difficulty</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Heuristic Skill</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
                       </div>
                     </div>
-                    <div class="answer-details">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="mcq3" name="mcq" class="custom-control-input">
-                        <label class="custom-control-label" for="mcq3">
-                          <p>Option 3</p>
-                        </label>
+                  </div>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                        Show more <i class="fas fa-chevron-down"></i>
+                      </a>
+                      <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                        Show less <i class="fas fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="question-modified-date text-muted">Modified on 11 May 2019</div>
+                </div>
+              </div>
+              <div class="component component-question">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="item1" class="custom-control-input">
+                  <label class="custom-control-label" for="item1"></label>
+                </div>
+                <div class="question-summary">
+                  <div class="question-title">
+                    Multiple Reponse MCQ
+                    <span class="badge badge-light" title="Shared">
+                      <i class="fas fa-user-friends"></i>
+                    </span>
+                  </div>
+                  <div class="question-text">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                  </div>
+                  <div class="collapse collapse-attributes" id="collapse2">
+                    <div class="question-answers">
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq1" name="mrq" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="mrq1">
+                            <p>Option 1</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq2" name="mrq" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="mrq2">
+                            <p>Option 2</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq3" name="mrq" class="custom-control-input">
+                          <label class="custom-control-label" for="mrq3">
+                            <p>Option 3</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq4" name="mrq" class="custom-control-input">
+                          <label class="custom-control-label" for="mrq4">
+                            <p>Option 4</p>
+                          </label>
+                        </div>
                       </div>
                     </div>
-                    <div class="answer-details">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="mcq4" name="mcq" class="custom-control-input">
-                        <label class="custom-control-label" for="mcq4">
-                          <p>Option 4</p>
-                        </label>
+                    <div class="question-attributes">
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Grade</div>
+                          <div class="attribute-value">1</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Stream</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subject</div>
+                          <div class="attribute-value">English</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">School</div>
+                          <div class="attribute-value">RESP</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Year</div>
+                          <div class="attribute-value">2019</div>
+                        </div>
+                      </div>
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Topic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subtopic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Learning Objective</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Keywords</div>
+                          <div class="attribute-value">ipsum, dolor, sit, amet</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Difficulty</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Heuristic Skill</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse2">
+                        Show more <i class="fas fa-chevron-down"></i>
+                      </a>
+                      <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse2">
+                        Show less <i class="fas fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="question-modified-date text-muted">Modified on 10 May 2019</div>
+                </div>
+              </div>
+              <div class="component component-question">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="item2" class="custom-control-input">
+                  <label class="custom-control-label" for="item2"></label>
+                </div>
+                <div class="question-summary">
+                  <div class="question-title">True/False Qn</div>
+                  <div class="question-text">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                  </div>
+                  <div class="collapse collapse-attributes" id="collapse3">
+                    <div class="question-answers">
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="tfq1" name="tfq" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="tfq1">
+                            <p>True</p>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="tfq2" name="tfq" class="custom-control-input">
+                          <label class="custom-control-label" for="tfq2">
+                            <p>False</p>
+                          </label>
+                        </div>
+                      </div>                          
+                    </div>
+                    <div class="question-attributes">
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Grade</div>
+                          <div class="attribute-value">1</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Stream</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subject</div>
+                          <div class="attribute-value">English</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">School</div>
+                          <div class="attribute-value">RESP</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Year</div>
+                          <div class="attribute-value">2019</div>
+                        </div>
+                      </div>
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Topic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subtopic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Learning Objective</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Keywords</div>
+                          <div class="attribute-value">ipsum, dolor, sit, amet</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Difficulty</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Heuristic Skill</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse3">
+                        Show more <i class="fas fa-chevron-down"></i>
+                      </a>
+                      <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse3">
+                        Show less <i class="fas fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="question-modified-date text-muted">Modified on 10 May 2019</div>
+                </div>
+              </div>
+              <div class="component component-question">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="item3" class="custom-control-input">
+                  <label class="custom-control-label" for="item3"></label>
+                </div>
+                <div class="question-summary">
+                  <div class="question-title">Short-Ans Qn</div>
+                  <div class="question-text">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget [dolor]. 
+                      Aenean massa. Cum sociis natoque penatibus et [magnis dis] dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                  </div>
+                  <div class="collapse collapse-attributes" id="collapse4">                    
+                    <div class="question-attributes">
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Grade</div>
+                          <div class="attribute-value">1</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Stream</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subject</div>
+                          <div class="attribute-value">English</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">School</div>
+                          <div class="attribute-value">RESP</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Year</div>
+                          <div class="attribute-value">2019</div>
+                        </div>
+                      </div>
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Topic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subtopic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Learning Objective</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Keywords</div>
+                          <div class="attribute-value">ipsum, dolor, sit, amet</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Difficulty</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Heuristic Skill</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse4">
+                        Show more <i class="fas fa-chevron-down"></i>
+                      </a>
+                      <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse4">
+                        Show less <i class="fas fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="question-modified-date text-muted">Modified on 08 May 2019</div>
+                </div>
+              </div>
+              <div class="component component-question">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="item4" class="custom-control-input">
+                  <label class="custom-control-label" for="item4"></label>
+                </div>
+                <div class="question-summary">
+                  <div class="question-title">Open-Ended Qn</div>
+                  <div class="question-text">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                  </div>
+                  <div class="collapse collapse-attributes" id="collapse5">
+                    <div class="question-answers">
+                      <div class="answer-title">
+                        Answer
+                      </div>
+                      <div class="answer-details">
+                        <p>
+                          Aenean commodo ligula eget dolor. 
+                          Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="question-attributes">
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Grade</div>
+                          <div class="attribute-value">1</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Stream</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subject</div>
+                          <div class="attribute-value">English</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">School</div>
+                          <div class="attribute-value">RESP</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Year</div>
+                          <div class="attribute-value">2019</div>
+                        </div>
+                      </div>
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Topic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subtopic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Learning Objective</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Keywords</div>
+                          <div class="attribute-value">ipsum, dolor, sit, amet</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Difficulty</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Heuristic Skill</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse5">
+                        Show more <i class="fas fa-chevron-down"></i>
+                      </a>
+                      <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse5">
+                        Show less <i class="fas fa-chevron-up"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="question-modified-date text-muted">Modified on 08 May 2019</div>
+                </div>
+              </div>
+              <div class="component component-question">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="item5" class="custom-control-input">
+                  <label class="custom-control-label" for="item5"></label>
+                </div>
+                <div class="question-summary">
+                  <div class="question-title">Open-Ended Qn</div>
+                  <div class="question-text">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    </p>
+                  </div>
+                  <div class="collapse collapse-attributes" id="collapse6">
+                    <div class="question-answers">
+                      <div class="answer-title">
+                        Answer
+                      </div>
+                      <div class="answer-details">
+                        <p>
+                          Aenean commodo ligula eget dolor. 
+                          Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="question-attributes">
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Grade</div>
+                          <div class="attribute-value">1</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Stream</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subject</div>
+                          <div class="attribute-value">English</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">School</div>
+                          <div class="attribute-value">RESP</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Year</div>
+                          <div class="attribute-value">2019</div>
+                        </div>
+                      </div>
+                      <div class="attribute-group">
+                        <div class="attribute">
+                          <div class="attribute-name">Topic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Subtopic</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Learning Objective</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Keywords</div>
+                          <div class="attribute-value">ipsum, dolor, sit, amet</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Difficulty</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
+                        <div class="attribute">
+                          <div class="attribute-name">Heuristic Skill</div>
+                          <div class="attribute-value">Not specified</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -253,142 +836,7 @@
                       </a>
                     </li>
                   </ul>
-                  <div class="question-score text-muted">1 pts</div>
-                </div>
-              </div>
-              <div class="component component-question">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="item1" class="custom-control-input">
-                  <label class="custom-control-label" for="item1"></label>
-                </div>
-                <div class="question-summary">
-                  <div class="question-title">Question <span class="question-number">2</span></div>
-                  <div class="question-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    </p>
-                  </div>
-                  <div class="question-answers">
-                    <div class="answer-details">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="mrq1" name="mrq" class="custom-control-input" checked>
-                        <label class="custom-control-label" for="mrq1">
-                          <p>Option 1</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="answer-details">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="mrq2" name="mrq" class="custom-control-input" checked>
-                        <label class="custom-control-label" for="mrq2">
-                          <p>Option 2</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="answer-details">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="mrq3" name="mrq" class="custom-control-input">
-                        <label class="custom-control-label" for="mrq3">
-                          <p>Option 3</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="answer-details">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" id="mrq4" name="mrq" class="custom-control-input">
-                        <label class="custom-control-label" for="mrq4">
-                          <p>Option 4</p>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="question-score text-muted">1 pts</div>
-                </div>
-              </div>
-              <div class="component component-question">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="item2" class="custom-control-input">
-                  <label class="custom-control-label" for="item2"></label>
-                </div>
-                <div class="question-summary">
-                  <div class="question-title">Question <span class="question-number">3</span></div>
-                  <div class="question-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    </p>
-                  </div>
-                  <div class="question-answers">
-                    <div class="answer-details">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="tfq1" name="tfq" class="custom-control-input" checked>
-                        <label class="custom-control-label" for="tfq1">
-                          <p>True</p>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="answer-details">
-                      <div class="custom-control custom-radio">
-                        <input type="radio" id="tfq2" name="tfq" class="custom-control-input">
-                        <label class="custom-control-label" for="tfq2">
-                          <p>False</p>
-                        </label>
-                      </div>
-                    </div>                          
-                  </div>
-                  <div class="question-score text-muted">1 pts</div>
-                </div>
-              </div>
-              <div class="component component-question">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="item3" class="custom-control-input">
-                  <label class="custom-control-label" for="item3"></label>
-                </div>
-                <div class="question-summary">
-                  <div class="question-title">Question <span class="question-number">4</span></div>
-                  <div class="question-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
-                      <input class="form-control form-input form-input-xs" type="text" readonly>. 
-                      Aenean massa. Cum sociis natoque penatibus et 
-                      <input class="form-control form-input form-input-sm" type="text" readonly>
-                      dis parturient montes, nascetur ridiculus mus.
-                    </p>
-                  </div>
-                  <div class="question-score text-muted">2 pts</div>
-                </div>
-              </div>
-              <div class="component component-question">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="item4" class="custom-control-input">
-                  <label class="custom-control-label" for="item4"></label>
-                </div>
-                <div class="question-summary">
-                  <div class="question-title">Question <span class="question-number">1</span></div>
-                  <div class="question-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    </p>
-                  </div>                        
-                  <div class="question-score text-muted">5 pts</div>
-                </div>
-              </div>
-              <div class="component component-question">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="item5" class="custom-control-input">
-                  <label class="custom-control-label" for="item5"></label>
-                </div>
-                <div class="question-summary">
-                  <div class="question-title">Question <span class="question-number">2</span></div>
-                  <div class="question-text">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                      Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    </p>
-                  </div>                        
-                  <div class="question-score text-muted">5 pts</div>
+                  <div class="question-modified-date text-muted">Modified on 08 May 2019</div>
                 </div>
               </div>
             </div>

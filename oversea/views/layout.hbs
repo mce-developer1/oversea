@@ -47,6 +47,7 @@
             {{#if reportsPage}}My Reports{{/if}}
             {{#if lessonsPage}}Lesson Builder{{/if}}
             {{#if testsPage}}Test Builder{{/if}}
+            {{#if questionsPage}}Question Builder{{/if}}
             {{#if notificationsPage}}Notifications{{/if}}
             {{#if announcementsPage}}Announcements{{/if}}
             {{#if profilePage}}About Me{{/if}}
@@ -194,6 +195,16 @@
                           <i class="img img-administration"></i> Access Levels
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/login_as_student">
+                          <i class="img img-administration"></i> Login to Student Account
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/login_as_teacher">
+                          <i class="img img-administration"></i> Login to Teacher Account
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </li>
@@ -293,6 +304,16 @@
                       <li class="nav-item d-none">
                         <a class="nav-link" href="/{{userRole}}/administration/access_levels">
                           <i class="img img-administration"></i> Access Levels
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/login_as_student">
+                          <i class="img img-administration"></i> Login to Student Account
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/login_as_teacher">
+                          <i class="img img-administration"></i> Login to Teacher Account
                         </a>
                       </li>
                     </ul>
@@ -513,7 +534,7 @@
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/questions/questions">
+                        <a class="nav-link {{#if questionsPage}}active{{/if}}" href="/{{userRole}}/questions/questions">
                           <i class="img img-myreports"></i> Question Builder
                         </a>
                       </li>
@@ -620,6 +641,16 @@
                       <li class="nav-item d-none">
                         <a class="nav-link {{#if accessLevelsPage}}active{{/if}}" href="/{{userRole}}/administration/access_levels">
                           <i class="img img-administration"></i> Access Levels
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if loginAsStudentPage}}active{{/if}}" href="/{{userRole}}/administration/login_as_student">
+                          <i class="img img-administration"></i> Login to Student Account
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if loginAsTeacherPage}}active{{/if}}" href="/{{userRole}}/administration/login_as_teacher">
+                          <i class="img img-administration"></i> Login to Teacher Account
                         </a>
                       </li>
                     </ul>

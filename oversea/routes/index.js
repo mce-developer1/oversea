@@ -145,6 +145,44 @@ router.get('/:userRole/administration/manage_form_class', function(req, res, nex
   });
 });
 
+/* GET login as student page. */
+router.get('/:userRole/administration/login_as_student', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('administration/login_as_student', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'administration',
+    loggedIn: true,
+    loginAsStudentPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET login as student page. */
+router.get('/:userRole/administration/login_as_teacher', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('administration/login_as_teacher', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'administration',
+    loggedIn: true,
+    loginAsTeacherPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET view class page. */
 router.get('/:userRole/class', function(req, res, next) {
   var userRole = req.params.userRole;
@@ -453,7 +491,7 @@ router.get('/:userRole/questions/questions', function(req, res, next) {
     title: 'Marshall Cavendish Education',
     module: 'questions',
     loggedIn: true,
-    testsPage: true,
+    questionsPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,
@@ -467,12 +505,23 @@ router.get('/:userRole/questions/create_question', function(req, res, next) {
   var studentUser = (userRole === 'student');
   var teacherUser = (userRole === 'teacher');
   var adminUser = (userRole === 'admin');
+  var questionType = req.query.type;
+  var mcqQuestion = (questionType === 'MCQ');
+  var mrqQuestion = (questionType === 'MRQ');
+  var tfqQuestion = (questionType === 'TFQ');
+  var fibQuestion = (questionType === 'FIB');
+  var essayQuestion = (questionType === 'ESSAY');
   res.render('questions/create_question', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
     module: 'questions',
     loggedIn: true,
-    testsPage: true,
+    questionsPage: true,
+    mcqQuestion: mcqQuestion,
+    mrqQuestion: mrqQuestion,
+    tfqQuestion: tfqQuestion,
+    fibQuestion: fibQuestion,
+    essayQuestion: essayQuestion,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,

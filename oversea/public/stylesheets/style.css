@@ -800,7 +800,7 @@ select.form-control {
   background-color: #ffffff !important;
   border-color: #ffffff !important;
   margin: 1px !important;
-  padding: 0.325rem 0.75rem !important;
+  padding: 0.325rem 0.625rem !important;
 }
 .input-group.input-group-search .input-group-prepend .btn-light:hover .fas,
 .input-group.input-group-search .input-group-append .btn-light:hover .fas {
@@ -1221,7 +1221,7 @@ select.form-control {
 .drawer {
   background-color: #fff;
   height: 100vh;
-  width: 16rem;
+  width: 18rem;
   z-index: 1070;
   -webkit-transition: left 0.35s;
   -moz-transition: left 0.35s;
@@ -1358,6 +1358,9 @@ select.form-control {
   display: block;
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search {
+  max-height: calc(100vh - 11rem);
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 1rem;
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search .form-group {
@@ -1384,6 +1387,18 @@ select.form-control {
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search .form-group .btn + .btn {
   margin-left: 0.5rem !important;
+}
+@media (min-width: 992px) {
+  .dialog .dialog-menu.dialog-menu-lg {
+    right: auto;
+  }
+  .dialog .dialog-menu.dialog-menu-lg .form-advanced-search {
+    max-width: 50rem;
+    width: 50rem;
+  }
+  .dialog .dialog-menu.dialog-menu-lg .form-advanced-search .form-row .col-lg + .col-lg {
+    margin-left: 2rem;
+  }
 }
 
 .dataTables_wrapper .dataTables_scrollBody {
@@ -1634,6 +1649,14 @@ select.form-control {
   min-width: 12rem;
   width: 12rem;
 }
+@media (max-width: 576px) {
+  .attribute-group .attribute {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
 
 .list-notifications .list-group .list-group-item {
   padding: 0.75rem 1rem;
@@ -1671,6 +1694,12 @@ select.form-control {
 }
 .list-components .component {
   background-color: #ffffff;
+}
+.list-components .component.component-active {
+  background-color: #e9ecef;
+}
+.list-components .component.component-toolbar .custom-control-label {
+  padding-left: 1rem;
 }
 .list-components .component.component-section.component-section-default .section-summary .section-actions .btn-handle,
 .list-components .component.component-section.component-section-default .section-edit .section-actions .btn-handle {
@@ -1759,6 +1788,7 @@ select.form-control {
   }
 }
 .list-components .component.component-question .question-summary,
+.list-components .component.component-question .question-create,
 .list-components .component.component-question .question-edit {
   display: -ms-flexbox;
   display: flex;
@@ -1769,7 +1799,46 @@ select.form-control {
   padding: 2rem 1.5rem 1rem;
   position: relative;
 }
+.list-components .component.component-question .question-summary .nav,
+.list-components .component.component-question .question-create .nav,
+.list-components .component.component-question .question-edit .nav {
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.list-components .component.component-question .question-summary .nav .nav-item .link-show-fields,
+.list-components .component.component-question .question-summary .nav .nav-item .link-hide-fields,
+.list-components .component.component-question .question-create .nav .nav-item .link-show-fields,
+.list-components .component.component-question .question-create .nav .nav-item .link-hide-fields,
+.list-components .component.component-question .question-edit .nav .nav-item .link-show-fields,
+.list-components .component.component-question .question-edit .nav .nav-item .link-hide-fields {
+  color: #495057;
+}
+.list-components .component.component-question .question-summary .nav .nav-item .link-show-fields .fas.fa-chevron-down, .list-components .component.component-question .question-summary .nav .nav-item .link-show-fields .fas.fa-chevron-up,
+.list-components .component.component-question .question-summary .nav .nav-item .link-hide-fields .fas.fa-chevron-down,
+.list-components .component.component-question .question-summary .nav .nav-item .link-hide-fields .fas.fa-chevron-up,
+.list-components .component.component-question .question-create .nav .nav-item .link-show-fields .fas.fa-chevron-down,
+.list-components .component.component-question .question-create .nav .nav-item .link-show-fields .fas.fa-chevron-up,
+.list-components .component.component-question .question-create .nav .nav-item .link-hide-fields .fas.fa-chevron-down,
+.list-components .component.component-question .question-create .nav .nav-item .link-hide-fields .fas.fa-chevron-up,
+.list-components .component.component-question .question-edit .nav .nav-item .link-show-fields .fas.fa-chevron-down,
+.list-components .component.component-question .question-edit .nav .nav-item .link-show-fields .fas.fa-chevron-up,
+.list-components .component.component-question .question-edit .nav .nav-item .link-hide-fields .fas.fa-chevron-down,
+.list-components .component.component-question .question-edit .nav .nav-item .link-hide-fields .fas.fa-chevron-up {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+.list-components .component.component-question .question-summary .nav .nav-item .link-show-fields:not(.collapsed),
+.list-components .component.component-question .question-create .nav .nav-item .link-show-fields:not(.collapsed),
+.list-components .component.component-question .question-edit .nav .nav-item .link-show-fields:not(.collapsed) {
+  display: none;
+}
+.list-components .component.component-question .question-summary .nav .nav-item .link-hide-fields.collapsed,
+.list-components .component.component-question .question-create .nav .nav-item .link-hide-fields.collapsed,
+.list-components .component.component-question .question-edit .nav .nav-item .link-hide-fields.collapsed {
+  display: none;
+}
 .list-components .component.component-question .question-summary .question-actions,
+.list-components .component.component-question .question-create .question-actions,
 .list-components .component.component-question .question-edit .question-actions {
   display: -ms-flexbox;
   display: flex;
@@ -1783,10 +1852,12 @@ select.form-control {
   width: 8rem;
 }
 .list-components .component.component-question .question-summary .question-actions .btn-handle,
+.list-components .component.component-question .question-create .question-actions .btn-handle,
 .list-components .component.component-question .question-edit .question-actions .btn-handle {
   cursor: move;
 }
 .list-components .component.component-question .question-summary .question-actions .btn-handle .fas,
+.list-components .component.component-question .question-create .question-actions .btn-handle .fas,
 .list-components .component.component-question .question-edit .question-actions .btn-handle .fas {
   color: #6c757d;
   font-size: 1.375rem;
@@ -1805,16 +1876,32 @@ select.form-control {
 .list-components .component.component-question .question-summary .question-text p {
   line-height: 2;
 }
+.list-components .component.component-question .question-summary .question-answers .answer-title {
+  color: #495057;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+.list-components .component.component-question .question-summary .question-attributes .attribute-group .attribute-name,
+.list-components .component.component-question .question-summary .question-attributes .attribute-group .attribute-value {
+  color: #6c757d;
+}
 .list-components .component.component-question .question-summary .question-score {
   position: absolute;
   top: 2rem;
   right: 1.5rem;
 }
+.list-components .component.component-question .question-summary .question-modified-date {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+.list-components .component.component-question .question-create,
 .list-components .component.component-question .question-edit {
   background-color: #ffffff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   padding: 3rem 1.5rem 1rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group.form-group-actions,
 .list-components .component.component-question .question-edit .form-edit-question .form-group.form-group-actions {
   display: -ms-flexbox;
   display: flex;
@@ -1825,19 +1912,24 @@ select.form-control {
   border-top: 1px solid #ced4da;
   padding-top: 1rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group.form-group-actions .btn-light .fas,
 .list-components .component.component-question .question-edit .form-edit-question .form-group.form-group-actions .btn-light .fas {
   font-size: 1.375rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .form-label,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .form-label {
   min-width: 10rem;
   width: 10rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .btn-generate-answers,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .btn-generate-answers {
   margin-bottom: 1rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-answers,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-answers {
   width: 100%;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-answers .answer-details,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-answers .answer-details {
   display: -ms-flexbox;
   display: flex;
@@ -1847,57 +1939,52 @@ select.form-control {
   align-items: flex-start;
   margin-bottom: 1rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-answers .answer-details .btn-light,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-answers .answer-details .btn-light {
   margin-left: 0.5rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-answers .answer-details .btn-light .fas,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-answers .answer-details .btn-light .fas {
   font-size: 1.375rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-answers .btn-add-option,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-answers .btn-add-option {
   margin-left: 1.5rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-answers-options,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-answers-options {
   width: 100%;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-answers-options .custom-checkbox + .custom-checkbox,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-answers-options .custom-checkbox + .custom-checkbox {
   margin-top: 1rem;
 }
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-optonal-fields,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields {
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav {
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-show-fields,
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-hide-fields {
-  color: #495057;
-}
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-show-fields .fas.fa-chevron-down, .list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-show-fields .fas.fa-chevron-up,
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-hide-fields .fas.fa-chevron-down,
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-hide-fields .fas.fa-chevron-up {
-  font-size: 0.75rem;
-  margin-left: 0.25rem;
-}
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-show-fields:not(.collapsed) {
-  display: none;
-}
-.list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .nav .nav-item .link-hide-fields.collapsed {
-  display: none;
-}
+.list-components .component.component-question .question-create .form-edit-question .form-group .question-optonal-fields .collapse-fields > .form-group,
 .list-components .component.component-question .question-edit .form-edit-question .form-group .question-optonal-fields .collapse-fields > .form-group {
   margin-bottom: 1rem;
 }
+@media (max-width: 767.98px) {
+  .list-components .component.component-question .question-summary .question-modified-date {
+    display: none;
+  }
+}
 @media (min-width: 768px) {
-  .list-components .component.component-question .question-edit .form-edit-question .form-row .form-group + .form-group {
+  .list-components .component.component-question .question-create .form-edit-question .form-row .form-group + .form-group,
+.list-components .component.component-question .question-edit .form-edit-question .form-row .form-group + .form-group {
     max-width: 20rem;
   }
-  .list-components .component.component-question .question-edit .form-edit-question .form-row .form-group + .form-group .form-label {
+  .list-components .component.component-question .question-create .form-edit-question .form-row .form-group + .form-group .form-label,
+.list-components .component.component-question .question-edit .form-edit-question .form-row .form-group + .form-group .form-label {
     margin: 0.375rem 0.5rem;
     text-align: right;
   }
-  .list-components .component.component-question .question-edit .form-edit-question .form-group {
+  .list-components .component.component-question .question-create .form-edit-question .form-group,
+.list-components .component.component-question .question-edit .form-edit-question .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -1905,15 +1992,29 @@ select.form-control {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .list-components .component.component-question .question-edit .form-edit-question .form-group .form-group {
+  .list-components .component.component-question .question-create .form-edit-question .form-group .form-group,
+.list-components .component.component-question .question-edit .form-edit-question .form-group .form-group {
     -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 0;
   }
-  .list-components .component.component-question .question-edit .form-edit-question .form-group .form-group .question-attributes .form-group + .form-group {
-    margin-top: 1rem;
+}
+@media (min-width: 1200px) {
+  .list-components .component .question-summary .question-attributes {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+  .list-components .component .question-summary .question-attributes .attribute-group {
+    max-width: calc(50% - 1rem);
+    width: calc(50% - 1rem);
   }
 }
 .list-components .component + .component.component-section {
@@ -2372,7 +2473,7 @@ select.form-control {
     display: none;
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   .app-header .navbar-nav .btn-notifications {
     display: none;
   }
@@ -2397,15 +2498,11 @@ select.form-control {
   }
 }
 
-@media (max-width: 767.98px) {
-  .app-header {
-    padding: 0 0.5rem;
-  }
-}
 @media (max-width: 991.98px) {
   .app-header {
     height: 5rem;
     max-height: 5rem;
+    padding: 0 0.5rem;
   }
 }
 .app-content {
@@ -5700,18 +5797,24 @@ select.form-control {
   flex-direction: row;
   -webkit-align-items: flex-start;
   align-items: flex-start;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.app-content.page-questions .article-questions .article-content .article-body .list-components .component:hover {
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component:not(.component-toolbar):not(.component-active):hover {
   background-color: #f8f9fa;
 }
-.app-content.page-questions .article-questions .article-content .article-body .list-components .component.component-active {
-  background-color: #e9ecef;
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component.component-toolbar {
+  border-bottom: 1px solid #ced4da;
 }
 .app-content.page-questions .article-questions .article-content .article-body .list-components .component + .component {
   border-top: 1px solid #ced4da;
 }
 .app-content.page-questions .article-questions .article-content .article-body .list-components .component > .custom-control {
-  margin: 1rem;
+  margin: 1rem 0 1rem 1rem;
 }
 .app-content.page-questions .article-questions .article-content .article-body .list-components .component .question-summary {
   padding: 1rem;
@@ -5794,6 +5897,12 @@ select.form-control {
     position: sticky;
     top: 10rem;
   }
+  .app-content.page-questions .article-questions .article-content .article-body .list-components .component.component-toolbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+    z-index: 970;
+  }
 }
 .app-content.page-questions .article-create-question {
   padding: 0 1.5rem;
@@ -5839,54 +5948,106 @@ select.form-control {
 .app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
 }
-.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
-.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light.btn-more {
-  padding: 0.325rem 1rem;
-}
-.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
-  font-size: 1.5rem;
-}
-.app-content.page-questions .article-create-question .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
-  font-size: 1.5rem;
-}
-.app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes {
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question {
   padding: 1.5rem 0;
 }
-.app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group-actions {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav {
+  -webkit-justify-content: center;
+  justify-content: center;
 }
-.app-content.page-questions .article-create-question .article-content .article-body .article-test-components {
-  margin: 0 auto;
-  max-width: 64rem;
-  padding: 0;
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-show-fields,
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-hide-fields,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-show-fields,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-hide-fields {
+  color: #495057;
 }
-.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar {
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  padding: 0.75rem 0;
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-show-fields .fas.fa-chevron-down, .app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-show-fields .fas.fa-chevron-up,
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-hide-fields .fas.fa-chevron-down,
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-hide-fields .fas.fa-chevron-up,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-show-fields .fas.fa-chevron-down,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-show-fields .fas.fa-chevron-up,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-hide-fields .fas.fa-chevron-down,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-hide-fields .fas.fa-chevron-up {
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
 }
-.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item {
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-show-fields:not(.collapsed),
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-show-fields:not(.collapsed) {
+  display: none;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .nav .nav-item .link-hide-fields.collapsed,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .nav .nav-item .link-hide-fields.collapsed {
+  display: none;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group.form-group-actions,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group.form-group-actions {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  padding-top: 1rem;
 }
-.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .item-text {
-  margin: 0 0.25rem;
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group.form-group-actions .btn-light .fas,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group.form-group-actions .btn-light .fas {
+  font-size: 1.375rem;
 }
-.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-primary,
-.app-content.page-questions .article-create-question .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-outline-secondary {
-  margin-right: 0.5rem;
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .form-label,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .form-label {
+  min-width: 10rem;
+  width: 10rem;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .btn-generate-answers,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .btn-generate-answers {
+  margin-bottom: 1rem;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-answers,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-answers {
+  width: 100%;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-answers .answer-details,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-answers .answer-details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-answers .answer-details .btn-light,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-answers .answer-details .btn-light {
+  margin-left: 0.5rem;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-answers .answer-details .btn-light .fas,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-answers .answer-details .btn-light .fas {
+  font-size: 1.375rem;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-answers .btn-add-option,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-answers .btn-add-option {
+  margin-left: 1.5rem;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-answers-options,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-answers-options {
+  width: 100%;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-answers-options .custom-checkbox + .custom-checkbox,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-answers-options .custom-checkbox + .custom-checkbox {
+  margin-top: 1rem;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-optonal-fields,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-optonal-fields {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.app-content.page-questions .article-create-question .article-content .article-body .form-create-question .form-group .question-optonal-fields .collapse-fields > .form-group,
+.app-content.page-questions .article-create-question .article-content .article-body .form-edit-question .form-group .question-optonal-fields .collapse-fields > .form-group {
+  margin-bottom: 1rem;
 }
 @media (max-width: 991.98px) {
   .app-content.page-questions .article-create-question .article-header {
@@ -5899,18 +6060,14 @@ select.form-control {
   .app-content.page-questions .article-create-question .article-content {
     margin: 0 -0.5rem;
   }
-  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes {
-    padding: 1rem 0;
-  }
-  .app-content.page-questions .article-create-question .article-content .article-body .article-test-components .article-content {
-    margin: 0;
-  }
 }
 @media (min-width: 768px) {
-  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes {
+  .app-content.page-questions .article-create-question .article-content .form-create-question,
+.app-content.page-questions .article-create-question .article-content .form-edit-question {
     max-width: 50rem;
   }
-  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group {
+  .app-content.page-questions .article-create-question .article-content .form-create-question .form-group,
+.app-content.page-questions .article-create-question .article-content .form-edit-question .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -5918,16 +6075,13 @@ select.form-control {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group .form-group {
+  .app-content.page-questions .article-create-question .article-content .form-create-question .form-group .form-group,
+.app-content.page-questions .article-create-question .article-content .form-edit-question .form-group .form-group {
     -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-bottom: 0;
-  }
-  .app-content.page-questions .article-create-question .article-content .article-body .form-test-attributes .form-group .form-label {
-    min-width: 12rem;
-    width: 12rem;
   }
 }
 @media (min-width: 992px) {
@@ -5936,28 +6090,6 @@ select.form-control {
     position: sticky;
     top: 6rem;
     z-index: 980;
-  }
-}
-
-@media (min-width: 768px) {
-  .modal-test-edit-attributes .modal-dialog .modal-body .form-edit-test-attributes .form-group {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-  }
-  .modal-test-edit-attributes .modal-dialog .modal-body .form-edit-test-attributes .form-group .form-group {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-  }
-  .modal-test-edit-attributes .modal-dialog .modal-body .form-edit-test-attributes .form-group .form-label {
-    min-width: 14rem;
-    width: 14rem;
   }
 }
 
@@ -6125,7 +6257,7 @@ select.form-control {
     display: none;
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 576px) {
   .app-content.page-announcements .article-announcements .article-content .article-body .table-head colgroup:nth-child(5),
 .app-content.page-announcements .article-announcements .article-content .article-body .table-body colgroup:nth-child(5) {
     display: none;

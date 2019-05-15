@@ -337,7 +337,7 @@
     }
   }
 
-  @media (max-width: 575.98px) {
+  @media (max-width: 576px) {
     .navbar-nav {
       .btn-notifications {
         display: none;
@@ -378,15 +378,10 @@
   }
 }
 
-@media (max-width: 767.98px) {
-  .app-header {
-    padding: 0 .5rem;
-  }
-}
-
 @media (max-width: 991.98px) {
   .app-header {
     height: 5rem;
     max-height: 5rem;
+    padding: 0 .5rem;
   }
 }

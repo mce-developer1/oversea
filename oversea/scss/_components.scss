@@ -95,7 +95,7 @@ select.form-control {
         background-color: $white !important;
         border-color: $white !important;
         margin: 1px !important;
-        padding: .325rem .75rem !important;
+        padding: .325rem .625rem !important;
         
         &:hover {
           .fas {
@@ -617,7 +617,7 @@ select.form-control {
 .drawer {
 	background-color: #fff;
 	height: 100vh;
-	width: 16rem;
+	width: 18rem;
 	z-index: 1070;
 	-webkit-transition: left .35s;
 	-moz-transition: left .35s;
@@ -772,6 +772,9 @@ select.form-control {
 
     &.dialog-menu-search {
       .form-advanced-search {
+        max-height: calc(100vh - 11rem);
+        overflow-x: hidden;
+        overflow-y: auto;
         padding: 1rem;
 
         .form-group {
@@ -796,6 +799,27 @@ select.form-control {
 
             +.btn {
               margin-left: .5rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    .dialog-menu {
+      &.dialog-menu-lg {
+        right: auto;
+
+        .form-advanced-search {
+          max-width: 50rem;
+          width: 50rem;
+
+          .form-row {
+            .col-lg {
+              +.col-lg {
+                margin-left: 2rem;
+              }
             }
           }
         }
@@ -1119,6 +1143,12 @@ select.form-control {
       width: 12rem;
     }
   }
+
+  @media (max-width: 576px) {
+    .attribute {
+      @include display-flex(column);
+    }
+  }
 }
 
 .list-notifications {
@@ -1164,6 +1194,16 @@ select.form-control {
 
   .component {
     background-color: $white;
+
+    &.component-active {
+      background-color: $gray-200;
+    }
+
+    &.component-toolbar {
+      .custom-control-label {
+        padding-left: 1rem;
+      }
+    }
 
     &.component-section {
       &.component-section-default {
@@ -1270,11 +1310,43 @@ select.form-control {
 
     &.component-question {
       .question-summary,
+      .question-create,
       .question-edit {
         @include display-flex(column);
         @include flex-grow(1);
         padding: 2rem 1.5rem 1rem;
-        position: relative;        
+        position: relative;
+
+        .nav {
+          @include justify-content(center);
+
+          .nav-item {
+            .link-show-fields,
+            .link-hide-fields {
+              color: $gray-700;
+
+              .fas {
+                &.fa-chevron-down,
+                &.fa-chevron-up {
+                  font-size: .75rem;
+                  margin-left: .25rem;
+                }
+              }
+            }
+
+            .link-show-fields {
+              &:not(.collapsed) {
+                display: none;
+              }
+            }
+
+            .link-hide-fields {
+              &.collapsed {
+                display: none;
+              }
+            }
+          }
+        }
 
         .question-actions {
           @include display-flex(row);
@@ -1320,13 +1392,37 @@ select.form-control {
           }
         }
 
+        .question-answers {
+          .answer-title {
+            color: $gray-700;
+            font-weight: 500;
+            margin: .5rem 0;
+          }
+        }
+
+        .question-attributes {
+          .attribute-group {
+            .attribute-name,
+            .attribute-value {
+              color: $gray-600;
+            }
+          }
+        }
+
         .question-score {
           position: absolute;
           top: 2rem;
           right: 1.5rem;
         }
+
+        .question-modified-date {
+          position: absolute;
+          top: 1rem;
+          right: 1.5rem;
+        }
       }
 
+      .question-create,
       .question-edit {
         background-color: $white;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -1391,37 +1487,6 @@ select.form-control {
             .question-optonal-fields {
               @include flex-grow(1);
 
-              .nav {
-                @include justify-content(center);
-
-                .nav-item {
-                  .link-show-fields,
-                  .link-hide-fields {
-                    color: $gray-700;
-
-                    .fas {
-                      &.fa-chevron-down,
-                      &.fa-chevron-up {
-                        font-size: .75rem;
-                        margin-left: .25rem;
-                      }
-                    }
-                  }
-
-                  .link-show-fields {
-                    &:not(.collapsed) {
-                      display: none;
-                    }
-                  }
-
-                  .link-hide-fields {
-                    &.collapsed {
-                      display: none;
-                    }
-                  }
-                }
-              }
-
               .collapse-fields {
                 > .form-group {
                   margin-bottom: 1rem;
@@ -1432,7 +1497,16 @@ select.form-control {
         }
       }
 
+      @media (max-width: 767.98px) {
+        .question-summary {
+          .question-modified-date {
+            display: none;
+          }
+        }
+      }
+
       @media (min-width: 768px) {
+        .question-create,
         .question-edit {
           .form-edit-question {
             .form-row {
@@ -1456,16 +1530,23 @@ select.form-control {
                 @include flex-grow(1);
                 @include flex-wrap(wrap);
                 margin-bottom: 0;
-
-                .question-attributes {
-                  .form-group {
-                    +.form-group {
-                      margin-top: 1rem;
-                    }
-                  }
-                }
               }
             }
+          }
+        }
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .question-summary {
+        .question-attributes {
+          @include display-flex(row);
+          @include align-items(flex-start);
+          @include justify-content(space-between);
+          
+          .attribute-group {
+            max-width: calc(50% - 1rem);
+            width: calc(50% - 1rem);
           }
         }
       }

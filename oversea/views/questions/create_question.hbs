@@ -1,1287 +1,840 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-create-test no-sidebar">
+      <div class="article article-create-question no-sidebar">
         <div class="article-header">
           <nav class="navbar navbar-expand">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <span class="item-text text-truncate">Create Test</span>
-              </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <button class="btn btn-light btn-edit d-none" type="button" title="Edit">
-                  <i class="fas fa-edit"></i>
-                </button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-light btn-move-to d-none" type="button" title="Move to">
-                  <i class="fas fa-folder"></i>
-                </button>
-              </li>
-              <li class="nav-divider divider-preview d-none"></li>
-              <li class="nav-item">
-                <button class="btn btn-light btn-preview d-none" type="button" title="Preview">
-                  <i class="fas fa-eye"></i>
-                </button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-light btn-close d-none" type="button" title="Close">
-                  <i class="fas fa-times"></i>
-                </button>
+                <span class="item-text text-truncate">Create Question</span>
               </li>
             </ul>
           </nav>
         </div>
         <div class="article-content">
           <div class="article-body">
-            <form class="form-test-attributes">
-              <div class="form-group">
-                <label class="form-label" for="txtTitle">Title</label>
+            {{#if mcqQuestion}}
+              <form class="form-create-question">
                 <div class="form-group">
-                  <input class="form-control form-input" type="text" value="P1-Maths Addition" id="txtTitle">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="selGrade">Grade</label>
-                <div class="form-group">
-                  <select class="form-control selectpicker" id="selGrade" data-container=".form-test-attributes">
-                    <option>Primary 1</option>
-                    <option>Primary 2</option>
-                    <option>Primary 3</option>
-                    <option>Primary 4</option>
-                    <option>Primary 5</option>
-                    <option>Primary 6</option>
+                  <label class="form-label" for="selType">Question Type</label>
+                  <select class="form-control selectpicker" id="selType">
+                    <option value="MCQ" selected>Single Response MCQ</option>
+                    <option value="MRQ">Multiple Reponse MCQ</option>
+                    <option value="TFQ">True/False Qn</option>
+                    <option value="FIB">Short-Ans Qn</option>
+                    <option value="ESSAY">Open-Ended Qn</option>
                   </select>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="selSubjet">Subject</label>
                 <div class="form-group">
-                  <select class="form-control selectpicker" id="selSubjet" data-container=".form-test-attributes">
-                    <option>Chemistry</option>
-                    <option>Mathematics</option>
-                    <option>Physics</option>
-                    <option>Science</option>
-                  </select>
+                  <label class="form-label">Question</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="selLanguage">Language</label>
                 <div class="form-group">
-                  <select class="form-control selectpicker" id="selLanguage" data-container=".form-test-attributes">
-                    <option value="Bahasa Indonesia">Bahasa Indonesia</option>
-                    <option value="Chinese">Chinese</option>
-                    <option value="Spanish">Spanish</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="txtKeywords">Keywords</label>
-                <div class="form-group">
-                  <input class="form-control form-input" type="text" id="txtKeywords">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="txtPassingCriteria">Passing Criteria (%)</label>
-                <div class="form-group">
-                  <input class="form-control form-input form-input-sm" type="text" id="txtPassingCriteria">
-                </div>
-              </div>
-              <div class="form-group form-group-actions">
-                <button class="btn btn-light btn-cancel" type="button">Cancel</button>
-                <button class="btn btn-primary btn-create" type="button">Create</button>
-              </div>
-            </form>
-            <div class="article article-test-components no-sidebar d-none">
-              <div class="article-content">
-                <div class="article-body">
-                  <nav class="navbar navbar-expand">
-                    <ul class="navbar-nav">
-                      <li class="nav-item">
-                        <div class="item-text text-truncate" title="P1-Maths Addition">P1-Maths Addition</div>
-                        <button class="btn btn-light btn-edit-test" type="button" title="Edit">
-                          <i class="fas fa-edit"></i>
+                  <label class="form-label">Answer</label>
+                  <div class="form-group">
+                    <div class="question-answers">
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq11" name="mcq1" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="mcq11"></label>
+                        </div>
+                        <div class="form-control form-textarea">
+                          <p>Option 1</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
                         </button>
-                      </li>
-                    </ul>
-                    <ul class="navbar-nav">
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq12" name="mcq1" class="custom-control-input">
+                          <label class="custom-control-label" for="mcq12"></label>
+                        </div>
+                        <div class="form-control form-textarea">
+                          <p>Option 2</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq13" name="mcq1" class="custom-control-input">
+                          <label class="custom-control-label" for="mcq13"></label>
+                        </div>
+                        <div class="form-control form-textarea">
+                          <p>Option 3</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="mcq14" name="mcq1" class="custom-control-input">
+                          <label class="custom-control-label" for="mcq14"></label>
+                        </div>
+                        <div class="form-control form-textarea">
+                          <p>Option 4</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <button class="btn btn-outline-secondary btn-add-option" type="button">
+                        Add Option
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Explanation</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="question-optonal-fields">
+                    <div class="collapse collapse-fields" id="collapse1">
+                      <div class="form-group">
+                        <label class="form-label" for="selTopic">Topic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selTopic">
+                            <option selected>None</option>
+                            <option>Numbers To 10</option>
+                            <option>Number Bonds</option>
+                            <option>Addition Within 10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selSubtopic">Subtopic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selSubtopic">
+                            <option selected>None</option>
+                            <option>Counting To 10</option>
+                            <option>Comparing Numbers</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selObjective">Learning Objective</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selObjective">
+                            <option selected>None</option>
+                            <option>1.1 Counting in hundreds/thousands</option>
+                            <option>1.2 Number notation, representations and place values (thousands, hundreds, tens, ones)</option>
+                            <option>1.3 Reading and Writing numbers in Numerals and in words</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="txtKeywords">Keywords</label>
+                        <div class="form-group">
+                          <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selDifficulty">Difficulty</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selDifficulty">
+                            <option selected>None</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selHeuristic">Heuristic Skill</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selHeuristic">
+                            <option selected>None</option>
+                            <option>Act It Out</option>
+                            <option>Draw A Diagram</option>
+                            <option>Guess And Check</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Options</label>
+                        <div class="form-group">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="copy1" class="custom-control-input">
+                            <label class="custom-control-label" for="copy1">Save a copy to My Questions</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="nav">
                       <li class="nav-item">
-                        <div class="item-text text-truncate">6 questions, 10 points</div>
+                        <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show more <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show less <i class="fas fa-chevron-up"></i>
+                        </a>
                       </li>
                     </ul>
-                  </nav>
-                  <div class="list-components">
-                    <div class="component component-section component-section-default">
-                      <div class="section-summary">
-                        <div class="section-title">Section A</div>
-                        <div class="section-description">
-                          <p>Answer all questions.</p>
+                  </div>
+                </div>
+                <div class="form-group form-group-actions">
+                  <button class="btn btn-light btn-cancel" type="button">
+                    Cancel
+                  </button>
+                  <button class="btn btn-light btn-save-and-create" type="button">
+                    Save and Create Another
+                  </button>
+                  <button class="btn btn-primary btn-save" type="button">
+                    Save
+                  </button>
+                </div>
+              </form>
+            {{/if}}
+            {{#if mrqQuestion}}
+              <form class="form-create-question">
+                <div class="form-group">
+                  <label class="form-label" for="selType">Question Type</label>
+                  <select class="form-control selectpicker" id="selType">
+                    <option value="MCQ">Single Response MCQ</option>
+                    <option value="MRQ" selected>Multiple Reponse MCQ</option>
+                    <option value="TFQ">True/False Qn</option>
+                    <option value="FIB">Short-Ans Qn</option>
+                    <option value="ESSAY">Open-Ended Qn</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Question</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Answer</label>
+                  <div class="form-group">
+                    <div class="question-answers">
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq11" name="mrq1" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="mrq11"></label>
                         </div>
-                        <div class="section-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
+                        <div class="form-control form-textarea">
+                          <p>Option 1</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq12" name="mrq1" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="mrq12"></label>
+                        </div>
+                        <div class="form-control form-textarea">
+                          <p>Option 2</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq13" name="mrq1" class="custom-control-input">
+                          <label class="custom-control-label" for="mrq13"></label>
+                        </div>
+                        <div class="form-control form-textarea">
+                          <p>Option 3</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <div class="answer-details">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" id="mrq14" name="mrq1" class="custom-control-input">
+                          <label class="custom-control-label" for="mrq14"></label>
+                        </div>
+                        <div class="form-control form-textarea">
+                          <p>Option 4</p>
+                        </div>
+                        <button class="btn btn-light" type="button" title="Remove">
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </div>
+                      <button class="btn btn-outline-secondary btn-add-option" type="button">
+                        Add Option
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Explanation</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="question-optonal-fields">
+                    <div class="collapse collapse-fields" id="collapse1">
+                      <div class="form-group">
+                        <label class="form-label" for="selTopic">Topic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selTopic">
+                            <option selected>None</option>
+                            <option>Numbers To 10</option>
+                            <option>Number Bonds</option>
+                            <option>Addition Within 10</option>
+                          </select>
                         </div>
                       </div>
-                      <div class="section-edit d-none">
-                        <form class="form-edit-section">
-                          <div class="form-group">
-                            <label class="form-label" for="txtTitle">Title</label>
-                            <div class="form-group">
-                              <input class="form-control form-input" type="text" value="Section A" id="txtTitle">
-                            </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selSubtopic">Subtopic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selSubtopic">
+                            <option selected>None</option>
+                            <option>Counting To 10</option>
+                            <option>Comparing Numbers</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selObjective">Learning Objective</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selObjective">
+                            <option selected>None</option>
+                            <option>1.1 Counting in hundreds/thousands</option>
+                            <option>1.2 Number notation, representations and place values (thousands, hundreds, tens, ones)</option>
+                            <option>1.3 Reading and Writing numbers in Numerals and in words</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="txtKeywords">Keywords</label>
+                        <div class="form-group">
+                          <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selDifficulty">Difficulty</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selDifficulty">
+                            <option selected>None</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selHeuristic">Heuristic Skill</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selHeuristic">
+                            <option selected>None</option>
+                            <option>Act It Out</option>
+                            <option>Draw A Diagram</option>
+                            <option>Guess And Check</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Options</label>
+                        <div class="form-group">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="copy1" class="custom-control-input">
+                            <label class="custom-control-label" for="copy1">Save a copy to My Questions</label>
                           </div>
-                          <div class="form-group">
-                            <label class="form-label">Description</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Answer all questions.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="section-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
                         </div>
                       </div>
                     </div>
-                    <div class="component component-question">
-                      <div class="question-summary">
-                        <div class="question-title">Question <span class="question-number">1</span></div>
-                        <div class="question-text">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                          </p>
-                        </div>
-                        <div class="question-answers">
-                          <div class="answer-details">
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="mcq1" name="mcq" class="custom-control-input" checked>
-                              <label class="custom-control-label" for="mcq1">
-                                <p>Option 1</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="answer-details">
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="mcq2" name="mcq" class="custom-control-input">
-                              <label class="custom-control-label" for="mcq2">
-                                <p>Option 2</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="answer-details">
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="mcq3" name="mcq" class="custom-control-input">
-                              <label class="custom-control-label" for="mcq3">
-                                <p>Option 3</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="answer-details">
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="mcq4" name="mcq" class="custom-control-input">
-                              <label class="custom-control-label" for="mcq4">
-                                <p>Option 4</p>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="question-score text-muted">1 pts</div>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="question-edit d-none">
-                        <form class="form-edit-question">
-                          <div class="form-row">
-                            <div class="form-group col-md">
-                              <label class="form-label" for="selType">Question Type</label>
-                              <select class="form-control selectpicker" id="selType">
-                                <option value="MCQ" selected>Single Response MCQ</option>
-                                <option value="MRQ">Multiple Reponse MCQ</option>
-                                <option value="TFQ">True/False Qn</option>
-                                <option value="FIB">Short-Ans Qn</option>
-                                <option value="ESSAY">Open-Ended Qn</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md">
-                              <label class="form-label" for="txtPoints">Points</label>
-                              <input class="form-control form-input form-input-sm" type="text" value="1" id="txtPoints">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Question</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Answer</label>
-                            <div class="form-group">
-                              <div class="question-answers">
-                                <div class="answer-details">
-                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="mcq11" name="mcq1" class="custom-control-input" checked>
-                                    <label class="custom-control-label" for="mcq11"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 1</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <div class="answer-details">
-                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="mcq12" name="mcq1" class="custom-control-input">
-                                    <label class="custom-control-label" for="mcq12"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 2</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <div class="answer-details">
-                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="mcq13" name="mcq1" class="custom-control-input">
-                                    <label class="custom-control-label" for="mcq13"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 3</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <div class="answer-details">
-                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="mcq14" name="mcq1" class="custom-control-input">
-                                    <label class="custom-control-label" for="mcq14"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 4</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <button class="btn btn-outline-secondary btn-add-option" type="button">
-                                  Add Option
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Explanation</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="question-optonal-fields">
-                              <div class="collapse collapse-fields" id="collapse1">
-                                <div class="form-group">
-                                  <label class="form-label" for="txtKeywords">Keywords</label>
-                                  <div class="form-group">
-                                    <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label" for="selDifficulty">Difficulty</label>
-                                  <div class="form-group">
-                                    <select class="form-control selectpicker" id="selDifficulty" title="Nothing selected">
-                                      <option value="Basic">Basic</option>
-                                      <option value="Intermediate">Intermediate</option>
-                                      <option value="Advanced">Advanced</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Options</label>
-                                  <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" id="copy1" class="custom-control-input">
-                                      <label class="custom-control-label" for="copy1">Save a copy to My Questions</label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <ul class="nav">
-                                <li class="nav-item">
-                                  <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
-                                    Show more <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                  <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
-                                    Show less <i class="fas fa-chevron-up"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show more <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show less <i class="fas fa-chevron-up"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="form-group form-group-actions">
+                  <button class="btn btn-light btn-cancel" type="button">
+                    Cancel
+                  </button>
+                  <button class="btn btn-light btn-save-and-create" type="button">
+                    Save and Create Another
+                  </button>
+                  <button class="btn btn-primary btn-save" type="button">
+                    Save
+                  </button>
+                </div>
+              </form>
+            {{/if}}
+            {{#if tfqQuestion}}
+              <form class="form-create-question">
+                <div class="form-group">
+                  <label class="form-label" for="selType">Question Type</label>
+                  <select class="form-control selectpicker" id="selType">
+                    <option value="MCQ">Single Response MCQ</option>
+                    <option value="MRQ">Multiple Reponse MCQ</option>
+                    <option value="TFQ" selected>True/False Qn</option>
+                    <option value="FIB">Short-Ans Qn</option>
+                    <option value="ESSAY">Open-Ended Qn</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Question</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      </p>
                     </div>
-                    <div class="component component-question">
-                      <div class="question-summary">
-                        <div class="question-title">Question <span class="question-number">2</span></div>
-                        <div class="question-text">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                          </p>
-                        </div>
-                        <div class="question-answers">
-                          <div class="answer-details">
-                            <div class="custom-control custom-checkbox">
-                              <input type="checkbox" id="mrq1" name="mrq" class="custom-control-input" checked>
-                              <label class="custom-control-label" for="mrq1">
-                                <p>Option 1</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="answer-details">
-                            <div class="custom-control custom-checkbox">
-                              <input type="checkbox" id="mrq2" name="mrq" class="custom-control-input" checked>
-                              <label class="custom-control-label" for="mrq2">
-                                <p>Option 2</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="answer-details">
-                            <div class="custom-control custom-checkbox">
-                              <input type="checkbox" id="mrq3" name="mrq" class="custom-control-input">
-                              <label class="custom-control-label" for="mrq3">
-                                <p>Option 3</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="answer-details">
-                            <div class="custom-control custom-checkbox">
-                              <input type="checkbox" id="mrq4" name="mrq" class="custom-control-input">
-                              <label class="custom-control-label" for="mrq4">
-                                <p>Option 4</p>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="question-score text-muted">1 pts</div>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Answer</label>
+                  <div class="form-group">
+                    <div class="question-answers">
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="tfq11" name="tfq1" class="custom-control-input" checked>
+                          <label class="custom-control-label" for="tfq11">True</label>
                         </div>
                       </div>
-                      <div class="question-edit d-none">
-                        <form class="form-edit-question">
-                          <div class="form-row">
-                            <div class="form-group col-md">
-                              <label class="form-label" for="selType">Question Type</label>
-                              <select class="form-control selectpicker" id="selType">
-                                <option value="MCQ">Single Response MCQ</option>
-                                <option value="MRQ" selected>Multiple Reponse MCQ</option>
-                                <option value="TFQ">True/False Qn</option>
-                                <option value="FIB">Short-Ans Qn</option>
-                                <option value="ESSAY">Open-Ended Qn</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md">
-                              <label class="form-label" for="txtPoints">Points</label>
-                              <input class="form-control form-input form-input-sm" type="text" value="1" id="txtPoints">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Question</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Answer</label>
-                            <div class="form-group">
-                              <div class="question-answers">
-                                <div class="answer-details">
-                                  <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="mrq11" name="mrq1" class="custom-control-input" checked>
-                                    <label class="custom-control-label" for="mrq11"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 1</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <div class="answer-details">
-                                  <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="mrq12" name="mrq1" class="custom-control-input" checked>
-                                    <label class="custom-control-label" for="mrq12"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 2</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <div class="answer-details">
-                                  <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="mrq13" name="mrq1" class="custom-control-input">
-                                    <label class="custom-control-label" for="mrq13"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 3</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <div class="answer-details">
-                                  <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" id="mrq14" name="mrq1" class="custom-control-input">
-                                    <label class="custom-control-label" for="mrq14"></label>
-                                  </div>
-                                  <div class="form-control form-textarea">
-                                    <p>Option 4</p>
-                                  </div>
-                                  <button class="btn btn-light" type="button" title="Remove">
-                                    <i class="fas fa-times"></i>
-                                  </button>
-                                </div>
-                                <button class="btn btn-outline-secondary btn-add-option" type="button">
-                                  Add Option
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Explanation</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="question-optonal-fields">
-                              <div class="collapse collapse-fields" id="collapse2">
-                                <div class="form-group">
-                                  <label class="form-label" for="txtKeywords">Keywords</label>
-                                  <div class="form-group">
-                                    <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label" for="selDifficulty">Difficulty</label>
-                                  <div class="form-group">
-                                    <select class="form-control selectpicker" id="selDifficulty" title="Nothing selected">
-                                      <option value="Basic">Basic</option>
-                                      <option value="Intermediate">Intermediate</option>
-                                      <option value="Advanced">Advanced</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Options</label>
-                                  <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" id="copy2" class="custom-control-input">
-                                      <label class="custom-control-labe2" for="copy1">Save a copy to My Questions</label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <ul class="nav">
-                                <li class="nav-item">
-                                  <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse2">
-                                    Show more <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                  <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse2">
-                                    Show less <i class="fas fa-chevron-up"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="component component-question">
-                      <div class="question-summary">
-                        <div class="question-title">Question <span class="question-number">3</span></div>
-                        <div class="question-text">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                          </p>
-                        </div>
-                        <div class="question-answers">
-                          <div class="answer-details">
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="tfq1" name="tfq" class="custom-control-input" checked>
-                              <label class="custom-control-label" for="tfq1">
-                                <p>True</p>
-                              </label>
-                            </div>
-                          </div>
-                          <div class="answer-details">
-                            <div class="custom-control custom-radio">
-                              <input type="radio" id="tfq2" name="tfq" class="custom-control-input">
-                              <label class="custom-control-label" for="tfq2">
-                                <p>False</p>
-                              </label>
-                            </div>
-                          </div>                          
-                        </div>
-                        <div class="question-score text-muted">1 pts</div>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="question-edit d-none">
-                        <form class="form-edit-question">
-                          <div class="form-row">
-                            <div class="form-group col-md">
-                              <label class="form-label" for="selType">Question Type</label>
-                              <select class="form-control selectpicker" id="selType">
-                                <option value="MCQ">Single Response MCQ</option>
-                                <option value="MRQ">Multiple Reponse MCQ</option>
-                                <option value="TFQ" selected>True/False Qn</option>
-                                <option value="FIB">Short-Ans Qn</option>
-                                <option value="ESSAY">Open-Ended Qn</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md">
-                              <label class="form-label" for="txtPoints">Points</label>
-                              <input class="form-control form-input form-input-sm" type="text" value="1" id="txtPoints">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Question</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Answer</label>
-                            <div class="form-group">
-                              <div class="question-answers">
-                                <div class="answer-details">
-                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="tfq11" name="tfq1" class="custom-control-input" checked>
-                                    <label class="custom-control-label" for="tfq11">True</label>
-                                  </div>
-                                </div>
-                                <div class="answer-details">
-                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="tfq12" name="tfq1" class="custom-control-input">
-                                    <label class="custom-control-label" for="tfq12">False</label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Explanation</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="question-optonal-fields">
-                              <div class="collapse collapse-fields" id="collapse3">
-                                <div class="form-group">
-                                  <label class="form-label" for="txtKeywords">Keywords</label>
-                                  <div class="form-group">
-                                    <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label" for="selDifficulty">Difficulty</label>
-                                  <div class="form-group">
-                                    <select class="form-control selectpicker" id="selDifficulty" title="Nothing selected">
-                                      <option value="Basic">Basic</option>
-                                      <option value="Intermediate">Intermediate</option>
-                                      <option value="Advanced">Advanced</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Options</label>
-                                  <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" id="copy3" class="custom-control-input">
-                                      <label class="custom-control-label" for="copy3">Save a copy to My Questions</label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <ul class="nav">
-                                <li class="nav-item">
-                                  <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse3">
-                                    Show more <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                  <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse3">
-                                    Show less <i class="fas fa-chevron-up"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="component component-question">
-                      <div class="question-summary">
-                        <div class="question-title">Question <span class="question-number">4</span></div>
-                        <div class="question-text">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget 
-                            <input class="form-control form-input form-input-xs" type="text" readonly>. 
-                            Aenean massa. Cum sociis natoque penatibus et 
-                            <input class="form-control form-input form-input-sm" type="text" readonly>
-                            dis parturient montes, nascetur ridiculus mus.
-                          </p>
-                        </div>
-                        <div class="question-score text-muted">2 pts</div>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="question-edit d-none">
-                        <form class="form-edit-question">
-                          <div class="form-row">
-                            <div class="form-group col-md">
-                              <label class="form-label" for="selType">Question Type</label>
-                              <select class="form-control selectpicker" id="selType">
-                                <option value="MCQ">Single Response MCQ</option>
-                                <option value="MRQ">Multiple Reponse MCQ</option>
-                                <option value="TFQ">True/False Qn</option>
-                                <option value="FIB" selected>Short-Ans Qn</option>
-                                <option value="ESSAY">Open-Ended Qn</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md">
-                              <label class="form-label" for="txtPoints">Points</label>
-                              <input class="form-control form-input form-input-sm" type="text" value="1" id="txtPoints">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Question</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget [dolor]. 
-                                  Aenean massa. Cum sociis natoque penatibus et [magnis dis] parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                              <div class="form-text text-muted">
-                                Note: Indicate the answer with [ ]. If one blank has more than one correct answer, separate them with ||.
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Answer</label>
-                            <div class="form-group">
-                              <button class="btn btn-outline-secondary btn-generate-answers" type="button">
-                                Generate Answers
-                              </button>
-                              <div class="question-answers d-none">
-                                <div class="answer-details">
-                                  <input class="form-control form-input form-input-md" type="text" value="dolor" readonly>
-                                </div>
-                                <div class="answer-details">
-                                  <input class="form-control form-input form-input-md" type="text" value="magnis dis" readonly>
-                                </div>
-                              </div>
-                              <div class="question-answers-options">
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" id="case" class="custom-control-input">
-                                  <label class="custom-control-label" for="case">Answers must be case sensitive</label>
-                                </div>
-                                <div class="custom-control custom-checkbox">
-                                  <input type="checkbox" id="mark" class="custom-control-input">
-                                  <label class="custom-control-label" for="mark">Marks will be awarded only when all answers are correct</label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Explanation</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="question-optonal-fields">
-                              <div class="collapse collapse-fields" id="collapse4">
-                                <div class="form-group">
-                                  <label class="form-label" for="txtKeywords">Keywords</label>
-                                  <div class="form-group">
-                                    <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label" for="selDifficulty">Difficulty</label>
-                                  <div class="form-group">
-                                    <select class="form-control selectpicker" id="selDifficulty" title="Nothing selected">
-                                      <option value="Basic">Basic</option>
-                                      <option value="Intermediate">Intermediate</option>
-                                      <option value="Advanced">Advanced</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Options</label>
-                                  <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" id="copy4" class="custom-control-input">
-                                      <label class="custom-control-label" for="copy4">Save a copy to My Questions</label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <ul class="nav">
-                                <li class="nav-item">
-                                  <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse4">
-                                    Show more <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                  <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse4">
-                                    Show less <i class="fas fa-chevron-up"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="component component-section">
-                      <div class="section-summary default-section-summary">
-                        <div class="section-title">Section B</div>
-                        <div class="section-description">
-                          <p>Answer one question.</p>
-                        </div>
-                        <div class="section-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="section-edit d-none">
-                        <form class="form-edit-section">
-                          <div class="form-group">
-                            <label class="form-label" for="txtTitle">Title</label>
-                            <div class="form-group">
-                              <input class="form-control form-input" type="text" value="Section B" id="txtTitle">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Description</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Answer all questions.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="section-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="component component-question">
-                      <div class="question-summary">
-                        <div class="question-title">Question <span class="question-number">1</span></div>
-                        <div class="question-text">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                          </p>
-                        </div>                        
-                        <div class="question-score text-muted">5 pts</div>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="question-edit d-none">
-                        <form class="form-edit-question">
-                          <div class="form-row">
-                            <div class="form-group col-md">
-                              <label class="form-label" for="selType">Question Type</label>
-                              <select class="form-control selectpicker" id="selType">
-                                <option value="MCQ">Single Response MCQ</option>
-                                <option value="MRQ">Multiple Reponse MCQ</option>
-                                <option value="TFQ">True/False Qn</option>
-                                <option value="FIB">Short-Ans Qn</option>
-                                <option value="ESSAY" selected>Open-Ended Qn</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md">
-                              <label class="form-label" for="txtPoints">Points</label>
-                              <input class="form-control form-input form-input-sm" type="text" value="1" id="txtPoints">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Question</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Answer</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Explanation</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="question-optonal-fields">
-                              <div class="collapse collapse-fields" id="collapse5">
-                                <div class="form-group">
-                                  <label class="form-label" for="txtKeywords">Keywords</label>
-                                  <div class="form-group">
-                                    <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label" for="selDifficulty">Difficulty</label>
-                                  <div class="form-group">
-                                    <select class="form-control selectpicker" id="selDifficulty" title="Nothing selected">
-                                      <option value="Basic">Basic</option>
-                                      <option value="Intermediate">Intermediate</option>
-                                      <option value="Advanced">Advanced</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Options</label>
-                                  <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" id="copy5" class="custom-control-input">
-                                      <label class="custom-control-label" for="copy5">Save a copy to My Questions</label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <ul class="nav">
-                                <li class="nav-item">
-                                  <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse5">
-                                    Show more <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                  <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse5">
-                                    Show less <i class="fas fa-chevron-up"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="component component-question">
-                      <div class="question-summary">
-                        <div class="question-title">Question <span class="question-number">2</span></div>
-                        <div class="question-text">
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                          </p>
-                        </div>                        
-                        <div class="question-score text-muted">5 pts</div>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="question-edit d-none">
-                        <form class="form-edit-question">
-                          <div class="form-row">
-                            <div class="form-group col-md">
-                              <label class="form-label" for="selType">Question Type</label>
-                              <select class="form-control selectpicker" id="selType">
-                                <option value="MCQ">Single Response MCQ</option>
-                                <option value="MRQ">Multiple Reponse MCQ</option>
-                                <option value="TFQ">True/False Qn</option>
-                                <option value="FIB">Short-Ans Qn</option>
-                                <option value="ESSAY" selected>Open-Ended Qn</option>
-                              </select>
-                            </div>
-                            <div class="form-group col-md">
-                              <label class="form-label" for="txtPoints">Points</label>
-                              <input class="form-control form-input form-input-sm" type="text" value="1" id="txtPoints">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Question</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Answer</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
-                                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="form-label">Explanation</label>
-                            <div class="form-group">
-                              <div class="form-control form-textarea">
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="question-optonal-fields">
-                              <div class="collapse collapse-fields" id="collapse6">
-                                <div class="form-group">
-                                  <label class="form-label" for="txtKeywords">Keywords</label>
-                                  <div class="form-group">
-                                    <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label" for="selDifficulty">Difficulty</label>
-                                  <div class="form-group">
-                                    <select class="form-control selectpicker" id="selDifficulty" title="Nothing selected">
-                                      <option value="Basic">Basic</option>
-                                      <option value="Intermediate">Intermediate</option>
-                                      <option value="Advanced">Advanced</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div class="form-group">
-                                  <label class="form-label">Options</label>
-                                  <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                      <input type="checkbox" id="copy6" class="custom-control-input">
-                                      <label class="custom-control-label" for="copy6">Save a copy to My Questions</label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <ul class="nav">
-                                <li class="nav-item">
-                                  <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse6">
-                                    Show more <i class="fas fa-chevron-down"></i>
-                                  </a>
-                                  <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse6">
-                                    Show less <i class="fas fa-chevron-up"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="form-group form-group-actions">
-                            <button class="btn btn-outline-secondary btn-done" type="button">
-                              Done
-                            </button>
-                            <div class="flex-grow-1"></div>
-                            <button class="btn btn-light btn-duplicate" type="button" title="Duplicate">
-                              <i class="fas fa-copy"></i>
-                            </button>
-                            <button class="btn btn-light btn-delete" type="button" title="Delete">
-                              <i class="fas fa-trash"></i>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="question-actions">
-                          <button class="btn btn-light btn-handle" type="button" title="Move">
-                            <i class="fas fa-grip-horizontal"></i>
-                          </button>
+                      <div class="answer-details">
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="tfq12" name="tfq1" class="custom-control-input">
+                          <label class="custom-control-label" for="tfq12">False</label>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <nav class="navbar navbar-expand">
-                    <ul class="navbar-nav">
-                      <li class="nav-item dropup">
-                        <button class="btn btn-primary btn-add-question" type="button" data-toggle="dropdown">
-                          <i class="fas fa-plus"></i> Add Question
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">
-                            Single Response MCQ
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            Multiple Reponse MCQ
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            True/False Qn
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            Short-Ans Qn
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            Open-Ended Qn
-                          </a>
-                          <div class="dropdown-divider" href="#"></div>
-                          <a class="dropdown-item" href="#">
-                            From Question Bank 
-                          </a>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Explanation</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="question-optonal-fields">
+                    <div class="collapse collapse-fields" id="collapse1">
+                      <div class="form-group">
+                        <label class="form-label" for="selTopic">Topic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selTopic">
+                            <option selected>None</option>
+                            <option>Numbers To 10</option>
+                            <option>Number Bonds</option>
+                            <option>Addition Within 10</option>
+                          </select>
                         </div>
-                      </li>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selSubtopic">Subtopic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selSubtopic">
+                            <option selected>None</option>
+                            <option>Counting To 10</option>
+                            <option>Comparing Numbers</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selObjective">Learning Objective</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selObjective">
+                            <option selected>None</option>
+                            <option>1.1 Counting in hundreds/thousands</option>
+                            <option>1.2 Number notation, representations and place values (thousands, hundreds, tens, ones)</option>
+                            <option>1.3 Reading and Writing numbers in Numerals and in words</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="txtKeywords">Keywords</label>
+                        <div class="form-group">
+                          <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selDifficulty">Difficulty</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selDifficulty">
+                            <option selected>None</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selHeuristic">Heuristic Skill</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selHeuristic">
+                            <option selected>None</option>
+                            <option>Act It Out</option>
+                            <option>Draw A Diagram</option>
+                            <option>Guess And Check</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Options</label>
+                        <div class="form-group">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="copy1" class="custom-control-input">
+                            <label class="custom-control-label" for="copy1">Save a copy to My Questions</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="nav">
                       <li class="nav-item">
-                        <button class="btn btn-outline-secondary btn-add-section" type="button">
-                          Add Section
-                        </button>
+                        <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show more <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show less <i class="fas fa-chevron-up"></i>
+                        </a>
                       </li>
                     </ul>
-                  </nav>
+                  </div>
                 </div>
-              </div>
-            </div>
+                <div class="form-group form-group-actions">
+                  <button class="btn btn-light btn-cancel" type="button">
+                    Cancel
+                  </button>
+                  <button class="btn btn-light btn-save-and-create" type="button">
+                    Save and Create Another
+                  </button>
+                  <button class="btn btn-primary btn-save" type="button">
+                    Save
+                  </button>
+                </div>
+              </form>
+            {{/if}}
+            {{#if fibQuestion}}
+              <form class="form-create-question">
+                <div class="form-group">
+                  <label class="form-label" for="selType">Question Type</label>
+                  <select class="form-control selectpicker" id="selType">
+                    <option value="MCQ">Single Response MCQ</option>
+                    <option value="MRQ">Multiple Reponse MCQ</option>
+                    <option value="TFQ">True/False Qn</option>
+                    <option value="FIB" selected>Short-Ans Qn</option>
+                    <option value="ESSAY">Open-Ended Qn</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Question</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget [dolor]. 
+                        Aenean massa. Cum sociis natoque penatibus et [magnis dis] parturient montes, nascetur ridiculus mus.
+                      </p>
+                    </div>
+                    <div class="form-text text-muted">
+                      Note: Indicate the answer with [ ]. If one blank has more than one correct answer, separate them with ||.
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Answer</label>
+                  <div class="form-group">
+                    <button class="btn btn-outline-secondary btn-generate-answers" type="button">
+                      Generate Answers
+                    </button>
+                    <div class="question-answers d-none">
+                      <div class="answer-details">
+                        <input class="form-control form-input form-input-md" type="text" value="dolor" readonly>
+                      </div>
+                      <div class="answer-details">
+                        <input class="form-control form-input form-input-md" type="text" value="magnis dis" readonly>
+                      </div>
+                    </div>
+                    <div class="question-answers-options">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="case" class="custom-control-input">
+                        <label class="custom-control-label" for="case">Answers must be case sensitive</label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" id="mark" class="custom-control-input">
+                        <label class="custom-control-label" for="mark">Marks will be awarded only when all answers are correct</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Explanation</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="question-optonal-fields">
+                    <div class="collapse collapse-fields" id="collapse1">
+                      <div class="form-group">
+                        <label class="form-label" for="selTopic">Topic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selTopic">
+                            <option selected>None</option>
+                            <option>Numbers To 10</option>
+                            <option>Number Bonds</option>
+                            <option>Addition Within 10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selSubtopic">Subtopic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selSubtopic">
+                            <option selected>None</option>
+                            <option>Counting To 10</option>
+                            <option>Comparing Numbers</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selObjective">Learning Objective</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selObjective">
+                            <option selected>None</option>
+                            <option>1.1 Counting in hundreds/thousands</option>
+                            <option>1.2 Number notation, representations and place values (thousands, hundreds, tens, ones)</option>
+                            <option>1.3 Reading and Writing numbers in Numerals and in words</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="txtKeywords">Keywords</label>
+                        <div class="form-group">
+                          <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selDifficulty">Difficulty</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selDifficulty">
+                            <option selected>None</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selHeuristic">Heuristic Skill</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selHeuristic">
+                            <option selected>None</option>
+                            <option>Act It Out</option>
+                            <option>Draw A Diagram</option>
+                            <option>Guess And Check</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Options</label>
+                        <div class="form-group">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="copy1" class="custom-control-input">
+                            <label class="custom-control-label" for="copy1">Save a copy to My Questions</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show more <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show less <i class="fas fa-chevron-up"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="form-group form-group-actions">
+                  <button class="btn btn-light btn-cancel" type="button">
+                    Cancel
+                  </button>
+                  <button class="btn btn-light btn-save-and-create" type="button">
+                    Save and Create Another
+                  </button>
+                  <button class="btn btn-primary btn-save" type="button">
+                    Save
+                  </button>
+                </div>
+              </form>
+            {{/if}}
+            {{#if essayQuestion}}
+              <form class="form-create-question">
+                <div class="form-group">
+                  <label class="form-label" for="selType">Question Type</label>
+                  <select class="form-control selectpicker" id="selType">
+                    <option value="MCQ">Single Response MCQ</option>
+                    <option value="MRQ">Multiple Reponse MCQ</option>
+                    <option value="TFQ">True/False Qn</option>
+                    <option value="FIB">Short-Ans Qn</option>
+                    <option value="ESSAY" selected>Open-Ended Qn</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Question</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget [dolor]. 
+                        Aenean massa. Cum sociis natoque penatibus et [magnis dis] parturient montes, nascetur ridiculus mus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Answer</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                        Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Explanation</label>
+                  <div class="form-group">
+                    <div class="form-control form-textarea">
+                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="question-optonal-fields">
+                    <div class="collapse collapse-fields" id="collapse1">
+                      <div class="form-group">
+                        <label class="form-label" for="selTopic">Topic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selTopic">
+                            <option selected>None</option>
+                            <option>Numbers To 10</option>
+                            <option>Number Bonds</option>
+                            <option>Addition Within 10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selSubtopic">Subtopic</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selSubtopic">
+                            <option selected>None</option>
+                            <option>Counting To 10</option>
+                            <option>Comparing Numbers</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selObjective">Learning Objective</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selObjective">
+                            <option selected>None</option>
+                            <option>1.1 Counting in hundreds/thousands</option>
+                            <option>1.2 Number notation, representations and place values (thousands, hundreds, tens, ones)</option>
+                            <option>1.3 Reading and Writing numbers in Numerals and in words</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="txtKeywords">Keywords</label>
+                        <div class="form-group">
+                          <input class="form-control form-input" type="text" value="ipsum, dolor, sit, amet" id="txtKeywords">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selDifficulty">Difficulty</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selDifficulty">
+                            <option selected>None</option>
+                            <option value="Basic">Basic</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selHeuristic">Heuristic Skill</label>
+                        <div class="form-group">
+                          <select class="form-control selectpicker" id="selHeuristic">
+                            <option selected>None</option>
+                            <option>Act It Out</option>
+                            <option>Draw A Diagram</option>
+                            <option>Guess And Check</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">Options</label>
+                        <div class="form-group">
+                          <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="copy1" class="custom-control-input">
+                            <label class="custom-control-label" for="copy1">Save a copy to My Questions</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link link-show-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show more <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <a class="nav-link link-hide-fields collapsed" href="#" data-toggle="collapse" data-target="#collapse1">
+                          Show less <i class="fas fa-chevron-up"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="form-group form-group-actions">
+                  <button class="btn btn-light btn-cancel" type="button">
+                    Cancel
+                  </button>
+                  <button class="btn btn-light btn-save-and-create" type="button">
+                    Save and Create Another
+                  </button>
+                  <button class="btn btn-primary btn-save" type="button">
+                    Save
+                  </button>
+                </div>
+              </form>
+            {{/if}}
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal modal-test-edit-attributes fade" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Edit Attributes</h5>
-        <button type="button" class="close" title="Close" data-dismiss="modal">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="form-edit-test-attributes">
-          <div class="form-group">
-            <label class="form-label" for="txtTitle">Title</label>
-            <div class="form-group">
-              <input class="form-control form-input" type="text" value="P1-Maths Addition" id="txtTitle">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="selGrade">Grade</label>
-            <div class="form-group">
-              <select class="form-control selectpicker" id="selGrade" data-container=".form-test-attributes">
-                <option>Primary 1</option>
-                <option>Primary 2</option>
-                <option>Primary 3</option>
-                <option>Primary 4</option>
-                <option>Primary 5</option>
-                <option>Primary 6</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="selSubjet">Subject</label>
-            <div class="form-group">
-              <select class="form-control selectpicker" id="selSubjet" data-container=".form-test-attributes">
-                <option>Chemistry</option>
-                <option>Mathematics</option>
-                <option>Physics</option>
-                <option>Science</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="selLanguage">Language</label>
-            <div class="form-group">
-              <select class="form-control selectpicker" id="selLanguage" data-container=".form-test-attributes">
-                <option value="Bahasa Indonesia">Bahasa Indonesia</option>
-                <option value="Chinese">Chinese</option>
-                <option value="Spanish">Spanish</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="txtKeywords">Keywords</label>
-            <div class="form-group">
-              <input class="form-control form-input" type="text" id="txtKeywords">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="txtPassingCriteria">Passing Criteria (%)</label>
-            <div class="form-group">
-              <input class="form-control form-input form-input-sm" type="text" id="txtPassingCriteria">
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
