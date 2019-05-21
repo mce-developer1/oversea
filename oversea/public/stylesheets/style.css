@@ -2413,8 +2413,8 @@ select.form-control {
 }
 .app-header .dropdown .dropdown-menu.dropdown-menu-more {
   padding: 0;
-  max-width: 36rem;
-  width: 36rem;
+  max-width: 37rem;
+  width: 37rem;
 }
 .app-header .dropdown .dropdown-menu.dropdown-menu-more.show {
   display: -ms-flexbox;
@@ -2442,8 +2442,8 @@ select.form-control {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  max-width: 16rem;
-  width: 16rem;
+  max-width: 16.5rem;
+  width: 16.5rem;
 }
 .app-header .dropdown .dropdown-menu .nav .nav-text,
 .app-header .dropdown .dropdown-menu .nav .nav-link {
