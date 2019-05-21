@@ -191,6 +191,10 @@ $(document).ready(function() {
 
   $container.find('.navbar-nav .btn-edit').on('click', function(e) {
     if ($container.find('.table-body .table-active').find('.fa-folder').length === 1) {
+      var readonly = $('.modal-resource-folder-edit .form-input').prop('readonly');
+      $('.modal-resource-folder-edit .form-input').prop('readonly', !readonly);
+      $('.modal-resource-folder-edit .text-muted').toggleClass('d-none');
+      $('.modal-resource-folder-edit .btn').toggleClass('d-none');
       $('.modal-resource-folder-edit').modal('show');
     } else {
       $('.modal-resource-file-edit-attributes').modal('show');
