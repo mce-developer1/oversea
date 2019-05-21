@@ -198,60 +198,37 @@ $(document).ready(function() {
     $('.modal-lesson-delete-confirmation').modal('show');
   });
 
-  $container.find('.table-body tr').on('click', function(e) {
-    if (e.shiftKey) {
-      e.preventDefault();
-
-      if ($(this).parent().find('.table-active-first').length > 0) {
-        $(this).parent().find(':not(.table-active-first)').removeClass('table-active');
-        if ($(this).siblings('.table-active-first').index() < $(this).index()) {
-          var $nextSibling = $(this).siblings('.table-active-first').next();
-          while (($nextSibling.index() > -1) && ($nextSibling.index() <= $(this).index())) {
-            $nextSibling.addClass('table-active');
-            $nextSibling = $nextSibling.next();
-          };
-        } else {
-          var $prevSibling = $(this).siblings('.table-active-first').prev();
-          while ($prevSibling.index() >= $(this).index()) {
-            $prevSibling.addClass('table-active');
-            $prevSibling = $prevSibling.prev();
-          };
-        }
-        updateActionButtonsStyles();
-        return;
-      }
-    }
-
-    if ($(this).siblings('.table-active').length > 0) {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
-
-      if ($(this).hasClass('table-active')) {      
-        if (!$(this).hasClass('table-active-first')) {
-          $(this).addClass('table-active-first');
-        }
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
+  $container.find('.table-body tr .custom-control-input').on('click', function(e) {
+    var $row = $(this).closest('tr');
+        
+    if ($row.hasClass('table-active')) {
+      $row.removeClass('table-active');
     } else {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
+      $row.addClass('table-active');
+    }
+    updateActionButtonsStyles();
+  });
 
-      if ($(this).hasClass('table-active')) {      
-        $(this).removeClass('table-active');
-        $(this).removeClass('table-active-first');
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
+  $container.find('.table-body tr').on('click', function(e) {
+    if ($(e.target).is('a')) return;
+    if ($(e.target).closest('a') > 0) return;
+    if ($(e.target).hasClass('.badge')) return;
+    if ($(e.target).closest('.badge').length > 0) return;
+    if ($(e.target).hasClass('.btn')) return;
+    if ($(e.target).closest('.btn').length > 0) return;
+    if ($(e.target).hasClass('.custom-control')) return;
+    if ($(e.target).closest('.custom-control').length > 0) return;
+    if ($(this).hasClass('table-active')) {
+      $(this).removeClass('table-active');
+      $(this).find('.custom-control-input').prop('checked', false);
+    } else {
+      $(this).addClass('table-active');
+      $(this).find('.custom-control-input').prop('checked', true);
     }
     updateActionButtonsStyles();
   });
 
   $container.find('.table-body tr .btn').on('click', function(e) {
-    e.stopPropagation();
-
     var $model = $('.modal-lesson-details');
     var $row = $(this).closest('tr');
     $model.find('.modal-title').text($row.find('td:nth-child(2)').text());
@@ -530,53 +507,31 @@ $(document).ready(function() {
     showAddResourceModal('/shared/add_weblinks');
   });
 
-  $('.article-lesson-resources .table-body tr').on('click', function(e) {
-    if (e.shiftKey) {
-      e.preventDefault();
-
-      if ($(this).parent().find('.table-active-first').length > 0) {
-        $(this).parent().find(':not(.table-active-first)').removeClass('table-active');
-        if ($(this).siblings('.table-active-first').index() < $(this).index()) {
-          var $nextSibling = $(this).siblings('.table-active-first').next();
-          while (($nextSibling.index() > -1) && ($nextSibling.index() <= $(this).index())) {
-            $nextSibling.addClass('table-active');
-            $nextSibling = $nextSibling.next();
-          };
-        } else {
-          var $prevSibling = $(this).siblings('.table-active-first').prev();
-          while ($prevSibling.index() >= $(this).index()) {
-            $prevSibling.addClass('table-active');
-            $prevSibling = $prevSibling.prev();
-          };
-        }
-        updateComponentsActionButtonsStyles();
-        return;
-      }
-    }
-
-    if ($(this).siblings('.table-active').length > 0) {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
-
-      if ($(this).hasClass('table-active')) {      
-        if (!$(this).hasClass('table-active-first')) {
-          $(this).addClass('table-active-first');
-        }
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
+  $('.article-lesson-resources .table-body tr .custom-control-input').on('click', function(e) {
+    var $row = $(this).closest('tr');
+        
+    if ($row.hasClass('table-active')) {
+      $row.removeClass('table-active');
     } else {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
+      $row.addClass('table-active');
+    }
+    updateComponentsActionButtonsStyles();
+  });
 
-      if ($(this).hasClass('table-active')) {      
-        $(this).removeClass('table-active');
-        $(this).removeClass('table-active-first');
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
+  $('.article-lesson-resources .table-body tr').on('click', function(e) {
+    if ($(e.target).is('a')) return;
+    if ($(e.target).closest('a') > 0) return;
+    if ($(e.target).hasClass('.btn')) return;
+    if ($(e.target).closest('.btn').length > 0) return;
+    if ($(e.target).hasClass('.custom-control')) return;
+    if ($(e.target).closest('.custom-control').length > 0) return;
+    if ($(e.target).closest('.dropdown').length > 0) return;
+    if ($(this).hasClass('table-active')) {
+      $(this).removeClass('table-active');
+      $(this).find('.custom-control-input').prop('checked', false);
+    } else {
+      $(this).addClass('table-active');
+      $(this).find('.custom-control-input').prop('checked', true);
     }
     updateComponentsActionButtonsStyles();
   });

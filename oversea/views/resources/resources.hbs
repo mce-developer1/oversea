@@ -372,6 +372,8 @@
               <colgroup width="120px"></colgroup>
               <colgroup width="140px"></colgroup>
               <colgroup width="100px"></colgroup>
+              <colgroup width="180px"></colgroup>
+              <colgroup width="140px"></colgroup>
               <colgroup width="60px"></colgroup>
               <thead>
                 <tr>
@@ -397,6 +399,12 @@
                     File Size
                   </th>
                   <th>
+                    Shared By
+                  </th>
+                  <th>
+                    Location
+                  </th>
+                  <th>
                     &nbsp;
                   </th>
                 </tr>
@@ -409,6 +417,8 @@
               <colgroup width="120px"></colgroup>
               <colgroup width="140px"></colgroup>
               <colgroup width="100px"></colgroup>
+              <colgroup width="180px"></colgroup>
+              <colgroup width="140px"></colgroup>
               <colgroup width="60px"></colgroup>
               <tbody>
                 <tr>
@@ -427,6 +437,8 @@
                   <td> - </td>
                   <td>29 Mar 2018</td>
                   <td> - </td>
+                  <td>Derrick Chua</td>
+                  <td>My Resources</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -449,6 +461,8 @@
                   <td> - </td>
                   <td>05 Dec 2006</td>
                   <td> - </td>
+                  <td>Derrick Chua</td>
+                  <td>Shared with Me</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -474,6 +488,8 @@
                   <td> - </td>
                   <td>22 Jul 2015</td>
                   <td> - </td>
+                  <td>Derrick Chua</td>
+                  <td>My Resources</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -499,6 +515,8 @@
                   <td> - </td>
                   <td>17 Feb 2016</td>
                   <td>2 KB</td>
+                  <td>Ernest  Goh</td>
+                  <td>My Resources</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -521,6 +539,8 @@
                   <td> - </td>
                   <td>14 Nov 2014</td>
                   <td>58 KB</td>
+                  <td>Ernest  Goh</td>
+                  <td>Resource Bank</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -543,6 +563,8 @@
                   <td> - </td>
                   <td>12 Nov 2014</td>
                   <td>882 KB</td>
+                  <td>Ernest  Goh</td>
+                  <td>Resource Bank</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -565,6 +587,8 @@
                   <td> - </td>
                   <td>10 Sep 2014</td>
                   <td>1 MB</td>
+                  <td>Ernest  Goh</td>
+                  <td>Resource Bank</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -587,6 +611,8 @@
                   <td> - </td>
                   <td>28 Nov 2014</td>
                   <td>100 KB</td>
+                  <td>Ernest  Goh</td>
+                  <td>Resource Bank</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>
@@ -632,6 +658,9 @@
                 </div>
                 <div class="card-body">
                   <a class="card-link" href="#">Making Number Patterns</a>
+                  <span class="badge badge-light" title="Shared">
+                    <i class="fas fa-user-friends"></i>
+                  </span>
                   <div class="text-muted">
                     22 Jul 2015
                   </div>
@@ -647,6 +676,9 @@
                 </div>
                 <div class="card-body">
                   <a class="card-link" href="#">Making Number Bonds</a>
+                  <span class="badge badge-light" title="Shared">
+                    <i class="fas fa-user-friends"></i>
+                  </span>
                   <div class="text-muted">
                     17 Feb 2016
                   </div>
@@ -761,7 +793,12 @@
         <form class="form-create-folder">
           <div class="form-group">
             <label class="form-label" for="txtFolderName">Name</label>
-            <input class="form-control form-input" type="text" id="txtFolderName">
+            <div class="form-group">
+              <input class="form-control form-input" type="text" id="txtFolderName">
+              <div class="form-text text-danger">
+                <i class="fas fa-exclamation"></i> Folder name be empty.
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -786,7 +823,9 @@
         <form class="form-edit-folder">
           <div class="form-group">
             <label class="form-label" for="txtFolderName">Name</label>
-            <input class="form-control form-input" type="text" id="txtFolderName" value="Folder name">
+            <div class="form-group">
+              <input class="form-control form-input" type="text" id="txtFolderName" value="Folder name">
+            </div>
           </div>
         </form>
       </div>

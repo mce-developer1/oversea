@@ -38,6 +38,10 @@ a {
   &:not(:disabled):not(.disabled):active:focus {
     box-shadow: none;
   }
+
+  &.focus {
+    box-shadow: none;
+  }
 }
 
 .btn-primary {
@@ -341,6 +345,11 @@ a {
 
       .dropdown-item {
         border-radius: 0;
+
+        .text {
+          @include text-truncate;
+          max-width: calc(100vw - 4rem);
+        }
       }
     }
   }

@@ -45,6 +45,12 @@
   user-select: $selection;
 }
 
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @mixin transform($transform) {
   -ms-transform: $transform;
   -webkit-transform: $transform;

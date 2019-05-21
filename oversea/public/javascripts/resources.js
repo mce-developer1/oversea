@@ -86,7 +86,15 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $container.find('.article-body .loading-state').addClass('d-none');
-      $container.find('.article-body .empty-state').removeClass('d-none');
+
+      if (search === 'empty') {
+        $container.find('.article-body .empty-state').removeClass('d-none');
+      } else {
+        $container.find('.article-body .table-head').removeClass('d-none');
+        $container.find('.article-body .table-body').removeClass('d-none');
+        $container.find('.article-body .table-head').addClass('table-search-results');
+        $container.find('.article-body .table-body').addClass('table-search-results');
+      }
     }, 5000);
   }
 
@@ -530,70 +538,52 @@ $(document).ready(function() {
     $container.find('.article-body .card-group').removeClass('d-none');
   });
 
+  $container.find('.tree-resources .resource a').on('click', function(e) {
+    if ($(this).attr('title') === 'Shared with Me') {
+      $container.find('.table').addClass('table-shared-with-me');
+    } else {
+      $container.find('.table').removeClass('table-shared-with-me');
+    }
+  });
+
+  $container.find('.table-body tr .custom-control-input').on('click', function(e) {
+    var $row = $(this).closest('tr');
+        
+    if ($row.hasClass('table-active')) {
+      $row.removeClass('table-active');
+    } else {
+      $row.addClass('table-active');
+    }
+    updateActionButtonsStyles();
+  });
+
+  $container.find('.table-body tr').on('click', function(e) {
+    if ($(e.target).is('a')) return;
+    if ($(e.target).closest('a') > 0) return;
+    if ($(e.target).hasClass('.badge')) return;
+    if ($(e.target).closest('.badge').length > 0) return;
+    if ($(e.target).hasClass('.btn')) return;
+    if ($(e.target).closest('.btn').length > 0) return;
+    if ($(e.target).hasClass('.custom-control')) return;
+    if ($(e.target).closest('.custom-control').length > 0) return;
+    if ($(this).hasClass('table-active')) {
+      $(this).removeClass('table-active');
+      $(this).find('.custom-control-input').prop('checked', false);
+    } else {
+      $(this).addClass('table-active');
+      $(this).find('.custom-control-input').prop('checked', true);
+    }
+    updateActionButtonsStyles();
+  });
+
   $container.find('.table-body tr a').on('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    
     var pdfPreview = '<iframe class="full" src="/viewers/pdf_viewer?file=/static/pdfs/teachers-portal-user-guide.pdf" frameborder="0" allowfullscreen></iframe>';
     var noPreview = '<p class="font-italic">Hmm... looks like this file doesn\'t have a preview that we can show you.</p>';
     $('.modal-resource-preview .modal-body .content').html(Math.round(Math.random()) ? pdfPreview : noPreview);
     $('.modal-resource-preview').modal('show');
   });
 
-  $container.find('.table-body tr').on('click', function(e) {
-    if (e.shiftKey) {
-      e.preventDefault();
-
-      if ($(this).parent().find('.table-active-first').length > 0) {
-        $(this).parent().find(':not(.table-active-first)').removeClass('table-active');
-        if ($(this).siblings('.table-active-first').index() < $(this).index()) {
-          var $nextSibling = $(this).siblings('.table-active-first').next();
-          while (($nextSibling.index() > -1) && ($nextSibling.index() <= $(this).index())) {
-            $nextSibling.addClass('table-active');
-            $nextSibling = $nextSibling.next();
-          };
-        } else {
-          var $prevSibling = $(this).siblings('.table-active-first').prev();
-          while ($prevSibling.index() >= $(this).index()) {
-            $prevSibling.addClass('table-active');
-            $prevSibling = $prevSibling.prev();
-          };
-        }
-        updateActionButtonsStyles();
-        return;
-      }
-    }
-
-    if ($(this).siblings('.table-active').length > 0) {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
-
-      if ($(this).hasClass('table-active')) {      
-        if (!$(this).hasClass('table-active-first')) {
-          $(this).addClass('table-active-first');
-        }
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
-    } else {
-      $(this).siblings('.table-active').removeClass('table-active');
-      $(this).siblings('.table-active-first').removeClass('table-active-first');
-
-      if ($(this).hasClass('table-active')) {      
-        $(this).removeClass('table-active');
-        $(this).removeClass('table-active-first');
-      } else {
-        $(this).addClass('table-active');
-        $(this).addClass('table-active-first');
-      }
-    }
-    updateActionButtonsStyles();
-  });
-
   $container.find('.table-body tr .btn').on('click', function(e) {
-    e.stopPropagation();
-
     var $model = $('.modal-resource-details');
     var $row = $(this).closest('tr');
     $model.find('.modal-title').text($row.find('td:nth-child(2)').text());
@@ -608,53 +598,31 @@ $(document).ready(function() {
     $('.modal-resource-details').modal('show');
   });
 
-  $container.find('.card-group .card').on('click', function(e) {
-    if (e.shiftKey) {
-      e.preventDefault();
 
-      if ($(this).parent().find('.card-active-first').length > 0) {
-        $(this).parent().find(':not(.card-active-first)').removeClass('card-active');
-        if ($(this).siblings('.card-active-first').index() < $(this).index()) {
-          var $nextSibling = $(this).siblings('.card-active-first').next();
-          while (($nextSibling.index() > -1) && ($nextSibling.index() <= $(this).index())) {
-            $nextSibling.addClass('card-active');
-            $nextSibling = $nextSibling.next();
-          };
-        } else {
-          var $prevSibling = $(this).siblings('.card-active-first').prev();
-          while ($prevSibling.index() >= $(this).index()) {
-            $prevSibling.addClass('card-active');
-            $prevSibling = $prevSibling.prev();
-          };
-        }
-        updateActionButtonsStyles();
-        return;
-      }
-    }
-
-    if ($(this).siblings('.card-active').length > 0) {
-      $(this).siblings('.card-active').removeClass('card-active');
-      $(this).siblings('.card-active-first').removeClass('card-active-first');
-
-      if ($(this).hasClass('card-active')) {      
-        if (!$(this).hasClass('card-active-first')) {
-          $(this).addClass('card-active-first');
-        }
-      } else {
-        $(this).addClass('card-active');
-        $(this).addClass('card-active-first');
-      }
+  $container.find('.card-group .card .custom-control-input').on('click', function(e) {
+    var $card = $(this).closest('.card');
+        
+    if ($card.hasClass('card-active')) {
+      $card.removeClass('card-active');
     } else {
-      $(this).siblings('.card-active').removeClass('card-active');
-      $(this).siblings('.card-active-first').removeClass('card-active-first');
+      $card.addClass('card-active');
+    }
+    updateActionButtonsStyles();
+  });
 
-      if ($(this).hasClass('card-active')) {      
-        $(this).removeClass('card-active');
-        $(this).removeClass('card-active-first');
-      } else {
-        $(this).addClass('card-active');
-        $(this).addClass('card-active-first');
-      }
+  $container.find('.card-group .card').on('click', function(e) {
+    if ($(e.target).is('a')) return;
+    if ($(e.target).closest('a') > 0) return;
+    if ($(e.target).hasClass('.badge')) return;
+    if ($(e.target).closest('.badge').length > 0) return;
+    if ($(e.target).hasClass('.custom-control')) return;
+    if ($(e.target).closest('.custom-control').length > 0) return;
+    if ($(this).hasClass('card-active')) {
+      $(this).removeClass('card-active');
+      $(this).find('.custom-control-input').prop('checked', false);
+    } else {
+      $(this).addClass('card-active');
+      $(this).find('.custom-control-input').prop('checked', true);
     }
     updateActionButtonsStyles();
   });

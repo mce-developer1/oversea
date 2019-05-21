@@ -33,6 +33,9 @@ a:focus {
 .btn:not(:disabled):not(.disabled):hover, .btn:not(:disabled):not(.disabled):focus, .btn:not(:disabled):not(.disabled):active:focus {
   box-shadow: none;
 }
+.btn.focus {
+  box-shadow: none;
+}
 
 .btn-primary {
   background-color: #ff6600;
@@ -268,6 +271,13 @@ a:focus {
 .dropdown.bootstrap-select .dropdown-menu .dropdown-item,
 .dropup.bootstrap-select .dropdown-menu .dropdown-item {
   border-radius: 0;
+}
+.dropdown.bootstrap-select .dropdown-menu .dropdown-item .text,
+.dropup.bootstrap-select .dropdown-menu .dropdown-item .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: calc(100vw - 4rem);
 }
 .dropdown .dropdown-menu,
 .dropup .dropdown-menu {
@@ -1352,15 +1362,12 @@ select.form-control {
   top: 100%;
   left: 1px;
   right: 1px;
-  z-index: 1000;
+  z-index: 970;
 }
 .dialog .dialog-menu.show {
   display: block;
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search {
-  max-height: calc(100vh - 11rem);
-  overflow-x: hidden;
-  overflow-y: auto;
   padding: 1rem;
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search .form-group {
@@ -1387,6 +1394,18 @@ select.form-control {
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search .form-group .btn + .btn {
   margin-left: 0.5rem !important;
+}
+.dialog .dialog-menu.form-filters {
+  max-height: calc(100vh - 10rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+@media (max-height: 575.98px) {
+  .dialog .dialog-menu.dialog-menu-search {
+    max-height: calc(100vh - 11rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
 }
 @media (min-width: 992px) {
   .dialog .dialog-menu.dialog-menu-lg {
@@ -1689,17 +1708,11 @@ select.form-control {
   font-size: 1.375rem;
 }
 
-.list-components {
-  margin-bottom: 1rem;
-}
 .list-components .component {
   background-color: #ffffff;
 }
 .list-components .component.component-active {
   background-color: #e9ecef;
-}
-.list-components .component.component-toolbar .custom-control-label {
-  padding-left: 1rem;
 }
 .list-components .component.component-section.component-section-default .section-summary .section-actions .btn-handle,
 .list-components .component.component-section.component-section-default .section-edit .section-actions .btn-handle {
@@ -1881,9 +1894,13 @@ select.form-control {
   font-weight: 500;
   margin: 0.5rem 0;
 }
+.list-components .component.component-question .question-summary .question-attributes {
+  margin: 1rem 0;
+}
 .list-components .component.component-question .question-summary .question-attributes .attribute-group .attribute-name,
 .list-components .component.component-question .question-summary .question-attributes .attribute-group .attribute-value {
   color: #6c757d;
+  font-size: 0.875rem;
 }
 .list-components .component.component-question .question-summary .question-score {
   position: absolute;
@@ -1891,8 +1908,9 @@ select.form-control {
   right: 1.5rem;
 }
 .list-components .component.component-question .question-summary .question-modified-date {
+  font-size: 0.875rem;
   position: absolute;
-  top: 1rem;
+  top: 1.25rem;
   right: 1.5rem;
 }
 .list-components .component.component-question .question-create,
@@ -2268,7 +2286,7 @@ select.form-control {
 }
 .app-header .navbar-nav .btn-notifications .badge {
   position: absolute;
-  top: 0.25rem;
+  top: 0;
   right: 0.25rem;
 }
 .app-header .dropdown.dropdown-more .dropdown-menu {
@@ -3128,14 +3146,6 @@ select.form-control {
   .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-divider {
     display: none;
   }
-  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.dropdown {
-    order: 1;
-  }
-  .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .btn-share,
-.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .btn-edit,
-.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item .btn-assign {
-    display: none;
-  }
   .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item-drawer {
     display: none;
   }
@@ -3229,6 +3239,226 @@ select.form-control {
     top: 4rem;
   }
   .app-content.page-shared .article-tests .article-content .article-body .table-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+    z-index: 970;
+  }
+}
+.app-content.page-shared .article-questions {
+  padding: 0 1.5rem;
+}
+.app-content.page-shared .article-questions .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+  font-size: 1.25rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+  font-size: 1.25rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.25rem;
+  width: 12rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light:hover .fas {
+  color: #212529;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light .fas {
+  color: #495057;
+  font-size: 1.5rem;
+}
+.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-shared .article-questions .article-content .article-sidebar {
+  margin: 0;
+}
+.app-content.page-shared .article-questions .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-shared .article-questions .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-shared .article-questions .article-content .article-body .navbar .navbar-nav .form-add-resource .form-label {
+  margin-right: 0.5rem;
+  margin-bottom: 0;
+}
+.app-content.page-shared .article-questions .article-content .article-body .navbar .navbar-nav .form-add-resource .btn-primary {
+  margin-left: 0.5rem;
+}
+.app-content.page-shared .article-questions .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-shared .article-questions .article-content .article-body .list-components .component {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.app-content.page-shared .article-questions .article-content .article-body .list-components .component:not(.component-toolbar):not(.component-active):hover {
+  background-color: #f8f9fa;
+}
+.app-content.page-shared .article-questions .article-content .article-body .list-components .component.component-toolbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  border-bottom: 1px solid #ced4da;
+  padding: 0.75rem 1rem;
+}
+.app-content.page-shared .article-questions .article-content .article-body .list-components .component.component-toolbar .custom-checkbox .custom-control-label {
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
+.app-content.page-shared .article-questions .article-content .article-body .list-components .component.component-question > .custom-control {
+  margin: 1rem;
+}
+.app-content.page-shared .article-questions .article-content .article-body .list-components .component + .component {
+  border-top: 1px solid #ced4da;
+}
+.app-content.page-shared .article-questions .article-content .article-body .list-components .component .question-summary {
+  padding: 1rem;
+}
+@media (max-width: 991.98px) {
+  .app-content.page-shared .article-questions .article-header {
+    margin: 0 -0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 980;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav.nav-main {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-divider {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item-drawer {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
+  .app-content.page-shared .article-questions .article-content {
+    margin: 0 -0.5rem;
+  }
+  .app-content.page-shared .article-questions .article-content .article-sidebar {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-shared .article-questions .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 980;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item-submodule {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
+  .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .input-group .form-control {
+    width: 24rem;
+  }
+  .app-content.page-shared .article-questions .article-content .article-sidebar {
+    height: calc(100vh - 13rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 4rem;
+  }
+  .app-content.page-shared .article-questions .article-content .article-body .list-components .component.component-toolbar {
     position: -webkit-sticky;
     position: sticky;
     top: 4rem;
@@ -4292,6 +4522,50 @@ select.form-control {
   user-select: none;
   margin-bottom: 0;
 }
+.app-content.page-resources .article-resources .article-content .article-body .table-head:not(.table-shared-with-me) colgroup:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body:not(.table-shared-with-me) colgroup:nth-child(7) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head:not(.table-shared-with-me) th:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-head:not(.table-shared-with-me) td:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body:not(.table-shared-with-me) th:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body:not(.table-shared-with-me) td:nth-child(7) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head:not(.table-search-results) colgroup:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-body:not(.table-search-results) colgroup:nth-child(8) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head:not(.table-search-results) th:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-head:not(.table-search-results) td:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-body:not(.table-search-results) th:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-body:not(.table-search-results) td:nth-child(8) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-shared-with-me colgroup:nth-child(6), .app-content.page-resources .article-resources .article-content .article-body .table-head.table-search-results colgroup:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-shared-with-me colgroup:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results colgroup:nth-child(6) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-shared-with-me th:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-shared-with-me td:nth-child(6), .app-content.page-resources .article-resources .article-content .article-body .table-head.table-search-results th:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-search-results td:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-shared-with-me th:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-shared-with-me td:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results th:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results td:nth-child(6) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-search-results colgroup:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results colgroup:nth-child(7) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-search-results th:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-search-results td:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results th:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results td:nth-child(7) {
+  display: none;
+}
 .app-content.page-resources .article-resources .article-content .article-body .table-head th .btn,
 .app-content.page-resources .article-resources .article-content .article-body .table-head td .btn,
 .app-content.page-resources .article-resources .article-content .article-body .table-body th .btn,
@@ -4362,10 +4636,43 @@ select.form-control {
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .card-link:hover {
   text-decoration: underline;
 }
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 0.5rem;
+}
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .custom-checkbox {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+}
+@media (max-width: 1199.98px) {
+  .app-content.page-resources .article-resources .article-content .article-body .table-head colgroup:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-head colgroup:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-head colgroup:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(8) {
+    display: none;
+  }
+  .app-content.page-resources .article-resources .article-content .article-body .table-head tr th:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-head tr th:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-head tr th:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-head tr td:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-head tr td:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-head tr td:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-body tr th:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body tr th:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body tr th:nth-child(8),
+.app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(6),
+.app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(7),
+.app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(8) {
+    display: none;
+  }
+  .app-content.page-resources .article-resources .article-content .article-body .card-group .card {
+    max-width: calc(50vw - 1.5rem);
+    min-width: calc(50vw - 1.5rem);
+  }
 }
 @media (max-width: 991.98px) {
   .app-content.page-resources .article-resources .article-header {
@@ -4449,19 +4756,13 @@ select.form-control {
     width: 14rem;
   }
   .app-content.page-resources .article-resources .article-content .article-body .table-head colgroup:nth-child(5),
-.app-content.page-resources .article-resources .article-content .article-body .table-head colgroup:nth-child(6),
-.app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(5),
-.app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(6) {
+.app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(5) {
     display: none;
   }
   .app-content.page-resources .article-resources .article-content .article-body .table-head tr th:nth-child(5),
-.app-content.page-resources .article-resources .article-content .article-body .table-head tr th:nth-child(6),
 .app-content.page-resources .article-resources .article-content .article-body .table-head tr td:nth-child(5),
-.app-content.page-resources .article-resources .article-content .article-body .table-head tr td:nth-child(6),
 .app-content.page-resources .article-resources .article-content .article-body .table-body tr th:nth-child(5),
-.app-content.page-resources .article-resources .article-content .article-body .table-body tr th:nth-child(6),
-.app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(5),
-.app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(6) {
+.app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(5) {
     display: none;
   }
   .app-content.page-resources .article-resources .article-content .article-body .card-group .card {
@@ -4501,20 +4802,22 @@ select.form-control {
   .app-content.page-resources .article-resources .article-content .article-body .navbar .navbar-text {
     display: none;
   }
-  .app-content.page-resources .article-resources .article-content .article-body .table-head {
+}
+@media (min-width: 1200px) {
+  .app-content.page-resources .article-resources .article-content .table-head {
     position: -webkit-sticky;
     position: sticky;
     top: 10rem;
     z-index: 970;
   }
-  .app-content.page-resources .article-resources .article-content .article-body .table-head colgroup:nth-child(7),
-.app-content.page-resources .article-resources .article-content .article-body .table-body colgroup:nth-child(7) {
+  .app-content.page-resources .article-resources .article-content .table-head colgroup:nth-child(9),
+.app-content.page-resources .article-resources .article-content .table-body colgroup:nth-child(9) {
     display: none;
   }
-  .app-content.page-resources .article-resources .article-content .article-body .table-head th:nth-child(7),
-.app-content.page-resources .article-resources .article-content .article-body .table-head td:nth-child(7),
-.app-content.page-resources .article-resources .article-content .article-body .table-body th:nth-child(7),
-.app-content.page-resources .article-resources .article-content .article-body .table-body td:nth-child(7) {
+  .app-content.page-resources .article-resources .article-content .table-head th:nth-child(9),
+.app-content.page-resources .article-resources .article-content .table-head td:nth-child(9),
+.app-content.page-resources .article-resources .article-content .table-body th:nth-child(9),
+.app-content.page-resources .article-resources .article-content .table-body td:nth-child(9) {
     display: none;
   }
 }
@@ -4528,6 +4831,15 @@ select.form-control {
   -ms-flex-direction: row;
   flex-direction: row;
   margin-bottom: 0;
+}
+.modal-resource-folder-create .modal-dialog .modal-body .form-create-folder .form-group .form-group,
+.modal-resource-folder-create .modal-dialog .modal-body .form-edit-folder .form-group .form-group,
+.modal-resource-folder-edit .modal-dialog .modal-body .form-create-folder .form-group .form-group,
+.modal-resource-folder-edit .modal-dialog .modal-body .form-edit-folder .form-group .form-group {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .modal-resource-folder-create .modal-dialog .modal-body .form-create-folder .form-group .form-label,
 .modal-resource-folder-create .modal-dialog .modal-body .form-edit-folder .form-group .form-label,
@@ -4744,7 +5056,19 @@ select.form-control {
   color: #212529;
   word-break: break-word;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1359.98px) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(5) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(5) {
+    display: none;
+  }
+}
+@media (max-width: 1199.98px) {
   .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(3),
 .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(4),
 .app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(3),
@@ -4809,14 +5133,14 @@ select.form-control {
   }
 }
 @media (max-width: 768px) {
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(5) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(7) {
     display: none;
   }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(5) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(7) {
     display: none;
   }
 }
@@ -4825,19 +5149,13 @@ select.form-control {
     width: 14rem;
   }
   .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(7),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(7) {
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(6) {
     display: none;
   }
   .app-content.page-lessons .article-lessons .article-content .article-body .table-head tr th:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head tr th:nth-child(7),
 .app-content.page-lessons .article-lessons .article-content .article-body .table-head tr td:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head tr td:nth-child(7),
 .app-content.page-lessons .article-lessons .article-content .article-body .table-body tr th:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body tr th:nth-child(7),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body tr td:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body tr td:nth-child(7) {
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body tr td:nth-child(6) {
     display: none;
   }
 }
@@ -4876,7 +5194,7 @@ select.form-control {
     z-index: 970;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1360px) {
   .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(8),
 .app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(8) {
     display: none;
@@ -5388,7 +5706,19 @@ select.form-control {
   color: #212529;
   word-break: break-word;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1359.98px) {
+  .app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(5),
+.app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(5) {
+    display: none;
+  }
+  .app-content.page-tests .article-tests .article-content .article-body .table-head th:nth-child(5),
+.app-content.page-tests .article-tests .article-content .article-body .table-head td:nth-child(5),
+.app-content.page-tests .article-tests .article-content .article-body .table-body th:nth-child(5),
+.app-content.page-tests .article-tests .article-content .article-body .table-body td:nth-child(5) {
+    display: none;
+  }
+}
+@media (max-width: 1198.98px) {
   .app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(3),
 .app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(4),
 .app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(3),
@@ -5453,14 +5783,14 @@ select.form-control {
   }
 }
 @media (max-width: 768px) {
-  .app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(5),
-.app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(5) {
+  .app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(7),
+.app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(7) {
     display: none;
   }
-  .app-content.page-tests .article-tests .article-content .article-body .table-head th:nth-child(5),
-.app-content.page-tests .article-tests .article-content .article-body .table-head td:nth-child(5),
-.app-content.page-tests .article-tests .article-content .article-body .table-body th:nth-child(5),
-.app-content.page-tests .article-tests .article-content .article-body .table-body td:nth-child(5) {
+  .app-content.page-tests .article-tests .article-content .article-body .table-head th:nth-child(7),
+.app-content.page-tests .article-tests .article-content .article-body .table-head td:nth-child(7),
+.app-content.page-tests .article-tests .article-content .article-body .table-body th:nth-child(7),
+.app-content.page-tests .article-tests .article-content .article-body .table-body td:nth-child(7) {
     display: none;
   }
 }
@@ -5469,19 +5799,13 @@ select.form-control {
     width: 14rem;
   }
   .app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(6),
-.app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(7),
-.app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(6),
-.app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(7) {
+.app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(6) {
     display: none;
   }
   .app-content.page-tests .article-tests .article-content .article-body .table-head tr th:nth-child(6),
-.app-content.page-tests .article-tests .article-content .article-body .table-head tr th:nth-child(7),
 .app-content.page-tests .article-tests .article-content .article-body .table-head tr td:nth-child(6),
-.app-content.page-tests .article-tests .article-content .article-body .table-head tr td:nth-child(7),
 .app-content.page-tests .article-tests .article-content .article-body .table-body tr th:nth-child(6),
-.app-content.page-tests .article-tests .article-content .article-body .table-body tr th:nth-child(7),
-.app-content.page-tests .article-tests .article-content .article-body .table-body tr td:nth-child(6),
-.app-content.page-tests .article-tests .article-content .article-body .table-body tr td:nth-child(7) {
+.app-content.page-tests .article-tests .article-content .article-body .table-body tr td:nth-child(6) {
     display: none;
   }
 }
@@ -5520,7 +5844,7 @@ select.form-control {
     z-index: 970;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1360px) {
   .app-content.page-tests .article-tests .article-content .article-body .table-head colgroup:nth-child(8),
 .app-content.page-tests .article-tests .article-content .article-body .table-body colgroup:nth-child(8) {
     display: none;
@@ -5624,6 +5948,9 @@ select.form-control {
 .app-content.page-tests .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-primary,
 .app-content.page-tests .article-create-test .article-content .article-body .article-test-components .navbar .navbar-nav .nav-item .btn-outline-secondary {
   margin-right: 0.5rem;
+}
+.app-content.page-tests .article-create-test .article-content .article-body .article-test-components .list-components {
+  margin-bottom: 1rem;
 }
 @media (max-width: 991.98px) {
   .app-content.page-tests .article-create-test .article-header {
@@ -5808,13 +6135,26 @@ select.form-control {
   background-color: #f8f9fa;
 }
 .app-content.page-questions .article-questions .article-content .article-body .list-components .component.component-toolbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   border-bottom: 1px solid #ced4da;
+  padding: 0.75rem 1rem;
+}
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component.component-toolbar .custom-checkbox .custom-control-label {
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
+.app-content.page-questions .article-questions .article-content .article-body .list-components .component.component-question > .custom-control {
+  margin: 1rem;
 }
 .app-content.page-questions .article-questions .article-content .article-body .list-components .component + .component {
   border-top: 1px solid #ced4da;
-}
-.app-content.page-questions .article-questions .article-content .article-body .list-components .component > .custom-control {
-  margin: 1rem 0 1rem 1rem;
 }
 .app-content.page-questions .article-questions .article-content .article-body .list-components .component .question-summary {
   padding: 1rem;
@@ -6575,14 +6915,20 @@ select.form-control {
   }
 }
 
-.app-content.page-administration .article-manage-form-class {
+.app-content.page-administration .article-manage-form-class,
+.app-content.page-administration .article-login-as-student,
+.app-content.page-administration .article-login-as-teacher {
   padding: 0 1.5rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header {
+.app-content.page-administration .article-manage-form-class .article-header,
+.app-content.page-administration .article-login-as-student .article-header,
+.app-content.page-administration .article-login-as-teacher .article-header {
   height: 4rem;
   max-height: 4rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar {
+.app-content.page-administration .article-manage-form-class .article-header .navbar,
+.app-content.page-administration .article-login-as-student .article-header .navbar,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -6601,20 +6947,28 @@ select.form-control {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav:first-child {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav:first-child,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav:first-child,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
   width: 20rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav.nav-main {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -6622,89 +6976,169 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
   padding: 0.25rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
   width: 3rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
   font-size: 1.25rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item .btn-light {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 16rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light:hover .fas {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light:hover .fas,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light:hover .fas,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light:hover .fas {
   color: #212529;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light.btn-more {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light .fas {
   color: #495057;
   font-size: 1.5rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body {
-  margin: 0 auto;
-  max-width: 64rem;
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar {
+  margin: 0;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar {
+.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar,
+.app-content.page-administration .article-login-as-student .article-content .article-body .navbar,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 0.75rem 0;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-primary {
+.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-administration .article-login-as-student .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
-.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-administration .article-login-as-student .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
   margin-left: 0.5rem;
 }
 @media (max-width: 991.98px) {
-  .app-content.page-administration .article-manage-form-class .article-header {
-    margin: 0 -0.5rem;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 5rem;
-    z-index: 980;
-  }
-  .app-content.page-administration .article-manage-form-class .article-header .navbar {
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-  }
-  .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item-drawer {
+  .app-content.page-administration .article-manage-form-class .article-header,
+.app-content.page-administration .article-login-as-student .article-header,
+.app-content.page-administration .article-login-as-teacher .article-header {
     display: none;
   }
-  .app-content.page-administration .article-manage-form-class .article-content {
+  .app-content.page-administration .article-manage-form-class .article-content,
+.app-content.page-administration .article-login-as-student .article-content,
+.app-content.page-administration .article-login-as-teacher .article-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
     margin: 0 -0.5rem;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar {
-    display: none;
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    margin: 0 -1rem;
+    width: auto;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body {
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar.dialog .form-filters,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar.dialog .form-filters {
+    margin: 0 0.5rem;
+    padding: 1rem;
+    width: calc(100% - 1rem);
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters .form-group,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar.dialog .form-filters .form-group,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar.dialog .form-filters .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar.dialog .form-filters .form-group .form-label {
+    min-width: 8rem;
+    width: 8rem;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    height: 3rem;
+    padding: 0;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar .btn-light,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar .btn-light,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar .btn-light {
+    padding: 0.5rem 1rem;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar .btn-light .fa-filter,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar .btn-light .fa-filter,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar .btn-light .fa-filter {
+    font-size: 1.25rem;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body,
+.app-content.page-administration .article-login-as-student .article-content .article-body,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body {
     margin: 0;
   }
 }
 @media (min-width: 992px) {
-  .app-content.page-administration .article-manage-form-class .article-header {
+  .app-content.page-administration .article-manage-form-class .article-header,
+.app-content.page-administration .article-login-as-student .article-header,
+.app-content.page-administration .article-login-as-teacher .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
     z-index: 980;
   }
-  .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item-submodule {
+  .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar {
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar {
     height: calc(100vh - 13rem);
     overflow-x: hidden;
     overflow-y: auto;
@@ -6713,16 +7147,27 @@ select.form-control {
     position: sticky;
     top: 10rem;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead {
+  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar {
+    display: none;
+  }
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
+.app-content.page-administration .article-login-as-student .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body .dataTables_wrapper .dataTables_scrollHead {
     position: -webkit-sticky !important;
     position: sticky !important;
     top: 10rem !important;
     z-index: 970 !important;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner {
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
+.app-content.page-administration .article-login-as-student .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner {
     position: relative !important;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTable {
+  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTable,
+.app-content.page-administration .article-login-as-student .article-content .article-body .dataTables_wrapper .dataTable,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body .dataTables_wrapper .dataTable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

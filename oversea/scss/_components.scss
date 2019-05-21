@@ -764,7 +764,7 @@ select.form-control {
     top: 100%;
     left: 1px;
     right: 1px;
-    z-index: 1000;
+    z-index: 970;
 
     &.show {
       display: block;
@@ -772,9 +772,6 @@ select.form-control {
 
     &.dialog-menu-search {
       .form-advanced-search {
-        max-height: calc(100vh - 11rem);
-        overflow-x: hidden;
-        overflow-y: auto;
         padding: 1rem;
 
         .form-group {
@@ -802,6 +799,22 @@ select.form-control {
             }
           }
         }
+      }
+    }
+
+    &.form-filters {
+      max-height: calc(100vh - 10rem);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+
+  @media (max-height: 575.98px) {
+    .dialog-menu {
+      &.dialog-menu-search {
+        max-height: calc(100vh - 11rem);
+        overflow-x: hidden;
+        overflow-y: auto;
       }
     }
   }
@@ -1190,19 +1203,11 @@ select.form-control {
 }
 
 .list-components {
-  margin-bottom: 1rem;
-
   .component {
     background-color: $white;
 
     &.component-active {
       background-color: $gray-200;
-    }
-
-    &.component-toolbar {
-      .custom-control-label {
-        padding-left: 1rem;
-      }
     }
 
     &.component-section {
@@ -1401,10 +1406,13 @@ select.form-control {
         }
 
         .question-attributes {
+          margin: 1rem 0;
+
           .attribute-group {
             .attribute-name,
             .attribute-value {
               color: $gray-600;
+              font-size: .875rem;
             }
           }
         }
@@ -1416,8 +1424,9 @@ select.form-control {
         }
 
         .question-modified-date {
+          font-size: .875rem;
           position: absolute;
-          top: 1rem;
+          top: 1.25rem;
           right: 1.5rem;
         }
       }

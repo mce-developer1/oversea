@@ -111,6 +111,51 @@
             @include user-select(none);
             margin-bottom: 0;
 
+            &:not(.table-shared-with-me) {
+              colgroup:nth-child(7) {
+                display: none;
+              }
+
+              th:nth-child(7),
+              td:nth-child(7) {
+                display: none;
+              }
+            }
+
+            &:not(.table-search-results) {
+              colgroup:nth-child(8) {
+                display: none;
+              }
+
+              th:nth-child(8),
+              td:nth-child(8) {
+                display: none;
+              }
+            }
+
+            &.table-shared-with-me,
+            &.table-search-results {
+              colgroup:nth-child(6) {
+                display: none;
+              }
+
+              th:nth-child(6),
+              td:nth-child(6) {
+                display: none;
+              }
+            }
+
+            &.table-search-results {
+              colgroup:nth-child(7) {
+                display: none;
+              }
+
+              th:nth-child(7),
+              td:nth-child(7) {
+                display: none;
+              }
+            }
+
             th,
             td {
               .btn {
@@ -176,6 +221,12 @@
                   }
                 }
 
+                .badge {
+                  position: absolute;
+                  bottom: 1rem;
+                  right: .5rem;
+                }
+
                 .custom-checkbox {
                   position: absolute;
                   top: .5rem;
@@ -183,6 +234,39 @@
                 }
               }
             }    
+          }
+        }
+      }
+
+      @media (max-width: 1199.98px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              colgroup:nth-child(6),
+              colgroup:nth-child(7),
+              colgroup:nth-child(8) {
+                display: none;
+              }
+
+              tr {
+                th:nth-child(6),
+                th:nth-child(7),
+                th:nth-child(8),
+                td:nth-child(6),
+                td:nth-child(7),
+                td:nth-child(8) {
+                  display: none;
+                }
+              }
+            }
+
+            .card-group {
+              .card {
+                max-width: calc(50vw - 1.5rem);
+                min-width: calc(50vw - 1.5rem);
+              }
+            }
           }
         }
       }
@@ -306,16 +390,13 @@
           .article-body {
             .table-head,
             .table-body {
-              colgroup:nth-child(5),
-              colgroup:nth-child(6) {
+              colgroup:nth-child(5) {
                 display: none;
               }
 
               tr {
                 th:nth-child(5),
-                th:nth-child(6),
-                td:nth-child(5),
-                td:nth-child(6) {
+                td:nth-child(5) {
                   display: none;
                 }
               }
@@ -382,25 +463,29 @@
               .navbar-text {
                 display: none;
               }
+            }            
+          }
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .article-content {
+          .table-head {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10rem;
+            z-index: 970;
+          }
+
+          .table-head,
+          .table-body {
+            colgroup:nth-child(9) {
+              display: none;
             }
 
-            .table-head {
-              position: -webkit-sticky;
-              position: sticky;
-              top: 10rem;
-              z-index: 970;
-            }
-
-            .table-head,
-            .table-body {
-              colgroup:nth-child(7) {
-                display: none;
-              }
-
-              th:nth-child(7),
-              td:nth-child(7) {
-                display: none;
-              }
+            th:nth-child(9),
+            td:nth-child(9) {
+              display: none;
             }
           }
         }
@@ -418,6 +503,11 @@
         .form-group {
           @include display-flex(row);
           margin-bottom: 0;
+
+          .form-group {
+            @include flex-grow(1);
+            @include flex-wrap(wrap);
+          }
 
           .form-label {
             margin-right: 1rem;

@@ -113,7 +113,8 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '[data-toggle="dialog"]', function(e) {
-    var dialog = $(e.target).closest('.dialog');
+    var target = $(this).attr('data-target');
+    var dialog = target ? target : $(e.target).closest('.dialog');
 
     if (dialog && !$(dialog).hasClass('open')) {
       setTimeout(function() {

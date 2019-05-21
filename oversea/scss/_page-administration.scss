@@ -1,6 +1,8 @@
 .app-content {
   &.page-administration {
-    .article-manage-form-class {
+    .article-manage-form-class,
+    .article-login-as-student,
+    .article-login-as-teacher {
       padding: 0 1.5rem;
 
       .article-header {
@@ -91,10 +93,11 @@
       }
 
       .article-content {
-        .article-body {
-          margin: 0 auto;
-          max-width: 64rem;
+        .article-sidebar {
+          margin: 0;          
+        }
 
+        .article-body {
           .navbar {
             @include justify-content(space-between);
             padding: .75rem 0;
@@ -114,30 +117,53 @@
 
       @media (max-width: 991.98px) {
         .article-header {
-          margin: 0 -.5rem;
-          position: -webkit-sticky;
-          position: sticky;
-          top: 5rem;
-          z-index: 980;
-
-          .navbar {
-            @include justify-content(space-between);
-
-            .navbar-nav {
-              .nav-item-drawer {
-                display: none;
-              }
-            }
-          }
+          display: none;
         }
-
+  
         .article-content {
+          @include display-flex(column);
           margin: 0 -.5rem;
 
           .article-sidebar {
-            display: none;
-          }
+            @include flex-grow(1);
+            background-color: $gray-200;
+            border-color: $gray-200;
+            margin: 0 -1rem;
+            width: auto;
 
+            &.dialog {
+              .form-filters {
+                margin: 0 .5rem;
+                padding: 1rem;
+                width: calc(100% - 1rem);
+
+                .form-group {
+                  @include display-flex(row);
+                  @include align-items(flex-start);
+    
+                  .form-label {
+                    min-width: 8rem;
+                    width: 8rem;
+                  }
+                }
+              }
+            }
+
+            .navbar {
+              @include justify-content(flex-end);
+              height: 3rem;
+              padding: 0;
+  
+              .btn-light {
+                padding: .5rem 1rem;
+  
+                .fa-filter {
+                  font-size: 1.25rem;
+                }
+              }
+            }
+          }
+  
           .article-body {
             margin: 0;
           }
@@ -150,7 +176,7 @@
           position: sticky;
           top: 6rem;
           z-index: 980;
-
+  
           .navbar {
             .navbar-nav {
               .nav-item-submodule {
@@ -159,7 +185,7 @@
             }
           }
         }
-
+  
         .article-content {
           .article-sidebar {
             height: calc(100vh - 13rem);
@@ -169,8 +195,12 @@
             position: -webkit-sticky;
             position: sticky;
             top: 10rem;
-          }
 
+            .navbar {
+              display: none;
+            }
+          }
+  
           .article-body {
             .dataTables_wrapper {
               .dataTables_scrollHead {
@@ -178,12 +208,12 @@
                 position: sticky !important;
                 top: 10rem !important;
                 z-index: 970 !important;
-
+  
                 .dataTables_scrollHeadInner {
                   position: relative !important;
                 }
               }
-
+  
               .dataTable {
                 @include user-select(none);
               }

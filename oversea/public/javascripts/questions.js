@@ -151,54 +151,34 @@ $(document).ready(function() {
     $('.modal-test-delete-confirmation').modal('show');
   });
 
-  $container.find('.list-components .component-question').on('click', function(e) {
-    if ($(e.target).hasClass('nav-link')) return;
-    if (e.shiftKey) {
+  $container.find('.list-components .component-question .custom-control-input').on('click', function(e) {
+    if ($(this).closest('.question-checkbox').length === 0) {
       e.preventDefault();
-
-      if ($(this).parent().find('.component-active-first').length > 0) {
-        $(this).parent().find(':not(.component-active-first)').removeClass('component-active');
-        if ($(this).siblings('.component-active-first').index() < $(this).index()) {
-          var $nextSibling = $(this).siblings('.component-active-first').next();
-          while (($nextSibling.index() > -1) && ($nextSibling.index() <= $(this).index())) {
-            $nextSibling.addClass('component-active');
-            $nextSibling = $nextSibling.next();
-          };
-        } else {
-          var $prevSibling = $(this).siblings('.component-active-first').prev();
-          while ($prevSibling.index() >= $(this).index()) {
-            $prevSibling.addClass('component-active');
-            $prevSibling = $prevSibling.prev();
-          };
-        }
-        updateActionButtonsStyles();
-        return;
-      }
+      e.stopPropagation();
+      return;
     }
 
-    if ($(this).siblings('.component-active').length > 0) {
-      $(this).siblings('.component-active').removeClass('component-active');
-      $(this).siblings('.component-active-first').removeClass('component-active-first');
-
-      if ($(this).hasClass('component-active')) {      
-        if (!$(this).hasClass('component-active-first')) {
-          $(this).addClass('component-active-first');
-        }
-      } else {
-        $(this).addClass('component-active');
-        $(this).addClass('component-active-first');
-      }
+    var $component = $(this).closest('.component-question');
+        
+    if ($component.hasClass('component-active')) {
+      $component.removeClass('component-active');
     } else {
-      $(this).siblings('.component-active').removeClass('component-active');
-      $(this).siblings('.component-active-first').removeClass('component-active-first');
+      $component.addClass('component-active');
+    }
+    updateActionButtonsStyles();
+  });
 
-      if ($(this).hasClass('component-active')) {      
-        $(this).removeClass('component-active');
-        $(this).removeClass('component-active-first');
-      } else {
-        $(this).addClass('component-active');
-        $(this).addClass('component-active-first');
-      }
+  $container.find('.list-components .component-question').on('click', function(e) {
+    if ($(e.target).hasClass('nav-link')) return;
+    if ($(e.target).closest('.nav-link').length > 0) return;
+    if ($(e.target).hasClass('custom-control')) return;
+    if ($(e.target).closest('.custom-control').length > 0) return;
+    if ($(this).hasClass('component-active')) {
+      $(this).removeClass('component-active');
+      $(this).find('.question-checkbox .custom-control-input').prop('checked', false);
+    } else {
+      $(this).addClass('component-active');
+      $(this).find('.question-checkbox .custom-control-input').prop('checked', true);
     }
     updateActionButtonsStyles();
   });

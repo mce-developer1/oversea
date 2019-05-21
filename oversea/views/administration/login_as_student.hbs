@@ -1,7 +1,7 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-manage-form-class no-sidebar">
+      <div class="article article-login-as-student">
         <div class="article-header">
           <nav class="navbar navbar-expand">
             <ul class="navbar-nav">
@@ -9,214 +9,114 @@
                 <button class="btn btn-light" type="button">
                   <i class="fas fa-users-cog"></i>
                 </button>
-                <span class="item-text text-truncate">Manage Form Class</span>
-              </li>
-              <li class="nav-item nav-item-submodule dropdown">
-                <span class="item-text text-truncate">Form Classes</span>
+                <span class="item-text text-truncate">Login to Student Account</span>
               </li>
             </ul>
           </nav>
         </div>
         <div class="article-content">
+          <div class="article-sidebar">
+            <div class="navbar navbar-expand">
+              <button class="btn btn-light btn-dialog" type="button" data-toggle="dialog">
+                <i class="fas fa-filter"></i>
+              </button>
+            </div>
+            <form class="form-filters">
+              <div class="form-group">
+                <label class="form-label" for="selGrade">Grade</label>
+                <select class="form-control selectpicker" id="selGrade" data-container=".article-sidebar" data-dropdown-align-right="true">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="selClass">Class</label>
+                <select class="form-control selectpicker" id="selClass" data-container=".article-sidebar" data-dropdown-align-right="true">
+                  <option>P1-EN</option>
+                  <option>P1-HA</option>
+                </select>
+              </div>
+            </form>
+          </div>
           <div class="article-body">
             <nav class="navbar navbar-expand">
-              <div class="navbar-text">&nbsp;</div>
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <button class="btn btn-primary btn-create" type="button">
-                    <i class="fas fa-plus"></i> New
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <button class="btn btn-outline-secondary btn-edit d-none" type="button" title="Edit">
-                    <i class="fas fa-edit"></i> Edit
-                  </button>
-                </li>
-                <li class="nav-item">
-                  <button class="btn btn-outline-secondary btn-delete d-none" type="button" title="Delete">
-                    <i class="fas fa-trash"></i> Delete
-                  </button>
-                </li>
-              </ul>
+              <div class="navbar-text">8 records found</div>
             </nav>
             <table class="table" style="width: 100%;">
               <thead>
                 <tr>
-                  <th>&nbsp;</th>
                   <th>Name</th>
-                  <th>Grade</th>
-                  <th>Form Teacher</th>
-                  <th>Assistant Teacher</th>
+                  <th>Login ID</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>                
                 <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item0" name="group">
-                      <label class="custom-control-label" for="item0"></label>
-                    </div>
-                  </td>
-                  <td>P1-EA</td>
-                  <td>1</td>
-                  <td>Derrick Chua</td>
                   <td>Aaron Tan</td>
+                  <td>aron</td>
+                  <td>
+                    <button class="btn btn-light" type="button" title="Login">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                  </td>
                 </tr>
                 <tr>
+                  <td>Arya Suman</td>
+                  <td>arya</td>
                   <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item1" name="group">
-                      <label class="custom-control-label" for="item1"></label>
-                    </div>
+                    <button class="btn btn-light" type="button" title="Login">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
                   </td>
-                  <td>P1-HA</td>
-                  <td>1</td>
-                  <td>Derrick Chua</td>
-                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
+                  <td>Ashar Ahmad</td>
+                  <td>ashar</td>
                   <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item2" name="group">
-                      <label class="custom-control-label" for="item2"></label>
-                    </div>
+                    <button class="btn btn-light" type="button" title="Login">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
                   </td>
-                  <td>P1-MA</td>
-                  <td>1</td>
-                  <td>Derrick Chua</td>
-                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
+                  <td>Chua Chin Hui</td>
+                  <td>chinhui</td>
                   <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item3" name="group">
-                      <label class="custom-control-label" for="item3"></label>
-                    </div>
+                    <button class="btn btn-light" type="button" title="Login">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
                   </td>
-                  <td>P1-PA</td>
-                  <td>1</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
                 </tr>
                 <tr>
+                  <td>Derrick Lee</td>
+                  <td>derrick</td>
                   <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item4" name="group">
-                      <label class="custom-control-label" for="item4"></label>
-                    </div>
+                    <button class="btn btn-light" type="button" title="Login">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
                   </td>
-                  <td>P1-SA</td>
-                  <td>1</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
                 </tr>
                 <tr>
+                  <td>Nurulhuda bte Sazali</td>
+                  <td>sazali</td>
                   <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item5" name="group">
-                      <label class="custom-control-label" for="item5"></label>
-                    </div>
+                    <button class="btn btn-light" type="button" title="Login">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
                   </td>
-                  <td>P1-TA</td>
-                  <td>1</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
                 </tr>
                 <tr>
+                  <td>Siow Poh Piah Irene</td>
+                  <td>irene</td>
                   <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item6" name="group">
-                      <label class="custom-control-label" for="item6"></label>
-                    </div>
+                    <button class="btn btn-light" type="button" title="Login">
+                      <i class="fas fa-sign-in-alt"></i>
+                    </button>
                   </td>
-                  <td>P1-UA</td>
-                  <td>1</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item7" name="group">
-                      <label class="custom-control-label" for="item7"></label>
-                    </div>
-                  </td>
-                  <td>P2-EA</td>
-                  <td>2</td>
-                  <td>Derrick Chua</td>
-                  <td>Aaron Tan</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item8" name="group">
-                      <label class="custom-control-label" for="item8"></label>
-                    </div>
-                  </td>
-                  <td>P2-HA</td>
-                  <td>2</td>
-                  <td>Derrick Chua</td>
-                  <td>Aaron Tan</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item9" name="group">
-                      <label class="custom-control-label" for="item9"></label>
-                    </div>
-                  </td>
-                  <td>P2-MA</td>
-                  <td>2</td>
-                  <td>Derrick Chua</td>
-                  <td>Aaron Tan</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item10" name="group">
-                      <label class="custom-control-label" for="item10"></label>
-                    </div>
-                  </td>
-                  <td>P2-PA</td>
-                  <td>2</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item11" name="group">
-                      <label class="custom-control-label" for="item11"></label>
-                    </div>
-                  </td>
-                  <td>P2-SA</td>
-                  <td>2</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item12" name="group">
-                      <label class="custom-control-label" for="item12"></label>
-                    </div>
-                  </td>
-                  <td>P2-TA</td>
-                  <td>2</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item13" name="group">
-                      <label class="custom-control-label" for="item13"></label>
-                    </div>
-                  </td>
-                  <td>P2-UA</td>
-                  <td>2</td>
-                  <td>Ernest  Goh</td>
-                  <td>Gary Lim</td>
                 </tr>
               </tbody>
             </table>
