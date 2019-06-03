@@ -94,7 +94,7 @@ $(document).ready(function() {
 
       if (search === 'empty') {
         $container.find('.article-body .empty-state').removeClass('d-none');
-      } else {      
+      } else {
         $container.find('.article-body .table-head').removeClass('d-none');
         $container.find('.article-body .table-body').removeClass('d-none');
         $container.find('.article-body .table-head').addClass('table-search-results');
@@ -159,8 +159,8 @@ $(document).ready(function() {
   }]);
 
   $container.find('.navbar-nav:not(.nav-main) .btn-search').on('click', function(e) {
-    $container.find('.navbar-nav:not(.nav-main)').addClass('d-none');
-    $container.find('.nav-main').addClass('d-block');
+    $container.find('.article-header .navbar-nav:not(.nav-main)').addClass('d-none');
+    $container.find('.article-header .nav-main').addClass('d-block');
   });
 
   $container.find('.navbar-nav.nav-main .btn-search').on('click', searchLessons);

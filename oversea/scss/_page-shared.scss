@@ -304,8 +304,21 @@
             margin: 0;
 
             .navbar {
+              &.navbar-expand {
+                @include flex-wrap(wrap);
+              }
+
+              .navbar-text {
+                margin-bottom: .75rem;
+                min-width: 24rem;
+              }
+
               .breadcrumb {
-                display: none;
+                height: 2.5rem;
+
+                .breadcrumb-item {
+                  display: none;
+                }
               }
             }
 
