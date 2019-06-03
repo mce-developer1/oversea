@@ -17,8 +17,9 @@
           }
 
           .error-text {
-            background-color: rgba($white, .5);
+            background-color: rgba($white, .7);
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            color: $black;
             font-size: 1.125rem;
             margin: 0;
             padding: 1rem;

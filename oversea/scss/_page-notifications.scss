@@ -98,6 +98,10 @@
           .navbar {
             @include justify-content(space-between);
             padding: .75rem 0;
+
+            &.navbar-load-more {
+              @include justify-content(center);
+            }
           }
         }
       }

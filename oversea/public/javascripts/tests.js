@@ -343,7 +343,7 @@ $(document).ready(function() {
         $component.find('.form-textarea').each(function(index, textarea) {
           window.Utils.destroyTextEditor(textarea);
         });
-        $component.find('.question-summary').removeClass('d-none');
+        $component.find('.question-preview').removeClass('d-none');
         $component.find('.question-edit').addClass('d-none');
         $component.removeClass('component-editing');
       } else {
@@ -353,7 +353,7 @@ $(document).ready(function() {
         $component.find('.form-textarea').each(function(index, textarea) {
           window.Utils.initTextEditor(textarea);
         });
-        $component.find('.question-summary').addClass('d-none');
+        $component.find('.question-preview').addClass('d-none');
         $component.find('.question-edit').removeClass('d-none');
         $component.addClass('component-editing');
         scrollToComponent($component);
@@ -403,12 +403,12 @@ $(document).ready(function() {
     toggleComponentMode($component);
   });
 
-  $('.article-test-components .list-components').on('click', '.question-summary', function(e) {
+  $('.article-test-components .list-components').on('click', '.question-preview', function(e) {
     var $component = $(this).closest('.component');
     toggleComponentMode($component)
   });
 
-  $('.article-test-components .list-components').on('click', '.question-summary .custom-control-input', function(e) {
+  $('.article-test-components .list-components').on('click', '.question-preview .custom-control-input', function(e) {
     e.preventDefault();
     e.stopPropagation();
   });

@@ -4,6 +4,8 @@ $(document).ready(function() {
   if ($container.length === 0) $container = $('.article-tests');
   if ($container.length === 0) $container = $('.article-questions');
   if ($container.length === 0) $container = $('.article-file-upload');
+  if ($container.length === 0) $container = $('.article-google');
+  if ($container.length === 0) $container = $('.article-youtube');
 
   function removeAllDropZoneFiles() {
     if (dropzone && dropzone.removeAllFiles) {
@@ -70,20 +72,25 @@ $(document).ready(function() {
     }
   }
 
-  function searchLessons(e) {
+  function searchResources(e) {
     var search = $container.find('.nav-main .input-group .aa-input').val();
     if (search === '') return;
 
     $container.find('.article-body .loading-state').removeClass('d-none');
+    $container.find('.article-body .navbar .breadcrumb').addClass('d-none');
+    $container.find('.article-body .navbar .navbar-nav').addClass('d-none');
+    $container.find('.article-body .navbar .navbar-text').removeClass('d-none');
     $container.find('.article-body .navbar').addClass('d-none');
     $container.find('.article-body .table-head').addClass('d-none');
     $container.find('.article-body .table-body').addClass('d-none');
+    $container.find('.article-body .list-components').addClass('d-none');
 
     setTimeout(function() {
       $container.find('.article-body .loading-state').addClass('d-none');
       $container.find('.article-body .navbar').removeClass('d-none');
       $container.find('.article-body .table-head').removeClass('d-none');
       $container.find('.article-body .table-body').removeClass('d-none');
+      $container.find('.article-body .list-components').removeClass('d-none');
       $container.find('.nav-item-result .item-text').text(search);
 
       var searchTitle = 'Search results for "'+ search + '"';
@@ -140,9 +147,9 @@ $(document).ready(function() {
     $container.find('.article-header .nav-main').addClass('d-block');
   });
 
-  $container.find('.navbar-nav.nav-main .btn-search').on('click', searchLessons);
+  $container.find('.navbar-nav.nav-main .btn-search').on('click', searchResources);
   $container.find('.nav-main .input-group .aa-input').on('keypress', function(e) {
-    if (e.which === 13) searchLessons(e);
+    if (e.which === 13) searchResources(e);
   });
 
   $container.find('.navbar-nav.nav-main .btn-back').on('click', function(e) {
@@ -153,7 +160,7 @@ $(document).ready(function() {
   $container.find('.nav-main .input-group .btn-clear').on('click', function(e) {
     $(this).addClass('d-none');
     $container.find('.nav-main .input-group .aa-input').val('');
-    searchLessons(e);
+    searchResources(e);
   });
 
   $container.find('.nav-main .dialog .dialog-menu .btn-primary').on('click', function(e) {
@@ -427,4 +434,201 @@ $(document).ready(function() {
       $('.modal-file-remove-confirmation').modal('show');
     });
   }
+
+  function searchGoogle(keyword) {
+    $container.find('.article-body .loading-state').removeClass('d-none');
+    $container.find('.article-body .navbar').addClass('d-none');
+    $container.find('.list-components').addClass('d-none');
+
+    fetch('/shared/search_google?keyword=' + keyword)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(response) {
+        var html = '';
+        response.items.forEach(function(item) {
+          var thumbnailHtml = `&nbsp;`;
+
+          if (item && item.pagemap && item.pagemap.cse_thumbnail) {
+            var thumbnail = item.pagemap.cse_thumbnail[0];
+            thumbnailHtml = `<img src="` + thumbnail.src + `"/>`;
+          }
+
+          html += `<div class="component component-webresource">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" id="` + item.cacheId + `" class="custom-control-input">
+              <label class="custom-control-label" for="` + item.cacheId + `"></label>
+            </div>
+            <div class="webresource-preview">
+              <div class="webresource-thumbnail">
+                ` + thumbnailHtml + `
+              </div>
+              <div class="webresource-details">
+                <div class="webresource-title">
+                  <a href="` + item.link + `" target="_blank">
+                    ` + item.title + `
+                  </a>
+                </div>
+                <div class="webresource-link text-muted">
+                  ` + item.link + `
+                </div>
+                <div class="webresource-description text-muted">
+                  ` + item.snippet + `
+                </div>
+              </div>
+            </div>
+          </div>`;
+        });
+        $container.find('.list-components').html(html);
+        $container.find('.article-body .loading-state').addClass('d-none');
+        $container.find('.article-body .navbar').removeClass('d-none');
+        $container.find('.list-components').removeClass('d-none');
+
+        var searchTitle = 'Search results for "'+ keyword + '"';
+        $container.find('.article-body .navbar .navbar-text').html(searchTitle);
+      });
+  }
+
+  if ($container.hasClass('article-google')) {
+    $container.find('.navbar-nav.nav-main .btn-search').off('click').on('click', function(e) {
+      searchGoogle($container.find('.nav-main .input-group .form-input').val());
+    });
+
+    $container.find('.nav-main .input-group .form-input').on('keyup', function(e) {
+      if ($(this).val().trim() !== '') {
+        $container.find('.nav-main .input-group .btn-clear').removeClass('d-none');
+      } else {
+        $container.find('.nav-main .input-group .btn-clear').addClass('d-none');
+      }
+    });
+
+    $container.find('.nav-main .input-group .form-input').on('keypress', function(e) {
+      if (e.which === 13) searchGoogle($(this).val());
+    });
+
+    $container.find('.list-components').on('click', '.component-webresource .custom-control-input', function(e) {
+      var $component = $(this).closest('.component-webresource');
+          
+      if ($component.hasClass('component-active')) {
+        $component.removeClass('component-active');
+      } else {
+        $component.addClass('component-active');
+      }
+      updateActionButtonsStyles();
+    });
+
+    $container.find('.list-components').on('click', '.component-webresource', function(e) {
+      if ($(e.target).is('a')) return;
+      if ($(e.target).closest('a') > 0) return;
+      if ($(this).hasClass('component-active')) {
+        $(this).removeClass('component-active');
+        $(this).find('.custom-control-input').prop('checked', false);
+      } else {
+        $(this).addClass('component-active');
+        $(this).find('.custom-control-input').prop('checked', true);
+      }
+      updateActionButtonsStyles();
+    });
+  }
+
+  function searchYoutube(keyword) {
+    $container.find('.article-body .loading-state').removeClass('d-none');
+    $container.find('.article-body .navbar').addClass('d-none');
+    $container.find('.list-components').addClass('d-none');
+
+    fetch('/shared/search_youtube?keyword=' + keyword)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(response) {
+        var html = '';
+        response.items.forEach(function(item) {
+          var snippet = item.snippet;
+          var thumbnail = snippet.thumbnails.default;
+          html += `<div class="component component-video">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" id="` + item.id.videoId + `" class="custom-control-input">
+              <label class="custom-control-label" for="` + item.id.videoId + `"></label>
+            </div>
+            <div class="video-preview">
+              <div class="video-thumbnail">
+                <img src="` + thumbnail.url + `"/>
+              </div>
+              <div class="video-details">
+                <div class="video-title">
+                  <a href="https://www.youtube.com/watch?v=` + item.id.videoId + `" target="_blank">
+                    ` + snippet.title + `
+                  </a>
+                </div>
+                <div class="video-modified-date text-muted">                  
+                  ` + snippet.publishedAt + `
+                  <span class="video-channel"> — ` + snippet.channelTitle + `</span>
+                </div>
+                <div class="video-description text-muted">
+                  ` + snippet.description + `
+                </div>
+              </div>
+            </div>
+          </div>`;
+        });
+        $container.find('.list-components').html(html);
+        $container.find('.article-body .loading-state').addClass('d-none');
+        $container.find('.article-body .navbar').removeClass('d-none');
+        $container.find('.list-components').removeClass('d-none');
+
+        var searchTitle = 'Search results for "'+ keyword + '"';
+        $container.find('.article-body .navbar .navbar-text').html(searchTitle);
+      });
+  }
+
+  if ($container.hasClass('article-youtube')) {
+    $container.find('.navbar-nav.nav-main .btn-search').off('click').on('click', function(e) {
+      searchYoutube($container.find('.nav-main .input-group .form-input').val());
+    });
+
+    $container.find('.nav-main .input-group .form-input').on('keyup', function(e) {
+      if ($(this).val().trim() !== '') {
+        $container.find('.nav-main .input-group .btn-clear').removeClass('d-none');
+      } else {
+        $container.find('.nav-main .input-group .btn-clear').addClass('d-none');
+      }
+    });
+
+    $container.find('.nav-main .input-group .form-input').on('keypress', function(e) {
+      if (e.which === 13) searchYoutube($(this).val());
+    });
+
+    $container.find('.list-components').on('click', '.component-video .custom-control-input', function(e) {
+      var $component = $(this).closest('.component-video');
+      
+      if ($component.hasClass('component-active')) {
+        $component.removeClass('component-active');
+      } else {
+        $component.addClass('component-active');
+      }
+      updateActionButtonsStyles();
+    });
+
+    $container.find('.list-components').on('click', '.component-video', function(e) {
+      if ($(e.target).is('a')) return;
+      if ($(e.target).closest('a') > 0) return;
+      if ($(this).hasClass('component-active')) {
+        $(this).removeClass('component-active');
+        $(this).find('.custom-control-input').prop('checked', false);
+      } else {
+        $(this).addClass('component-active');
+        $(this).find('.custom-control-input').prop('checked', true);
+      }
+      updateActionButtonsStyles();
+    });
+  }
+
+  $(window).on('resize', function(e) {
+    if ($(window).width() > 992) {
+      if ($container.find('.nav-main').hasClass('d-block')) {
+        $container.find('.navbar-nav:not(.nav-main)').removeClass('d-none');
+        $container.find('.nav-main').removeClass('d-block');
+      }
+    }
+  });
 });

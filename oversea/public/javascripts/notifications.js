@@ -16,4 +16,9 @@ $(document).ready(function() {
     $(this).addClass('d-none');
     $(this).parent().find('.btn-mark-read').removeClass('d-none');
   });
+
+  $container.find('.list-notifications .notification').on('click', '.btn-delete', function(e) {
+    e.stopPropagation();
+    $('.modal-question-delete-confirmation').modal('show');
+  });
 });

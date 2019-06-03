@@ -442,6 +442,26 @@ a {
 }
 
 .navbar {
+  &.navbar-toolbar {
+    @include display-flex(row);
+    @include align-items(center);
+    @include justify-content(space-between);
+    background-color: $white;
+    border-bottom: 1px solid $gray-400;
+    padding: 1rem;
+
+    .navbar-nav {
+      .nav-item {
+        .custom-checkbox {
+          .custom-control-label {
+            font-weight: 500;
+            padding-left: .5rem;
+          }
+        }
+      }
+    }
+  }
+
   &.navbar-pagination {
     .navbar-nav {
       @include align-items(center);
@@ -478,6 +498,38 @@ a {
 
 .navbar-nav,
 .nav {
+  &.nav-light {
+    .nav-link {
+      color: $gray-700;
+
+      &:not(.disabled):hover,
+      &:not(.disabled):active {
+        color: $gray-900;
+      }
+
+      &.active {
+        background-color: $gray-600;
+        border-color: $gray-600;
+        color: $white;
+
+        &:not(.disabled):hover,
+        &:not(.disabled):active {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &.nav-pad {
+    .nav-link {
+      border: 1px solid $gray-400;
+      padding: .375rem .5rem;
+      margin: .125rem;
+      min-width: 2.5rem;
+      text-align: center;      
+    }
+  }
+
   .nav-divider {
     border-right: 1px solid $gray-400;
     margin: .325rem .5rem;
@@ -521,17 +573,6 @@ a {
           color: $primary;
         }
       }
-    }
-  }
-}
-
-.nav-light {
-  .nav-link {
-    color: $gray-700;
-
-    &:not(:disabled):not(.disabled):hover,
-    &:not(:disabled):not(.disabled):active {
-      color: $gray-900;
     }
   }
 }
@@ -842,13 +883,30 @@ a {
 
       td {
         padding: 1rem;
+
+        .dropdown {
+          margin: -.5rem 0;
+          
+          .btn-light {
+            &.dropdown-toggle {
+              margin: 0;
+              padding: .375rem .5rem;
+            }
+          }
+        }
         
         .btn-light {
+          padding: .325rem;
+          margin: -.5rem 0;
+          opacity: .8;
+
           &:hover {
             opacity: 1;
           }
 
-          opacity: .8;
+          .fas {
+            font-size: 1.375rem;
+          }
         }
       }
     }

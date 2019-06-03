@@ -1,3 +1,4 @@
+const axios = require('axios');
 var express = require('express');
 var router = express.Router();
 var multer  = require('multer');
@@ -436,13 +437,64 @@ router.get('/shared/add_files', function(req, res, next) {
   });
 });
 
-/* GET add weblinks page. */
-router.get('/shared/add_weblinks', function(req, res, next) {
-  res.render('shared/add_weblinks', {
+/* GET add google page. */
+router.get('/shared/add_google', function(req, res, next) {
+  res.render('shared/add_google', {
     layout: 'iframe_layout',
     title: 'Marshall Cavendish Education',
     module: 'shared'
   });
+});
+
+/* GET search google page. */
+router.get('/shared/search_google', function(req, res, next) {
+  var keyword = req.query.keyword;
+  var url = 'https://www.googleapis.com/customsearch/v1?q=' + keyword
+    + '&key=AIzaSyCXd3M-Cb0KvyBMKTNS23nfaoiez6l51Go&cx=011138866815983095785%3Abvwtd3ixiqy';
+  var request = axios.create({
+    headers: {
+      'X-Origin': 'https://developers.google.com',
+      'X-Referer': 'https://developers.google.com',
+      'Referer': 'https://content.googleapis.com'
+    }
+  });
+  request.get(url)
+    .then(function(response) {
+      res.send(JSON.stringify(response.data));
+    })
+    .catch('error', (error) => {
+      res.send(error);
+    });
+});
+
+/* GET add youtube page. */
+router.get('/shared/add_youtube', function(req, res, next) {
+  res.render('shared/add_youtube', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
+/* GET search youtube page. */
+router.get('/shared/search_youtube', function(req, res, next) {
+  var keyword = req.query.keyword;
+  var url = 'https://content.googleapis.com/youtube/v3/search?part=snippet&q=' + keyword
+    + '&type=video&key=AIzaSyCXd3M-Cb0KvyBMKTNS23nfaoiez6l51Go';
+  var request = axios.create({
+    headers: {
+      'X-Origin': 'https://developers.google.com',
+      'X-Referer': 'https://developers.google.com',
+      'Referer': 'https://content.googleapis.com'
+    }
+  });
+  request.get(url)
+    .then(function(response) {
+      res.send(JSON.stringify(response.data));
+    })
+    .catch('error', (error) => {
+      res.send(error);
+    });
 });
 
 /* GET upload page. */

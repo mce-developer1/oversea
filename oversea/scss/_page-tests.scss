@@ -115,18 +115,6 @@
             @include user-select(none);
             margin-bottom: 0;
 
-            th,
-            td {
-              .btn {
-                padding: .325rem;
-                margin: -.5rem 0;
-
-                .fa-info-circle {
-                  font-size: 1.375rem;
-                }
-              }
-            }
-
             a {
               color: $gray-900;
               word-break: break-word; 
@@ -337,7 +325,7 @@
               position: -webkit-sticky;
               position: sticky;
               top: 10rem;
-              z-index: 970;
+              z-index: 950;
             }
           }
         }

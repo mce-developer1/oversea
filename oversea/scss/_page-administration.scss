@@ -94,7 +94,7 @@
 
       .article-content {
         .article-sidebar {
-          margin: 0;          
+          margin: 0;
         }
 
         .article-body {
@@ -136,6 +136,13 @@
                 margin: 0 .5rem;
                 padding: 1rem;
                 width: calc(100% - 1rem);
+
+                .nav {
+                  &.nav-pad2 {
+                    @include flex-grow(1);
+                    width: 100vw;
+                  }
+                }
 
                 .form-group {
                   @include display-flex(row);

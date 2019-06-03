@@ -35,16 +35,13 @@ select.form-control {
   }
 }
 
+.processing-overlay,
 .loading-state {
   @include display-flex(column);
   @include align-items(center);
   @include justify-content(center);
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
 
   .spinner-border {
-    animation: spinner-border .75s linear infinite;
     background-image: url("../images/icon_spinner.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -52,6 +49,22 @@ select.form-control {
     height: 2rem;
     width: 2rem;
   }
+}
+
+.processing-overlay {
+  background-color: rgba($black, .1);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+}
+
+.loading-state {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
 }
 
 .empty-state {
@@ -432,6 +445,69 @@ select.form-control {
         .file-preview {
           min-width: 20rem;
           width: calc(50% - 1.25rem);
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  &.navbar-menu {
+    .resource-menu {
+      @include display-flex(column);
+      
+      .menu-divider {
+        border-bottom: 1px solid $gray-400;
+        margin: 1rem 1.5rem;
+      }
+    }
+
+    .navbar-nav {
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(center);
+      max-width: 26rem;
+
+      .nav-link {
+        @include display-flex(column);
+        @include align-items(center);
+        color: $gray-700;
+        font-size: .875rem;
+        margin: .5rem;
+        min-width: 7rem;
+        padding: .75rem 1rem;
+
+        &:hover {
+          background-color: $gray-200;
+        }
+
+        .img {
+          margin-bottom: .25rem;
+          height: 2.5rem;
+          width: 2.5rem;
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      .resource-menu {
+        @include display-flex(row);
+        @include align-items(center);
+
+        .navbar-nav {
+          &:not(.nav-main) {
+            max-width: 10rem;
+          }
+
+          &.nav-main {
+            max-width: 26rem;
+          }
+        }
+        
+        .menu-divider {
+          border-right: 1px solid $gray-400;
+          margin: 1.5rem 0;
+          height: 10rem;
         }
       }
     }
@@ -856,6 +932,25 @@ select.form-control {
           }
         }
       }
+
+      tbody {
+        th,
+        td {
+          .btn-light {
+            padding: .325rem;
+            margin: -.5rem 0;
+            opacity: .8;
+
+            &:hover {
+              opacity: 1;
+            }           
+
+            .fas {
+              font-size: 1.375rem;
+            }
+          }
+        }
+      }
     }    
   }
 
@@ -936,7 +1031,7 @@ select.form-control {
 
   &.tox-tinymce-inline {
     box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
-    z-index: 1000;
+    z-index: 1050;
   }
 
   .tox-tbtn {
@@ -1194,7 +1289,7 @@ select.form-control {
 
         .btn-light {
           .fas {
-            font-size: 1.375rem;
+            font-size: 1.25rem;
           }
         }
       }
@@ -1314,7 +1409,7 @@ select.form-control {
     }
 
     &.component-question {
-      .question-summary,
+      .question-preview,
       .question-create,
       .question-edit {
         @include display-flex(column);
@@ -1372,7 +1467,7 @@ select.form-control {
         }
       }
 
-      .question-summary {
+      .question-preview {
         &:not(:hover) {
           .question-actions {
             display: none;
@@ -1507,7 +1602,7 @@ select.form-control {
       }
 
       @media (max-width: 767.98px) {
-        .question-summary {
+        .question-preview {
           .question-modified-date {
             display: none;
           }
@@ -1544,18 +1639,92 @@ select.form-control {
           }
         }
       }
+
+      @media (min-width: 1200px) {
+        .question-preview {
+          .question-attributes {
+            @include display-flex(row);
+            @include align-items(flex-start);
+            @include justify-content(space-between);
+            
+            .attribute-group {
+              max-width: calc(50% - 1rem);
+              width: calc(50% - 1rem);
+            }
+          }
+        }
+      }
     }
-    
-    @media (min-width: 1200px) {
-      .question-summary {
-        .question-attributes {
-          @include display-flex(row);
-          @include align-items(flex-start);
-          @include justify-content(space-between);
-          
-          .attribute-group {
-            max-width: calc(50% - 1rem);
-            width: calc(50% - 1rem);
+
+    &.component-webresource {
+      .webresource-preview {
+        @include display-flex(row);
+        @include align-items(flex-start);
+
+        .webresource-thumbnail {
+          margin-right: 1rem;
+          max-width: 10rem;
+          width: 10rem;
+
+          img {
+            max-width: 100%;
+          }
+        }
+
+        .webresource-details {
+          .webresource-title {
+            a {
+              color: $gray-700;
+            }
+          }
+
+          .webresource-link {
+            margin-bottom: .5rem;
+          }
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .webresource-preview {
+          @include display-flex(column);
+
+          .webresource-thumbnail {
+            margin-right: 0;
+            margin-bottom: .5rem;
+          }
+        }
+      }
+    }
+
+    &.component-video {
+      .video-preview {
+        @include display-flex(row);
+        @include align-items(flex-start);
+
+        .video-thumbnail {
+          margin-right: 1rem;
+        }
+
+        .video-details {
+          .video-title {
+            a {
+              color: $gray-700;
+            }
+          }
+
+          .video-modified-date {
+            margin-bottom: .5rem;
+          }
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .video-preview {
+          @include display-flex(column);
+
+          .video-thumbnail {
+            margin-right: 0;
+            margin-bottom: .5rem;
           }
         }
       }
@@ -1733,33 +1902,6 @@ select.form-control {
           margin-bottom: 1rem;
           padding: .5rem 1rem;
           text-align: center;
-        }
-
-        .navbar-nav {
-          @include flex-direction(row);
-          @include flex-wrap(wrap);
-          @include justify-content(center);
-          max-width: 36rem;
-
-          .nav-link {
-            @include display-flex(column);
-            @include align-items(center);
-            color: $gray-700;
-            font-size: .875rem;
-            margin: .5rem;
-            min-width: 7rem;
-            padding: .75rem 1rem;
-
-            &:hover {
-              background-color: $gray-200;
-            }
-
-            .img {
-              margin-bottom: .25rem;
-              height: 2.5rem;
-              width: 2.5rem;
-            }
-          }
         }
       }
     }

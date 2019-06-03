@@ -95,6 +95,29 @@ $(document).ready(function() {
       dom: 'rt<"bottom">',
       order: [[0, 'asc']]
     });
+  } else if ($container.hasClass('article-login-as-teacher')) {
+    var dataTable = $('.table').DataTable({
+      scrollY: '100%',
+      scrollX: true,
+      fixedHeader: true,
+      paging: false,
+      language: {
+        infoEmpty: 'Oops, nothing to see here!',
+      },
+      columnDefs: [
+        {
+          width: 160,
+          targets: 1
+        },
+        {
+          orderable: false,
+          width: 60,
+          targets: 2
+        }
+      ],
+      dom: 'rt<"bottom">',
+      order: [[0, 'asc']]
+    });
   }
 
   $(window).on('resize', function(e) {

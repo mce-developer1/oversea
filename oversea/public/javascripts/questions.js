@@ -242,6 +242,10 @@ $(document).ready(function() {
     }
   }]);
 
+  $('.article-create-question .form-create-question .form-textarea').each(function(index, textarea) {
+    window.Utils.initTextEditor(textarea);
+  });
+
   $('.article-create-question .form-create-question .btn-generate-answers').on('click', function(e) {
     var $form = $(this).closest('.form-create-question');
     $form.find('.question-answers').removeClass('d-none');

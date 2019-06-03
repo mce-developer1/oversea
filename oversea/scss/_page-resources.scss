@@ -156,18 +156,6 @@
               }
             }
 
-            th,
-            td {
-              .btn {
-                padding: .325rem;
-                margin: -.5rem 0;
-
-                .fa-info-circle {
-                  font-size: 1.375rem;
-                }
-              }
-            }
-
             a {
               color: $gray-900;
               display: inline-block;
@@ -457,14 +445,6 @@
             position: sticky;
             top: 10rem;
           }
-
-          .article-body {
-            .navbar {
-              .navbar-text {
-                display: none;
-              }
-            }            
-          }
         }
       }
 
@@ -474,7 +454,7 @@
             position: -webkit-sticky;
             position: sticky;
             top: 10rem;
-            z-index: 970;
+            z-index: 950;
           }
 
           .table-head,

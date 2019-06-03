@@ -89,6 +89,15 @@ window.Utils = {
     }
 
     return $icon;
+  },
+  showProcessingOverlay: function() {
+    $('body').append('<div class="processing-overlay">'
+      + '<div class="spinner-border text-primary" role="status">'
+      + '<span class="sr-only">Processing...</span>'
+      + '</div></div>');
+  },
+  hideProcessingOverlay: function() {
+    $('.processing-overlay').remove();
   }
 };
 

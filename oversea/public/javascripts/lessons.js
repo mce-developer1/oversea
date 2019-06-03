@@ -470,8 +470,34 @@ $(document).ready(function() {
     showAddResourceModal('/shared/add_files');
   });
 
-  $('.article-lesson-resources .article-body .link-add-weblinks').on('click', function(e) {
-    showAddResourceModal('/shared/add_weblinks');
+  $('.article-lesson-resources .article-body .link-add-google').on('click', function(e) {
+    showAddResourceModal('/shared/add_google');
+  });
+
+  $('.article-lesson-resources .article-body .link-add-youtube').on('click', function(e) {
+    showAddResourceModal('/shared/add_youtube');
+  });
+
+  $('.article-lesson-resources .article-body .link-add-weblink').on('click', function(e) {
+    $('.modal-weblink-add').on('hide.bs.modal', function(e) {
+      showFolderResources();
+    });
+    $('.modal-weblink-add').modal('show');
+  });
+
+  $('.article-lesson-resources .article-body .link-add-text').on('click', function(e) {
+    $('.modal-text-add').off('shown.bs.modal').on('shown.bs.modal', function(e) {
+      $('.modal-text-add .form-add-text .form-textarea').each(function(index, textarea) {
+        window.Utils.initTextEditor(textarea);
+      });
+    });
+    $('.modal-text-add').off('hide.bs.modal').on('hide.bs.modal', function(e) {
+      $('.modal-text-add .form-add-text .form-textarea').each(function(index, textarea) {
+        window.Utils.destroyTextEditor(textarea);
+      });
+      showFolderResources();
+    });
+    $('.modal-text-add').modal('show');
   });
 
   $('.article-lesson-resources .article-body .btn-add-resource').on('click', function(e) {
@@ -502,9 +528,38 @@ $(document).ready(function() {
     showAddResourceModal('/shared/add_files');
   });
 
-  $('.modal-resource-type-select .navbar .link-add-weblinks').on('click', function(e) {
+  $('.modal-resource-type-select .navbar .link-add-google').on('click', function(e) {
     $('.modal-resource-type-select').modal('hide');
-    showAddResourceModal('/shared/add_weblinks');
+    showAddResourceModal('/shared/add_google');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-youtube').on('click', function(e) {
+    $('.modal-resource-type-select').modal('hide');
+    showAddResourceModal('/shared/add_youtube');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-weblink').on('click', function(e) {
+    $('.modal-resource-type-select').modal('hide');
+    $('.modal-weblink-add').on('hide.bs.modal', function(e) {
+      showFolderResources();
+    });
+    $('.modal-weblink-add').modal('show');
+  });
+
+  $('.modal-resource-type-select .navbar .link-add-text').on('click', function(e) {
+    $('.modal-resource-type-select').modal('hide');
+    $('.modal-text-add').off('shown.bs.modal').on('shown.bs.modal', function(e) {
+      $('.modal-text-add .form-add-text .form-textarea').each(function(index, textarea) {
+        window.Utils.initTextEditor(textarea);
+      });
+    });
+    $('.modal-text-add').off('hide.bs.modal').on('hide.bs.modal', function(e) {
+      showFolderResources();
+      $('.modal-text-add .form-add-text .form-textarea').each(function(index, textarea) {
+        window.Utils.destroyTextEditor(textarea);
+      });
+    });
+    $('.modal-text-add').modal('show');
   });
 
   $('.article-lesson-resources .table-body tr .custom-control-input').on('click', function(e) {

@@ -1,0 +1,96 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-youtube no-sidebar">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <span class="item-text text-truncate">Youtube</span>
+              </li>
+            </ul>
+            <ul class="navbar-nav nav-main">
+              <li class="nav-item dialog">
+                <div class="input-group input-group-search">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light btn-search" type="button">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-light btn-back" type="button">
+                      <i class="fas fa-arrow-left"></i>
+                    </button>
+                  </div>
+                  <input class="form-control form-input" type="text" placeholder="Search videos">
+                  <div class="input-group-append">
+                    <button class="btn btn-light btn-clear d-none" type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-light btn-search" type="button" title="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-body">
+            <div class="loading-state d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <nav class="navbar navbar-expand">
+              <div class="navbar-text">&nbsp;</div>
+              <ul class="navbar-nav nav-form d-none">
+                <li class="nav-item">
+                  <form class="form-inline form-add-resource">
+                    <label class="form-label text-truncate">Add to</label>
+                    <select class="form-control selectpicker" data-width="160">
+                      <option selected>Counting To 10</option>
+                      <option>Comparing Numbers</option>
+                      <option>Making Number Patterns</option>
+                    </select>
+                    <button type="button" class="btn btn-primary btn-add">
+                      Add
+                    </button>
+                  </form>
+                </li>
+              </ul>
+            </nav>
+            <nav class="navbar navbar-toolbar d-none">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" id="all" class="custom-control-input">
+                    <label class="custom-control-label" for="all">Select All</label>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <div class="list-components d-none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-stack d-none">
+  <div class="toast" role="alert fade" data-delay="5000">
+    <div class="toast-header">
+      <button class="close" type="button" title="Close" data-dismiss="toast">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>    
+    <div class="toast-body">
+      <i class="img img-toast-success"></i>
+      Videos have been added to the "Counting To 10" folder.
+    </div>
+  </div>
+</div>

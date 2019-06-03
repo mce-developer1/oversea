@@ -136,7 +136,7 @@
                           <input class="form-control form-input" type="text" id="txtKeyword">
                         </div>
                       </div>
-                      <div class="col-lg">&nbsp;</div>
+                      <div class="col-lg"></div>
                     </div>
                     <div class="form-group form-group-actions">
                       <button class="btn btn-light" type="button">Reset</button> 
@@ -212,23 +212,31 @@
                 </li>
               </ul>
             </nav>
+            <nav class="navbar navbar-toolbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" id="all" class="custom-control-input">
+                    <label class="custom-control-label" for="all">Select All</label>
+                  </div>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="expand">
+                    <label class="custom-control-label" for="expand">Expand All</label>
+                  </div>
+                </li>
+              </ul>
+            </nav>
             <div class="list-components">
-              <div class="component component-toolbar">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" id="all" class="custom-control-input">
-                  <label class="custom-control-label" for="all">Select All</label>
-                </div>
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" class="custom-control-input" id="expand">
-                  <label class="custom-control-label" for="expand">Expand All</label>
-                </div>
-              </div>
               <div class="component component-question">
                 <div class="custom-control custom-checkbox question-checkbox">
                   <input type="checkbox" id="item0" class="custom-control-input">
                   <label class="custom-control-label" for="item0"></label>
                 </div>
-                <div class="question-summary">
+                <div class="question-preview">
                   <div class="question-title">
                     Single Response MCQ
                     <span class="badge badge-light" title="Shared">
@@ -333,7 +341,7 @@
                   <input type="checkbox" id="item1" class="custom-control-input">
                   <label class="custom-control-label" for="item1"></label>
                 </div>
-                <div class="question-summary">
+                <div class="question-preview">
                   <div class="question-title">
                     Multiple Reponse MCQ
                     <span class="badge badge-light" title="Shared">
@@ -438,7 +446,7 @@
                   <input type="checkbox" id="item2" class="custom-control-input">
                   <label class="custom-control-label" for="item2"></label>
                 </div>
-                <div class="question-summary">
+                <div class="question-preview">
                   <div class="question-title">True/False Qn</div>
                   <div class="question-text">
                     <p>
@@ -522,7 +530,7 @@
                   <input type="checkbox" id="item3" class="custom-control-input">
                   <label class="custom-control-label" for="item3"></label>
                 </div>
-                <div class="question-summary">
+                <div class="question-preview">
                   <div class="question-title">Short-Ans Qn</div>
                   <div class="question-text">
                     <p>
@@ -588,7 +596,7 @@
                   <input type="checkbox" id="item4" class="custom-control-input">
                   <label class="custom-control-label" for="item4"></label>
                 </div>
-                <div class="question-summary">
+                <div class="question-preview">
                   <div class="question-title">Open-Ended Qn</div>
                   <div class="question-text">
                     <p>
@@ -665,7 +673,7 @@
                   <input type="checkbox" id="item5" class="custom-control-input">
                   <label class="custom-control-label" for="item5"></label>
                 </div>
-                <div class="question-summary">
+                <div class="question-preview">
                   <div class="question-title">Open-Ended Qn</div>
                   <div class="question-text">
                     <p>
