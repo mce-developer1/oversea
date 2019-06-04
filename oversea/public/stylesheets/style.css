@@ -227,6 +227,7 @@ a:focus {
 .form-control.form-textarea {
   overflow: auto;
   max-height: 20rem;
+  min-height: 10rem;
   height: auto;
 }
 
@@ -4959,10 +4960,6 @@ select.form-control {
 .app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(8) {
     display: none;
   }
-  .app-content.page-resources .article-resources .article-content .article-body .card-group .card {
-    max-width: calc(50vw - 1.5rem);
-    min-width: calc(50vw - 1.5rem);
-  }
 }
 @media (max-width: 991.98px) {
   .app-content.page-resources .article-resources .article-header {
@@ -5062,10 +5059,6 @@ select.form-control {
 .app-content.page-resources .article-resources .article-content .article-body .table-body tr th:nth-child(5),
 .app-content.page-resources .article-resources .article-content .article-body .table-body tr td:nth-child(5) {
     display: none;
-  }
-  .app-content.page-resources .article-resources .article-content .article-body .card-group .card {
-    max-width: calc(50vw - 1.5rem);
-    min-width: calc(50vw - 1.5rem);
   }
 }
 @media (min-width: 992px) {

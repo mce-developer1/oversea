@@ -73,7 +73,7 @@ $(document).ready(function() {
 
       var searchTitle = 'Search results for "'+ search + '"';
       $container.find('.article-body .navbar .navbar-text').html(searchTitle);
-    }, 5000);
+    }, 1000);
   }
 
   function showAssignResourceModal(srcUrl) {

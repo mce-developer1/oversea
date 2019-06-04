@@ -6,7 +6,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $('.article-resources .article-body .loading-state').addClass('d-none');
       $('.article-resources .article-body .card-group').removeClass('d-none');
-    }, 5000);
+    }, 1000);
   });
 
   $('#selSubjet').on('changed.bs.select', function (e) {
