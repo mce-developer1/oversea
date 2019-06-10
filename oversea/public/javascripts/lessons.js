@@ -562,6 +562,13 @@ $(document).ready(function() {
     $('.modal-text-add').modal('show');
   });
 
+  $('.article-lesson-resources .table-body tr a').on('click', function(e) {
+    var pdfPreview = '<iframe class="full" src="/viewers/pdf_viewer?file=/static/pdfs/teachers-portal-user-guide.pdf" frameborder="0" allowfullscreen></iframe>';
+    var youtubePreview = '<iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/lXcvAql5-qk" frameborder="0"></iframe>';
+    $('.modal-resource-preview .modal-body .content').html(Math.round(Math.random()) ? pdfPreview : youtubePreview);
+    $('.modal-resource-preview').modal('show');
+  });
+
   $('.article-lesson-resources .table-body tr .custom-control-input').on('click', function(e) {
     var $row = $(this).closest('tr');
         

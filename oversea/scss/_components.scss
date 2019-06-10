@@ -840,7 +840,7 @@ select.form-control {
     top: 100%;
     left: 1px;
     right: 1px;
-    z-index: 970;
+    z-index: 1000;
 
     &.show {
       display: block;
@@ -882,16 +882,6 @@ select.form-control {
       max-height: calc(100vh - 10rem);
       overflow-x: hidden;
       overflow-y: auto;
-    }
-  }
-
-  @media (max-height: 575.98px) {
-    .dialog-menu {
-      &.dialog-menu-search {
-        max-height: calc(100vh - 11rem);
-        overflow-x: hidden;
-        overflow-y: auto;
-      }
     }
   }
 

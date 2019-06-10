@@ -258,7 +258,7 @@
           position: -webkit-sticky;
           position: sticky;
           top: 5rem;
-          z-index: 980;
+          z-index: 970;
 
           .navbar {
             @include justify-content(space-between);
@@ -402,7 +402,7 @@
           position: -webkit-sticky;
           position: sticky;
           top: 6rem;
-          z-index: 980;
+          z-index: 970;
 
           .navbar {
             .navbar-nav {

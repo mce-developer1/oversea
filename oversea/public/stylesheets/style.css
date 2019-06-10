@@ -227,7 +227,7 @@ a:focus {
 .form-control.form-textarea {
   overflow: auto;
   max-height: 20rem;
-  min-height: 10rem;
+  min-height: 4rem;
   height: auto;
 }
 
@@ -264,10 +264,6 @@ a:focus {
 .dropdown.bootstrap-select .dropdown-toggle .filter-option-inner-inner .fas,
 .dropup.bootstrap-select .dropdown-toggle .filter-option-inner-inner .fas {
   margin-right: 0.5rem;
-}
-.dropdown.bootstrap-select .dropdown-menu,
-.dropup.bootstrap-select .dropdown-menu {
-  z-index: 970;
 }
 .dropdown.bootstrap-select .dropdown-menu .dropdown-item,
 .dropup.bootstrap-select .dropdown-menu .dropdown-item {
@@ -1489,7 +1485,7 @@ select.form-control {
   top: 100%;
   left: 1px;
   right: 1px;
-  z-index: 970;
+  z-index: 1000;
 }
 .dialog .dialog-menu.show {
   display: block;
@@ -1526,13 +1522,6 @@ select.form-control {
   max-height: calc(100vh - 10rem);
   overflow-x: hidden;
   overflow-y: auto;
-}
-@media (max-height: 575.98px) {
-  .dialog .dialog-menu.dialog-menu-search {
-    max-height: calc(100vh - 11rem);
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
 }
 @media (min-width: 992px) {
   .dialog .dialog-menu.dialog-menu-lg {
@@ -2695,6 +2684,7 @@ select.form-control {
     height: 5rem;
     max-height: 5rem;
     padding: 0 0.5rem;
+    z-index: 970;
   }
 }
 .app-content {
@@ -2786,7 +2776,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     bottom: 0;
-    z-index: 970;
+    z-index: 950;
   }
 }
 .app-content.page-shared {
@@ -3007,7 +2997,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-resources .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -3117,7 +3107,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-resources .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
@@ -3281,7 +3271,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-tests .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -3363,7 +3353,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-tests .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
@@ -3491,7 +3481,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
 }
 .app-content.page-shared .article-questions {
@@ -3628,7 +3618,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-questions .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -3670,7 +3660,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-questions .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
@@ -3754,7 +3744,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-file-upload .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -3770,7 +3760,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
 }
 .app-content.page-shared .article-google,
@@ -3930,7 +3920,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-google .article-header .navbar,
 .app-content.page-shared .article-youtube .article-header .navbar {
@@ -3975,7 +3965,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-shared .article-google .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
 .app-content.page-shared .article-youtube .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
@@ -4423,7 +4413,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 @media (max-width: 768px) {
@@ -4530,7 +4520,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 
@@ -4632,7 +4622,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 @media (max-width: 767.98px) {
@@ -4724,7 +4714,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 
@@ -4967,7 +4957,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-resources .article-resources .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -5066,7 +5056,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-resources .article-resources .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
@@ -5367,7 +5357,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-lessons .article-lessons .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -5439,7 +5429,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-lessons .article-lessons .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
@@ -5675,7 +5665,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-lessons .article-create-lesson .article-content {
     margin: 0 -0.5rem;
@@ -5753,7 +5743,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-lessons .article-create-lesson .article-content .article-sidebar {
     height: calc(100vh - 13rem);
@@ -6002,7 +5992,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-tests .article-tests .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -6074,7 +6064,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-tests .article-tests .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
@@ -6218,7 +6208,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-tests .article-create-test .article-content {
     margin: 0 -0.5rem;
@@ -6259,7 +6249,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 
@@ -6411,7 +6401,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-questions .article-questions .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -6460,7 +6450,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-questions .article-questions .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
@@ -6641,7 +6631,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-questions .article-create-question .article-content {
     margin: 0 -0.5rem;
@@ -6675,7 +6665,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 
@@ -6789,7 +6779,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-announcements .article-announcements .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -6847,7 +6837,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-announcements .article-announcements .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
@@ -6963,7 +6953,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-announcements .article-create-announcement .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -7022,7 +7012,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 
@@ -7124,7 +7114,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-notifications .article-notifications .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -7145,7 +7135,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-notifications .article-notifications .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
@@ -7373,7 +7363,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item-submodule,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item-submodule,
@@ -7550,7 +7540,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-administration .article-create-form-class .article-header .navbar {
     -webkit-justify-content: space-between;
@@ -7578,7 +7568,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
 }
 
@@ -7793,7 +7783,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-profile .article-update-profile-picture .article-header .navbar,
 .app-content.page-profile .article-update-personal-particulars .article-header .navbar,
@@ -7856,7 +7846,7 @@ select.form-control {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
-    z-index: 980;
+    z-index: 970;
   }
   .app-content.page-profile .article-update-profile-picture .article-header .navbar .navbar-nav .nav-item-submodule,
 .app-content.page-profile .article-update-personal-particulars .article-header .navbar .navbar-nav .nav-item-submodule,
