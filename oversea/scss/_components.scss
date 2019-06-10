@@ -1288,11 +1288,15 @@ select.form-control {
             }
           }
         }
+      }
 
-        .btn-light {
-          .fas {
-            font-size: 1.25rem;
-          }
+      .btn-light {
+        &.btn-actions {
+          padding: .325rem .875rem;
+        }
+
+        .fas {
+          font-size: 1.25rem;
         }
       }
     }
