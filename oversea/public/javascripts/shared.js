@@ -63,9 +63,6 @@ $(document).ready(function() {
     if (search === '') return;
 
     $container.find('.article-body .loading-state').removeClass('d-none');
-    $container.find('.article-body .navbar .breadcrumb').addClass('d-none');
-    $container.find('.article-body .navbar .navbar-nav').addClass('d-none');
-    $container.find('.article-body .navbar .navbar-text').removeClass('d-none');
     $container.find('.article-body .navbar').addClass('d-none');
     $container.find('.article-body .table-head').addClass('d-none');
     $container.find('.article-body .table-body').addClass('d-none');
@@ -73,6 +70,9 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $container.find('.article-body .loading-state').addClass('d-none');
+      $container.find('.article-body .navbar .breadcrumb').addClass('d-none');
+      $container.find('.article-body .navbar-expand .navbar-nav').addClass('d-none');
+      $container.find('.article-body .navbar-expand .navbar-text').removeClass('d-none');
       $container.find('.article-body .navbar').removeClass('d-none');
       $container.find('.article-body .table-head').removeClass('d-none');
       $container.find('.article-body .table-body').removeClass('d-none');

@@ -1252,7 +1252,19 @@ select.form-control {
 .list-notifications {
   .list-group {
     .list-group-item {
+      cursor: pointer;
       padding: .75rem 1rem;
+
+      &.active {
+        background-color: lighten($blue, 48%);
+        border-color: $gray-400;
+        color: $gray-700;
+        z-index: initial;
+
+        &:hover {
+          background-color: lighten($blue, 46%);
+        }
+      }
 
       .notification {
         @include display-flex(row);

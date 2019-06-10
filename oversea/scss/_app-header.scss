@@ -139,16 +139,6 @@
             .list-group-item {
               padding: .5rem .75rem;
 
-              &.active {
-                background-color: lighten($blue, 48%);
-                border-color: $gray-400;
-                color: $gray-700;
-
-                &:hover {
-                  background-color: $gray-100;
-                }
-              }
-
               .notification {
                 max-width: 20rem;
                 width: 20rem;

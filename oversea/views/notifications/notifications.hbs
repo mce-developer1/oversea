@@ -24,7 +24,7 @@
             </nav>
             <div class="list-notifications">
               <div class="list-group">
-                <a class="list-group-item list-group-item-action" href="#">
+                <div class="list-group-item list-group-item-action active">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -36,18 +36,25 @@
                         2 min ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread d-none" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread d-none" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action active">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -59,18 +66,25 @@
                         3 hours ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread d-none" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -82,18 +96,25 @@
                         5 hours ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -105,18 +126,25 @@
                         1 day ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -128,18 +156,25 @@
                         3 days ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -151,18 +186,25 @@
                         1 week ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -174,18 +216,25 @@
                         3 weeks ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -197,18 +246,25 @@
                         5 weeks ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread d-none" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -220,18 +276,25 @@
                         5 weeks ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
-                <a class="list-group-item list-group-item-action" href="#">
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
                   <div class="notification">
                     <img src="/static/images/user.png">
                     <div class="notification-body">
@@ -243,17 +306,24 @@
                         8 weeks ago
                       </div>
                     </div>
-                    <button class="btn btn-light btn-mark-read d-none" type="button" title="Mark as Read">
-                      <i class="fas fa-envelope-open"></i>
-                    </button>
-                    <button class="btn btn-light btn-mark-unread" type="button" title="Mark as Unread">
-                      <i class="fas fa-envelope"></i>
-                    </button>
-                    <button class="btn btn-light btn-delete" type="button" title="Delete">
-                      <i class="fas fa-trash"></i>
-                    </button>
                   </div>
-                </a>
+                  <div class="dropdown">
+                    <button class="btn btn-light" type="button" data-toggle="dropdown">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item item-mark-as-read d-none" href="#">
+                        <i class="fas fa-envelope-open"></i> Mark as Read
+                      </a>
+                      <a class="dropdown-item item-mark-as-unread" href="#">
+                        <i class="fas fa-envelope"></i> Mark as Unread
+                      </a>
+                      <a class="dropdown-item item-delete" href="#">
+                        <i class="fas fa-trash"></i> Delete
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <nav class="navbar navbar-expand navbar-load-more">

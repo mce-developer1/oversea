@@ -57,6 +57,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $container.find('.article-body .loading-state').addClass('d-none');
+      $container.find('.article-body .navbar-expand .navbar-nav').addClass('d-none');
       $container.find('.article-body .navbar').removeClass('d-none');
       $container.find('.article-body .list-components').removeClass('d-none');
       $container.find('.nav-item-result .item-text').text(search);
