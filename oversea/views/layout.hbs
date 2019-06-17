@@ -43,6 +43,7 @@
           </a>
           <div class="navbar-text">
             {{#if homePage}}My Library{{/if}}
+            {{#if assignmentsPage}}My Assignments{{/if}}
             {{#if resourcesPage}}My Resources{{/if}}
             {{#if reportsPage}}My Reports{{/if}}
             {{#if lessonsPage}}Lesson Builder{{/if}}
@@ -62,6 +63,11 @@
               <li class="nav-item">
                 <a class="nav-link link-mylibrary {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
                   <i class="img img-mylibrary"></i> My Library
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-myassignments {{#if assignmentsPage}}active{{/if}}" href="/{{userRole}}/assignments/assignments">
+                  <i class="img img-myresources"></i> My Assignments
                 </a>
               </li>
               <li class="nav-item">
@@ -215,7 +221,36 @@
                   <i class="img img-myreports"></i> More
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-more">
-                  <ul class="nav">
+                  {{#unless studentUser}}
+                    <ul class="nav">
+                      <li class="nav-item">
+                        <div class="nav-text">
+                          <i class="img img-myreports"></i> My Tools
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/lessons/lessons">
+                          <i class="img img-myreports"></i> Lesson Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/tests/tests">
+                          <i class="img img-myreports"></i> Test Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/questions/questions">
+                          <i class="img img-myreports"></i> Question Builder
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-myreports"></i> School To Home Notes
+                        </a>
+                      </li>
+                    </ul>
+                  {{/unless}}
+                  <ul class="nav">                    
                     <li class="nav-item">
                       <div class="nav-text">
                         <i class="img img-myreports"></i> My Reports
@@ -510,6 +545,11 @@
               <li class="nav-item">
                 <a class="nav-link {{#if homePage}}active{{/if}}" href="/{{userRole}}/home">
                   <i class="img img-mylibrary"></i> My Library
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if assignmentsPage}}active{{/if}}" href="/{{userRole}}/assignments/assignments">
+                  <i class="img img-myresources"></i> My Assignments
                 </a>
               </li>
               <li class="nav-item">

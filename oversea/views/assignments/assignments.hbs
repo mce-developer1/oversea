@@ -1,0 +1,587 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-assignments">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <i class="fas fa-calendar-check"></i>
+                </button>
+                <span class="item-text text-truncate">My Assignments</span>
+              </li>
+              <li class="nav-item nav-item-submodule dropdown">
+                <button class="btn btn-light" type="button" data-toggle="dropdown">
+                  All Assignments <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">All Assignments</a>
+                  <a class="dropdown-item" href="#">Not Started</a>
+                  <a class="dropdown-item" href="#">Started</a>
+                  <a class="dropdown-item" href="#">Closed</a>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav nav-main">
+              <li class="nav-item dialog">
+                <div class="input-group input-group-search">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-light btn-search" type="button">
+                      <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-light btn-back" type="button">
+                      <i class="fas fa-arrow-left"></i>
+                    </button>
+                  </div>
+                  <input class="form-control form-input input-autocomplete" type="text" placeholder="Search assignments">
+                  <div class="input-group-append">
+                    <button class="btn btn-light btn-clear d-none" type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                    <button class="btn btn-light btn-toggle" type="button" data-toggle='dialog'>
+                      <i class="fas fa-caret-down"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="dialog-menu dialog-menu-search dialog-menu-lg">
+                  <form class="form-advanced-search">
+                    <div class="form-row">
+                      <div class="col-lg">
+                        <div class="form-group">
+                          <label class="form-label" for="selCurriculum">Curriculum</label>
+                          <select class="form-control selectpicker" id="selCurriculum">
+                            <option>All</option>
+                            <option>CAIE</option>
+                            <option>SG</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selGrade">Grade</label>
+                          <select class="form-control selectpicker" id="selGrade">
+                            <option>All</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selSubjet">Subject</label>
+                          <select class="form-control selectpicker" id="selSubjet">
+                            <option>All</option>
+                            <option>Chemistry</option>
+                            <option>Mathematics</option>
+                            <option>Physics</option>
+                            <option>Science</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-lg">
+                        <div class="form-group">
+                          <label class="form-label" for="selType">Assignment Type</label>
+                          <select class="form-control selectpicker" id="selType">
+                            <option>All</option>
+                            <option>Lesson</option>
+                            <option>Type</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="selStatus">Status</label>
+                          <select class="form-control selectpicker" id="selStatus">
+                            <option>All</option>
+                            <option>Not Started</option>
+                            <option>Started</option>
+                            <option>Closed</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col-lg">
+                        <div class="form-group">
+                          <label class="form-label" for="txtKeyword">Keyword</label>
+                          <input class="form-control form-input" type="text" id="txtKeyword">
+                        </div>
+                      </div>
+                      <div class="col-lg"></div>
+                    </div>
+                    <div class="form-group form-group-actions">
+                      <button class="btn btn-light" type="button">Reset</button> 
+                      <button class="btn btn-primary" type="button">Search</button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <button class="btn btn-light btn-search" type="button" title="Search">
+                  <i class="fas fa-search"></i>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-light btn-list-view d-none" type="button" title="List view">
+                  <i class="fas fa-th-list"></i>
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="btn btn-light btn-card-view" type="button" title="Grid view">
+                  <i class="fas fa-th-large"></i>
+                </button>
+              </li>
+            </ul>            
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-sidebar">
+            <ul class="nav nav-side">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">All Assignments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Not Started</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Started</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Closed</a>
+              </li>
+            </ul>
+          </div>
+          <div class="article-body">
+            <div class="loading-state d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <nav class="navbar navbar-expand">
+              <div class="navbar-text">8 records found</div>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-primary btn-export" type="button">
+                    <i class="fas fa-file-export"></i> Export
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <table class="table table-head">
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="160px"></colgroup>
+              <colgroup width="200px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <thead>
+                <tr>
+                  <th class="sortable-column">
+                    Title <i class="fas fa-long-arrow-alt-down"></i>
+                  </th>
+                  <th class="sortable-column">
+                    Subject
+                  </th>
+                  <th class="sortable-column">
+                    Grade
+                  </th>
+                  <th>
+                    Assigned To
+                  </th>
+                  <th>
+                    Start & End Dates
+                  </th>
+                  <th>
+                    Completed
+                  </th>
+                  <th>
+                    &nbsp;
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-body">
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="160px"></colgroup>
+              <colgroup width="200px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                      Counting To 10
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>P1-EA</td>
+                  <td>
+                    01 Nov 2019 - 30 Nov 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">0%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                      Comparing Numbers
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    01 Jun 2019 - 30 Jun 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">80%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-tachometer-alt"></i>
+                      Making Number Patterns
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    01 Mar 2019 - 30 Mar 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">100%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-tachometer-alt"></i>
+                      Making Number Bonds
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    01 Mar 2019 - 30 Mar 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">100%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                      Making Addition Stories
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    01 Feb 2019 - 28 Feb 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">100%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                      Making Subtraction Stories
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    01 Feb 2019 - 28 Feb 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">100%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                      Making Fact Families
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    01 Jan 2019 - 31 Feb 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">100%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <a class="title" href="#">
+                      <i class="fas fa-chalkboard-teacher"></i>
+                      Making Patterns With Shapes
+                    </a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    01 Jan 2019 - 31 Feb 2019
+                  </td>
+                  <td>
+                    <a class="completed" href="#">100%</a>
+                  </td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="card-group d-none">
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Counting To 10</a>
+                  <div class="text-muted">
+                    01 Nov 2019 - 30 Nov 2019
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 0%;"></div>
+                  </div>
+                  <a class="completed" href="#">0% completed</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Comparing Numbers</a>
+                  <div class="text-muted">
+                    01 Jun 2019 - 30 Jun 2019
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
+                  </div>
+                  <a class="completed" href="#">80% completed</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Making Number Patterns</a>
+                  <div class="text-muted">
+                    01 Mar 2019 - 30 Mar 2019
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                  <a class="completed" href="#">100% completed</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-tachometer-alt"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Making Number Bonds</a>
+                  <div class="text-muted">
+                    01 Mar 2019 - 30 Mar 2019
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                  <a class="completed" href="#">100% completed</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-img-top">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="card-body">
+                  <a class="card-link" href="#">Making Addition Stories</a>
+                  <div class="text-muted">
+                    01 Feb 2019 - 28 Feb 2019
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                  </div>
+                  <a class="completed" href="#">100% completed</a>
+                </div>
+              </div>
+            </div>
+            <nav class="navbar navbar-expand navbar-pagination">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <label class="text-muted" for="selLimit">Records per page:</label>
+                  <select class="selectpicker" id="selLimit" data-width="fit">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>50</option>
+                    <option>100</option>
+                  </select>
+                </li>
+                <li class="nav-item text-muted">1 - 8 of 8</li>
+                <li class="nav-item">
+                  <button class="btn btn-light" type="button" title="Previous" data-toggle="dropdown" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="btn btn-light" type="button" title="Next" data-toggle="dropdown">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>            
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-assignment-details fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Assignment Details</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="attribute-group">
+          <div class="attribute">
+            <div class="attribute-name">Subject</div>
+            <div class="attribute-value">
+            </div>
+          </div>
+          <div class=" attribute">
+            <div class="attribute-name">Level</div>
+            <div class="attribute-value">
+            </div>
+          </div>
+          <div class=" attribute">
+            <div class="attribute-name">Assigned To</div>
+            <div class="attribute-value">
+            </div>
+          </div>
+          <div class=" attribute">
+            <div class="attribute-name">Start & End Dates</div>
+            <div class="attribute-value">
+            </div>
+          </div>
+          <div class="attribute">
+            <div class="attribute-name">Completed</div>
+            <div class="attribute-value">
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-resource-resource-track fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-track-resource modal-iframe" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item nav-title">
+              <div class="item-text text-truncate">Track Assignment</div>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn btn-light btn-close" type="button" title="Close" data-dismiss="modal">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="content">
+          <iframe class="full" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -66,6 +66,25 @@ router.get('/:userRole/home', function(req, res, next) {
   });
 });
 
+/* GET assignments page. */
+router.get('/:userRole/assignments/assignments', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('assignments/assignments', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'assignments',
+    loggedIn: true,
+    assignmentsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET track resources page. */
 router.get('/:userRole/tracking/resources', function(req, res, next) {
   var userRole = req.params.userRole;
@@ -495,6 +514,33 @@ router.get('/shared/search_youtube', function(req, res, next) {
     .catch('error', (error) => {
       res.send(error);
     });
+});
+
+/* GET assign resource page. */
+router.get('/shared/assign_resource', upload.any(), function(req, res, next) {
+  res.render('shared/assign_resource', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
+/* GET track lesson page. */
+router.get('/shared/track_lesson', upload.any(), function(req, res, next) {
+  res.render('shared/track_lesson', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
+/* GET track test page. */
+router.get('/shared/track_test', upload.any(), function(req, res, next) {
+  res.render('shared/track_test', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
 });
 
 /* GET upload page. */

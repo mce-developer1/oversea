@@ -192,7 +192,7 @@ $(document).ready(function() {
   });
 
   $container.find('.navbar-nav .btn-assign').on('click', function(e) {
-    showAssignResourceModal();
+    showAssignResourceModal('/shared/assign_resource');
   });
 
   $container.find('.dropdown-menu .item-delete').on('click', function(e) {

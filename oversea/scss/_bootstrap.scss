@@ -278,19 +278,19 @@ a {
   }
 
   &.form-input-xs {
-    max-width: 5rem;
+    max-width: 4rem;
   }
 
   &.form-input-sm {
-    max-width: 10rem;
+    max-width: 8rem;
   }
 
   &.form-input-md {
-    max-width: 20rem;
+    max-width: 16rem;
   }
 
   &.form-input-lg {
-    max-width: 40rem;
+    max-width: 32rem;
   }
 
   &.form-textarea {
@@ -522,7 +522,7 @@ a {
   &.nav-pad {
     .nav-link {
       border: 1px solid $gray-400;
-      padding: .375rem .5rem;
+      padding: .325rem .5rem;
       margin: .125rem;
       min-width: 2.5rem;
       text-align: center;      
@@ -577,8 +577,6 @@ a {
 }
 
 .list-group {
-  @include display-flex(column);
-
   &.list-group-bubble {
     @include display-flex(row);
     @include align-items(flex-start);
@@ -587,6 +585,9 @@ a {
     padding: .25rem;
 
     .list-group-item {
+      @include display-flex(row);
+      @include align-items(center);
+      @include justify-content(space-between);
       @include user-select(none);
       background-color: $gray-200;
       border: 0;
@@ -604,9 +605,6 @@ a {
   }
 
   .list-group-item {
-    @include display-flex(row);
-    @include align-items(center);
-    @include justify-content(space-between);
     border-left: 0;
     border-right: 0;
     border-radius: 0;
@@ -696,7 +694,8 @@ a {
   .modal-dialog {
     &.modal-preview,
     &.modal-add-resource,
-    &.modal-assign-resource {
+    &.modal-assign-resource,
+    &.modal-track-resource {
       margin: 0;
       max-width: 100vw;
       
@@ -889,13 +888,13 @@ a {
           .btn-light {
             &.dropdown-toggle {
               margin: 0;
-              padding: .375rem .5rem;
+              padding: .325rem .5rem;
             }
           }
         }
         
         .btn-light {
-          padding: .325rem;
+          padding: .325rem !important;
           margin: -.5rem 0;
           opacity: .8;
 

@@ -6,6 +6,7 @@ $(document).ready(function() {
   if ($container.length === 0) $container = $('.article-file-upload');
   if ($container.length === 0) $container = $('.article-google');
   if ($container.length === 0) $container = $('.article-youtube');
+  if ($container.length === 0) $container = $('.article-assign-resource');
 
   function removeAllDropZoneFiles() {
     if (dropzone && dropzone.removeAllFiles) {
@@ -606,6 +607,93 @@ $(document).ready(function() {
         $(this).find('.custom-control-input').prop('checked', true);
       }
       updateActionButtonsStyles();
+    });
+  }
+
+  if ($container.hasClass('article-assign-resource')) {
+    function updateAssignButtonsStyle() {
+      var groupUsersSelected = ($container.find('.list-group .custom-control-input:checked').length > 0);
+      
+      if (groupUsersSelected) {
+        if ($container.find('.article-header .btn-assign').hasClass('d-none')) {
+          $container.find('.article-header .btn-assign').removeClass('d-none');
+        }
+      } else {
+        if (!$container.find('.article-header .btn-assign').hasClass('d-none')) {
+          $container.find('.article-header .btn-assign').addClass('d-none');
+        }
+      }
+    }
+
+    $('#txtStartDateTime').daterangepicker({
+      parentEl: '.form-assign-resource',
+      singleDatePicker: true,
+      timePicker: true,
+      timePickerIncrement: 5,
+      minYear: 2019,
+      maxYear: 2019,
+      locale: {
+        format: 'DD MMM YYYY hh:mm A'
+      }
+    });
+
+    $('#txtEndDateTime').daterangepicker({
+      parentEl: '.form-assign-resource',
+      singleDatePicker: true,
+      timePicker: true,
+      timePickerIncrement: 5,
+      minYear: 2019,
+      maxYear: 2019,
+      locale: {
+        format: 'DD MMM YYYY hh:mm A'
+      }
+    });
+
+    $container.find('.form-assign-settings .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
+      displayKey: 'name',
+      source: function(query, callback) {
+        var records = [
+          { name: 'Aaron Tan' }, 
+          { name: 'Arya Suman' },
+          { name: 'Ashar Ahmad' }, 
+          { name: 'Chua Chin Hui' },
+          { name: 'Derrick Lee' }
+        ];
+        var pattern = new RegExp(query, 'i');
+        var hits = records.filter(function(record) {
+          return record.name.match(pattern);
+        });
+        hits.forEach(function(hit) {
+          var match = hit.name.match(pattern)[0];
+          var highlighted = '<em>' + match + '</em>';
+          hit.highlighted = hit.name.replace(match, highlighted);
+        });
+        callback(hits);
+      },
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion.highlighted;
+        }
+      }
+    }]);
+
+    $container.find('.form-assign-settings .btn-add').on('click', function(e) {
+      $container.find('.form-assign-settings .list-users').removeClass('d-none');
+    });
+
+    $container.find('.form-assign-settings .btn-select').on('click', function(e) {
+      $('.modal-user-select').modal('show');
+    });
+
+    $container.find('.list-group .custom-control-input').on('click', function(e) {
+      var $item = $(this).closest('.list-group-item');
+
+      if ($(this).prop('checked')) {
+        $item.find('.collapse .custom-control-input').prop('checked', true);
+      } else {
+        $item.find('.collapse .custom-control-input').prop('checked', false);
+      }
+      updateAssignButtonsStyle();
     });
   }
 

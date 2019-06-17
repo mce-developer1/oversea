@@ -33,6 +33,14 @@ select.form-control {
   &.fa-file-archive {
     color: darken($red, 8%);
   }
+
+  &.fa-chalkboard-teacher {
+    color: $green;
+  }
+
+  &.fa-tachometer-alt {
+    color: $red;
+  }
 }
 
 .processing-overlay,
@@ -44,7 +52,7 @@ select.form-control {
   .spinner-border {
     background-image: url("../images/icon_spinner.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     border: 0;
     height: 2rem;
     width: 2rem;
@@ -210,7 +218,7 @@ select.form-control {
 
       .img {
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         height: 2rem;
         min-width: 2rem;
         width: 2rem;
@@ -540,7 +548,7 @@ select.form-control {
 
   .img {
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   
     &.img-mylibrary {
       background-image: url("../images/icon_topnav_mylibrary.png");
@@ -556,6 +564,124 @@ select.form-control {
 
     &.img-administration {
       background-image: url("../images/icon_topnav_administration.png");
+    }
+  }
+}
+
+.list-group {
+  .list-group-item {
+    &.collapsible {
+      padding: 0;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      .collapsible-header {
+        @include display-flex(row);
+        @include align-items(center);
+        @include justify-content(space-between);
+        background-color: lighten($gray-200, 2%);
+        padding: .5rem .5rem .5rem 1rem;
+
+        .btn-light {
+          padding: 0.325rem 0.75rem;
+
+          &:not(.collapsed) {
+            .fa-chevron-up {
+              display: none;
+            }
+          }
+
+          &.collapsed {
+            .fa-chevron-up {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .collapse {
+        .list-group {
+          &.list-group-horizontal {
+            background-color: $white;
+
+            .list-group-item {
+              padding: .5rem 0;
+
+              &:hover {
+                background-color: transparent;
+              }
+
+              .custom-checkbox {
+                margin: .325rem 1rem;
+              }
+            }
+          }
+
+          .list-group-item {
+            border: 0;
+
+            &.collapsible {
+              .collapsible-header {
+                background-color: lighten($gray-200, 4%);
+              }
+            }
+          }
+        }
+      }
+
+      > .collapse {
+        > .list-group {
+          &.list-group-horizontal {
+            padding: 0 .5rem 0 1rem;
+          }
+
+          > .list-group-item {
+            &.collapsible {
+              > .collapsible-header {
+                padding: .5rem .5rem .5rem 2rem;
+              }
+
+              > .collapse {
+                > .list-group {
+                  &.list-group-horizontal {
+                    padding: 0 .5rem 0 2rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .collapse {
+          .list-group {
+            &.list-group-horizontal {
+              @include display-flex(column);
+              @include align-items(flex-start);
+            }
+          }
+        }
+      }
+  
+      @media (min-width: 576px) {
+        .collapse {
+          .list-group {
+            &.list-group-horizontal {
+              @include display-flex(row);
+              @include align-items(flex-start);
+              @include flex-wrap(wrap);
+
+              .list-group-item {
+                max-width: 16rem;
+                width: 16rem;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -927,7 +1053,7 @@ select.form-control {
         th,
         td {
           .btn-light {
-            padding: .325rem;
+            padding: .325rem .5rem;
             margin: -.5rem 0;
             opacity: .8;
 
@@ -1157,6 +1283,10 @@ select.form-control {
     @include display-flex(row);
     @include flex-wrap(wrap);
 
+    &.dropdown-open {
+      z-index: 980 !important;
+    }
+
     h5 {
       @include flex-grow(1);
       line-height: 1.75;
@@ -1196,7 +1326,7 @@ select.form-control {
       }
 
       .btn {
-        padding: .375rem .5rem;
+        padding: .325rem .5rem;
         
         &.dropdown-toggle {
           margin-left: 0;
@@ -1252,6 +1382,9 @@ select.form-control {
 .list-notifications {
   .list-group {
     .list-group-item {
+      @include display-flex(row);
+      @include align-items(center);
+      @include justify-content(space-between);
       cursor: pointer;
       padding: .75rem 1rem;
 
@@ -1774,6 +1907,10 @@ select.form-control {
           
           .list-group {
             .list-group-item {
+              @include display-flex(row);
+              @include align-items(center);
+              @include justify-content(space-between);
+
               &.item-owner {
                 @include justify-content(flex-start);
                 padding: .875rem .5rem;
@@ -1844,42 +1981,45 @@ select.form-control {
           .form-control {
             margin-top: 1rem;
           }
+        }
+      }
 
-          .list-groups,
-          .list-users {
-            height: 16rem;
-            margin-top: 1rem;
-            overflow-y: auto;
+      .navbar {
+        padding: .675rem .5rem;
+  
+        h6 {
+          margin-bottom: 0;
+        }
+      }
 
-            .list-group {
-              .list-group-item {
-                padding: .75rem .5rem;
-              }
-            }
-          }
+      .list-groups,
+      .list-users {
+        height: 16rem;
+        margin-top: 1rem;
+        overflow-y: auto;
 
-          .list-users {
-            height: 12.6rem;
+        .list-group {
+          .list-group-item {
+            padding: .75rem .5rem;
           }
         }
       }
-    }
 
-    .navbar {
-      padding: .675rem .5rem;
-
-      h6 {
-        margin-bottom: 0;
+      .list-users {
+        height: 12.6rem;
       }
-    }
-
-    .selected-users {
-      max-height: 17rem;
-      overflow-y: auto;
-
-      .list-group {
-        .list-group-item {
-          padding: .25rem .5rem;
+  
+      .selected-users {
+        max-height: 17rem;
+        overflow-y: auto;
+  
+        .list-group {
+          .list-group-item {
+            @include display-flex(row);
+            @include align-items(center);
+            @include justify-content(space-between);
+            padding: .25rem .5rem;
+          }
         }
       }
     }

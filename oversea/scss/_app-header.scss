@@ -8,7 +8,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 980;
 
   .btn-menu {
     margin-right: 1rem;
@@ -179,8 +179,8 @@
 
         img {
           margin-right: 1rem;
-          max-height: 3.5rem;
-          max-width: 3.5rem;
+          max-height: 3rem;
+          max-width: 3rem;
           vertical-align: baseline;
         }
 
@@ -200,7 +200,7 @@
             .user-name {
               color: $primary;
               margin-left: .25rem;
-              max-width: 10rem;
+              max-width: 8rem;
             }
           }
         }
@@ -208,6 +208,11 @@
 
       .user-account {
         padding: .5rem 1rem;
+
+        img {
+          max-height: 4rem;
+          max-width: 4rem;
+        }
 
         .user-summary {
           @include flex-grow(1);
@@ -277,9 +282,10 @@
     }
   }
   
-  @media (max-width: 1200px) {
+  @media (max-width: 1399.98px) {
     .navbar-nav {
       &.nav-main {
+        .link-mytools,
         .link-myreports,
         .link-schoolmatters,
         .link-administration {
@@ -315,8 +321,6 @@
         .btn-user {
           img {
             margin-right: 0;
-            max-height: 3rem;
-            max-width: 3rem;
           }
 
           .user-summary {
@@ -357,7 +361,7 @@
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     .navbar-nav {
       &.nav-main {
         .link-more {
@@ -373,6 +377,5 @@
     height: 5rem;
     max-height: 5rem;
     padding: 0 .5rem;
-    z-index: 970;
   }
 }

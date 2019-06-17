@@ -112,6 +112,18 @@ $(document).ready(function() {
     });
   });
 
+  $(document).on('show.bs.collapse', function(e) {
+    if (!$(e.target).closest('.collapsible').hasClass('show')) {
+      $(e.target).closest('.collapsible').addClass('show');
+    }
+  });
+
+  $(document).on('hide.bs.collapse', function(e) {
+    if ($(e.target).closest('.collapsible').hasClass('show')) {
+      $(e.target).closest('.collapsible').removeClass('show');
+    }
+  });
+
   $(document).on('click', '[data-toggle="password"]', function(e) {
     var icon = $(this).find('.fas');
     $(icon).toggleClass('fa-eye-slash');
@@ -133,7 +145,21 @@ $(document).ready(function() {
     }
   });
 
+  $(document).on('hide.bs.dropdown', function(e) {
+    var header = $(e.target).closest('.article-header');
+    
+    if ($(header).hasClass('dropdown-open')) {
+      $(header).removeClass('dropdown-open');
+    }
+  });
+
   $(document).on('show.bs.dropdown', function(e) {
+    var header = $(e.target).closest('.article-header');
+
+    if (!$(header).hasClass('dropdown-open')) {
+      $(header).addClass('dropdown-open');
+    }
+
     if ($(e.target).closest('.dialog-menu').length === 0) {
       if ($('.dialog.open').length === 1) {
         $('.dialog.open .dialog-menu').removeClass('show');
