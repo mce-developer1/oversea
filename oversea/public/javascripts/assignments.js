@@ -23,26 +23,53 @@ $(document).ready(function() {
     }, 1000);
   }
 
-  function showTrackAssignmentModal(srcUrl) {
-    $('.modal-resource-resource-track').find('iframe').attr('src', srcUrl);
-    $('.modal-resource-resource-track').on('keydown', function(e) {
+  function showAssignResourceModal(srcUrl) {
+    $('.modal-resource-assign').find('iframe').attr('src', srcUrl);
+    $('.modal-resource-assign').on('keydown', function(e) {
       if ((e.which == 27) && window._pageDirty) {
         e.which = Number.NaN;
         e.stopPropagation();
         showCancelUploadConfirmationModal(function() {
-          $('.modal-resource-resource-track').modal('hide');
+          $('.modal-resource-assign').modal('hide');
         });
       }
     });
-    $('.modal-resource-resource-track .btn-close').on('click', function(e) {
+    $('.modal-resource-assign .btn-close').on('click', function(e) {
       if (window._pageDirty) {
         e.stopPropagation();
         showCancelUploadConfirmationModal(function() {
-          $('.modal-resource-resource-track').modal('hide');
+          $('.modal-resource-assign').modal('hide');
         });
       }
     });
-    $('.modal-resource-resource-track').modal('show');
+    $('.modal-resource-assign').on('hide.bs.modal', function(e) {
+      // To do
+    });
+    $('.modal-resource-assign').modal('show');
+  }
+
+  function showTrackAssignmentModal(srcUrl) {
+    var title = 'Track ' + ((srcUrl === '/shared/track_lesson') ? 'Lesson' : 'Test');
+    $('.modal-assignment-track .navbar .navbar-nav .item-text').text(title);
+    $('.modal-assignment-track').find('iframe').attr('src', srcUrl);
+    $('.modal-assignment-track').on('keydown', function(e) {
+      if ((e.which == 27) && window._pageDirty) {
+        e.which = Number.NaN;
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-assignment-track').modal('hide');
+        });
+      }
+    });
+    $('.modal-assignment-track .btn-close').on('click', function(e) {
+      if (window._pageDirty) {
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-assignment-track').modal('hide');
+        });
+      }
+    });
+    $('.modal-assignment-track').modal('show');
   }
 
   $container.find('.nav-main .input-group .input-autocomplete').on('keyup', function(e) {
@@ -167,12 +194,29 @@ $(document).ready(function() {
     $('.modal-assignment-details').modal('show');
   });
 
-  $container.find('.table-body tr .completed').on('click', function(e) {
-    showTrackAssignmentModal('/shared/track_lesson');
+  $container.find('.table-body tr .period').on('click', function(e) {
+    e.preventDefault();
+    showAssignResourceModal('/shared/assign_resource');
   });
 
-  $container.find('.card-group .card .completed').on('click', function(e) {
-    showTrackAssignmentModal('/shared/track_lesson');
+  $container.find('.table-body tr .percentage').on('click', function(e) {
+    e.preventDefault();
+
+    if ($(this).data('type') === 'lesson') {
+      showTrackAssignmentModal('/shared/track_lesson');
+    } else {
+      showTrackAssignmentModal('/shared/track_test');
+    }
+  });
+
+  $container.find('.card-group .card .percentage').on('click', function(e) {
+    e.preventDefault();
+
+    if ($(this).data('type') === 'lesson') {
+      showTrackAssignmentModal('/shared/track_lesson_user');
+    } else {
+      showTrackAssignmentModal('/shared/track_test_user');
+    }
   });
 
   $('a[data-toggle="popover"]').on('click', function(e) {

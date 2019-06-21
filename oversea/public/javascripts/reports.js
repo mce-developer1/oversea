@@ -172,10 +172,10 @@ $(document).ready(function() {
   function drawStudentUsageReport() {
     var data = [
       ['Element', 'Usage', { role: 'style' }, { role: 'annotation' }],
-      ['Math Buddies', 95, getBarColor(95), 'Success!'],
-      ['Marshall Cavendish Maths', 80, getBarColor(80), 'Almost There!'],
-      ['Marshall Cavendish Science', 70, getBarColor(70), 'Keep It Up!'],
-      ['My Pals are here! Science', 55, getBarColor(55), 'Halfway There!']
+      ['Math Buddies', { v: 95, f: '95%' }, getBarColor(95), 'Success!'],
+      ['Marshall Cavendish Maths', { v: 80, f: '80%' }, getBarColor(80), 'Almost There!'],
+      ['Marshall Cavendish Science', { v: 70, f: '70%' }, getBarColor(70), 'Keep It Up!'],
+      ['My Pals are here! Science', { v: 55, f: '55%' }, getBarColor(55), 'Halfway There!']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -187,6 +187,7 @@ $(document).ready(function() {
       chartArea: { left: chartAreaLeft, top: 16, bottom: 32, height: '80%', width: '60%' },
       bar: { groupWidth: (data.length === 2) ? '30%' : (data.length === 3) ? '40%' : '50%' },
       legend: { position: 'none' },
+      tooltip: { text: 'percentage' },
       annotations: {
         textStyle: {
           color: 'white'
@@ -286,10 +287,10 @@ $(document).ready(function() {
   function drawStudentProficiencyReport() {
     var data = [
       ['Element', 'Mastery', { role: 'style' }, { role: 'annotation' }],
-      ['Math Buddies', 95, getBarColor(95), 'Master'],
-      ['Marshall Cavendish Maths', 80, getBarColor(80), 'Expert'],
-      ['Marshall Cavendish Science', 70, getBarColor(70), 'Advanced'],
-      ['My Pals are here! Science', 55, getBarColor(55), 'Apprentice']
+      ['Math Buddies', { v: 95, f: '95%' }, getBarColor(95), 'Master'],
+      ['Marshall Cavendish Maths', { v: 80, f: '80%' }, getBarColor(80), 'Expert'],
+      ['Marshall Cavendish Science', { v: 70, f: '70%' }, getBarColor(70), 'Advanced'],
+      ['My Pals are here! Science', { v: 55, f: '55%' }, getBarColor(55), 'Apprentice']
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     

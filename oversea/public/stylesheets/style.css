@@ -438,6 +438,11 @@ a:focus {
 
 .nav.nav-tabs .nav-link {
   border-radius: 0;
+  color: #495057;
+  font-weight: 500;
+}
+.nav.nav-tabs .nav-link.active {
+  color: #212529;
 }
 .nav.nav-side {
   -ms-flex-direction: column;
@@ -515,6 +520,10 @@ a:focus {
   background-color: #f8f9fa;
 }
 
+.tab-content {
+  background-color: #ffffff;
+}
+
 .card-group {
   display: -ms-flexbox;
   display: flex;
@@ -580,18 +589,18 @@ a:focus {
 .modal.modal-base {
   z-index: 1030;
 }
-.modal .modal-dialog.modal-preview, .modal .modal-dialog.modal-add-resource, .modal .modal-dialog.modal-assign-resource, .modal .modal-dialog.modal-track-resource {
+.modal .modal-dialog.modal-preview, .modal .modal-dialog.modal-add-resource, .modal .modal-dialog.modal-assign-resource, .modal .modal-dialog.modal-track-assignment {
   margin: 0;
   max-width: 100vw;
 }
-.modal .modal-dialog.modal-preview .modal-content, .modal .modal-dialog.modal-add-resource .modal-content, .modal .modal-dialog.modal-assign-resource .modal-content, .modal .modal-dialog.modal-track-resource .modal-content {
+.modal .modal-dialog.modal-preview .modal-content, .modal .modal-dialog.modal-add-resource .modal-content, .modal .modal-dialog.modal-assign-resource .modal-content, .modal .modal-dialog.modal-track-assignment .modal-content {
   background-color: #f8f9fa;
   border: 0;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body, .modal .modal-dialog.modal-add-resource .modal-content .modal-body, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body, .modal .modal-dialog.modal-track-resource .modal-content .modal-body {
+.modal .modal-dialog.modal-preview .modal-content .modal-body, .modal .modal-dialog.modal-add-resource .modal-content .modal-body, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body {
   padding: 0;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .navbar {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .navbar {
   -ms-flex-wrap: none;
   flex-wrap: none;
   background-color: #e9ecef;
@@ -602,11 +611,11 @@ a:focus {
   top: 0;
   z-index: 1000;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-text, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-text, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-text, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .navbar .navbar-text {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-text, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-text, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-text, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .navbar .navbar-text {
   font-size: 1.25rem;
   max-width: calc(100vw - 14rem);
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-nav, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-nav, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .navbar .navbar-nav {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-nav, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-nav, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .navbar .navbar-nav {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -614,14 +623,14 @@ a:focus {
   -ms-flex-wrap: none;
   flex-wrap: none;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav .btn-light, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-nav .btn-light, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-nav .btn-light, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .navbar .navbar-nav .btn-light {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav .btn-light, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-nav .btn-light, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-nav .btn-light, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .navbar .navbar-nav .btn-light {
   margin: 0 0.25rem;
   padding: 0.325rem 0.5rem;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav .btn-light .fas, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-nav .btn-light .fas, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-nav .btn-light .fas, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .navbar .navbar-nav .btn-light .fas {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .navbar .navbar-nav .btn-light .fas, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .navbar .navbar-nav .btn-light .fas, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .navbar .navbar-nav .btn-light .fas, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .navbar .navbar-nav .btn-light .fas {
   font-size: 1.5rem;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .content, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .content {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .content, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .content {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -631,32 +640,32 @@ a:focus {
   height: calc(100vh - 4rem);
   width: 100vw;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .content .full, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .content .full, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .content .full {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .content .full, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .content .full, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .content .full {
   overflow-x: hidden;
   overflow-y: auto;
   height: calc(100vh - 4rem);
   width: 100vw;
 }
-.modal .modal-dialog.modal-preview .modal-content .modal-body .content .full .file-upload, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .content .full .file-upload, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .content .full .file-upload, .modal .modal-dialog.modal-track-resource .modal-content .modal-body .content .full .file-upload {
+.modal .modal-dialog.modal-preview .modal-content .modal-body .content .full .file-upload, .modal .modal-dialog.modal-add-resource .modal-content .modal-body .content .full .file-upload, .modal .modal-dialog.modal-assign-resource .modal-content .modal-body .content .full .file-upload, .modal .modal-dialog.modal-track-assignment .modal-content .modal-body .content .full .file-upload {
   margin: 1.5rem;
   min-height: calc(100vh - 7rem);
   width: calc(100vw - 3rem);
 }
-.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-resource.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-resource.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar {
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-preview.modal-track-assignment.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-track-assignment.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-track-assignment.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-assignment.modal-add-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-assignment.modal-assign-resource.modal-iframe.modal-muted .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-assignment.modal-track-assignment.modal-iframe.modal-muted .modal-content .modal-body .navbar {
   z-index: 1030;
 }
-.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-resource.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar {
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-preview.modal-track-assignment.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-add-resource.modal-track-assignment.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-assign-resource.modal-track-assignment.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-assignment.modal-add-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-assignment.modal-assign-resource.modal-iframe .modal-content .modal-body .navbar, .modal .modal-dialog.modal-track-assignment.modal-track-assignment.modal-iframe .modal-content .modal-body .navbar {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1050;
 }
-.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-track-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-track-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content {
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-preview.modal-track-assignment.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-track-assignment.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource.modal-track-assignment.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-track-assignment.modal-add-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-track-assignment.modal-assign-resource.modal-iframe .modal-content .modal-body .content, .modal .modal-dialog.modal-track-assignment.modal-track-assignment.modal-iframe .modal-content .modal-body .content {
   height: 100vh;
   width: 100vw;
 }
-.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-track-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-track-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full {
+.modal .modal-dialog.modal-preview.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-preview.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-preview.modal-track-assignment.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-add-resource.modal-track-assignment.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-assign-resource.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-assign-resource.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-assign-resource.modal-track-assignment.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-track-assignment.modal-add-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-track-assignment.modal-assign-resource.modal-iframe .modal-content .modal-body .content .full, .modal .modal-dialog.modal-track-assignment.modal-track-assignment.modal-iframe .modal-content .modal-body .content .full {
   background-color: transparent;
   overflow-x: hidden;
   overflow-y: auto;
@@ -669,15 +678,15 @@ a:focus {
   left: 0;
   z-index: 1030;
 }
-.modal .modal-dialog.modal-preview.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-track-resource.modal-preview .modal-content .modal-body .content {
+.modal .modal-dialog.modal-preview.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-add-resource.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-assign-resource.modal-preview .modal-content .modal-body .content, .modal .modal-dialog.modal-track-assignment.modal-preview .modal-content .modal-body .content {
   -webkit-justify-content: center;
   justify-content: center;
 }
-.modal .modal-dialog.modal-preview.modal-preview .modal-content .modal-body .content *, .modal .modal-dialog.modal-add-resource.modal-preview .modal-content .modal-body .content *, .modal .modal-dialog.modal-assign-resource.modal-preview .modal-content .modal-body .content *, .modal .modal-dialog.modal-track-resource.modal-preview .modal-content .modal-body .content * {
+.modal .modal-dialog.modal-preview.modal-preview .modal-content .modal-body .content *, .modal .modal-dialog.modal-add-resource.modal-preview .modal-content .modal-body .content *, .modal .modal-dialog.modal-assign-resource.modal-preview .modal-content .modal-body .content *, .modal .modal-dialog.modal-track-assignment.modal-preview .modal-content .modal-body .content * {
   font-size: 1.25rem;
   max-width: 100%;
 }
-.modal .modal-dialog.modal-preview.modal-preview .modal-content .modal-body .content p, .modal .modal-dialog.modal-add-resource.modal-preview .modal-content .modal-body .content p, .modal .modal-dialog.modal-assign-resource.modal-preview .modal-content .modal-body .content p, .modal .modal-dialog.modal-track-resource.modal-preview .modal-content .modal-body .content p {
+.modal .modal-dialog.modal-preview.modal-preview .modal-content .modal-body .content p, .modal .modal-dialog.modal-add-resource.modal-preview .modal-content .modal-body .content p, .modal .modal-dialog.modal-assign-resource.modal-preview .modal-content .modal-body .content p, .modal .modal-dialog.modal-track-assignment.modal-preview .modal-content .modal-body .content p {
   margin: 1rem;
   text-align: center;
 }
@@ -700,6 +709,7 @@ a:focus {
   border-top: 0;
   border-bottom-width: 1px;
   color: #495057;
+  font-weight: 500;
   padding: 1rem;
 }
 .table thead th.sortable-column:hover {
@@ -792,10 +802,10 @@ select.form-control {
   color: #c62232;
 }
 .fas.fa-chalkboard-teacher {
-  color: #28a745;
+  color: #6c757d;
 }
 .fas.fa-tachometer-alt {
-  color: #dc3545;
+  color: #6c757d;
 }
 
 .processing-overlay,
@@ -1783,6 +1793,45 @@ select.form-control {
   font-style: normal;
 }
 
+.chart {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+}
+.chart.no-legend .chart-area {
+  max-width: 90%;
+}
+.chart .chart-area {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: calc(50% - 2rem);
+}
+.chart .chart-legend {
+  min-width: 20rem;
+  margin-left: 2rem;
+  padding: 1rem;
+}
+.chart .chart-legend .legend-group {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.chart .chart-legend .legend-group .legend-label {
+  min-width: 10rem;
+  width: 10rem;
+}
+
 .article {
   padding: 1.5rem;
 }
@@ -1793,12 +1842,12 @@ select.form-control {
   margin-left: 0;
 }
 .article .article-header {
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -1889,6 +1938,22 @@ select.form-control {
     -ms-flex-direction: column;
     flex-direction: column;
   }
+}
+
+.user-details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+.user-details img {
+  margin-right: 1rem;
+  max-height: 4rem;
+  max-width: 4rem;
+  vertical-align: baseline;
 }
 
 .list-notifications .list-group .list-group-item {
@@ -2468,17 +2533,20 @@ select.form-control {
 }
 
 .modal-resource-resource-add .modal-dialog .modal-body .navbar,
-.modal-resource-assign .modal-dialog .modal-body .navbar {
+.modal-resource-assign .modal-dialog .modal-body .navbar,
+.modal-assignment-track .modal-dialog .modal-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
 .modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-divider,
-.modal-resource-assign .modal-dialog .modal-body .navbar .nav-divider {
+.modal-resource-assign .modal-dialog .modal-body .navbar .nav-divider,
+.modal-assignment-track .modal-dialog .modal-body .navbar .nav-divider {
   border-right-color: #6c757d;
   margin: 0.25rem 1rem;
 }
 .modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-item .item-text,
-.modal-resource-assign .modal-dialog .modal-body .navbar .nav-item .item-text {
+.modal-resource-assign .modal-dialog .modal-body .navbar .nav-item .item-text,
+.modal-assignment-track .modal-dialog .modal-body .navbar .nav-item .item-text {
   font-size: 1.25rem;
   max-width: 16rem;
 }
@@ -2486,7 +2554,9 @@ select.form-control {
   .modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-title,
 .modal-resource-resource-add .modal-dialog .modal-body .navbar .nav-divider,
 .modal-resource-assign .modal-dialog .modal-body .navbar .nav-title,
-.modal-resource-assign .modal-dialog .modal-body .navbar .nav-divider {
+.modal-resource-assign .modal-dialog .modal-body .navbar .nav-divider,
+.modal-assignment-track .modal-dialog .modal-body .navbar .nav-title,
+.modal-assignment-track .modal-dialog .modal-body .navbar .nav-divider {
     display: none;
   }
 }
@@ -2808,33 +2878,6 @@ select.form-control {
   background-color: #f8f9fa;
   min-height: calc(100vh - 9rem);
 }
-.app-content .nav-tabs {
-  -webkit-justify-content: center;
-  justify-content: center;
-  background-color: #fda316;
-  padding: 0 2rem;
-}
-.app-content .nav-tabs .nav-item {
-  margin-bottom: 0;
-}
-.app-content .nav-tabs .nav-link {
-  border-color: transparent;
-  border-bottom-width: 4px;
-  border-bottom-color: transparent;
-  border-radius: 0;
-  color: #ffffff;
-  font-size: 1.25rem;
-  margin: 0;
-}
-.app-content .nav-tabs .nav-link.active {
-  background-color: transparent;
-  border-bottom-color: #ff6600;
-}
-.app-content .nav-tabs .nav-link .fas {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-}
 
 @media (max-width: 991.98px) {
   .app-content {
@@ -2968,14 +3011,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-shared .article-resources .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-shared .article-resources .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-shared .article-resources .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-shared .article-resources .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -3330,14 +3369,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -3545,14 +3580,10 @@ select.form-control {
 .app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
 }
-.app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-shared .article-create-test .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -3666,14 +3697,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -3950,17 +3977,12 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-shared .article-google .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-shared .article-youtube .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-shared .article-google .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-shared .article-youtube .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-shared .article-google .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-shared .article-youtube .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-shared .article-google .article-content .article-body,
@@ -4154,11 +4176,7 @@ select.form-control {
 .app-content .article-assign-resource .article-header .navbar .navbar-nav .nav-item .item-text .resource-title {
   font-size: 1.25rem;
 }
-.app-content .article-assign-resource .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content .article-assign-resource .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content .article-assign-resource .article-content .article-sidebar .navbar {
@@ -4303,6 +4321,331 @@ select.form-control {
     margin-right: 1.5rem;
     margin-left: 0;
   }
+}
+.app-content .article-track-lesson {
+  padding: 0 1.5rem;
+}
+.app-content .article-track-lesson .article-header {
+  height: 5rem;
+  max-height: 5rem;
+}
+.app-content .article-track-lesson .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  height: 5rem;
+  max-height: 5rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item .item-text .resource-title {
+  font-size: 1.25rem;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .btn-light .fas {
+  font-size: 1.5rem;
+}
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+  font-size: 1.25rem;
+}
+.app-content .article-track-lesson .article-content .article-body .nav-tabs,
+.app-content .article-track-lesson .article-content .article-body .tab-content {
+  margin: 0 auto;
+  max-width: 64rem;
+}
+.app-content .article-track-lesson .article-content .article-body .nav-tabs {
+  margin-top: 1rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-text {
+  padding: 0;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle) {
+  margin: 0 0.25rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle) .fas {
+  font-size: 1.375rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value {
+  background-color: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  min-width: 4rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value.legend-value-md {
+  min-width: 8rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light {
+  margin: 0 0.5rem;
+  padding: 0.125rem 0.5rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light .fas {
+  font-size: 1.375rem;
+}
+.app-content .article-track-lesson .article-content .article-body .tab-content .table a {
+  color: #212529;
+  display: inline-block;
+  position: relative;
+  word-break: break-word;
+}
+@media (max-width: 991.98px) {
+  .app-content .article-track-lesson .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 970;
+  }
+  .app-content .article-track-lesson .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content .article-track-lesson .article-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 -0.5rem;
+  }
+  .app-content .article-track-lesson .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 767.98px) {
+  .app-content .article-track-lesson .article-content .article-body .tab-content .table colgroup:nth-child(3) {
+    display: none;
+  }
+  .app-content .article-track-lesson .article-content .article-body .tab-content .table tr th:nth-child(3),
+.app-content .article-track-lesson .article-content .article-body .tab-content .table tr td:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .app-content .article-track-lesson .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+  .app-content .article-track-lesson .article-content .article-body .tab-content .table colgroup:nth-child(1) {
+    display: none;
+  }
+  .app-content .article-track-lesson .article-content .article-body .tab-content .table tr th:nth-child(1),
+.app-content .article-track-lesson .article-content .article-body .tab-content .table tr td:nth-child(1) {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .app-content .article-track-lesson .article-content .article-body .tab-content .table colgroup:nth-child(5) {
+    display: none;
+  }
+  .app-content .article-track-lesson .article-content .article-body .tab-content .table tr th:nth-child(5),
+.app-content .article-track-lesson .article-content .article-body .tab-content .table tr td:nth-child(5) {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .app-content .article-track-lesson .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 970;
+  }
+  .app-content .article-track-lesson .article-content {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+  .app-content .article-track-lesson .article-content .article-body {
+    min-height: calc(100vh - 9rem);
+    margin-left: 0;
+  }
+}
+.app-content .article-track-lesson-user,
+.app-content .article-track-test-user {
+  padding: 0 1.5rem;
+}
+.app-content .article-track-lesson-user .article-header,
+.app-content .article-track-test-user .article-header {
+  height: 5rem;
+  max-height: 5rem;
+}
+.app-content .article-track-lesson-user .article-header .navbar,
+.app-content .article-track-test-user .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  height: 5rem;
+  max-height: 5rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content .article-track-lesson-user .article-header .navbar .navbar-nav,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content .article-track-lesson-user .article-header .navbar .navbar-nav:first-child,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content .article-track-lesson-user .article-header .navbar .navbar-nav.nav-main,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content .article-track-lesson-user .article-header .navbar .navbar-nav .nav-item,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content .article-track-lesson-user .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content .article-track-lesson-user .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content .article-track-lesson-user .article-header .navbar .navbar-nav .nav-item .item-text .resource-title,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav .nav-item .item-text .resource-title {
+  font-size: 1.25rem;
+}
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress {
+  margin: 0 auto;
+  max-width: 64rem;
+}
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .navbar,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .navbar {
+  padding: 1rem 0;
+}
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value {
+  background-color: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  min-width: 4rem;
+}
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value.legend-value-md,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value.legend-value-md {
+  min-width: 8rem;
+}
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light {
+  margin: 0 0.5rem;
+  padding: 0.125rem 0.5rem;
+}
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light .fas,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light .fas {
+  font-size: 1.375rem;
+}
+@media (max-width: 991.98px) {
+  .app-content .article-track-lesson-user .article-header,
+.app-content .article-track-test-user .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 970;
+  }
+  .app-content .article-track-lesson-user .article-header .navbar,
+.app-content .article-track-test-user .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content .article-track-lesson-user .article-content,
+.app-content .article-track-test-user .article-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 -0.5rem;
+  }
+  .app-content .article-track-lesson-user .article-content .article-body,
+.app-content .article-track-test-user .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .app-content .article-track-lesson-user .article-header .navbar .navbar-nav:first-child,
+.app-content .article-track-test-user .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content .article-track-lesson-user .article-header,
+.app-content .article-track-test-user .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 970;
+  }
+  .app-content .article-track-lesson-user .article-content,
+.app-content .article-track-test-user .article-content {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+  .app-content .article-track-lesson-user .article-content .article-body,
+.app-content .article-track-test-user .article-content .article-body {
+    min-height: calc(100vh - 9rem);
+    margin-left: 0;
+  }
+}
+.app-content .article-track-lesson-user .article-content .article-body .chart .chart-legend .legend-group .legend-label {
+  min-width: 14rem;
+  width: 14rem;
 }
 
 .app-content.page-error {
@@ -4908,14 +5251,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-assignments .article-assignments .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-assignments .article-assignments .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-assignments .article-assignments .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-assignments .article-assignments .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -4997,6 +5336,8 @@ select.form-control {
   padding: 1rem;
 }
 .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card .card-body a {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
   color: #495057;
   display: inline-block;
   word-break: break-word;
@@ -5407,14 +5748,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-resources .article-resources .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -5534,6 +5871,8 @@ select.form-control {
   padding: 1rem;
 }
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .card-link {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
   color: #495057;
   display: inline-block;
   margin-bottom: 0.5rem;
@@ -5903,14 +6242,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-lessons .article-lessons .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-lessons .article-lessons .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-lessons .article-lessons .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-lessons .article-lessons .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -6140,14 +6475,10 @@ select.form-control {
 .app-content.page-lessons .article-create-lesson .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
 }
-.app-content.page-lessons .article-create-lesson .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-lessons .article-create-lesson .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-lessons .article-create-lesson .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-lessons .article-create-lesson .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -6538,14 +6869,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-tests .article-tests .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-tests .article-tests .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-tests .article-tests .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-tests .article-tests .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -6775,14 +7102,10 @@ select.form-control {
 .app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
 }
-.app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-tests .article-create-test .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -6964,14 +7287,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-questions .article-questions .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-questions .article-questions .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-questions .article-questions .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-questions .article-questions .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -7360,14 +7679,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 16rem;
 }
-.app-content.page-announcements .article-announcements .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-announcements .article-announcements .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-announcements .article-announcements .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-announcements .article-announcements .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -7707,14 +8022,10 @@ select.form-control {
   font-size: 1.25rem;
   width: 16rem;
 }
-.app-content.page-notifications .article-notifications .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-notifications .article-notifications .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-notifications .article-notifications .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-notifications .article-notifications .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
@@ -7859,11 +8170,6 @@ select.form-control {
   font-size: 1.25rem;
   width: 16rem;
 }
-.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light.btn-more {
@@ -7872,7 +8178,6 @@ select.form-control {
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
@@ -8326,14 +8631,6 @@ select.form-control {
   font-size: 1.25rem;
   width: 16rem;
 }
-.app-content.page-profile .article-update-profile-picture .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-profile .article-update-personal-particulars .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-profile .article-update-personal-preferences .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-profile .article-change-password .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-profile .article-reset-student-password .article-header .navbar .navbar-nav .btn-light:hover .fas,
-.app-content.page-profile .article-reset-teacher-password .article-header .navbar .navbar-nav .btn-light:hover .fas {
-  color: #212529;
-}
 .app-content.page-profile .article-update-profile-picture .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-profile .article-update-personal-particulars .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-profile .article-update-personal-preferences .article-header .navbar .navbar-nav .btn-light.btn-more,
@@ -8348,7 +8645,6 @@ select.form-control {
 .app-content.page-profile .article-change-password .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-profile .article-reset-student-password .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-profile .article-reset-teacher-password .article-header .navbar .navbar-nav .btn-light .fas {
-  color: #495057;
   font-size: 1.5rem;
 }
 .app-content.page-profile .article-update-profile-picture .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
@@ -8518,18 +8814,6 @@ select.form-control {
     height: calc(100vh - 8rem);
     width: 100vw;
   }
-}
-
-.app-content.page-tracking .article-tracking {
-  background-color: #fda316;
-  padding: 1.5rem;
-}
-.app-content.page-tracking .article-tracking h1 {
-  color: #ffffff;
-}
-.app-content.page-tracking .article-track-channel .table-track-channel {
-  margin: 0;
-  max-width: 56rem;
 }
 
 /*# sourceMappingURL=style.css.map */

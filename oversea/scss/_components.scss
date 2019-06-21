@@ -35,11 +35,11 @@ select.form-control {
   }
 
   &.fa-chalkboard-teacher {
-    color: $green;
+    color: $gray-600;
   }
 
   &.fa-tachometer-alt {
-    color: $red;
+    color: $gray-600;
   }
 }
 
@@ -1263,6 +1263,42 @@ select.form-control {
   }
 }
 
+.chart {
+  @include display-flex(row);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  background-color: $white;
+  margin-bottom: 1rem;
+
+  &.no-legend {
+    .chart-area {
+      max-width: 90%;
+    }
+  }
+
+  .chart-area {
+    @include flex-grow(1);
+    max-width: calc(50% - 2rem);
+  }
+
+  .chart-legend {
+    min-width: 20rem;
+    margin-left: 2rem;
+    padding: 1rem;
+
+    .legend-group {
+      @include display-flex(row);
+      @include align-items(center);
+      margin-bottom: .5rem;
+
+      .legend-label {
+        min-width: 10rem;
+        width: 10rem;
+      }
+    }
+  }
+}
+
 .article {
   padding: 1.5rem;
 
@@ -1279,8 +1315,8 @@ select.form-control {
   }
 
   .article-header {
-    @include align-items(flex-start);
     @include display-flex(row);
+    @include align-items(flex-start);
     @include flex-wrap(wrap);
 
     &.dropdown-open {
@@ -1376,6 +1412,19 @@ select.form-control {
     .attribute {
       @include display-flex(column);
     }
+  }
+}
+
+.user-details {
+  @include display-flex(row);
+  @include align-items(center);
+  padding: 1rem 0;
+
+  img {
+    margin-right: 1rem;
+    max-height: 4rem;
+    max-width: 4rem;
+    vertical-align: baseline;
   }
 }
 
@@ -2055,7 +2104,8 @@ select.form-control {
 }
 
 .modal-resource-resource-add,
-.modal-resource-assign {
+.modal-resource-assign,
+.modal-assignment-track {
   .modal-dialog {
     .modal-body {
       .navbar {

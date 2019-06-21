@@ -539,6 +539,12 @@ a {
   &.nav-tabs {
     .nav-link {
       border-radius: 0;
+      color: $gray-700;
+      font-weight: 500;
+
+      &.active {
+        color: $gray-900;
+      }
     }
   }
 
@@ -614,6 +620,10 @@ a {
       background-color: $gray-100;
     }
   }
+}
+
+.tab-content {
+  background-color: $white;
 }
 
 .card-group {
@@ -695,7 +705,7 @@ a {
     &.modal-preview,
     &.modal-add-resource,
     &.modal-assign-resource,
-    &.modal-track-resource {
+    &.modal-track-assignment {
       margin: 0;
       max-width: 100vw;
       
@@ -759,7 +769,8 @@ a {
       }
 
       &.modal-add-resource,
-      &.modal-assign-resource {
+      &.modal-assign-resource,
+      &.modal-track-assignment {
         &.modal-iframe {
           &.modal-muted {
             .modal-content {
@@ -850,6 +861,7 @@ a {
       border-top: 0;
       border-bottom-width: 1px;
       color: $gray-700;
+      font-weight: 500;
       padding: 1rem;
 
       &.sortable-column {

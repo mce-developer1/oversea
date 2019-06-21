@@ -122,16 +122,18 @@
                   <i class="fas fa-search"></i>
                 </button>
               </li>
-              <li class="nav-item">
-                <button class="btn btn-light btn-list-view d-none" type="button" title="List view">
-                  <i class="fas fa-th-list"></i>
-                </button>
-              </li>
-              <li class="nav-item">
-                <button class="btn btn-light btn-card-view" type="button" title="Grid view">
-                  <i class="fas fa-th-large"></i>
-                </button>
-              </li>
+              {{#unless studentUser}}
+                <li class="nav-item">
+                  <button class="btn btn-light btn-list-view d-none" type="button" title="List view">
+                    <i class="fas fa-th-list"></i>
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-light btn-card-view" type="button" title="Grid view">
+                    <i class="fas fa-th-large"></i>
+                  </button>
+                </li>
+              {{/unless}}
             </ul>            
           </nav>
         </div>
@@ -169,262 +171,261 @@
                 </li>
               </ul>
             </nav>
-            <table class="table table-head">
-              <colgroup width="auto"></colgroup>
-              <colgroup width="140px"></colgroup>
-              <colgroup width="120px"></colgroup>
-              <colgroup width="160px"></colgroup>
-              <colgroup width="200px"></colgroup>
-              <colgroup width="120px"></colgroup>
-              <colgroup width="60px"></colgroup>
-              <thead>
-                <tr>
-                  <th class="sortable-column">
-                    Title <i class="fas fa-long-arrow-alt-down"></i>
-                  </th>
-                  <th class="sortable-column">
-                    Subject
-                  </th>
-                  <th class="sortable-column">
-                    Grade
-                  </th>
-                  <th>
-                    Assigned To
-                  </th>
-                  <th>
-                    Start & End Dates
-                  </th>
-                  <th>
-                    Completed
-                  </th>
-                  <th>
-                    &nbsp;
-                  </th>
-                </tr>
-              </thead>
-            </table>
-            <table class="table table-body">
-              <colgroup width="auto"></colgroup>
-              <colgroup width="140px"></colgroup>
-              <colgroup width="120px"></colgroup>
-              <colgroup width="160px"></colgroup>
-              <colgroup width="200px"></colgroup>
-              <colgroup width="120px"></colgroup>
-              <colgroup width="60px"></colgroup>
-              <tbody>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-chalkboard-teacher"></i>
-                      Counting To 10
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>P1-EA</td>
-                  <td>
-                    01 Nov 2019 - 30 Nov 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">0%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-chalkboard-teacher"></i>
-                      Comparing Numbers
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>
-                    P1-EA, P1-HA, 
-                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
-                  </td>
-                  <td>
-                    01 Jun 2019 - 30 Jun 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">80%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-tachometer-alt"></i>
-                      Making Number Patterns
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>
-                    P1-EA, P1-HA, 
-                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
-                  </td>
-                  <td>
-                    01 Mar 2019 - 30 Mar 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">100%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-tachometer-alt"></i>
-                      Making Number Bonds
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>
-                    P1-EA, P1-HA, 
-                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
-                  </td>
-                  <td>
-                    01 Mar 2019 - 30 Mar 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">100%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-chalkboard-teacher"></i>
-                      Making Addition Stories
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>
-                    P1-EA, P1-HA, 
-                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
-                  </td>
-                  <td>
-                    01 Feb 2019 - 28 Feb 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">100%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-chalkboard-teacher"></i>
-                      Making Subtraction Stories
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>
-                    P1-EA, P1-HA, 
-                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
-                  </td>
-                  <td>
-                    01 Feb 2019 - 28 Feb 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">100%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-chalkboard-teacher"></i>
-                      Making Fact Families
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>
-                    P1-EA, P1-HA, 
-                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
-                  </td>
-                  <td>
-                    01 Jan 2019 - 31 Feb 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">100%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a class="title" href="#">
-                      <i class="fas fa-chalkboard-teacher"></i>
-                      Making Patterns With Shapes
-                    </a>
-                  </td>
-                  <td>Mathematics</td>
-                  <td>Grade 1</td>
-                  <td>
-                    P1-EA, P1-HA, 
-                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
-                  </td>
-                  <td>
-                    01 Jan 2019 - 31 Feb 2019
-                  </td>
-                  <td>
-                    <a class="completed" href="#">100%</a>
-                  </td>
-                  <td>
-                    <button class="btn btn-light" type="button">
-                      <i class="fas fa-info-circle"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="card-group d-none">
+            {{#unless studentUser}}
+              <table class="table table-head">
+                <colgroup width="auto"></colgroup>
+                <colgroup width="140px"></colgroup>
+                <colgroup width="120px"></colgroup>
+                <colgroup width="160px"></colgroup>
+                <colgroup width="200px"></colgroup>
+                <colgroup width="120px"></colgroup>
+                <colgroup width="60px"></colgroup>
+                <thead>
+                  <tr>
+                    <th class="sortable-column">
+                      Title <i class="fas fa-long-arrow-alt-down"></i>
+                    </th>
+                    <th class="sortable-column">
+                      Subject
+                    </th>
+                    <th class="sortable-column">
+                      Grade
+                    </th>
+                    <th>
+                      Assigned To
+                    </th>
+                    <th>
+                      Start & End Dates
+                    </th>
+                    <th>
+                      Completed
+                    </th>
+                    <th>
+                      &nbsp;
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+              <table class="table table-body">
+                <colgroup width="auto"></colgroup>
+                <colgroup width="140px"></colgroup>
+                <colgroup width="120px"></colgroup>
+                <colgroup width="160px"></colgroup>
+                <colgroup width="200px"></colgroup>
+                <colgroup width="120px"></colgroup>
+                <colgroup width="60px"></colgroup>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Counting To 10
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>P1-EA</td>
+                    <td>
+                      <a class="period" href="#">01 Nov 2019 - 30 Nov 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="lesson">0%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Comparing Numbers
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>
+                      P1-EA, P1-HA, 
+                      <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                    </td>
+                    <td>
+                      <a class="period" href="#">01 Jun 2019 - 30 Jun 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="lesson">80%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Making Number Patterns
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>
+                      P1-EA, P1-HA, 
+                      <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                    </td>
+                    <td>
+                      <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="test">40%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Making Number Bonds
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>
+                      P1-EA, P1-HA, 
+                      <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                    </td>
+                    <td>
+                      <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="test">100%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Making Addition Stories
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>
+                      P1-EA, P1-HA, 
+                      <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                    </td>
+                    <td>
+                      <a class="period" href="#">01 Feb 2019 - 28 Feb 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="lesson">100%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Making Subtraction Stories
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>
+                      P1-EA, P1-HA, 
+                      <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                    </td>
+                    <td>
+                      <a class="period" href="#">01 Feb 2019 - 28 Feb 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="lesson">100%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Making Fact Families
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>
+                      P1-EA, P1-HA, 
+                      <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                    </td>
+                    <td>
+                      <a class="period" href="#">01 Jan 2019 - 31 Feb 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="lesson">100%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a class="title" href="#">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Making Patterns With Shapes
+                      </a>
+                    </td>
+                    <td>Mathematics</td>
+                    <td>Grade 1</td>
+                    <td>
+                      P1-EA, P1-HA, 
+                      <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                    </td>
+                    <td>
+                      <a class="period" href="#">01 Jan 2019 - 31 Feb 2019</a>
+                    </td>
+                    <td>
+                      <a class="percentage" href="#" data-type="lesson">100%</a>
+                    </td>
+                    <td>
+                      <button class="btn btn-light" type="button">
+                        <i class="fas fa-info-circle"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="card-group {{#unless studentUser}}d-none{{/unless}}">
               <div class="card">
                 <div class="card-img-top">
                   <i class="fas fa-chalkboard-teacher"></i>
                 </div>
                 <div class="card-body">
                   <a class="card-link" href="#">Counting To 10</a>
-                  <div class="text-muted">
-                    01 Nov 2019 - 30 Nov 2019
-                  </div>
+                  <a class="period" href="#">01 Nov 2019 - 30 Nov 2019</a>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 0%;"></div>
                   </div>
-                  <a class="completed" href="#">0% completed</a>
+                  <a class="percentage" href="#" data-type="lesson">0% Completed</a>
                 </div>
               </div>
               <div class="card">
@@ -433,13 +434,11 @@
                 </div>
                 <div class="card-body">
                   <a class="card-link" href="#">Comparing Numbers</a>
-                  <div class="text-muted">
-                    01 Jun 2019 - 30 Jun 2019
-                  </div>
+                  <a class="period" href="#">01 Jun 2019 - 30 Jun 2019</a>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
                   </div>
-                  <a class="completed" href="#">80% completed</a>
+                  <a class="percentage" href="#" data-type="lesson">80% Completed</a>
                 </div>
               </div>
               <div class="card">
@@ -448,13 +447,11 @@
                 </div>
                 <div class="card-body">
                   <a class="card-link" href="#">Making Number Patterns</a>
-                  <div class="text-muted">
-                    01 Mar 2019 - 30 Mar 2019
-                  </div>
+                  <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
                   <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                    <div class="progress-bar" role="progressbar" style="width: 40%;"></div>
                   </div>
-                  <a class="completed" href="#">100% completed</a>
+                  <a class="percentage" href="#" data-type="test">40% Completed</a>
                 </div>
               </div>
               <div class="card">
@@ -463,13 +460,11 @@
                 </div>
                 <div class="card-body">
                   <a class="card-link" href="#">Making Number Bonds</a>
-                  <div class="text-muted">
-                    01 Mar 2019 - 30 Mar 2019
-                  </div>
+                  <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
                   </div>
-                  <a class="completed" href="#">100% completed</a>
+                  <a class="percentage" href="#" data-type="test">100% Completed</a>
                 </div>
               </div>
               <div class="card">
@@ -478,16 +473,94 @@
                 </div>
                 <div class="card-body">
                   <a class="card-link" href="#">Making Addition Stories</a>
-                  <div class="text-muted">
-                    01 Feb 2019 - 28 Feb 2019
-                  </div>
+                  <a class="period" href="#">01 Feb 2019 - 28 Feb 2019</a>
                   <div class="progress">
                     <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
                   </div>
-                  <a class="completed" href="#">100% completed</a>
+                  <a class="percentage" href="#" data-type="lesson">100% Completed</a>
                 </div>
               </div>
             </div>
+            {{/unless}}
+            {{#if studentUser}}
+              <div class="card-group {{#unless studentUser}}d-none{{/unless}}">
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Counting To 10</a>
+                    <div class="text-muted">
+                      01 Nov 2019 - 30 Nov 2019
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="lesson">0% Completed</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Comparing Numbers</a>
+                    <div class="text-muted">
+                      01 Jun 2019 - 30 Jun 2019
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="lesson">80% Completed</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-tachometer-alt"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Making Number Patterns</a>
+                    <div class="text-muted">
+                      01 Mar 2019 - 30 Mar 2019
+                    </div>
+                    <br/>
+                    <a class="percentage" href="#" data-type="test">
+                      Scored: <span class="text-danger">40%</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-tachometer-alt"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Making Number Bonds</a>
+                    <div class="text-muted">
+                      01 Mar 2019 - 30 Mar 2019
+                    </div>
+                    <br/>
+                    <a class="percentage" href="#" data-type="test">
+                      Scored: <span class="text-success">100%</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Making Addition Stories</a>
+                    <div class="text-muted">
+                      01 Feb 2019 - 28 Feb 2019
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="lesson">100% Completed</a>
+                  </div>
+                </div>
+              </div>
+            {{/if}}
             <nav class="navbar navbar-expand navbar-pagination">
               <ul class="navbar-nav">
                 <li class="nav-item">
@@ -502,10 +575,10 @@
                 </li>
                 <li class="nav-item text-muted">1 - 8 of 8</li>
                 <li class="nav-item">
-                  <button class="btn btn-light" type="button" title="Previous" data-toggle="dropdown" disabled>
+                  <button class="btn btn-light" type="button" title="Previous" disabled>
                     <i class="fas fa-chevron-left"></i>
                   </button>
-                  <button class="btn btn-light" type="button" title="Next" data-toggle="dropdown">
+                  <button class="btn btn-light" type="button" title="Next">
                     <i class="fas fa-chevron-right"></i>
                   </button>
                 </li>
@@ -550,23 +623,49 @@
             </div>
           </div>
           <div class="attribute">
-            <div class="attribute-name">Completed</div>
+            <div class="attribute-name">percentage</div>
             <div class="attribute-value">
             </div>
-          </div>          
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal modal-resource-resource-track fade" tabindex="-1" role="dialog" data-backdrop="static">
-  <div class="modal-dialog modal-track-resource modal-iframe" role="document">
+<div class="modal modal-resource-assign fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-assign-resource modal-iframe" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <nav class="navbar navbar-expand">
           <ul class="navbar-nav">
-            <li class="nav-item nav-title">
+            <li class="nav-item">
+              <div class="item-text text-truncate">Assignment Settings</div>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn btn-light btn-close" type="button" title="Close" data-dismiss="modal">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="content">
+          <iframe class="full" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-assignment-track fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-track-assignment modal-iframe" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item">
               <div class="item-text text-truncate">Track Assignment</div>
             </li>
           </ul>

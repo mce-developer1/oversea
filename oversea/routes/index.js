@@ -534,12 +534,36 @@ router.get('/shared/track_lesson', upload.any(), function(req, res, next) {
   });
 });
 
+/* GET track lesson user page. */
+router.get('/shared/track_lesson_user', upload.any(), function(req, res, next) {
+  var referrer = req.get('Referrer');
+  var assignmentsPage = referrer.endsWith('/assignments/assignments');
+  res.render('shared/track_lesson_user', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared',
+    assignmentsPage: assignmentsPage
+  });
+});
+
 /* GET track test page. */
 router.get('/shared/track_test', upload.any(), function(req, res, next) {
   res.render('shared/track_test', {
     layout: 'iframe_layout',
     title: 'Marshall Cavendish Education',
     module: 'shared'
+  });
+});
+
+/* GET track test user page. */
+router.get('/shared/track_test_user', upload.any(), function(req, res, next) {
+  var referrer = req.get('Referrer');
+  var assignmentsPage = referrer.endsWith('/assignments/assignments');
+  res.render('shared/track_test_user', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared',
+    assignmentsPage: assignmentsPage
   });
 });
 
