@@ -1714,6 +1714,11 @@
       .article-content {
         @include flex-direction(row-reverse);
 
+        .article-sidebar {
+          min-width: 20rem;
+          width: 20rem;
+        }
+
         .article-body {
           min-height: calc(100vh - 9rem);
           margin-right: 1.5rem;

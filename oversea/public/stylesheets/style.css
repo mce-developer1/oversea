@@ -1323,31 +1323,31 @@ select.form-control {
 .list-group .list-group-item.collapsible .collapsible-header .btn-light.collapsed .fa-chevron-up {
   display: none;
 }
-.list-group .list-group-item.collapsible .collapse .list-group.list-group-horizontal {
+.list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal {
   background-color: #ffffff;
 }
-.list-group .list-group-item.collapsible .collapse .list-group.list-group-horizontal .list-group-item {
+.list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal .list-group-item {
   padding: 0.5rem 0;
 }
-.list-group .list-group-item.collapsible .collapse .list-group.list-group-horizontal .list-group-item:hover {
+.list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal .list-group-item:hover {
   background-color: transparent;
 }
-.list-group .list-group-item.collapsible .collapse .list-group.list-group-horizontal .list-group-item .custom-checkbox {
+.list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal .list-group-item .custom-checkbox {
   margin: 0.325rem 1rem;
 }
-.list-group .list-group-item.collapsible .collapse .list-group .list-group-item {
+.list-group .list-group-item.collapsible .collapsible-content .list-group .list-group-item {
   border: 0;
 }
-.list-group .list-group-item.collapsible .collapse .list-group .list-group-item.collapsible .collapsible-header {
+.list-group .list-group-item.collapsible .collapsible-content .list-group .list-group-item.collapsible .collapsible-header {
   background-color: #f5f6f8;
 }
-.list-group .list-group-item.collapsible > .collapse > .list-group.list-group-horizontal {
+.list-group .list-group-item.collapsible > .collapsible-content > .list-group.list-group-horizontal {
   padding: 0 0.5rem 0 1rem;
 }
-.list-group .list-group-item.collapsible > .collapse > .list-group > .list-group-item.collapsible > .collapsible-header {
+.list-group .list-group-item.collapsible > .collapsible-content > .list-group > .list-group-item.collapsible > .collapsible-header {
   padding: 0.5rem 0.5rem 0.5rem 2rem;
 }
-.list-group .list-group-item.collapsible > .collapse > .list-group > .list-group-item.collapsible > .collapse > .list-group.list-group-horizontal {
+.list-group .list-group-item.collapsible > .collapsible-content > .list-group > .list-group-item.collapsible > .collapsible-content > .list-group.list-group-horizontal {
   padding: 0 0.5rem 0 2rem;
 }
 @media (max-width: 575.98px) {
@@ -4305,6 +4305,10 @@ select.form-control {
   .app-content .article-assign-resource .article-content {
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse;
+  }
+  .app-content .article-assign-resource .article-content .article-sidebar {
+    min-width: 20rem;
+    width: 20rem;
   }
   .app-content .article-assign-resource .article-content .article-body {
     min-height: calc(100vh - 9rem);

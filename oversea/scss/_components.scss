@@ -601,7 +601,7 @@ select.form-control {
         }
       }
 
-      .collapse {
+      .collapsible-content {
         .list-group {
           &.list-group-horizontal {
             background-color: $white;
@@ -631,7 +631,7 @@ select.form-control {
         }
       }
 
-      > .collapse {
+      > .collapsible-content {
         > .list-group {
           &.list-group-horizontal {
             padding: 0 .5rem 0 1rem;
@@ -643,7 +643,7 @@ select.form-control {
                 padding: .5rem .5rem .5rem 2rem;
               }
 
-              > .collapse {
+              > .collapsible-content {
                 > .list-group {
                   &.list-group-horizontal {
                     padding: 0 .5rem 0 2rem;
