@@ -656,7 +656,7 @@ select.form-control {
       }
 
       @media (max-width: 575.98px) {
-        .collapse {
+        .collapsible-content {
           .list-group {
             &.list-group-horizontal {
               @include display-flex(column);
@@ -667,7 +667,7 @@ select.form-control {
       }
   
       @media (min-width: 576px) {
-        .collapse {
+        .collapsible-content {
           .list-group {
             &.list-group-horizontal {
               @include display-flex(row);
