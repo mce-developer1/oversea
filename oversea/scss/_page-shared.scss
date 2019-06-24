@@ -2150,45 +2150,45 @@
 
     .article-content {      
       .article-body {
-        .user-lesson-progress,
-        .user-test-result {
-          margin: 1rem auto;
-          max-width: 76rem;
+        margin: 0 auto;
+        max-width: 76rem;
 
-          .user-details {
-            @include display-flex(row);
-            @include align-items(center);
-            background-color: $white;
-            padding: 1rem;
+        .user-details {
+          @include display-flex(row);
+          @include align-items(center);
+          background-color: $white;
+          margin-top: 1rem;
+          padding: 1rem ;
+        
+          img {
+            margin-right: 1rem;
+            max-height: 4rem;
+            max-width: 4rem;
+            vertical-align: baseline;
+          }
+        }          
+
+        .chart {
+          margin-bottom: 0;
           
-            img {
-              margin-right: 1rem;
-              max-height: 4rem;
-              max-width: 4rem;
-              vertical-align: baseline;
-            }
-          }          
+          .chart-legend {
+            .legend-group {
+              .legend-value {
+                background-color: $gray-200;
+                padding: .25rem .5rem;
+                min-width: 4rem;
 
-          .chart {
-            .chart-legend {
-              .legend-group {
-                .legend-value {
-                  background-color: $gray-200;
-                  padding: .25rem .5rem;
-                  min-width: 4rem;
-
-                  &.legend-value-md {
-                    min-width: 8rem;
-                  }
+                &.legend-value-md {
+                  min-width: 8rem;
                 }
+              }
 
-                .btn-light {
-                  margin: 0 .5rem;
-                  padding: .125rem .5rem;
+              .btn-light {
+                margin: 0 .5rem;
+                padding: .125rem .5rem;
 
-                  .fas {
-                    font-size: 1.375rem;
-                  }
+                .fas {
+                  font-size: 1.375rem;
                 }
               }
             }
@@ -2245,7 +2245,6 @@
 
         .article-body {
           min-height: calc(100vh - 9rem);
-          margin-left: 0;
         }
       }
     }

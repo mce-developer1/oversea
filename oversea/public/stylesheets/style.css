@@ -4637,17 +4637,13 @@ select.form-control {
 .app-content .article-track-test-user .article-header .navbar .navbar-nav .nav-item .item-text .resource-title {
   font-size: 1.25rem;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress,
-.app-content .article-track-lesson-user .article-content .article-body .user-test-result,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress,
-.app-content .article-track-test-user .article-content .article-body .user-test-result {
-  margin: 1rem auto;
+.app-content .article-track-lesson-user .article-content .article-body,
+.app-content .article-track-test-user .article-content .article-body {
+  margin: 0 auto;
   max-width: 76rem;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .user-details,
-.app-content .article-track-lesson-user .article-content .article-body .user-test-result .user-details,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .user-details,
-.app-content .article-track-test-user .article-content .article-body .user-test-result .user-details {
+.app-content .article-track-lesson-user .article-content .article-body .user-details,
+.app-content .article-track-test-user .article-content .article-body .user-details {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4655,42 +4651,37 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
   background-color: #ffffff;
+  margin-top: 1rem;
   padding: 1rem;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .user-details img,
-.app-content .article-track-lesson-user .article-content .article-body .user-test-result .user-details img,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .user-details img,
-.app-content .article-track-test-user .article-content .article-body .user-test-result .user-details img {
+.app-content .article-track-lesson-user .article-content .article-body .user-details img,
+.app-content .article-track-test-user .article-content .article-body .user-details img {
   margin-right: 1rem;
   max-height: 4rem;
   max-width: 4rem;
   vertical-align: baseline;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value,
-.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value,
-.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value {
+.app-content .article-track-lesson-user .article-content .article-body .chart,
+.app-content .article-track-test-user .article-content .article-body .chart {
+  margin-bottom: 0;
+}
+.app-content .article-track-lesson-user .article-content .article-body .chart .chart-legend .legend-group .legend-value,
+.app-content .article-track-test-user .article-content .article-body .chart .chart-legend .legend-group .legend-value {
   background-color: #e9ecef;
   padding: 0.25rem 0.5rem;
   min-width: 4rem;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value.legend-value-md,
-.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value.legend-value-md,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value.legend-value-md,
-.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value.legend-value-md {
+.app-content .article-track-lesson-user .article-content .article-body .chart .chart-legend .legend-group .legend-value.legend-value-md,
+.app-content .article-track-test-user .article-content .article-body .chart .chart-legend .legend-group .legend-value.legend-value-md {
   min-width: 8rem;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light,
-.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light,
-.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light {
+.app-content .article-track-lesson-user .article-content .article-body .chart .chart-legend .legend-group .btn-light,
+.app-content .article-track-test-user .article-content .article-body .chart .chart-legend .legend-group .btn-light {
   margin: 0 0.5rem;
   padding: 0.125rem 0.5rem;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light .fas,
-.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light .fas,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light .fas,
-.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light .fas {
+.app-content .article-track-lesson-user .article-content .article-body .chart .chart-legend .legend-group .btn-light .fas,
+.app-content .article-track-test-user .article-content .article-body .chart .chart-legend .legend-group .btn-light .fas {
   font-size: 1.375rem;
 }
 @media (max-width: 991.98px) {
@@ -4742,7 +4733,6 @@ select.form-control {
   .app-content .article-track-lesson-user .article-content .article-body,
 .app-content .article-track-test-user .article-content .article-body {
     min-height: calc(100vh - 9rem);
-    margin-left: 0;
   }
 }
 .app-content .article-track-lesson-user .article-content .article-body .chart .chart-legend .legend-group .legend-label {
