@@ -6,6 +6,12 @@
     max-height: calc(100vh - 4rem);
     height: calc(100vh - 4rem);
 
+    &.no-margin {
+      margin-top: 0;
+      max-height: 100vh;
+      height: 100vh;
+    }
+
     .article-resources {
       padding: 0 1.5rem;
 
@@ -1717,7 +1723,8 @@
     }
   }
 
-  .article-track-lesson {
+  .article-track-lesson,
+  .article-track-test {
     padding: 0 1.5rem;
 
     .article-header {
@@ -1792,7 +1799,7 @@
         .nav-tabs,
         .tab-content {
           margin: 0 auto;
-          max-width: 64rem;
+          max-width: 76rem;
         }
 
         .nav-tabs {
@@ -1883,6 +1890,38 @@
       }
     }
 
+    @media (max-width: 576px) {
+      .article-header {
+        .navbar {
+          .navbar-nav {
+            &:first-child {
+              width: 14rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      .article-header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 970;
+      }
+
+      .article-content {
+        @include flex-direction(row-reverse);
+
+        .article-body {
+          min-height: calc(100vh - 9rem);
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .article-track-lesson {
     @media (max-width: 767.98px) {
       .article-content {
         .article-body {
@@ -1905,16 +1944,6 @@
     }
 
     @media (max-width: 576px) {
-      .article-header {
-        .navbar {
-          .navbar-nav {
-            &:first-child {
-              width: 14rem;
-            }
-          }
-        }
-      }
-
       .article-content {
         .article-body {
           .tab-content {
@@ -1955,21 +1984,95 @@
         }
       }
     }
+  }
+
+  .article-track-test {
+    @media (max-width: 991.98px) {
+      .article-content {
+        .article-body {
+          .tab-content {
+            .table {
+              colgroup:nth-child(4),
+              colgroup:nth-child(5) {
+                display: none;
+              }
+
+              tr {
+                th:nth-child(4),
+                th:nth-child(5),
+                td:nth-child(4),
+                td:nth-child(5) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .article-content {
+        .article-body {
+          .tab-content {
+            .table {
+              colgroup:nth-child(3),
+              colgroup:nth-child(7) {
+                display: none;
+              }
+
+              tr {
+                th:nth-child(3),
+                th:nth-child(7),
+                td:nth-child(3),
+                td:nth-child(7) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 576px) {
+      .article-content {
+        .article-body {
+          .tab-content {
+            .table {
+              colgroup:nth-child(1) {
+                display: none;
+              }
+
+              tr {
+                th:nth-child(1),
+                td:nth-child(1) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     @media (min-width: 992px) {
-      .article-header {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        z-index: 970;
-      }
-
       .article-content {
-        @include flex-direction(row-reverse);
-
         .article-body {
-          min-height: calc(100vh - 9rem);
-          margin-left: 0;
+          .tab-content {
+            .table {
+              colgroup:nth-child(8) {
+                display: none;
+              }
+
+              tr {
+                th:nth-child(8),
+                td:nth-child(8) {
+                  display: none;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -2034,13 +2137,24 @@
 
     .article-content {      
       .article-body {
-        .user-lesson-progress {
-          margin: 0 auto;
-          max-width: 64rem;
+        .user-lesson-progress,
+        .user-test-result {
+          margin: 1rem auto;
+          max-width: 76rem;
 
-          .navbar {
-            padding: 1rem 0;
-          }
+          .user-details {
+            @include display-flex(row);
+            @include align-items(center);
+            background-color: $white;
+            padding: 1rem;
+          
+            img {
+              margin-right: 1rem;
+              max-height: 4rem;
+              max-width: 4rem;
+              vertical-align: baseline;
+            }
+          }          
 
           .chart {
             .chart-legend {
@@ -2135,6 +2249,39 @@
                 width: 14rem;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-user-progress-track,
+.modal-user-result-track {
+  .modal-track-user-progress,
+  .modal-track-user-result {
+    .modal-content {
+      .modal-body {
+        padding: 0;
+
+        .content {
+          @include display-flex(column);
+          @include align-items(center);
+          height: calc(100vh - 7.5rem);
+          width: 100%;
+
+          .full {
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        @media (max-width: 575.98px) {
+          .content {
+            height: calc(100vh - 5rem);
+            width: 100%;
           }
         }
       }

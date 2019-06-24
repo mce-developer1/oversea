@@ -1,7 +1,7 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-track-lesson no-sidebar">
+      <div class="article article-track-test no-sidebar">
         <div class="article-header">
           <nav class="navbar navbar-expand">
             <ul class="navbar-nav">
@@ -40,13 +40,17 @@
                       </button>
                     </li>
                     <li class="nav-item dropdown">
-                      <button class="btn btn-light" type="button" title="Download" data-toggle="dropdown">
+                      <button class="btn btn-light" type="button" title="Download" data-toggle="">
                         <i class="fas fa-download"></i>
                       </button>
                     </li>
                   </ul>
                 </nav>
-                <div class="chart no-legend">
+                <div class="chart chart-submission-status no-legend">
+                  <div class="chart-area">
+                  </div>
+                </div>
+                <div class="chart chart-students-passed no-legend">
                   <div class="chart-area">
                   </div>
                 </div>
@@ -87,14 +91,20 @@
                   <colgroup width="60px"></colgroup>
                   <colgroup width="auto"></colgroup>
                   <colgroup width="160px"></colgroup>
-                  <colgroup width="120px"></colgroup>
+                  <colgroup width="140px"></colgroup>
+                  <colgroup width="100px"></colgroup>
+                  <colgroup width="100px"></colgroup>
+                  <colgroup width="100px"></colgroup>
                   <colgroup width="60px"></colgroup>
                   <thead>
                     <tr>
                       <th>No.</th>
                       <th>Name</th>
                       <th>Class/Group</th>
-                      <th>Completed</th>
+                      <th>Submission Date</th>
+                      <th>Duration</th>
+                      <th>Score</th>
+                      <th>Quartile</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -104,9 +114,12 @@
                         <a class="assignee" href="#">Aaron Tan</a>
                       </td>
                       <td>P1-EA</td>
+                      <td>08 Mar 2019</td>
+                      <td>22 mins</td>
                       <td>
                         <a class="percentage" href="#">40%</a>
                       </td>
+                      <td>Q2</td>
                       <td>
                         <button class="btn btn-light" type="button">
                           <i class="fas fa-info-circle"></i>
@@ -119,9 +132,12 @@
                         <a class="assignee" href="#">Arya Suman</a>
                       </td>
                       <td>P1-EA</td>
+                      <td>05 Mar 2019</td>
+                      <td>15 mins</td>
                       <td>
                         <a class="percentage" href="#">80%</a>
                       </td>
+                      <td>Q4</td>
                       <td>
                         <button class="btn btn-light" type="button">
                           <i class="fas fa-info-circle"></i>
@@ -134,9 +150,12 @@
                         <a class="assignee" href="#">Ashar Ahmad</a>
                       </td>
                       <td>P1-HA</td>
+                      <td>08 Mar 2019</td>
+                      <td>23 mins</td>
                       <td>
                         <a class="percentage" href="#">70%</a>
                       </td>
+                      <td>Q3</td>
                       <td>
                         <button class="btn btn-light" type="button">
                           <i class="fas fa-info-circle"></i>
@@ -149,9 +168,12 @@
                         <a class="assignee" href="#">Chua Chin Hui</a>
                       </td>
                       <td>P1-HA</td>
+                      <td>08 Mar 2019</td>
+                      <td>25 mins</td>
                       <td>
                         <a class="percentage" href="#">100%</a>
                       </td>
+                      <td>Q4</td>
                       <td>
                         <button class="btn btn-light" type="button">
                           <i class="fas fa-info-circle"></i>
@@ -164,9 +186,12 @@
                         <a class="assignee" href="#">Derrick Lee</a>
                       </td>
                       <td>P1-MA</td>
+                      <td>10 Mar 2019</td>
+                      <td>20 mins</td>
                       <td>
                         <a class="percentage" href="#">100%</a>
                       </td>
+                      <td>Q4</td>
                       <td>
                         <button class="btn btn-light" type="button">
                           <i class="fas fa-info-circle"></i>
@@ -179,9 +204,12 @@
                         <a class="assignee" href="#">Nurulhuda bte Sazali</a>
                       </td>
                       <td>P1-PA</td>
+                      <td>12 Mar 2019</td>
+                      <td>25 mins</td>
                       <td>
                         <a class="percentage" href="#">100%</a>
                       </td>
+                      <td>Q4</td>
                       <td>
                         <button class="btn btn-light" type="button">
                           <i class="fas fa-info-circle"></i>
@@ -194,9 +222,12 @@
                         <a class="assignee" href="#">Siow Poh Piah Irene</a>
                       </td>
                       <td>P1-SA</td>
+                      <td>12 Mar 2019</td>
+                      <td>22 mins</td>
                       <td>
                         <a class="percentage" href="#">100%</a>
                       </td>
+                      <td>Q4</td>
                       <td>
                         <button class="btn btn-light" type="button">
                           <i class="fas fa-info-circle"></i>
@@ -224,7 +255,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>There are <strong>3</strong> assignees who have not completed the assigned lesson.</p>
+        <p>There are <strong>3</strong> assignees who have not completed the assignment.</p>
         <p>Proceed to send Announcement notification to these assignees?</p>
       </div>
       <div class="modal-footer">
@@ -240,6 +271,24 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Track User Progress</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="content">
+          <iframe class="full" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-user-result-track fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-track-user-result modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Track User Result</h5>
         <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>

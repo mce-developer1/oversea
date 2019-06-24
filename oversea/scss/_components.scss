@@ -1279,6 +1279,7 @@ select.form-control {
   .chart-area {
     @include flex-grow(1);
     max-width: calc(50% - 2rem);
+    min-width: 20rem;
   }
 
   .chart-legend {
@@ -1412,19 +1413,6 @@ select.form-control {
     .attribute {
       @include display-flex(column);
     }
-  }
-}
-
-.user-details {
-  @include display-flex(row);
-  @include align-items(center);
-  padding: 1rem 0;
-
-  img {
-    margin-right: 1rem;
-    max-height: 4rem;
-    max-width: 4rem;
-    vertical-align: baseline;
   }
 }
 

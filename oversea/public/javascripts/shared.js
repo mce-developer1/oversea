@@ -703,23 +703,23 @@ $(document).ready(function() {
     });
   }
 
+  function getBarColor(percentage) {
+    if (percentage >= 91) return '#33cc99';
+    else if ((percentage >= 75) && (percentage <= 90)) return '#67cc72';
+    else if ((percentage >= 60) && (percentage <= 74)) return '#a8cc41';
+    else if ((percentage >= 50) && (percentage <= 59)) return '#e3cc15';
+    else if ((percentage >= 35) && (percentage <= 49)) return '#f4a000';
+    else if ((percentage >= 20) && (percentage <= 34)) return '#e76d00';
+    else return '#d93300';
+  }
+
   function showTrackUserProgressModal(srcUrl) {
     $('.modal-user-progress-track').find('iframe').attr('src', srcUrl);
     $('.modal-user-progress-track').modal('show');
   }
 
   if ($container.hasClass('article-track-lesson')) {
-    function getBarColor(percentage) {
-      if (percentage >= 91) return '#33cc99';
-      else if ((percentage >= 75) && (percentage <= 90)) return '#67cc72';
-      else if ((percentage >= 60) && (percentage <= 74)) return '#a8cc41';
-      else if ((percentage >= 50) && (percentage <= 59)) return '#e3cc15';
-      else if ((percentage >= 35) && (percentage <= 49)) return '#f4a000';
-      else if ((percentage >= 20) && (percentage <= 34)) return '#e76d00';
-      else return '#d93300';
-    }
-
-    function drawLessonTrackingReport() {
+    function drawLessonProgressReport() {
       var data = [
         ['Element', 'Percentage', { role: 'style' }, { role: 'annotation' }],
         ['P1-EA', { v: 40, f: '40%' }, getBarColor(40), '40%'],
@@ -749,6 +749,10 @@ $(document).ready(function() {
       inlineChart.draw(dataTable, options);
     }
 
+    $container.find('.navbar .btn-notify').on('click', function(e) {
+      $('.modal-user-notify-confirmation').modal('show');
+    });
+
     $container.find('.table tr .percentage').on('click', function(e) {
       e.preventDefault();
       showTrackUserProgressModal('/shared/track_lesson_user');
@@ -756,7 +760,7 @@ $(document).ready(function() {
 
     setTimeout(function waitForVisualizationLib() {
       if (google.visualization && google.visualization.arrayToDataTable) {
-        drawLessonTrackingReport();
+        drawLessonProgressReport();
         return;
       }
       setTimeout(waitForVisualizationLib, 500);
@@ -764,7 +768,7 @@ $(document).ready(function() {
   }
 
   if ($container.hasClass('article-track-lesson-user')) {
-    function drawStudentLessonTrackingReport() {
+    function drawUserLessonProgressReport() {
       var data = [
         ['Resource', 'Status'],
         ['Completed', 60],
@@ -776,7 +780,7 @@ $(document).ready(function() {
         fontSize: 13,
         height: 240,
         pieHole: 0.5,
-        chartArea: { top: 48, right: 32, bottom: 16, left: 32 },
+        chartArea: { top: 56, right: 32, bottom: 28, left: 32 },
         title: 'Percentage Completed',
         legend: { position: 'none' },
         tooltip: { text: 'percentage' },
@@ -793,7 +797,92 @@ $(document).ready(function() {
 
     setTimeout(function waitForVisualizationLib() {
       if (google.visualization && google.visualization.arrayToDataTable) {
-        drawStudentLessonTrackingReport();
+        drawUserLessonProgressReport();
+        return;
+      }
+      setTimeout(waitForVisualizationLib, 500);
+    }, 500);
+  }
+
+  function showTrackUserResultModal(srcUrl) {
+    $('.modal-user-result-track').find('iframe').attr('src', srcUrl);
+    $('.modal-user-result-track').modal('show');
+  }
+
+  if ($container.hasClass('article-track-test')) {
+    function drawTestSubmissionStatusReport() {
+      var data = [
+        ['Element', 'Percentage', { role: 'style' }, { role: 'annotation' }],
+        ['P1-EA', { v: 40, f: '40%' }, getBarColor(40), '40%'],
+        ['P1-HA', { v: 70, f: '70%' }, getBarColor(70), '70%'],
+        ['P1-MA', { v: 80, f: '80%' }, getBarColor(80), '80%'],
+        ['P1-PA', { v: 100, f: '100%' }, getBarColor(100), '100%'],
+        ['P1-SA', { v: 100, f: '100%' }, getBarColor(100), '100%']
+      ];
+      var dataTable = google.visualization.arrayToDataTable(data);
+      var options = {
+        fontName: 'Arial',
+        fontSize: 13,
+        height: ((data.length * 48) + 48),
+        chartArea: { top: 48, right: 32, bottom: 48 },
+        title: 'Submission Status',
+        bar: { groupWidth: '50%' },
+        legend: { position: 'none' },
+        hAxis: {
+          gridlines: { count: 2, color: '#6c757d' },
+          minValue: 0,
+          maxValue: 100
+        }
+      };
+      
+      var element = $('.article-track-test .chart-submission-status .chart-area').get(0);
+      inlineChart = new google.visualization.BarChart(element);
+      inlineChart.draw(dataTable, options);
+    }
+
+    function drawTestStudentPassedReport() {
+      var data = [
+        ['Element', 'Percentage', { role: 'style' }, { role: 'annotation' }],
+        ['P1-EA', { v: 40, f: '40%' }, getBarColor(40), '40%'],
+        ['P1-HA', { v: 50, f: '50%' }, getBarColor(50), '50%'],
+        ['P1-MA', { v: 60, f: '60%' }, getBarColor(60), '60%'],
+        ['P1-PA', { v: 80, f: '80%' }, getBarColor(80), '80%'],
+        ['P1-SA', { v: 100, f: '100%' }, getBarColor(100), '100%']
+      ];
+      var dataTable = google.visualization.arrayToDataTable(data);
+      var options = {
+        fontName: 'Arial',
+        fontSize: 13,
+        height: ((data.length * 48) + 48),
+        chartArea: { top: 48, right: 32, bottom: 48 },
+        title: 'Students Passed',
+        bar: { groupWidth: '50%' },
+        legend: { position: 'none' },
+        hAxis: {
+          gridlines: { count: 2, color: '#6c757d' },
+          minValue: 0,
+          maxValue: 100
+        }
+      };
+      
+      var element = $('.article-track-test .chart-students-passed .chart-area').get(0);
+      inlineChart = new google.visualization.BarChart(element);
+      inlineChart.draw(dataTable, options);
+    }
+
+    $container.find('.navbar .btn-notify').on('click', function(e) {
+      $('.modal-user-notify-confirmation').modal('show');
+    });
+
+    $container.find('.table tr .percentage').on('click', function(e) {
+      e.preventDefault();
+      showTrackUserResultModal('/shared/track_test_user');
+    });
+
+    setTimeout(function waitForVisualizationLib() {
+      if (google.visualization && google.visualization.arrayToDataTable) {
+        drawTestSubmissionStatusReport();
+        drawTestStudentPassedReport();
         return;
       }
       setTimeout(waitForVisualizationLib, 500);
@@ -801,19 +890,19 @@ $(document).ready(function() {
   }
 
   if ($container.hasClass('article-track-test-user')) {
-    function drawStudentLessonTrackingReport() {
+    function drawUserTestResultReport() {
       var data = [
         ['Element', 'Percentage', { role: 'style' }],
-        ['Media Score', { v: 60, f: '60%' }, '#f4a000'],
-        ['Your Score', { v: 70, f: '70%' }, '#e3cc15'],
-        ['Top Score', { v: 100, f: '100%' }, '#67cc72']
+        ['Media Score', { v: 60, f: '60%' }, getBarColor(60)],
+        ['Your Score', { v: 50, f: '50%' }, getBarColor(50)],
+        ['Top Score', { v: 100, f: '100%' }, getBarColor(100)]
       ];
       var dataTable = google.visualization.arrayToDataTable(data);
       var options = {
         fontName: 'Arial',
         fontSize: 13,
         height: 240,
-        chartArea: { top: 48, right: 32, bottom: 48, left: 64 },
+        chartArea: { top: 56, right: 32, bottom: 56, left: 64 },
         title: 'Score Obtained',
         bar: { groupWidth: '40%' },
         legend: { position: 'none' },
@@ -831,7 +920,7 @@ $(document).ready(function() {
 
     setTimeout(function waitForVisualizationLib() {
       if (google.visualization && google.visualization.arrayToDataTable) {
-        drawStudentLessonTrackingReport();
+        drawUserTestResultReport();
         return;
       }
       setTimeout(waitForVisualizationLib, 500);

@@ -1812,6 +1812,7 @@ select.form-control {
   -ms-flex-positive: 1;
   flex-grow: 1;
   max-width: calc(50% - 2rem);
+  min-width: 20rem;
 }
 .chart .chart-legend {
   min-width: 20rem;
@@ -1938,22 +1939,6 @@ select.form-control {
     -ms-flex-direction: column;
     flex-direction: column;
   }
-}
-
-.user-details {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-  padding: 1rem 0;
-}
-.user-details img {
-  margin-right: 1rem;
-  max-height: 4rem;
-  max-width: 4rem;
-  vertical-align: baseline;
 }
 
 .list-notifications .list-group .list-group-item {
@@ -2945,6 +2930,11 @@ select.form-control {
   margin-top: 4rem;
   max-height: calc(100vh - 4rem);
   height: calc(100vh - 4rem);
+}
+.app-content.page-shared.no-margin {
+  margin-top: 0;
+  max-height: 100vh;
+  height: 100vh;
 }
 .app-content.page-shared .article-resources {
   padding: 0 1.5rem;
@@ -4322,14 +4312,17 @@ select.form-control {
     margin-left: 0;
   }
 }
-.app-content .article-track-lesson {
+.app-content .article-track-lesson,
+.app-content .article-track-test {
   padding: 0 1.5rem;
 }
-.app-content .article-track-lesson .article-header {
+.app-content .article-track-lesson .article-header,
+.app-content .article-track-test .article-header {
   height: 5rem;
   max-height: 5rem;
 }
-.app-content .article-track-lesson .article-header .navbar {
+.app-content .article-track-lesson .article-header .navbar,
+.app-content .article-track-test .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4347,20 +4340,24 @@ select.form-control {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav,
+.app-content .article-track-test .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav:first-child {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav:first-child,
+.app-content .article-track-test .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
   width: 16.5rem;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav.nav-main {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav.nav-main,
+.app-content .article-track-test .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item,
+.app-content .article-track-test .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4368,88 +4365,135 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content .article-track-test .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
   padding: 0.25rem;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content .article-track-test .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
   width: 3rem;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item .btn-light {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content .article-track-test .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item .item-text .resource-title {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item .item-text .resource-title,
+.app-content .article-track-test .article-header .navbar .navbar-nav .nav-item .item-text .resource-title {
   font-size: 1.25rem;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav .btn-light .fas {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content .article-track-test .article-header .navbar .navbar-nav .btn-light .fas {
   font-size: 1.5rem;
 }
-.app-content .article-track-lesson .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+.app-content .article-track-lesson .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content .article-track-test .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
   font-size: 1.25rem;
 }
 .app-content .article-track-lesson .article-content .article-body .nav-tabs,
-.app-content .article-track-lesson .article-content .article-body .tab-content {
+.app-content .article-track-lesson .article-content .article-body .tab-content,
+.app-content .article-track-test .article-content .article-body .nav-tabs,
+.app-content .article-track-test .article-content .article-body .tab-content {
   margin: 0 auto;
-  max-width: 64rem;
+  max-width: 76rem;
 }
-.app-content .article-track-lesson .article-content .article-body .nav-tabs {
+.app-content .article-track-lesson .article-content .article-body .nav-tabs,
+.app-content .article-track-test .article-content .article-body .nav-tabs {
   margin-top: 1rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .navbar {
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar,
+.app-content .article-track-test .article-content .article-body .tab-content .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 1rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-text {
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-text,
+.app-content .article-track-test .article-content .article-body .tab-content .navbar .navbar-text {
   padding: 0;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle) {
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle),
+.app-content .article-track-test .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle) {
   margin: 0 0.25rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle) .fas {
+.app-content .article-track-lesson .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle) .fas,
+.app-content .article-track-test .article-content .article-body .tab-content .navbar .navbar-nav .nav-item .btn-light:not(.dropdown-toggle) .fas {
   font-size: 1.375rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value {
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value,
+.app-content .article-track-test .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value {
   background-color: #e9ecef;
   padding: 0.25rem 0.5rem;
   min-width: 4rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value.legend-value-md {
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value.legend-value-md,
+.app-content .article-track-test .article-content .article-body .tab-content .chart .chart-legend .legend-group .legend-value.legend-value-md {
   min-width: 8rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light {
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light,
+.app-content .article-track-test .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light {
   margin: 0 0.5rem;
   padding: 0.125rem 0.5rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light .fas {
+.app-content .article-track-lesson .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light .fas,
+.app-content .article-track-test .article-content .article-body .tab-content .chart .chart-legend .legend-group .btn-light .fas {
   font-size: 1.375rem;
 }
-.app-content .article-track-lesson .article-content .article-body .tab-content .table a {
+.app-content .article-track-lesson .article-content .article-body .tab-content .table a,
+.app-content .article-track-test .article-content .article-body .tab-content .table a {
   color: #212529;
   display: inline-block;
   position: relative;
   word-break: break-word;
 }
 @media (max-width: 991.98px) {
-  .app-content .article-track-lesson .article-header {
+  .app-content .article-track-lesson .article-header,
+.app-content .article-track-test .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 970;
   }
-  .app-content .article-track-lesson .article-header .navbar {
+  .app-content .article-track-lesson .article-header .navbar,
+.app-content .article-track-test .article-header .navbar {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     padding: 1rem;
   }
-  .app-content .article-track-lesson .article-content {
+  .app-content .article-track-lesson .article-content,
+.app-content .article-track-test .article-content {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
     margin: 0 -0.5rem;
   }
-  .app-content .article-track-lesson .article-content .article-body {
+  .app-content .article-track-lesson .article-content .article-body,
+.app-content .article-track-test .article-content .article-body {
     margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .app-content .article-track-lesson .article-header .navbar .navbar-nav:first-child,
+.app-content .article-track-test .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content .article-track-lesson .article-header,
+.app-content .article-track-test .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 970;
+  }
+  .app-content .article-track-lesson .article-content,
+.app-content .article-track-test .article-content {
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+  .app-content .article-track-lesson .article-content .article-body,
+.app-content .article-track-test .article-content .article-body {
+    min-height: calc(100vh - 9rem);
+    margin-left: 0;
   }
 }
 @media (max-width: 767.98px) {
@@ -4462,9 +4506,6 @@ select.form-control {
   }
 }
 @media (max-width: 576px) {
-  .app-content .article-track-lesson .article-header .navbar .navbar-nav:first-child {
-    width: 14rem;
-  }
   .app-content .article-track-lesson .article-content .article-body .tab-content .table colgroup:nth-child(1) {
     display: none;
   }
@@ -4482,20 +4523,46 @@ select.form-control {
     display: none;
   }
 }
+@media (max-width: 991.98px) {
+  .app-content .article-track-test .article-content .article-body .tab-content .table colgroup:nth-child(4),
+.app-content .article-track-test .article-content .article-body .tab-content .table colgroup:nth-child(5) {
+    display: none;
+  }
+  .app-content .article-track-test .article-content .article-body .tab-content .table tr th:nth-child(4),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr th:nth-child(5),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr td:nth-child(4),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr td:nth-child(5) {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .app-content .article-track-test .article-content .article-body .tab-content .table colgroup:nth-child(3),
+.app-content .article-track-test .article-content .article-body .tab-content .table colgroup:nth-child(7) {
+    display: none;
+  }
+  .app-content .article-track-test .article-content .article-body .tab-content .table tr th:nth-child(3),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr th:nth-child(7),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr td:nth-child(3),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr td:nth-child(7) {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .app-content .article-track-test .article-content .article-body .tab-content .table colgroup:nth-child(1) {
+    display: none;
+  }
+  .app-content .article-track-test .article-content .article-body .tab-content .table tr th:nth-child(1),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr td:nth-child(1) {
+    display: none;
+  }
+}
 @media (min-width: 992px) {
-  .app-content .article-track-lesson .article-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 970;
+  .app-content .article-track-test .article-content .article-body .tab-content .table colgroup:nth-child(8) {
+    display: none;
   }
-  .app-content .article-track-lesson .article-content {
-    -ms-flex-direction: row-reverse;
-    flex-direction: row-reverse;
-  }
-  .app-content .article-track-lesson .article-content .article-body {
-    min-height: calc(100vh - 9rem);
-    margin-left: 0;
+  .app-content .article-track-test .article-content .article-body .tab-content .table tr th:nth-child(8),
+.app-content .article-track-test .article-content .article-body .tab-content .table tr td:nth-child(8) {
+    display: none;
   }
 }
 .app-content .article-track-lesson-user,
@@ -4564,31 +4631,59 @@ select.form-control {
   font-size: 1.25rem;
 }
 .app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress {
-  margin: 0 auto;
-  max-width: 64rem;
+.app-content .article-track-lesson-user .article-content .article-body .user-test-result,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress,
+.app-content .article-track-test-user .article-content .article-body .user-test-result {
+  margin: 1rem auto;
+  max-width: 76rem;
 }
-.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .navbar,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .navbar {
-  padding: 1rem 0;
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .user-details,
+.app-content .article-track-lesson-user .article-content .article-body .user-test-result .user-details,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .user-details,
+.app-content .article-track-test-user .article-content .article-body .user-test-result .user-details {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+}
+.app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .user-details img,
+.app-content .article-track-lesson-user .article-content .article-body .user-test-result .user-details img,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .user-details img,
+.app-content .article-track-test-user .article-content .article-body .user-test-result .user-details img {
+  margin-right: 1rem;
+  max-height: 4rem;
+  max-width: 4rem;
+  vertical-align: baseline;
 }
 .app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value {
+.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value,
+.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value {
   background-color: #e9ecef;
   padding: 0.25rem 0.5rem;
   min-width: 4rem;
 }
 .app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value.legend-value-md,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value.legend-value-md {
+.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value.legend-value-md,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .legend-value.legend-value-md,
+.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .legend-value.legend-value-md {
   min-width: 8rem;
 }
 .app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light {
+.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light,
+.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light {
   margin: 0 0.5rem;
   padding: 0.125rem 0.5rem;
 }
 .app-content .article-track-lesson-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light .fas,
-.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light .fas {
+.app-content .article-track-lesson-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light .fas,
+.app-content .article-track-test-user .article-content .article-body .user-lesson-progress .chart .chart-legend .legend-group .btn-light .fas,
+.app-content .article-track-test-user .article-content .article-body .user-test-result .chart .chart-legend .legend-group .btn-light .fas {
   font-size: 1.375rem;
 }
 @media (max-width: 991.98px) {
@@ -4646,6 +4741,44 @@ select.form-control {
 .app-content .article-track-lesson-user .article-content .article-body .chart .chart-legend .legend-group .legend-label {
   min-width: 14rem;
   width: 14rem;
+}
+
+.modal-user-progress-track .modal-track-user-progress .modal-content .modal-body,
+.modal-user-progress-track .modal-track-user-result .modal-content .modal-body,
+.modal-user-result-track .modal-track-user-progress .modal-content .modal-body,
+.modal-user-result-track .modal-track-user-result .modal-content .modal-body {
+  padding: 0;
+}
+.modal-user-progress-track .modal-track-user-progress .modal-content .modal-body .content,
+.modal-user-progress-track .modal-track-user-result .modal-content .modal-body .content,
+.modal-user-result-track .modal-track-user-progress .modal-content .modal-body .content,
+.modal-user-result-track .modal-track-user-result .modal-content .modal-body .content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  height: calc(100vh - 7.5rem);
+  width: 100%;
+}
+.modal-user-progress-track .modal-track-user-progress .modal-content .modal-body .content .full,
+.modal-user-progress-track .modal-track-user-result .modal-content .modal-body .content .full,
+.modal-user-result-track .modal-track-user-progress .modal-content .modal-body .content .full,
+.modal-user-result-track .modal-track-user-result .modal-content .modal-body .content .full {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 575.98px) {
+  .modal-user-progress-track .modal-track-user-progress .modal-content .modal-body .content,
+.modal-user-progress-track .modal-track-user-result .modal-content .modal-body .content,
+.modal-user-result-track .modal-track-user-progress .modal-content .modal-body .content,
+.modal-user-result-track .modal-track-user-result .modal-content .modal-body .content {
+    height: calc(100vh - 5rem);
+    width: 100%;
+  }
 }
 
 .app-content.page-error {
