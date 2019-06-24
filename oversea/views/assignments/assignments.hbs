@@ -44,70 +44,105 @@
                     </button>
                   </div>
                 </div>
-                <div class="dialog-menu dialog-menu-search dialog-menu-lg">
+                <div class="dialog-menu dialog-menu-search {{#unless studentUser}}dialog-menu-lg{{/unless}}">
                   <form class="form-advanced-search">
-                    <div class="form-row">
-                      <div class="col-lg">
-                        <div class="form-group">
-                          <label class="form-label" for="selCurriculum">Curriculum</label>
-                          <select class="form-control selectpicker" id="selCurriculum">
-                            <option>All</option>
-                            <option>CAIE</option>
-                            <option>SG</option>
-                          </select>
+                    {{#if studentUser}}
+                      <div class="form-group">
+                        <label class="form-label" for="selSubjet">Subject</label>
+                        <select class="form-control selectpicker" id="selSubjet">
+                          <option>All</option>
+                          <option>Chemistry</option>
+                          <option>Mathematics</option>
+                          <option>Physics</option>
+                          <option>Science</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selType">Type</label>
+                        <select class="form-control selectpicker" id="selType">
+                          <option>All</option>
+                          <option>Lesson</option>
+                          <option>Type</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="selStatus">Status</label>
+                        <select class="form-control selectpicker" id="selStatus">
+                          <option>All</option>
+                          <option>Not Started</option>
+                          <option>Started</option>
+                          <option>Closed</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label" for="txtKeyword">Keyword</label>
+                        <input class="form-control form-input" type="text" id="txtKeyword">
+                      </div>
+                    {{/if}}
+                    {{#unless studentUser}}
+                      <div class="form-row">
+                        <div class="col-lg">
+                          <div class="form-group">
+                            <label class="form-label" for="selCurriculum">Curriculum</label>
+                            <select class="form-control selectpicker" id="selCurriculum">
+                              <option>All</option>
+                              <option>CAIE</option>
+                              <option>SG</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label" for="selGrade">Grade</label>
+                            <select class="form-control selectpicker" id="selGrade">
+                              <option>All</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label" for="selSubjet">Subject</label>
+                            <select class="form-control selectpicker" id="selSubjet">
+                              <option>All</option>
+                              <option>Chemistry</option>
+                              <option>Mathematics</option>
+                              <option>Physics</option>
+                              <option>Science</option>
+                            </select>
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label class="form-label" for="selGrade">Grade</label>
-                          <select class="form-control selectpicker" id="selGrade">
-                            <option>All</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label class="form-label" for="selSubjet">Subject</label>
-                          <select class="form-control selectpicker" id="selSubjet">
-                            <option>All</option>
-                            <option>Chemistry</option>
-                            <option>Mathematics</option>
-                            <option>Physics</option>
-                            <option>Science</option>
-                          </select>
+                        <div class="col-lg">
+                          <div class="form-group">
+                            <label class="form-label" for="selType">Type</label>
+                            <select class="form-control selectpicker" id="selType">
+                              <option>All</option>
+                              <option>Lesson</option>
+                              <option>Type</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="form-label" for="selStatus">Status</label>
+                            <select class="form-control selectpicker" id="selStatus">
+                              <option>All</option>
+                              <option>Not Started</option>
+                              <option>Started</option>
+                              <option>Closed</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-lg">
-                        <div class="form-group">
-                          <label class="form-label" for="selType">Assignment Type</label>
-                          <select class="form-control selectpicker" id="selType">
-                            <option>All</option>
-                            <option>Lesson</option>
-                            <option>Type</option>
-                          </select>
+                      <div class="form-row">
+                        <div class="col-lg">
+                          <div class="form-group">
+                            <label class="form-label" for="txtKeyword">Keyword</label>
+                            <input class="form-control form-input" type="text" id="txtKeyword">
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label class="form-label" for="selStatus">Status</label>
-                          <select class="form-control selectpicker" id="selStatus">
-                            <option>All</option>
-                            <option>Not Started</option>
-                            <option>Started</option>
-                            <option>Closed</option>
-                          </select>
-                        </div>
+                        <div class="col-lg"></div>
                       </div>
-                    </div>
-                    <div class="form-row">
-                      <div class="col-lg">
-                        <div class="form-group">
-                          <label class="form-label" for="txtKeyword">Keyword</label>
-                          <input class="form-control form-input" type="text" id="txtKeyword">
-                        </div>
-                      </div>
-                      <div class="col-lg"></div>
-                    </div>
+                    {{/unless}}
                     <div class="form-group form-group-actions">
                       <button class="btn btn-light" type="button">Reset</button> 
                       <button class="btn btn-primary" type="button">Search</button>

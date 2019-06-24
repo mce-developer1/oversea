@@ -779,7 +779,7 @@ $(document).ready(function() {
         fontName: 'Arial',
         fontSize: 13,
         height: 240,
-        pieHole: 0.5,
+        pieHole: 0.4,
         chartArea: { top: 56, right: 32, bottom: 28, left: 32 },
         title: 'Percentage Completed',
         legend: { position: 'none' },
