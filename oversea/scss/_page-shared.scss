@@ -1717,6 +1717,14 @@
         .article-sidebar {
           min-width: 20rem;
           width: 20rem;
+
+          .form-assign-settings {
+            .form-group {
+              .form-control {
+                max-width: 20rem;
+              }
+            }
+          }
         }
 
         .article-body {
