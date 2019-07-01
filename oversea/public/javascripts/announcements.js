@@ -54,6 +54,12 @@ $(document).ready(function() {
           { id: 3, name: 'Ashar Ahmad' }, 
           { id: 4, name: 'Chua Chin Hui' },
           { id: 5, name: 'Derrick Lee' }
+
+          ,{ id: 1, name: 'Aaron Tan' }, 
+          { id: 2, name: 'Arya Suman' },
+          { id: 3, name: 'Ashar Ahmad' }, 
+          { id: 4, name: 'Chua Chin Hui' },
+          { id: 5, name: 'Derrick Lee' }
         ];
         var pattern = new RegExp(query, 'i');
         var hits = records.filter(function(record) {

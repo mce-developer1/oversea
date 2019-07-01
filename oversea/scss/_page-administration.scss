@@ -1,6 +1,9 @@
 .app-content {
   &.page-administration {
+    .article-manage-school,
+    .article-manage-user-account,
     .article-manage-form-class,
+    .article-manage-school-group,
     .article-login-as-student,
     .article-login-as-teacher {
       padding: 0 1.5rem;
@@ -95,6 +98,10 @@
             @include justify-content(space-between);
             padding: .75rem 0;
 
+            &.navbar-pagination {
+              @include justify-content(flex-end);
+            }
+
             .navbar-nav {
               .btn-primary {
                 margin-left: 1rem;
@@ -123,19 +130,16 @@
             border-color: $gray-200;
             margin: 0 -1rem;
             width: auto;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 5rem;
+            z-index: 970;
 
             &.dialog {
               .form-filters {
                 margin: 0 .5rem;
                 padding: 1rem;
                 width: calc(100% - 1rem);
-
-                .nav {
-                  &.nav-pad2 {
-                    @include flex-grow(1);
-                    width: 100vw;
-                  }
-                }
 
                 .form-group {
                   @include display-flex(row);
@@ -204,13 +208,13 @@
           .article-body {
             .dataTables_wrapper {
               .dataTables_scrollHead {
-                position: -webkit-sticky !important;
-                position: sticky !important;
-                top: 10rem !important;
-                z-index: 970 !important;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 10rem;
+                z-index: 970;
   
                 .dataTables_scrollHeadInner {
-                  position: relative !important;
+                  position: relative;
                 }
               }
   
@@ -223,7 +227,10 @@
       }
     }
 
-    .article-create-form-class {
+    .article-create-school,
+    .article-create-user-account,
+    .article-create-form-class,
+    .article-create-school-group {
       padding: 0 1.5rem;
 
       .article-header {
@@ -270,10 +277,11 @@
 
       .article-content {
         .article-body {
-          margin: 0 auto;
-          max-width: 64rem;
+          max-width: 76rem;
           
-          .form-form-class {
+          .form-user-account,
+          .form-form-class,
+          .form-school-group {
             padding: 1rem 0;
 
             .form-row {
@@ -288,12 +296,44 @@
               .form-group {
                 padding: 0;
 
-                +.form-group {
-                  margin-left: 1.5rem;
+                .form-group {
+                  margin-bottom: 0;
+
+                  &+.form-group {
+                    margin-top: 1rem;
+                  }
+                }
+
+                .custom-control {
+                  margin-top: .25rem;
+                }
+
+                .input-group {
+                  @include justify-content(flex-start);
+    
+                  .algolia-autocomplete {
+                    @include flex-grow(1);
+                  }
+
+                  .btn,
+                  .custom-control {
+                    margin-left: .5rem;
+                  }
                 }
 
                 .form-control[multiple] {
-                  height: 16rem;
+                  height: 20rem;
+
+                  &.form-control-group {
+                    height: 8.375rem;
+                  }
+                }
+
+                .list-groups {
+                  margin-bottom: .5rem;
+                  overflow-x: hidden;
+                  overflow-y: auto;
+                  max-height: 16rem;
                 }
               }
 
@@ -316,6 +356,12 @@
                 }
               }
             }
+
+            .form-group {
+              &.form-group-actions {
+                margin: .5rem 0;
+              }
+            }
           }
         }
       }
@@ -323,7 +369,9 @@
       @media (max-width: 767.98px) {
         .article-content {
           .article-body {
-            .form-form-class {
+            .form-user-account,
+            .form-form-class,
+            .form-school-group {
               .form-row {
                 @include align-items(flex-start);
                 @include flex-direction(column);
@@ -381,10 +429,33 @@
         }
       }
 
+      @media (max-width: 576px) {
+        .article-content {
+          .article-body {
+            .form-user-account {
+              .form-group {
+                .input-group {
+                  .algolia-autocomplete {
+                    min-width: 100%;
+                    width: 100%;
+                  }
+    
+                  .btn {
+                    margin: .5rem .5rem .5rem 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
       @media (min-width: 768px) {
         .article-content {
           .article-body {
-            .form-form-class {
+            .form-user-account,
+            .form-form-class,
+            .form-school-group {
               .form-row {
                 .btn-group {
                   .btn {
@@ -407,7 +478,9 @@
       @media (min-width: 768px) {
         .article-content {
           .article-body {
-            .form-form-class {
+            .form-user-account,
+            .form-form-class,
+            .form-school-group {
               .form-group {
                 &:not(.form-group-actions) {
                   max-width: 30rem;

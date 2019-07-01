@@ -472,6 +472,24 @@ a:focus {
   color: #ff6600;
 }
 
+.list-group.list-group-horizontal {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.list-group.list-group-horizontal .list-group-item {
+  background-color: transparent;
+  border: 0;
+  min-width: 10rem;
+}
+.list-group.list-group-horizontal .list-group-item:hover {
+  background-color: transparent;
+}
 .list-group.list-group-bubble {
   display: -ms-flexbox;
   display: flex;
@@ -1329,9 +1347,6 @@ select.form-control {
 .list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal .list-group-item {
   padding: 0.5rem 0;
 }
-.list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal .list-group-item:hover {
-  background-color: transparent;
-}
 .list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal .list-group-item .custom-checkbox {
   margin: 0.325rem 1rem;
 }
@@ -1361,19 +1376,9 @@ select.form-control {
   }
 }
 @media (min-width: 576px) {
-  .list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-  }
   .list-group .list-group-item.collapsible .collapsible-content .list-group.list-group-horizontal .list-group-item {
     max-width: 16rem;
-    width: 16rem;
+    min-width: 16rem;
   }
 }
 
@@ -1605,6 +1610,7 @@ select.form-control {
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search .form-group .btn {
   margin: 0 !important;
+  padding: 0.325rem 0.5rem;
 }
 .dialog .dialog-menu.dialog-menu-search .form-advanced-search .form-group .btn + .btn {
   margin-left: 0.5rem !important;
@@ -1775,6 +1781,7 @@ select.form-control {
   max-height: 320px;
   overflow-y: auto;
   width: 100%;
+  z-index: 1000;
 }
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
   cursor: pointer;
@@ -1879,6 +1886,21 @@ select.form-control {
 }
 .article .article-content .article-sidebar {
   margin-bottom: 1rem;
+}
+.article .article-content .article-sidebar .form-filters .form-group.form-group-actions {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.article .article-content .article-sidebar .form-filters .form-group .btn {
+  margin: 0 !important;
+  padding: 0.325rem 0.5rem;
+}
+.article .article-content .article-sidebar .form-filters .form-group .btn + .btn {
+  margin-left: 0.5rem !important;
 }
 .article .article-content .article-body {
   min-width: 280px;
@@ -2455,35 +2477,46 @@ select.form-control {
   }
 }
 
+.modal-group-select .modal-dialog .modal-body,
 .modal-user-select .modal-dialog .modal-body {
   padding: 1rem 0;
 }
+.modal-group-select .modal-dialog .modal-body .tab-content .tab-pane .form-control,
 .modal-user-select .modal-dialog .modal-body .tab-content .tab-pane .form-control {
   margin-top: 1rem;
 }
+.modal-group-select .modal-dialog .modal-body .navbar,
 .modal-user-select .modal-dialog .modal-body .navbar {
   padding: 0.675rem 0.5rem;
 }
+.modal-group-select .modal-dialog .modal-body .navbar h6,
 .modal-user-select .modal-dialog .modal-body .navbar h6 {
   margin-bottom: 0;
 }
+.modal-group-select .modal-dialog .modal-body .list-groups,
+.modal-group-select .modal-dialog .modal-body .list-users,
 .modal-user-select .modal-dialog .modal-body .list-groups,
 .modal-user-select .modal-dialog .modal-body .list-users {
   height: 16rem;
   margin-top: 1rem;
   overflow-y: auto;
 }
+.modal-group-select .modal-dialog .modal-body .list-groups .list-group .list-group-item,
+.modal-group-select .modal-dialog .modal-body .list-users .list-group .list-group-item,
 .modal-user-select .modal-dialog .modal-body .list-groups .list-group .list-group-item,
 .modal-user-select .modal-dialog .modal-body .list-users .list-group .list-group-item {
   padding: 0.75rem 0.5rem;
 }
+.modal-group-select .modal-dialog .modal-body .list-users,
 .modal-user-select .modal-dialog .modal-body .list-users {
   height: 12.6rem;
 }
+.modal-group-select .modal-dialog .modal-body .selected-users,
 .modal-user-select .modal-dialog .modal-body .selected-users {
   max-height: 17rem;
   overflow-y: auto;
 }
+.modal-group-select .modal-dialog .modal-body .selected-users .list-group .list-group-item,
 .modal-user-select .modal-dialog .modal-body .selected-users .list-group .list-group-item {
   display: -ms-flexbox;
   display: flex;
@@ -2496,7 +2529,8 @@ select.form-control {
   padding: 0.25rem 0.5rem;
 }
 @media (max-width: 992px) {
-  .modal-user-select .modal-dialog .modal-body .tab-content {
+  .modal-group-select .modal-dialog .modal-body .tab-content,
+.modal-user-select .modal-dialog .modal-body .tab-content {
     margin-bottom: 1rem;
   }
 }
@@ -4200,7 +4234,7 @@ select.form-control {
   margin: 0.5rem 0.5rem 0.5rem 0;
 }
 .app-content .article-assign-resource .article-content .article-sidebar .form-assign-settings .form-group .list-users {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 16rem;
@@ -4991,6 +5025,9 @@ select.form-control {
 .app-content.page-sign-in .form-sign-in .form-group-actions .btn-block {
   margin-bottom: 0.5rem;
 }
+.app-content.page-sign-in .form-sign-in .form-group-actions a {
+  color: #212529;
+}
 .app-content.page-sign-in .form-reset-password {
   max-width: 36rem;
 }
@@ -5684,7 +5721,7 @@ select.form-control {
 .app-content.page-reports .article-report .article-content .article-body .article-proficiency-report {
   background-color: #ffffff;
   overflow-x: auto;
-  max-width: 64rem;
+  max-width: 76rem;
   padding: 1rem;
 }
 .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-header .btn,
@@ -5707,7 +5744,7 @@ select.form-control {
 .app-content.page-reports .article-report .article-content .article-body .navbar-report {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
-  max-width: 64rem;
+  max-width: 76rem;
   padding: 0.5rem 0;
 }
 .app-content.page-reports .article-report .article-content .article-body .navbar-report .btn-light .fas {
@@ -5950,6 +5987,16 @@ select.form-control {
 .app-content.page-resources .article-resources .article-content .article-body .table-head.table-search-results td:nth-child(7),
 .app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results th:nth-child(7),
 .app-content.page-resources .article-resources .article-content .article-body .table-body.table-search-results td:nth-child(7) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-resource-bank colgroup:nth-child(5),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-resource-bank colgroup:nth-child(5) {
+  display: none;
+}
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-resource-bank th:nth-child(5),
+.app-content.page-resources .article-resources .article-content .article-body .table-head.table-resource-bank td:nth-child(5),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-resource-bank th:nth-child(5),
+.app-content.page-resources .article-resources .article-content .article-body .table-body.table-resource-bank td:nth-child(5) {
   display: none;
 }
 .app-content.page-resources .article-resources .article-content .article-body .table-head a,
@@ -7254,7 +7301,7 @@ select.form-control {
 }
 .app-content.page-tests .article-create-test .article-content .article-body .article-test-components {
   margin: 0 auto;
-  max-width: 64rem;
+  max-width: 76rem;
   padding: 0;
 }
 .app-content.page-tests .article-create-test .article-content .article-body .article-test-components .navbar {
@@ -8012,7 +8059,7 @@ select.form-control {
   margin-left: 0.5rem;
 }
 .app-content.page-announcements .article-create-announcement .article-content .article-body .form-announcement .form-group .list-users {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 16rem;
@@ -8161,9 +8208,10 @@ select.form-control {
 .app-content.page-notifications .article-notifications .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
-.app-content.page-notifications .article-notifications .article-content .article-body {
+.app-content.page-notifications .article-notifications .article-content .article-body .navbar,
+.app-content.page-notifications .article-notifications .article-content .article-body .list-notifications {
   margin: 0 auto;
-  max-width: 64rem;
+  max-width: 76rem;
 }
 .app-content.page-notifications .article-notifications .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
@@ -8208,18 +8256,27 @@ select.form-control {
   }
 }
 
+.app-content.page-administration .article-manage-school,
+.app-content.page-administration .article-manage-user-account,
 .app-content.page-administration .article-manage-form-class,
+.app-content.page-administration .article-manage-school-group,
 .app-content.page-administration .article-login-as-student,
 .app-content.page-administration .article-login-as-teacher {
   padding: 0 1.5rem;
 }
+.app-content.page-administration .article-manage-school .article-header,
+.app-content.page-administration .article-manage-user-account .article-header,
 .app-content.page-administration .article-manage-form-class .article-header,
+.app-content.page-administration .article-manage-school-group .article-header,
 .app-content.page-administration .article-login-as-student .article-header,
 .app-content.page-administration .article-login-as-teacher .article-header {
   height: 4rem;
   max-height: 4rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar,
+.app-content.page-administration .article-manage-user-account .article-header .navbar,
 .app-content.page-administration .article-manage-form-class .article-header .navbar,
+.app-content.page-administration .article-manage-school-group .article-header .navbar,
 .app-content.page-administration .article-login-as-student .article-header .navbar,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar {
   display: -ms-flexbox;
@@ -8240,26 +8297,38 @@ select.form-control {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav:first-child,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav:first-child,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav:first-child,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav:first-child,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav:first-child,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
   width: 20rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
@@ -8269,81 +8338,135 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
   padding: 0.25rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
   width: 3rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
   font-size: 1.25rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item .item-text,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item .item-text,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item .item-text,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 16rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light .fas {
   font-size: 1.5rem;
 }
+.app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
 .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
+.app-content.page-administration .article-manage-school .article-content .article-sidebar,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar,
 .app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar {
   margin: 0;
 }
+.app-content.page-administration .article-manage-school .article-content .article-body .navbar,
+.app-content.page-administration .article-manage-user-account .article-content .article-body .navbar,
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar,
+.app-content.page-administration .article-manage-school-group .article-content .article-body .navbar,
 .app-content.page-administration .article-login-as-student .article-content .article-body .navbar,
 .app-content.page-administration .article-login-as-teacher .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 0.75rem 0;
 }
+.app-content.page-administration .article-manage-school .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-administration .article-manage-user-account .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-administration .article-manage-form-class .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-administration .article-manage-school-group .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-administration .article-login-as-student .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-administration .article-login-as-teacher .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-administration .article-manage-school .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-administration .article-manage-user-account .article-content .article-body .navbar .navbar-nav .btn-primary,
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-administration .article-manage-school-group .article-content .article-body .navbar .navbar-nav .btn-primary,
 .app-content.page-administration .article-login-as-student .article-content .article-body .navbar .navbar-nav .btn-primary,
 .app-content.page-administration .article-login-as-teacher .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
+.app-content.page-administration .article-manage-school .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-administration .article-manage-user-account .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
 .app-content.page-administration .article-manage-form-class .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-administration .article-manage-school-group .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
 .app-content.page-administration .article-login-as-student .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
 .app-content.page-administration .article-login-as-teacher .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
   margin-left: 0.5rem;
 }
 @media (max-width: 991.98px) {
-  .app-content.page-administration .article-manage-form-class .article-header,
+  .app-content.page-administration .article-manage-school .article-header,
+.app-content.page-administration .article-manage-user-account .article-header,
+.app-content.page-administration .article-manage-form-class .article-header,
+.app-content.page-administration .article-manage-school-group .article-header,
 .app-content.page-administration .article-login-as-student .article-header,
 .app-content.page-administration .article-login-as-teacher .article-header {
     display: none;
   }
-  .app-content.page-administration .article-manage-form-class .article-content,
+  .app-content.page-administration .article-manage-school .article-content,
+.app-content.page-administration .article-manage-user-account .article-content,
+.app-content.page-administration .article-manage-form-class .article-content,
+.app-content.page-administration .article-manage-school-group .article-content,
 .app-content.page-administration .article-login-as-student .article-content,
 .app-content.page-administration .article-login-as-teacher .article-content {
     display: -ms-flexbox;
@@ -8352,7 +8475,10 @@ select.form-control {
     flex-direction: column;
     margin: 0 -0.5rem;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar {
     -ms-flex-positive: 1;
@@ -8361,22 +8487,25 @@ select.form-control {
     border-color: #e9ecef;
     margin: 0 -1rem;
     width: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    z-index: 970;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar.dialog .form-filters,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar.dialog .form-filters,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar.dialog .form-filters,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar.dialog .form-filters,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar.dialog .form-filters {
     margin: 0 0.5rem;
     padding: 1rem;
     width: calc(100% - 1rem);
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters .nav.nav-pad2,
-.app-content.page-administration .article-login-as-student .article-content .article-sidebar.dialog .form-filters .nav.nav-pad2,
-.app-content.page-administration .article-login-as-teacher .article-content .article-sidebar.dialog .form-filters .nav.nav-pad2 {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    width: 100vw;
-  }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters .form-group,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar.dialog .form-filters .form-group,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar.dialog .form-filters .form-group,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters .form-group,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar.dialog .form-filters .form-group,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar.dialog .form-filters .form-group,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar.dialog .form-filters .form-group {
     display: -ms-flexbox;
@@ -8386,13 +8515,19 @@ select.form-control {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar.dialog .form-filters .form-group .form-label,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar.dialog .form-filters .form-group .form-label {
     min-width: 8rem;
     width: 8rem;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar .navbar,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar {
     -webkit-justify-content: flex-end;
@@ -8400,24 +8535,36 @@ select.form-control {
     height: 3rem;
     padding: 0;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar .btn-light,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar .navbar .btn-light,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar .navbar .btn-light,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar .btn-light,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar .navbar .btn-light,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar .btn-light,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar .btn-light {
     padding: 0.5rem 1rem;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar .btn-light .fa-filter,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar .navbar .btn-light .fa-filter,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar .navbar .btn-light .fa-filter,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar .btn-light .fa-filter,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar .navbar .btn-light .fa-filter,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar .btn-light .fa-filter,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar .btn-light .fa-filter {
     font-size: 1.25rem;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body,
+  .app-content.page-administration .article-manage-school .article-content .article-body,
+.app-content.page-administration .article-manage-user-account .article-content .article-body,
+.app-content.page-administration .article-manage-form-class .article-content .article-body,
+.app-content.page-administration .article-manage-school-group .article-content .article-body,
 .app-content.page-administration .article-login-as-student .article-content .article-body,
 .app-content.page-administration .article-login-as-teacher .article-content .article-body {
     margin: 0;
   }
 }
 @media (min-width: 992px) {
-  .app-content.page-administration .article-manage-form-class .article-header,
+  .app-content.page-administration .article-manage-school .article-header,
+.app-content.page-administration .article-manage-user-account .article-header,
+.app-content.page-administration .article-manage-form-class .article-header,
+.app-content.page-administration .article-manage-school-group .article-header,
 .app-content.page-administration .article-login-as-student .article-header,
 .app-content.page-administration .article-login-as-teacher .article-header {
     position: -webkit-sticky;
@@ -8425,12 +8572,18 @@ select.form-control {
     top: 6rem;
     z-index: 970;
   }
-  .app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item-submodule,
+  .app-content.page-administration .article-manage-school .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-administration .article-manage-user-account .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-administration .article-manage-form-class .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-administration .article-manage-school-group .article-header .navbar .navbar-nav .nav-item-submodule,
 .app-content.page-administration .article-login-as-student .article-header .navbar .navbar-nav .nav-item-submodule,
 .app-content.page-administration .article-login-as-teacher .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar {
     height: calc(100vh - 13rem);
@@ -8441,25 +8594,37 @@ select.form-control {
     position: sticky;
     top: 10rem;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar,
+  .app-content.page-administration .article-manage-school .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-manage-user-account .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-manage-form-class .article-content .article-sidebar .navbar,
+.app-content.page-administration .article-manage-school-group .article-content .article-sidebar .navbar,
 .app-content.page-administration .article-login-as-student .article-content .article-sidebar .navbar,
 .app-content.page-administration .article-login-as-teacher .article-content .article-sidebar .navbar {
     display: none;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
+  .app-content.page-administration .article-manage-school .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
+.app-content.page-administration .article-manage-user-account .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
+.app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
+.app-content.page-administration .article-manage-school-group .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
 .app-content.page-administration .article-login-as-student .article-content .article-body .dataTables_wrapper .dataTables_scrollHead,
 .app-content.page-administration .article-login-as-teacher .article-content .article-body .dataTables_wrapper .dataTables_scrollHead {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 10rem !important;
-    z-index: 970 !important;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+    z-index: 970;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
+  .app-content.page-administration .article-manage-school .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
+.app-content.page-administration .article-manage-user-account .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
+.app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
+.app-content.page-administration .article-manage-school-group .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
 .app-content.page-administration .article-login-as-student .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner,
 .app-content.page-administration .article-login-as-teacher .article-content .article-body .dataTables_wrapper .dataTables_scrollHead .dataTables_scrollHeadInner {
-    position: relative !important;
+    position: relative;
   }
-  .app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTable,
+  .app-content.page-administration .article-manage-school .article-content .article-body .dataTables_wrapper .dataTable,
+.app-content.page-administration .article-manage-user-account .article-content .article-body .dataTables_wrapper .dataTable,
+.app-content.page-administration .article-manage-form-class .article-content .article-body .dataTables_wrapper .dataTable,
+.app-content.page-administration .article-manage-school-group .article-content .article-body .dataTables_wrapper .dataTable,
 .app-content.page-administration .article-login-as-student .article-content .article-body .dataTables_wrapper .dataTable,
 .app-content.page-administration .article-login-as-teacher .article-content .article-body .dataTables_wrapper .dataTable {
     -webkit-touch-callout: none;
@@ -8470,14 +8635,23 @@ select.form-control {
     user-select: none;
   }
 }
-.app-content.page-administration .article-create-form-class {
+.app-content.page-administration .article-create-school,
+.app-content.page-administration .article-create-user-account,
+.app-content.page-administration .article-create-form-class,
+.app-content.page-administration .article-create-school-group {
   padding: 0 1.5rem;
 }
-.app-content.page-administration .article-create-form-class .article-header {
+.app-content.page-administration .article-create-school .article-header,
+.app-content.page-administration .article-create-user-account .article-header,
+.app-content.page-administration .article-create-form-class .article-header,
+.app-content.page-administration .article-create-school-group .article-header {
   height: 4rem;
   max-height: 4rem;
 }
-.app-content.page-administration .article-create-form-class .article-header .navbar {
+.app-content.page-administration .article-create-school .article-header .navbar,
+.app-content.page-administration .article-create-user-account .article-header .navbar,
+.app-content.page-administration .article-create-form-class .article-header .navbar,
+.app-content.page-administration .article-create-school-group .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -8496,20 +8670,32 @@ select.form-control {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
-.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav {
+.app-content.page-administration .article-create-school .article-header .navbar .navbar-nav,
+.app-content.page-administration .article-create-user-account .article-header .navbar .navbar-nav,
+.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav,
+.app-content.page-administration .article-create-school-group .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav:first-child {
+.app-content.page-administration .article-create-school .article-header .navbar .navbar-nav:first-child,
+.app-content.page-administration .article-create-user-account .article-header .navbar .navbar-nav:first-child,
+.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav:first-child,
+.app-content.page-administration .article-create-school-group .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
   width: 20rem;
 }
-.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav.nav-main {
+.app-content.page-administration .article-create-school .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-administration .article-create-user-account .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-administration .article-create-school-group .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
 }
-.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav .nav-item {
+.app-content.page-administration .article-create-school .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-administration .article-create-user-account .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-administration .article-create-school-group .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -8517,36 +8703,233 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-administration .article-create-school .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-administration .article-create-user-account .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-administration .article-create-form-class .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-administration .article-create-school-group .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 16rem;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body {
-  margin: 0 auto;
-  max-width: 64rem;
+.app-content.page-administration .article-create-school .article-content .article-body,
+.app-content.page-administration .article-create-user-account .article-content .article-body,
+.app-content.page-administration .article-create-form-class .article-content .article-body,
+.app-content.page-administration .article-create-school-group .article-content .article-body {
+  max-width: 76rem;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group {
   padding: 1rem 0;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row {
   -webkit-align-items: flex-start;
   align-items: flex-start;
   margin: 0;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .col-auto {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .col-auto,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .col-auto,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .col-auto,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .col-auto {
   margin: 0 0.5rem;
   min-width: 4rem;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group {
   padding: 0;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group + .form-group {
-  margin-left: 1.5rem;
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .form-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .form-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .form-group {
+  margin-bottom: 0;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple] {
-  height: 16rem;
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .form-group + .form-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .form-group + .form-group {
+  margin-top: 1rem;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .custom-control,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .custom-control {
+  margin-top: 0.25rem;
+}
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .input-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .input-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .input-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .input-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .input-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .input-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .input-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .input-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .input-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .input-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .input-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .input-group {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .input-group .algolia-autocomplete {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .input-group .custom-control,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .input-group .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .input-group .custom-control {
+  margin-left: 0.5rem;
+}
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple],
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple] {
+  height: 20rem;
+}
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .form-control[multiple].form-control-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .form-control[multiple].form-control-group {
+  height: 8.375rem;
+}
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .form-group .list-groups,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .form-group .list-groups {
+  margin-bottom: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 16rem;
+}
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -8555,24 +8938,93 @@ select.form-control {
   justify-content: center;
   margin-top: 1.75rem;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn {
   margin: 0.25rem 0.5rem;
   width: 2.5rem;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn + .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn + .btn {
   margin: 0.25rem 0.5rem;
 }
-.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas {
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas {
   font-size: 1.25rem;
 }
+.app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-group.form-group-actions,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-group.form-group-actions,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-group.form-group-actions,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-group.form-group-actions,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-group.form-group-actions,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-group.form-group-actions,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-group.form-group-actions,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-group.form-group-actions,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-group.form-group-actions,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-group.form-group-actions,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-group.form-group-actions,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-group.form-group-actions {
+  margin: 0.5rem 0;
+}
 @media (max-width: 767.98px) {
-  .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row {
     -webkit-align-items: flex-start;
     align-items: flex-start;
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .col-auto {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .col-auto,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .col-auto,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .col-auto,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .col-auto,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .col-auto,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .col-auto {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -8580,51 +9032,202 @@ select.form-control {
     -webkit-align-items: center;
     align-items: center;
   }
-  .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group {
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-align-items: center;
     align-items: center;
     margin: 0.5rem 0;
   }
-  .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group + .btn-group {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group + .btn-group,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group + .btn-group {
     margin-left: 1.75rem;
   }
-  .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-right, .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-right, .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-left, .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-left {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-right, .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-right, .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-left, .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-left,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-right,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-right,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-left,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-left {
     display: none;
   }
 }
 @media (max-width: 991.98px) {
-  .app-content.page-administration .article-create-form-class .article-header {
+  .app-content.page-administration .article-create-school .article-header,
+.app-content.page-administration .article-create-user-account .article-header,
+.app-content.page-administration .article-create-form-class .article-header,
+.app-content.page-administration .article-create-school-group .article-header {
     margin: 0 -0.5rem;
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     z-index: 970;
   }
-  .app-content.page-administration .article-create-form-class .article-header .navbar {
+  .app-content.page-administration .article-create-school .article-header .navbar,
+.app-content.page-administration .article-create-user-account .article-header .navbar,
+.app-content.page-administration .article-create-form-class .article-header .navbar,
+.app-content.page-administration .article-create-school-group .article-header .navbar {
     -webkit-justify-content: space-between;
     justify-content: space-between;
   }
-  .app-content.page-administration .article-create-form-class .article-content {
+  .app-content.page-administration .article-create-school .article-content,
+.app-content.page-administration .article-create-user-account .article-content,
+.app-content.page-administration .article-create-form-class .article-content,
+.app-content.page-administration .article-create-school-group .article-content {
     margin: 0 -0.5rem;
   }
-  .app-content.page-administration .article-create-form-class .article-content .article-body {
+  .app-content.page-administration .article-create-school .article-content .article-body,
+.app-content.page-administration .article-create-user-account .article-content .article-body,
+.app-content.page-administration .article-create-form-class .article-content .article-body,
+.app-content.page-administration .article-create-school-group .article-content .article-body {
     margin: 0;
   }
 }
+@media (max-width: 576px) {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-group .input-group .algolia-autocomplete,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-group .input-group .algolia-autocomplete {
+    min-width: 100%;
+    width: 100%;
+  }
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-group .input-group .btn,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-group .input-group .btn,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-group .input-group .btn,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-group .input-group .btn {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+  }
+}
 @media (min-width: 768px) {
-  .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-down, .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-down, .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-up, .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-up {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-down, .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-down, .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-up, .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-row .btn-group .btn .fas.fa-angle-double-up,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-down,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-down,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-up,
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-row .btn-group .btn .fas.fa-angle-double-up {
     display: none;
   }
 }
 @media (min-width: 768px) {
-  .app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-group:not(.form-group-actions) {
+  .app-content.page-administration .article-create-school .article-content .article-body .form-user-account .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-school .article-content .article-body .form-form-class .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-school .article-content .article-body .form-school-group .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-user-account .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-form-class .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-user-account .article-content .article-body .form-school-group .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-user-account .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-form-class .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-form-class .article-content .article-body .form-school-group .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-user-account .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-form-class .form-group:not(.form-group-actions),
+.app-content.page-administration .article-create-school-group .article-content .article-body .form-school-group .form-group:not(.form-group-actions) {
     max-width: 30rem;
   }
 }
 @media (min-width: 992px) {
-  .app-content.page-administration .article-create-form-class .article-header {
+  .app-content.page-administration .article-create-school .article-header,
+.app-content.page-administration .article-create-user-account .article-header,
+.app-content.page-administration .article-create-form-class .article-header,
+.app-content.page-administration .article-create-school-group .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;

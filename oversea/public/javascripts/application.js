@@ -112,6 +112,11 @@ $(document).ready(function() {
     });
   });
 
+  $(document).on('autocomplete:opened', function(e) {
+    var autocomplete = $(e.target).closest('.algolia-autocomplete');
+    $(autocomplete).find('.aa-dropdown-menu').css('z-index', '');
+  });
+
   $(document).on('show.bs.collapse', function(e) {
     if (!$(e.target).closest('.collapsible').hasClass('show')) {
       $(e.target).closest('.collapsible').addClass('show');

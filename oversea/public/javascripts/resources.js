@@ -560,10 +560,13 @@ $(document).ready(function() {
   });
 
   $container.find('.tree-resources .resource a').on('click', function(e) {
+    $container.find('.table').removeClass('table-shared-with-me');
+    $container.find('.table').removeClass('table-resource-bank');
+
     if ($(this).attr('title') === 'Shared with Me') {
       $container.find('.table').addClass('table-shared-with-me');
-    } else {
-      $container.find('.table').removeClass('table-shared-with-me');
+    } else if ($(this).attr('title') === 'Resource Bank') {
+      $container.find('.table').addClass('table-resource-bank');
     }
   });
 

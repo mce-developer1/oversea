@@ -53,8 +53,12 @@
             {{#if announcementsPage}}Announcements{{/if}}
             {{#if profilePage}}About Me{{/if}}
             {{#if passwordPage}}User Administration{{/if}}
+            {{#if schoolPage}}Manage School{{/if}}
+            {{#if userAccountPage}}Manage User Account{{/if}}
             {{#if formClassPage}}Manage Form Class{{/if}}
+            {{#if schoolGroupPage}}Manage School Group{{/if}}
             {{#if loginAsStudentPage}}Login to Student Account{{/if}}
+            {{#if loginAsTeacherPage}}Login to Teacher Account{{/if}}
             {{#if legacyPage}}Legacy Page{{/if}}
             {{#if errorPage}}Page Not Found{{/if}}
           </div>
@@ -182,6 +186,11 @@
                   </a>
                   <div class="dropdown-menu">
                     <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_school">
+                          <i class="img img-administration"></i> Manage School
+                        </a>
+                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
                           <i class="img img-administration"></i> Manage User Account
@@ -321,6 +330,11 @@
                         <div class="nav-text">
                           <i class="img img-administration"></i> Administration
                         </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/manage_school">
+                          <i class="img img-administration"></i> Manage School
+                        </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
@@ -664,6 +678,11 @@
                   </a>
                   <div class="collapse" id="administration">
                     <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link {{#if schoolPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school">
+                          <i class="img img-administration"></i> Manage School
+                        </a>
+                      </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if userAccountPage}}active{{/if}}" href="/{{userRole}}/administration/manage_user_account">
                           <i class="img img-administration"></i> Manage User Account

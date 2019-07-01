@@ -609,10 +609,6 @@ select.form-control {
             .list-group-item {
               padding: .5rem 0;
 
-              &:hover {
-                background-color: transparent;
-              }
-
               .custom-checkbox {
                 margin: .325rem 1rem;
               }
@@ -670,13 +666,9 @@ select.form-control {
         .collapsible-content {
           .list-group {
             &.list-group-horizontal {
-              @include display-flex(row);
-              @include align-items(flex-start);
-              @include flex-wrap(wrap);
-
               .list-group-item {
                 max-width: 16rem;
-                width: 16rem;
+                min-width: 16rem;
               }
             }
           }
@@ -995,6 +987,7 @@ select.form-control {
 
           .btn {
             margin: 0 !important;
+            padding: .325rem .5rem;
 
             +.btn {
               margin-left: .5rem !important;
@@ -1033,7 +1026,7 @@ select.form-control {
   }
 }
 
-.dataTables_wrapper {
+.dataTables_wrapper {  
   .dataTables_scrollBody {
     border-bottom: 0 !important;
 
@@ -1240,6 +1233,7 @@ select.form-control {
     max-height: 320px;
     overflow-y: auto;
     width: 100%;
+    z-index: 1000;
 
     .aa-suggestion {
       cursor: pointer;
@@ -1349,6 +1343,24 @@ select.form-control {
 
     .article-sidebar {
       margin-bottom: 1rem;
+
+      .form-filters {
+        .form-group {
+          &.form-group-actions {
+            @include display-flex(row);
+            @include justify-content(flex-end);
+          }
+
+          .btn {
+            margin: 0 !important;
+            padding: .325rem .5rem;
+
+            +.btn {
+              margin-left: .5rem !important;
+            }
+          }
+        }
+      }
     }
 
     .article-body {      
@@ -2008,6 +2020,7 @@ select.form-control {
   }
 }
 
+.modal-group-select,
 .modal-user-select {
   .modal-dialog {
     .modal-body {

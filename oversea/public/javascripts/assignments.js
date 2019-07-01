@@ -49,7 +49,7 @@ $(document).ready(function() {
   }
 
   function showTrackAssignmentModal(srcUrl) {
-    var title = 'Track ' + ((srcUrl === '/shared/track_lesson') ? 'Lesson' : 'Test');
+    var title = 'Track ' + ((srcUrl.indexOf('/shared/track_lesson') > -1) ? 'Lesson' : 'Test');
     $('.modal-assignment-track .navbar .navbar-nav .item-text').text(title);
     $('.modal-assignment-track').find('iframe').attr('src', srcUrl);
     $('.modal-assignment-track').on('keydown', function(e) {

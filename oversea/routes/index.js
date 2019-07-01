@@ -146,6 +146,44 @@ router.get('/:userRole/reports/reports', function(req, res, next) {
   });
 });
 
+/* GET manage school page. */
+router.get('/:userRole/administration/manage_school', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('administration/manage_school', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'administration',
+    loggedIn: true,
+    schoolPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET manage user account page. */
+router.get('/:userRole/administration/manage_user_account', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('administration/manage_user_account', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'administration',
+    loggedIn: true,
+    userAccountPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET manage form class page. */
 router.get('/:userRole/administration/manage_form_class', function(req, res, next) {
   var userRole = req.params.userRole;
@@ -158,6 +196,25 @@ router.get('/:userRole/administration/manage_form_class', function(req, res, nex
     module: 'administration',
     loggedIn: true,
     formClassPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET manage school group page. */
+router.get('/:userRole/administration/manage_school_group', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('administration/manage_school_group', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'administration',
+    loggedIn: true,
+    schoolGroupPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,

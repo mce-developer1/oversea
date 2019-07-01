@@ -149,6 +149,17 @@
               }
             }
 
+            &.table-resource-bank {
+              colgroup:nth-child(5) {
+                display: none;
+              }
+
+              th:nth-child(5),
+              td:nth-child(5) {
+                display: none;
+              }
+            }
+
             a {
               color: $gray-900;
               display: inline-block;

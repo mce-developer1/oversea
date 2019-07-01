@@ -85,9 +85,12 @@
 
       .article-content {
         .article-body {
-          margin: 0 auto;
-          max-width: 64rem;
-
+          .navbar,
+          .list-notifications {
+            margin: 0 auto;
+            max-width: 76rem;
+          }
+          
           .navbar {
             @include justify-content(space-between);
             padding: .75rem 0;

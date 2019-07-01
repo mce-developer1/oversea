@@ -30,17 +30,12 @@
                   <ul class="navbar-nav"></ul>
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <button class="btn btn-light btn-notify" type="button" title="Notify">
-                        <i class="fas fa-bullhorn"></i>
-                      </button>
-                    </li>
-                    <li class="nav-item">
                       <button class="btn btn-light btn-print" type="button" title="Print">
                         <i class="fas fa-print"></i>
                       </button>
                     </li>
-                    <li class="nav-item dropdown">
-                      <button class="btn btn-light" type="button" title="Download" data-toggle="">
+                    <li class="nav-item">
+                      <button class="btn btn-light btn-download" type="button" title="Download">
                         <i class="fas fa-download"></i>
                       </button>
                     </li>
@@ -80,10 +75,18 @@
                         <i class="fas fa-print"></i>
                       </button>
                     </li>
-                    <li class="nav-item">
-                      <button class="btn btn-light" type="button" title="Download">
+                    <li class="nav-item dropdown">
+                      <button class="btn btn-light" type="button" title="Download" data-toggle="dropdown">
                         <i class="fas fa-download"></i>
                       </button>
+                      <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item item-download" href="#">
+                          <i class="fas fa-download"></i> Download
+                        </a>
+                        <a class="dropdown-item item-download-details" href="#">
+                          <i class="fas fa-download"></i> Download Details
+                        </a>
+                      </div>
                     </li>
                   </ul>
                 </nav>

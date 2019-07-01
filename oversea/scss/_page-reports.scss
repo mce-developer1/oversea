@@ -95,7 +95,7 @@
           .article-proficiency-report {
             background-color: $white;
             overflow-x: auto;
-            max-width: 64rem;
+            max-width: 76rem;
             padding: 1rem;
 
             .article-header {
@@ -120,7 +120,7 @@
 
           .navbar-report {
             @include justify-content(flex-end);
-            max-width: 64rem;
+            max-width: 76rem;
             padding: .5rem 0;
 
             .btn-light {

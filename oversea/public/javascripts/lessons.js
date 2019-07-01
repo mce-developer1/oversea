@@ -77,7 +77,7 @@ $(document).ready(function() {
     }, 1000);
   }
 
-  function showAssignResourceModal(srcUrl) {
+  function showAssignLessonModal(srcUrl) {
     $('.modal-resource-assign').find('iframe').attr('src', srcUrl);
     $('.modal-resource-assign').on('keydown', function(e) {
       if ((e.which == 27) && window._pageDirty) {
@@ -100,6 +100,29 @@ $(document).ready(function() {
       // To do
     });
     $('.modal-resource-assign').modal('show');
+  }
+
+  function showTrackLessonAssignmentModal(srcUrl) {
+    $('.modal-assignment-track .navbar .navbar-nav .item-text').text('Track Lesson');
+    $('.modal-assignment-track').find('iframe').attr('src', srcUrl);
+    $('.modal-assignment-track').on('keydown', function(e) {
+      if ((e.which == 27) && window._pageDirty) {
+        e.which = Number.NaN;
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-assignment-track').modal('hide');
+        });
+      }
+    });
+    $('.modal-assignment-track .btn-close').on('click', function(e) {
+      if (window._pageDirty) {
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-assignment-track').modal('hide');
+        });
+      }
+    });
+    $('.modal-assignment-track').modal('show');
   }
 
   $container.find('.nav-main .input-group .input-autocomplete').on('keyup', function(e) {
@@ -192,7 +215,11 @@ $(document).ready(function() {
   });
 
   $container.find('.navbar-nav .btn-assign').on('click', function(e) {
-    showAssignResourceModal('/shared/assign_resource');
+    showAssignLessonModal('/shared/assign_resource');
+  });
+
+  $container.find('.dropdown-menu .item-track').on('click', function(e) {
+    showTrackLessonAssignmentModal('/shared/track_lesson');
   });
 
   $container.find('.dropdown-menu .item-delete').on('click', function(e) {

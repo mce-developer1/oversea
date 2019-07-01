@@ -77,6 +77,54 @@ $(document).ready(function() {
     }, 1000);
   }
 
+  function showAssignTestModal(srcUrl) {
+    $('.modal-resource-assign').find('iframe').attr('src', srcUrl);
+    $('.modal-resource-assign').on('keydown', function(e) {
+      if ((e.which == 27) && window._pageDirty) {
+        e.which = Number.NaN;
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-resource-assign').modal('hide');
+        });
+      }
+    });
+    $('.modal-resource-assign .btn-close').on('click', function(e) {
+      if (window._pageDirty) {
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-resource-assign').modal('hide');
+        });
+      }
+    });
+    $('.modal-resource-assign').on('hide.bs.modal', function(e) {
+      // To do
+    });
+    $('.modal-resource-assign').modal('show');
+  }
+
+  function showTrackTestAssignmentModal(srcUrl) {
+    $('.modal-assignment-track .navbar .navbar-nav .item-text').text('Track Test');
+    $('.modal-assignment-track').find('iframe').attr('src', srcUrl);
+    $('.modal-assignment-track').on('keydown', function(e) {
+      if ((e.which == 27) && window._pageDirty) {
+        e.which = Number.NaN;
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-assignment-track').modal('hide');
+        });
+      }
+    });
+    $('.modal-assignment-track .btn-close').on('click', function(e) {
+      if (window._pageDirty) {
+        e.stopPropagation();
+        showCancelUploadConfirmationModal(function() {
+          $('.modal-assignment-track').modal('hide');
+        });
+      }
+    });
+    $('.modal-assignment-track').modal('show');
+  }
+
   $container.find('.nav-main .input-group .input-autocomplete').on('keyup', function(e) {
     if ($(this).val().trim() !== '') {
       $container.find('.nav-main .input-group .btn-clear').removeClass('d-none');
@@ -164,6 +212,14 @@ $(document).ready(function() {
 
   $container.find('.navbar-nav .btn-share').on('click', function(e) {
     $('.modal-resource-share').modal('show');
+  });
+
+  $container.find('.navbar-nav .btn-assign').on('click', function(e) {
+    showAssignTestModal('/shared/assign_resource');
+  });
+
+  $container.find('.dropdown-menu .item-track').on('click', function(e) {
+    showTrackTestAssignmentModal('/shared/track_test');
   });
 
   $container.find('.dropdown-menu .item-delete').on('click', function(e) {

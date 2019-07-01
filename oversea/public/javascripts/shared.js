@@ -893,7 +893,7 @@ $(document).ready(function() {
     function drawUserTestResultReport() {
       var data = [
         ['Element', 'Percentage', { role: 'style' }],
-        ['Media Score', { v: 60, f: '60%' }, getBarColor(60)],
+        ['Median Score', { v: 60, f: '60%' }, getBarColor(60)],
         ['Your Score', { v: 50, f: '50%' }, getBarColor(50)],
         ['Top Score', { v: 100, f: '100%' }, getBarColor(100)]
       ];

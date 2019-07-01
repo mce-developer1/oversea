@@ -1,0 +1,585 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-manage-user-account">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <i class="fas fa-user-cog"></i>
+                </button>
+                <span class="item-text text-truncate">Manage User Account</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-sidebar">
+            <div class="navbar navbar-expand">
+              <button class="btn btn-light btn-dialog" type="button" data-toggle="dialog">
+                <i class="fas fa-filter"></i>
+              </button>
+            </div>
+            <form class="form-filters">
+              <div class="form-group">
+                <label class="form-label" for="selRole">User Role</label>
+                <select class="form-control selectpicker" id="selRole" data-container=".article-sidebar" data-dropdown-align-right="true">
+                  <option>All User Roles</option>
+                  <option>School Admin</option>
+                  <option>Principal</option>
+                  <option>Teacher</option>
+                  <option>Student</option>
+                  <option>Parent</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="selGrade">Grade</label>
+                <select class="form-control selectpicker" id="selGrade" data-container=".article-sidebar" data-dropdown-align-right="true">
+                  <option>All Grades</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="selClass">Class</label>
+                <select class="form-control selectpicker" id="selClass" data-container=".article-sidebar" data-dropdown-align-right="true">
+                  <option>All Classes</option>
+                  <option>P1-EN</option>
+                  <option>P1-HA</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="selName">Name/Login ID</label>
+                <input class="form-control form-input" type="text" id="txtName">
+              </div>
+              <div class="form-group form-group-actions">
+                <button class="btn btn-light" type="button">Reset</button> 
+                <button class="btn btn-outline-secondary" type="button">Search</button>
+              </div>
+            </form>
+          </div>
+          <div class="article-body">
+            <nav class="navbar navbar-expand">
+              <div class="navbar-text">8 records found</div>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-primary btn-create" type="button">
+                    <i class="fas fa-plus"></i> New
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-secondary btn-edit d-none" type="button" title="Edit">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-secondary btn-delete d-none" type="button" title="Delete">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <table class="table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Name</th>
+                  <th>Login ID</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>                
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user0" name="group">
+                      <label class="custom-control-label" for="user0"></label>
+                    </div>
+                  </td>
+                  <td>Aaron Tan</td>
+                  <td>aron</td>
+                  <td>School Admin</td>
+                  <td>Enabled</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user1" name="group">
+                      <label class="custom-control-label" for="user1"></label>
+                    </div>
+                  </td>
+                  <td>Arya Suman</td>
+                  <td>arya</td>
+                  <td>School Admin</td>
+                  <td>Disabled</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user2" name="group">
+                      <label class="custom-control-label" for="user2"></label>
+                    </div>
+                  </td>
+                  <td>Ashar Ahmad</td>
+                  <td>ashar</td>
+                  <td>Principal</td>
+                  <td>Enabled</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user3" name="group">
+                      <label class="custom-control-label" for="user3"></label>
+                    </div>
+                  </td>
+                  <td>Chua Chin Hui</td>
+                  <td>chinhui</td>
+                  <td>Teacher</td>
+                  <td>Enabled</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user4" name="group">
+                      <label class="custom-control-label" for="user4"></label>
+                    </div>
+                  </td>
+                  <td>Derrick Lee</td>
+                  <td>derrick</td>
+                  <td>Parent</td>
+                  <td>Enabled</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user5" name="group">
+                      <label class="custom-control-label" for="user5"></label>
+                    </div>
+                  </td>
+                  <td>Nurulhuda bte Sazali</td>
+                  <td>sazali</td>
+                  <td>Student</td>
+                  <td>Enabled</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user6" name="group">
+                      <label class="custom-control-label" for="user6"></label>
+                    </div>
+                  </td>
+                  <td>Siow Poh Piah Irene</td>
+                  <td>irene</td>
+                  <td>Student</td>
+                  <td>Enabled</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="user7" name="group">
+                      <label class="custom-control-label" for="user7"></label>
+                    </div>
+                  </td>
+                  <td>Tan Boon Huat</td>
+                  <td>boonhuat</td>
+                  <td>Student</td>
+                  <td>Enabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <nav class="navbar navbar-expand navbar-pagination">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <label class="text-muted" for="selLimit">Records per page:</label>
+                  <select class="selectpicker" id="selLimit" data-width="fit">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>30</option>
+                    <option>50</option>
+                    <option>100</option>
+                  </select>
+                </li>
+                <li class="nav-item text-muted">1 - 8 of 8</li>
+                <li class="nav-item">
+                  <button class="btn btn-light" type="button" title="Previous" disabled>
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button class="btn btn-light" type="button" title="Next">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="article article-create-user-account no-sidebar d-none">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <span class="item-text text-truncate">Create User Account</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-body">
+            <form class="form-user-account">
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtLoginID">Login ID</label>
+                  <input class="form-control form-input" type="text" id="txtLoginID">
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="txtFullname">Fullname</label>
+                  <input class="form-control form-input" type="text" id="txtFullname">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtPassword">Password</label>
+                  <input class="form-control form-input" type="text" id="txtLoginID">
+                  <small class="form-text text-muted">
+                    Minimum 8 alphanumeric characters, containing at least 1 letter and 1 numeral and it must be different from the Login ID. Acceptable characters include a-z, 0-9 and symbols _ - . @
+                  </small>
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="txtConfirmPassword">Confirm Password</label>
+                  <input class="form-control form-input" type="text" id="txtConfirmPassword">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="generate">
+                    <label class="custom-control-label" for="generate">
+                      Auto generate password and send to personal email address and mobile phone.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtIndexNo">Index No.</label>
+                  <input class="form-control form-input" type="text" id="txtIndexNo">
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="selGender">Gender</label>
+                  <select class="form-control" id="selGender">
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtEmailAlias">Email Alias</label>
+                  <input class="form-control form-input" type="text" id="txtEmailAlias">
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="txtPersonalEmail">Personal Email</label>
+                  <input class="form-control form-input" type="text" id="txtPersonalEmail">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtMobile">Mobile Number</label>
+                  <input class="form-control form-input" type="text" id="txtMobile">
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="txtDescription">User Description</label>
+                  <textarea class="form-control form-input" id="txtDescription"></textarea>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtExpiryDate">Expiry Date</label>
+                  <div class="input-group">
+                    <input class="form-control form-input" type="text" id="txtExpiryDate">
+                    <div class="input-group-append">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="expiry">
+                        <label class="custom-control-label" for="expiry">Never Expire</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label">Join Group(s)</label>
+                  <div class="list-groups d-none">
+                    <ul class="list-group list-group-bubble">
+                      <li class="list-group-item">
+                        <div class="item-text group-name">HOD Teachers</div>
+                        <button class="btn btn-light" type="button" >
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="item-text group-name">Teachers</div>
+                        <button class="btn btn-light" type="button" >
+                          <i class="fas fa-times"></i>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="input-group">
+                    <input class="form-control form-input input-autocomplete" type="text" placeholder="Enter group name...">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary btn-add" type="button" >Add</button>
+                    </div>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary btn-select" type="button" >Select from list</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtMobile">User Type</label>
+                  <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="school" name="type">
+                        <label class="custom-control-label" for="school">School User</label>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="home" name="type">
+                        <label class="custom-control-label" for="home">School/Home User</label>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="subscriber" name="type">
+                        <label class="custom-control-label" for="subscriber">Subscriber</label>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="package" name="type">
+                        <label class="custom-control-label" for="package">Package Subscriber</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="txtDescription">User Role</label>
+                  <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="admin">
+                        <label class="custom-control-label" for="admin">School Admin</label>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="principal">
+                        <label class="custom-control-label" for="principal">Principal</label>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="teacher">
+                        <label class="custom-control-label" for="teacher">Teacher</label>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="student">
+                        <label class="custom-control-label" for="student">Student</label>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="parent">
+                        <label class="custom-control-label" for="parent">Parent</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label">Other Settings</label>
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="enable">
+                      <label class="custom-control-label" for="enable">Enable User Account</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col"></div>
+              </div>
+              <div class="form-group form-group-actions">
+                <button class="btn btn-primary btn-create" type="button">Create</button>
+                <button class="btn btn-light btn-cancel" type="button">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-group-select fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Select Group(s)</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#groups" role="tab" data-toggle="tab">
+                    Select School Group(s)
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#classes" role="tab" data-toggle="tab">
+                    Select Form Class(s)
+                  </a>
+                </li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="groups" role="tabpanel">
+                  <div class="list-users">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group0">
+                          <label class="custom-control-label" for="group0">Administrators</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group1" checked>
+                          <label class="custom-control-label" for="group1">HOD Teachers</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group2" checked>
+                          <label class="custom-control-label" for="group2">Teachers</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group3">
+                          <label class="custom-control-label" for="group3">Students</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="group4">
+                          <label class="custom-control-label" for="group4">ICT Executives</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="tab-pane" id="classes" role="tabpanel">
+                  <div class="list-users">
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class0">
+                          <label class="custom-control-label" for="class0">P1-EA</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class1">
+                          <label class="custom-control-label" for="class1">P1-HA</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class2">
+                          <label class="custom-control-label" for="class2">P1-MA</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class3">
+                          <label class="custom-control-label" for="class3">P1-PA</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class4">
+                          <label class="custom-control-label" for="class4">P2-EA</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class5">
+                          <label class="custom-control-label" for="class5">P2-HA</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class6">
+                          <label class="custom-control-label" for="class6">P2-MA</label>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="class7">
+                          <label class="custom-control-label" for="class7">P2-PA</label>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg">
+              <nav class="navbar">
+                <h6>Selected Group(s)</h6>
+              </nav>
+              <div class="selected-users">
+                <ul class="list-group">
+                   <li class="list-group-item">
+                    <div class="user-name">HOD Teachers</div>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="user-name">Teachers</div>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </li>                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Select</button>
+      </div>
+    </div>
+  </div>
+</div>

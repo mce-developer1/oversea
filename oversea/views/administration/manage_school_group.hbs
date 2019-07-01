@@ -1,0 +1,224 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-manage-school-group">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <i class="fas fa-users-cog"></i>
+                </button>
+                <span class="item-text text-truncate">Manage School Group</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-sidebar">
+            <div class="navbar navbar-expand">
+              <button class="btn btn-light btn-dialog" type="button" data-toggle="dialog">
+                <i class="fas fa-filter"></i>
+              </button>
+            </div>
+            <form class="form-filters">
+              <div class="form-group">
+                <label class="form-label" for="selName">Name</label>
+                <input class="form-control form-input" type="text" id="txtName">
+              </div>
+              <div class="form-group form-group-actions">
+                <button class="btn btn-light" type="button">Reset</button> 
+                <button class="btn btn-outline-secondary" type="button">Search</button>
+              </div>
+            </form>
+          </div>
+          <div class="article-body">
+            <nav class="navbar navbar-expand">
+              <div class="navbar-text">5 records found</div>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-primary btn-create" type="button">
+                    <i class="fas fa-plus"></i> New
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-secondary btn-edit d-none" type="button" title="Edit">
+                    <i class="fas fa-edit"></i> Edit
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-secondary btn-delete d-none" type="button" title="Delete">
+                    <i class="fas fa-trash"></i> Delete
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <table class="table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>                
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item0" name="group">
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>Administrators</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item1" name="group">
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>HOD Teachers</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item2" name="group">
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>Teachers</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item3" name="group">
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>Students</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item4" name="group">
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>ICT Executives</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="article article-create-school-group no-sidebar d-none">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <span class="item-text text-truncate">Create School Group</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-body">
+            <form class="form-school-group">
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="txtName">Name</label>
+                  <input class="form-control form-input" type="text" value="Group name" id="txtName">
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="txtDescription">Description</label>
+                  <textarea class="form-control form-input" id="txtDescription"></textarea>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="selType">Select from existing</label>
+                  <select class="form-control" id="selType">
+                    <option>Form Class</option>
+                    <option>School Group</option>
+                  </select>
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <div class="form-group">
+                    <label class="form-label" for="selGroups">Select Group(s)</label>
+                    <select class="form-control form-control-group" id="selGroups" multiple>
+                      <option>P1-EA</option>
+                      <option>P1-HA</option>
+                      <option>P1-MA</option>
+                      <option>P1-PA</option>
+                      <option>P1-SA</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="selUsers">Select User(s)</label>
+                    <select class="form-control form-control-group" id="selUsers" multiple>
+                      <option>Aaron Tan</option>
+                      <option>Arya Suman</option>
+                      <option>Ashar Ahmad</option>
+                      <option>Chua Chin Hui</option>
+                      <option>Derrick Lee</option>
+                      <option>Nurulhuda bte Sazali</option>
+                      <option>Siow Poh Piah Irene</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="btn-group">
+                    <button class="btn btn-outline-secondary btn-add" type="button" title="Add selected user(s)">
+                      <i class="fas fa-angle-right"></i>
+                      <i class="fas fa-angle-down"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary btn-add-all" type="button" title="Add all user(s)">
+                      <i class="fas fa-angle-double-right"></i>
+                      <i class="fas fa-angle-double-down"></i>
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button class="btn btn-outline-secondary btn-remove" type="button" title="Remove selected user(s)">
+                      <i class="fas fa-angle-left"></i>
+                      <i class="fas fa-angle-up"></i>
+                    </button>
+                    <button class="btn btn-outline-secondary btn-remove-all" type="button" title="Remove all user(s)">
+                      <i class="fas fa-angle-double-left"></i>
+                      <i class="fas fa-angle-double-up"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group col">
+                  <label class="form-label" for="selSelectedUsers">Selected User(s)</label>
+                  <select class="form-control" id="selSelectedUsers" multiple>
+                    <option>Aaron Tan</option>
+                    <option>Arya Suman</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group form-group-actions">
+                <button class="btn btn-primary btn-create" type="button">Create</button>
+                <button class="btn btn-light btn-cancel" type="button">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
