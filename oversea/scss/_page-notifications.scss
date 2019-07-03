@@ -149,3 +149,18 @@
     }
   }
 }
+
+.modal-notifications-settings {
+  .modal-dialog {
+    .modal-body {
+      .navbar {
+        border-bottom: 1px solid $gray-400;
+        padding: .5rem;
+
+        .navbar-text {
+          padding: .25rem 0;
+        }
+      }
+    }
+  }
+}

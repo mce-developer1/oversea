@@ -19,11 +19,19 @@ window.Utils = {
         'link image media',
         'alignleft aligncenter alignright alignjustify',
         'bullist numlist outdent indent',
-        'table'
+        'table',
+        'removeformat'
       ],
       mobile: {
+        plugins: ['autoresize', 'link', 'image', 'lists'],
         toolbar: [
-          'bold italic underline forecolor bullist numlist'
+          'undo', 'redo', 'styleselect',
+          'fontsizeselect',
+          'bold', 'italic', 'underline',
+          'forecolor',
+          'link', 'image',
+          'bullist', 'numlist',
+          'removeformat'
         ]
       },
       init_instance_callback: function (editor) {

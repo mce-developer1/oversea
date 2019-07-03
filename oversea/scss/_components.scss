@@ -1428,6 +1428,18 @@ select.form-control {
   }
 }
 
+.list-settings {
+  .list-group {
+    .list-group-item {
+      @include display-flex(row);
+      @include align-items(center);
+      @include justify-content(space-between);
+      border-color: transparent;
+      padding: .5rem;
+    }
+  }
+}
+
 .list-notifications {
   .list-group {
     .list-group-item {

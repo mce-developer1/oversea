@@ -186,7 +186,7 @@
                   </a>
                   <div class="dropdown-menu">
                     <ul class="nav">
-                      <li class="nav-item">
+                      <li class="nav-item d-none">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-administration"></i> Manage School
                         </a>
@@ -331,7 +331,7 @@
                           <i class="img img-administration"></i> Administration
                         </div>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item d-none">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-administration"></i> Manage School
                         </a>
@@ -678,7 +678,7 @@
                   </a>
                   <div class="collapse" id="administration">
                     <ul class="nav">
-                      <li class="nav-item">
+                      <li class="nav-item d-none">
                         <a class="nav-link {{#if schoolPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-administration"></i> Manage School
                         </a>
@@ -723,6 +723,60 @@
       </nav>
     </div>
 
+    <div class="modal modal-announcement-view fade" tabindex="-1" role="dialog" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Announcement 1 of 2</h5>
+            <button type="button" class="close" title="Close" data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">            
+            <div class="announcement">
+              <div class="announcement-title">Results of Chinese Challenge</div>
+              <div class="announcement-text">
+                <p>Congratulations to the following top 5 scorers!</p>
+                <ol>
+                  <ol>
+                    <li>Chua Chin Hui</li>
+                    <li>Derrick Lee</li>
+                    <li>Siow Poh Piah Irene</li>
+                    <li>Tang Zi Hao</li>
+                    <li>Lei Jian</li>
+                  </ol>
+                </ol>
+              </div>
+              <div class="announcement-posted-date text-muted">Posted on 02 Jul 2019</div>
+            </div>
+            <div class="announcement d-none">
+              <div class="announcement-title">Lorem ipsum</div>
+              <div class="announcement-text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. 
+                  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+                </p>
+                <p>
+                  Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
+                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
+                </p>
+                <p>
+                  In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
+                  Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+                </p>
+              </div>
+              <div class="announcement-posted-date text-muted">Posted on 01 Jul 2019</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-light btn-previous d-none" type="button" title="Previous">Previous</button>
+            <button class="btn btn-primary btn-next" type="button" title="Next">Next</button>
+            <button type="button" class="btn btn-primary btn-close d-none" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="modal modal-notification-view fade" tabindex="-1" role="dialog" data-backdrop="static">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -743,6 +797,9 @@
                 <li>Lei Jian</li>
               </ol>
             </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

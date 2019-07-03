@@ -140,6 +140,26 @@ $(document).ready(function() {
       log.info(suggestion);
     });
 
+    $('#selRole').on('changed.bs.select', function (e) {
+      var selectedRole = $('#selRole').selectpicker('val');
+      
+      if (selectedRole === 'Student') {
+        if ($('#selGrade').closest('.form-group').hasClass('d-none')) {
+          $('#selGrade').closest('.form-group').removeClass('d-none')
+        }
+        if ($('#selClass').closest('.form-group').hasClass('d-none')) {
+          $('#selClass').closest('.form-group').removeClass('d-none')
+        }
+      } else {
+        if (!$('#selGrade').closest('.form-group').hasClass('d-none')) {
+          $('#selGrade').closest('.form-group').addClass('d-none')
+        }
+        if (!$('#selClass').closest('.form-group').hasClass('d-none')) {
+          $('#selClass').closest('.form-group').addClass('d-none')
+        }
+      }
+    });
+
     $container.find('.article-body .navbar .btn-create').on('click', function(e) {
       $('.article-manage-user-account').addClass('d-none');
       $('.article-create-user-account').removeClass('d-none');

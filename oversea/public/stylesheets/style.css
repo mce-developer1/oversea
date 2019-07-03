@@ -1963,6 +1963,19 @@ select.form-control {
   }
 }
 
+.list-settings .list-group .list-group-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  border-color: transparent;
+  padding: 0.5rem;
+}
+
 .list-notifications .list-group .list-group-item {
   display: -ms-flexbox;
   display: flex;
@@ -8133,6 +8146,22 @@ select.form-control {
   }
 }
 
+.modal-announcement-view .modal-dialog .modal-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0 0 0.5rem;
+}
+.modal-announcement-view .modal-dialog .modal-body .announcement {
+  position: relative;
+}
+.modal-announcement-view .modal-dialog .modal-body .announcement .announcement-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.modal-announcement-view .modal-dialog .modal-body .announcement .announcement-text {
+  margin-bottom: 0.5rem;
+}
+
 .app-content.page-notifications .article-notifications {
   padding: 0 1.5rem;
 }
@@ -8254,6 +8283,14 @@ select.form-control {
   .app-content.page-notifications .article-notifications .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
   }
+}
+
+.modal-notifications-settings .modal-dialog .modal-body .navbar {
+  border-bottom: 1px solid #ced4da;
+  padding: 0.5rem;
+}
+.modal-notifications-settings .modal-dialog .modal-body .navbar .navbar-text {
+  padding: 0.25rem 0;
 }
 
 .app-content.page-administration .article-manage-school,
