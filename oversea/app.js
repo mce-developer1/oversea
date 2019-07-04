@@ -32,6 +32,7 @@ app.use('/static/dropzone', express.static(path.join(__dirname, 'node_modules/dr
 app.use('/static/sortablejs', express.static(path.join(__dirname, 'node_modules/sortablejs')));
 app.use('/static/cropperjs', express.static(path.join(__dirname, 'node_modules/cropperjs/dist')));
 app.use('/static/tinymce', express.static(path.join(__dirname, 'node_modules/tinymce')));
+app.use('/games', express.static(path.join(__dirname, 'games')));
 
 app.use('/', require('./routes/index'));
 

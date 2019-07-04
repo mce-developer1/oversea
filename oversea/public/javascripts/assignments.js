@@ -209,13 +209,26 @@ $(document).ready(function() {
     }
   });
 
+  $container.find('.card-group .card .period').on('click', function(e) {
+    e.preventDefault();
+    showAssignResourceModal('/shared/assign_resource');
+  });
+
   $container.find('.card-group .card .percentage').on('click', function(e) {
     e.preventDefault();
-
-    if ($(this).data('type') === 'lesson') {
-      showTrackAssignmentModal('/shared/track_lesson_user');
+    
+    if (/^student$/i.test(window.location.pathname)) {
+      if ($(this).data('type') === 'lesson') {
+        showTrackAssignmentModal('/shared/track_lesson_user');
+      } else {
+        showTrackAssignmentModal('/shared/track_test_user');
+      }
     } else {
-      showTrackAssignmentModal('/shared/track_test_user');
+      if ($(this).data('type') === 'lesson') {
+        showTrackAssignmentModal('/shared/track_lesson');
+      } else {
+        showTrackAssignmentModal('/shared/track_test');
+      }
     }
   });
 

@@ -1938,6 +1938,49 @@ select.form-control {
   }
 }
 
+.modal-announcement-view,
+.modal-notification-view {
+  .modal-dialog {
+    .modal-body {
+      .navbar {
+        @include justify-content(space-between);
+        padding: 0;
+      }
+
+      .announcement {
+        .announcement-date {
+          margin-bottom: 1rem;
+        }
+
+        .announcement-message {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .notification {
+        .notification-date {
+          margin-bottom: .5rem;
+        }
+      }
+    }
+
+    @media (min-width: 576px) {
+      .modal-body {
+        .navbar {
+          @include justify-content(space-between);
+          padding: 0;
+  
+          &.navbar-pagination {
+            position: absolute;
+            top: .5rem;
+            right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 .modal-resource-share {
   .modal-dialog {
     .modal-body {

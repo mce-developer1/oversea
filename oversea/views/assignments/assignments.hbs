@@ -159,12 +159,12 @@
               </li>
               {{#unless studentUser}}
                 <li class="nav-item">
-                  <button class="btn btn-light btn-list-view d-none" type="button" title="List view">
+                  <button class="btn btn-light btn-list-view" type="button" title="List view">
                     <i class="fas fa-th-list"></i>
                   </button>
                 </li>
                 <li class="nav-item">
-                  <button class="btn btn-light btn-card-view" type="button" title="Grid view">
+                  <button class="btn btn-light btn-card-view d-none" type="button" title="Grid view">
                     <i class="fas fa-th-large"></i>
                   </button>
                 </li>
@@ -207,7 +207,7 @@
               </ul>
             </nav>
             {{#unless studentUser}}
-              <table class="table table-head">
+              <table class="table table-head d-none">
                 <colgroup width="auto"></colgroup>
                 <colgroup width="140px"></colgroup>
                 <colgroup width="120px"></colgroup>
@@ -241,7 +241,7 @@
                   </tr>
                 </thead>
               </table>
-              <table class="table table-body">
+              <table class="table table-body d-none">
                 <colgroup width="auto"></colgroup>
                 <colgroup width="140px"></colgroup>
                 <colgroup width="120px"></colgroup>
@@ -449,73 +449,73 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="card-group {{#unless studentUser}}d-none{{/unless}}">
-              <div class="card">
-                <div class="card-img-top">
-                  <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <div class="card-body">
-                  <a class="card-link" href="#">Counting To 10</a>
-                  <a class="period" href="#">01 Nov 2019 - 30 Nov 2019</a>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 0%;"></div>
+              <div class="card-group">
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-chalkboard-teacher"></i>
                   </div>
-                  <a class="percentage" href="#" data-type="lesson">0% Completed</a>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Counting To 10</a>
+                    <a class="period" href="#">01 Nov 2019 - 30 Nov 2019</a>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 0%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="lesson">0% Completed</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Comparing Numbers</a>
+                    <a class="period" href="#">01 Jun 2019 - 30 Jun 2019</a>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="lesson">80% Completed</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-tachometer-alt"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Making Number Patterns</a>
+                    <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 40%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="test">40% Completed</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-tachometer-alt"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Making Number Bonds</a>
+                    <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="test">100% Completed</a>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-img-top">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <div class="card-body">
+                    <a class="card-link" href="#">Making Addition Stories</a>
+                    <a class="period" href="#">01 Feb 2019 - 28 Feb 2019</a>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
+                    </div>
+                    <a class="percentage" href="#" data-type="lesson">100% Completed</a>
+                  </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-img-top">
-                  <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <div class="card-body">
-                  <a class="card-link" href="#">Comparing Numbers</a>
-                  <a class="period" href="#">01 Jun 2019 - 30 Jun 2019</a>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 80%;"></div>
-                  </div>
-                  <a class="percentage" href="#" data-type="lesson">80% Completed</a>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-img-top">
-                  <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <div class="card-body">
-                  <a class="card-link" href="#">Making Number Patterns</a>
-                  <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 40%;"></div>
-                  </div>
-                  <a class="percentage" href="#" data-type="test">40% Completed</a>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-img-top">
-                  <i class="fas fa-tachometer-alt"></i>
-                </div>
-                <div class="card-body">
-                  <a class="card-link" href="#">Making Number Bonds</a>
-                  <a class="period" href="#">01 Mar 2019 - 30 Mar 2019</a>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
-                  </div>
-                  <a class="percentage" href="#" data-type="test">100% Completed</a>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-img-top">
-                  <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <div class="card-body">
-                  <a class="card-link" href="#">Making Addition Stories</a>
-                  <a class="period" href="#">01 Feb 2019 - 28 Feb 2019</a>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;"></div>
-                  </div>
-                  <a class="percentage" href="#" data-type="lesson">100% Completed</a>
-                </div>
-              </div>
-            </div>
             {{/unless}}
             {{#if studentUser}}
               <div class="card-group {{#unless studentUser}}d-none{{/unless}}">

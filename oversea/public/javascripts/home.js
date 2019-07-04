@@ -28,8 +28,15 @@ $(document).ready(function() {
   });
 
   $('.article-resources .article-body .card-group .card').on('click', function(e) {
-    var userRole = $('#userRole').val();
-    location.href = '/' + userRole + '/channel';
+    //var userRole = $('#userRole').val();
+    //location.href = '/' + userRole + '/channel';
+    if (Math.round(Math.random())) {
+      window.open('/games/didi-and-friends-guess-what', 'game');
+    } else {
+      var gamePreview = '<iframe class="full" src="/games/didi-and-friends-guess-what" frameborder="0" allowfullscreen></iframe>';
+      $('.modal-resource-preview .modal-body .content').html(gamePreview);
+      $('.modal-resource-preview').modal('show');
+    }
   });
 
   $(window).on('resize', function(e) {

@@ -410,27 +410,3 @@
     }
   }
 }
-
-.modal-announcement-view {
-  .modal-dialog {
-    .modal-body {
-      .navbar {
-        @include justify-content(space-between);
-        padding: 0 0 .5rem;
-      }
-
-      .announcement {
-        position: relative;
-
-        .announcement-title {
-          font-weight: 500;
-          margin-bottom: .5rem;
-        }
-
-        .announcement-text {
-          margin-bottom: .5rem;
-        }
-      }
-    }
-  }
-}

@@ -2422,6 +2422,39 @@ select.form-control {
   margin-top: 2rem;
 }
 
+.modal-announcement-view .modal-dialog .modal-body .navbar,
+.modal-notification-view .modal-dialog .modal-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0;
+}
+.modal-announcement-view .modal-dialog .modal-body .announcement .announcement-date,
+.modal-notification-view .modal-dialog .modal-body .announcement .announcement-date {
+  margin-bottom: 1rem;
+}
+.modal-announcement-view .modal-dialog .modal-body .announcement .announcement-message,
+.modal-notification-view .modal-dialog .modal-body .announcement .announcement-message {
+  margin-bottom: 1rem;
+}
+.modal-announcement-view .modal-dialog .modal-body .notification .notification-date,
+.modal-notification-view .modal-dialog .modal-body .notification .notification-date {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 576px) {
+  .modal-announcement-view .modal-dialog .modal-body .navbar,
+.modal-notification-view .modal-dialog .modal-body .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 0;
+  }
+  .modal-announcement-view .modal-dialog .modal-body .navbar.navbar-pagination,
+.modal-notification-view .modal-dialog .modal-body .navbar.navbar-pagination {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+  }
+}
+
 .modal-resource-share .modal-dialog .modal-body {
   padding: 1rem 0;
 }
@@ -8144,22 +8177,6 @@ select.form-control {
     top: 6rem;
     z-index: 970;
   }
-}
-
-.modal-announcement-view .modal-dialog .modal-body .navbar {
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  padding: 0 0 0.5rem;
-}
-.modal-announcement-view .modal-dialog .modal-body .announcement {
-  position: relative;
-}
-.modal-announcement-view .modal-dialog .modal-body .announcement .announcement-title {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-.modal-announcement-view .modal-dialog .modal-body .announcement .announcement-text {
-  margin-bottom: 0.5rem;
 }
 
 .app-content.page-notifications .article-notifications {
