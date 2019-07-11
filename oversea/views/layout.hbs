@@ -53,6 +53,7 @@
             {{#if announcementsPage}}Announcements{{/if}}
             {{#if profilePage}}About Me{{/if}}
             {{#if passwordPage}}User Administration{{/if}}
+            {{#if loginReportPage}}User Login Report{{/if}}
             {{#if schoolPage}}Manage School{{/if}}
             {{#if userAccountPage}}Manage User Account{{/if}}
             {{#if formClassPage}}Manage Form Class{{/if}}
@@ -139,11 +140,6 @@
                           <i class="img img-myreports"></i> Usage Report
                         </a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
-                          <i class="img img-myreports"></i> Login Report
-                        </a>
-                      </li>
                     {{/unless}}
                   </ul>
                 </div>
@@ -186,6 +182,11 @@
                   </a>
                   <div class="dropdown-menu">
                     <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/login_report">
+                          <i class="img img-administration"></i> User Login Report
+                        </a>
+                      </li>
                       <li class="nav-item d-none">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-administration"></i> Manage School
@@ -288,11 +289,6 @@
                           <i class="img img-myreports"></i> Usage Report
                         </a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
-                          <i class="img img-myreports"></i> Login Report
-                        </a>
-                      </li>
                     {{/unless}}
                   </ul>
                   <ul class="nav">
@@ -330,6 +326,11 @@
                         <div class="nav-text">
                           <i class="img img-administration"></i> Administration
                         </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/administration/login_report">
+                          <i class="img img-administration"></i> User Login Report
+                        </a>
                       </li>
                       <li class="nav-item d-none">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
@@ -631,11 +632,6 @@
                           <i class="img img-myreports"></i> Usage Report
                         </a>
                       </li>
-                      <li class="nav-item">
-                        <a class="nav-link {{#if loginReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=login">
-                          <i class="img img-myreports"></i> Login Report
-                        </a>
-                      </li>
                     {{/unless}}
                   </ul>
                 </div>
@@ -678,6 +674,11 @@
                   </a>
                   <div class="collapse" id="administration">
                     <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link {{#if loginReportPage}}active{{/if}}" href="/{{userRole}}/administration/login_report">
+                          <i class="img img-administration"></i> User Login Report
+                        </a>
+                      </li>
                       <li class="nav-item d-none">
                         <a class="nav-link {{#if schoolPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-administration"></i> Manage School

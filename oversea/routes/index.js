@@ -146,6 +146,26 @@ router.get('/:userRole/reports/reports', function(req, res, next) {
   });
 });
 
+/* GET login report page. */
+router.get('/:userRole/administration/login_report', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('administration/login_report', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'administration',
+    loggedIn: true,
+    loginReportPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+
 /* GET manage school page. */
 router.get('/:userRole/administration/manage_school', function(req, res, next) {
   var userRole = req.params.userRole;
