@@ -1,1 +1,1 @@
-# MCE repository to host prototypes
+# Prototypes repository
