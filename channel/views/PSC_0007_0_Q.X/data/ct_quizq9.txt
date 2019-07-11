@@ -1,4 +1,0 @@
-Qnum=9&Q=Which of the following are classified as fungus?&A=Mushroom&B=Daffodil&C=Fern&D=Moss&answer=a&show_ans=Mushroom
-
-
-

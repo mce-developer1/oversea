@@ -1,2 +1,0 @@
-Qnum=14&Q=Which one of the following is wrongly grouped?&A=Monkey, koala bear and mouse.&B=Crocodile, turtle and lizard.&C=Eagle, robin and pigeon.&D=Bee, housefly and house.&answer=d&show_ans=Bee, housefly and house.
-

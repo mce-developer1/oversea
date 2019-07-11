@@ -1,3 +1,0 @@
-Qnum=6&Q=6.  Which one of the following groups is classified as stationery?&A=Pens, erasers and spoons.&B=Vases, flowers and pots.&C=Clocks, paper clips and handbags.&D=Pencils, rulers and staplers.&answer=d&show_ans=Pencils, rulers and staplers.
-
-

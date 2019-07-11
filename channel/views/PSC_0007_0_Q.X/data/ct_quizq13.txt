@@ -1,2 +1,0 @@
-Qnum=13&Q=The goose, sparrow and feather duster can be classified in the same group because they ______.&A=are living things&B=are non-living things&C=have feathers&D=have wings&answer=c&show_ans=have feathers
-

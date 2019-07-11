@@ -1,1 +1,0 @@
-Qnum=17&Q=The computer, printer and scanner can be grouped together as  ______.&A=stationery&B=furniture&C=crockery&D=office equipment&answer=d&show_ans=office equipment

@@ -1,2 +1,0 @@
-Qnum=4&Q=Mimosa, maize and moss are classified as ______.&A=animals&B=plants&C=fungi&D=micro-organisms&answer=b&show_ans=plants
-

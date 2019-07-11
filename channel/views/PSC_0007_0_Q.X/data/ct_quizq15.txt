@@ -1,2 +1,0 @@
-Qnum=15&Q=A glass, mirror and window pane can be classified as ______ things.&A=durable &B=shiny&C=fragile &D=colourful&answer=c&show_ans=fragile
-

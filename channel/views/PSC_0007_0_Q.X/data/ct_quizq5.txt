@@ -1,3 +1,0 @@
-Qnum=5&Q=Butterflies, sparrows and aeroplanes are similar because they ______.&A=are living things&B=are non-living things&C=need food&D=have wings&answer=d&show_ans=have wings
-
-

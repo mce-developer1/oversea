@@ -1,3 +1,0 @@
-Qnum=11&Q=Which one of the following is classified as plants?&A=Waterfall&B=Water hyacinth&C=Mushroom&D=Grasshopper&answer=b&show_ans=Water hyacinth
-
-

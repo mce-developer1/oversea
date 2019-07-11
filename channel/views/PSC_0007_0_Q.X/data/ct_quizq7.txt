@@ -1,3 +1,0 @@
-Qnum=7&Q=Toothpaste, body shampoo and towel are classified as ______.&A=cosmetics&B=stationery&C=toiletries&D=accessories&answer=c&show_ans=toiletries
-
-

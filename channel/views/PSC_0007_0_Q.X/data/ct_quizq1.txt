@@ -1,2 +1,0 @@
-Qnum=1&Q=To classify things, we must identify the ______.&A=similarities&B=differences&C=origins&D=similarities and differences&answer=d&show_ans=similarities and differences
-
