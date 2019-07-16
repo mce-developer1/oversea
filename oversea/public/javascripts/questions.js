@@ -253,8 +253,12 @@ $(document).ready(function() {
   });
 
   $('.article-create-question .form-create-question .btn-save').on('click', function(e) {
-    var url = window.location.pathname;
-    window.location = url.replace('/create_question', '/questions');
+    window.Utils.showProcessingOverlay();
+    setTimeout(function() {
+      window.Utils.hideProcessingOverlay();
+      var url = window.location.pathname;
+      window.location = url.replace('/create_question', '/questions');
+    }, 1000);
   });
 
   $(window).on('resize', function(e) {

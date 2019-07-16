@@ -774,7 +774,7 @@ router.get('/:userRole/announcements/announcements', function(req, res, next) {
   });
 });
 
-/* GET announcements page. */
+/* GET notifications page. */
 router.get('/:userRole/notifications/notifications', function(req, res, next) {
   var userRole = req.params.userRole;
   var studentUser = (userRole === 'student');
@@ -786,6 +786,44 @@ router.get('/:userRole/notifications/notifications', function(req, res, next) {
     module: 'notifications',
     loggedIn: true,
     notificationsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET add booking page. */
+router.get('/:userRole/facilities/add_booking', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('facilities/add_booking', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'facility-booking',
+    loggedIn: true,
+    facilitiesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET facility bookings page. */
+router.get('/:userRole/facilities/bookings', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('facilities/bookings', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'facility-booking',
+    loggedIn: true,
+    facilitiesPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,
