@@ -42,7 +42,7 @@
         @include display-flex(column);
         @include align-items(center);
         color: $gray-700;
-        min-width: 7rem;
+        min-width: 6rem;
         padding: .5rem 1rem;
 
         &:hover {
@@ -285,11 +285,24 @@
   @media (max-width: 1399.98px) {
     .navbar-nav {
       &.nav-main {
-        .link-mytools,
-        .link-myreports,
-        .link-schoolmatters,
-        .link-administration {
-          display: none;
+        .nav-item {
+          .link-myreports,
+          .link-schoolmatters,
+          .link-administration {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1199.98px) {
+    .navbar-nav {
+      &.nav-main {
+        .nav-item {
+          .link-mytools {
+            display: none;
+          }
         }
       }
     }
@@ -361,11 +374,27 @@
     }
   }
 
+  @media (min-width: 1200px) {
+    .navbar-nav {
+      &.nav-main {
+        .nav-item {
+          .dropdown-menu {
+            .nav-mytools {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
   @media (min-width: 1400px) {
     .navbar-nav {
       &.nav-main {
-        .link-more {
-          display: none;
+        .nav-item {
+          .link-more {
+            display: none;
+          }
         }
       }
     }

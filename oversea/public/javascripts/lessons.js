@@ -449,6 +449,10 @@ $(document).ready(function() {
     $('.modal-lesson-folder-edit').modal('show');
   });
 
+  $('.article-lesson-resources .article-body .btn-delete-folder').on('click', function(e) {
+    $('.modal-lesson-folder-delete-confirmation').modal('show');
+  });
+
   function showAddResourceModal(srcUrl) {
     $('.modal-resource-resource-add').find('iframe').attr('src', srcUrl);
     $('.modal-resource-resource-add').on('keydown', function(e) {

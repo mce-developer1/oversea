@@ -1677,6 +1677,10 @@ select.form-control {
         .question-title {
           font-weight: 500;
           margin-bottom: 1rem;
+
+          .text-muted {
+            font-weight: 400;
+          }
         }
 
         .question-text {

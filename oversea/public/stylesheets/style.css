@@ -2202,6 +2202,9 @@ select.form-control {
   font-weight: 500;
   margin-bottom: 1rem;
 }
+.list-components .component.component-question .question-preview .question-title .text-muted {
+  font-weight: 400;
+}
 .list-components .component.component-question .question-preview .question-text .form-control.form-input {
   display: inline-block;
   margin: 0.25rem 0;
@@ -2679,7 +2682,7 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
   color: #495057;
-  min-width: 7rem;
+  min-width: 6rem;
   padding: 0.5rem 1rem;
 }
 .app-header .navbar-nav.nav-main .nav-link:hover {
@@ -2883,10 +2886,14 @@ select.form-control {
   padding: 0.5rem 0;
 }
 @media (max-width: 1399.98px) {
-  .app-header .navbar-nav.nav-main .link-mytools,
-.app-header .navbar-nav.nav-main .link-myreports,
-.app-header .navbar-nav.nav-main .link-schoolmatters,
-.app-header .navbar-nav.nav-main .link-administration {
+  .app-header .navbar-nav.nav-main .nav-item .link-myreports,
+.app-header .navbar-nav.nav-main .nav-item .link-schoolmatters,
+.app-header .navbar-nav.nav-main .nav-item .link-administration {
+    display: none;
+  }
+}
+@media (max-width: 1199.98px) {
+  .app-header .navbar-nav.nav-main .nav-item .link-mytools {
     display: none;
   }
 }
@@ -2926,8 +2933,13 @@ select.form-control {
     display: none;
   }
 }
+@media (min-width: 1200px) {
+  .app-header .navbar-nav.nav-main .nav-item .dropdown-menu .nav-mytools {
+    display: none;
+  }
+}
 @media (min-width: 1400px) {
-  .app-header .navbar-nav.nav-main .link-more {
+  .app-header .navbar-nav.nav-main .nav-item .link-more {
     display: none;
   }
 }
@@ -6104,6 +6116,9 @@ select.form-control {
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .card-link:hover {
   text-decoration: underline;
 }
+.app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .text-muted3 {
+  margin-bottom: 0.5rem;
+}
 .app-content.page-resources .article-resources .article-content .article-body .card-group .card .card-body .badge {
   position: absolute;
   bottom: 1rem;
@@ -6801,7 +6816,8 @@ select.form-control {
   margin: 0 0.25rem;
 }
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .item-text {
-  max-width: 12rem;
+  margin-right: 1rem;
+  max-width: 14rem;
 }
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head,
 .app-content.page-lessons .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body {

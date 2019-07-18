@@ -846,6 +846,25 @@ router.post('/logging', function(req, res) {
   res.send('{status: "OK"}');
 });
 
+/* GET games page. */
+router.get('/:userRole/galaxy/games', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('galaxy/games', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'galaxy',
+    loggedIn: true,
+    galaxyPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET legacy page. */
 router.get('/:userRole/legacy/legacy', function(req, res, next) {
   var userRole = req.params.userRole;

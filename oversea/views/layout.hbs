@@ -227,13 +227,18 @@
                   </div>
                 </li>
               {{/if}}
+              <li class="nav-item">
+                <a class="nav-link link-mygalaxy {{#if galaxyPage}}active{{/if}}" href="/{{userRole}}/galaxy/games">
+                  <i class="img img-myresources"></i> My Galaxy
+                </a>
+              </li>
               <li class="nav-item dropdown dropdown-more">
                 <a class="nav-link link-more" href="#" data-toggle="dropdown">
                   <i class="img img-myreports"></i> More
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-more">
                   {{#unless studentUser}}
-                    <ul class="nav">
+                    <ul class="nav nav-mytools">
                       <li class="nav-item">
                         <div class="nav-text">
                           <i class="img img-myreports"></i> My Tools
@@ -261,7 +266,7 @@
                       </li>
                     </ul>
                   {{/unless}}
-                  <ul class="nav">                    
+                  <ul class="nav nav-myreports">
                     <li class="nav-item">
                       <div class="nav-text">
                         <i class="img img-myreports"></i> My Reports
@@ -292,7 +297,7 @@
                       </li>
                     {{/unless}}
                   </ul>
-                  <ul class="nav">
+                  <ul class="nav nav-schoolmatters">
                     <li class="nav-item">
                       <div class="nav-text">
                         <i class="img img-myreports"></i> School Matters
@@ -322,7 +327,7 @@
                     {{/unless}}
                   </ul>
                   {{#if adminUser}}
-                    <ul class="nav">
+                    <ul class="nav nav-administration">
                       <li class="nav-item">
                         <div class="nav-text">
                           <i class="img img-administration"></i> Administration
@@ -719,6 +724,11 @@
                   </div>
                 </li>
               {{/if}}
+              <li class="nav-item">
+                <a class="nav-link {{#if galaxyPage}}active{{/if}}" href="/{{userRole}}/galaxy/games">
+                  <i class="img img-myresources"></i> My Galaxy
+                </a>
+              </li>
             {{/if}}
           </ul>
         </div>

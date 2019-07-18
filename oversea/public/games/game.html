@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Marshall Cavendish Education</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <button class="btn-start" type="button">Start</button>
+    <button class="btn-finish" type="button">Finish</button>
+    <button class="btn-close" type="button">Close</button>
+    <script>
+      if (window.opener && window.opener.postMessage) {
+        document.querySelector('.btn-start').addEventListener('click', function(e) {
+          window.postMessage('{"status": "Started"}', 'http://localhost:3000');
+        }, false);
+        document.querySelector('.btn-finish').addEventListener('click', function(e) {          
+          window.postMessage('{"status": "Finished", "score": 100}', 'http://localhost:3000');
+        }, false);
+        document.querySelector('.btn-close').addEventListener('click', function(e) {          
+          window.close();
+        }, false);
+      }
+    </script>
+  </body>
+</html>
