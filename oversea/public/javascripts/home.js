@@ -58,4 +58,24 @@ $(document).ready(function() {
     $('.article-resources .article-sidebar').addClass('dialog');
     $('.article-resources .article-sidebar .form-filters').addClass('dialog-menu');
   }
+
+  $('.modal-announcement-view .btn-previous').on('click', function(e) {
+    $('.modal-announcement-view .modal-title').text('Results of Chinese Challenge');
+    $('.modal-announcement-view .navbar-text').text('Announcement 1 of 2');
+    $('.modal-announcement-view .announcement').toggleClass('d-none');
+    $('.modal-announcement-view .btn-previous').addClass('d-none');
+    $('.modal-announcement-view .btn-close').addClass('d-none');
+    $('.modal-announcement-view .btn-next').removeClass('d-none');
+  });
+
+  $('.modal-announcement-view .btn-next').on('click', function(e) {
+    $('.modal-announcement-view .modal-title').text('Lorem ipsum');
+    $('.modal-announcement-view .navbar-text').text('Announcement 2 of 2');
+    $('.modal-announcement-view .announcement').toggleClass('d-none');
+    $('.modal-announcement-view .btn-next').addClass('d-none');
+    $('.modal-announcement-view .btn-previous').removeClass('d-none');
+    $('.modal-announcement-view .btn-close').removeClass('d-none');
+  });
+
+  $('.modal-announcement-view').modal('show');
 });
