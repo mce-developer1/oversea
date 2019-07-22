@@ -646,7 +646,7 @@ router.get('/shared/track_test_user', upload.any(), function(req, res, next) {
 
 /* GET upload page. */
 router.post('/shared/upload', upload.any(), function(req, res, next) {
-  res.send('{"status": "OK"}');
+  res.send('{"status": "OK", "location": "/static/images/user.png"}');
 });
 
 /* GET tests page. */

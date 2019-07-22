@@ -1133,14 +1133,20 @@ select.form-control {
   }
 }
 
+.mce-content-body {
+  .mce-resizehandle {
+    z-index: 1000 !important;
+  }
+}
+
 .tox-tinymce,
 .tinymce-outer-container,
 .tinymce-mobile-outer-container {
   width: 100% !important;
 
   &.tox-tinymce-inline {
-    box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
-    z-index: 1050;
+    box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23) !important;
+    z-index: 1050 !important;
   }
 
   .tox-tbtn {
@@ -1152,6 +1158,164 @@ select.form-control {
 
     svg {
       fill: $gray-700 !important;
+    }
+  }
+}
+
+.tox-dialog-wrap {
+  .tox-button {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border-radius: 0 !important;
+    color: $gray-700 !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+
+    &:disabled,
+    &.disabled,
+    &:disabled:hover,
+    &.disabled:hover {
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+
+    &:not(:disabled):not(.disabled):hover,
+    &:not(:disabled):not(.disabled):active {
+      background-color: transparent !important;
+      border-color: transparent !important;
+      color: $gray-900 !important;
+    }
+
+    &:not(:disabled):not(.disabled):active {
+      background-color: $gray-300 !important;
+      border-color: $gray-300!important;
+    }
+  }
+
+  .tox-dialog-wrap__backdrop {
+    background-color: $black !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    opacity: 0.5 !important;
+  }
+
+  .tox-dialog {
+    border-radius: 0 !important;
+
+    .tox-dialog__header {
+      background-color: $gray-200 !important;
+      padding: .5rem .5rem .5rem 1rem !important;
+      margin-bottom: 0 !important;
+
+      .tox-dialog__title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+      }
+    }
+
+    .tox-dialog__body {
+      padding: 1rem !important;
+
+      .tox-form__group {
+        margin-bottom: 1rem !important;
+
+        .tox-label {
+          color: $gray-900 !important;
+          margin: 0.375rem 0 !important;
+        }
+
+        .tox-textfield {
+          border-radius: 0 !important;
+          padding: .375rem .75rem !important;
+
+          &:not(:disabled):hover {
+            border-color: $gray-700 !important;
+          }
+      
+          &:not(:disabled):not(.disabled):focus,
+          &:not(:disabled):not(.disabled):active {
+            border-color: $gray-700 !important;
+            box-shadow: none !important;
+          }
+      
+          &[readonly]:hover {
+            border-color: $gray-400 !important;
+          }
+        }
+
+        .tox-selectfield {
+          select {
+            border-radius: 0 !important;
+            padding: .375rem .75rem !important;
+
+            &:not(:disabled):hover {
+              border-color: $gray-700 !important;
+            }
+        
+            &:not(:disabled):not(.disabled):focus,
+            &:not(:disabled):not(.disabled):active {
+              border-color: $gray-700 !important;
+              box-shadow: none !important;
+            }
+        
+            &[readonly]:hover {
+              border-color: $gray-400 !important;
+            }
+          }
+        }
+      }
+
+      .tox-dropzone-container {
+        .tox-button {
+          border-color: $gray-400 !important;
+
+          &:disabled,
+          &.disabled,
+          &:disabled:hover,
+          &.disabled:hover {
+            background-color: $gray-600 !important;
+            border-color: $gray-600 !important;
+            color: $white !important;
+          }
+
+          &:not(:disabled):not(.disabled):hover,
+          &:not(:disabled):not(.disabled):active {
+            background-color: $gray-600 !important;
+            border-color: $gray-600 !important;
+            color: $white !important;
+          }
+        }
+      }
+    }
+
+    .tox-dialog__footer {
+      padding: 1rem !important;
+      margin-top: 0 !important;
+
+      .tox-button {
+        font-weight: 400 !important;
+        padding: .325rem .5rem !important;
+
+        &:not(.tox-button--secondary) {
+          background-color: $primary !important;
+          border-color: $primary !important;
+          color: $white !important;
+          
+          &:disabled,
+          &.disabled,
+          &:disabled:hover,
+          &.disabled:hover {
+            background-color: lighten($primary, 8%) !important;
+            border-color: lighten($primary, 8%) !important;
+          }
+
+          &:not(:disabled):not(.disabled):hover,
+          &:not(:disabled):not(.disabled):active {
+            background-color: darken($primary, 8%) !important;
+            border-color: darken($primary, 8%) !important;
+          }
+        }
+      }
     }
   }
 }

@@ -1,7 +1,14 @@
 window.Utils = {
-  initTextEditor: function(target) {
-    var options = { toolbar_drawer: 'sliding' };
-    if (tinymce.Env.desktop) options = {};
+  initTextEditor: function(target, options) {
+    if (tinymce.Env.desktop) options = $.extend(options, {      
+      images_upload_url: '/shared/upload',
+      image_uploadtab: true,      
+      image_dimensions: false
+    });
+    else options = $.extend(options, {
+      toolbar_drawer: 'sliding' 
+    });
+
     tinymce.init($.extend(options, {
       target: target,
       min_height: 80,
@@ -10,6 +17,8 @@ window.Utils = {
       inline: tinymce.Env.desktop,
       menubar: false,
       statusbar: false,
+      //language: 'id',
+      //language_url: '/static/tinymce/langs/id.js',
       plugins: ['autoresize', 'link', 'image', 'media', 'lists', 'table'],
       toolbar: [
         'undo redo',
@@ -376,4 +385,14 @@ $(document).ready(function() {
   $(window).on('unload', function(e) {
     window._logStore.send();
   });
+
+  var tinymceBind = window.tinymce.DOM.bind;
+  window.tinymce.DOM.bind = (target, name, func, scope) => {
+    // TODO This is only necessary until https://github.com/tinymce/tinymce/issues/4355 is fixed
+    if (name === 'mouseup' && func.toString().includes('throttle()')) {
+        return func;
+    } else {
+        return tinymceBind(target, name, func, scope);
+    }
+  };
 });

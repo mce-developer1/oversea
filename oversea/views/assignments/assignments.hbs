@@ -12,15 +12,26 @@
                 <span class="item-text text-truncate">My Assignments</span>
               </li>
               <li class="nav-item nav-item-submodule dropdown">
-                <button class="btn btn-light" type="button" data-toggle="dropdown">
-                  All Assignments <i class="fas fa-caret-down"></i>
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">All Assignments</a>
-                  <a class="dropdown-item" href="#">Not Started</a>
-                  <a class="dropdown-item" href="#">Started</a>
-                  <a class="dropdown-item" href="#">Closed</a>
-                </div>
+                {{#if adminUser}}
+                  <button class="btn btn-light" type="button" data-toggle="dropdown">
+                    Assigned by Me <i class="fas fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Assigned by Me</a>
+                    <a class="dropdown-item" href="#">Assigned to Me</a>
+                  </div>
+                {{/if}}
+                {{#unless adminUser}}
+                  <button class="btn btn-light" type="button" data-toggle="dropdown">
+                    All Assignments <i class="fas fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">All Assignments</a>
+                    <a class="dropdown-item" href="#">Not Started</a>
+                    <a class="dropdown-item" href="#">Started</a>
+                    <a class="dropdown-item" href="#">Closed</a>
+                  </div>
+                {{/unless}}
               </li>
             </ul>
             <ul class="navbar-nav nav-main">
@@ -175,18 +186,28 @@
         <div class="article-content">
           <div class="article-sidebar">
             <ul class="nav nav-side">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">All Assignments</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Not Started</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Started</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Closed</a>
-              </li>
+              {{#if adminUser}}
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Assigned by Me</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Assigned to Me</a>
+                </li>
+              {{/if}}
+              {{#unless adminUser}}
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">All Assignments</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Not Started</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Started</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Closed</a>
+                </li>
+              {{/unless}}
             </ul>
           </div>
           <div class="article-body">

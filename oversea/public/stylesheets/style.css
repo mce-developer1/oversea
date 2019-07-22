@@ -1701,6 +1701,10 @@ select.form-control {
   white-space: nowrap;
 }
 
+.mce-content-body .mce-resizehandle {
+  z-index: 1000 !important;
+}
+
 .tox-tinymce,
 .tinymce-outer-container,
 .tinymce-mobile-outer-container {
@@ -1709,8 +1713,8 @@ select.form-control {
 .tox-tinymce.tox-tinymce-inline,
 .tinymce-outer-container.tox-tinymce-inline,
 .tinymce-mobile-outer-container.tox-tinymce-inline {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  z-index: 1050;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+  z-index: 1050 !important;
 }
 .tox-tinymce .tox-tbtn:disabled svg,
 .tinymce-outer-container .tox-tbtn:disabled svg,
@@ -1721,6 +1725,118 @@ select.form-control {
 .tinymce-outer-container .tox-tbtn svg,
 .tinymce-mobile-outer-container .tox-tbtn svg {
   fill: #495057 !important;
+}
+
+.tox-dialog-wrap .tox-button {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-radius: 0 !important;
+  color: #495057 !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+.tox-dialog-wrap .tox-button:disabled, .tox-dialog-wrap .tox-button.disabled, .tox-dialog-wrap .tox-button:disabled:hover, .tox-dialog-wrap .tox-button.disabled:hover {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.tox-dialog-wrap .tox-button:not(:disabled):not(.disabled):hover, .tox-dialog-wrap .tox-button:not(:disabled):not(.disabled):active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: #212529 !important;
+}
+.tox-dialog-wrap .tox-button:not(:disabled):not(.disabled):active {
+  background-color: #dee2e6 !important;
+  border-color: #dee2e6 !important;
+}
+.tox-dialog-wrap .tox-dialog-wrap__backdrop {
+  background-color: #000000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  opacity: 0.5 !important;
+}
+.tox-dialog-wrap .tox-dialog {
+  border-radius: 0 !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__header {
+  background-color: #e9ecef !important;
+  padding: 0.5rem 0.5rem 0.5rem 1rem !important;
+  margin-bottom: 0 !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__header .tox-dialog__title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body {
+  padding: 1rem !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group {
+  margin-bottom: 1rem !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-label {
+  color: #212529 !important;
+  margin: 0.375rem 0 !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-textfield {
+  border-radius: 0 !important;
+  padding: 0.375rem 0.75rem !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-textfield:not(:disabled):hover {
+  border-color: #495057 !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-textfield:not(:disabled):not(.disabled):focus, .tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-textfield:not(:disabled):not(.disabled):active {
+  border-color: #495057 !important;
+  box-shadow: none !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-textfield[readonly]:hover {
+  border-color: #ced4da !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-selectfield select {
+  border-radius: 0 !important;
+  padding: 0.375rem 0.75rem !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-selectfield select:not(:disabled):hover {
+  border-color: #495057 !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-selectfield select:not(:disabled):not(.disabled):focus, .tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-selectfield select:not(:disabled):not(.disabled):active {
+  border-color: #495057 !important;
+  box-shadow: none !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-form__group .tox-selectfield select[readonly]:hover {
+  border-color: #ced4da !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-dropzone-container .tox-button {
+  border-color: #ced4da !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-dropzone-container .tox-button:disabled, .tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-dropzone-container .tox-button.disabled, .tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-dropzone-container .tox-button:disabled:hover, .tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-dropzone-container .tox-button.disabled:hover {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  color: #ffffff !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-dropzone-container .tox-button:not(:disabled):not(.disabled):hover, .tox-dialog-wrap .tox-dialog .tox-dialog__body .tox-dropzone-container .tox-button:not(:disabled):not(.disabled):active {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  color: #ffffff !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__footer {
+  padding: 1rem !important;
+  margin-top: 0 !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button {
+  font-weight: 400 !important;
+  padding: 0.325rem 0.5rem !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary) {
+  background-color: #ff6600 !important;
+  border-color: #ff6600 !important;
+  color: #ffffff !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary):disabled, .tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary).disabled, .tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary):disabled:hover, .tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary).disabled:hover {
+  background-color: #ff7e29 !important;
+  border-color: #ff7e29 !important;
+}
+.tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary):not(:disabled):not(.disabled):hover, .tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary):not(:disabled):not(.disabled):active {
+  background-color: #d65600 !important;
+  border-color: #d65600 !important;
 }
 
 .daterangepicker {

@@ -167,6 +167,23 @@ $(document).ready(function() {
     $container.find('.article-body .card-group').removeClass('d-none');
   });
 
+  $container.find('.article-sidebar .nav-side .nav-link').on('click', function(e) {
+    $container.find('.article-sidebar .nav-side .nav-link').removeClass('active');
+    $(this).addClass('active')
+
+    if ($(this).text() === 'Assigned to Me') {
+      $container.find('.card-group .card:eq(1)').addClass('d-none');
+      $container.find('.card-group .card:eq(2)').addClass('d-none');
+      $container.find('.table-body tr:eq(1)').addClass('d-none');
+      $container.find('.table-body tr:eq(2)').addClass('d-none');
+    } else {
+      $container.find('.card-group .card:eq(1)').removeClass('d-none');
+      $container.find('.card-group .card:eq(2)').removeClass('d-none');
+      $container.find('.table-body tr:eq(1)').removeClass('d-none');
+      $container.find('.table-body tr:eq(2)').removeClass('d-none');
+    }
+  });
+
   $container.find('.table-body tr .btn').on('click', function(e) {
     var $model = $('.modal-assignment-details');
     var $row = $(this).closest('tr');
