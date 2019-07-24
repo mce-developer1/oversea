@@ -252,6 +252,37 @@ $(document).ready(function() {
     $form.find('.question-answers').removeClass('d-none');
   });
 
+  $('#selCurriculum').on('changed.bs.select', function (e) {
+    $('.form-group-language').addClass('d-none');
+  });
+
+  $('#selSubjet').on('changed.bs.select', function (e) {
+    if ($('#selCurriculum').selectpicker('val') === 'CAIE') {
+      if ($('#selSubjet').selectpicker('val') === 'Mathematics') {
+        $('.form-group-language').removeClass('d-none');
+      } else {
+        $('.form-group-language').addClass('d-none');
+      }
+    } else {
+      $('.form-group-language').addClass('d-none');
+    }
+  });
+
+  $('#selGrade').on('changed.bs.select', function (e) {
+    if ($('#selCurriculum').selectpicker('val') === 'CAIE') {
+      if ($('#selGrade').selectpicker('val') === '1') {
+        $('.form-group-syllabus').removeClass('d-none');
+        $('.form-group-stream').removeClass('d-none');
+      } else {
+        $('.form-group-syllabus').addClass('d-none');
+        $('.form-group-stream').addClass('d-none');
+      }
+    } else {
+      $('.form-group-syllabus').addClass('d-none');
+      $('.form-group-stream').addClass('d-none');
+    }
+  });
+
   $('.article-create-question .form-create-question .btn-save').on('click', function(e) {
     window.Utils.showProcessingOverlay();
     setTimeout(function() {

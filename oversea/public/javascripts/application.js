@@ -1,13 +1,19 @@
 window.Utils = {
   initTextEditor: function(target, options) {
-    if (tinymce.Env.desktop) options = $.extend(options, {      
+    options = options ? options : {};
+    options = $.extend(options, {
       images_upload_url: '/shared/upload',
-      image_uploadtab: true,      
+      image_uploadtab: true,
       image_dimensions: false
+      //language: 'id',
+      //language_url: '/static/tinymce/langs/id.js'
     });
-    else options = $.extend(options, {
-      toolbar_drawer: 'sliding' 
-    });
+
+    if (!tinymce.Env.desktop) {
+      options = $.extend(options, {
+        toolbar_drawer: 'sliding' 
+      });
+    }
 
     tinymce.init($.extend(options, {
       target: target,
@@ -17,8 +23,6 @@ window.Utils = {
       inline: tinymce.Env.desktop,
       menubar: false,
       statusbar: false,
-      //language: 'id',
-      //language_url: '/static/tinymce/langs/id.js',
       plugins: ['autoresize', 'link', 'image', 'media', 'lists', 'table'],
       toolbar: [
         'undo redo',

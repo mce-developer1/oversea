@@ -9,12 +9,24 @@
     <button class="btn-finish" type="button">Finish</button>
     <button class="btn-close" type="button">Close</button>
     <script>
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+
       if (window.opener && window.opener.postMessage) {
         document.querySelector('.btn-start').addEventListener('click', function(e) {
-          window.postMessage('{"status": "Started"}', 'http://localhost:3000');
+          var origin = getParameterByName('origin');
+          window.postMessage('{"status": "Started"}', origin);
         }, false);
-        document.querySelector('.btn-finish').addEventListener('click', function(e) {          
-          window.postMessage('{"status": "Finished", "score": 100}', 'http://localhost:3000');
+        document.querySelector('.btn-finish').addEventListener('click', function(e) {
+          var origin = getParameterByName('origin');
+          window.postMessage('{"status": "Finished", "score": 100}', origin);
         }, false);
         document.querySelector('.btn-close').addEventListener('click', function(e) {          
           window.close();

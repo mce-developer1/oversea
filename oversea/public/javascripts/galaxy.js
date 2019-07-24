@@ -8,7 +8,7 @@ $(document).ready(function() {
   }
 
   $container.find('.list-group .list-group-item').on('click', function(e) {
-    var gameWindow = window.open('/static/games/game.html', '_blank');
+    var gameWindow = window.open('/static/games/game.html?origin=http://localhost:3000', '_blank');
     gameWindow.addEventListener("message", receivedMessage.bind(this), false);
   });
 });

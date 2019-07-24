@@ -242,7 +242,8 @@ a {
     margin: .375rem 0;
   }
 
-  .form-check {
+  .form-check,
+  .custom-checkbox {
     margin-bottom: .5rem;
   }
 
@@ -250,8 +251,10 @@ a {
     @include display-flex(row);
     @include flex-wrap(wrap);
     
-    .form-check {
-      margin-bottom: 0;
+    .form-check,
+    .custom-checkbox {
+      margin-right: 1rem;
+      min-width: 8rem;
     }
   }
 }
