@@ -437,7 +437,6 @@ $(document).ready(function() {
   }
 
   if ($container.hasClass('article-visitor-categories')) {
-
     var dataTable = $('.table').DataTable({
       scrollY: '100%',
       scrollX: true,
@@ -488,23 +487,67 @@ $(document).ready(function() {
       updateActionButtonsStyles();
     });
 
+    $('.modal-category-create .alert-recipients .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
+      displayKey: 'name',
+      source: function(query, callback) {
+        var pattern = new RegExp(query, 'i');
+        var hits = visitors.filter(function(record) {
+          return record.name.match(pattern);
+        });
+        hits.forEach(function(hit) {
+          var match = hit.name.match(pattern)[0];
+          var highlighted = '<em>' + match + '</em>';
+          hit.highlighted = hit.name.replace(match, highlighted);
+        });
+        callback(hits);
+      },
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion.highlighted;
+        }
+      }
+    }])
+    .on('autocomplete:selected', function(event, suggestion) {
+      $('.modal-category-create .alert-recipients .list-users').removeClass('d-none');
+      $('.modal-category-create .alert-recipients .input-autocomplete').autocomplete('val', '');
+    });
+
     $('.modal-category-create .custom-control-input').on('click', function(e) {
-      if ($(this).attr('id') === 'email0') {
-        if ($(this).is(':checked')) $('#txtEmail0').removeClass('d-none');
-        else $('#txtEmail0').addClass('d-none');
-      } else if ($(this).attr('id') === 'sms0') {
-        if ($(this).is(':checked')) $('#txtMobile0').removeClass('d-none');
-        else $('#txtMobile0').addClass('d-none');
+      if ($(this).attr('id') === 'others0') {
+        if ($(this).is(':checked')) $('.modal-category-create .alert-recipients').removeClass('d-none');
+        else $('.modal-category-create .alert-recipients').addClass('d-none');
       }
     });
 
+    $('.modal-category-edit .alert-recipients .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
+      displayKey: 'name',
+      source: function(query, callback) {
+        var pattern = new RegExp(query, 'i');
+        var hits = visitors.filter(function(record) {
+          return record.name.match(pattern);
+        });
+        hits.forEach(function(hit) {
+          var match = hit.name.match(pattern)[0];
+          var highlighted = '<em>' + match + '</em>';
+          hit.highlighted = hit.name.replace(match, highlighted);
+        });
+        callback(hits);
+      },
+      templates: {
+        suggestion: function(suggestion) {
+          return suggestion.highlighted;
+        }
+      }
+    }])
+    .on('autocomplete:selected', function(event, suggestion) {
+      $('.modal-category-edit .alert-recipients .list-users').removeClass('d-none');
+      $('.modal-category-edit .alert-recipients .input-autocomplete').autocomplete('val', '');
+    });
+
     $('.modal-category-edit .custom-control-input').on('click', function(e) {
-      if ($(this).attr('id') === 'email1') {
-        if ($(this).is(':checked')) $('#txtEmail1').removeClass('d-none');
-        else $('#txtEmail1').addClass('d-none');
-      } else if ($(this).attr('id') === 'sms1') {
-        if ($(this).is(':checked')) $('#txtMobile1').removeClass('d-none');
-        else $('#txtMobile1').addClass('d-none');
+      if ($(this).attr('id') === 'others1') {
+        if ($(this).is(':checked')) $('.modal-category-edit .alert-recipients').removeClass('d-none');
+        else $('.modal-category-edit .alert-recipients').addClass('d-none');
       }
     });
 

@@ -393,6 +393,18 @@
 .modal-category-create {
   .modal-dialog {
     .modal-body {
+      .form-create-category {
+        .form-group {
+          .alert-recipients {
+            @include display-flex(column);
+            
+            .algolia-autocomplete {
+              @include flex-grow(1);
+            }
+          }
+        }
+      }
+
       @media (min-width: 768px) {
         .form-create-category {
           .form-group {
@@ -419,6 +431,18 @@
 .modal-category-edit {
   .modal-dialog {
     .modal-body {
+      .form-edit-category {
+        .form-group {
+          .alert-recipients {
+            @include display-flex(column);
+
+            .algolia-autocomplete {
+              @include flex-grow(1);
+            }
+          }
+        }
+      }
+
       @media (min-width: 768px) {
         .form-edit-category {
           .form-group {

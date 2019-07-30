@@ -4587,6 +4587,16 @@ select.form-control {
   background-color: #e9ecef;
 }
 
+.modal-category-create .modal-dialog .modal-body .form-create-category .form-group .alert-recipients {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.modal-category-create .modal-dialog .modal-body .form-create-category .form-group .alert-recipients .algolia-autocomplete {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
 @media (min-width: 768px) {
   .modal-category-create .modal-dialog .modal-body .form-create-category .form-group {
     display: -ms-flexbox;
@@ -4611,6 +4621,16 @@ select.form-control {
   }
 }
 
+.modal-category-edit .modal-dialog .modal-body .form-edit-category .form-group .alert-recipients {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.modal-category-edit .modal-dialog .modal-body .form-edit-category .form-group .alert-recipients .algolia-autocomplete {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
 @media (min-width: 768px) {
   .modal-category-edit .modal-dialog .modal-body .form-edit-category .form-group {
     display: -ms-flexbox;
