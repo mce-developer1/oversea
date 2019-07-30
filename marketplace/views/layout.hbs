@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="/static/bootstrap-select/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="/static/fontawesome-free/css/solid.css" />
+    <link rel="stylesheet" href="/static/fontawesome-free/css/fontawesome.css" />
+    <link rel="stylesheet" href="/static/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="/static/datatables/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="/static/cropperjs/cropper.css" />
+    <link rel="stylesheet" href="/static/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      {{#if infoPage}}
+        <div class="navbar navbar-expand app-header">
+          <div class="navbar-brand d-block">
+            <img src="/static/images/mce_logo.png"/>
+          </div>
+          <ul class="navbar-nav nav-main"></ul>
+        </div>
+      {{/if}}
+      {{#if errorPage}}
+        {{#unless loggedIn}}
+          <div class="navbar navbar-expand app-header">
+            <a class="navbar-brand d-block" href="/">
+              <img src="/static/images/mce_logo.png"/>
+            </a>
+            <ul class="navbar-nav nav-main"></ul>
+          </div>
+        {{/unless}}
+      {{/if}}
+      {{#if loggedIn}}
+        <div class="navbar navbar-expand app-header">
+          <button class="btn btn-light btn-menu" type="button" data-toggle="drawer" data-target=".drawer">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="/{{userRole}}/home">
+            <img src="/static/images/mce_logo.png"/>
+          </a>
+          <div class="navbar-text">
+            {{#if facilitiesPage}}Facility Booking{{/if}}
+            {{#if visitorsPage}}Visitor Management{{/if}}
+            {{#if attendancesPage}}Remedial Class Attedance{{/if}}
+            {{#if incidentsPage}}Student Incident Management{{/if}}
+            {{#if referralsPage}}Student Referral{{/if}}
+            {{#if errorPage}}Page Not Found{{/if}}
+          </div>
+          <ul class="navbar-nav nav-main">
+            {{#if loggedIn}}
+              <li class="nav-item">
+                <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/bookings">
+                  <i class="img img-administration"></i> Facility Booking
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if visitorsPage}}active{{/if}}" href="/{{userRole}}/visitors/visitors">
+                  <i class="img img-administration"></i> Visitor Management Extended
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if attendancesPage}}active{{/if}}" href="/{{userRole}}/attendances/attendances">
+                  <i class="img img-administration"></i> Remedial Class Attedance
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if incidentsPage}}active{{/if}}" href="/{{userRole}}/incidents/incidents">
+                  <i class="img img-administration"></i> Student Incident Management
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if referralsPage}}active{{/if}}" href="/{{userRole}}/referrals/referrals">
+                  <i class="img img-administration"></i> Student Referral
+                </a>
+              </li>
+            {{/if}}
+          </ul>
+          <ul class="navbar-nav">
+            {{#if loggedIn}}              
+              <li class="nav-item dropdown dropdown-user">
+                <button class="btn btn-light btn-user" type="button" data-toggle="dropdown">
+                  <img src="/static/images/user.png"/>
+                  <div class="user-summary">
+                    <div class="user-info">
+                      I'm
+                      <span class="user-name text-truncate">
+                        {{#if studentUser}}Aaron Tan{{/if}}
+                        {{#if teacherUser}}Derrick Chua{{/if}}
+                        {{#if adminUser}}Ernest  Goh{{/if}}
+                      </span>
+                    </div>
+                    <div class="user-role">
+                      {{#if studentUser}}I study. :){{/if}}
+                      {{#if teacherUser}}I teach. :){{/if}}
+                      {{#if adminUser}}I administer. :){{/if}}
+                    </div>
+                  </div>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                  <div class="user-account">
+                    <img src="/static/images/user.png"/>
+                    <div class="user-summary">
+                      <div class="user-info d-block">
+                        I'm
+                        <span class="user-name text-truncate">
+                          {{#if studentUser}}Aaron Tan{{/if}}
+                          {{#if teacherUser}}Derrick Chua{{/if}}
+                          {{#if adminUser}}Ernest  Goh{{/if}}
+                        </span>
+                      </div>
+                      <div class="user-role">
+                        {{#if studentUser}}I study. :){{/if}}
+                        {{#if teacherUser}}I teach. :){{/if}}
+                        {{#if adminUser}}I administer. :){{/if}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown-divider"></div>
+                  <ul class="nav">
+                    <div class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/profile/update_personal_particulars">
+                        <i class="fas fa-user"></i> About Me
+                      </a>
+                    </div>
+                    <div class="nav-item">
+                      <a class="nav-link" href="/signout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                      </a>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+            {{/if}}
+          </ul>
+        </div>
+      {{/if}}
+      {{{body}}}
+      <div class="app-footer">
+        <ul class="nav nav-light">
+          <li class="nav-item">
+            <a class="nav-link" href="/privacy" target="_blank">
+              Data Protection & Privacy Statement
+            </a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-item">
+            <a class="nav-link" href="/terms" target="_blank">
+              Terms & Conditions
+            </a>
+          </li>
+        </ul>
+        <div class="text-truncate copyright">
+          Copyright © 2019 Marshall Cavendish Education Pte. Ltd.
+        </div>
+      </div>
+    </div>
+    <div class="drawer">
+      <nav class="navbar">
+        <a class="navbar-brand" href="/{{userRole}}/home">
+          <img src="/static/images/logo_mceduhub.png"/>
+        </a>
+        <div class="navbar-content">
+          <ul class="navbar-nav">
+            {{#if loggedIn}}
+              <li class="nav-item">
+                <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/bookings">
+                  <i class="img img-administration"></i> Facility Booking
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if visitorsPage}}active{{/if}}" href="/{{userRole}}/visitors/visitors">
+                  <i class="img img-administration"></i> Visitor Management
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if attendancesPage}}active{{/if}}" href="/{{userRole}}/attendances/attendances">
+                  <i class="img img-administration"></i> Remedial Class Attedance
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if incidentsPage}}active{{/if}}" href="/{{userRole}}/incidents/incidents">
+                  <i class="img img-administration"></i> Student Incident Management
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{#if referralsPage}}active{{/if}}" href="/{{userRole}}/referrals/referrals">
+                  <i class="img img-administration"></i> Student Referral
+                </a>
+              </li>             
+            {{/if}}
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/static/loglevel/loglevel.js"></script>
+    <script src="/static/jquery/jquery.js"></script>
+    <script src="/static/popper/popper.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.js"></script>
+    <script src="/static/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="/static/moment/moment.js"></script>
+    <script src="/static/daterangepicker/daterangepicker.js"></script>
+    <script src="/static/datatables/js/jquery.dataTables.js"></script>
+    <script src="/static/autocomplete.js/autocomplete.jquery.js"></script>
+    <script src="/static/dropzone/dropzone.js"></script>
+    <script src="/static/sortablejs/sortable.js"></script>
+    <script src="/static/cropperjs/cropper.js"></script>
+    <script src="/static/tinymce/tinymce.js"></script>
+    <script src="/static/javascripts/application.js"></script>
+    <script src="/static/javascripts/{{module}}.js"></script>
+  </body>
+</html>

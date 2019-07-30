@@ -1,0 +1,58 @@
+@mixin display-flex($direction) {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: $direction;
+	flex-direction: $direction;
+}
+
+@mixin align-items($alignment) {
+  -webkit-align-items: $alignment;
+  align-items: $alignment;
+}
+
+@mixin align-self($alignment) {
+  -webkit-align-self: $alignment;
+  align-self: $alignment;
+}
+
+
+@mixin flex-direction($direction) {
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin flex-grow($size) {
+  -ms-flex-positive: $size;
+  flex-grow: $size;
+}
+
+@mixin flex-wrap($wrapping) {
+  -ms-flex-wrap: $wrapping;
+  flex-wrap: $wrapping;
+}
+
+@mixin justify-content($alignment) {
+  -webkit-justify-content: $alignment;
+  justify-content: $alignment;
+}
+
+@mixin user-select($selection) {
+  -webkit-touch-callout: $selection;
+  -webkit-user-select: $selection;
+  -khtml-user-select: $selection;
+  -moz-user-select: $selection;
+  -ms-user-select: $selection;
+  user-select: $selection;
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin transform($transform) {
+  -ms-transform: $transform;
+  -webkit-transform: $transform;
+  transform: $transform;
+}

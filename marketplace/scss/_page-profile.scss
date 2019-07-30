@@ -1,0 +1,226 @@
+.app-content {
+  &.page-profile {
+    .article-update-profile-picture,
+    .article-update-personal-particulars,
+    .article-update-personal-preferences,
+    .article-change-password,
+    .article-reset-student-password,
+    .article-reset-teacher-password {
+      padding: 0 1.5rem;
+
+      .article-header {
+        height: 4rem;
+        max-height: 4rem;
+
+        .navbar {
+          @include display-flex(row);
+          @include align-items(center);
+          @include flex-grow(1);
+          @include flex-wrap(nowrap);
+          background-color: $gray-200;
+          height: 4rem;
+          max-height: 4rem;
+          margin: 0 -1.5rem;
+          padding: .75rem 1.5rem;
+
+          .navbar-nav {
+            @include flex-direction(row);
+
+            &:first-child {
+              margin-right: 1rem;
+              width: 20rem;
+            }
+
+            &.nav-main {
+              @include flex-grow(1);
+              position: relative;
+            }
+
+            .nav-item {
+              @include display-flex(row);
+              @include align-items(center);
+
+              &.nav-item-drawer {
+                .btn-light {
+                  padding: .25rem;
+
+                  img {
+                    width: 3rem;
+                  }
+                }
+              }
+
+              &.nav-item-submodule {
+                .btn-light {
+                  font-size: 1.25rem;
+
+                  .fas {
+                    font-size: 1.25rem;
+                  }
+                }
+              }
+
+              .btn-light {
+                margin: 0 .25rem;                
+              }
+
+              .item-text {
+                font-size: 1.25rem;
+                width: 16rem;
+              }
+            }
+
+            .btn-light {
+              &.btn-more {
+                padding: .325rem 1rem;
+              }
+
+              .fas {
+                font-size: 1.5rem;
+
+                &.fa-arrow-left {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .article-content {
+        .article-sidebar {
+          margin: 0;
+        }
+      }
+    }
+
+    .article-update-personal-preferences {
+      .dropdown {
+        &.bootstrap-select {
+          .dropdown-item {
+            .fas {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .form-profile-picture,
+    .form-personal-particulars,
+    .form-personal-preferences,
+    .form-change-password,
+    .form-reset-student-password,
+    .form-reset-teacher-password {
+      max-width: 24rem;
+      padding: 1rem 0;
+
+      .form-group {
+        .btn {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .form-profile-picture {
+      .form-group {
+        .file-upload {
+          &:not(.file-upload-button) {
+            min-height: 20rem;
+          }
+        }
+
+        .image-cropper {
+          max-width: 20rem;
+          width: 20rem;
+
+          img {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .article-update-profile-picture,
+      .article-update-personal-particulars,
+      .article-update-personal-preferences,
+      .article-change-password,
+      .article-reset-student-password,
+      .article-reset-teacher-password {
+        .article-header {
+          margin: 0 -.5rem;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 5rem;
+          z-index: 970;
+
+          .navbar {
+            @include justify-content(space-between);
+            padding: 1rem;
+
+            .navbar-nav {
+              .nav-item-drawer {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .article-content {
+          margin: 0 -.5rem;
+
+          .article-sidebar {
+            display: none;
+          }
+
+          .article-body {
+            margin: 0;
+
+            .navbar {
+              .breadcrumb {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      .article-update-profile-picture,
+      .article-update-personal-particulars,
+      .article-update-personal-preferences,
+      .article-change-password,
+      .article-reset-student-password,
+      .article-reset-teacher-password {
+        .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 6rem;
+          z-index: 970;
+
+          .navbar {
+            .navbar-nav {
+              .nav-item-submodule {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .article-content {
+          .article-sidebar {
+            height: calc(100vh - 13rem);
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: .5rem 0;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10rem;
+          }
+        }
+      }
+    }
+  }
+}

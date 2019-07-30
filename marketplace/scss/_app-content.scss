@@ -1,0 +1,10 @@
+.app-content {
+  background-color: $gray-100;
+  min-height: calc(100vh - 9rem);
+}
+
+@media (max-width: 991.98px) {
+  .app-content {
+    min-height: calc(100vh - 8rem);
+  }
+}

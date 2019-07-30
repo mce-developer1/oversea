@@ -1,0 +1,206 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-visitors-report">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <i class="fas fa-chalkboard-teacher"></i>
+                </button>
+                <span class="item-text text-truncate">Visitor Management</span>
+              </li>
+              <li class="nav-item nav-item-submodule dropdown">
+                <button class="btn btn-light" type="button" data-toggle="dropdown">
+                  Visitor Report <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/{{userRole}}/visitors/current_visitors">Current Visitors</a>
+                  <a class="dropdown-item" href="/{{userRole}}/visitors/visitors">School Visitors</a>
+                  <a class="dropdown-item" href="/{{userRole}}/visitors/report">Visitor Report</a>
+                  <a class="dropdown-item" href="/{{userRole}}/visitors/categories">Visitor Categories</a>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav nav-main">
+            </ul>
+            <ul class="navbar-nav">
+              <li class="nav-item dialog">
+                <button class="btn btn-light btn-toggle" type="button" data-toggle='dialog'>
+                  <i class="fas fa-filter"></i>
+                </button>
+                <div class="dialog-menu dialog-menu-right dialog-menu-filters">
+                  <form class="form-filters">
+                    <div class="form-group">
+                      <label class="form-label" for="selVisitorCategory">Category</label>
+                      <select class="form-control selectpicker" id="selVisitorCategory">
+                        <option>All</option>
+                        <option>Contractors</option>
+                        <option>Delivery</option>
+                        <option>Ministry Staff</option>
+                        <option>Parents</option>
+                        <option>Others</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="txtDateTimeIn">Date/Time-in</label>
+                      <input class="form-control form-input" type="text" id="txtDateTimeIn">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="txtDateTimeOut">Date/Time-out</label>
+                      <input class="form-control form-input" type="text" id="txtDateTimeOut">
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="txtKeyword">Keyword</label>
+                      <input class="form-control form-input" type="text" id="txtKeyword">
+                    </div>
+                    <div class="form-group form-group-actions">
+                      <button class="btn btn-light" type="button">Reset</button> 
+                      <button class="btn btn-primary" type="button">Apply</button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-sidebar">
+            <ul class="nav nav-side">
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/visitors/current_visitors">
+                  Current Visitors
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/visitors/visitors">
+                  School Visitors
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/{{userRole}}/visitors/report">
+                  Visitor Report
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/visitors/categories">
+                  Visitor Categories
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="article-body">
+            <div class="loading-state d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <nav class="navbar navbar-expand">
+              <div class="navbar-text">8 records found</div>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-primary btn-export" type="button">
+                    <i class="fas fa-file-export"></i> Export
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <table class="table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>Visitor Name</th>
+                  <th>Category</th>
+                  <th>Company Name</th>
+                  <th>Mobile</th>
+                  <th>Date/Time-in</th>
+                  <th>Date/Time-out</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>                
+                <tr>
+                  <td>Aaron Tan</td>
+                  <td>Parents</td>
+                  <td>N.A.</td>
+                  <td>98765432</td>
+                  <td>27 Jul 2019 10:00 AM (Pre-registered)</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Arya Suman</td>
+                  <td>Parents</td>
+                  <td>N.A.</td>
+                  <td>97654321</td>
+                  <td>26 Jul 2019 10:00 AM</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Ashar Ahmad</td>
+                  <td>Delivery</td>
+                  <td>AA Delivery</td>
+                  <td>96543219</td>
+                  <td>26 Jul 2019 10:10 AM</td>
+                  <td>26 Jul 2019 10:30 AM</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Chua Chin Hui</td>
+                  <td>Delivery</td>
+                  <td>CC Food & Beverages</td>
+                  <td>95432198</td>
+                  <td>26 Jul 2019 10:00 AM</td>
+                  <td>26 Jul 2019 10:15 AM</td>
+                  <td>
+                    Aenean commodo ligula eget dolor.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Derrick Lee</td>
+                  <td>Contractor</td>
+                  <td>EE Electric</td>
+                  <td>94321987</td>
+                  <td>26 Jul 2019 09:00 AM</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Nurulhuda bte Sazali</td>
+                  <td>Contractor</td>
+                  <td>EE Electric</td>
+                  <td>93219876</td>
+                  <td>26 Jul 2019 09:00 AM</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Siow Poh Piah Irene</td>
+                  <td>Ministry Staff</td>
+                  <td>N.A.</td>
+                  <td>92198765</td>
+                  <td>26 Jul 2019 09:00 AM</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>Tan Boon Huat</td>
+                  <td>Ministry Staff</td>
+                  <td>N.A.</td>
+                  <td>91987654</td>
+                  <td>26 Jul 2019 09:00 AM</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>            
+      </div>
+    </div>
+  </div>
+</div>

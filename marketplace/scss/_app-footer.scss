@@ -1,0 +1,62 @@
+.app-footer {
+  @include display-flex(row);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  background-color: $gray-700;
+  font-size: .875rem;
+  height: 3rem;
+  max-height: 3rem;
+  padding: .325rem 1.5rem;
+
+  .copyright {
+    color: $gray-300;
+    font-size: .875rem;
+    margin-right: 1rem;
+    margin-left: auto;
+    padding: .5rem;
+  }
+
+  .company-logo {
+    img {
+      width: 10rem;
+    }
+  }
+
+  .nav {
+    .nav-link {
+      color: $gray-300;
+      font-size: .875rem;
+      padding: .5rem;
+
+      &:not(:disabled):not(.disabled):hover,
+      &:not(:disabled):not(.disabled):active {
+        color: $white;
+      }
+    }
+
+    .nav-divider {
+      margin: .625rem .25rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .nav {
+      display: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .company-logo {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .app-footer {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 950;
+  }
+}

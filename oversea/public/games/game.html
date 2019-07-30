@@ -19,7 +19,7 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
       }
 
-      if (window.opener && window.opener.postMessage) {
+      if (window.postMessage) {
         document.querySelector('.btn-start').addEventListener('click', function(e) {
           var origin = getParameterByName('origin');
           window.postMessage('{"status": "Started"}', origin);
