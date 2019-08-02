@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/static/bootstrap-select/css/bootstrap-select.css" />
     <link rel="stylesheet" href="/static/fontawesome-free/css/solid.css" />
     <link rel="stylesheet" href="/static/fontawesome-free/css/fontawesome.css" />
+    <link rel="stylesheet" href="/static/fullcalendar/core/main.css" />
+    <link rel="stylesheet" href="/static/fullcalendar/daygrid/main.css" />
+    <link rel="stylesheet" href="/static/fullcalendar/timeline/main.css" />
+    <link rel="stylesheet" href="/static/fullcalendar/resource-timeline/main.css" />
     <link rel="stylesheet" href="/static/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="/static/datatables/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="/static/cropperjs/cropper.css" />
@@ -57,8 +61,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if visitorsPage}}active{{/if}}" href="/{{userRole}}/visitors/visitors">
-                  <i class="img img-administration"></i> Visitor Management Extended
+                <a class="nav-link {{#if visitorsPage}}active{{/if}}" href="/{{userRole}}/visitors/current_visitors">
+                  <i class="img img-administration"></i> Visitor Management
                 </a>
               </li>
               <li class="nav-item">
@@ -72,7 +76,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if referralsPage}}active{{/if}}" href="/{{userRole}}/referrals/referrals">
+                <a class="nav-link {{#if referralsPage}}active{{/if}}" href="/{{userRole}}/referrals/eduauthority_booking">
                   <i class="img img-administration"></i> Student Referral
                 </a>
               </li>
@@ -171,7 +175,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if visitorsPage}}active{{/if}}" href="/{{userRole}}/visitors/visitors">
+                <a class="nav-link {{#if visitorsPage}}active{{/if}}" href="/{{userRole}}/visitors/current_visitors">
                   <i class="img img-administration"></i> Visitor Management
                 </a>
               </li>
@@ -186,7 +190,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if referralsPage}}active{{/if}}" href="/{{userRole}}/referrals/referrals">
+                <a class="nav-link {{#if referralsPage}}active{{/if}}" href="/{{userRole}}/referrals/eduauthority_booking">
                   <i class="img img-administration"></i> Student Referral
                 </a>
               </li>             
@@ -203,6 +207,12 @@
     <script src="/static/bootstrap/js/bootstrap.js"></script>
     <script src="/static/bootstrap-select/js/bootstrap-select.js"></script>
     <script src="/static/moment/moment.js"></script>
+    <script src="/static/fullcalendar/core/main.js"></script>
+    <script src="/static/fullcalendar/interaction/main.js"></script>
+    <script src="/static/fullcalendar/daygrid/main.js"></script>
+    <script src="/static/fullcalendar/timeline/main.js"></script>
+    <script src="/static/fullcalendar/resource-common/main.js"></script>
+    <script src="/static/fullcalendar/resource-timeline/main.js"></script>
     <script src="/static/daterangepicker/daterangepicker.js"></script>
     <script src="/static/datatables/js/jquery.dataTables.js"></script>
     <script src="/static/autocomplete.js/autocomplete.jquery.js"></script>

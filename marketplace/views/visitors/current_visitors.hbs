@@ -116,7 +116,7 @@
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <button class="btn btn-primary btn-checkin" type="button" data-toggle="dropdown">
-                    Check In
+                    New Check In
                   </button>
                 </li>
               </ul>
@@ -277,6 +277,9 @@
             <label class="form-label" for="txtName">Visitor Name</label>
             <div class="form-group">
               <input class="form-control form-input input-autocomplete" type="text" id="txtName">
+              <div class="form-text text-danger d-none">
+                <i class="fas fa-exclamation"></i> The visitor is blacklisted.
+              </div>
             </div>
           </div>
           <div class="form-group">

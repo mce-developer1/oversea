@@ -8,6 +8,13 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
+    "@fullcalendar/core": "^4.2.0",
+    "@fullcalendar/daygrid": "^4.2.0",
+    "@fullcalendar/interaction": "^4.2.0",
+    "@fullcalendar/resource-common": "^4.2.0",
+    "@fullcalendar/resource-timeline": "^4.2.0",
+    "@fullcalendar/timegrid": "^4.2.0",
+    "@fullcalendar/timeline": "^4.2.0",
     "algoliasearch": "^3.32.0",
     "autocomplete.js": "^0.36.0",
     "axios": "^0.18.0",

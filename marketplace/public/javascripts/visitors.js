@@ -106,11 +106,11 @@ $(document).ready(function() {
           targets: 3
         },
         {
-          width: 140,
+          width: 150,
           targets: 4
         },
         {
-          width: 140,
+          width: 150,
           targets: 5
         },
         {
@@ -150,8 +150,7 @@ $(document).ready(function() {
       $('#txtIdentification').attr('readonly', true)
         .val('A6543217Z');
       $('#selCategory').attr('disabled', true)
-        .selectpicker('val', 'Parents')
-        .selectpicker('refresh');
+        .selectpicker('val', 'Parents');
       $('#txtCompany').attr('readonly', true).val('');
       $('#txtMobile').attr('readonly', true)
         .val('98765432');
@@ -163,20 +162,24 @@ $(document).ready(function() {
         return (record.name === name);
       });
 
+      if (name === 'Arya Suman') {
+        $('.modal-visitor-checkin .form-checkin-visitor .text-danger').removeClass('d-none');
+      } else {
+        $('.modal-visitor-checkin .form-checkin-visitor .text-danger').removeClass('d-none');
+      }
+
       if (result.length > 0) {
         $('#txtIdentification').attr('readonly', true)
           .val('A6543217Z');
         $('#selCategory').attr('disabled', true)
-          .selectpicker('val', 'Parents')
-          .selectpicker('refresh');
+          .selectpicker('val', 'Parents');
         $('#txtCompany').attr('readonly', true).val('');
         $('#txtMobile').attr('readonly', true)
           .val('98765432');
       } else {
         $('#txtIdentification').removeAttr('readonly').val('');
         $('#selCategory').removeAttr('disabled')
-          .selectpicker('val', 'Contractors')
-          .selectpicker('refresh');
+          .selectpicker('val', 'Contractors');
         $('#txtCompany').removeAttr('readonly').val('');
         $('#txtMobile').removeAttr('readonly').val('');
       }
@@ -417,11 +420,11 @@ $(document).ready(function() {
           targets: 3
         },
         {
-          width: 140,
+          width: 150,
           targets: 4
         },
         {
-          width: 140,
+          width: 150,
           targets: 5
         },
         {

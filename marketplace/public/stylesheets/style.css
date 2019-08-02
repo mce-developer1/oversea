@@ -245,7 +245,29 @@ a:focus {
 }
 
 .popover {
+  border-radius: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.popover .popover-body .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  padding: 0;
+  width: 16rem;
+}
+.popover .popover-body .navbar .navbar-text {
+  font-weight: 500;
+}
+.popover .popover-body .navbar .navbar-nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .popover .popover-body .assignment-period {
   margin-bottom: 0.25rem;
@@ -1898,6 +1920,36 @@ select.form-control {
 .tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary):not(:disabled):not(.disabled):hover, .tox-dialog-wrap .tox-dialog .tox-dialog__footer .tox-button:not(.tox-button--secondary):not(:disabled):not(.disabled):active {
   background-color: #d65600 !important;
   border-color: #d65600 !important;
+}
+
+.calendar .fc-license-message {
+  z-index: 1000 !important;
+}
+.calendar .fc-event {
+  color: #ffffff !important;
+}
+.calendar .fc-event:hover {
+  color: #ffffff !important;
+}
+.calendar .fc-button {
+  border-radius: 0;
+}
+.calendar .fc-button.fc-button-primary {
+  background-color: transparent;
+  border-color: #6c757d;
+  color: #6c757d;
+}
+.calendar .fc-button.fc-button-primary:not(:disabled):not(.disabled):hover, .calendar .fc-button.fc-button-primary:not(:disabled):not(.disabled):active {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+.calendar .fc-button.fc-button-primary.fc-resourceTimelineDay-button.fc-button-active, .calendar .fc-button.fc-button-primary.fc-resourceTimelineWeek-button.fc-button-active {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.calendar-event .event-header {
+  margin-bottom: 0.5rem;
 }
 
 .daterangepicker {
@@ -4650,6 +4702,329 @@ select.form-control {
     margin-bottom: 0;
   }
   .modal-category-edit .modal-dialog .modal-body .form-edit-category .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+.app-content.page-referrals .article-eduauthority-booking,
+.app-content.page-referrals .article-eduauthority-bookings,
+.app-content.page-referrals .article-eduauthority-report {
+  padding: 0 1.5rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header,
+.app-content.page-referrals .article-eduauthority-bookings .article-header,
+.app-content.page-referrals .article-eduauthority-report .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #e9ecef;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav:first-child,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav:first-child,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+  font-size: 1.25rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+  font-size: 1.25rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.25rem;
+  width: 12rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas {
+  font-size: 1.5rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+  font-size: 1.25rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar {
+  margin: 0;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+  margin-left: 0.5rem;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-body .calendar,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .calendar,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .calendar {
+  padding: 1rem 0;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-body .table,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .table,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+}
+.app-content.page-referrals .article-eduauthority-booking .article-content .article-body .table a,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .table a,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table a {
+  color: #212529;
+  word-break: break-word;
+}
+@media (max-width: 991.98px) {
+  .app-content.page-referrals .article-eduauthority-booking .article-header,
+.app-content.page-referrals .article-eduauthority-bookings .article-header,
+.app-content.page-referrals .article-eduauthority-report .article-header {
+    margin: 0 -0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    z-index: 970;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav.nav-main {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-divider {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item-drawer {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-content,
+.app-content.page-referrals .article-eduauthority-bookings .article-content,
+.app-content.page-referrals .article-eduauthority-report .article-content {
+    margin: 0 -0.5rem;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-content .article-body,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav:first-child,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav:first-child,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-referrals .article-eduauthority-booking .article-header,
+.app-content.page-referrals .article-eduauthority-bookings .article-header,
+.app-content.page-referrals .article-eduauthority-report .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    z-index: 970;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item-submodule {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .form-control {
+    width: 24rem;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar {
+    height: calc(100vh - 13rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+  }
+  .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .table-head,
+.app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .table-head,
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+    z-index: 950;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-booking-create .modal-dialog .modal-body .form-create-booking .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-booking-create .modal-dialog .modal-body .form-create-booking .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-booking-create .modal-dialog .modal-body .form-create-booking .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-booking-edit .modal-dialog .modal-body .form-edit-booking .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-booking-edit .modal-dialog .modal-body .form-edit-booking .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-booking-edit .modal-dialog .modal-body .form-edit-booking .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
   }

@@ -124,6 +124,83 @@ router.get('/:userRole/visitors/categories', function(req, res, next) {
   });
 });
 
+/* GET education authority booking page. */
+router.get('/:userRole/referrals/eduauthority_booking', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('referrals/eduauthority_booking', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'referrals',
+    loggedIn: true,
+    referralsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+
+/* GET education authority bookings page. */
+router.get('/:userRole/referrals/bookings', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('referrals/bookings', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'referrals',
+    loggedIn: true,
+    referralsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET education authority report page. */
+router.get('/:userRole/referrals/report', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('referrals/report', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'referrals',
+    loggedIn: true,
+    referralsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET education authority setup page. */
+router.get('/:userRole/referrals/eduauthorities', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('referrals/eduauthorities', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'referrals',
+    loggedIn: true,
+    referralsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET 404 error page. */
 router.get('*', function(req, res) {
   var url = req.originalUrl;
