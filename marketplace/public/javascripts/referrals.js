@@ -75,6 +75,7 @@ $(document).ready(function() {
   var $container = $('.article-eduauthority-booking');
   if ($container.length === 0) $container = $('.article-eduauthority-bookings');
   if ($container.length === 0) $container = $('.article-eduauthority-report');
+  if ($container.length === 0) $container = $('.article-eduauthorities');
 
   function updateActionButtonsStyles() {
     var visitorSelected = ($container.find('.table tr input[type="radio"]:checked').length > 0);
@@ -372,6 +373,62 @@ $(document).ready(function() {
       headerCallback: function( thead, data, start, end, display ) {
         $(thead).closest('.dataTables_scrollHead').css('position', '');
       }
+    });
+  }
+
+  if ($container.hasClass('article-eduauthorities')) {
+    var dataTable = $('.table').DataTable({
+      scrollY: '100%',
+      scrollX: true,
+      paging: false,
+      language: {
+        infoEmpty: 'Oops, nothing to see here!',
+      },
+      columnDefs: [
+        {
+          orderable: false,
+          width: 24,
+          targets: 0
+        },
+        {
+          width: 180,
+          targets: 1
+        }
+      ],
+      dom: 'rt<"bottom">',
+      order: [[1, 'asc']],
+      headerCallback: function( thead, data, start, end, display ) {
+        $(thead).closest('.dataTables_scrollHead').css('position', '');
+      }
+    });
+
+    $container.find('.table tr input[type="radio"]').on('change', function(e) {
+      var $row = $(this).closest('tr');
+      $container.find('.table tr').removeClass('table-active');
+      $row.addClass('table-active');
+      updateActionButtonsStyles();
+    });
+
+    $container.find('.table tr').on('click', function(e) {
+      if ($(e.target).hasClass('.custom-control')) return;
+      if ($(e.target).closest('.custom-control').length > 0) return;
+      $container.find('.table tr .custom-control-input').prop('checked', false);
+      $container.find('.table tr').removeClass('table-active');
+      $(this).find('.custom-control-input').prop('checked', true);
+      $(this).addClass('table-active');
+      updateActionButtonsStyles();
+    });
+
+    $container.find('.article-body .navbar .btn-create').on('click', function(e) {
+      $('.modal-eduauthority-create').modal('show');
+    });
+
+    $container.find('.article-body .navbar .btn-edit').on('click', function(e) {
+      $('.modal-eduauthority-edit').modal('show');
+    });
+
+    $container.find('.article-body .navbar .btn-delete').on('click', function(e) {
+      $('.modal-eduauthority-delete-confirmation').modal('show');
     });
   }
 });

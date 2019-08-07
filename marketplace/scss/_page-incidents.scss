@@ -1,9 +1,9 @@
 .app-content {
-  &.page-referrals {
-    .article-eduauthority-booking,
-    .article-eduauthority-bookings,
-    .article-eduauthority-report,
-    .article-eduauthorities {
+  &.page-incidents {
+    .article-student-incidents,
+    .article-incidents-report,
+    .article-incident-categories,
+    .article-notification-rules {
       padding: 0 1.5rem;
 
       .article-header {
@@ -50,7 +50,7 @@
 
               &.nav-item-submodule {
                 .btn-light {
-                  font-size: 1.25rem;
+                  font-size: 1rem;
 
                   .fas {
                     font-size: 1.25rem;
@@ -63,8 +63,8 @@
               }
 
               .item-text {
-                font-size: 1.25rem;
-                width: 12rem;
+                font-size: 1.05rem;
+                width: 18rem;
               }
             }
 
@@ -112,10 +112,6 @@
                 margin-left: .5rem;
               }
             }
-          }
-
-          .calendar {
-            padding: 1rem 0;
           }
 
           .table {
@@ -254,11 +250,21 @@
   }
 }
 
-.modal-booking-create {
+.modal-student-incident-create {
   .modal-dialog {
     .modal-body {
+      .form-create-student-incident {
+        .form-group {
+          .file-upload {
+            margin-bottom: 0;
+            min-width: 100%;
+            width: 100%;
+          }
+        }
+      }
+
       @media (min-width: 768px) {
-        .form-create-booking {
+        .form-create-student-incident {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);
@@ -280,63 +286,21 @@
   }
 }
 
-.modal-booking-edit {
+.modal-student-incident-edit {
   .modal-dialog {
     .modal-body {
-      @media (min-width: 768px) {
-        .form-edit-booking {
-          .form-group {
-            @include display-flex(row);
-            @include align-items(flex-start);
-
-            .form-group {
-              @include display-flex(column);
-              @include flex-grow(1);
-              margin-bottom: 0;
-            }
-
-            .form-label {
-              min-width: 12rem;
-              width: 12rem;
-            }
+      .form-create-student-incident {
+        .form-group {
+          .file-upload {
+            margin-bottom: 0;
+            min-width: 100%;
+            width: 100%;
           }
         }
       }
-    }
-  }
-}
-
-.modal-eduauthority-create {
-  .modal-dialog {
-    .modal-body {
+      
       @media (min-width: 768px) {
-        .form-create-eduauthority {
-          .form-group {
-            @include display-flex(row);
-            @include align-items(flex-start);
-
-            .form-group {
-              @include display-flex(column);
-              @include flex-grow(1);
-              margin-bottom: 0;
-            }
-
-            .form-label {
-              min-width: 12rem;
-              width: 12rem;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.modal-eduauthority-edit {
-  .modal-dialog {
-    .modal-body {
-      @media (min-width: 768px) {
-        .form-edit-eduauthority {
+        .form-edit-student-incident {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);

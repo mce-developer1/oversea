@@ -1,9 +1,9 @@
 .app-content {
-  &.page-referrals {
-    .article-eduauthority-booking,
-    .article-eduauthority-bookings,
-    .article-eduauthority-report,
-    .article-eduauthorities {
+  &.page-attendances {
+    .article-attendance-sessions,
+    .article-long-absences,
+    .article-attendance-report,
+    .article-notification-rules {
       padding: 0 1.5rem;
 
       .article-header {
@@ -64,7 +64,7 @@
 
               .item-text {
                 font-size: 1.25rem;
-                width: 12rem;
+                width: 18rem;
               }
             }
 
@@ -76,6 +76,7 @@
               .fas {
                 font-size: 1.5rem;
 
+                &.fa-file-export,
                 &.fa-filter {
                   font-size: 1.25rem;
                 }
@@ -123,8 +124,10 @@
             margin-bottom: 0;
 
             a {
-              color: $gray-900;
-              word-break: break-word; 
+              &:not(.dropdown-item) {
+                color: $gray-900;
+                word-break: break-word;
+              } 
             }
           }
         }
@@ -251,14 +254,274 @@
         }
       }
     }
+
+    .article-attendance-taking {
+      padding: 0 1.5rem;
+
+      .article-header {
+        height: 4rem;
+        max-height: 4rem;
+
+        .navbar {
+          @include display-flex(row);
+          @include align-items(center);
+          @include flex-grow(1);
+          @include flex-wrap(nowrap);
+          background-color: $gray-200;
+          height: 4rem;
+          max-height: 4rem;
+          margin: 0 -1.5rem;
+          padding: .75rem 1.5rem;
+
+          .navbar-nav {
+            @include flex-direction(row);
+
+            &:first-child {
+              margin-right: 1rem;
+              width: 16.5rem;
+            }
+
+            &.nav-main {
+              @include flex-grow(1);
+              position: relative;
+            }
+
+            .nav-item {
+              @include display-flex(row);
+              @include align-items(center);
+
+              &.nav-item-drawer {
+                .btn-light {
+                  padding: .25rem;
+
+                  img {
+                    width: 3rem;
+                  }
+                }  
+              }
+
+              &.nav-item-submodule {
+                .btn-light {
+                  font-size: 1.25rem;
+
+                  .fas {
+                    font-size: 1.25rem;
+                  }
+                }
+              }
+
+              .btn-light {
+                margin: 0 .25rem;
+              }
+
+              .item-text {
+                font-size: 1.25rem;
+                width: 16rem;
+              }
+            }
+
+            .btn-light {
+              &.btn-more {
+                padding: .325rem 1rem;
+              }
+
+              .fas {
+                font-size: 1.5rem;
+
+                &.fa-file-export,
+                &.fa-filter {
+                  font-size: 1.25rem;
+                }
+
+                &.fa-arrow-left {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .article-content {
+        .article-sidebar {
+          margin: 0;
+        }
+
+        .article-body {
+          .navbar {
+            @include justify-content(space-between);
+            padding: .75rem 0;
+
+            &.navbar-pagination {
+              @include justify-content(flex-end);
+            }
+
+            .navbar-nav {
+              .btn-primary {
+                margin-left: 1rem;
+              }
+
+              .btn-outline-secondary {
+                margin-left: .5rem;
+              }
+            }
+          }
+
+          .calendar {
+            padding: 1rem 0;
+          }
+
+          .table {
+            @include user-select(none);
+            margin-bottom: 0;
+
+            a {
+              &:not(.dropdown-item) {
+                color: $gray-900;
+                word-break: break-word;
+              } 
+            }
+          }
+        }
+      }
+
+      @media (max-width: 991.98px) {
+        .article-header {
+          margin: 0 -.5rem;
+          position: -webkit-sticky;
+          position: sticky;
+          top: 5rem;
+          z-index: 970;
+
+          .navbar {
+            @include justify-content(space-between);
+            padding: 1rem;
+
+            .navbar-nav {
+              &.nav-main {
+                display: none;
+              }
+
+              .input-group {
+                .input-group-prepend {
+                  .btn-search {
+                    display: none;
+                  }
+                }
+
+                .form-control {
+                  padding-left: 3.5rem;
+                }
+              }
+            }
+          }
+        }
+
+        .article-content {
+          margin: 0 -.5rem;
+
+          .article-sidebar {
+            display: none;
+          }
+
+          .article-body {
+            margin: 0;
+          }
+        }
+      }
+
+      @media (max-width: 576px) {
+        .article-header {
+          .navbar {
+            .navbar-nav {
+              &:first-child {
+                width: 14rem;
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 992px) {
+        .article-header {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 6rem;
+          z-index: 970;
+
+          .navbar {
+            .navbar-nav {
+              &:not(.nav-main) {
+                .btn-search {
+                  display: none;
+                }
+              }
+
+              .input-group {
+                .input-group-prepend {
+                  .btn-back {
+                    display: none;
+                  }
+                }
+
+                .form-control {
+                  width: 24rem;
+                }
+              }
+            }
+          }
+        }
+
+        .article-content {
+          .article-sidebar {
+            height: calc(100vh - 13rem);
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: .5rem 0;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10rem;
+          }
+
+          .article-body {
+            .table-head {
+              position: -webkit-sticky;
+              position: sticky;
+              top: 10rem;
+              z-index: 950;
+            }
+          }
+        }
+      }
+    }
+
+    .article-attendance-taking {
+      .article-body {
+        max-width: 76rem;
+
+        .navbar {
+          .form-inline {
+            .form-group {
+              &+.form-group {
+                margin-left: 1rem;
+              }
+
+              .form-label {
+                margin-right: .5rem;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-.modal-booking-create {
+.modal-attendance-status-update {
   .modal-dialog {
     .modal-body {
       @media (min-width: 768px) {
-        .form-create-booking {
+        .form-update-attendance-status {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);
@@ -280,11 +543,11 @@
   }
 }
 
-.modal-booking-edit {
+.modal-long-absence-taking {
   .modal-dialog {
     .modal-body {
       @media (min-width: 768px) {
-        .form-edit-booking {
+        .form-taking-long-absence {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);
@@ -306,11 +569,11 @@
   }
 }
 
-.modal-eduauthority-create {
+.modal-notification-rule-create {
   .modal-dialog {
     .modal-body {
       @media (min-width: 768px) {
-        .form-create-eduauthority {
+        .form-create-notification-rule {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);
@@ -332,11 +595,11 @@
   }
 }
 
-.modal-eduauthority-edit {
+.modal-notification-rule-edit {
   .modal-dialog {
     .modal-body {
       @media (min-width: 768px) {
-        .form-edit-eduauthority {
+        .form-edit-notification-rule {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);

@@ -185,9 +185,13 @@ a:focus {
   margin: 0.375rem 0;
 }
 .form-group .form-check,
-.form-group .custom-checkbox {
-  margin-bottom: 0.5rem;
+.form-group .custom-checkbox,
+.form-group .form-radio,
+.form-group .custom-radio {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
 }
+.form-group .radio-group,
 .form-group .checkbox-group {
   display: -ms-flexbox;
   display: flex;
@@ -196,10 +200,18 @@ a:focus {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.form-group .radio-group .form-check,
+.form-group .radio-group .custom-checkbox,
+.form-group .radio-group .form-radio,
+.form-group .radio-group .custom-radio,
 .form-group .checkbox-group .form-check,
-.form-group .checkbox-group .custom-checkbox {
+.form-group .checkbox-group .custom-checkbox,
+.form-group .checkbox-group .form-radio,
+.form-group .checkbox-group .custom-radio {
+  margin-top: 0.375rem;
   margin-right: 1rem;
-  min-width: 8rem;
+  margin-bottom: 0.375rem;
+  min-width: 12rem;
 }
 
 .form-control-group {
@@ -772,6 +784,10 @@ a:focus {
   font-size: 1.125rem;
   margin-left: 0.25rem;
 }
+.table thead th .custom-checkbox .custom-control-label::after {
+  height: 1.25rem;
+  width: 1.25rem;
+}
 .table tbody tr:hover {
   background-color: #f8f9fa;
 }
@@ -782,8 +798,15 @@ a:focus {
 .table tbody tr td {
   padding: 1rem;
 }
+.table tbody tr td .custom-checkbox .custom-control-label::after {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+.table tbody tr td .form-input {
+  margin: -0.25rem 0;
+}
 .table tbody tr td .dropdown {
-  margin: -0.5rem 0;
+  margin: -0.25rem 0;
 }
 .table tbody tr td .dropdown .btn-light.dropdown-toggle {
   margin: 0;
@@ -1144,6 +1167,17 @@ select.form-control {
   flex-wrap: wrap;
   margin-top: 1.5rem;
   max-width: 100%;
+}
+.file-upload .file-group.file-group-list {
+  min-width: 100%;
+  width: 100%;
+}
+.file-upload .file-group.file-group-list .file-preview {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.file-upload .file-group.file-group-list .file-preview .file-details {
+  margin-top: 0.5rem;
 }
 .file-upload .file-group .file-preview {
   display: -ms-flexbox;
@@ -1721,6 +1755,14 @@ select.form-control {
 }
 .dataTables_wrapper .dataTables_scrollBody .dataTable thead tr th.sorting_asc:after, .dataTables_wrapper .dataTables_scrollBody .dataTable thead tr th.sorting_desc:after {
   display: none;
+}
+.dataTables_wrapper .dataTables_scrollBody .dataTable tbody th,
+.dataTables_wrapper .dataTables_scrollBody .dataTable tbody td {
+  vertical-align: top !important;
+}
+.dataTables_wrapper .dataTables_scrollBody .dataTable tbody th .dropdown .btn-light.dropdown-toggle,
+.dataTables_wrapper .dataTables_scrollBody .dataTable tbody td .dropdown .btn-light.dropdown-toggle {
+  background-color: #ffffff;
 }
 .dataTables_wrapper .dataTables_scrollBody .dataTable tbody th .btn-light,
 .dataTables_wrapper .dataTables_scrollBody .dataTable tbody td .btn-light {
@@ -4219,20 +4261,23 @@ select.form-control {
 .app-content.page-visitors .article-current-visitors,
 .app-content.page-visitors .article-school-visitors,
 .app-content.page-visitors .article-visitors-report,
-.app-content.page-visitors .article-visitor-categories {
+.app-content.page-visitors .article-visitor-categories,
+.app-content.page-visitors .article-notification-rules {
   padding: 0 1.5rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header,
 .app-content.page-visitors .article-school-visitors .article-header,
 .app-content.page-visitors .article-visitors-report .article-header,
-.app-content.page-visitors .article-visitor-categories .article-header {
+.app-content.page-visitors .article-visitor-categories .article-header,
+.app-content.page-visitors .article-notification-rules .article-header {
   height: 4rem;
   max-height: 4rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar,
 .app-content.page-visitors .article-school-visitors .article-header .navbar,
 .app-content.page-visitors .article-visitors-report .article-header .navbar,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar,
+.app-content.page-visitors .article-notification-rules .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4252,21 +4297,24 @@ select.form-control {
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav:first-child,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav:first-child,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav:first-child,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav:first-child {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav:first-child,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
   width: 16.5rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav.nav-main,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav.nav-main {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
@@ -4274,7 +4322,8 @@ select.form-control {
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4285,74 +4334,86 @@ select.form-control {
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
   padding: 0.25rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
   width: 3rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
   font-size: 1.25rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item .btn-light,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item .btn-light {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item .item-text,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item .item-text,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item .item-text,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 12rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .btn-light.btn-more,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light.btn-more {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .btn-light .fas,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light .fas {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas {
   font-size: 1.5rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
   font-size: 1.25rem;
 }
 .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
 .app-content.page-visitors .article-current-visitors .article-content .article-sidebar,
 .app-content.page-visitors .article-school-visitors .article-content .article-sidebar,
 .app-content.page-visitors .article-visitors-report .article-content .article-sidebar,
-.app-content.page-visitors .article-visitor-categories .article-content .article-sidebar {
+.app-content.page-visitors .article-visitor-categories .article-content .article-sidebar,
+.app-content.page-visitors .article-notification-rules .article-content .article-sidebar {
   margin: 0;
 }
 .app-content.page-visitors .article-current-visitors .article-content .article-body .navbar,
 .app-content.page-visitors .article-school-visitors .article-content .article-body .navbar,
 .app-content.page-visitors .article-visitors-report .article-content .article-body .navbar,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar,
+.app-content.page-visitors .article-notification-rules .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 0.75rem 0;
@@ -4360,26 +4421,30 @@ select.form-control {
 .app-content.page-visitors .article-current-visitors .article-content .article-body .navbar.navbar-pagination,
 .app-content.page-visitors .article-school-visitors .article-content .article-body .navbar.navbar-pagination,
 .app-content.page-visitors .article-visitors-report .article-content .article-body .navbar.navbar-pagination,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar.navbar-pagination {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-visitors .article-notification-rules .article-content .article-body .navbar.navbar-pagination {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
 .app-content.page-visitors .article-current-visitors .article-content .article-body .navbar .navbar-nav .btn-primary,
 .app-content.page-visitors .article-school-visitors .article-content .article-body .navbar .navbar-nav .btn-primary,
 .app-content.page-visitors .article-visitors-report .article-content .article-body .navbar .navbar-nav .btn-primary,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar .navbar-nav .btn-primary {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-visitors .article-notification-rules .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
 .app-content.page-visitors .article-current-visitors .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
 .app-content.page-visitors .article-school-visitors .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
 .app-content.page-visitors .article-visitors-report .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-visitors .article-notification-rules .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
   margin-left: 0.5rem;
 }
 .app-content.page-visitors .article-current-visitors .article-content .article-body .table,
 .app-content.page-visitors .article-school-visitors .article-content .article-body .table,
 .app-content.page-visitors .article-visitors-report .article-content .article-body .table,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body .table {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body .table,
+.app-content.page-visitors .article-notification-rules .article-content .article-body .table {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -4391,7 +4456,8 @@ select.form-control {
 .app-content.page-visitors .article-current-visitors .article-content .article-body .table a,
 .app-content.page-visitors .article-school-visitors .article-content .article-body .table a,
 .app-content.page-visitors .article-visitors-report .article-content .article-body .table a,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body .table a {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body .table a,
+.app-content.page-visitors .article-notification-rules .article-content .article-body .table a {
   color: #212529;
   word-break: break-word;
 }
@@ -4399,7 +4465,8 @@ select.form-control {
   .app-content.page-visitors .article-current-visitors .article-header,
 .app-content.page-visitors .article-school-visitors .article-header,
 .app-content.page-visitors .article-visitors-report .article-header,
-.app-content.page-visitors .article-visitor-categories .article-header {
+.app-content.page-visitors .article-visitor-categories .article-header,
+.app-content.page-visitors .article-notification-rules .article-header {
     margin: 0 -0.5rem;
     position: -webkit-sticky;
     position: sticky;
@@ -4409,7 +4476,8 @@ select.form-control {
   .app-content.page-visitors .article-current-visitors .article-header .navbar,
 .app-content.page-visitors .article-school-visitors .article-header .navbar,
 .app-content.page-visitors .article-visitors-report .article-header .navbar,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar,
+.app-content.page-visitors .article-notification-rules .article-header .navbar {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     padding: 1rem;
@@ -4417,49 +4485,57 @@ select.form-control {
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav.nav-main,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav.nav-main {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav.nav-main {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-divider,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-divider,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-divider,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-divider {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-divider {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item-drawer,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item-drawer,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item-drawer,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item-drawer {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item-drawer {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .input-group .form-control,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .input-group .form-control,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .input-group .form-control,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .form-control {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .input-group .form-control {
     padding-left: 3.5rem;
   }
   .app-content.page-visitors .article-current-visitors .article-content,
 .app-content.page-visitors .article-school-visitors .article-content,
 .app-content.page-visitors .article-visitors-report .article-content,
-.app-content.page-visitors .article-visitor-categories .article-content {
+.app-content.page-visitors .article-visitor-categories .article-content,
+.app-content.page-visitors .article-notification-rules .article-content {
     margin: 0 -0.5rem;
   }
   .app-content.page-visitors .article-current-visitors .article-content .article-sidebar,
 .app-content.page-visitors .article-school-visitors .article-content .article-sidebar,
 .app-content.page-visitors .article-visitors-report .article-content .article-sidebar,
-.app-content.page-visitors .article-visitor-categories .article-content .article-sidebar {
+.app-content.page-visitors .article-visitor-categories .article-content .article-sidebar,
+.app-content.page-visitors .article-notification-rules .article-content .article-sidebar {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-content .article-body,
 .app-content.page-visitors .article-school-visitors .article-content .article-body,
 .app-content.page-visitors .article-visitors-report .article-content .article-body,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body,
+.app-content.page-visitors .article-notification-rules .article-content .article-body {
     margin: 0;
   }
 }
@@ -4467,7 +4543,8 @@ select.form-control {
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav:first-child,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav:first-child,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav:first-child,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav:first-child {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav:first-child,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
   }
 }
@@ -4475,7 +4552,8 @@ select.form-control {
   .app-content.page-visitors .article-current-visitors .article-header,
 .app-content.page-visitors .article-school-visitors .article-header,
 .app-content.page-visitors .article-visitors-report .article-header,
-.app-content.page-visitors .article-visitor-categories .article-header {
+.app-content.page-visitors .article-visitor-categories .article-header,
+.app-content.page-visitors .article-notification-rules .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
@@ -4484,31 +4562,36 @@ select.form-control {
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .nav-item-submodule,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .nav-item-submodule,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .nav-item-submodule,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item-submodule {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
     display: none;
   }
   .app-content.page-visitors .article-current-visitors .article-header .navbar .navbar-nav .input-group .form-control,
 .app-content.page-visitors .article-school-visitors .article-header .navbar .navbar-nav .input-group .form-control,
 .app-content.page-visitors .article-visitors-report .article-header .navbar .navbar-nav .input-group .form-control,
-.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .form-control {
+.app-content.page-visitors .article-visitor-categories .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-visitors .article-notification-rules .article-header .navbar .navbar-nav .input-group .form-control {
     width: 24rem;
   }
   .app-content.page-visitors .article-current-visitors .article-content .article-sidebar,
 .app-content.page-visitors .article-school-visitors .article-content .article-sidebar,
 .app-content.page-visitors .article-visitors-report .article-content .article-sidebar,
-.app-content.page-visitors .article-visitor-categories .article-content .article-sidebar {
+.app-content.page-visitors .article-visitor-categories .article-content .article-sidebar,
+.app-content.page-visitors .article-notification-rules .article-content .article-sidebar {
     height: calc(100vh - 13rem);
     overflow-x: hidden;
     overflow-y: auto;
@@ -4520,7 +4603,8 @@ select.form-control {
   .app-content.page-visitors .article-current-visitors .article-content .article-body .table-head,
 .app-content.page-visitors .article-school-visitors .article-content .article-body .table-head,
 .app-content.page-visitors .article-visitors-report .article-content .article-body .table-head,
-.app-content.page-visitors .article-visitor-categories .article-content .article-body .table-head {
+.app-content.page-visitors .article-visitor-categories .article-content .article-body .table-head,
+.app-content.page-visitors .article-notification-rules .article-content .article-body .table-head {
     position: -webkit-sticky;
     position: sticky;
     top: 10rem;
@@ -4709,18 +4793,21 @@ select.form-control {
 
 .app-content.page-referrals .article-eduauthority-booking,
 .app-content.page-referrals .article-eduauthority-bookings,
-.app-content.page-referrals .article-eduauthority-report {
+.app-content.page-referrals .article-eduauthority-report,
+.app-content.page-referrals .article-eduauthorities {
   padding: 0 1.5rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header,
 .app-content.page-referrals .article-eduauthority-bookings .article-header,
-.app-content.page-referrals .article-eduauthority-report .article-header {
+.app-content.page-referrals .article-eduauthority-report .article-header,
+.app-content.page-referrals .article-eduauthorities .article-header {
   height: 4rem;
   max-height: 4rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4739,26 +4826,30 @@ select.form-control {
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav:first-child,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav:first-child,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:first-child {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:first-child,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
   width: 16.5rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav.nav-main,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav.nav-main {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -4768,91 +4859,108 @@ select.form-control {
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
   padding: 0.25rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
   width: 3rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
   font-size: 1.25rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item .btn-light,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item .btn-light {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item .item-text,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item .item-text,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 12rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light.btn-more,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light.btn-more,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light.btn-more {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light .fas,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light .fas,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .btn-light .fas {
   font-size: 1.5rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
   font-size: 1.25rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-sidebar,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-sidebar,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthorities .article-content .article-sidebar {
   margin: 0;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 0.75rem 0;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar.navbar-pagination,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar.navbar-pagination,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar.navbar-pagination {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .navbar.navbar-pagination {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar .navbar-nav .btn-primary,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar .navbar-nav .btn-primary,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar .navbar-nav .btn-primary {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
   margin-left: 0.5rem;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .calendar,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .calendar,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .calendar {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .calendar,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .calendar {
   padding: 1rem 0;
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .table,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .table,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .table {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -4863,14 +4971,16 @@ select.form-control {
 }
 .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .table a,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .table a,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table a {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table a,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .table a {
   color: #212529;
   word-break: break-word;
 }
 @media (max-width: 991.98px) {
   .app-content.page-referrals .article-eduauthority-booking .article-header,
 .app-content.page-referrals .article-eduauthority-bookings .article-header,
-.app-content.page-referrals .article-eduauthority-report .article-header {
+.app-content.page-referrals .article-eduauthority-report .article-header,
+.app-content.page-referrals .article-eduauthorities .article-header {
     margin: 0 -0.5rem;
     position: -webkit-sticky;
     position: sticky;
@@ -4879,63 +4989,74 @@ select.form-control {
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     padding: 1rem;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav.nav-main,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav.nav-main,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav.nav-main {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav.nav-main {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-divider,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-divider,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-divider {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-divider {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item-drawer,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item-drawer,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item-drawer {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item-drawer {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .form-control,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .form-control,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .form-control {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .input-group .form-control {
     padding-left: 3.5rem;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-content,
 .app-content.page-referrals .article-eduauthority-bookings .article-content,
-.app-content.page-referrals .article-eduauthority-report .article-content {
+.app-content.page-referrals .article-eduauthority-report .article-content,
+.app-content.page-referrals .article-eduauthorities .article-content {
     margin: 0 -0.5rem;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-content .article-sidebar,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-sidebar,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthorities .article-content .article-sidebar {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-content .article-body,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body {
     margin: 0;
   }
 }
 @media (max-width: 576px) {
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav:first-child,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav:first-child,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:first-child {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:first-child,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
   }
 }
 @media (min-width: 992px) {
   .app-content.page-referrals .article-eduauthority-booking .article-header,
 .app-content.page-referrals .article-eduauthority-bookings .article-header,
-.app-content.page-referrals .article-eduauthority-report .article-header {
+.app-content.page-referrals .article-eduauthority-report .article-header,
+.app-content.page-referrals .article-eduauthorities .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
@@ -4943,27 +5064,32 @@ select.form-control {
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .nav-item-submodule,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .nav-item-submodule,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item-submodule {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
     display: none;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-header .navbar .navbar-nav .input-group .form-control,
 .app-content.page-referrals .article-eduauthority-bookings .article-header .navbar .navbar-nav .input-group .form-control,
-.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .form-control {
+.app-content.page-referrals .article-eduauthority-report .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-referrals .article-eduauthorities .article-header .navbar .navbar-nav .input-group .form-control {
     width: 24rem;
   }
   .app-content.page-referrals .article-eduauthority-booking .article-content .article-sidebar,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-sidebar,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-sidebar,
+.app-content.page-referrals .article-eduauthorities .article-content .article-sidebar {
     height: calc(100vh - 13rem);
     overflow-x: hidden;
     overflow-y: auto;
@@ -4974,7 +5100,8 @@ select.form-control {
   }
   .app-content.page-referrals .article-eduauthority-booking .article-content .article-body .table-head,
 .app-content.page-referrals .article-eduauthority-bookings .article-content .article-body .table-head,
-.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table-head {
+.app-content.page-referrals .article-eduauthority-report .article-content .article-body .table-head,
+.app-content.page-referrals .article-eduauthorities .article-content .article-body .table-head {
     position: -webkit-sticky;
     position: sticky;
     top: 10rem;
@@ -5025,6 +5152,1029 @@ select.form-control {
     margin-bottom: 0;
   }
   .modal-booking-edit .modal-dialog .modal-body .form-edit-booking .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-eduauthority-create .modal-dialog .modal-body .form-create-eduauthority .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-eduauthority-create .modal-dialog .modal-body .form-create-eduauthority .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-eduauthority-create .modal-dialog .modal-body .form-create-eduauthority .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-eduauthority-edit .modal-dialog .modal-body .form-edit-eduauthority .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-eduauthority-edit .modal-dialog .modal-body .form-edit-eduauthority .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-eduauthority-edit .modal-dialog .modal-body .form-edit-eduauthority .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+.app-content.page-attendances .article-attendance-sessions,
+.app-content.page-attendances .article-long-absences,
+.app-content.page-attendances .article-attendance-report,
+.app-content.page-attendances .article-notification-rules {
+  padding: 0 1.5rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header,
+.app-content.page-attendances .article-long-absences .article-header,
+.app-content.page-attendances .article-attendance-report .article-header,
+.app-content.page-attendances .article-notification-rules .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar,
+.app-content.page-attendances .article-long-absences .article-header .navbar,
+.app-content.page-attendances .article-attendance-report .article-header .navbar,
+.app-content.page-attendances .article-notification-rules .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #e9ecef;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav:first-child,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav:first-child,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav:first-child,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+  font-size: 1.25rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+  font-size: 1.25rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.25rem;
+  width: 18rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas {
+  font-size: 1.5rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .btn-light .fas.fa-file-export, .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .btn-light .fas.fa-file-export,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .btn-light .fas.fa-file-export,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas.fa-file-export,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+  font-size: 1.25rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-sidebar,
+.app-content.page-attendances .article-long-absences .article-content .article-sidebar,
+.app-content.page-attendances .article-attendance-report .article-content .article-sidebar,
+.app-content.page-attendances .article-notification-rules .article-content .article-sidebar {
+  margin: 0;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-body .navbar,
+.app-content.page-attendances .article-long-absences .article-content .article-body .navbar,
+.app-content.page-attendances .article-attendance-report .article-content .article-body .navbar,
+.app-content.page-attendances .article-notification-rules .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-attendances .article-long-absences .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-attendances .article-attendance-report .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-attendances .article-notification-rules .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-attendances .article-long-absences .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-attendances .article-attendance-report .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-attendances .article-notification-rules .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-attendances .article-long-absences .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-attendances .article-attendance-report .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-attendances .article-notification-rules .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+  margin-left: 0.5rem;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-body .calendar,
+.app-content.page-attendances .article-long-absences .article-content .article-body .calendar,
+.app-content.page-attendances .article-attendance-report .article-content .article-body .calendar,
+.app-content.page-attendances .article-notification-rules .article-content .article-body .calendar {
+  padding: 1rem 0;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-body .table,
+.app-content.page-attendances .article-long-absences .article-content .article-body .table,
+.app-content.page-attendances .article-attendance-report .article-content .article-body .table,
+.app-content.page-attendances .article-notification-rules .article-content .article-body .table {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+}
+.app-content.page-attendances .article-attendance-sessions .article-content .article-body .table a:not(.dropdown-item),
+.app-content.page-attendances .article-long-absences .article-content .article-body .table a:not(.dropdown-item),
+.app-content.page-attendances .article-attendance-report .article-content .article-body .table a:not(.dropdown-item),
+.app-content.page-attendances .article-notification-rules .article-content .article-body .table a:not(.dropdown-item) {
+  color: #212529;
+  word-break: break-word;
+}
+@media (max-width: 991.98px) {
+  .app-content.page-attendances .article-attendance-sessions .article-header,
+.app-content.page-attendances .article-long-absences .article-header,
+.app-content.page-attendances .article-attendance-report .article-header,
+.app-content.page-attendances .article-notification-rules .article-header {
+    margin: 0 -0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    z-index: 970;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar,
+.app-content.page-attendances .article-long-absences .article-header .navbar,
+.app-content.page-attendances .article-attendance-report .article-header .navbar,
+.app-content.page-attendances .article-notification-rules .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav.nav-main {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-divider {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item-drawer {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-content,
+.app-content.page-attendances .article-long-absences .article-content,
+.app-content.page-attendances .article-attendance-report .article-content,
+.app-content.page-attendances .article-notification-rules .article-content {
+    margin: 0 -0.5rem;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-content .article-sidebar,
+.app-content.page-attendances .article-long-absences .article-content .article-sidebar,
+.app-content.page-attendances .article-attendance-report .article-content .article-sidebar,
+.app-content.page-attendances .article-notification-rules .article-content .article-sidebar {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-content .article-body,
+.app-content.page-attendances .article-long-absences .article-content .article-body,
+.app-content.page-attendances .article-attendance-report .article-content .article-body,
+.app-content.page-attendances .article-notification-rules .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav:first-child,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav:first-child,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav:first-child,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-attendances .article-attendance-sessions .article-header,
+.app-content.page-attendances .article-long-absences .article-header,
+.app-content.page-attendances .article-attendance-report .article-header,
+.app-content.page-attendances .article-notification-rules .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    z-index: 970;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .nav-item-submodule {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-attendances .article-long-absences .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-attendances .article-attendance-report .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-attendances .article-notification-rules .article-header .navbar .navbar-nav .input-group .form-control {
+    width: 24rem;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-content .article-sidebar,
+.app-content.page-attendances .article-long-absences .article-content .article-sidebar,
+.app-content.page-attendances .article-attendance-report .article-content .article-sidebar,
+.app-content.page-attendances .article-notification-rules .article-content .article-sidebar {
+    height: calc(100vh - 13rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+  }
+  .app-content.page-attendances .article-attendance-sessions .article-content .article-body .table-head,
+.app-content.page-attendances .article-long-absences .article-content .article-body .table-head,
+.app-content.page-attendances .article-attendance-report .article-content .article-body .table-head,
+.app-content.page-attendances .article-notification-rules .article-content .article-body .table-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+    z-index: 950;
+  }
+}
+.app-content.page-attendances .article-attendance-taking {
+  padding: 0 1.5rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #e9ecef;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+  font-size: 1.25rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+  font-size: 1.25rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.25rem;
+  width: 16rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .btn-light .fas {
+  font-size: 1.5rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .btn-light .fas.fa-file-export, .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+  font-size: 1.25rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-sidebar {
+  margin: 0;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+  margin-left: 0.5rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-body .calendar {
+  padding: 1rem 0;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-body .table {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+}
+.app-content.page-attendances .article-attendance-taking .article-content .article-body .table a:not(.dropdown-item) {
+  color: #212529;
+  word-break: break-word;
+}
+@media (max-width: 991.98px) {
+  .app-content.page-attendances .article-attendance-taking .article-header {
+    margin: 0 -0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    z-index: 970;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav.nav-main {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-content {
+    margin: 0 -0.5rem;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-content .article-sidebar {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-attendances .article-attendance-taking .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    z-index: 970;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-header .navbar .navbar-nav .input-group .form-control {
+    width: 24rem;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-content .article-sidebar {
+    height: calc(100vh - 13rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+  }
+  .app-content.page-attendances .article-attendance-taking .article-content .article-body .table-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+    z-index: 950;
+  }
+}
+.app-content.page-attendances .article-attendance-taking .article-body {
+  max-width: 76rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-body .navbar .form-inline .form-group + .form-group {
+  margin-left: 1rem;
+}
+.app-content.page-attendances .article-attendance-taking .article-body .navbar .form-inline .form-group .form-label {
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .modal-attendance-status-update .modal-dialog .modal-body .form-update-attendance-status .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-attendance-status-update .modal-dialog .modal-body .form-update-attendance-status .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-attendance-status-update .modal-dialog .modal-body .form-update-attendance-status .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-long-absence-taking .modal-dialog .modal-body .form-taking-long-absence .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-long-absence-taking .modal-dialog .modal-body .form-taking-long-absence .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-long-absence-taking .modal-dialog .modal-body .form-taking-long-absence .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-notification-rule-create .modal-dialog .modal-body .form-create-notification-rule .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-notification-rule-create .modal-dialog .modal-body .form-create-notification-rule .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-notification-rule-create .modal-dialog .modal-body .form-create-notification-rule .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-notification-rule-edit .modal-dialog .modal-body .form-edit-notification-rule .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-notification-rule-edit .modal-dialog .modal-body .form-edit-notification-rule .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-notification-rule-edit .modal-dialog .modal-body .form-edit-notification-rule .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+.app-content.page-incidents .article-student-incidents,
+.app-content.page-incidents .article-incidents-report,
+.app-content.page-incidents .article-incident-categories,
+.app-content.page-incidents .article-notification-rules {
+  padding: 0 1.5rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header,
+.app-content.page-incidents .article-incidents-report .article-header,
+.app-content.page-incidents .article-incident-categories .article-header,
+.app-content.page-incidents .article-notification-rules .article-header {
+  height: 4rem;
+  max-height: 4rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar,
+.app-content.page-incidents .article-incidents-report .article-header .navbar,
+.app-content.page-incidents .article-incident-categories .article-header .navbar,
+.app-content.page-incidents .article-notification-rules .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #e9ecef;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav:first-child,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav:first-child,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav:first-child,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 3rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+  font-size: 1rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+  font-size: 1.25rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item .btn-light,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item .item-text,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.05rem;
+  width: 18rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .btn-light.btn-more,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .btn-light .fas,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas {
+  font-size: 1.5rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .btn-light .fas.fa-filter,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+  font-size: 1.25rem;
+}
+.app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-incidents .article-student-incidents .article-content .article-sidebar,
+.app-content.page-incidents .article-incidents-report .article-content .article-sidebar,
+.app-content.page-incidents .article-incident-categories .article-content .article-sidebar,
+.app-content.page-incidents .article-notification-rules .article-content .article-sidebar {
+  margin: 0;
+}
+.app-content.page-incidents .article-student-incidents .article-content .article-body .navbar,
+.app-content.page-incidents .article-incidents-report .article-content .article-body .navbar,
+.app-content.page-incidents .article-incident-categories .article-content .article-body .navbar,
+.app-content.page-incidents .article-notification-rules .article-content .article-body .navbar {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+.app-content.page-incidents .article-student-incidents .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-incidents .article-incidents-report .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-incidents .article-incident-categories .article-content .article-body .navbar.navbar-pagination,
+.app-content.page-incidents .article-notification-rules .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-incidents .article-student-incidents .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-incidents .article-incidents-report .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-incidents .article-incident-categories .article-content .article-body .navbar .navbar-nav .btn-primary,
+.app-content.page-incidents .article-notification-rules .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
+}
+.app-content.page-incidents .article-student-incidents .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-incidents .article-incidents-report .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-incidents .article-incident-categories .article-content .article-body .navbar .navbar-nav .btn-outline-secondary,
+.app-content.page-incidents .article-notification-rules .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+  margin-left: 0.5rem;
+}
+.app-content.page-incidents .article-student-incidents .article-content .article-body .table,
+.app-content.page-incidents .article-incidents-report .article-content .article-body .table,
+.app-content.page-incidents .article-incident-categories .article-content .article-body .table,
+.app-content.page-incidents .article-notification-rules .article-content .article-body .table {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+}
+.app-content.page-incidents .article-student-incidents .article-content .article-body .table a,
+.app-content.page-incidents .article-incidents-report .article-content .article-body .table a,
+.app-content.page-incidents .article-incident-categories .article-content .article-body .table a,
+.app-content.page-incidents .article-notification-rules .article-content .article-body .table a {
+  color: #212529;
+  word-break: break-word;
+}
+@media (max-width: 991.98px) {
+  .app-content.page-incidents .article-student-incidents .article-header,
+.app-content.page-incidents .article-incidents-report .article-header,
+.app-content.page-incidents .article-incident-categories .article-header,
+.app-content.page-incidents .article-notification-rules .article-header {
+    margin: 0 -0.5rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    z-index: 970;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar,
+.app-content.page-incidents .article-incidents-report .article-header .navbar,
+.app-content.page-incidents .article-incident-categories .article-header .navbar,
+.app-content.page-incidents .article-notification-rules .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav.nav-main,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav.nav-main {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-divider,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-divider {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item-drawer,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item-drawer {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
+  .app-content.page-incidents .article-student-incidents .article-content,
+.app-content.page-incidents .article-incidents-report .article-content,
+.app-content.page-incidents .article-incident-categories .article-content,
+.app-content.page-incidents .article-notification-rules .article-content {
+    margin: 0 -0.5rem;
+  }
+  .app-content.page-incidents .article-student-incidents .article-content .article-sidebar,
+.app-content.page-incidents .article-incidents-report .article-content .article-sidebar,
+.app-content.page-incidents .article-incident-categories .article-content .article-sidebar,
+.app-content.page-incidents .article-notification-rules .article-content .article-sidebar {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-content .article-body,
+.app-content.page-incidents .article-incidents-report .article-content .article-body,
+.app-content.page-incidents .article-incident-categories .article-content .article-body,
+.app-content.page-incidents .article-notification-rules .article-content .article-body {
+    margin: 0;
+  }
+}
+@media (max-width: 576px) {
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav:first-child,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav:first-child,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav:first-child,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
+}
+@media (min-width: 992px) {
+  .app-content.page-incidents .article-student-incidents .article-header,
+.app-content.page-incidents .article-incidents-report .article-header,
+.app-content.page-incidents .article-incident-categories .article-header,
+.app-content.page-incidents .article-notification-rules .article-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    z-index: 970;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav:not(.nav-main) .btn-search,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .nav-item-submodule,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .nav-item-submodule {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
+  .app-content.page-incidents .article-student-incidents .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-incidents .article-incidents-report .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-incidents .article-incident-categories .article-header .navbar .navbar-nav .input-group .form-control,
+.app-content.page-incidents .article-notification-rules .article-header .navbar .navbar-nav .input-group .form-control {
+    width: 24rem;
+  }
+  .app-content.page-incidents .article-student-incidents .article-content .article-sidebar,
+.app-content.page-incidents .article-incidents-report .article-content .article-sidebar,
+.app-content.page-incidents .article-incident-categories .article-content .article-sidebar,
+.app-content.page-incidents .article-notification-rules .article-content .article-sidebar {
+    height: calc(100vh - 13rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+  }
+  .app-content.page-incidents .article-student-incidents .article-content .article-body .table-head,
+.app-content.page-incidents .article-incidents-report .article-content .article-body .table-head,
+.app-content.page-incidents .article-incident-categories .article-content .article-body .table-head,
+.app-content.page-incidents .article-notification-rules .article-content .article-body .table-head {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
+    z-index: 950;
+  }
+}
+
+.modal-student-incident-create .modal-dialog .modal-body .form-create-student-incident .form-group .file-upload {
+  margin-bottom: 0;
+  min-width: 100%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .modal-student-incident-create .modal-dialog .modal-body .form-create-student-incident .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-student-incident-create .modal-dialog .modal-body .form-create-student-incident .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-student-incident-create .modal-dialog .modal-body .form-create-student-incident .form-group .form-label {
+    min-width: 12rem;
+    width: 12rem;
+  }
+}
+
+.modal-student-incident-edit .modal-dialog .modal-body .form-create-student-incident .form-group .file-upload {
+  margin-bottom: 0;
+  min-width: 100%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .modal-student-incident-edit .modal-dialog .modal-body .form-edit-student-incident .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+  }
+  .modal-student-incident-edit .modal-dialog .modal-body .form-edit-student-incident .form-group .form-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+  .modal-student-incident-edit .modal-dialog .modal-body .form-edit-student-incident .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
   }

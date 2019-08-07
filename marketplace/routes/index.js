@@ -124,6 +124,25 @@ router.get('/:userRole/visitors/categories', function(req, res, next) {
   });
 });
 
+/* GET visitor notification rules page. */
+router.get('/:userRole/visitors/notification_rules', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('visitors/notification_rules', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'visitors',
+    loggedIn: true,
+    visitorsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET education authority booking page. */
 router.get('/:userRole/referrals/eduauthority_booking', function(req, res, next) {
   var userRole = req.params.userRole;
@@ -199,6 +218,163 @@ router.get('/:userRole/referrals/eduauthorities', function(req, res, next) {
     teacherUser: teacherUser,
     adminUser: adminUser
   });
+});
+
+/* GET attendance taking page. */
+router.get('/:userRole/attendances/attendance_taking', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('attendances/attendance_taking', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'attendances',
+    loggedIn: true,
+    attendancesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET long absences page. */
+router.get('/:userRole/attendances/long_absences', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('attendances/long_absences', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'attendances',
+    loggedIn: true,
+    attendancesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET attendances report page. */
+router.get('/:userRole/attendances/report', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('attendances/report', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'attendances',
+    loggedIn: true,
+    attendancesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET attendances notification rules page. */
+router.get('/:userRole/attendances/notification_rules', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('attendances/notification_rules', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'attendances',
+    loggedIn: true,
+    attendancesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET student incidents page. */
+router.get('/:userRole/incidents/student_incidents', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('incidents/student_incidents', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'incidents',
+    loggedIn: true,
+    incidentsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET student incident report page. */
+router.get('/:userRole/incidents/report', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('incidents/report', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'incidents',
+    loggedIn: true,
+    incidentsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET student incident categories page. */
+router.get('/:userRole/incidents/categories', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('incidents/categories', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'incidents',
+    loggedIn: true,
+    incidentsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET incident notification rules page. */
+router.get('/:userRole/incidents/notification_rules', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('incidents/notification_rules', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'incidents',
+    loggedIn: true,
+    incidentsPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
+/* GET upload page. */
+router.post('/shared/upload', upload.any(), function(req, res, next) {
+  res.send('{"status": "OK", "location": "/static/images/user.png"}');
 });
 
 /* GET 404 error page. */

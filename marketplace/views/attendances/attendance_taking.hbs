@@ -1,0 +1,327 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-attendance-sessions">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <i class="fas fa-calendar-check"></i>
+                </button>
+                <span class="item-text text-truncate">Remedial Class Attendance</span>
+              </li>
+              <li class="nav-item nav-item-submodule dropdown">
+                <button class="btn btn-light" type="button" data-toggle="dropdown">
+                  Remedial Sessions <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/attendance_taking">Remedial Sessions</a>
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/long_absences">Long Absences</a>
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/report">Attendance Report</a>
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/notification_rules">Notification Rules</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-sidebar">
+            <ul class="nav nav-side">
+              <li class="nav-item">
+                <a class="nav-link active" href="/{{userRole}}/attendances/attendance_taking">
+                  Remedial Sessions
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/attendances/long_absences">
+                  Long Absences
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/attendances/report">
+                  Attendance Report
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/attendances/notification_rules">
+                  Notification Rules
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="article-body">
+            <div class="loading-state d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <div class="calendar"></div>
+          </div>
+        </div>            
+      </div>
+      <div class="article article-attendance-taking no-sidebar d-none">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <span class="item-text text-truncate">Attendance Taking</span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-body">
+            <div class="loading-state d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <nav class="navbar navbar-expand">
+              <form class="form-inline">
+                <div class="form-group">
+                  <label class="form-label" for="txtDate">Date</label>
+                  <input class="form-control form-input form-input-sm" type="text" id="txtDate">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selGrade">Grade</label>
+                  <select class="form-control selectpicker" id="selGrade" data-width="auto">
+                    <option>All</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selClass">Remedial Class</label>
+                  <select class="form-control selectpicker" id="selClass" data-width="auto">
+                    <option>P1 Maths Remedial</option>
+                    <option>P2 Maths Remedial</option>
+                    <option>P3 Maths Remedial</option>
+                    <option>P4 Maths Remedial</option>
+                    <option>P5 Maths Remedial</option>
+                  </select>
+                </div>
+              </form>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-outline-secondary btn-bulk-update d-none" type="button">
+                    Bulk Status Update
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <table class="table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="all">
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th>Student Name</th>
+                  <th>Gender</th>
+                  <th>Attendance Status</th>
+                  <th>Remark</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item0">
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>Amos Chee</td>
+                  <td>Male</td>
+                  <td>
+                    <select class="form-control selectpicker">
+                      <option selected>Present</option>
+                      <option>Absent with MC</option>
+                      <option>Absent without Reason</option>
+                      <option>Absent VR(Official)</option>
+                      <option>Absent VR(Private)</option>
+                      <option>Late Coming</option>
+                    </select>
+                  </td>
+                  <td>
+                    <textarea class="form-control form-input form-input-md" type="text"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item1">
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>Charles Tan</td>
+                  <td>Male</td>
+                  <td>
+                    <select class="form-control selectpicker">
+                      <option selected>Present</option>
+                      <option>Absent with MC</option>
+                      <option>Absent without Reason</option>
+                      <option>Absent VR(Official)</option>
+                      <option>Absent VR(Private)</option>
+                      <option>Late Coming</option>
+                    </select>
+                  </td>
+                  <td>
+                    <textarea class="form-control form-input form-input-md" type="text"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item2">
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>Faisal Manaf</td>
+                  <td>Male</td>
+                  <td>
+                    <select class="form-control selectpicker">
+                      <option selected>Present</option>
+                      <option>Absent with MC</option>
+                      <option>Absent without Reason</option>
+                      <option>Absent VR(Official)</option>
+                      <option>Absent VR(Private)</option>
+                      <option>Late Coming</option>
+                    </select>
+                  </td>
+                  <td>
+                    <textarea class="form-control form-input form-input-md" type="text"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item3">
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>Vivian Lim</td>
+                  <td>Female</td>
+                  <td>
+                    <select class="form-control selectpicker">
+                      <option selected>Present</option>
+                      <option>Absent with MC</option>
+                      <option>Absent without Reason</option>
+                      <option>Absent VR(Official)</option>
+                      <option>Absent VR(Private)</option>
+                      <option>Late Coming</option>
+                    </select>
+                  </td>
+                  <td>
+                    <textarea class="form-control form-input form-input-md" type="text"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4">
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>Zachary Teo</td>
+                  <td>Male</td>
+                  <td>
+                    <select class="form-control selectpicker">
+                      <option selected>Present</option>
+                      <option>Absent with MC</option>
+                      <option>Absent without Reason</option>
+                      <option>Absent VR(Official)</option>
+                      <option>Absent VR(Private)</option>
+                      <option>Late Coming</option>
+                    </select>
+                  </td>
+                  <td>
+                    <textarea class="form-control form-input form-input-md" type="text"></textarea>
+                  </td>
+                </tr>            
+              </tbody>
+            </table>
+            <nav class="navbar navbar-expand">
+              <ul class="navbar-nav">
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-light btn-cancel" type="button">
+                    Cancel
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-primary btn-save" type="button">
+                    Save
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>            
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-attendance-status-update fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Bulk Status Update</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-update-attendance-status">
+          <div class="form-group">
+            <label class="form-label" for="selStatus">Attendance Status</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selStatus">
+                <option selected>Present</option>
+                <option>Absent with MC</option>
+                <option>Absent without Reason</option>
+                <option>Absent VR(Official)</option>
+                <option>Absent VR(Private)</option>
+                <option>Late Coming</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-attendance-delete-confirmation fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete the attendance records?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

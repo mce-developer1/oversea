@@ -1,7 +1,7 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-visitor-categories">
+      <div class="article article-notification-rules">
         <div class="article-header">
           <nav class="navbar navbar-expand">
             <ul class="navbar-nav">
@@ -13,7 +13,7 @@
               </li>
               <li class="nav-item nav-item-submodule dropdown">
                 <button class="btn btn-light" type="button" data-toggle="dropdown">
-                  Visitors Categories <i class="fas fa-caret-down"></i>
+                  Notification Rules <i class="fas fa-caret-down"></i>
                 </button>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="/{{userRole}}/visitors/current_visitors">Current Visitors</a>
@@ -45,12 +45,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/{{userRole}}/visitors/categories">
+                <a class="nav-link" href="/{{userRole}}/visitors/categories">
                   Visitor Categories
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/{{userRole}}/visitors/notification_rules">
+                <a class="nav-link active" href="/{{userRole}}/visitors/notification_rules">
                   Notification Rules
                 </a>
               </li>
@@ -87,66 +87,72 @@
               <thead>
                 <tr>
                   <th>&nbsp;</th>
-                  <th>Category Name</th>
-                  <th>Visitory Type</th>
-                  <th>Description</th>
+                  <th>Rule Name</th>
+                  <th>Visitor Category</th>
+                  <th>Recipient</th>
+                  <th>Notify Via</th>
                 </tr>
               </thead>
               <tbody>                
                 <tr>
                   <td>
                     <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item0" name="category">
+                      <input class="custom-control-input" type="radio" id="item0" name="rule">
                       <label class="custom-control-label" for="item0"></label>
                     </div>
                   </td>
-                  <td>Contractor</td>
-                  <td>Normal</td>
-                  <td>Lorem ipsum dolor sit amet.</td>
+                  <td>Rule 1</td>
+                  <td>Contractors</td>
+                  <td>Operations Manager</td>
+                  <td>Email, SMS</td>
                 </tr>
                 <tr>
                   <td>
                     <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item1" name="category">
+                      <input class="custom-control-input" type="radio" id="item1" name="rule">
                       <label class="custom-control-label" for="item1"></label>
                     </div>
                   </td>
+                  <td>Rule 2</td>
                   <td>Delivery</td>
-                  <td>Ad-hoc</td>
-                  <td>Consectetuer adipiscing elit.</td>
+                  <td>Operations Manager</td>
+                  <td>Email, SMS</td>
                 </tr>
                 <tr>
                   <td>
                     <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item2" name="category">
+                      <input class="custom-control-input" type="radio" id="item2" name="rule">
                       <label class="custom-control-label" for="item2"></label>
                     </div>
                   </td>
+                  <td>Rule 3</td>
                   <td>Ministry Staff</td>
-                  <td>Regular</td>
-                  <td>Lorem ipsum dolor sit amet.</td>
+                  <td>Operations Manager</td>
+                  <td>Email, SMS</td>
                 </tr>
                 <tr>
                   <td>
                     <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item3" name="category">
+                      <input class="custom-control-input" type="radio" id="item3" name="rule">
                       <label class="custom-control-label" for="item3"></label>
                     </div>
                   </td>
+                  <td>Rule 4</td>
                   <td>Parents</td>
-                  <td>Regular</td>
-                  <td>Lorem ipsum dolor sit amet.</td>
+                  <td>Form Teacher</td>
+                  <td>Email, SMS</td>
                 </tr>
                 <tr>
                   <td>
                     <div class="custom-control custom-radio">
-                      <input class="custom-control-input" type="radio" id="item4" name="category">
+                      <input class="custom-control-input" type="radio" id="item4" name="rule">
                       <label class="custom-control-label" for="item4"></label>
                     </div>
                   </td>
+                  <td>Rule 5</td>
                   <td>Others</td>
-                  <td>Ad-hoc</td>
-                  <td>Aenean commodo ligula eget dolor.</td>
+                  <td>Operations Manager</td>
+                  <td>Email, SMS</td>
                 </tr>
               </tbody>
             </table>
@@ -157,37 +163,71 @@
   </div>
 </div>
 
-<div class="modal modal-category-create fade" tabindex="-1" role="dialog" data-backdrop="static">
+<div class="modal modal-notification-rule-create fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Create Category</h5>
+        <h5 class="modal-title">Create Notification Rule</h5>
         <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-create-category">
+        <form class="form-create-notification-rule">
           <div class="form-group">
-            <label class="form-label" for="txtName">Category Name</label>
+            <label class="form-label" for="txtName0">Rule Name</label>
             <div class="form-group">
-              <input class="form-control form-input" type="text" id="txtName">
+              <input class="form-control form-input" type="text" id="txtName0">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="selCategory">Visitor Type</label>
+            <label class="form-label" for="selCategory0">Visitor Category</label>
             <div class="form-group">
-              <select class="form-control selectpicker" id="selCategory">
-                <option>Regular</option>
-                <option>Normal</option>
-                <option>Ad-hoc</option>
+              <select class="form-control selectpicker" id="selCategory0">
+                <option selected>All</option>
+                <option>Contractors</option>
+                <option>Delivery</option>
+                <option>Ministry Staff</option>
+                <option>Parents</option>
+                <option>Others</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="txtDescription">Description</label>
+            <label class="form-label">Recipient</label>
             <div class="form-group">
-              <textarea class="form-control form-input" type="text" id="txtDescription"></textarea>
+              <div class="checkbox-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="teacher0">
+                  <label class="custom-control-label" for="teacher0">Form Teacher</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="operations0">
+                  <label class="custom-control-label" for="operations0">Operations Manager</label>
+                </div>
+              </div>
+              <div class="checkbox-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="other0">
+                  <label class="custom-control-label" for="other0">Other</label>
+                </div>
+                <input class="form-control form-input d-none" type="text" id="txtRecipient0">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Notify Via</label>
+            <div class="form-group">
+              <div class="checkbox-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="email0">
+                  <label class="custom-control-label" for="email0">Email</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="sms0">
+                  <label class="custom-control-label" for="sms0">SMS</label>
+                </div>
+              </div>
             </div>
           </div>
         </form>
@@ -200,37 +240,71 @@
   </div>
 </div>
 
-<div class="modal modal-category-edit fade" tabindex="-1" role="dialog" data-backdrop="static">
+<div class="modal modal-notification-rule-edit fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Create Category</h5>
+        <h5 class="modal-title">Edit Notification Rule</h5>
         <button type="button" class="close" title="Close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-edit-category">
+        <form class="form-edit-notification-rule">
           <div class="form-group">
-            <label class="form-label" for="txtName">Category Name</label>
+            <label class="form-label" for="txtName1">Rule Name</label>
             <div class="form-group">
-              <input class="form-control form-input" type="text" id="txtName" value="Parents">
+              <input class="form-control form-input" type="text" id="txtName1" value="Rule 1">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="selCategory">Visitor Type</label>
+            <label class="form-label" for="selCategory1">Visitor Category</label>
             <div class="form-group">
-              <select class="form-control selectpicker" id="selCategory">
-                <option>Regular</option>
-                <option>Normal</option>
-                <option>Ad-hoc</option>
+              <select class="form-control selectpicker" id="selCategory1">
+                <option>All</option>
+                <option>Contractors</option>
+                <option>Delivery</option>
+                <option>Ministry Staff</option>
+                <option selected>Parents</option>
+                <option>Others</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="txtDescription">Description</label>
+            <label class="form-label">Recipient</label>
             <div class="form-group">
-              <textarea class="form-control form-input" type="text" id="txtDescription">Lorem ipsum dolor sit amet.</textarea>
+              <div class="checkbox-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="teacher1" checked>
+                  <label class="custom-control-label" for="teacher1">Form Teacher</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="operations1">
+                  <label class="custom-control-label" for="operations1">Operations Manager</label>
+                </div>
+              </div>
+              <div class="checkbox-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="other1">
+                  <label class="custom-control-label" for="other1">Other</label>
+                </div>
+                <input class="form-control form-input d-none" type="text" id="txtRecipient1">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selFrequency1">Notify Via</label>
+            <div class="form-group">
+              <div class="checkbox-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="email1" checked>
+                  <label class="custom-control-label" for="email1">Email</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="sms1" checked>
+                  <label class="custom-control-label" for="sms1">SMS</label>
+                </div>
+              </div>
             </div>
           </div>
         </form>
@@ -243,7 +317,7 @@
   </div>
 </div>
 
-<div class="modal modal-category-delete-confirmation fade" tabindex="-1" role="dialog" data-backdrop="static">
+<div class="modal modal-notification-rule-delete-confirmation fade" tabindex="-1" role="dialog" data-backdrop="static">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -253,7 +327,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Are you sure you want to delete the selected category?</p>
+        <p>Are you sure you want to delete the notification rule?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>

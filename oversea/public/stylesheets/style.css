@@ -185,9 +185,13 @@ a:focus {
   margin: 0.375rem 0;
 }
 .form-group .form-check,
-.form-group .custom-checkbox {
-  margin-bottom: 0.5rem;
+.form-group .custom-checkbox,
+.form-group .form-radio,
+.form-group .custom-radio {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
 }
+.form-group .radio-group,
 .form-group .checkbox-group {
   display: -ms-flexbox;
   display: flex;
@@ -196,10 +200,18 @@ a:focus {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.form-group .radio-group .form-check,
+.form-group .radio-group .custom-checkbox,
+.form-group .radio-group .form-radio,
+.form-group .radio-group .custom-radio,
 .form-group .checkbox-group .form-check,
-.form-group .checkbox-group .custom-checkbox {
+.form-group .checkbox-group .custom-checkbox,
+.form-group .checkbox-group .form-radio,
+.form-group .checkbox-group .custom-radio {
+  margin-top: 0.375rem;
   margin-right: 1rem;
-  min-width: 8rem;
+  margin-bottom: 0.375rem;
+  min-width: 12rem;
 }
 
 .form-control.form-input, .form-control.form-select, .form-control.form-textarea {
@@ -240,6 +252,7 @@ a:focus {
 }
 
 .popover {
+  border-radius: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .popover .popover-body .assignment-period {
@@ -751,8 +764,11 @@ a:focus {
 .table tbody tr td {
   padding: 1rem;
 }
+.table tbody tr td .form-input {
+  margin: -0.25rem 0;
+}
 .table tbody tr td .dropdown {
-  margin: -0.5rem 0;
+  margin: -0.25rem 0;
 }
 .table tbody tr td .dropdown .btn-light.dropdown-toggle {
   margin: 0;
@@ -6445,6 +6461,7 @@ select.form-control {
 .modal-resource-folder-edit .modal-dialog .modal-body .form-create-folder .form-group .form-label,
 .modal-resource-folder-edit .modal-dialog .modal-body .form-edit-folder .form-group .form-label {
   margin-right: 1rem;
+  width: 14rem;
 }
 
 @media (min-width: 768px) {

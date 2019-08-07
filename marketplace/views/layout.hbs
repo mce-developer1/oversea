@@ -55,7 +55,7 @@
           </div>
           <ul class="navbar-nav nav-main">
             {{#if loggedIn}}
-              <li class="nav-item">
+              <li class="nav-item d-none">
                 <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/bookings">
                   <i class="img img-administration"></i> Facility Booking
                 </a>
@@ -66,12 +66,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if attendancesPage}}active{{/if}}" href="/{{userRole}}/attendances/attendances">
+                <a class="nav-link {{#if attendancesPage}}active{{/if}}" href="/{{userRole}}/attendances/attendance_taking">
                   <i class="img img-administration"></i> Remedial Class Attedance
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if incidentsPage}}active{{/if}}" href="/{{userRole}}/incidents/incidents">
+                <a class="nav-link {{#if incidentsPage}}active{{/if}}" href="/{{userRole}}/incidents/student_incidents">
                   <i class="img img-administration"></i> Student Incident Management
                 </a>
               </li>
@@ -169,7 +169,7 @@
         <div class="navbar-content">
           <ul class="navbar-nav">
             {{#if loggedIn}}
-              <li class="nav-item">
+              <li class="nav-item d-none">
                 <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/bookings">
                   <i class="img img-administration"></i> Facility Booking
                 </a>
@@ -180,12 +180,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if attendancesPage}}active{{/if}}" href="/{{userRole}}/attendances/attendances">
+                <a class="nav-link {{#if attendancesPage}}active{{/if}}" href="/{{userRole}}/attendances/attendance_taking">
                   <i class="img img-administration"></i> Remedial Class Attedance
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{#if incidentsPage}}active{{/if}}" href="/{{userRole}}/incidents/incidents">
+                <a class="nav-link {{#if incidentsPage}}active{{/if}}" href="/{{userRole}}/incidents/student_incidents">
                   <i class="img img-administration"></i> Student Incident Management
                 </a>
               </li>

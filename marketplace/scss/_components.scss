@@ -345,6 +345,20 @@ select.form-control {
     margin-top: 1.5rem;
     max-width: 100%;
 
+    &.file-group-list {
+      min-width: 100%;
+      width: 100%;
+
+      .file-preview {
+        padding: .5rem 3rem .5rem 1rem;
+        margin-bottom: 1rem;
+
+        .file-details {
+          margin-top: .5rem;
+        }
+      }
+    }
+
     .file-preview {
       @include display-flex(column);
       @include justify-content(flex-end);
@@ -1096,6 +1110,16 @@ select.form-control {
       tbody {
         th,
         td {
+          vertical-align: top !important;
+
+          .dropdown {
+            .btn-light {
+              &.dropdown-toggle {
+                background-color: $white;
+              }
+            }
+          }
+
           .btn-light {
             padding: .325rem .5rem;
             margin: -.5rem 0;

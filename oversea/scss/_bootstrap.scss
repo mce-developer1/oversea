@@ -243,18 +243,26 @@ a {
   }
 
   .form-check,
-  .custom-checkbox {
-    margin-bottom: .5rem;
+  .custom-checkbox,
+  .form-radio,
+  .custom-radio {
+    margin-top: .375rem;
+    margin-bottom: .375rem;
   }
 
+  .radio-group,
   .checkbox-group {
     @include display-flex(row);
     @include flex-wrap(wrap);
     
     .form-check,
-    .custom-checkbox {
+    .custom-checkbox,
+    .form-radio,
+    .custom-radio {
+      margin-top: .375rem;
       margin-right: 1rem;
-      min-width: 8rem;
+      margin-bottom: .375rem;
+      min-width: 12rem;
     }
   }
 }
@@ -312,6 +320,7 @@ a {
 }
 
 .popover {
+  border-radius: 0;
   box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
 
   .popover-body {
@@ -913,8 +922,12 @@ a {
       td {
         padding: 1rem;
 
+				.form-input {
+          margin: -.25rem 0;
+        }
+
         .dropdown {
-          margin: -.5rem 0;
+          margin: -.25rem 0;
           
           .btn-light {
             &.dropdown-toggle {

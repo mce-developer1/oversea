@@ -1,0 +1,364 @@
+<div class="app-content page-{{module}}">
+  <div class="row no-gutters">
+    <div class="col-sm">
+      <div class="article article-notification-rules">
+        <div class="article-header">
+          <nav class="navbar navbar-expand">
+            <ul class="navbar-nav">
+              <li class="nav-item nav-item-drawer">
+                <button class="btn btn-light" type="button">
+                  <i class="fas fa-calendar-check"></i>
+                </button>
+                <span class="item-text text-truncate">Remedial Class Attendance</span>
+              </li>
+              <li class="nav-item nav-item-submodule dropdown">
+                <button class="btn btn-light" type="button" data-toggle="dropdown">
+                  Notification Rules <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/attendance_taking">Remedial Sessions</a>
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/long_absences">Long Absences</a>
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/report">Attendance Report</a>
+                  <a class="dropdown-item" href="/{{userRole}}/attendances/notification_rules">Notification Rules</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="article-content">
+          <div class="article-sidebar">
+            <ul class="nav nav-side">
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/attendances/attendance_taking">
+                  Remedial Sessions
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/attendances/long_absences">
+                  Long Absences
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/attendances/report">
+                  Attendance Report
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/{{userRole}}/attendances/notification_rules">
+                  Notification Rules
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="article-body">
+            <div class="loading-state d-none">
+              <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <nav class="navbar navbar-expand">
+              <div class="navbar-text">5 records found</div>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <button class="btn btn-primary btn-create" type="button">
+                    <i class="fas fa-plus"></i> New
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-secondary btn-edit d-none" type="button">
+                    Edit
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-outline-secondary btn-delete d-none" type="button">
+                    Delete
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            <table class="table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Rule Name</th>
+                  <th>Absent Status</th>
+                  <th>Remedial Class</th>
+                  <th>Recipient</th>
+                  <th>Frequency</th>
+                </tr>
+              </thead>
+              <tbody>                
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item0" name="rule">
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>Rule 1</td>
+                  <td>Absent with MC</td>
+                  <td>P1 Maths Remedial</td>
+                  <td>Aaron Tan</td>
+                  <td>Monthly</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item1" name="rule">
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>Rule 2</td>
+                  <td>Absent without Reason</td>
+                  <td>P1 Maths Remedial</td>
+                  <td>Aaron Tan</td>
+                  <td>Weekly</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item2" name="rule">
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>Rule 3</td>
+                  <td>Absent with MC</td>
+                  <td>P2 Maths Remedial</td>
+                  <td>Ashar Ahmad</td>
+                  <td>Monthly</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item3" name="rule">
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>Rule 4</td>
+                  <td>Absent without Reason</td>
+                  <td>P2 Maths Remedial</td>
+                  <td>Ashar Ahmad</td>
+                  <td>Weekly</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-radio">
+                      <input class="custom-control-input" type="radio" id="item4" name="rule">
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>Rule 5</td>
+                  <td>Absent without Reason</td>
+                  <td>P3 Maths Remedial</td>
+                  <td>Arya Suman</td>
+                  <td>Monthly</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>            
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-notification-rule-create fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Notification Rule</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-create-notification-rule">
+          <div class="form-group">
+            <label class="form-label" for="txtName0">Rule Name</label>
+            <div class="form-group">
+              <input class="form-control form-input" type="text" id="txtName0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selStatus0">Absent Status</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selStatus0">
+                <option selected>All</option>
+                <option>Absent with MC</option>
+                <option>Absent without Reason</option>
+                <option>Absent VR(Official)</option>
+                <option>Absent VR(Private)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selGrade0">Grade</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selGrade0">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selClass0">Remedial Class</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selClass0">
+                <option selected>All</option>
+                <option>P1 Maths Remedial</option>
+                <option>P2 Maths Remedial</option>
+                <option>P3 Maths Remedial</option>
+                <option>P4 Maths Remedial</option>
+                <option>P5 Maths Remedial</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selRecipient0">Recipient</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selRecipient0">
+                <option selected>Aaron Tan</option>
+                <option>Arya Suman</option>
+                <option>Ashar Ahmad</option>
+                <option>Chua Chin Hui</option>
+                <option>Derrick Lee</option>
+                <option>Nurulhuda bte Sazali</option>
+                <option>Siow Poh Piah Irene</option>
+                <option>Tan Boon Huat</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selFrequency0">Frequency</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selFrequency0">
+                <option selected>Weekly</option>
+                <option>Monthly</option>
+                <option>Termly</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-notification-rule-edit fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Notification Rule</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-edit-notification-rule">
+          <div class="form-group">
+            <label class="form-label" for="txtName1">Rule Name</label>
+            <div class="form-group">
+              <input class="form-control form-input" type="text" id="txtName1" value="Rule 1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selStatus1">Absent Status</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selStatus1">
+                <option>All</option>
+                <option selected>Absent with MC</option>
+                <option>Absent without Reason</option>
+                <option>Absent VR(Official)</option>
+                <option>Absent VR(Private)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selGrade1">Grade</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selGrade1">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selClass1">Remedial Class</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selClass1">
+                <option>All</option>
+                <option selected>P1 Maths Remedial</option>
+                <option>P2 Maths Remedial</option>
+                <option>P3 Maths Remedial</option>
+                <option>P4 Maths Remedial</option>
+                <option>P5 Maths Remedial</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selRecipient1">Recipient</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selRecipient1">
+                <option selected>Aaron Tan</option>
+                <option>Arya Suman</option>
+                <option>Ashar Ahmad</option>
+                <option>Chua Chin Hui</option>
+                <option>Derrick Lee</option>
+                <option>Nurulhuda bte Sazali</option>
+                <option>Siow Poh Piah Irene</option>
+                <option>Tan Boon Huat</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="selFrequency1">Frequency</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selFrequency1">
+                <option selected>Weekly</option>
+                <option>Monthly</option>
+                <option>Termly</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-notification-rule-delete-confirmation fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation</h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete the notification rule?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

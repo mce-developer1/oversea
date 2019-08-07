@@ -234,7 +234,7 @@ $(document).ready(function() {
   $container.find('.card-group .card .percentage').on('click', function(e) {
     e.preventDefault();
     
-    if (/^student$/i.test(window.location.pathname)) {
+    if (/^\/student/i.test(window.location.pathname)) {
       if ($(this).data('type') === 'lesson') {
         showTrackAssignmentModal('/shared/track_lesson_user');
       } else {

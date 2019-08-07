@@ -7,7 +7,7 @@
             <ul class="navbar-nav">
               <li class="nav-item nav-item-drawer">
                 <button class="btn btn-light" type="button">
-                  <i class="fas fa-chalkboard-teacher"></i>
+                  <i class="fas fa-id-card"></i>
                 </button>
                 <span class="item-text text-truncate">Visitor Management</span>
               </li>
@@ -18,8 +18,9 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="/{{userRole}}/visitors/current_visitors">Current Visitors</a>
                   <a class="dropdown-item" href="/{{userRole}}/visitors/visitors">School Visitors</a>
-                  <a class="dropdown-item" href="/{{userRole}}/visitors/report">Visitor Report</a>
+                  <a class="dropdown-item" href="/{{userRole}}/visitors/report">Visitors Report</a>
                   <a class="dropdown-item" href="/{{userRole}}/visitors/categories">Visitor Categories</a>
+                  <a class="dropdown-item" href="/{{userRole}}/visitors/notification_rules">Notification Rules</a>
                 </div>
               </li>
             </ul>
@@ -80,12 +81,17 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="/{{userRole}}/visitors/report">
-                  Visitor Report
+                  Visitors Report
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/{{userRole}}/visitors/categories">
                   Visitor Categories
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/{{userRole}}/visitors/notification_rules">
+                  Notification Rules
                 </a>
               </li>
             </ul>
