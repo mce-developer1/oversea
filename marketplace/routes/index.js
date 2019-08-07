@@ -277,6 +277,25 @@ router.get('/:userRole/attendances/report', function(req, res, next) {
   });
 });
 
+/* GET class attendances report page. */
+router.get('/:userRole/attendances/class_report', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('attendances/class_report', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'attendances',
+    loggedIn: true,
+    attendancesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET attendances notification rules page. */
 router.get('/:userRole/attendances/notification_rules', function(req, res, next) {
   var userRole = req.params.userRole;

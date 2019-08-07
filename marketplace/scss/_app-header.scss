@@ -44,7 +44,7 @@
         font-size: .875rem;
         height: calc(6rem - 3px);
         line-height: 1.2;
-        max-width: 10rem;
+        max-width: 9rem;
         min-width: 6rem;
         padding: .5rem 1rem;
         text-align: center;
@@ -57,6 +57,16 @@
         &.active {
           background-color: $accent;
           color: $white;
+
+          .fas {
+            color: $white;
+          }
+        }
+        
+        .fas {
+          margin-bottom: .5rem;
+          font-size: 2.25rem;
+          color: $accent;
         }
 
         .img {

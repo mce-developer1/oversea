@@ -259,6 +259,10 @@
             margin-bottom: 0;
             min-width: 100%;
             width: 100%;
+
+            .file-group {
+              margin-top: 0;
+            }
           }
         }
       }
@@ -289,16 +293,20 @@
 .modal-student-incident-edit {
   .modal-dialog {
     .modal-body {
-      .form-create-student-incident {
+      .form-edit-student-incident {
         .form-group {
           .file-upload {
             margin-bottom: 0;
             min-width: 100%;
             width: 100%;
+
+            .file-group {
+              margin-top: 0;
+            }
           }
         }
       }
-      
+
       @media (min-width: 768px) {
         .form-edit-student-incident {
           .form-group {

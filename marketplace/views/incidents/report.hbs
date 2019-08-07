@@ -1,7 +1,7 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-incident-report">
+      <div class="article article-incidents-report">
         <div class="article-header">
           <nav class="navbar navbar-expand">
             <ul class="navbar-nav">
@@ -45,12 +45,49 @@
                       </select>
                     </div>
                     <div class="form-group">
+                      <label class="form-label" for="selClass">Form Class</label>
+                      <select class="form-control selectpicker" id="selClass">
+                        <option selected>All</option>
+                        <option>P1 Maths Remedial</option>
+                        <option>P2 Maths Remedial</option>
+                        <option>P3 Maths Remedial</option>
+                        <option>P4 Maths Remedial</option>
+                        <option>P5 Maths Remedial</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="selFilter">Filter By</label>
+                      <select class="form-control selectpicker" id="selFilter">
+                        <option selected>Period</option>
+                        <option>Term</option>
+                      </select>
+                    </div>
+                    <div class="form-group form-group-period">
                       <label class="form-label" for="txtStartDate">Start Date</label>
                       <input class="form-control form-input" type="text" id="txtStartDate">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group form-group-period">
                       <label class="form-label" for="txtEndDate">End Date</label>
                       <input class="form-control form-input" type="text" id="txtEndDate">
+                    </div>
+                    <div class="form-group form-group-term d-none">
+                      <label class="form-label" for="selYear">Year</label>
+                      <select class="form-control selectpicker" id="selYear">
+                        <option selected>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                      </select>
+                    </div>
+                    <div class="form-group form-group-term d-none">
+                      <label class="form-label" for="selTerm">Term</label>
+                      <select class="form-control selectpicker" id="selTerm">
+                        <option selected>All</option>
+                        <option>Term 1</option>
+                        <option>Term 2</option>
+                        <option>Term 3</option>
+                        <option>Term 4</option>
+                      </select>
                     </div>
                     <div class="form-group form-group-actions">
                       <button class="btn btn-light" type="button">Reset</button> 
@@ -95,7 +132,7 @@
             </div>
             <div class="empty-state d-none">Oops, nothing to see here!</div>
             <nav class="navbar navbar-expand">
-              <div class="navbar-text">15 records found</div>
+              <div class="navbar-text">5 records found</div>
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <button class="btn btn-primary btn-create" type="button">
@@ -107,70 +144,70 @@
             <table class="table" style="width: 100%;">
               <thead>
                 <tr>
-                  <th>Remedial Class</th>
-                  <th>Attendance Date</th>
-                  <th>Total Students</th>
-                  <th>Present</th>
-                  <th>Late</th>
-                  <th>Absence</th>
-                  <th>Taken By</th>
+                  <th>Student Name</th>
+                  <th>Form Class</th>
+                  <th>Incident Date & Time</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Location</th>
+                  <th>Reported By</th>                  
                 </tr>
               </thead>
-              <tbody>
+              <tbody>                
                 <tr>
+                  <td>Amos Chee</td>
+                  <td>P1-EA</td>
+                  <td>27 Jul 2019 10:00 AM</td>
+                  <td>Attendance</td>
                   <td>
-                    <a href="#">P1 Maths Remedial</a>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   </td>
-                  <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>5</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>Ernest Goh</td>
+                  <td>&nbsp;</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
+                  <td>Charles Tan</td>
+                  <td>P1-EA</td>
+                  <td>05 Aug 2019 03:00 PM</td>
+                  <td>Attendance</td>
                   <td>
-                    <a href="#">P2 Maths Remedial</a>
+                    Aenean commodo ligula eget dolor. Aenean massa.
                   </td>
-                  <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>5</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>Ernest Goh</td>
+                  <td>&nbsp;</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
+                  <td>Faisal Manaf</td>
+                  <td>P1-EA</td>
+                  <td>05 Aug 2019 03:00 PM</td>
+                  <td>Misconduct</td>
                   <td>
-                    <a href="#">P3 Maths Remedial</a>
+                    Aenean commodo ligula eget dolor. Aenean massa.
                   </td>
-                  <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>3</td>
-                  <td>0</td>
-                  <td>2</td>
-                  <td>Ernest Goh</td>
+                  <td>Class Room</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
+                  <td>Vivian Lim</td>
+                  <td>P1-EA</td>
+                  <td>05 Aug 2019 03:00 PM</td>
+                  <td>Misconduct</td>
                   <td>
-                    <a href="#">P4 Maths Remedial</a>
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
                   </td>
-                  <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>4</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>Ernest Goh</td>
+                  <td>Class Room</td>
+                  <td>Aaron Tan</td>
                 </tr>
                 <tr>
+                  <td>Zachary Teo</td>
+                  <td>P1-EA</td>
+                  <td>05 Aug 2019 03:00 PM</td>
+                  <td>Misconduct</td>
                   <td>
-                    <a href="#">P5 Maths Remedial</a>
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
                   </td>
-                  <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>5</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>Ernest Goh</td>
+                  <td>Class Room</td>
+                  <td>Aaron Tan</td>
                 </tr>
               </tbody>
             </table>

@@ -1,7 +1,7 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-attendance-report">
+      <div class="article article-class-attendance-report">
         <div class="article-header">
           <nav class="navbar navbar-expand">
             <ul class="navbar-nav">
@@ -46,6 +46,17 @@
                       </select>
                     </div>
                     <div class="form-group">
+                      <label class="form-label" for="selClass">Remedial Class</label>
+                      <select class="form-control selectpicker" id="selClass">
+                        <option selected="">All</option>
+                        <option>P1 Maths Remedial</option>
+                        <option>P2 Maths Remedial</option>
+                        <option>P3 Maths Remedial</option>
+                        <option>P4 Maths Remedial</option>
+                        <option>P5 Maths Remedial</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
                       <label class="form-label" for="txtStartDate">Start Date</label>
                       <input class="form-control form-input" type="text" id="txtStartDate">
                     </div>
@@ -77,12 +88,12 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/{{userRole}}/attendances/report">
+                <a class="nav-link" href="/{{userRole}}/attendances/report">
                   Attendance Report
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/{{userRole}}/attendances/class_report">
+                <a class="nav-link active" href="/{{userRole}}/attendances/class_report">
                   Class Attendance Report
                 </a>
               </li>
@@ -113,60 +124,52 @@
             <table class="table" style="width: 100%;">
               <thead>
                 <tr>
+                  <th>Student Name</th>
                   <th>Remedial Class</th>
                   <th>Attendance Date</th>
-                  <th>Total Students</th>
-                  <th>Present</th>
-                  <th>Late</th>
-                  <th>Absent</th>
-                  <th>Taken By</th>
+                  <th>Status</th>
+                  <th>Remarks</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td>Amos Chee</td>
                   <td>P1 Maths Remedial</td>
                   <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>5</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>Ernest Goh</td>
+                  <td>Absent with MC</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  </td>
                 </tr>
                 <tr>
-                  <td>P2 Maths Remedial</td>
+                  <td>Charles Tan</td>
+                  <td>P1 Maths Remedial</td>
                   <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>5</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>Ernest Goh</td>
+                  <td>Absent with MC</td>
+                  <td>
+                    Aenean commodo ligula eget dolor.
+                  </td>
                 </tr>
                 <tr>
-                  <td>P3 Maths Remedial</td>
+                  <td>Faisal Manaf</td>
+                  <td>P1 Maths Remedial</td>
                   <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>3</td>
-                  <td>0</td>
-                  <td>2</td>
-                  <td>Ernest Goh</td>
+                  <td>Present</td>
+                  <td>&nbsp;</td>
                 </tr>
                 <tr>
-                  <td>P4 Maths Remedial</td>
+                  <td>Vivian Lim</td>
+                  <td>P1 Maths Remedial</td>
                   <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>4</td>
-                  <td>0</td>
-                  <td>1</td>
-                  <td>Ernest Goh</td>
+                  <td>Present</td>
+                  <td>&nbsp;</td>
                 </tr>
                 <tr>
-                  <td>P5 Maths Remedial</td>
+                  <td>Zachary Teo</td>
+                  <td>P1 Maths Remedial</td>
                   <td>07 Aug 2019</td>
-                  <td>5</td>
-                  <td>5</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>Ernest Goh</td>
+                  <td>Present</td>
+                  <td>&nbsp;</td>
                 </tr>
               </tbody>
             </table>

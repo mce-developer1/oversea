@@ -29,6 +29,7 @@ $(document).ready(function() {
   var $container = $('.article-attendance-sessions');
   if ($container.length === 0) $container = $('.article-long-absences');
   if ($container.length === 0) $container = $('.article-attendance-report');
+  if ($container.length === 0) $container = $('.article-class-attendance-report');
   if ($container.length === 0) $container = $('.article-notification-rules');
 
   function updateActionButtonsStyles() {
@@ -389,36 +390,6 @@ $(document).ready(function() {
   }
 
   if ($container.hasClass('article-attendance-report')) {
-    function renderStudentTable() {
-      if ($.fn.DataTable.isDataTable('.modal-class-attendance-view .table')) return;
-      var dataTable = $('.modal-class-attendance-view .table').DataTable({
-        ordering: false,
-        paging: false,
-        language: {
-          infoEmpty: 'Oops, nothing to see here!',
-        },
-        columnDefs: [
-          {
-            width: 160,
-            targets: 0
-          },
-          {
-            width: 140,
-            targets: 1
-          },
-          {
-            width: 160,
-            targets: 2
-          }
-        ],
-        dom: 'rt<"bottom">',
-        order: [[1, 'asc']],
-        headerCallback: function( thead, data, start, end, display ) {
-          $(thead).closest('.dataTables_scrollHead').css('position', '');
-        }
-      });
-    }
-
     $('#txtStartDate').daterangepicker({
       parentEl: '.dialog-menu-filters',
       singleDatePicker: true,
@@ -477,15 +448,58 @@ $(document).ready(function() {
         $(thead).closest('.dataTables_scrollHead').css('position', '');
       }
     });
+  }
 
-    $container.find('.table tr a').on('click', function(e) {
-      e.preventDefault();
-      var className = $(this).text();
-      $('.modal-class-attendance-view .modal-dialog .modal-title').text(className);
-      $('.modal-class-attendance-view').on('shown.bs.modal', function (e) {
-        renderStudentTable();
-      });
-      $('.modal-class-attendance-view').modal('show');
+  if ($container.hasClass('article-class-attendance-report')) {
+    $('#txtStartDate').daterangepicker({
+      parentEl: '.dialog-menu-filters',
+      singleDatePicker: true,
+      timePicker: false,
+      minYear: 2019,
+      maxYear: 2019,
+      locale: {
+        format: 'DD MMM YYYY'
+      }
+    });
+
+    $('#txtEndDate').daterangepicker({
+      parentEl: '.dialog-menu-filters',
+      singleDatePicker: true,
+      timePicker: false,
+      minYear: 2019,
+      maxYear: 2019,
+      locale: {
+        format: 'DD MMM YYYY'
+      }
+    });
+
+    var dataTable = $container.find('.table').DataTable({
+      scrollY: '100%',
+      scrollX: true,
+      ordering: false,
+      paging: false,
+      language: {
+        infoEmpty: 'Oops, nothing to see here!',
+      },
+      columnDefs: [
+        {
+          width: 160,
+          targets: 1
+        },
+        {
+          width: 140,
+          targets: 2
+        },
+        {
+          width: 240,
+          targets: 4
+        }
+      ],
+      dom: 'rt<"bottom">',
+      order: [[1, 'asc']],
+      headerCallback: function( thead, data, start, end, display ) {
+        $(thead).closest('.dataTables_scrollHead').css('position', '');
+      }
     });
   }
 

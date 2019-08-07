@@ -935,6 +935,17 @@ select.form-control {
           &.active {
             background-color: $accent;
             color: $white;
+
+            .fas {
+              color: $white;
+            }
+          }
+
+          .fas {
+            font-size: 1.5rem;
+            color: $accent;
+            margin-right: .5rem;
+            width: 2rem;
           }
 
           .img {
