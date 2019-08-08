@@ -29,6 +29,7 @@ a:focus {
 
 .btn {
   border-radius: 0;
+  white-space: nowrap;
 }
 .btn:not(:disabled):not(.disabled):hover, .btn:not(:disabled):not(.disabled):focus, .btn:not(:disabled):not(.disabled):active:focus {
   box-shadow: none;
@@ -1973,6 +1974,9 @@ select.form-control {
   border-color: #d65600 !important;
 }
 
+.calendar .fc-view-container {
+  background-color: #ffffff;
+}
 .calendar .fc-license-message {
   z-index: 1000 !important;
 }

@@ -111,16 +111,35 @@ $(document).ready(function() {
       });
       
       $('.article-attendance-taking .table tr input[type="checkbox"]').on('change', function(e) {
-        var $row = $(this).closest('tr');
-        if ($row.hasClass('table-active')) {
-          $row.removeClass('table-active');
+        if ($(this).attr('id') === 'all') {
+          if ($(this).is(':checked')) {
+            $('.article-attendance-taking .table tr .custom-control-input').prop('checked', true);
+            $('.article-attendance-taking .table tbody tr').addClass('table-active');
+          } else {
+            $('.article-attendance-taking .table tr .custom-control-input').prop('checked', false);
+            $('.article-attendance-taking .table tbody tr').removeClass('table-active');
+          }
         } else {
-          $row.addClass('table-active');
+          var $row = $(this).closest('tr');
+          if ($row.hasClass('table-active')) {
+            $row.removeClass('table-active');
+          } else {
+            $row.addClass('table-active');
+          }
+        }
+
+        var totalRows = $('.article-attendance-taking .table tbody tr').length;
+        var selectedRows = $('.article-attendance-taking .table tbody tr.table-active').length;
+
+        if (totalRows === selectedRows) {
+          $('.article-attendance-taking .table tr #all').prop('checked', true);
+        } else {
+          $('.article-attendance-taking .table tr #all').prop('checked', false);
         }
         updateActionButtonsStyles();
       });
   
-      $('.article-attendance-taking .table tr').on('click', function(e) {
+      $('.article-attendance-taking .table tbody tr').on('click', function(e) {
         if ($(e.target).hasClass('.form-input')) return;
         if ($(e.target).closest('.form-input').length > 0) return;
         if ($(e.target).hasClass('.bootstrap-select')) return;
@@ -133,6 +152,15 @@ $(document).ready(function() {
         } else {
           $(this).find('.custom-control-input').prop('checked', true);
           $(this).addClass('table-active');
+        }
+        
+        var totalRows = $('.article-attendance-taking .table tbody tr').length;
+        var selectedRows = $('.article-attendance-taking .table tbody tr.table-active').length;
+
+        if (totalRows === selectedRows) {
+          $('.article-attendance-taking .table tr #all').prop('checked', true);
+        } else {
+          $('.article-attendance-taking .table tr #all').prop('checked', false);
         }
         updateActionButtonsStyles();
       });

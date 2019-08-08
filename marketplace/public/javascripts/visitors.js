@@ -1,13 +1,13 @@
 $(document).ready(function() {
   var visitors = [
-    { id: 1, name: 'Aaron Tan' }, 
-    { id: 2, name: 'Arya Suman' },
-    { id: 3, name: 'Ashar Ahmad' }, 
-    { id: 4, name: 'Chua Chin Hui' },
-    { id: 5, name: 'Derrick Lee' },
-    { id: 6, name: 'Nurulhuda bte Sazali' },
-    { id: 7, name: 'Siow Poh Piah Irene' },
-    { id: 8, name: 'Tan Boon Huat' }
+    { id: 1, name: 'Aaron Tan', ident: 'A98765432Z', mobile: '98765432', category: 'Parents' }, 
+    { id: 2, name: 'Arya Suman', ident: 'A96543219Z', mobile: '96543219', category: 'Parents' },
+    { id: 3, name: 'Ashar Ahmad', ident: 'A97654321Z', mobile: '97654321', category: 'Delivery' }, 
+    { id: 4, name: 'Chua Chin Hui', ident: 'A95432198Z', mobile: '95432198', category: 'Delivery' },
+    { id: 5, name: 'Derrick Lee', ident: 'A94321987Z', mobile: '94321987', category: 'Contractor' },
+    { id: 6, name: 'Nurulhuda bte Sazali', ident: 'A93219876Z', mobile: '93219876', category: 'Contractor' },
+    { id: 7, name: 'Siow Poh Piah Irene', ident: 'A92198765Z', mobile: '92198765', category: 'Ministry Staff' },
+    { id: 8, name: 'Tan Boon Huat', ident: 'A91987654Z', mobile: '91987654', category: 'Ministry Staff' }
   ];
   var $container = $('.article-current-visitors');
   if ($container.length === 0) $container = $('.article-school-visitors');
@@ -158,13 +158,22 @@ $(document).ready(function() {
       }
     }])
     .on('autocomplete:selected', function(event, suggestion) {
-      $('#txtIdentification').attr('readonly', true)
-        .val('A6543217Z');
-      $('#selCategory').attr('disabled', true)
-        .selectpicker('val', 'Parents');
-      $('#txtCompany').attr('readonly', true).val('');
-      $('#txtMobile').attr('readonly', true)
-        .val('98765432');
+      $('#txtIdentification').attr('readonly', true);
+      $('#selCategory').attr('disabled', true);
+      $('#txtCompany').attr('readonly', true);
+      $('#txtMobile').attr('readonly', true);
+
+      if (suggestion && suggestion.name) {
+        $('#txtIdentification').val(suggestion.ident);
+        $('#selCategory').selectpicker('val', suggestion.category);
+        $('#txtCompany').val(suggestion.company);
+        $('#txtMobile').val(suggestion.mobile);
+      } else {
+        $('#txtIdentification').val('');
+        $('#selCategory').selectpicker('val', 'Contractors');
+        $('#txtCompany').val('');
+        $('#txtMobile').val('');
+      }
     });
 
     $('.modal-visitor-checkin .form-checkin-visitor .input-autocomplete').on('change', function(e) {
@@ -174,25 +183,28 @@ $(document).ready(function() {
       });
 
       if (name === 'Arya Suman') {
-        $('.modal-visitor-checkin .form-checkin-visitor .text-danger').removeClass('d-none');
+        $('.modal-visitor-checkin .text-danger').removeClass('d-none');
       } else {
-        $('.modal-visitor-checkin .form-checkin-visitor .text-danger').removeClass('d-none');
+        $('.modal-visitor-checkin .text-danger').addClass('d-none');
       }
 
-      if (result.length > 0) {
-        $('#txtIdentification').attr('readonly', true)
-          .val('A6543217Z');
-        $('#selCategory').attr('disabled', true)
-          .selectpicker('val', 'Parents');
-        $('#txtCompany').attr('readonly', true).val('');
-        $('#txtMobile').attr('readonly', true)
-          .val('98765432');
-      } else {
+      if (result.length === 0) {
         $('#txtIdentification').removeAttr('readonly').val('');
         $('#selCategory').removeAttr('disabled')
           .selectpicker('val', 'Contractors');
+        $('#selCategory').selectpicker('refresh');
         $('#txtCompany').removeAttr('readonly').val('');
         $('#txtMobile').removeAttr('readonly').val('');
+      } else {
+        $('#txtIdentification').attr('readonly', true)
+          .val(result[0].ident);
+        $('#selCategory').attr('disabled', true)
+          .selectpicker('val', result[0].category);
+        $('#selCategory').selectpicker('refresh');
+        $('#txtCompany').attr('readonly', true)
+          .val(result[0].company);
+        $('#txtMobile').attr('readonly', true)
+          .val(result[0].mobile);;
       }
     });
 
@@ -243,14 +255,27 @@ $(document).ready(function() {
     });
 
     $container.find('.article-body .navbar .btn-checkin').on('click', function(e) {
+      $('.modal-visitor-checkin').on('shown.bs.modal', function(e) {
+        $('.modal-visitor-checkin .input-autocomplete').autocomplete('val', '');
+        $('.modal-visitor-checkin .input-autocomplete').trigger('autocomplete:selected');
+      });
       $('.modal-visitor-checkin').modal('show');
     });
 
     $container.find('.table tr .btn-checkin').on('click', function(e) {
+      $('.modal-visitor-checkin').on('shown.bs.modal', function(e) {
+        $('.modal-visitor-checkin .input-autocomplete').autocomplete('val', visitors[0].name);
+        $('.modal-visitor-checkin .input-autocomplete').trigger('autocomplete:selected', visitors[0]);
+      });
       $('.modal-visitor-checkin').modal('show');
     });
 
     $container.find('.table tr .btn-checkout').on('click', function(e) {
+      var index = $(this).attr('data-index');
+      $('.modal-visitor-checkout').on('shown.bs.modal', function(e) {
+        $('.modal-visitor-checkout #txtName').val(visitors[index].name);
+        $('.modal-visitor-checkout #txtIdentification').val(visitors[index].ident);
+      });
       $('.modal-visitor-checkout').modal('show');
     });
   }

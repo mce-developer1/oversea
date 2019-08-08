@@ -28,6 +28,7 @@ app.use('/static/chartjs-plugin-datalabels', express.static(path.join(__dirname,
 app.use('/static/moment', express.static(path.join(__dirname, 'node_modules/moment')));
 app.use('/static/daterangepicker', express.static(path.join(__dirname, 'node_modules/daterangepicker')));
 app.use('/static/datatables', express.static(path.join(__dirname, 'node_modules/datatables/media')));
+app.use('/static/datatables-fixedcolumns', express.static(path.join(__dirname, 'node_modules/datatables-fixedcolumns')));
 app.use('/static/autocomplete.js', express.static(path.join(__dirname, 'node_modules/autocomplete.js/dist')));
 app.use('/static/dropzone', express.static(path.join(__dirname, 'node_modules/dropzone/dist')));
 app.use('/static/sortablejs', express.static(path.join(__dirname, 'node_modules/sortablejs')));

@@ -1407,6 +1407,10 @@ select.form-control {
 }
 
 .calendar {
+  .fc-view-container {
+    background-color: $white;
+  }
+
   .fc-license-message {
     z-index: 1000 !important;
   }
