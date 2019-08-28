@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/static/fullcalendar/resource-timeline/main.css" />
     <link rel="stylesheet" href="/static/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="/static/datatables/css/jquery.dataTables.css" />
-    <link rel="stylesheet" href="/static/cropperjs/cropper.css" />
     <link rel="stylesheet" href="/static/stylesheets/style.css" />
   </head>
   <body>
@@ -55,9 +54,9 @@
           </div>
           <ul class="navbar-nav nav-main">
             {{#if loggedIn}}
-              <li class="nav-item d-none">
-                <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/bookings">
-                  <i class="img img-administration"></i> Facility Booking
+              <li class="nav-item">
+                <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/add_booking">
+                  <i class="fas fa-calendar-plus"></i> Facility Booking
                 </a>
               </li>
               <li class="nav-item">
@@ -169,9 +168,9 @@
         <div class="navbar-content">
           <ul class="navbar-nav">
             {{#if loggedIn}}
-              <li class="nav-item d-none">
-                <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/bookings">
-                  <i class="img img-administration"></i> Facility Booking
+              <li class="nav-item">
+                <a class="nav-link {{#if facilitiesPage}}active{{/if}}" href="/{{userRole}}/facilities/add_booking">
+                  <i class="fas fa-calendar-plus"></i> Facility Booking
                 </a>
               </li>
               <li class="nav-item">
@@ -219,7 +218,6 @@
     <script src="/static/autocomplete.js/autocomplete.jquery.js"></script>
     <script src="/static/dropzone/dropzone.js"></script>
     <script src="/static/sortablejs/sortable.js"></script>
-    <script src="/static/cropperjs/cropper.js"></script>
     <script src="/static/tinymce/tinymce.js"></script>
     <script src="/static/javascripts/application.js"></script>
     <script src="/static/javascripts/{{module}}.js"></script>

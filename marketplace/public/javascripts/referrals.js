@@ -15,7 +15,7 @@ $(document).ready(function() {
         { id: 1, title: 'Aaron Tan', eventColor: '#3788d8' }, 
         { id: 2, title: 'Arya Suman', eventColor: '#3788d8' },
         { id: 3, title: 'Ashar Ahmad', eventColor: '#3788d8' }, 
-        { id: 4, title: 'Chua Chin Hui', eventColor: '#3788d8' }        
+        { id: 4, title: 'Chua Chin Hui', eventColor: '#3788d8' }
       ]
     },
     { 
@@ -150,7 +150,7 @@ $(document).ready(function() {
 
     $(document).on('click', '.popover .btn-edit', function(e) {
       if (window.eventElement) $(window.eventElement).popover('hide');
-      $('.modal-booking-edit').modal('show');
+      $('.modal-ed-booking-edit').modal('show');
     });
 
     $(document).on('click', '.popover .btn-delete', function(e) {
@@ -171,14 +171,13 @@ $(document).ready(function() {
     var fullCalendar = new FullCalendar.Calendar(calendar, {
       plugins: ['interaction','resourceTimeline'],
       defaultView: 'resourceTimelineDay',
-      aspectRatio: 2,
+      aspectRatio: 3,
       selectable: true,
       editable: true,
       header: {
-        left: 'title',
-        center: '',
-        right: 'today prev,next'
-        //right: 'resourceTimelineDay,resourceTimelineWeek'
+        left: 'prev,next today',
+        center: 'title',
+        right: 'resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth'
       },
       resources: resources,
       events: events,
@@ -234,7 +233,7 @@ $(document).ready(function() {
           .setStartDate(info.start);
         $('#txtEndDate0').data('daterangepicker')
           .setStartDate(info.end);
-        $('.modal-booking-create').modal('show');
+        $('.modal-ed-booking-create').modal('show');
       },
       eventClick: function(info) {
         var properties = info.event.extendedProps;
@@ -341,7 +340,7 @@ $(document).ready(function() {
     });
 
     $container.find('.article-body .navbar .btn-edit').on('click', function(e) {
-      $('.modal-booking-edit').modal('show');
+      $('.modal-ed-booking-edit').modal('show');
     });
 
     $container.find('.article-body .navbar .btn-delete').on('click', function(e) {

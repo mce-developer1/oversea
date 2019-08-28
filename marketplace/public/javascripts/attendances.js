@@ -206,10 +206,9 @@ $(document).ready(function() {
       selectable: true,
       editable: true,
       header: {
-        left: 'title',
-        center: '',
-        right: 'today prev,next'
-        //right: 'resourceTimelineDay,resourceTimelineWeek'
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridWeek,dayGridMonth'
       },
       events: events,
       eventRender: function(info) {

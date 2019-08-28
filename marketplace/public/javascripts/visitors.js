@@ -242,6 +242,10 @@ $(document).ready(function() {
       $('.modal-user-select').modal('show');
     });
 
+    $('.modal-visitor-checkin .btn-primary').on('click', function(e) {
+      $('.modal-visitor-checkin').modal('hide');
+    });
+
     $('#txtTimeOut').daterangepicker({
       drops: 'up',
       singleDatePicker: true,

@@ -1407,6 +1407,12 @@ select.form-control {
 }
 
 .calendar {
+  .fc-header-toolbar {
+    .dropdown-toggle {
+      padding: .4rem !important;
+    }
+  }
+
   .fc-view-container {
     background-color: $white;
   }
@@ -1437,6 +1443,9 @@ select.form-control {
         color: $white;
       }
 
+      &.fc-dayGridDay-button,
+      &.fc-dayGridWeek-button,
+      &.fc-dayGridMonth-button,
       &.fc-resourceTimelineDay-button,
       &.fc-resourceTimelineWeek-button {
         &.fc-button-active {
@@ -1444,6 +1453,10 @@ select.form-control {
           color: $white;
         }
       }
+    }
+
+    .fc-icon {
+      font-size: 1.25rem;
     }
   }
 }

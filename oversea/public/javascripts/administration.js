@@ -29,6 +29,20 @@ $(document).ready(function() {
   }
 
   if ($container.hasClass('article-manage-school')) {
+    $('#txtExpiryDate').val(moment().endOf("year").format('DD MMM YYYY'));
+    $('#txtExpiryDate').daterangepicker({
+      parentEl: '.form-school-group',
+      drops: 'up',
+      singleDatePicker: true,
+      showDropdowns: true,
+      timePicker: false,
+      minYear: 1901,
+      maxYear: moment().add(10, 'y').format('YYYY'),
+      locale: {
+        format: 'DD MMM YYYY'
+      }
+    });
+
     var dataTable = $('.table').DataTable({
       scrollY: '100%',
       scrollX: true,

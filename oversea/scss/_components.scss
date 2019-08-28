@@ -531,16 +531,36 @@ select.form-control {
           background-image: url("../images/icon_topnav_selected_mylibrary.png");
         }
 
+        &.img-myebooks {
+          background-image: url("../images/icon_topnav_selected_myebooks.png");
+        }
+
+        &.img-myassignments {
+          background-image: url("../images/icon_topnav_selected_myassignments.png");
+        }
+
         &.img-myresources {
           background-image: url("../images/icon_topnav_selected_myresources.png");
+        }
+
+        &.img-mytools {
+          background-image: url("../images/icon_topnav_selected_mytools.png");
         }
 
         &.img-myreports {
           background-image: url("../images/icon_topnav_selected_myreports.png");
         }
 
+        &.img-schoolmatters {
+          background-image: url("../images/icon_topnav_selected_schoolmatters.png");
+        }
+
         &.img-administration {
           background-image: url("../images/icon_topnav_selected_administration.png");
+        }
+
+        &.img-mygalaxy {
+          background-image: url("../images/icon_topnav_selected_mygalaxy.png");
         }
       }
     }
@@ -551,19 +571,95 @@ select.form-control {
     background-size: contain;
   
     &.img-mylibrary {
-      background-image: url("../images/icon_topnav_mylibrary.png");
+      background-image: url("../images/icon_topnav_unselected_mylibrary.png");
+    }
+
+    &.img-myebooks {
+      background-image: url("../images/icon_topnav_unselected_myebooks.png");
+    }
+
+    &.img-myassignments {
+      background-image: url("../images/icon_topnav_unselected_myassignments.png");
     }
   
     &.img-myresources {
-      background-image: url("../images/icon_topnav_myresources.png");
+      background-image: url("../images/icon_topnav_unselected_myresources.png");
+    }
+
+    &.img-mytools {
+      background-image: url("../images/icon_topnav_unselected_mytools.png");
     }
   
     &.img-myreports {
-      background-image: url("../images/icon_topnav_myreports.png");
+      background-image: url("../images/icon_topnav_unselected_myreports.png");
+    }
+
+    &.img-schoolmatters {
+      background-image: url("../images/icon_topnav_unselected_schoolmatters.png");
     }
 
     &.img-administration {
-      background-image: url("../images/icon_topnav_administration.png");
+      background-image: url("../images/icon_topnav_unselected_administration.png");
+    }
+
+    &.img-mygalaxy {
+      background-image: url("../images/icon_topnav_unselected_mygalaxy.png");
+    }
+
+    &.img-mytools-lessonbuilder {
+      background-image: url("../images/icon_topnav_sub_mytools_lessonbuilder.png");
+    }
+
+    &.img-mytools-testbuilder {
+      background-image: url("../images/icon_topnav_sub_mytools_testbuilder.png");
+    }
+
+    &.img-mytools-questionbuilder {
+      background-image: url("../images/icon_topnav_sub_mytools_questionbuilder.png");
+    }
+
+    &.img-mytools-schoolnotes {
+      background-image: url("../images/icon_topnav_sub_mytools_schoolnotes.png");
+    }
+
+    &.img-myreports-mastery {
+      background-image: url("../images/icon_topnav_sub_myreports_mastery.png");
+    }
+
+    &.img-myreports-usage {
+      background-image: url("../images/icon_topnav_sub_myreports_usage.png");
+    }
+
+    &.img-schoolmatters-notifications {
+      background-image: url("../images/icon_topnav_sub_schoolmatters_notifications.png");
+    }
+
+    &.img-schoolmatters-announcements {
+      background-image: url("../images/icon_topnav_sub_schoolmatters_announcements.png");
+    }
+
+    &.img-schoolmatters-facilitybooking {
+      background-image: url("../images/icon_topnav_sub_schoolmatters_facilitybooking.png");
+    }
+
+    &.img-schoolmatters-markattendance {
+      background-image: url("../images/icon_topnav_sub_schoolmatters_markattendance.png");
+    }
+
+    &.img-administration-loginreport {
+      background-image: url("../images/icon_topnav_sub_administration_loginreport.png");
+    }
+
+    &.img-administration-useraccount {
+      background-image: url("../images/icon_topnav_sub_administration_useraccount.png");
+    }
+
+    &.img-administration-formclass {
+      background-image: url("../images/icon_topnav_sub_administration_formclass.png");
+    }
+
+    &.img-administration-schoolgroup {
+      background-image: url("../images/icon_topnav_sub_administration_schoolgroup.png");
     }
   }
 }

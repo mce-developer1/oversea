@@ -47,6 +47,25 @@ router.get('/signout', function(req, res, next) {
   res.redirect('/');
 });
 
+/* GET facility booking page. */
+router.get('/:userRole/facilities/add_booking', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('facilities/add_booking', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'facilities',
+    loggedIn: true,
+    facilitiesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET current visitors page. */
 router.get('/:userRole/visitors/current_visitors', function(req, res, next) {
   var userRole = req.params.userRole;
@@ -65,7 +84,6 @@ router.get('/:userRole/visitors/current_visitors', function(req, res, next) {
     adminUser: adminUser
   });
 });
-
 
 /* GET visitors page. */
 router.get('/:userRole/visitors/visitors', function(req, res, next) {

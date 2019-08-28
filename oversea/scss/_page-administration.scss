@@ -279,6 +279,7 @@
         .article-body {
           max-width: 76rem;
           
+          .form-school,
           .form-user-account,
           .form-form-class,
           .form-school-group {
@@ -369,6 +370,7 @@
       @media (max-width: 767.98px) {
         .article-content {
           .article-body {
+            .form-school,
             .form-user-account,
             .form-form-class,
             .form-school-group {
@@ -453,6 +455,7 @@
       @media (min-width: 768px) {
         .article-content {
           .article-body {
+            .form-school,
             .form-user-account,
             .form-form-class,
             .form-school-group {
@@ -478,6 +481,7 @@
       @media (min-width: 768px) {
         .article-content {
           .article-body {
+            .form-school,
             .form-user-account,
             .form-form-class,
             .form-school-group {

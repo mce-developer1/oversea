@@ -235,6 +235,12 @@ a {
 }
 
 .form-group {
+  &.form-group-inline {
+    @include display-flex(row);
+    @include align-items(center);
+    width: 100%;
+  }
+
   &.form-group-actions {
     margin-bottom: 0;
   }

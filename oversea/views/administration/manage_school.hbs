@@ -141,7 +141,7 @@
         </div>
         <div class="article-content">
           <div class="article-body">
-            <form class="form-school-group">
+            <form class="form-school">
               <div class="form-row">
                 <div class="form-group col">
                   <label class="form-label" for="txtSchoolID">School ID</label>
@@ -161,7 +161,7 @@
                 <div class="col-auto"></div>
                 <div class="form-group col">
                   <label class="form-label" for="selTemplate">Template</label>
-                  <select class="form-control" id="selTemplate">
+                  <select class="form-control selectpicker" id="selTemplate">
                     <option>Primary School</option>
                     <option>Secondary School</option>
                   </select>
@@ -170,7 +170,7 @@
               <div class="form-row">
                 <div class="form-group col">
                   <label class="form-label" for="selSubscriberType">Subscriber Type</label>
-                  <select class="form-control" id="selSubscriberType">
+                  <select class="form-control selectpicker" id="selSubscriberType">
                     <option>Primary School</option>
                     <option>Secondary School</option>
                   </select>
@@ -178,10 +178,27 @@
                 <div class="col-auto"></div>
                 <div class="form-group col">
                   <label class="form-label" for="selCalendar">Calendar</label>
-                  <select class="form-control" id="selCalendar">
+                  <select class="form-control selectpicker" id="selCalendar">
                     <option>Indonesia School</option>
                     <option>Malaysia School</option>
                     <option>Singapore School</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label class="form-label" for="selContentSubscriberType">Content Subscriber Type</label>
+                  <select class="form-control selectpicker" id="selContentSubscriberType">
+                    <option>Lead Essential</option>
+                    <option>Lead Ultra</option>
+                  </select>
+                </div>
+                <div class="col-auto"></div>
+                <div class="form-group col">
+                  <label class="form-label" for="selNonChannelSubscriberType">Non-channel Subscriber Type</label>
+                  <select class="form-control selectpicker" id="selNonChannelSubscriberType">
+                    <option>Oversea</option>
+                    <option>Singapore</option>
                   </select>
                 </div>
               </div>
@@ -193,12 +210,18 @@
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                  <label class="form-label" for="txtLicense">No. of User License</label>
+                  <label class="form-label" for="txtLicense">
+                    No. of User License
+                    <small class="text-muted">(Optional)</small>
+                  </label>
                   <input class="form-control form-input" type="text" id="txtLicense">
                 </div>
                 <div class="col-auto"></div>
                 <div class="form-group col">
-                  <label class="form-label" for="txtExpiryDate">School Expiry Date</label>
+                  <label class="form-label" for="txtExpiryDate">
+                    Expiry Date
+                    <small class="text-muted">(Optional)</small>
+                  </label>
                   <input class="form-control form-input" type="text" id="txtExpiryDate">
                 </div>
               </div>

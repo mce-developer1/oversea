@@ -179,6 +179,15 @@ a:focus {
   margin-bottom: 1rem;
 }
 
+.form-group.form-group-inline {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  width: 100%;
+}
 .form-group.form-group-actions {
   margin-bottom: 0;
 }
@@ -1974,6 +1983,9 @@ select.form-control {
   border-color: #d65600 !important;
 }
 
+.calendar .fc-header-toolbar .dropdown-toggle {
+  padding: 0.4rem !important;
+}
 .calendar .fc-view-container {
   background-color: #ffffff;
 }
@@ -1998,9 +2010,12 @@ select.form-control {
   background-color: #6c757d;
   color: #ffffff;
 }
-.calendar .fc-button.fc-button-primary.fc-resourceTimelineDay-button.fc-button-active, .calendar .fc-button.fc-button-primary.fc-resourceTimelineWeek-button.fc-button-active {
+.calendar .fc-button.fc-button-primary.fc-dayGridDay-button.fc-button-active, .calendar .fc-button.fc-button-primary.fc-dayGridWeek-button.fc-button-active, .calendar .fc-button.fc-button-primary.fc-dayGridMonth-button.fc-button-active, .calendar .fc-button.fc-button-primary.fc-resourceTimelineDay-button.fc-button-active, .calendar .fc-button.fc-button-primary.fc-resourceTimelineWeek-button.fc-button-active {
   background-color: #6c757d;
   color: #ffffff;
+}
+.calendar .fc-button .fc-icon {
+  font-size: 1.25rem;
 }
 
 .calendar-event .event-header {
@@ -3652,14 +3667,14 @@ select.form-control {
   vertical-align: middle;
 }
 
-.app-content.page-facility-booking .article-facility-booking {
+.app-content.page-facilities .article-facility-booking {
   padding: 0 1.5rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header {
+.app-content.page-facilities .article-facility-booking .article-header {
   height: 4rem;
   max-height: 4rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar {
+.app-content.page-facilities .article-facility-booking .article-header .navbar {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -3676,20 +3691,20 @@ select.form-control {
   margin: 0 -1.5rem;
   padding: 0.75rem 1.5rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav:first-child {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav:first-child {
   margin-right: 1rem;
   width: 16.5rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav.nav-main {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav.nav-main {
   -ms-flex-positive: 1;
   flex-grow: 1;
   position: relative;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -3697,51 +3712,59 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
   padding: 0.25rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
   width: 3rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
   font-size: 1.25rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item .btn-light {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item .item-text {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 12rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .btn-light.btn-more {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .btn-light.btn-more {
   padding: 0.325rem 1rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .btn-light .fas {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .btn-light .fas {
   font-size: 1.5rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .btn-light .fas.fa-filter {
+  font-size: 1.25rem;
+}
+.app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
   font-size: 1.5rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-content .article-sidebar {
+.app-content.page-facilities .article-facility-booking .article-content .article-sidebar {
   margin: 0;
 }
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .navbar {
+.app-content.page-facilities .article-facility-booking .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   padding: 0.75rem 0;
 }
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .navbar.navbar-pagination {
+.app-content.page-facilities .article-facility-booking .article-content .article-body .navbar.navbar-pagination {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .navbar .navbar-nav .btn-primary {
+.app-content.page-facilities .article-facility-booking .article-content .article-body .navbar .navbar-nav .btn-primary {
   margin-left: 1rem;
 }
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head,
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body {
+.app-content.page-facilities .article-facility-booking .article-content .article-body .navbar .navbar-nav .btn-outline-secondary {
+  margin-left: 0.5rem;
+}
+.app-content.page-facilities .article-facility-booking .article-content .article-body .calendar {
+  padding: 1rem 0;
+}
+.app-content.page-facilities .article-facility-booking .article-content .article-body .table {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -3750,134 +3773,73 @@ select.form-control {
   user-select: none;
   margin-bottom: 0;
 }
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head a,
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body a {
+.app-content.page-facilities .article-facility-booking .article-content .article-body .table a {
   color: #212529;
   word-break: break-word;
 }
-@media (max-width: 1359.98px) {
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head colgroup:nth-child(5),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body colgroup:nth-child(5) {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head th:nth-child(5),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head td:nth-child(5),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body th:nth-child(5),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body td:nth-child(5) {
-    display: none;
-  }
-}
-@media (max-width: 1199.98px) {
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head colgroup:nth-child(3),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head colgroup:nth-child(4),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body colgroup:nth-child(3),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body colgroup:nth-child(4) {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head th:nth-child(3),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head th:nth-child(4),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head td:nth-child(3),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head td:nth-child(4),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body th:nth-child(3),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body th:nth-child(4),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body td:nth-child(3),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body td:nth-child(4) {
-    display: none;
-  }
-}
 @media (max-width: 991.98px) {
-  .app-content.page-facility-booking .article-facility-booking .article-header {
+  .app-content.page-facilities .article-facility-booking .article-header {
     margin: 0 -0.5rem;
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     z-index: 970;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar {
     -webkit-justify-content: space-between;
     justify-content: space-between;
     padding: 1rem;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav.nav-main {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav.nav-main {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-divider {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-divider {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item.dropdown {
-    order: 1;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item .btn-share,
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item .btn-edit,
-.app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item .btn-assign {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item-drawer {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item-drawer {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .input-group .form-control {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .input-group .form-control {
     padding-left: 3.5rem;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-content {
+  .app-content.page-facilities .article-facility-booking .article-content {
     margin: 0 -0.5rem;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-sidebar {
+  .app-content.page-facilities .article-facility-booking .article-content .article-sidebar {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body {
+  .app-content.page-facilities .article-facility-booking .article-content .article-body {
     margin: 0;
-  }
-}
-@media (max-width: 768px) {
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head colgroup:nth-child(7),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body colgroup:nth-child(7) {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head th:nth-child(7),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head td:nth-child(7),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body th:nth-child(7),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body td:nth-child(7) {
-    display: none;
   }
 }
 @media (max-width: 576px) {
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav:first-child {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head colgroup:nth-child(6),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body colgroup:nth-child(6) {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head tr th:nth-child(6),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head tr td:nth-child(6),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body tr th:nth-child(6),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body tr td:nth-child(6) {
-    display: none;
   }
 }
 @media (min-width: 992px) {
-  .app-content.page-facility-booking .article-facility-booking .article-header {
+  .app-content.page-facilities .article-facility-booking .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
     z-index: 970;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .nav-item-submodule {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .nav-item-submodule {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
     display: none;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-header .navbar .navbar-nav .input-group .form-control {
+  .app-content.page-facilities .article-facility-booking .article-header .navbar .navbar-nav .input-group .form-control {
     width: 24rem;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-sidebar {
+  .app-content.page-facilities .article-facility-booking .article-content .article-sidebar {
     height: calc(100vh - 13rem);
     overflow-x: hidden;
     overflow-y: auto;
@@ -3886,254 +3848,41 @@ select.form-control {
     position: sticky;
     top: 10rem;
   }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head {
+  .app-content.page-facilities .article-facility-booking .article-content .article-body .table-head {
     position: -webkit-sticky;
     position: sticky;
     top: 10rem;
     z-index: 950;
   }
 }
-@media (min-width: 1360px) {
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head colgroup:nth-child(8),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body colgroup:nth-child(8) {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head th:nth-child(8),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-head td:nth-child(8),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body th:nth-child(8),
-.app-content.page-facility-booking .article-facility-booking .article-content .article-body .table-body td:nth-child(8) {
-    display: none;
-  }
+
+.modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-group {
+  width: 100%;
 }
-.app-content.page-facility-booking .article-create-lesson {
-  padding: 0 1.5rem;
+.modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-group.form-group-inline .form-label {
+  min-width: auto;
+  width: auto;
 }
-.app-content.page-facility-booking .article-create-lesson .article-header {
-  height: 4rem;
-  max-height: 4rem;
+.modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-group.form-group-inline .custom-control {
+  min-width: 4rem;
 }
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  background-color: #e9ecef;
-  height: 4rem;
-  max-height: 4rem;
-  margin: 0 -1.5rem;
-  padding: 0.75rem 1.5rem;
+.modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-group.form-group-inline .form-control {
+  margin: 0 0.5rem;
 }
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav {
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .nav-item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-}
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .nav-item .btn-light {
-  margin: 0 0.25rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .nav-item .item-text {
-  font-size: 1.25rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .btn-light.btn-more {
-  padding: 0.325rem 1rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .btn-light .fas {
-  font-size: 1.5rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
-  font-size: 1.5rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .form-lesson-attributes {
-  padding: 1.5rem 0;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group-actions {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources {
-  padding: 0;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar {
-  margin: 0;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar {
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  padding: 0.5rem 0;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .navbar-text {
-  font-weight: 500;
-  max-width: calc(100% - 3rem);
-  padding: 0;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .btn-folders:not(.collapsed) .text-view-folders {
-  display: none;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .btn-folders.collapsed .text-hide-folders {
-  display: none;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar .btn-light {
-  margin: 0 0.25rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse-folders .btn-light {
+.modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-group .list-group {
   margin: 0.5rem 0;
-  padding: 0.325rem 0.75rem;
+  width: 100%;
 }
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse-folders .btn-light .fas {
-  font-size: 1.5rem;
-  min-width: 2rem;
+.modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-group .list-group.list-group-flush .list-group-item {
+  background-color: #f8f9fa;
 }
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse-folders .btn-light .fas.fa-folder-plus {
-  color: #ff6600;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar {
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  padding: 0.75rem 0;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu {
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  background-color: #ffffff;
-  margin-bottom: 1rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar.navbar-menu .navbar-text {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-  text-align: center;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .dropdown-menu .dropdown-item .img {
-  margin-bottom: 0;
-  margin-right: 1rem;
-  height: 1.5rem;
-  width: 1.5rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-light {
-  margin: 0 0.25rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .item-text {
-  max-width: 12rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head,
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  margin-bottom: 0;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head th .btn-light.btn-handle,
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head td .btn-light.btn-handle,
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body th .btn-light.btn-handle,
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body td .btn-light.btn-handle {
-  cursor: move;
-  margin: -0.5rem;
-  padding: 0.25rem 0.5rem;
-}
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-head a:not(.dropdown-item),
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .table-body a:not(.dropdown-item) {
-  color: #212529;
-  word-break: break-word;
-}
-@media (max-width: 992px) {
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-head colgroup:nth-child(4),
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-body colgroup:nth-child(4) {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-head th:nth-child(4),
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-head td:nth-child(4),
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-body th:nth-child(4),
-.app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-body td:nth-child(4) {
-    display: none;
+@media (min-width: 992px) {
+  .modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-row .col-auto {
+    width: 2rem;
   }
 }
-@media (max-width: 991.98px) {
-  .app-content.page-facility-booking .article-create-lesson .article-header {
-    margin: 0 -0.5rem;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 5rem;
-    z-index: 970;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content {
-    margin: 0 -0.5rem;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .form-lesson-attributes {
-    padding: 1rem 0;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content {
-    margin: 0;
-  }
-}
-@media (max-width: 767.98px) {
-  .app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .nav-divider {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .nav-item .btn-edit,
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .nav-item .btn-delete,
-.app-content.page-facility-booking .article-create-lesson .article-header .navbar .navbar-nav .nav-item .btn-move-to {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-body .navbar .navbar-nav .btn-add-resource {
-    display: none;
-  }
-}
-@media (min-width: 768px) {
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-sidebar {
-    height: calc(100vh - 13rem);
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0.5rem 0;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 9rem;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .form-lesson-attributes {
-    max-width: 50rem;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group {
+@media (min-width: 576px) {
+  .modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -4141,141 +3890,28 @@ select.form-control {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group .form-group {
+  .modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-group:not(.form-group-inline) {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     margin-bottom: 0;
   }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .form-lesson-attributes .form-group .form-label {
+  .modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
   }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .navbar:not(.navbar-expand) {
+}
+@media (max-width: 767.98px) {
+  .modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-row .col-auto {
+    width: 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .modal-facility-booking-create .modal-dialog .modal-body .form-create-facility-booking .form-label-checkbox {
     display: none;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-sidebar .collapse {
-    display: block;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .article-lesson-resources .article-content .article-body .navbar .navbar-nav .nav-item .btn-actions {
-    display: none;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-head {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 9rem;
-    z-index: 950;
-  }
-}
-@media (min-width: 992px) {
-  .app-content.page-facility-booking .article-create-lesson .article-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 6rem;
-    z-index: 970;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-sidebar {
-    height: calc(100vh - 13rem);
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0.5rem 0;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 10rem;
-  }
-  .app-content.page-facility-booking .article-create-lesson .article-content .article-body .table-head {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 10rem;
-    z-index: 950;
-  }
-}
-
-@media (min-width: 768px) {
-  .modal-lesson-edit-attributes .modal-dialog .modal-body .form-edit-lesson-attributes .form-group {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-  }
-  .modal-lesson-edit-attributes .modal-dialog .modal-body .form-edit-lesson-attributes .form-group .form-group {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-  }
-  .modal-lesson-edit-attributes .modal-dialog .modal-body .form-edit-lesson-attributes .form-group .form-label {
-    min-width: 14rem;
-    width: 14rem;
-  }
-}
-
-.modal-lesson-resource-move-to .modal-dialog .modal-body .tree-resources {
-  border: 1px solid #ced4da;
-  max-height: 20rem;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-@media (min-width: 768px) {
-  .modal-weblink-add .modal-dialog .modal-body .form-add-weblink .form-group,
-.modal-weblink-add .modal-dialog .modal-body .form-edit-weblink .form-group,
-.modal-weblink-edit .modal-dialog .modal-body .form-add-weblink .form-group,
-.modal-weblink-edit .modal-dialog .modal-body .form-edit-weblink .form-group {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-  .modal-weblink-add .modal-dialog .modal-body .form-add-weblink .form-group .form-group,
-.modal-weblink-add .modal-dialog .modal-body .form-edit-weblink .form-group .form-group,
-.modal-weblink-edit .modal-dialog .modal-body .form-add-weblink .form-group .form-group,
-.modal-weblink-edit .modal-dialog .modal-body .form-edit-weblink .form-group .form-group {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-  }
-  .modal-weblink-add .modal-dialog .modal-body .form-add-weblink .form-group .form-label,
-.modal-weblink-add .modal-dialog .modal-body .form-edit-weblink .form-group .form-label,
-.modal-weblink-edit .modal-dialog .modal-body .form-add-weblink .form-group .form-label,
-.modal-weblink-edit .modal-dialog .modal-body .form-edit-weblink .form-group .form-label {
-    min-width: 10rem;
-    width: 10rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .modal-text-add .modal-dialog .modal-body .form-add-text .form-group,
-.modal-text-add .modal-dialog .modal-body .form-edit-text .form-group,
-.modal-text-edit .modal-dialog .modal-body .form-add-text .form-group,
-.modal-text-edit .modal-dialog .modal-body .form-edit-text .form-group {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-  .modal-text-add .modal-dialog .modal-body .form-add-text .form-group .form-group,
-.modal-text-add .modal-dialog .modal-body .form-edit-text .form-group .form-group,
-.modal-text-edit .modal-dialog .modal-body .form-add-text .form-group .form-group,
-.modal-text-edit .modal-dialog .modal-body .form-edit-text .form-group .form-group {
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-  }
-  .modal-text-add .modal-dialog .modal-body .form-add-text .form-group .form-label,
-.modal-text-add .modal-dialog .modal-body .form-edit-text .form-group .form-label,
-.modal-text-edit .modal-dialog .modal-body .form-add-text .form-group .form-label,
-.modal-text-edit .modal-dialog .modal-body .form-edit-text .form-group .form-label {
-    min-width: 10rem;
-    width: 10rem;
   }
 }
 
@@ -5131,7 +4767,7 @@ select.form-control {
 }
 
 @media (min-width: 768px) {
-  .modal-booking-create .modal-dialog .modal-body .form-create-booking .form-group {
+  .modal-ed-booking-create .modal-dialog .modal-body .form-create-ea-booking .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -5139,7 +4775,7 @@ select.form-control {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .modal-booking-create .modal-dialog .modal-body .form-create-booking .form-group .form-group {
+  .modal-ed-booking-create .modal-dialog .modal-body .form-create-ea-booking .form-group .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -5148,14 +4784,14 @@ select.form-control {
     flex-grow: 1;
     margin-bottom: 0;
   }
-  .modal-booking-create .modal-dialog .modal-body .form-create-booking .form-group .form-label {
+  .modal-ed-booking-create .modal-dialog .modal-body .form-create-ea-booking .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
   }
 }
 
 @media (min-width: 768px) {
-  .modal-booking-edit .modal-dialog .modal-body .form-edit-booking .form-group {
+  .modal-ed-booking-edit .modal-dialog .modal-body .form-edit-ea-booking .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
@@ -5163,7 +4799,7 @@ select.form-control {
     -webkit-align-items: flex-start;
     align-items: flex-start;
   }
-  .modal-booking-edit .modal-dialog .modal-body .form-edit-booking .form-group .form-group {
+  .modal-ed-booking-edit .modal-dialog .modal-body .form-edit-ea-booking .form-group .form-group {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -5172,7 +4808,7 @@ select.form-control {
     flex-grow: 1;
     margin-bottom: 0;
   }
-  .modal-booking-edit .modal-dialog .modal-body .form-edit-booking .form-group .form-label {
+  .modal-ed-booking-edit .modal-dialog .modal-body .form-edit-ea-booking .form-group .form-label {
     min-width: 12rem;
     width: 12rem;
   }

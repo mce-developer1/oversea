@@ -68,9 +68,17 @@ $(document).ready(function() {
       $container.find('.article-body .loading-state').addClass('d-none');
       $container.find('.article-body .navbar-expand .navbar-nav').addClass('d-none');
       $container.find('.article-body .navbar').removeClass('d-none');
-      $container.find('.article-body .table-head').removeClass('d-none');
-      $container.find('.article-body .table-body').removeClass('d-none');
       $container.find('.nav-item-result .item-text').text(search);
+
+      if (search === 'empty') {
+        $container.find('.article-body .empty-state').removeClass('d-none');
+      } else {
+        $container.find('.article-body .table-head').removeClass('d-none');
+        $container.find('.article-body .table-body').removeClass('d-none');
+        $container.find('.table').removeClass('table-shared-with-me');
+        $container.find('.table').removeClass('table-test-bank');
+        $container.find('.table').addClass('table-search-results');
+      }
 
       var searchTitle = 'Search results for "'+ search + '"';
       $container.find('.article-body .navbar .navbar-text').html(searchTitle);
@@ -200,6 +208,21 @@ $(document).ready(function() {
     $container.find('.nav-main .input-group .aa-input').val(query);
     $container.find('.nav-main .dialog').removeClass('open');
     $container.find('.nav-main .dialog .dialog-menu').removeClass('show');
+  });
+
+  $container.find('.nav-side .nav-item a').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $container.find('.table').removeClass('table-shared-with-me');
+    $container.find('.table').removeClass('table-test-bank');
+    $container.find('.table').removeClass('table-search-results');
+
+    if ($(this).text().trim() === 'Shared with Me') {
+      $container.find('.table').addClass('table-shared-with-me');
+    } else if ($(this).text().trim() === 'Test Bank') {
+      $container.find('.table').addClass('table-test-bank');
+    }
   });
 
   $container.find('.navbar-nav .btn-create').on('click', function(e) {

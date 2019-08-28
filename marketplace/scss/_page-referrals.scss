@@ -254,11 +254,11 @@
   }
 }
 
-.modal-booking-create {
+.modal-ed-booking-create {
   .modal-dialog {
     .modal-body {
       @media (min-width: 768px) {
-        .form-create-booking {
+        .form-create-ea-booking {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);
@@ -280,11 +280,11 @@
   }
 }
 
-.modal-booking-edit {
+.modal-ed-booking-edit {
   .modal-dialog {
     .modal-body {
       @media (min-width: 768px) {
-        .form-edit-booking {
+        .form-edit-ea-booking {
           .form-group {
             @include display-flex(row);
             @include align-items(flex-start);

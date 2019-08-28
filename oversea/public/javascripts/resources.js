@@ -97,8 +97,9 @@ $(document).ready(function() {
       } else {
         $container.find('.article-body .table-head').removeClass('d-none');
         $container.find('.article-body .table-body').removeClass('d-none');
-        $container.find('.article-body .table-head').addClass('table-search-results');
-        $container.find('.article-body .table-body').addClass('table-search-results');
+        $container.find('.table').removeClass('table-shared-with-me');
+        $container.find('.table').removeClass('table-resource-bank');
+        $container.find('.table').addClass('table-search-results');
       }
       
       var searchTitle = 'Search results for "'+ search + '"';
@@ -562,6 +563,7 @@ $(document).ready(function() {
   $container.find('.tree-resources .resource a').on('click', function(e) {
     $container.find('.table').removeClass('table-shared-with-me');
     $container.find('.table').removeClass('table-resource-bank');
+    $container.find('.table').removeClass('table-search-results');
 
     if ($(this).attr('title') === 'Shared with Me') {
       $container.find('.table').addClass('table-shared-with-me');
