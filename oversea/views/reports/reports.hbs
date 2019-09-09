@@ -38,6 +38,7 @@
                   <select class="form-control selectpicker" id="selReport" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option value="proficiency">Mastery</option>
                     <option value="usage">Usage</option>
+                    <option value="login">Login</option>
                   </select>
                 </div>
                 <div class="form-group">
@@ -59,7 +60,7 @@
                     <option>P1-HA</option>
                   </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group form-group-channel d-none">
                   <label class="form-label" for="selChannel">Channel</label>
                   <select class="form-control selectpicker" id="selChannel" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <optgroup label="Math Buddies">
@@ -124,7 +125,7 @@
                     </optgroup>
                   </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group form-group-topic d-none">
                   <label class="form-label" for="selTopic">Topic</label>
                   <select class="form-control selectpicker" id="selTopic" data-container=".article-sidebar" data-dropdown-align-right="true">
                     <option>All</option>
@@ -134,6 +135,18 @@
                     <option>Subtraction Within 10</option>
                     <option>Shapes And Patterns</option>
                   </select>
+                </div>
+                <div class="form-group form-group-duration d-none">
+                  <label class="form-label" for="selDuration">Duration</label>
+                  <select class="form-control selectpicker" id="selDuration" data-container=".article-sidebar" data-dropdown-align-right="true">
+                    <option value="week">This Week</option>
+                    <option value="term">This Term</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                </div>
+                <div class="form-group form-group-period d-none">
+                  <label class="form-label" for="txtPeriod">Period</label>
+                  <input class="form-control form-input" type="text" id="txtPeriod">
                 </div>
               {{/unless}}
             </form>
@@ -205,7 +218,7 @@
                 </div>
               </div>              
             </div>
-            <div class="article article-proficiency-report no-sidebar">
+            <div class="article article-proficiency-report no-sidebar d-none">
               <div class="article-header">
                 {{#if studentUser}}
                   <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the mastery at Topic and Sub-Topic levels by displaying the average percentage score of quizzes that have been attempted and submitted.">
@@ -265,6 +278,26 @@
                   {{#unless studentUser}}
                     <p>
                       Grade 1, All Classes for Math Buddies, All Topics
+                    </p>
+                    <div class="chart"></div>
+                  {{/unless}}
+                </div>
+              </div>
+            </div>
+            <div class="article article-login-report no-sidebar d-none">
+              <div class="article-header">
+                {{#unless studentUser}}
+                  <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the number of login students.">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                  <h5>Login Summary</h5>
+                {{/unless}}
+              </div>
+              <div class="article-content">                
+                <div class="article-body">
+                  {{#unless studentUser}}
+                    <p>
+                      Grade 1, All Classes for This Week
                     </p>
                     <div class="chart"></div>
                   {{/unless}}

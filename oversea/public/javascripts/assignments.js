@@ -213,6 +213,7 @@ $(document).ready(function() {
 
   $container.find('.table-body tr .period').on('click', function(e) {
     e.preventDefault();
+    if(!$(this).attr("href")) return;
     showAssignResourceModal('/shared/assign_resource');
   });
 
@@ -228,6 +229,7 @@ $(document).ready(function() {
 
   $container.find('.card-group .card .period').on('click', function(e) {
     e.preventDefault();
+    if(!$(this).attr("href")) return;
     showAssignResourceModal('/shared/assign_resource');
   });
 

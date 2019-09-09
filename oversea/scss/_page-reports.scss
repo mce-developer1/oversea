@@ -92,7 +92,8 @@
           padding: 1.5rem 0;
 
           .article-usage-report,
-          .article-proficiency-report {
+          .article-proficiency-report,
+          .article-login-report {
             background-color: $white;
             overflow-x: auto;
             max-width: 76rem;
@@ -220,7 +221,8 @@
 
           .article-body {
             .article-usage-report,
-            .article-proficiency-report {
+            .article-proficiency-report,
+            .article-login-report {
               .article-content {
                 .article-body {
                   .chart {
@@ -260,7 +262,8 @@
 
           .article-body {
             .article-usage-report,
-            .article-proficiency-report {
+            .article-proficiency-report,
+            .article-login-report {
               .article-content {
                 .article-body {
                   .table {

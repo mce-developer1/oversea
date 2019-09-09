@@ -201,7 +201,6 @@
                 <span class="sr-only">Loading...</span>
               </div>
             </div>
-            <div class="empty-state d-none">Oops, nothing to see here!</div>
             <nav class="navbar navbar-expand">
               <div class="navbar-text">8 records found</div>
               <ul class="navbar-nav">
@@ -212,7 +211,8 @@
                 </li>
               </ul>
             </nav>
-            <table class="table table-head">
+            <div class="empty-state d-none">Oops, nothing to see here!</div>
+            <table class="table table-head table-my-lessons">
               <colgroup width="50px"></colgroup>
               <colgroup width="auto"></colgroup>
               <colgroup width="140px"></colgroup>
@@ -253,7 +253,7 @@
                 </tr>
               </thead>
             </table>
-            <table class="table table-body">
+            <table class="table table-body table-my-lessons">
               <colgroup width="50px"></colgroup>
               <colgroup width="auto"></colgroup>
               <colgroup width="140px"></colgroup>
@@ -371,6 +371,9 @@
                   </td>
                   <td>
                     <a href="#">Making Addition Stories</a>
+                    <span class="badge badge-light" title="Imported">
+                      <i class="fas fa-file-import"></i>
+                    </span>
                   </td>
                   <td>Mathematics</td>
                   <td>Grade 1</td>
@@ -440,6 +443,843 @@
                   <td> - </td>
                   <td> - </td>
                   <td>28 Nov 2014</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-head table-shared-with-me d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="all"/>
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th class="sortable-column">
+                    Title <i class="fas fa-long-arrow-alt-down"></i>
+                  </th>
+                  <th class="sortable-column">
+                    Subject
+                  </th>
+                  <th class="sortable-column">
+                    Grade
+                  </th>
+                  <th class="sortable-column">
+                    Last Modified
+                  </th>
+                  <th>
+                    Shared By
+                  </th>
+                  <th>
+                    &nbsp;
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-body table-shared-with-me d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item0"/>
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Counting To 10</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>29 Mar 2018</td>
+                  <td>Derrick Chua</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item1"/>
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Comparing Numbers</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>05 Dec 2006</td>
+                  <td>Derrick Chua</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item2"/>
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Patterns</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>22 Jul 2015</td>
+                  <td>Derrick Chua</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item3"/>
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Bonds</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>17 Feb 2016</td>
+                  <td>Ernest Goh</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Addition Stories</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>14 Nov 2014</td>
+                  <td>Ernest Goh</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Subtraction Stories</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>12 Nov 2014</td>
+                  <td>Ernest Goh</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Fact Families</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>10 Sep 2014</td>
+                  <td>Ernest Goh</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Patterns With Shapes</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>28 Nov 2014</td>
+                  <td>Ernest Goh</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-head table-shared-by-me d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="160px"></colgroup>
+              <colgroup width="180px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="all"/>
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th class="sortable-column">
+                    Title <i class="fas fa-long-arrow-alt-down"></i>
+                  </th>
+                  <th class="sortable-column">
+                    Subject
+                  </th>
+                  <th class="sortable-column">
+                    Grade
+                  </th>
+                  <th>
+                    Assigned To
+                  </th>
+                  <th>
+                    Assignment Status
+                  </th>
+                  <th class="sortable-column">
+                    Last Modified
+                  </th>
+                  <th>
+                    &nbsp;
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-body table-shared-by-me d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="160px"></colgroup>
+              <colgroup width="180px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item0"/>
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Counting To 10</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>P1-EA</td>
+                  <td>
+                    <a href="#" data-toggle="popover" data-title="Assignment Period" data-content="<div class='assignment-period'>01 Jan 2019 - 30 Nov 2019</div><a href='#'>Edit Assignment</a>">Started</a>
+						        <div>(Due on <span class="text-nowrap">30 Nov 2019</span>)</div>
+                  </td>
+                  <td>29 Mar 2018</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item1"/>
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Comparing Numbers</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    P1-EA, P1-HA, 
+                    <a href="#" data-toggle="popover" data-content="P1-EA, P1-HA, P1-MA">more</a>
+                  </td>
+                  <td>
+                    <a href="#" data-toggle="popover" data-title="Assignment Period" data-content="<div class='assignment-period'>01 Jan 2019 - 30 Mar 2019</div><a href='#'>Edit Assignment</a>">Closed</a>
+						        <div>(Due on <span class="text-nowrap">30 Mar 2019</span>)</div>
+                  </td>
+                  <td>05 Dec 2006</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item2"/>
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Patterns</a>
+                    <span class="badge badge-light" title="Shared">
+                      <i class="fas fa-user-friends"></i>
+                    </span>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>22 Jul 2015</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item3"/>
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Bonds</a>
+                    <span class="badge badge-light" title="Shared">
+                      <i class="fas fa-user-friends"></i>
+                    </span>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>17 Feb 2016</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Addition Stories</a>
+                    <span class="badge badge-light" title="Imported">
+                      <i class="fas fa-file-import"></i>
+                    </span>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>14 Nov 2014</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Subtraction Stories</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>12 Nov 2014</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Fact Families</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>10 Sep 2014</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Patterns With Shapes</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td>28 Nov 2014</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-head table-lesson-bank d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="all"/>
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th class="sortable-column">
+                    Title <i class="fas fa-long-arrow-alt-down"></i>
+                  </th>
+                  <th class="sortable-column">
+                    Subject
+                  </th>
+                  <th class="sortable-column">
+                    Grade
+                  </th>
+                  <th>
+                    &nbsp;
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-body table-lesson-bank d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item0"/>
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Counting To 10</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item1"/>
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Comparing Numbers</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item2"/>
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Patterns</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item3"/>
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Bonds</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Addition Stories</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Subtraction Stories</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Fact Families</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Patterns With Shapes</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-head table-search-results d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="all"/>
+                      <label class="custom-control-label" for="all"></label>
+                    </div>
+                  </th>
+                  <th class="sortable-column">
+                    Title <i class="fas fa-long-arrow-alt-down"></i>
+                  </th>
+                  <th class="sortable-column">
+                    Subject
+                  </th>
+                  <th class="sortable-column">
+                    Grade
+                  </th>
+                  <th class="sortable-column">
+                    Last Modified
+                  </th>
+                  <th>
+                    Location
+                  </th>
+                  <th>
+                    &nbsp;
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-body table-search-results d-none">
+              <colgroup width="50px"></colgroup>
+              <colgroup width="auto"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="120px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="140px"></colgroup>
+              <colgroup width="60px"></colgroup>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item0"/>
+                      <label class="custom-control-label" for="item0"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Counting To 10</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>29 Mar 2018</td>
+                  <td>My Lessons</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item1"/>
+                      <label class="custom-control-label" for="item1"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Comparing Numbers</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>05 Dec 2006</td>
+                  <td>Shared with Me</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item2"/>
+                      <label class="custom-control-label" for="item2"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Patterns</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>22 Jul 2015</td>
+                  <td>My Lessons</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item3"/>
+                      <label class="custom-control-label" for="item3"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Number Bonds</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>17 Feb 2016</td>
+                  <td>My Lessons</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Addition Stories</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>14 Nov 2014</td>
+                  <td>Lesson Bank</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Subtraction Stories</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>12 Nov 2014</td>
+                  <td>Lesson Bank</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Fact Families</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>10 Sep 2014</td>
+                  <td>Lesson Bank</td>
+                  <td>
+                    <button class="btn btn-light" type="button">
+                      <i class="fas fa-info-circle"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="custom-control custom-checkbox">
+                      <input class="custom-control-input" type="checkbox" id="item4"/>
+                      <label class="custom-control-label" for="item4"></label>
+                    </div>
+                  </td>
+                  <td>
+                    <a href="#">Making Patterns With Shapes</a>
+                  </td>
+                  <td>Mathematics</td>
+                  <td>Grade 1</td>
+                  <td>28 Nov 2014</td>
+                  <td>Lesson Bank</td>
                   <td>
                     <button class="btn btn-light" type="button">
                       <i class="fas fa-info-circle"></i>

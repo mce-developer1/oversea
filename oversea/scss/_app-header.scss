@@ -42,7 +42,7 @@
         @include display-flex(column);
         @include align-items(center);
         color: $gray-700;
-        min-width: 6rem;
+        min-width: 7rem;
         padding: .5rem 1rem;
 
         &:hover {
@@ -306,6 +306,16 @@
         }
       }
     }
+
+    .dropdown {
+      &.dropdown-user {
+        .btn-user {
+          .user-summary {
+            display: none;
+          }
+        }
+      }
+    }
   }
 
   @media (max-width: 991.98px) {
@@ -334,10 +344,6 @@
         .btn-user {
           img {
             margin-right: 0;
-          }
-
-          .user-summary {
-            display: none;
           }
         }
       }

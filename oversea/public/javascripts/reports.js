@@ -707,16 +707,149 @@ $(document).ready(function() {
     chart.draw(dataTable, options);
   }
 
+  function drawWeeklyLoginReport() {
+    var data = [
+      ['Element', 'Login'],
+      ['Mon 09/09', { v: 60, f: '60%' }],
+      ['Tue 10/09', { v: 70, f: '70%' }],
+      ['Wed 11/09', { v: 80, f: '80%' }],
+      ['Thu 12/09', { v: 70, f: '70%' }],
+      ['Fri 13/09', { v: 80, f: '80%' }],
+      ['Sat 14/09', { v: 90, f: '90%' }],
+      ['Sun 15/09', { v: 90, f: '90%' }]
+    ];
+    var dataTable = google.visualization.arrayToDataTable(data);
+    
+    var options = {
+      fontName: 'Arial',
+      fontSize: 13,      
+      height: 340,
+      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '70%' },
+      legend: { position: 'none' },
+      vAxis: {
+        format: '#\'%\'',
+        gridlines: { count: 4 },
+        minorGridlines: { count: 0 },
+        minValue: 0,
+        maxValue: 100
+      },
+      pointSize: 5
+    };
+
+    var element = $('.article-login-report .chart').get(0);
+    inlineChart = new google.visualization.LineChart(element);
+    inlineChart.draw(dataTable, options);
+  }
+
+  function drawTermlyLoginReport() {
+    var data = [
+      ['Element', 'Login'],
+      ['Oct', { v: 70, f: '70%' }],
+      ['Nov', { v: 80, f: '80%' }],
+      ['Dec', { v: 90, f: '90%' }]
+    ];
+    var dataTable = google.visualization.arrayToDataTable(data);
+    
+    var options = {
+      fontName: 'Arial',
+      fontSize: 13,      
+      height: 340,
+      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '70%' },
+      legend: { position: 'none' },
+      vAxis: {
+        format: '#\'%\'',
+        gridlines: { count: 4 },
+        minorGridlines: { count: 0 },
+        minValue: 0,
+        maxValue: 100
+      },
+      pointSize: 5
+    };
+
+    var element = $('.article-login-report .chart').get(0);
+    inlineChart = new google.visualization.LineChart(element);
+    inlineChart.draw(dataTable, options);
+  }
+
+  function drawPeriodLoginReport() {
+    var data = [
+      ['Element', 'Login'],
+      ['Jan', { v: 60, f: '60%' }],
+      ['Feb', { v: 70, f: '70%' }],
+      ['Mar', { v: 80, f: '80%' }],
+      ['Apr', { v: 70, f: '70%' }],
+      ['May', { v: 80, f: '80%' }],
+      ['Jun', { v: 90, f: '90%' }],
+      ['Jul', { v: 80, f: '80%' }],
+      ['Aug', { v: 70, f: '70%' }],
+      ['Sep', { v: 60, f: '60%' }],
+      ['Oct', { v: 70, f: '70%' }],
+      ['Nov', { v: 80, f: '80%' }],
+      ['Dec', { v: 90, f: '90%' }]
+    ];
+    var dataTable = google.visualization.arrayToDataTable(data);
+    
+    var options = {
+      fontName: 'Arial',
+      fontSize: 13,      
+      height: 340,
+      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '70%' },
+      legend: { position: 'none' },
+      vAxis: {
+        format: '#\'%\'',
+        gridlines: { count: 4 },
+        minorGridlines: { count: 0 },
+        minValue: 0,
+        maxValue: 100
+      },
+      pointSize: 5
+    };
+
+    var element = $('.article-login-report .chart').get(0);
+    inlineChart = new google.visualization.LineChart(element);
+    inlineChart.draw(dataTable, options);
+  }
+
+  function showDurationFilter() {
+    $('.form-filters .form-group-duration').removeClass('d-none');
+    $('.form-filters .form-group-period').addClass('d-none');
+  }
+
+  function hideDurationFilter() {
+    $('.form-filters .form-group-duration').addClass('d-none');
+    $('.form-filters .form-group-period').addClass('d-none');
+  }
+
+  function showChannelFilters() {
+    $('.form-filters .form-group-channel').removeClass('d-none');
+    $('.form-filters .form-group-topic').removeClass('d-none');
+  }
+
+  function hideChannelFilters() {
+    $('.form-filters .form-group-channel').addClass('d-none');
+    $('.form-filters .form-group-topic').addClass('d-none');
+  }
+
   function initPage() {
     $('#selReport').on('changed.bs.select', function (e) {
+      var selectedReportType = $('#selReport').selectpicker('val');
       var selectedClass = $('#selClass').selectpicker('val');
       var selectedChannel = $('#selChannel').selectpicker('val');
       disconnectObserver();
       clearInlineChart();
 
-      switch ($('#selReport').selectpicker('val')) {
+      if (selectedReportType === 'login') {
+        hideChannelFilters();
+        showDurationFilter();
+      } else {
+        hideDurationFilter();
+        showChannelFilters();
+      }
+
+      switch (selectedReportType) {
         case 'usage':
           $('.article-proficiency-report').addClass('d-none');
+          $('.article-login-report').addClass('d-none');
           $('.article-usage-report').removeClass('d-none');
           if (studentUser) {
             if (selectedChannel === 'All') drawStudentUsageReport();
@@ -728,6 +861,7 @@ $(document).ready(function() {
           break;
         case 'proficiency':
           $('.article-usage-report').addClass('d-none');
+          $('.article-login-report').addClass('d-none');
           $('.article-proficiency-report').removeClass('d-none');
           if (studentUser) {
             if (selectedChannel === 'All') drawStudentProficiencyReport();
@@ -737,22 +871,41 @@ $(document).ready(function() {
             else drawClassProficiencyReport();
           }
           break;
+        case 'login':
+          $('.article-usage-report').addClass('d-none');
+          $('.article-proficiency-report').addClass('d-none');
+          $('.article-login-report').removeClass('d-none');
+          var selectedDuration = $('#selDuration').selectpicker('val');
+          if (selectedDuration === 'week') drawWeeklyLoginReport();
+          else drawTermlyLoginReport();
+          break;
       }
     });
 
     $('#selClass').on('changed.bs.select', function (e) {
       var selectedReport = $('#selReport').selectpicker('val');
+      var selectedDuration = $('#selDuration').selectpicker('val');
       disconnectObserver();
       clearInlineChart();
 
       switch ($('#selClass').selectpicker('val')) {
         case 'All':
           if (selectedReport === 'usage') drawAllClassesUsageReport();
-          else drawAllClassesProficiencyReport();
+          else if (selectedReport === 'proficiency') drawAllClassesProficiencyReport();
+          else {
+            if (selectedDuration === 'week') drawWeeklyLoginReport();
+            else if (selectedDuration === 'term') drawTermlyLoginReport();
+            else drawPeriodLoginReport();
+          }
           break;
         default:
           if (selectedReport === 'usage') drawClassUsageReport();
-          else drawClassProficiencyReport();
+          else if (selectedReport === 'proficiency') drawClassProficiencyReport();
+          else {
+            if (selectedDuration === 'week') drawWeeklyLoginReport();
+            else if (selectedDuration === 'term') drawTermlyLoginReport();
+            else drawPeriodLoginReport();
+          }
           break;
       }
     });
@@ -771,16 +924,58 @@ $(document).ready(function() {
       }
     });
 
+    $('#selDuration').on('changed.bs.select', function (e) {
+      var selectedDuration = $('#selDuration').selectpicker('val');
+      $('.form-filters .form-group-period').addClass('d-none')
+      disconnectObserver();
+      clearInlineChart();
+
+      if (selectedDuration === 'week') drawWeeklyLoginReport();
+      else if (selectedDuration === 'term') drawTermlyLoginReport();
+      else {
+        $('.form-filters .form-group-period').removeClass('d-none');
+        drawPeriodLoginReport();
+      }
+    });
+
+    if (location.href.indexOf('type=login') > -1) {
+      hideChannelFilters();
+      showDurationFilter();
+    } else {
+      hideDurationFilter();
+      showChannelFilters();
+    }
+
+    $('#txtPeriod').on('apply.daterangepicker', function(ev, picker) {
+      drawPeriodLoginReport();
+    });
+
+    $('#txtPeriod').daterangepicker({
+      drops: 'up',
+      parentEl: '.article-create-announcement',
+      startDate: '01 Jan 2019',
+      endDate: '31 Dec 2019',
+      minDate: '01 Jan 2019',
+      maxDate: '31 Dec 2019',
+      locale: {
+        format: 'DD MMM YYYY',
+        separator: ' - '
+      }
+    });
+
     setTimeout(function waitForVisualizationLib() {
       if (google.visualization && google.visualization.arrayToDataTable) {
-        if (location.href.indexOf('type=proficiency') > -1) {
+        if (location.href.indexOf('type=usage') > -1) {
+          $('#selReport').selectpicker('val', 'usage');
+          if (studentUser) drawStudentUsageReport();
+          else drawAllClassesUsageReport();
+        } else if (location.href.indexOf('type=proficiency') > -1) {
           $('#selReport').selectpicker('val', 'proficiency');
           if (studentUser) drawStudentProficiencyReport();
           else drawAllClassesProficiencyReport();
         } else {
-          $('#selReport').selectpicker('val', 'usage');
-          if (studentUser) drawStudentUsageReport();
-          else drawAllClassesUsageReport();
+          $('#selReport').selectpicker('val', 'login');
+          drawWeeklyLoginReport();
         }
         return;
       }
@@ -814,6 +1009,6 @@ $(document).ready(function() {
     $('.article-report .article-sidebar .form-filters').addClass('dialog-menu');
   }
 
-  google.charts.load('current', {'packages':['corechart']});
+  google.charts.load('current', {'packages':['corechart', 'line']});
   google.charts.setOnLoadCallback(initPage());
 });

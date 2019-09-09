@@ -1,13 +1,13 @@
 window.Utils = {
   initTextEditor: function(target, options) {
     options = options ? options : {};
-    options = $.extend(options, {
+    options = $.extend({
       images_upload_url: '/shared/upload',
       image_uploadtab: true,
       image_dimensions: false
       //language: 'id',
       //language_url: '/static/tinymce/langs/id.js'
-    });
+    }, options);
 
     if (!tinymce.Env.desktop) {
       options = $.extend(options, {
@@ -130,6 +130,11 @@ $(document).ready(function() {
       $('.app-header .btn-notifications .badge').remove();
     });
   });
+
+  /*$('.app-content').on('contextmenu', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });*/
 
   $(document).on('autocomplete:opened', function(e) {
     var autocomplete = $(e.target).closest('.algolia-autocomplete');

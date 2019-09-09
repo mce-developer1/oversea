@@ -1399,6 +1399,10 @@ select.form-control {
 .navbar-nav .img.img-myreports-usage {
   background-image: url("../images/icon_topnav_sub_myreports_usage.png");
 }
+.nav .img.img-myreports-loginreport,
+.navbar-nav .img.img-myreports-loginreport {
+  background-image: url("../images/icon_topnav_sub_myreports_loginreport.png");
+}
 .nav .img.img-schoolmatters-notifications,
 .navbar-nav .img.img-schoolmatters-notifications {
   background-image: url("../images/icon_topnav_sub_schoolmatters_notifications.png");
@@ -1414,10 +1418,6 @@ select.form-control {
 .nav .img.img-schoolmatters-markattendance,
 .navbar-nav .img.img-schoolmatters-markattendance {
   background-image: url("../images/icon_topnav_sub_schoolmatters_markattendance.png");
-}
-.nav .img.img-administration-loginreport,
-.navbar-nav .img.img-administration-loginreport {
-  background-image: url("../images/icon_topnav_sub_administration_loginreport.png");
 }
 .nav .img.img-administration-useraccount,
 .navbar-nav .img.img-administration-useraccount {
@@ -2916,7 +2916,7 @@ select.form-control {
   -webkit-align-items: center;
   align-items: center;
   color: #495057;
-  min-width: 6rem;
+  min-width: 7rem;
   padding: 0.5rem 1rem;
 }
 .app-header .navbar-nav.nav-main .nav-link:hover {
@@ -3130,6 +3130,9 @@ select.form-control {
   .app-header .navbar-nav.nav-main .nav-item .link-mytools {
     display: none;
   }
+  .app-header .dropdown.dropdown-user .btn-user .user-summary {
+    display: none;
+  }
 }
 @media (max-width: 991.98px) {
   .app-header .navbar-brand:not(d-block) {
@@ -3143,9 +3146,6 @@ select.form-control {
   }
   .app-header .dropdown.dropdown-user .btn-user img {
     margin-right: 0;
-  }
-  .app-header .dropdown.dropdown-user .btn-user .user-summary {
-    display: none;
   }
 }
 @media (max-width: 576px) {
@@ -5779,7 +5779,7 @@ select.form-control {
   position: relative;
 }
 .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card .card-img-top {
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem;
   text-align: center;
 }
 .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card .card-img-top .fas {
@@ -6010,27 +6010,32 @@ select.form-control {
   padding: 1.5rem 0;
 }
 .app-content.page-reports .article-report .article-content .article-body .article-usage-report,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report {
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report,
+.app-content.page-reports .article-report .article-content .article-body .article-login-report {
   background-color: #ffffff;
   overflow-x: auto;
   max-width: 76rem;
   padding: 1rem;
 }
 .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-header .btn,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-header .btn {
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-header .btn,
+.app-content.page-reports .article-report .article-content .article-body .article-login-report .article-header .btn {
   margin: 0 0.25rem 0 0;
   padding: 0.25rem;
 }
 .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-header .btn .fa-info-circle,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-header .btn .fa-info-circle {
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-header .btn .fa-info-circle,
+.app-content.page-reports .article-report .article-content .article-body .article-login-report .article-header .btn .fa-info-circle {
   font-size: 1.25rem;
 }
 .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-content,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content {
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content,
+.app-content.page-reports .article-report .article-content .article-body .article-login-report .article-content {
   padding: 0 2rem;
 }
 .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-content .article-body,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body {
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body,
+.app-content.page-reports .article-report .article-content .article-body .article-login-report .article-content .article-body {
   padding: 0;
 }
 .app-content.page-reports .article-report .article-content .article-body .navbar-report {
@@ -6108,7 +6113,8 @@ select.form-control {
     padding: 1rem;
   }
   .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-content .article-body .chart,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body .chart {
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body .chart,
+.app-content.page-reports .article-report .article-content .article-body .article-login-report .article-content .article-body .chart {
     display: none;
   }
 }
@@ -6129,7 +6135,8 @@ select.form-control {
     overflow-y: auto;
   }
   .app-content.page-reports .article-report .article-content .article-body .article-usage-report .article-content .article-body .table,
-.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body .table {
+.app-content.page-reports .article-report .article-content .article-body .article-proficiency-report .article-content .article-body .table,
+.app-content.page-reports .article-report .article-content .article-body .article-login-report .article-content .article-body .table {
     display: none;
   }
 }
@@ -6752,32 +6759,50 @@ select.form-control {
   word-break: break-word;
 }
 @media (max-width: 1359.98px) {
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(5) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons colgroup:nth-child(5), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me colgroup:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons colgroup:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me colgroup:nth-child(5) {
     display: none;
   }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(5),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(5) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons td:nth-child(5), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me td:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons td:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me td:nth-child(5) {
     display: none;
   }
 }
 @media (max-width: 1199.98px) {
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(3),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(4),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(3),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(4) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head:not(.table-lesson-bank) colgroup:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head:not(.table-lesson-bank) colgroup:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body:not(.table-lesson-bank) colgroup:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body:not(.table-lesson-bank) colgroup:nth-child(4) {
     display: none;
   }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(3),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(4),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(3),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(4),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(3),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(4),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(3),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(4) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head:not(.table-lesson-bank) th:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head:not(.table-lesson-bank) th:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head:not(.table-lesson-bank) td:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head:not(.table-lesson-bank) td:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body:not(.table-lesson-bank) th:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body:not(.table-lesson-bank) th:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body:not(.table-lesson-bank) td:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body:not(.table-lesson-bank) td:nth-child(4) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me colgroup:nth-child(6), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results colgroup:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me colgroup:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results colgroup:nth-child(6) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me td:nth-child(6), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results td:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me td:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results td:nth-child(6) {
     display: none;
   }
 }
@@ -6828,14 +6853,50 @@ select.form-control {
   }
 }
 @media (max-width: 768px) {
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(7),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(7) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons colgroup:nth-child(7), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me colgroup:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons colgroup:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me colgroup:nth-child(7) {
     display: none;
   }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head th:nth-child(7),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head td:nth-child(7),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body th:nth-child(7),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body td:nth-child(7) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons td:nth-child(7), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me td:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons td:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me td:nth-child(7) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me colgroup:nth-child(5), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results colgroup:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me colgroup:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results colgroup:nth-child(5) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me td:nth-child(5), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results td:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me td:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results td:nth-child(5) {
+    display: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank colgroup:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank colgroup:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank colgroup:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank colgroup:nth-child(4) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank th:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank th:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank td:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank td:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank th:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank th:nth-child(4),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank td:nth-child(3),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank td:nth-child(4) {
     display: none;
   }
 }
@@ -6843,14 +6904,30 @@ select.form-control {
   .app-content.page-lessons .article-lessons .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
   }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head colgroup:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body colgroup:nth-child(6) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons colgroup:nth-child(6), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me colgroup:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons colgroup:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me colgroup:nth-child(6) {
     display: none;
   }
-  .app-content.page-lessons .article-lessons .article-content .article-body .table-head tr th:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-head tr td:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body tr th:nth-child(6),
-.app-content.page-lessons .article-lessons .article-content .article-body .table-body tr td:nth-child(6) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons tr th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-my-lessons tr td:nth-child(6), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me tr th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-by-me tr td:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons tr th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-my-lessons tr td:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me tr th:nth-child(6),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-by-me tr td:nth-child(6) {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank colgroup:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank colgroup:nth-child(5) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank td:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank td:nth-child(5) {
     display: none;
   }
 }
@@ -6887,6 +6964,32 @@ select.form-control {
     position: sticky;
     top: 10rem;
     z-index: 950;
+  }
+}
+@media (min-width: 1200px) {
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me colgroup:nth-child(7), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results colgroup:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me colgroup:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results colgroup:nth-child(7) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-shared-with-me td:nth-child(7), .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-search-results td:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-shared-with-me td:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results th:nth-child(7),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-search-results td:nth-child(7) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank colgroup:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank colgroup:nth-child(5) {
+    display: none;
+  }
+  .app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-head.table-lesson-bank td:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank th:nth-child(5),
+.app-content.page-lessons .article-lessons .article-content .article-body .table-body.table-lesson-bank td:nth-child(5) {
+    display: none;
   }
 }
 @media (min-width: 1360px) {
@@ -7467,7 +7570,7 @@ select.form-control {
     display: none;
   }
 }
-@media (max-width: 1198.98px) {
+@media (max-width: 1199.98px) {
   .app-content.page-tests .article-tests .article-content .article-body .table-head:not(.table-test-bank) colgroup:nth-child(3),
 .app-content.page-tests .article-tests .article-content .article-body .table-head:not(.table-test-bank) colgroup:nth-child(4),
 .app-content.page-tests .article-tests .article-content .article-body .table-body:not(.table-test-bank) colgroup:nth-child(3),

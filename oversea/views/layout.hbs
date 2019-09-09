@@ -54,14 +54,13 @@
             {{#if facilitiesPage}}Facility Booking{{/if}}
             {{#if profilePage}}About Me{{/if}}
             {{#if passwordPage}}User Administration{{/if}}
-            {{#if loginReportPage}}User Login Report{{/if}}
             {{#if schoolPage}}Manage School{{/if}}
             {{#if userAccountPage}}Manage User Account{{/if}}
             {{#if formClassPage}}Manage Form Class{{/if}}
             {{#if schoolGroupPage}}Manage School Group{{/if}}
             {{#if loginAsStudentPage}}Login to Student Account{{/if}}
             {{#if loginAsTeacherPage}}Login to Teacher Account{{/if}}
-            {{#if galaxyPage}}My Galaxy{{/if}}
+            {{#if galaxyPage}}My Achievements{{/if}}
             {{#if legacyPage}}Legacy Page{{/if}}
             {{#if errorPage}}Page Not Found{{/if}}
           </div>
@@ -142,6 +141,11 @@
                           <i class="img img-myreports-usage"></i> Usage Report
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
+                          <i class="img img-myreports-loginreport"></i> Login Report
+                        </a>
+                      </li>
                     {{/unless}}
                   </ul>
                 </div>
@@ -152,6 +156,11 @@
                 </a>
                 <div class="dropdown-menu">
                   <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                        <i class="img img-schoolmatters-notifications"></i> Social Learning Wall
+                      </a>
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/notifications/notifications">
                         <i class="img img-schoolmatters-notifications"></i> Notifications
@@ -184,11 +193,6 @@
                   </a>
                   <div class="dropdown-menu">
                     <ul class="nav">
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/administration/login_report">
-                          <i class="img img-administration-loginreport"></i> User Login Report
-                        </a>
-                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-administration"></i> Manage School
@@ -230,7 +234,7 @@
               {{/if}}
               <li class="nav-item">
                 <a class="nav-link link-mygalaxy {{#if galaxyPage}}active{{/if}}" href="/{{userRole}}/galaxy/games">
-                  <i class="img img-mygalaxy"></i> My Galaxy
+                  <i class="img img-mygalaxy"></i> My Achievements
                 </a>
               </li>
               <li class="nav-item dropdown dropdown-more">
@@ -296,6 +300,11 @@
                           <i class="img img-myreports-usage"></i> Usage Report
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
+                          <i class="img img-myreports-loginreport"></i> Login Report
+                        </a>
+                      </li>
                     {{/unless}}
                   </ul>
                   <ul class="nav nav-schoolmatters">
@@ -303,6 +312,11 @@
                       <div class="nav-text">
                         <i class="img img-schoolmatters"></i> School Matters
                       </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                        <i class="img img-schoolmatters-notifications"></i> Social Learning Wall
+                      </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/notifications/notifications">
@@ -333,11 +347,6 @@
                         <div class="nav-text">
                           <i class="img img-administration"></i> Administration
                         </div>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/administration/login_report">
-                          <i class="img img-administration-loginreport"></i> User Login Report
-                        </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
@@ -639,6 +648,11 @@
                           <i class="img img-myreports-usage"></i> Usage Report
                         </a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{#if loginReportPage}}active{{/if}}" href="/{{userRole}}/reports/reports?type=usage">
+                          <i class="img img-myreports-loginreport"></i> Login Report
+                        </a>
+                      </li>
                     {{/unless}}
                   </ul>
                 </div>
@@ -649,6 +663,11 @@
                 </a>
                 <div class="collapse" id="matters">
                   <ul class="nav">
+                    <li class="nav-item">
+                      <a class="nav-link {{#if iwallPage}}active{{/if}}" href="/{{userRole}}/legacy/legacy">
+                        <i class="img img-schoolmatters-notifications"></i> Social Learning Wall
+                      </a>
+                    </li>
                     <li class="nav-item">
                       <a class="nav-link {{#if notificationsPage}}active{{/if}}" href="/{{userRole}}/notifications/notifications">
                         <i class="img img-schoolmatters-notifications"></i> Notifications
@@ -681,11 +700,6 @@
                   </a>
                   <div class="collapse" id="administration">
                     <ul class="nav">
-                      <li class="nav-item">
-                        <a class="nav-link {{#if loginReportPage}}active{{/if}}" href="/{{userRole}}/administration/login_report">
-                          <i class="img img-administration-loginreport"></i> User Login Report
-                        </a>
-                      </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if schoolPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-administration"></i> Manage School
@@ -727,7 +741,7 @@
               {{/if}}
               <li class="nav-item">
                 <a class="nav-link {{#if galaxyPage}}active{{/if}}" href="/{{userRole}}/galaxy/games">
-                  <i class="img img-mygalaxy"></i> My Galaxy
+                  <i class="img img-mygalaxy"></i> My Achievements
                 </a>
               </li>
             {{/if}}

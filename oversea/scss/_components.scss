@@ -630,6 +630,10 @@ select.form-control {
       background-image: url("../images/icon_topnav_sub_myreports_usage.png");
     }
 
+    &.img-myreports-loginreport {
+      background-image: url("../images/icon_topnav_sub_myreports_loginreport.png");
+    }
+
     &.img-schoolmatters-notifications {
       background-image: url("../images/icon_topnav_sub_schoolmatters_notifications.png");
     }
@@ -644,10 +648,6 @@ select.form-control {
 
     &.img-schoolmatters-markattendance {
       background-image: url("../images/icon_topnav_sub_schoolmatters_markattendance.png");
-    }
-
-    &.img-administration-loginreport {
-      background-image: url("../images/icon_topnav_sub_administration_loginreport.png");
     }
 
     &.img-administration-useraccount {

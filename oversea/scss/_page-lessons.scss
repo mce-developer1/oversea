@@ -121,13 +121,16 @@
           .article-body {
             .table-head,
             .table-body {
-              colgroup:nth-child(5) {
-                display: none;
-              }
+              &.table-my-lessons,
+              &.table-shared-by-me {
+                colgroup:nth-child(5) {
+                  display: none;
+                }
 
-              th:nth-child(5),
-              td:nth-child(5) {
-                display: none;
+                th:nth-child(5),
+                td:nth-child(5) {
+                  display: none;
+                }
               }
             }
           }
@@ -139,16 +142,30 @@
           .article-body {
             .table-head,
             .table-body {
-              colgroup:nth-child(3),
-              colgroup:nth-child(4) {
-                display: none;
+              &:not(.table-lesson-bank) {
+                colgroup:nth-child(3),
+                colgroup:nth-child(4) {
+                  display: none;
+                }
+
+                th:nth-child(3),
+                th:nth-child(4),
+                td:nth-child(3),
+                td:nth-child(4) {
+                  display: none;
+                }
               }
 
-              th:nth-child(3),
-              th:nth-child(4),
-              td:nth-child(3),
-              td:nth-child(4) {
-                display: none;
+              &.table-shared-with-me,
+              &.table-search-results {
+                colgroup:nth-child(6) {
+                  display: none;
+                }
+
+                th:nth-child(6),
+                td:nth-child(6) {
+                  display: none;
+                }
               }
             }
           }
@@ -225,13 +242,51 @@
           .article-body {
             .table-head,
             .table-body {
-              colgroup:nth-child(7) {
-                display: none;
+              &.table-my-lessons,
+              &.table-shared-by-me {
+                colgroup:nth-child(7) {
+                  display: none;
+                }
+
+                th:nth-child(7),
+                td:nth-child(7) {
+                  display: none;
+                }
               }
 
-              th:nth-child(7),
-              td:nth-child(7) {
-                display: none;
+              &.table-shared-with-me,
+              &.table-search-results {
+                colgroup:nth-child(5) {
+                  display: none;
+                }
+
+                th:nth-child(5),
+                td:nth-child(5) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              &.table-lesson-bank {
+                colgroup:nth-child(3),
+                colgroup:nth-child(4) {
+                  display: none;
+                }
+
+                th:nth-child(3),
+                th:nth-child(4),
+                td:nth-child(3),
+                td:nth-child(4) {
+                  display: none;
+                }
               }
             }
           }
@@ -253,13 +308,36 @@
           .article-body {
             .table-head,
             .table-body {
-              colgroup:nth-child(6) {
-                display: none;
-              }
+              &.table-my-lessons,
+              &.table-shared-by-me {
+                colgroup:nth-child(6) {
+                  display: none;
+                }
 
-              tr {
-                th:nth-child(6),
-                td:nth-child(6) {
+                tr {
+                  th:nth-child(6),
+                  td:nth-child(6) {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              &.table-lesson-bank {
+                colgroup:nth-child(5) {
+                  display: none;
+                }
+
+                th:nth-child(5),
+                td:nth-child(5) {
                   display: none;
                 }
               }
@@ -319,6 +397,38 @@
               position: sticky;
               top: 10rem;
               z-index: 950;
+            }
+          }
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .article-content {
+          .article-body {
+            .table-head,
+            .table-body {
+              &.table-shared-with-me,
+              &.table-search-results {
+                colgroup:nth-child(7) {
+                  display: none;
+                }
+
+                th:nth-child(7),
+                td:nth-child(7) {
+                  display: none;
+                }
+              }              
+
+              &.table-lesson-bank {
+                colgroup:nth-child(5) {
+                  display: none;
+                }
+
+                th:nth-child(5),
+                td:nth-child(5) {
+                  display: none;
+                }
+              }
             }
           }
         }
