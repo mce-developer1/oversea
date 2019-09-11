@@ -309,6 +309,10 @@ a {
     max-height: 20rem;
     min-height: 4rem;
     height: auto;
+
+    p {
+      word-break: break-word;
+    }
   }
 }
 

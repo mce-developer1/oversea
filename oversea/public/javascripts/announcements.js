@@ -45,7 +45,7 @@ $(document).ready(function() {
       }
     });
 
-    $('.article-create-announcement .form-announcement .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
+    $('.article-create-announcement .form-announcement .input-autocomplete').autocomplete({ hint: true, debug: false, autoselect: true }, [{
       displayKey: 'name',
       source: function(query, callback) {
         var records = [

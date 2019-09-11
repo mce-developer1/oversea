@@ -215,7 +215,7 @@ $(document).ready(function() {
     $(this).closest('.list-group-item').remove();
   });
 
-  $('.modal-resource-share .form-add-user .input-autocomplete').autocomplete({ hint: true, debug: false }, [{
+  $('.modal-resource-share .form-add-user .input-autocomplete').autocomplete({ hint: true, debug: false, autoselect: true }, [{
     displayKey: 'name',
     source: function(query, callback) {
       var records = [

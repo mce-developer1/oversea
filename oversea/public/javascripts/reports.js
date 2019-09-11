@@ -493,7 +493,7 @@ $(document).ready(function() {
     };
 
     var element = $('.article-usage-report .chart').get(0);
-    var inlineChart = new google.visualization.BarChart(element);
+    inlineChart = new google.visualization.BarChart(element);
 
     google.visualization.events.addListener(inlineChart, 'click', function(e) {
       var regex = /^vAxis[\#0-9a-zA-Z]+\#([0-9]+)$/;
@@ -648,7 +648,7 @@ $(document).ready(function() {
     };
 
     var element = $('.article-proficiency-report .chart').get(0);
-    var inlineChart = new google.visualization.BarChart(element);
+    inlineChart = new google.visualization.BarChart(element);
 
     google.visualization.events.addListener(inlineChart, 'click', function(e) {
       var regex = /^vAxis[\#0-9a-zA-Z]+\#([0-9]+)$/;
@@ -708,24 +708,39 @@ $(document).ready(function() {
   }
 
   function drawWeeklyLoginReport() {
-    var data = [
-      ['Element', 'Login'],
-      ['Mon 09/09', { v: 60, f: '60%' }],
-      ['Tue 10/09', { v: 70, f: '70%' }],
-      ['Wed 11/09', { v: 80, f: '80%' }],
-      ['Thu 12/09', { v: 70, f: '70%' }],
-      ['Fri 13/09', { v: 80, f: '80%' }],
-      ['Sat 14/09', { v: 90, f: '90%' }],
-      ['Sun 15/09', { v: 90, f: '90%' }]
-    ];
+    var data = [['Element', 'Login']];
+    var getRndInteger = function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min) ) + min;
+    };
+    var endDate = moment(new Date());
+    var startDate = endDate.clone().subtract(7, 'days');
+    while (!startDate.isSame(endDate, 'day')) {
+      var sessions = getRndInteger(20, 30);
+      data.push([
+        { v: startDate.toDate(), f: startDate.format('ddd DD/MM') },
+        { v: Math.ceil((sessions / 30) * 100), f: (sessions + '/30') }
+      ]);
+      startDate.add(1, 'day');
+    }
     var dataTable = google.visualization.arrayToDataTable(data);
     
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: 340,
-      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '70%' },
+      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '80%' },
       legend: { position: 'none' },
+      hAxis: {
+        gridlines: { count: 0, color: 'transparent' },
+        textStyle: {
+          color: '007bff'
+        },
+        ticks: [
+          data[1][0], data[2][0], data[3][0],
+          data[4][0], data[5][0], data[6][0],
+          data[7][0]
+        ]
+      },
       vAxis: {
         format: '#\'%\'',
         gridlines: { count: 4 },
@@ -733,29 +748,61 @@ $(document).ready(function() {
         minValue: 0,
         maxValue: 100
       },
-      pointSize: 5
+      pointSize: 5,
+      pointsVisible: true
     };
 
     var element = $('.article-login-report .chart').get(0);
     inlineChart = new google.visualization.LineChart(element);
+
+    google.visualization.events.addListener(inlineChart, 'click', function(e) {
+      var regex = /^hAxis[\#0-9a-zA-Z]+\#([0-9]+)$/;
+      var matches = e.targetID.match(regex);
+      if (!matches) return;
+
+      $('.modal-login-summary').modal('show');
+      $('.modal-login-summary').on('shown.bs.modal', function (e) {
+        
+      });
+    });
+
     inlineChart.draw(dataTable, options);
   }
 
   function drawTermlyLoginReport() {
-    var data = [
-      ['Element', 'Login'],
-      ['Oct', { v: 70, f: '70%' }],
-      ['Nov', { v: 80, f: '80%' }],
-      ['Dec', { v: 90, f: '90%' }]
-    ];
+    var data = [['Element', 'Login']];
+    var getRndInteger = function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min) ) + min;
+    };
+    var startDate = moment(new Date(2019, 6, 1));
+    var endDate = moment(new Date(2019, 9, 1));
+    while (!startDate.isSame(endDate, 'day')) {
+      var sessions = getRndInteger(20, 30);
+      data.push([
+        { v: startDate.toDate(), f: startDate.format('ddd DD/MM') },
+        { v: Math.ceil((sessions / 30) * 100), f: (sessions + '/30') }
+      ]);
+      startDate.add(1, 'day');
+    }
     var dataTable = google.visualization.arrayToDataTable(data);
     
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: 340,
-      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '70%' },
+      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '80%' },
       legend: { position: 'none' },
+      hAxis: {
+        gridlines: { count: 0, color: 'transparent' },
+        textStyle: {
+          color: '007bff'
+        },
+        ticks: [
+          { v: new Date(2019, 6, 1), f: 'Jul' },
+          { v: new Date(2019, 7, 1), f: 'Aug' },
+          { v: new Date(2019, 8, 1), f: 'Sep' }
+        ]
+      },
       vAxis: {
         format: '#\'%\'',
         gridlines: { count: 4 },
@@ -763,7 +810,8 @@ $(document).ready(function() {
         minValue: 0,
         maxValue: 100
       },
-      pointSize: 5
+      pointSize: 5,
+      pointsVisible: false
     };
 
     var element = $('.article-login-report .chart').get(0);
@@ -772,29 +820,48 @@ $(document).ready(function() {
   }
 
   function drawPeriodLoginReport() {
-    var data = [
-      ['Element', 'Login'],
-      ['Jan', { v: 60, f: '60%' }],
-      ['Feb', { v: 70, f: '70%' }],
-      ['Mar', { v: 80, f: '80%' }],
-      ['Apr', { v: 70, f: '70%' }],
-      ['May', { v: 80, f: '80%' }],
-      ['Jun', { v: 90, f: '90%' }],
-      ['Jul', { v: 80, f: '80%' }],
-      ['Aug', { v: 70, f: '70%' }],
-      ['Sep', { v: 60, f: '60%' }],
-      ['Oct', { v: 70, f: '70%' }],
-      ['Nov', { v: 80, f: '80%' }],
-      ['Dec', { v: 90, f: '90%' }]
-    ];
+    var data = [['Element', 'Login']];
+    var getRndInteger = function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min) ) + min;
+    };
+    var startDate = moment(new Date(2019, 0, 1));
+    var endDate = moment(new Date(2020, 0, 1));
+    while (!startDate.isSame(endDate, 'day')) {
+      var sessions = getRndInteger(20, 30);
+      data.push([
+        { v: startDate.toDate(), f: startDate.format('ddd DD/MM') },
+        { v: Math.ceil((sessions / 30) * 100), f: (sessions + '/30') }
+      ]);
+      startDate.add(1, 'day');
+    }
     var dataTable = google.visualization.arrayToDataTable(data);
     
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: 340,
-      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '70%' },
+      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '80%' },
       legend: { position: 'none' },
+      hAxis: {
+        gridlines: { count: 0, color: 'transparent' },
+        textStyle: {
+          color: '007bff'
+        },
+        ticks: [
+          { v: new Date(2019, 0, 1), f: 'Jan' },
+          { v: new Date(2019, 1, 1), f: 'Feb' },
+          { v: new Date(2019, 2, 1), f: 'Mar' },
+          { v: new Date(2019, 3, 1), f: 'Apr' },
+          { v: new Date(2019, 4, 1), f: 'May' },
+          { v: new Date(2019, 5, 1), f: 'Jun' },
+          { v: new Date(2019, 6, 1), f: 'Jul' },
+          { v: new Date(2019, 7, 1), f: 'Aug' },
+          { v: new Date(2019, 8, 1), f: 'Sep' },
+          { v: new Date(2019, 9, 1), f: 'Oct' },
+          { v: new Date(2019, 10, 1), f: 'Nov' },
+          { v: new Date(2019, 11, 1), f: 'Dec' }
+        ]
+      },
       vAxis: {
         format: '#\'%\'',
         gridlines: { count: 4 },
@@ -802,7 +869,8 @@ $(document).ready(function() {
         minValue: 0,
         maxValue: 100
       },
-      pointSize: 5
+      pointSize: 5,
+      pointsVisible: false
     };
 
     var element = $('.article-login-report .chart').get(0);
@@ -967,15 +1035,15 @@ $(document).ready(function() {
       if (google.visualization && google.visualization.arrayToDataTable) {
         if (location.href.indexOf('type=usage') > -1) {
           $('#selReport').selectpicker('val', 'usage');
-          if (studentUser) drawStudentUsageReport();
-          else drawAllClassesUsageReport();
+          //if (studentUser) drawStudentUsageReport();
+          //else drawAllClassesUsageReport();
         } else if (location.href.indexOf('type=proficiency') > -1) {
           $('#selReport').selectpicker('val', 'proficiency');
-          if (studentUser) drawStudentProficiencyReport();
-          else drawAllClassesProficiencyReport();
+          //if (studentUser) drawStudentProficiencyReport();
+          //else drawAllClassesProficiencyReport();
         } else {
           $('#selReport').selectpicker('val', 'login');
-          drawWeeklyLoginReport();
+          //drawWeeklyLoginReport();
         }
         return;
       }

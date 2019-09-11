@@ -218,6 +218,10 @@
                   position: absolute;
                   bottom: 1rem;
                   right: .5rem;
+
+                  .fas {
+                    font-size: .875rem;
+                  }
                 }
 
                 .custom-checkbox {
@@ -493,7 +497,7 @@
 
           .form-label {
             margin-right: 1rem;
-						width: 14rem;
+						width: 4rem;
           }
         }
       }

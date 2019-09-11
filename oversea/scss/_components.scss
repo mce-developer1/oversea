@@ -1937,6 +1937,7 @@ select.form-control {
         .question-title {
           font-weight: 500;
           margin-bottom: 1rem;
+          word-break: break-word;
 
           .text-muted {
             font-weight: 400;
@@ -1953,6 +1954,7 @@ select.form-control {
 
           p {
             line-height: 2;
+            word-break: break-word;
           }
         }
 

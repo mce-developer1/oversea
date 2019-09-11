@@ -52,6 +52,12 @@ window.Utils = {
             $(editor.editorContainer).css({ maxWidth: toolbarWidth });
           }
         });
+
+        editor.on('Change', function (e) {
+          if (options.changeCallback) {
+            options.changeCallback();
+          }
+        });
       }
     }));
   },
