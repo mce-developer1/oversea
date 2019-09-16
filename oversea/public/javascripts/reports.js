@@ -716,9 +716,10 @@ $(document).ready(function() {
     var startDate = endDate.clone().subtract(7, 'days');
     while (!startDate.isSame(endDate, 'day')) {
       var sessions = getRndInteger(20, 30);
+      var percentage = Math.ceil((sessions / 30) * 100);
       data.push([
         { v: startDate.toDate(), f: startDate.format('ddd DD/MM') },
-        { v: Math.ceil((sessions / 30) * 100), f: (sessions + '/30') }
+        { v: percentage, f: (sessions + '/30 (' + percentage + '%)') }
       ]);
       startDate.add(1, 'day');
     }
@@ -762,7 +763,7 @@ $(document).ready(function() {
 
       $('.modal-login-summary').modal('show');
       $('.modal-login-summary').on('shown.bs.modal', function (e) {
-        
+        // TO DO
       });
     });
 
@@ -770,38 +771,26 @@ $(document).ready(function() {
   }
 
   function drawTermlyLoginReport() {
-    var data = [['Element', 'Login']];
-    var getRndInteger = function getRndInteger(min, max) {
-      return Math.floor(Math.random() * (max - min) ) + min;
-    };
-    var startDate = moment(new Date(2019, 6, 1));
-    var endDate = moment(new Date(2019, 9, 1));
-    while (!startDate.isSame(endDate, 'day')) {
-      var sessions = getRndInteger(20, 30);
-      data.push([
-        { v: startDate.toDate(), f: startDate.format('ddd DD/MM') },
-        { v: Math.ceil((sessions / 30) * 100), f: (sessions + '/30') }
-      ]);
-      startDate.add(1, 'day');
-    }
+    var data = [
+      ['Element', 'Login', { role: 'annotation' }],
+      ['Jul', { v: 70, f: '21/30 (70%)' }, '70%'],
+      ['Jul', { v: 80, f: '24/30 (80%)' }, '80%'],
+      ['Jul', { v: 90, f: '27/30 (90%)' }, '90%'],
+    ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
     var options = {
       fontName: 'Arial',
       fontSize: 13,      
       height: 340,
-      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '80%' },
+      chartArea: { left: 80, top: 32, bottom: 32, height: '80%', width: '60%' },
+      bar: { groupWidth: '30%' },
       legend: { position: 'none' },
       hAxis: {
         gridlines: { count: 0, color: 'transparent' },
         textStyle: {
           color: '007bff'
-        },
-        ticks: [
-          { v: new Date(2019, 6, 1), f: 'Jul' },
-          { v: new Date(2019, 7, 1), f: 'Aug' },
-          { v: new Date(2019, 8, 1), f: 'Sep' }
-        ]
+        }
       },
       vAxis: {
         format: '#\'%\'',
@@ -809,13 +798,23 @@ $(document).ready(function() {
         minorGridlines: { count: 0 },
         minValue: 0,
         maxValue: 100
-      },
-      pointSize: 5,
-      pointsVisible: false
+      }
     };
 
     var element = $('.article-login-report .chart').get(0);
-    inlineChart = new google.visualization.LineChart(element);
+    inlineChart = new google.visualization.ColumnChart(element);
+
+    google.visualization.events.addListener(inlineChart, 'click', function(e) {
+      var regex = /^hAxis[\#0-9a-zA-Z]+\#([0-9]+)$/;
+      var matches = e.targetID.match(regex);
+      if (!matches) return;
+
+      $('.modal-login-summary').modal('show');
+      $('.modal-login-summary').on('shown.bs.modal', function (e) {
+        // TO DO
+      });
+    });
+
     inlineChart.draw(dataTable, options);
   }
 
@@ -828,9 +827,10 @@ $(document).ready(function() {
     var endDate = moment(new Date(2020, 0, 1));
     while (!startDate.isSame(endDate, 'day')) {
       var sessions = getRndInteger(20, 30);
+      var percentage = Math.ceil((sessions / 30) * 100);
       data.push([
         { v: startDate.toDate(), f: startDate.format('ddd DD/MM') },
-        { v: Math.ceil((sessions / 30) * 100), f: (sessions + '/30') }
+        { v: percentage, f: (sessions + '/30 (' + percentage + '%)') }
       ]);
       startDate.add(1, 'day');
     }

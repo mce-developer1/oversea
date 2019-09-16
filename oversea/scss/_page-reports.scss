@@ -290,3 +290,23 @@
     }
   }
 }
+
+.modal-login-summary {
+  .modal-dialog {
+    .modal-body {
+      .navbar {
+        &.navbar-expand {
+          padding: 0.5rem 0;
+        }
+
+        .navbar-nav {
+          .nav-item {
+            +.nav-item {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
