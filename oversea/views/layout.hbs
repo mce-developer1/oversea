@@ -49,9 +49,9 @@
             {{#if lessonsPage}}Lesson Builder{{/if}}
             {{#if testsPage}}Test Builder{{/if}}
             {{#if questionsPage}}Question Builder{{/if}}
+            {{#if facilitiesPage}}Facility Booking{{/if}}
             {{#if notificationsPage}}Notifications{{/if}}
             {{#if announcementsPage}}Announcements{{/if}}
-            {{#if facilitiesPage}}Facility Booking{{/if}}
             {{#if profilePage}}About Me{{/if}}
             {{#if passwordPage}}User Administration{{/if}}
             {{#if schoolPage}}Manage School{{/if}}
@@ -60,7 +60,7 @@
             {{#if schoolGroupPage}}Manage School Group{{/if}}
             {{#if loginAsStudentPage}}Login to Student Account{{/if}}
             {{#if loginAsTeacherPage}}Login to Teacher Account{{/if}}
-            {{#if galaxyPage}}My Achievements{{/if}}
+            {{#if achievementsPage}}My Achievements{{/if}}
             {{#if legacyPage}}Legacy Page{{/if}}
             {{#if errorPage}}Page Not Found{{/if}}
           </div>
@@ -89,23 +89,38 @@
                   <div class="dropdown-menu">
                     <ul class="nav">
                       <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-assessment"></i> Assessment
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/lessons/lessons">
-                          <i class="img img-mytools-lessonbuilder"></i> Lesson Builder
+                          <i class="img img-lessonbuilder"></i> Lesson Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/tests/tests">
-                          <i class="img img-mytools-testbuilder"></i> Test Builder
+                          <i class="img img-testbuilder"></i> Test Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/questions/questions">
-                          <i class="img img-mytools-questionbuilder"></i> Question Builder
+                          <i class="img img-questionbuilder"></i> Question Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/legacy/legacy">
-                          <i class="img img-mytools-schoolnotes"></i> School To Home Notes
+                          <i class="img img-schoolnotes"></i> School To Home Notes
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-facilitybooking"></i> Facility Booking
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-markattendance"></i> Mark Attendance
                         </a>
                       </li>
                     </ul>
@@ -121,29 +136,29 @@
                     {{#if studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=proficiency">
-                          <i class="img img-myreports-mastery"></i> How Well I've Done
+                          <i class="img img-masteryreport"></i> How Well I've Done
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=usage">
-                          <i class="img img-myreports-usage"></i> How Much I've Completed
+                          <i class="img img-usagereport"></i> How Much I've Completed
                         </a>
                       </li>
                     {{/if}}
                     {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=proficiency">
-                          <i class="img img-myreports-mastery"></i> Mastery Report
+                          <i class="img img-masteryreport"></i> Mastery Report
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=usage">
-                          <i class="img img-myreports-usage"></i> Usage Report
+                          <i class="img img-usagereport"></i> Usage Report
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
-                          <i class="img img-myreports-loginreport"></i> Login Report
+                          <i class="img img-loginreport"></i> Login Report
                         </a>
                       </li>
                     {{/unless}}
@@ -151,35 +166,25 @@
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link link-schoolmatters" href="#" data-toggle="dropdown">
-                  <i class="img img-schoolmatters"></i> School Matters
+                <a class="nav-link link-collaboration" href="#" data-toggle="dropdown">
+                  <i class="img img-collaboration"></i> Collaboration
                 </a>
                 <div class="dropdown-menu">
                   <ul class="nav">
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/legacy/legacy">
-                        <i class="img img-schoolmatters-notifications"></i> Social Learning Wall
+                        <i class="img img-sociallearningwall"></i> Social Learning Wall
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/notifications/notifications">
-                        <i class="img img-schoolmatters-notifications"></i> Notifications
+                        <i class="img img-notifications"></i> Notifications
                       </a>
                     </li>
                     {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/announcements/announcements">
-                          <i class="img img-schoolmatters-announcements"></i> Announcements
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/facilities/add_booking">
-                          <i class="img img-schoolmatters-facilitybooking"></i> Facility Booking
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/mark_attendance/mark_attendance">
-                          <i class="img img-schoolmatters-markattendance"></i> Mark Attendance
+                          <i class="img img-announcements"></i> Announcements
                         </a>
                       </li>
                     {{/unless}}
@@ -195,37 +200,37 @@
                     <ul class="nav">
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
-                          <i class="img img-administration"></i> Manage School
+                          <i class="img img-manageschool"></i> Manage School
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
-                          <i class="img img-administration-useraccount"></i> Manage User Account
+                          <i class="img img-useraccount"></i> Manage User Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
-                          <i class="img img-administration-formclass"></i> Manage Form Class
+                          <i class="img img-formclass"></i> Manage Form Class
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
-                          <i class="img img-administration-schoolgroup"></i> Manage School Group
+                          <i class="img img-schoolgroup"></i> Manage School Group
                         </a>
                       </li>
                       <li class="nav-item d-none">
                         <a class="nav-link" href="/{{userRole}}/administration/access_levels">
-                          <i class="img img-administration"></i> Access Levels
+                          <i class="img img-accesslevels"></i> Access Levels
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/login_as_student">
-                          <i class="img img-administration"></i> Login to Student Account
+                          <i class="img img-loginstudent"></i> Login to Student Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/login_as_teacher">
-                          <i class="img img-administration"></i> Login to Teacher Account
+                          <i class="img img-loginteacher"></i> Login to Teacher Account
                         </a>
                       </li>
                     </ul>
@@ -233,13 +238,13 @@
                 </li>
               {{/if}}
               <li class="nav-item">
-                <a class="nav-link link-mygalaxy {{#if galaxyPage}}active{{/if}}" href="/{{userRole}}/galaxy/games">
-                  <i class="img img-mygalaxy"></i> My Achievements
+                <a class="nav-link link-myachievements {{#if achievementsPage}}active{{/if}}" href="/{{userRole}}/achievements/games">
+                  <i class="img img-myachievements"></i> My Achievements
                 </a>
               </li>
               <li class="nav-item dropdown dropdown-more">
                 <a class="nav-link link-more" href="#" data-toggle="dropdown">
-                  <i class="img img-myreports"></i> More
+                  <i class="img img-more"></i> More
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-more">
                   {{#unless studentUser}}
@@ -250,23 +255,38 @@
                         </div>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-assessment"></i> Assessment
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/lessons/lessons">
-                          <i class="img img-mytools-lessonbuilder"></i> Lesson Builder
+                          <i class="img img-lessonbuilder"></i> Lesson Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/tests/tests">
-                          <i class="img img-mytools-testbuilder"></i> Test Builder
+                          <i class="img img-testbuilder"></i> Test Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/questions/questions">
-                          <i class="img img-mytools-questionbuilder"></i> Question Builder
+                          <i class="img img-questionbuilder"></i> Question Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/legacy/legacy">
-                          <i class="img img-mytools-schoolnotes"></i> School To Home Notes
+                          <i class="img img-schoolnotes"></i> School To Home Notes
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-facilitybooking"></i> Facility Booking
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-markattendance"></i> Mark Attendance
                         </a>
                       </li>
                     </ul>
@@ -280,63 +300,53 @@
                     {{#if studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=proficiency">
-                          <i class="img img-myreports-mastery"></i> How Well I've Done
+                          <i class="img img-masteryreport"></i> How Well I've Done
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=usage">
-                          <i class="img img-myreports-usage"></i> How Much I've Completed
+                          <i class="img img-usagereport"></i> How Much I've Completed
                         </a>
                       </li>
                     {{/if}}
                     {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=proficiency">
-                          <i class="img img-myreports-mastery"></i> Mastery Report
+                          <i class="img img-masteryreport"></i> Mastery Report
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=usage">
-                          <i class="img img-myreports-usage"></i> Usage Report
+                          <i class="img img-usagereport"></i> Usage Report
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/reports/reports?type=login">
-                          <i class="img img-myreports-loginreport"></i> Login Report
+                          <i class="img img-loginreport"></i> Login Report
                         </a>
                       </li>
                     {{/unless}}
                   </ul>
-                  <ul class="nav nav-schoolmatters">
+                  <ul class="nav nav-collaboration">
                     <li class="nav-item">
                       <div class="nav-text">
-                        <i class="img img-schoolmatters"></i> School Matters
+                        <i class="img img-collaboration"></i> Collaboration
                       </div>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/legacy/legacy">
-                        <i class="img img-schoolmatters-notifications"></i> Social Learning Wall
+                        <i class="img img-sociallearningwall"></i> Social Learning Wall
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/notifications/notifications">
-                        <i class="img img-schoolmatters-notifications"></i> Notifications
+                        <i class="img img-notifications"></i> Notifications
                       </a>
                     </li>
                     {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/announcements/announcements">
-                          <i class="img img-schoolmatters-announcements"></i> Announcements
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/facilities/add_booking">
-                          <i class="img img-schoolmatters-facilitybooking"></i> Facility Booking
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/mark_attendance/mark_attendance">
-                          <i class="img img-schoolmatters-markattendance"></i> Mark Attendance
+                          <i class="img img-announcements"></i> Announcements
                         </a>
                       </li>
                     {{/unless}}
@@ -350,37 +360,37 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
-                          <i class="img img-administration"></i> Manage School
+                          <i class="img img-manageschool"></i> Manage School
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_user_account">
-                          <i class="img img-administration-useraccount"></i> Manage User Account
+                          <i class="img img-useraccount"></i> Manage User Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_form_class">
-                          <i class="img img-administration-formclass"></i> Manage Form Class
+                          <i class="img img-formclass"></i> Manage Form Class
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school_group">
-                          <i class="img img-administration-schoolgroup"></i> Manage School Group
+                          <i class="img img-schoolgroup"></i> Manage School Group
                         </a>
                       </li>
                       <li class="nav-item d-none">
                         <a class="nav-link" href="/{{userRole}}/administration/access_levels">
-                          <i class="img img-administration"></i> Access Levels
+                          <i class="img img-accesslevels"></i> Access Levels
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/login_as_student">
-                          <i class="img img-administration"></i> Login to Student Account
+                          <i class="img img-loginstudent"></i> Login to Student Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/login_as_teacher">
-                          <i class="img img-administration"></i> Login to Teacher Account
+                          <i class="img img-loginteacher"></i> Login to Teacher Account
                         </a>
                       </li>
                     </ul>
@@ -596,23 +606,38 @@
                   <div class="collapse" id="tools">
                     <ul class="nav">
                       <li class="nav-item">
+                        <a class="nav-link {{#if assessmentPage}}active{{/if}}" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-assessment"></i> Assessment
+                        </a>
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link {{#if lessonsPage}}active{{/if}}" href="/{{userRole}}/lessons/lessons">
-                          <i class="img img-mytools-lessonbuilder"></i> Lesson Builder
+                          <i class="img img-lessonbuilder"></i> Lesson Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if testsPage}}active{{/if}}" href="/{{userRole}}/tests/tests">
-                          <i class="img img-mytools-testbuilder"></i> Test Builder
+                          <i class="img img-testbuilder"></i> Test Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if questionsPage}}active{{/if}}" href="/{{userRole}}/questions/questions">
-                          <i class="img img-mytools-questionbuilder"></i> Question Builder
+                          <i class="img img-questionbuilder"></i> Question Builder
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/legacy/legacy">
-                          <i class="img img-mytools-schoolnotes"></i> School To Home Notes
+                          <i class="img img-schoolnotes"></i> School To Home Notes
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-facilitybooking"></i> Facility Booking
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/legacy/legacy">
+                          <i class="img img-markattendance"></i> Mark Attendance
                         </a>
                       </li>
                     </ul>
@@ -628,29 +653,29 @@
                     {{#if studentUser}}
                       <li class="nav-item">
                         <a class="nav-link {{#if proficiencyReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=proficiency">
-                          <i class="img img-myreports-mastery"></i> How Well I've Done
+                          <i class="img img-masteryreport"></i> How Well I've Done
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if usageReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=usage">
-                          <i class="img img-myreports-usage"></i> How Much I've Completed
+                          <i class="img img-usagereport"></i> How Much I've Completed
                         </a>
                       </li>
                     {{/if}}
                     {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link {{#if proficiencyReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=proficiency">
-                          <i class="img img-myreports-mastery"></i> Mastery Report
+                          <i class="img img-masteryreport"></i> Mastery Report
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if usageReport}}active{{/if}}" href="/{{userRole}}/reports/reports?type=usage">
-                          <i class="img img-myreports-usage"></i> Usage Report
+                          <i class="img img-usagereport"></i> Usage Report
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if loginReportPage}}active{{/if}}" href="/{{userRole}}/reports/reports?type=usage">
-                          <i class="img img-myreports-loginreport"></i> Login Report
+                          <i class="img img-loginreport"></i> Login Report
                         </a>
                       </li>
                     {{/unless}}
@@ -659,34 +684,24 @@
               </li>
               <li class="nav-item collapsible">
                 <a class="nav-link collapsed" href="#matters" data-toggle="collapse">
-                  <i class="img img-schoolmatters"></i> School Matters
+                  <i class="img img-collaboration"></i> Collaboration
                 </a>
                 <div class="collapse" id="matters">
                   <ul class="nav">
                     <li class="nav-item">
                       <a class="nav-link {{#if iwallPage}}active{{/if}}" href="/{{userRole}}/legacy/legacy">
-                        <i class="img img-schoolmatters-notifications"></i> Social Learning Wall
+                        <i class="img img-sociallearningwall"></i> Social Learning Wall
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link {{#if notificationsPage}}active{{/if}}" href="/{{userRole}}/notifications/notifications">
-                        <i class="img img-schoolmatters-notifications"></i> Notifications
+                        <i class="img img-notifications"></i> Notifications
                       </a>
                     </li>
                     {{#unless studentUser}}
                       <li class="nav-item">
                         <a class="nav-link {{#if announcementsPage}}active{{/if}}" href="/{{userRole}}/announcements/announcements">
-                          <i class="img img-schoolmatters-announcements"></i> Announcements
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link {{#if facilityBookingPage}}active{{/if}}" href="/{{userRole}}/facilities/add_booking">
-                          <i class="img img-schoolmatters-facilitybooking"></i> Facility Booking
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link {{#if markAttendancePage}}active{{/if}}" href="/{{userRole}}/mark_attendance/mark_attendance">
-                          <i class="img img-schoolmatters-markattendance"></i> Mark Attendance
+                          <i class="img img-announcements"></i> Announcements
                         </a>
                       </li>
                     {{/unless}}
@@ -702,37 +717,37 @@
                     <ul class="nav">
                       <li class="nav-item">
                         <a class="nav-link {{#if schoolPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school">
-                          <i class="img img-administration"></i> Manage School
+                          <i class="img img-manageschool"></i> Manage School
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if userAccountPage}}active{{/if}}" href="/{{userRole}}/administration/manage_user_account">
-                          <i class="img img-administration-useraccount"></i> Manage User Account
+                          <i class="img img-useraccount"></i> Manage User Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if formClassPage}}active{{/if}}" href="/{{userRole}}/administration/manage_form_class">
-                          <i class="img img-administration-formclass"></i> Manage Form Class
+                          <i class="img img-formclass"></i> Manage Form Class
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if schoolGroupPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school_group">
-                          <i class="img img-administration-schoolgroup"></i> Manage School Group
+                          <i class="img img-schoolgroup"></i> Manage School Group
                         </a>
                       </li>
                       <li class="nav-item d-none">
                         <a class="nav-link {{#if accessLevelsPage}}active{{/if}}" href="/{{userRole}}/administration/access_levels">
-                          <i class="img img-administration"></i> Access Levels
+                          <i class="img img-accesslevels"></i> Access Levels
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if loginAsStudentPage}}active{{/if}}" href="/{{userRole}}/administration/login_as_student">
-                          <i class="img img-administration"></i> Login to Student Account
+                          <i class="img img-loginstudent"></i> Login to Student Account
                         </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if loginAsTeacherPage}}active{{/if}}" href="/{{userRole}}/administration/login_as_teacher">
-                          <i class="img img-administration"></i> Login to Teacher Account
+                          <i class="img img-loginteacher"></i> Login to Teacher Account
                         </a>
                       </li>
                     </ul>
@@ -740,8 +755,8 @@
                 </li>
               {{/if}}
               <li class="nav-item">
-                <a class="nav-link {{#if galaxyPage}}active{{/if}}" href="/{{userRole}}/galaxy/games">
-                  <i class="img img-mygalaxy"></i> My Achievements
+                <a class="nav-link {{#if achievementsPage}}active{{/if}}" href="/{{userRole}}/achievements/games">
+                  <i class="img img-myachievements"></i> My Achievements
                 </a>
               </li>
             {{/if}}

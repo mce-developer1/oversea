@@ -47,6 +47,12 @@
           -o-transition: margin-left .35s;
           transition: margin-left .35s;
 
+          &.dialog {
+            &.ie {
+              top: 0 !important;
+            }
+          }
+
           .navbar {
             @include justify-content(flex-end);
             background-color: $accent;
@@ -268,9 +274,13 @@
             }
 
             .form-filters {
+              box-shadow: none;
+              display: block;
               height: calc(100vh - 12rem);
               overflow-x: hidden;
               overflow-y: auto;
+              position: static;
+              z-index: inherit;
             }
           }
         }

@@ -3,7 +3,7 @@
     <div class="col-sm">
       <div class="article article-report">
         <div class="article-content">
-          <div class="article-sidebar">
+          <div class="article-sidebar dialog">
             <div class="navbar">
               <button class="btn btn-light btn-toggle" type="button" data-toggle="sidebar" data-target=".article-report">
                 <i class="fas fa-chevron-left"></i>
@@ -13,7 +13,7 @@
                 <i class="fas fa-filter"></i>
               </button>
             </div>
-            <form class="form-filters">
+            <form class="form-filters dialog-menu">
               {{#if studentUser}}
                 <div class="form-group">
                   <label class="form-label" for="selReport">Report Type</label>
@@ -175,6 +175,8 @@
                     </p>
                     <div class="chart"></div>
                     <table class="table">
+                      <colgroup width="auto"></colgroup>
+                      <colgroup width="140px"></colgroup>
                       <thead>
                         <tr>
                           <th>Channel</th>
@@ -214,6 +216,60 @@
                       Grade 1, All Classes for Math Buddies, All Topics
                     </p>
                     <div class="chart"></div>
+                    <table class="table">
+                      <colgroup width="auto"></colgroup>
+                      <colgroup width="120px"></colgroup>
+                      <thead>
+                        <tr>
+                          <th>Channel</th>
+                          <th>Usage</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <a href="#">P1-EA</a>
+                          </td>
+                          <td>95%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-HA</a>
+                          </td>
+                          <td>80%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-MA</a>
+                          </td>
+                          <td>70%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-PA</a>
+                          </td>
+                          <td>55%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-SA</a>
+                          </td>
+                          <td>40%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-MT</a>
+                          </td>
+                          <td>30%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-UA</a>
+                          </td>
+                          <td>10%</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   {{/unless}}
                 </div>
               </div>              
@@ -241,6 +297,8 @@
                     </p>
                     <div class="chart"></div>
                     <table class="table">
+                      <colgroup width="auto"></colgroup>
+                      <colgroup width="140px"></colgroup>
                       <thead>
                         <tr>
                           <th>Channel</th>
@@ -280,6 +338,60 @@
                       Grade 1, All Classes for Math Buddies, All Topics
                     </p>
                     <div class="chart"></div>
+                    <table class="table">
+                      <colgroup width="auto"></colgroup>
+                      <colgroup width="120px"></colgroup>
+                      <thead>
+                        <tr>
+                          <th>Channel</th>
+                          <th>Mastery</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <a href="#">P1-EA</a>
+                          </td>
+                          <td>95%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-HA</a>
+                          </td>
+                          <td>80%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-MA</a>
+                          </td>
+                          <td>70%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-PA</a>
+                          </td>
+                          <td>55%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-SA</a>
+                          </td>
+                          <td>40%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-MT</a>
+                          </td>
+                          <td>30%</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <a href="#">P1-UA</a>
+                          </td>
+                          <td>10%</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   {{/unless}}
                 </div>
               </div>
@@ -287,7 +399,7 @@
             <div class="article article-login-report no-sidebar d-none">
               <div class="article-header">
                 {{#unless studentUser}}
-                  <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the number of login students.">
+                  <button class="btn btn-light" type="button" data-toggle="popover" data-content="This report tracks the no. of students who have successfully logged in at least once within each day or each month and shows details of individual login time & duration.">
                     <i class="fas fa-info-circle"></i>
                   </button>
                   <h5>Login Summary</h5>
@@ -300,6 +412,7 @@
                       Grade 1, All Classes for This Week
                     </p>
                     <div class="chart"></div>
+                    <table class="table"></table>
                   {{/unless}}
                 </div>
               </div>

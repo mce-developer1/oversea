@@ -304,6 +304,11 @@ $(document).ready(function() {
     }
     $model.find('.attribute:nth-child(5) .attribute-value')
       .text($row.find('td:nth-child(7)').text());
+    $('.modal-lesson-details').on('shown.bs.modal', function(e) {
+      $('a.edit-assign').on('click', function(e) {
+        showAssignLessonModal('/shared/assign_resource');
+      });
+    });
     $('.modal-lesson-details').modal('show');
   });
 
@@ -658,7 +663,14 @@ $(document).ready(function() {
     e.stopPropagation();
   });
 
+  $('a[data-toggle="popover"]').on('shown.bs.popover', function(e) {
+    $('a.edit-assign').on('click', function(e) {
+      showAssignLessonModal('/shared/assign_resource');
+    });
+  });
+
   $('a[data-toggle="popover"]').popover({
+    delay: { 'show': 100, 'hide': 100 },
     html: true,
     container: 'body',    
     placement: 'top',

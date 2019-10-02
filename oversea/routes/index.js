@@ -827,17 +827,17 @@ router.post('/logging', function(req, res) {
 });
 
 /* GET games page. */
-router.get('/:userRole/galaxy/games', function(req, res, next) {
+router.get('/:userRole/achievements/games', function(req, res, next) {
   var userRole = req.params.userRole;
   var studentUser = (userRole === 'student');
   var teacherUser = (userRole === 'teacher');
   var adminUser = (userRole === 'admin');
-  res.render('galaxy/games', {
+  res.render('achievements/games', {
     layout: 'layout',
     title: 'Marshall Cavendish Education',
-    module: 'galaxy',
+    module: 'achievements',
     loggedIn: true,
-    galaxyPage: true,
+    achievementsPage: true,
     userRole: userRole,
     studentUser: studentUser,
     teacherUser: teacherUser,

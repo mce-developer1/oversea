@@ -4,7 +4,7 @@
       <div class="article article-resources {{#if studentUser}}no-sidebar{{/if}}">
         <div class="article-content">
           {{#unless studentUser}}
-            <div class="article-sidebar">
+            <div class="article-sidebar dialog">
               <div class="navbar">
                 <button class="btn btn-light btn-toggle" type="button" data-toggle="sidebar" data-target=".article-resources">
                   <i class="fas fa-chevron-left"></i>
@@ -14,7 +14,7 @@
                   <i class="fas fa-filter"></i>
                 </button>
               </div>
-              <form class="form-filters">
+              <form class="form-filters dialog-menu">
                 <div class="form-group">
                   <label class="form-label" for="selGrade">Grade</label>
                   <select class="form-control selectpicker" id="selGrade" data-container=".article-sidebar" data-dropdown-align-right="true">

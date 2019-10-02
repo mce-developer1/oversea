@@ -43,7 +43,7 @@
         @include align-items(center);
         color: $gray-700;
         min-width: 7rem;
-        padding: .5rem 1rem;
+        padding: .5rem .75rem;
 
         &:hover {
           background-color: $gray-200;
@@ -138,6 +138,10 @@
           .list-group {
             .list-group-item {
               padding: .5rem .75rem;
+
+              &.list-group-item-empty {
+                cursor: default;
+              }
 
               .notification {
                 max-width: 20rem;
@@ -287,7 +291,7 @@
       &.nav-main {
         .nav-item {
           .link-myreports,
-          .link-schoolmatters,
+          .link-collaboration,
           .link-administration {
             display: none;
           }

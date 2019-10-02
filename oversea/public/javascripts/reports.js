@@ -708,7 +708,7 @@ $(document).ready(function() {
   }
 
   function drawWeeklyLoginReport() {
-    var data = [['Element', 'Login']];
+    var data = [['Element', 'Login Count']];
     var getRndInteger = function getRndInteger(min, max) {
       return Math.floor(Math.random() * (max - min) ) + min;
     };
@@ -753,6 +753,31 @@ $(document).ready(function() {
       pointsVisible: true
     };
 
+    $('.article-login-report .table').html(`
+      <colgroup width="auto"></colgroup>
+      <colgroup width="120px"></colgroup>  
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Login Count</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    `);
+
+    var html = [];
+    data.forEach(function(item, index) {
+      if (index === 0) return;
+      html.push(`
+        <tr>
+          <td><a href="#">` + item[0].f + `</a></td>
+          <td>` + item[1].f + `</td>
+        </tr>
+      `);
+    });
+    $('.article-login-report .table tbody').append(html.join(''));
+
     var element = $('.article-login-report .chart').get(0);
     inlineChart = new google.visualization.LineChart(element);
 
@@ -772,10 +797,10 @@ $(document).ready(function() {
 
   function drawTermlyLoginReport() {
     var data = [
-      ['Element', 'Login', { role: 'annotation' }],
+      ['Element', 'Login Count', { role: 'annotation' }],
       ['Jul', { v: 70, f: '21/30 (70%)' }, '70%'],
-      ['Jul', { v: 80, f: '24/30 (80%)' }, '80%'],
-      ['Jul', { v: 90, f: '27/30 (90%)' }, '90%'],
+      ['Aug', { v: 80, f: '24/30 (80%)' }, '80%'],
+      ['Sep', { v: 90, f: '27/30 (90%)' }, '90%'],
     ];
     var dataTable = google.visualization.arrayToDataTable(data);
     
@@ -800,6 +825,31 @@ $(document).ready(function() {
         maxValue: 100
       }
     };
+
+    $('.article-login-report .table').html(`
+      <colgroup width="auto"></colgroup>
+      <colgroup width="120px"></colgroup>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Login Count</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    `);
+
+    var html = [];
+    data.forEach(function(item, index) {
+      if (index === 0) return;
+      html.push(`
+        <tr>
+          <td><a href="#">` + item[0] + `</a></td>
+          <td>` + item[1].f + `</td>
+        </tr>
+      `);
+    });
+    $('.article-login-report .table tbody').append(html.join(''));
 
     var element = $('.article-login-report .chart').get(0);
     inlineChart = new google.visualization.ColumnChart(element);
@@ -1056,26 +1106,6 @@ $(document).ready(function() {
     placement: 'top',
     trigger: 'focus'
   });
-
-  $(window).on('resize', function(e) {
-    if ($(window).width() < 768) {
-      if (!$('.article-report .article-sidebar').hasClass('dialog')) {
-        $('.article-report .article-sidebar').addClass('dialog');
-        $('.article-report .article-sidebar .form-filters').addClass('dialog-menu');
-      }
-    } else {
-      if ($('.article-report .article-sidebar').hasClass('dialog')) {
-        $('.article-report .article-sidebar').removeClass('dialog');
-        $('.article-report .article-sidebar .form-filters').removeClass('dialog-menu');
-      }
-    }
-  });
-
-  if ($(window).width() < 768) {
-    $('.article-report').addClass('collapse-sidebar');
-    $('.article-report .article-sidebar').addClass('dialog');
-    $('.article-report .article-sidebar .form-filters').addClass('dialog-menu');
-  }
 
   google.charts.load('current', {'packages':['corechart', 'line']});
   google.charts.setOnLoadCallback(initPage());

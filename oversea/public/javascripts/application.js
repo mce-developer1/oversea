@@ -9,7 +9,15 @@ window.Utils = {
       //language_url: '/static/tinymce/langs/id.js'
     }, options);
 
-    if (!tinymce.Env.desktop) {
+    if (tinymce.Env.desktop) {
+      // TinyMCE - add wrapper to scroll toolbar when user scrolls window.
+      window.editorCount = (window.editorCount !== undefined) ? ++window.editorCount : 0;
+      $(target).wrap('<div class="texteditor" id="editor_' + window.editorCount + '"></div>');
+      $(target).parent('.texteditor').append('<div class="texteditor-toolbar d-none"></div>');
+      options = $.extend(options, {
+        fixed_toolbar_container: '.texteditor-toolbar'
+      });
+    } else {
       options = $.extend(options, {
         toolbar_drawer: 'sliding' 
       });
@@ -47,9 +55,22 @@ window.Utils = {
       },
       init_instance_callback: function (editor) {
         editor.on('focus', function (e) {
+          if (tinymce.Env.desktop) {            
+            // TinyMCE - update toolbar position according to editable area.
+            var texteditor = $(editor.contentAreaContainer).closest('.texteditor');
+            var toolbar = $(texteditor).find('.texteditor-toolbar');
+            $(toolbar).removeClass('d-none');
+
+            var toolbarHeight = $(toolbar).height() + 'px';
+            $(toolbar).css('transform', 'translate3d(0px, -' + toolbarHeight + ', 0px)');
+          }
+        });
+
+        editor.on('blur', function (e) {
           if (tinymce.Env.desktop) {
-            var toolbarWidth = $(editor.contentAreaContainer).width() + 'px';
-            $(editor.editorContainer).css({ maxWidth: toolbarWidth });
+            var texteditor = $(editor.contentAreaContainer).closest('.texteditor');
+            var toolbar = $(texteditor).find('.texteditor-toolbar');
+            $(toolbar).addClass('d-none');
           }
         });
 
@@ -58,6 +79,14 @@ window.Utils = {
             options.changeCallback();
           }
         });
+
+        if (tinymce.Env.desktop) {
+          if (editor.settings.fixed_toolbar_container === '.texteditor-toolbar') {
+            var texteditor = $(editor.contentAreaContainer).closest('.texteditor');
+            var container = '#' + $(texteditor).attr('id') + ' .texteditor-toolbar';
+            editor.settings.fixed_toolbar_container = container;console.log(container);
+          }
+        }
       }
     }));
   },
@@ -403,13 +432,30 @@ $(document).ready(function() {
     window._logStore.send();
   });
 
-  var tinymceBind = window.tinymce.DOM.bind;
-  window.tinymce.DOM.bind = (target, name, func, scope) => {
-    // TODO This is only necessary until https://github.com/tinymce/tinymce/issues/4355 is fixed
-    if (name === 'mouseup' && func.toString().includes('throttle()')) {
-        return func;
-    } else {
-        return tinymceBind(target, name, func, scope);
+  $(window).on('resize', function(e) {
+    if (tinymce.Env.desktop) {
+      // TinyMCE - resize toolbar when user resize window.
+      if ($('.texteditor > .texteditor-toolbar:not(.d-none)').length === 1) {
+        var toolbar = $('.texteditor > .texteditor-toolbar:not(.d-none)');
+        var toolbarHeight = $(toolbar).height() + 'px';
+        $(toolbar).css('transform', 'translate3d(0px, -' + toolbarHeight + ', 0px)');
+      }
     }
-  };
+  });
+
+  if (window.tinymce && window.tinymce.DOM && window.tinymce.DOM.bind) {
+    var tinymceBind = window.tinymce.DOM.bind;
+    window.tinymce.DOM.bind = function(target, name, func, scope) {
+      // TODO This is only necessary until https://github.com/tinymce/tinymce/issues/4355 is fixed
+      if (name === 'mouseup' && func.toString().includes('throttle()')) {
+          return func;
+      } else {
+          return tinymceBind(target, name, func, scope);
+      }
+    };
+  }
+
+  var userAgent = window.navigator.userAgent;
+  var isIE = /MSIE|Trident\//.test(userAgent);
+  if (isIE) $('body').addClass('msie');
 });

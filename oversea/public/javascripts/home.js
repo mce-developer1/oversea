@@ -39,26 +39,6 @@ $(document).ready(function() {
     }
   });
 
-  $(window).on('resize', function(e) {
-    if ($(window).width() < 768) {
-      if (!$('.article-resources .article-sidebar').hasClass('dialog')) {
-        $('.article-resources .article-sidebar').addClass('dialog');
-        $('.article-resources .article-sidebar .form-filters').addClass('dialog-menu');
-      }
-    } else {
-      if ($('.article-resources .article-sidebar').hasClass('dialog')) {
-        $('.article-resources .article-sidebar').removeClass('dialog');
-        $('.article-resources .article-sidebar .form-filters').removeClass('dialog-menu');
-      }
-    }
-  });
-
-  if ($(window).width() < 768) {
-    $('.article-resources').addClass('collapse-sidebar');
-    $('.article-resources .article-sidebar').addClass('dialog');
-    $('.article-resources .article-sidebar .form-filters').addClass('dialog-menu');
-  }
-
   $('.modal-announcement-view .btn-previous').on('click', function(e) {
     $('.modal-announcement-view .modal-title').text('Results of Chinese Challenge');
     $('.modal-announcement-view .navbar-text').text('Announcement 1 of 2');

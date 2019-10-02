@@ -40,7 +40,7 @@
                   padding: .25rem;
 
                   img {
-                    width: 3rem;
+                    width: 2.5rem;
                   }
                 }
               }
@@ -331,11 +331,6 @@
               &.navbar-expand {
                 @include flex-wrap(wrap);
               }
-
-              .navbar-text {
-                margin-bottom: .75rem;
-                min-width: 24rem;
-              }
               
               .breadcrumb {
                 .breadcrumb-item {
@@ -541,6 +536,10 @@
         overflow-y: auto;        
 
         .list-group-item {
+          @include display-flex(row);
+          @include align-items(center);
+          @include justify-content(space-between);
+
           &:hover {
             background-color: transparent;
           }

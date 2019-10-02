@@ -40,7 +40,7 @@
                   padding: .25rem;
 
                   img {
-                    width: 3rem;
+                    width: 2rem;
                   }
                 }  
               }
@@ -362,6 +362,12 @@
                 min-width: 10rem;
                 width: 10rem;
               }
+
+              .form-group {
+                @include flex-grow(1);
+                @include flex-wrap(wrap);
+                margin-bottom: 0;
+              }
   
               .btn-generate-answers {
                 margin-bottom: 1rem;
@@ -436,12 +442,6 @@
             .form-group {
               @include display-flex(row);
               @include align-items(flex-start);
-
-              .form-group {
-                @include flex-grow(1);
-                @include flex-wrap(wrap);
-                margin-bottom: 0;
-              }
             }
           }
         }

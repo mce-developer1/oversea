@@ -40,7 +40,7 @@
                   padding: .25rem;
 
                   img {
-                    width: 3rem;
+                    width: 2rem;
                   }
                 }  
               }
@@ -495,6 +495,15 @@
 
               .fas {
                 font-size: 1.5rem;
+
+                &.fa-folder {
+                  color: $gray-700;
+
+                  &:not(:disabled):not(.disabled):hover,
+                  &:not(:disabled):not(.disabled):active {
+                    color: $gray-900;
+                  }
+                }
 
                 &.fa-arrow-left {
                   font-size: 1.5rem;

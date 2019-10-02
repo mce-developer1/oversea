@@ -248,16 +248,11 @@ select.form-control {
   }
 }
 
-.custom-checkbox {
+.custom-radio,
+.custom-checkbox,
+.custom-switch {
   .custom-control-label {
-    &::before {
-      height: 1.125rem;
-      width: 1.125rem;
-    }
-    &::after {
-      height: 1.125rem;
-      width: 1.125rem;
-    }
+    word-break: break-all;
   }
 }
 
@@ -374,6 +369,10 @@ select.form-control {
 
         .file-filename {
           @include flex-grow(1);
+
+          .file-name {
+            word-break: break-word;
+          }
 
           .file-size {
             strong {
@@ -551,16 +550,20 @@ select.form-control {
           background-image: url("../images/icon_topnav_selected_myreports.png");
         }
 
-        &.img-schoolmatters {
-          background-image: url("../images/icon_topnav_selected_schoolmatters.png");
+        &.img-collaboration {
+          background-image: url("../images/icon_topnav_selected_collaboration.png");
         }
 
         &.img-administration {
           background-image: url("../images/icon_topnav_selected_administration.png");
         }
 
-        &.img-mygalaxy {
-          background-image: url("../images/icon_topnav_selected_mygalaxy.png");
+        &.img-myachievements {
+          background-image: url("../images/icon_topnav_selected_myachievements.png");
+        }
+
+        &.img-more {
+          background-image: url("../images/icon_topnav_selected_more.png");
         }
       }
     }
@@ -594,72 +597,96 @@ select.form-control {
       background-image: url("../images/icon_topnav_unselected_myreports.png");
     }
 
-    &.img-schoolmatters {
-      background-image: url("../images/icon_topnav_unselected_schoolmatters.png");
+    &.img-collaboration {
+      background-image: url("../images/icon_topnav_unselected_collaboration.png");
     }
 
     &.img-administration {
       background-image: url("../images/icon_topnav_unselected_administration.png");
     }
 
-    &.img-mygalaxy {
-      background-image: url("../images/icon_topnav_unselected_mygalaxy.png");
+    &.img-myachievements {
+      background-image: url("../images/icon_topnav_unselected_myachievements.png");
     }
 
-    &.img-mytools-lessonbuilder {
-      background-image: url("../images/icon_topnav_sub_mytools_lessonbuilder.png");
+    &.img-more {
+      background-image: url("../images/icon_topnav_unselected_more.png");
     }
 
-    &.img-mytools-testbuilder {
-      background-image: url("../images/icon_topnav_sub_mytools_testbuilder.png");
+    &.img-assessment {
+      background-image: url("../images/icon_topnav_sub_assessment.png");
     }
 
-    &.img-mytools-questionbuilder {
-      background-image: url("../images/icon_topnav_sub_mytools_questionbuilder.png");
+    &.img-lessonbuilder {
+      background-image: url("../images/icon_topnav_sub_lessonbuilder.png");
     }
 
-    &.img-mytools-schoolnotes {
-      background-image: url("../images/icon_topnav_sub_mytools_schoolnotes.png");
+    &.img-testbuilder {
+      background-image: url("../images/icon_topnav_sub_testbuilder.png");
     }
 
-    &.img-myreports-mastery {
-      background-image: url("../images/icon_topnav_sub_myreports_mastery.png");
+    &.img-questionbuilder {
+      background-image: url("../images/icon_topnav_sub_questionbuilder.png");
     }
 
-    &.img-myreports-usage {
-      background-image: url("../images/icon_topnav_sub_myreports_usage.png");
+    &.img-schoolnotes {
+      background-image: url("../images/icon_topnav_sub_schoolnotes.png");
     }
 
-    &.img-myreports-loginreport {
-      background-image: url("../images/icon_topnav_sub_myreports_loginreport.png");
+    &.img-facilitybooking {
+      background-image: url("../images/icon_topnav_sub_facilitybooking.png");
     }
 
-    &.img-schoolmatters-notifications {
-      background-image: url("../images/icon_topnav_sub_schoolmatters_notifications.png");
+    &.img-markattendance {
+      background-image: url("../images/icon_topnav_sub_markattendance.png");
     }
 
-    &.img-schoolmatters-announcements {
-      background-image: url("../images/icon_topnav_sub_schoolmatters_announcements.png");
+    &.img-masteryreport {
+      background-image: url("../images/icon_topnav_sub_masteryreport.png");
     }
 
-    &.img-schoolmatters-facilitybooking {
-      background-image: url("../images/icon_topnav_sub_schoolmatters_facilitybooking.png");
+    &.img-usagereport {
+      background-image: url("../images/icon_topnav_sub_usagereport.png");
     }
 
-    &.img-schoolmatters-markattendance {
-      background-image: url("../images/icon_topnav_sub_schoolmatters_markattendance.png");
+    &.img-loginreport {
+      background-image: url("../images/icon_topnav_sub_loginreport.png");
     }
 
-    &.img-administration-useraccount {
-      background-image: url("../images/icon_topnav_sub_administration_useraccount.png");
+    &.img-sociallearningwall {
+      background-image: url("../images/icon_topnav_sub_sociallearningwall.png");
     }
 
-    &.img-administration-formclass {
-      background-image: url("../images/icon_topnav_sub_administration_formclass.png");
+    &.img-notifications {
+      background-image: url("../images/icon_topnav_sub_notifications.png");
     }
 
-    &.img-administration-schoolgroup {
-      background-image: url("../images/icon_topnav_sub_administration_schoolgroup.png");
+    &.img-announcements {
+      background-image: url("../images/icon_topnav_sub_announcements.png");
+    }
+
+    &.img-manageschool {
+      background-image: url("../images/icon_topnav_sub_manageschool.png");
+    }
+
+    &.img-useraccount {
+      background-image: url("../images/icon_topnav_sub_useraccount.png");
+    }
+
+    &.img-formclass {
+      background-image: url("../images/icon_topnav_sub_formclass.png");
+    }
+
+    &.img-schoolgroup {
+      background-image: url("../images/icon_topnav_sub_schoolgroup.png");
+    }
+
+    &.img-loginstudent {
+      background-image: url("../images/icon_topnav_sub_loginstudent.png");
+    }
+
+    &.img-loginteacher {
+      background-image: url("../images/icon_topnav_sub_loginteacher.png");
     }
   }
 }
@@ -1235,6 +1262,21 @@ select.form-control {
   }
 }
 
+.texteditor {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  .texteditor-toolbar {
+    background-color: $white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1050;
+  }
+}
+
 .tox-tinymce,
 .tinymce-outer-container,
 .tinymce-mobile-outer-container {
@@ -1639,6 +1681,7 @@ select.form-control {
         
         &.dropdown-toggle {
           margin-left: 0;
+          padding: .375rem .5rem;
         }
   
         +.btn {
@@ -1964,6 +2007,10 @@ select.form-control {
             font-weight: 500;
             margin: .5rem 0;
           }
+
+          p {
+            word-break: break-word;
+          }
         }
 
         .question-attributes {
@@ -1974,6 +2021,7 @@ select.form-control {
             .attribute-value {
               color: $gray-600;
               font-size: .875rem;
+              word-break: break-word;
             }
           }
         }
@@ -2016,6 +2064,12 @@ select.form-control {
             .form-label {
               min-width: 10rem;
               width: 10rem;
+            }
+
+            .form-group {
+              @include flex-grow(1);
+              @include flex-wrap(wrap);
+              margin-bottom: 0;
             }
 
             .btn-generate-answers {
@@ -2095,12 +2149,6 @@ select.form-control {
             .form-group {
               @include display-flex(row);
               @include align-items(flex-start);
-
-              .form-group {
-                @include flex-grow(1);
-                @include flex-wrap(wrap);
-                margin-bottom: 0;
-              }
             }
           }
         }
@@ -2211,6 +2259,10 @@ select.form-control {
       .navbar {
         @include justify-content(space-between);
         padding: 0;
+
+        .text-muted {
+          padding: .5rem 0;
+        }
       }
 
       .announcement {
@@ -2220,6 +2272,11 @@ select.form-control {
 
         .announcement-message {
           margin-bottom: 1rem;
+
+          .full {
+            height: 50vh;
+            width: 100%;
+          }
         }
       }
 
@@ -2233,9 +2290,6 @@ select.form-control {
     @media (min-width: 576px) {
       .modal-body {
         .navbar {
-          @include justify-content(space-between);
-          padding: 0;
-  
           &.navbar-pagination {
             position: absolute;
             top: .5rem;
@@ -2391,6 +2445,10 @@ select.form-control {
             @include justify-content(space-between);
             padding: .25rem .5rem;
           }
+        }
+
+        .user-name {
+          word-break: break-all;
         }
       }
     }

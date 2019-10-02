@@ -1,0 +1,15 @@
+.msie {
+  .app-container {
+    .app-content {
+      .article {
+        .article-content {
+          .article-sidebar {
+            &.dialog {
+              top: 0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

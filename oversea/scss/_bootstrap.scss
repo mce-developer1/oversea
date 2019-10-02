@@ -6,6 +6,11 @@ body {
   background-color: transparent;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   &:focus {
     box-shadow: none;

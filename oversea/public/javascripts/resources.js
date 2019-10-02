@@ -638,7 +638,9 @@ $(document).ready(function() {
 
   $container.find('.card-group .card').on('click', function(e) {
     if ($(e.target).is('a')) return;
-    if ($(e.target).closest('a') > 0) return;
+    if ($(e.target).closest('a').length > 0) return;
+    if ($(e.target).is('.fas')) return;
+    if ($(e.target).closest('.fas').length > 0) return;
     if ($(e.target).hasClass('.badge')) return;
     if ($(e.target).closest('.badge').length > 0) return;
     if ($(e.target).hasClass('.custom-control')) return;
