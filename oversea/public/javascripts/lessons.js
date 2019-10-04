@@ -666,15 +666,28 @@ $(document).ready(function() {
   $('a[data-toggle="popover"]').on('shown.bs.popover', function(e) {
     $('a.edit-assign').on('click', function(e) {
       showAssignLessonModal('/shared/assign_resource');
+      $("a[data-toggle='popover']").popover('hide');
     });
   });
 
+  $("a[data-toggle='popover']").on("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $("a[data-toggle='popover']").popover('hide');
+    $(this).popover('show');
+  });
+
+  $(document).on("click", function (e) {
+    if ($(e.target).closest('.popover').length === 0) {
+      $("a[data-toggle='popover']").popover('hide');
+    }
+  });
+
   $('a[data-toggle="popover"]').popover({
-    delay: { 'show': 100, 'hide': 100 },
     html: true,
     container: 'body',    
     placement: 'top',
-    trigger: 'focus'
+    trigger: 'manual'
   });
 
   $(window).on('resize', function(e) {

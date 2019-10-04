@@ -1,0 +1,31 @@
+.app-container {  
+  &.app-container-embedded {
+    .app-header,
+    .app-footer {
+      display: none !important;
+    }
+
+    .app-content {
+      min-height: 100vh !important;
+
+      .article {
+        .article-header {
+          top: 0 !important;
+        }
+
+        .article-content {
+          .article-sidebar {
+            height: calc(100vh - 4rem) !important;
+            top: 4rem !important;
+          }
+
+          .article-body {
+            .table-head {
+              top: 4rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

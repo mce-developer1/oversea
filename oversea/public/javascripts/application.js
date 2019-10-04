@@ -11,9 +11,11 @@ window.Utils = {
 
     if (tinymce.Env.desktop) {
       // TinyMCE - add wrapper to scroll toolbar when user scrolls window.
-      window.editorCount = (window.editorCount !== undefined) ? ++window.editorCount : 0;
-      $(target).wrap('<div class="texteditor" id="editor_' + window.editorCount + '"></div>');
-      $(target).parent('.texteditor').append('<div class="texteditor-toolbar d-none"></div>');
+      if ($(target).closest('.texteditor').length === 0) {
+        window.editorCount = (window.editorCount !== undefined) ? ++window.editorCount : 0;
+        $(target).wrap('<div class="texteditor" id="editor_' + window.editorCount + '"></div>');
+        $(target).parent('.texteditor').append('<div class="texteditor-toolbar d-none"></div>');
+      }
       options = $.extend(options, {
         fixed_toolbar_container: '.texteditor-toolbar'
       });
@@ -60,9 +62,7 @@ window.Utils = {
             var texteditor = $(editor.contentAreaContainer).closest('.texteditor');
             var toolbar = $(texteditor).find('.texteditor-toolbar');
             $(toolbar).removeClass('d-none');
-
-            var toolbarHeight = $(toolbar).height() + 'px';
-            $(toolbar).css('transform', 'translate3d(0px, -' + toolbarHeight + ', 0px)');
+            $(toolbar).css('top', '-' + $(toolbar).height() + 'px');
           }
         });
 
@@ -437,8 +437,7 @@ $(document).ready(function() {
       // TinyMCE - resize toolbar when user resize window.
       if ($('.texteditor > .texteditor-toolbar:not(.d-none)').length === 1) {
         var toolbar = $('.texteditor > .texteditor-toolbar:not(.d-none)');
-        var toolbarHeight = $(toolbar).height() + 'px';
-        $(toolbar).css('transform', 'translate3d(0px, -' + toolbarHeight + ', 0px)');
+        $(toolbar).css('top', '-' + $(toolbar).height() + 'px');
       }
     }
   });
@@ -458,4 +457,6 @@ $(document).ready(function() {
   var userAgent = window.navigator.userAgent;
   var isIE = /MSIE|Trident\//.test(userAgent);
   if (isIE) $('body').addClass('msie');
+
+  log.info("MY_RESOURCES", "SEARCH", { grade: 1, level: 1 });
 });

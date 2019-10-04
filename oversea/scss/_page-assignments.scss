@@ -312,6 +312,13 @@
                 display: none;
               }
             }
+
+            .card-group {
+              .card {
+                max-width: calc(30vw - 1.5rem);
+                min-width: calc(30vw - 1.5rem);
+              }
+            }
           }
         }
       }
@@ -322,6 +329,17 @@
             .navbar-nav {
               &:first-child {
                 width: 14rem;
+              }
+            }
+          }
+        }
+
+        .article-content {
+          .article-body {
+            .card-group {
+              .card {
+                max-width: calc(50vw - 1.5rem);
+                min-width: calc(50vw - 1.5rem);
               }
             }
           }

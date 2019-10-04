@@ -4,6 +4,26 @@ var router = express.Router();
 var multer  = require('multer');
 var upload = multer();
 
+/* POST checkKey api endpoint. */
+router.post('/api/games/checkKey', function(req, res, next) {
+  var validKeys = ['25D4755C-ED3D-48BF-9E5A-96744C6BE206'];
+  var gameIds = ['54965D4D-9C57-475D-BDA0-2D2EFB1CEE68'];
+  if (validKeys.indexOf(req.body.key) === -1) res.send('{"result": false}');
+  else if (gameIds.indexOf(req.body.gameId) === -1) res.send('{"result": false}');
+  else res.send('{"result": true}');
+});
+
+/* POST checkKey api endpoint. */
+router.post('/api/games/postScore', function(req, res, next) {
+  var validKeys = ['25D4755C-ED3D-48BF-9E5A-96744C6BE206'];
+  var gameIds = ['54965D4D-9C57-475D-BDA0-2D2EFB1CEE68'];
+  if (validKeys.indexOf(req.body.key) === -1) res.send('{"result": false}');
+  else if (gameIds.indexOf(req.body.gameId) === -1) res.send('{"result": false}');
+  else if (req.body.score === undefined) res.send('{"result": false}');
+  else if (isNaN(req.body.score)) res.send('{"result": false}');
+  else res.send('{"result": true}');
+});
+
 /* GET sign in page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
@@ -13,6 +33,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* GET reset password page. */
 router.get('/reset_password', function(req, res, next) {
   res.render('profile/reset_password', {
     layout: 'layout',

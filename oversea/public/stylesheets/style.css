@@ -2943,6 +2943,24 @@ select.form-control {
   }
 }
 
+.app-container.app-container-embedded .app-header,
+.app-container.app-container-embedded .app-footer {
+  display: none !important;
+}
+.app-container.app-container-embedded .app-content {
+  min-height: 100vh !important;
+}
+.app-container.app-container-embedded .app-content .article .article-header {
+  top: 0 !important;
+}
+.app-container.app-container-embedded .app-content .article .article-content .article-sidebar {
+  height: calc(100vh - 4rem) !important;
+  top: 4rem !important;
+}
+.app-container.app-container-embedded .app-content .article .article-content .article-body .table-head {
+  top: 4rem !important;
+}
+
 .app-container {
   max-height: 100vh;
   overflow-x: hidden;
@@ -3807,7 +3825,7 @@ select.form-control {
   padding: 0.25rem;
 }
 .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
-  width: 2.5rem;
+  width: 2rem;
 }
 .app-content.page-shared .article-tests .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
@@ -4317,7 +4335,7 @@ select.form-control {
   padding: 0.25rem;
 }
 .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
-  width: 2.5rem;
+  width: 2rem;
 }
 .app-content.page-shared .article-questions .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
@@ -4609,7 +4627,7 @@ select.form-control {
 }
 .app-content.page-shared .article-google .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content.page-shared .article-youtube .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
-  width: 2.5rem;
+  width: 2rem;
 }
 .app-content.page-shared .article-google .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content.page-shared .article-youtube .article-header .navbar .navbar-nav .nav-item .btn-light {
@@ -4816,7 +4834,7 @@ select.form-control {
   padding: 0.25rem;
 }
 .app-content .article-assign-resource .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
-  width: 2.5rem;
+  width: 2rem;
 }
 .app-content .article-assign-resource .article-header .navbar .navbar-nav .nav-item .btn-light {
   margin: 0 0.25rem;
@@ -5042,7 +5060,7 @@ select.form-control {
 }
 .app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content .article-track-test .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
-  width: 2.5rem;
+  width: 2rem;
 }
 .app-content .article-track-lesson .article-header .navbar .navbar-nav .nav-item .btn-light,
 .app-content .article-track-test .article-header .navbar .navbar-nav .nav-item .btn-light {
@@ -5295,7 +5313,7 @@ select.form-control {
 }
 .app-content .article-track-lesson-user .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img,
 .app-content .article-track-test-user .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
-  width: 2.5rem;
+  width: 2rem;
 }
 .app-content .article-track-lesson-user .article-header .navbar .navbar-nav .nav-item .item-text .resource-title,
 .app-content .article-track-test-user .article-header .navbar .navbar-nav .nav-item .item-text .resource-title {
@@ -5868,7 +5886,6 @@ select.form-control {
 .app-content.page-home .article-resources .article-content .article-body .card-group .card .card-img-top {
   -webkit-align-self: center;
   align-self: center;
-  padding: 0 1rem;
   width: auto;
 }
 @media (max-width: 991.98px) {
@@ -6256,10 +6273,18 @@ select.form-control {
 .app-content.page-assignments .article-assignments .article-content .article-body .table-body td:nth-child(5) {
     display: none;
   }
+  .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card {
+    max-width: calc(30vw - 1.5rem);
+    min-width: calc(30vw - 1.5rem);
+  }
 }
 @media (max-width: 576px) {
   .app-content.page-assignments .article-assignments .article-header .navbar .navbar-nav:first-child {
     width: 14rem;
+  }
+  .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card {
+    max-width: calc(50vw - 1.5rem);
+    min-width: calc(50vw - 1.5rem);
   }
 }
 @media (min-width: 992px) {
