@@ -433,7 +433,7 @@ $(document).ready(function() {
   });
 
   $(window).on('resize', function(e) {
-    if (tinymce.Env.desktop) {
+    if (window.tinymce && window.tinymce.Env.desktop) {
       // TinyMCE - resize toolbar when user resize window.
       if ($('.texteditor > .texteditor-toolbar:not(.d-none)').length === 1) {
         var toolbar = $('.texteditor > .texteditor-toolbar:not(.d-none)');

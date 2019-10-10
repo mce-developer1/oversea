@@ -95,6 +95,8 @@ $(document).ready(function() {
   });
 
   $container.find('.table-body tr').on('click', function(e) {
+    if ($(e.target).is('a')) return;
+    if ($(e.target).closest('a') > 0) return;
     if ($(e.target).hasClass('.btn')) return;
     if ($(e.target).closest('.btn').length > 0) return;
     if ($(e.target).hasClass('.custom-control')) return;
@@ -107,6 +109,17 @@ $(document).ready(function() {
       $(this).find('.custom-control-input').prop('checked', true);
     }
     updateActionButtonsStyles();
+  });
+
+  $container.find('.table-body tr a').on('click', function(e) {
+    $('.modal-announcement-view .modal-title').text('Lorem ipsum');
+    $('.modal-announcement-view .announcement').toggleClass('d-none');
+    $('.modal-announcement-view .btn-next').addClass('d-none');
+    $('.modal-announcement-view .btn-previous').addClass('d-none');
+    $('.modal-announcement-view .btn-close').removeClass('d-none');
+    $('.modal-announcement-view .navbar-pagination').remove();
+    $('.modal-announcement-view .announcement-actions').remove();
+    $('.modal-announcement-view').modal('show');
   });
 
   $container.find('.article-body .navbar .btn-create').on('click', function(e) {

@@ -2265,12 +2265,15 @@ select.form-control {
         }
       }
 
-      .announcement {
-        .announcement-date {
+      .announcement,
+      .notification {
+        .announcement-date,
+        .notification-date {
           margin-bottom: 1rem;
         }
 
-        .announcement-message {
+        .announcement-message,
+        .notification-message {
           margin-bottom: 1rem;
 
           .full {
@@ -2278,11 +2281,10 @@ select.form-control {
             width: 100%;
           }
         }
-      }
 
-      .notification {
-        .notification-date {
-          margin-bottom: .5rem;
+        .announcement-attachments,
+        .notification-attachments {
+          margin-bottom: 1rem;
         }
       }
     }

@@ -523,6 +523,13 @@ a:focus {
 .list-group.list-group-horizontal .list-group-item:hover {
   background-color: transparent;
 }
+.list-group.list-group-light .list-group-item {
+  border: 0;
+  padding: 0.375rem 0;
+}
+.list-group.list-group-light .list-group-item:hover {
+  background-color: transparent;
+}
 .list-group.list-group-bubble {
   display: -ms-flexbox;
   display: flex;
@@ -2743,21 +2750,45 @@ select.form-control {
   padding: 0.5rem 0;
 }
 .modal-announcement-view .modal-dialog .modal-body .announcement .announcement-date,
-.modal-notification-view .modal-dialog .modal-body .announcement .announcement-date {
+.modal-announcement-view .modal-dialog .modal-body .announcement .notification-date,
+.modal-announcement-view .modal-dialog .modal-body .notification .announcement-date,
+.modal-announcement-view .modal-dialog .modal-body .notification .notification-date,
+.modal-notification-view .modal-dialog .modal-body .announcement .announcement-date,
+.modal-notification-view .modal-dialog .modal-body .announcement .notification-date,
+.modal-notification-view .modal-dialog .modal-body .notification .announcement-date,
+.modal-notification-view .modal-dialog .modal-body .notification .notification-date {
   margin-bottom: 1rem;
 }
 .modal-announcement-view .modal-dialog .modal-body .announcement .announcement-message,
-.modal-notification-view .modal-dialog .modal-body .announcement .announcement-message {
+.modal-announcement-view .modal-dialog .modal-body .announcement .notification-message,
+.modal-announcement-view .modal-dialog .modal-body .notification .announcement-message,
+.modal-announcement-view .modal-dialog .modal-body .notification .notification-message,
+.modal-notification-view .modal-dialog .modal-body .announcement .announcement-message,
+.modal-notification-view .modal-dialog .modal-body .announcement .notification-message,
+.modal-notification-view .modal-dialog .modal-body .notification .announcement-message,
+.modal-notification-view .modal-dialog .modal-body .notification .notification-message {
   margin-bottom: 1rem;
 }
 .modal-announcement-view .modal-dialog .modal-body .announcement .announcement-message .full,
-.modal-notification-view .modal-dialog .modal-body .announcement .announcement-message .full {
+.modal-announcement-view .modal-dialog .modal-body .announcement .notification-message .full,
+.modal-announcement-view .modal-dialog .modal-body .notification .announcement-message .full,
+.modal-announcement-view .modal-dialog .modal-body .notification .notification-message .full,
+.modal-notification-view .modal-dialog .modal-body .announcement .announcement-message .full,
+.modal-notification-view .modal-dialog .modal-body .announcement .notification-message .full,
+.modal-notification-view .modal-dialog .modal-body .notification .announcement-message .full,
+.modal-notification-view .modal-dialog .modal-body .notification .notification-message .full {
   height: 50vh;
   width: 100%;
 }
-.modal-announcement-view .modal-dialog .modal-body .notification .notification-date,
-.modal-notification-view .modal-dialog .modal-body .notification .notification-date {
-  margin-bottom: 0.5rem;
+.modal-announcement-view .modal-dialog .modal-body .announcement .announcement-attachments,
+.modal-announcement-view .modal-dialog .modal-body .announcement .notification-attachments,
+.modal-announcement-view .modal-dialog .modal-body .notification .announcement-attachments,
+.modal-announcement-view .modal-dialog .modal-body .notification .notification-attachments,
+.modal-notification-view .modal-dialog .modal-body .announcement .announcement-attachments,
+.modal-notification-view .modal-dialog .modal-body .announcement .notification-attachments,
+.modal-notification-view .modal-dialog .modal-body .notification .announcement-attachments,
+.modal-notification-view .modal-dialog .modal-body .notification .notification-attachments {
+  margin-bottom: 1rem;
 }
 @media (min-width: 576px) {
   .modal-announcement-view .modal-dialog .modal-body .navbar.navbar-pagination,
@@ -5803,75 +5834,99 @@ select.form-control {
 .app-content.page-home .article-resources {
   padding: 0 1.5rem;
 }
-.app-content.page-home .article-resources:not(.collapse-sidebar) .article-content .article-sidebar .navbar .btn .fa-chevron-right {
-  display: none;
+.app-content.page-home .article-resources .article-header {
+  height: 4rem;
+  max-height: 4rem;
 }
-.app-content.page-home .article-resources.collapse-sidebar .article-content .article-sidebar {
-  margin-left: -17.5rem;
+.app-content.page-home .article-resources .article-header .navbar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  background-color: #e9ecef;
+  height: 4rem;
+  max-height: 4rem;
+  margin: 0 -1.5rem;
+  padding: 0.75rem 1.5rem;
 }
-.app-content.page-home .article-resources.collapse-sidebar .article-content .article-sidebar .navbar {
-  width: 18.5rem;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav {
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
-.app-content.page-home .article-resources.collapse-sidebar .article-content .article-sidebar .navbar .btn .fa-chevron-left {
-  display: none;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav:first-child {
+  margin-right: 1rem;
+  width: 16.5rem;
 }
-.app-content.page-home .article-resources.collapse-sidebar .article-content .article-body {
-  padding-left: 3rem;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav.nav-main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  position: relative;
 }
-.app-content.page-home .article-resources .article-content .article-sidebar {
-  background-color: #ffffff;
-  -webkit-transition: margin-left 0.35s;
-  -moz-transition: margin-left 0.35s;
-  -o-transition: margin-left 0.35s;
-  transition: margin-left 0.35s;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
 }
-.app-content.page-home .article-resources .article-content .article-sidebar.dialog.ie {
-  top: 0 !important;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light {
+  padding: 0.25rem;
 }
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar {
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
-  background-color: #ff9900;
-  height: 3rem;
-  padding: 0;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item.nav-item-drawer .btn-light img {
+  width: 2.5rem;
 }
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light {
-  background-color: #ff9900;
-  border-color: #ff9900;
-  height: 3rem;
-  padding: 0.5rem 1rem;
-}
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light:hover .fa-chevron-left,
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light:hover .fa-chevron-right,
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light:hover .fa-filter {
-  color: #ffffff;
-}
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-chevron-left,
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-chevron-right,
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-filter {
-  color: #e9ecef;
-}
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-chevron-left,
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-chevron-right {
-  font-size: 1.5rem;
-}
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-filter {
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light {
   font-size: 1.25rem;
 }
-.app-content.page-home .article-resources .article-content .article-sidebar .form-filters {
-  padding: 1rem;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item.nav-item-submodule .btn-light .fas {
+  font-size: 1.25rem;
 }
-.app-content.page-home .article-resources .article-content .article-body {
-  padding: 1.5rem 0;
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item .btn-light {
+  margin: 0 0.25rem;
+}
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item .item-text {
+  font-size: 1.25rem;
+  width: 12rem;
+}
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .btn-light.btn-more {
+  padding: 0.325rem 1rem;
+}
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .btn-light .fas {
+  font-size: 1.5rem;
+}
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .btn-light .fas.fa-arrow-left {
+  font-size: 1.5rem;
+}
+.app-content.page-home .article-resources .article-content .article-sidebar {
+  margin: 0;
 }
 .app-content.page-home .article-resources .article-content .article-body .navbar {
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
-  padding: 0;
+  padding: 0.75rem 0;
+}
+.app-content.page-home .article-resources .article-content .article-body .navbar.navbar-pagination {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.app-content.page-home .article-resources .article-content .article-body .navbar .navbar-nav .btn-primary {
+  margin-left: 1rem;
 }
 .app-content.page-home .article-resources .article-content .article-body .card-group {
-  margin: -0.5rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0 -0.5rem 0.5rem;
 }
 .app-content.page-home .article-resources .article-content .article-body .card-group .card {
   cursor: pointer;
@@ -5879,21 +5934,93 @@ select.form-control {
   min-width: 16rem;
   margin: 0.5rem;
   padding: 0;
-}
-.app-content.page-home .article-resources .article-content .article-body .card-group .card:active {
-  background-color: #e9ecef;
+  position: relative;
 }
 .app-content.page-home .article-resources .article-content .article-body .card-group .card .card-img-top {
   -webkit-align-self: center;
   align-self: center;
+  margin: 0.5rem auto 0;
   width: auto;
 }
+.app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+.app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body a {
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  color: #495057;
+  display: inline-block;
+  word-break: break-word;
+}
+.app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body a.card-link {
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+.app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body a.card-link:hover {
+  text-decoration: underline;
+}
+.app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body .badge {
+  border-radius: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding: 0.5rem 0.75rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body .title {
+  margin-bottom: 0.5rem;
+}
 @media (max-width: 991.98px) {
-  .app-content.page-home .article-resources .article-content .article-sidebar {
+  .app-content.page-home .article-resources .article-header {
+    margin: 0 -0.5rem;
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     z-index: 970;
+  }
+  .app-content.page-home .article-resources .article-header .navbar {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav.nav-main {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-divider {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item.dropdown {
+    order: 1;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item .btn-share,
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item .btn-edit,
+.app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item .btn-assign {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item-drawer {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-search {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .input-group .form-control {
+    padding-left: 3.5rem;
+  }
+  .app-content.page-home .article-resources .article-content {
+    margin: 0 -0.5rem;
+  }
+  .app-content.page-home .article-resources .article-content .article-sidebar {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-content .article-body {
+    margin: 0;
   }
 }
 @media (max-width: 768px) {
@@ -5902,109 +6029,42 @@ select.form-control {
     min-width: calc(30vw - 1.5rem);
   }
 }
-@media (max-width: 767.98px) {
-  .app-content.page-home .article-resources.collapse-sidebar .article-content .article-sidebar {
-    margin: 0 -1rem;
-  }
-  .app-content.page-home .article-resources.collapse-sidebar .article-content .article-sidebar .navbar {
-    width: 100%;
-  }
-  .app-content.page-home .article-resources.collapse-sidebar .article-content .article-body {
-    padding-left: 0;
-  }
-  .app-content.page-home .article-resources .article-content {
-    margin: 0 -0.5rem;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar {
-    margin: 0 -1rem;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar.dialog .form-filters {
-    margin: 0 0.5rem;
-    width: calc(100% - 1rem);
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar.dialog .form-filters .form-group {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar.dialog .form-filters .form-group .form-label {
-    min-width: 8rem;
-    width: 8rem;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar {
-    background-color: #e9ecef;
-    border-color: #e9ecef;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light {
-    background-color: #e9ecef;
-    border-color: #e9ecef;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light:hover .fa-filter {
-    color: #212529;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light.btn-toggle {
-    display: none;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-chevron-left,
-.app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-chevron-right {
-    display: none;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-filter {
-    color: #495057;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .form-filters {
-    padding: 1rem;
-  }
-  .app-content.page-home .article-resources .article-content .article-body {
-    padding: 1rem 0;
-  }
-  .app-content.page-home .article-resources .article-content .article-body .card-group .card {
-    margin: 0.325rem;
-  }
-  .app-content.page-home .article-resources .article-content .article-body .card-group .card .card-body {
-    padding: 1rem;
-  }
-}
 @media (max-width: 576px) {
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav:first-child {
+    width: 14rem;
+  }
   .app-content.page-home .article-resources .article-content .article-body .card-group .card {
     max-width: calc(50vw - 1.5rem);
     min-width: calc(50vw - 1.5rem);
   }
 }
-@media (min-width: 768px) {
-  .app-content.page-home .article-resources .article-content .article-sidebar {
-    height: calc(100vh - 8rem);
-    margin: 0 0 0 -1.5rem;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light.btn-dialog {
-    display: none;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .navbar .btn-light .fa-filter {
-    display: none;
-  }
-  .app-content.page-home .article-resources .article-content .article-sidebar .form-filters {
-    box-shadow: none;
-    display: block;
-    height: calc(100vh - 12rem);
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: static;
-    z-index: inherit;
-  }
-  .app-content.page-home .article-resources .article-body .navbar {
-    display: none;
-  }
-}
 @media (min-width: 992px) {
-  .app-content.page-home .article-resources .article-content .article-sidebar {
-    height: calc(100vh - 9rem);
+  .app-content.page-home .article-resources .article-header {
     position: -webkit-sticky;
     position: sticky;
     top: 6rem;
     z-index: 970;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav:not(.nav-main) .btn-search {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .nav-item-submodule {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .input-group .input-group-prepend .btn-back {
+    display: none;
+  }
+  .app-content.page-home .article-resources .article-header .navbar .navbar-nav .input-group .form-control {
+    width: 24rem;
+  }
+  .app-content.page-home .article-resources .article-content .article-sidebar {
+    height: calc(100vh - 13rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10rem;
   }
 }
 
@@ -6134,6 +6194,7 @@ select.form-control {
   margin: 0 -0.5rem;
 }
 .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card {
+  cursor: pointer;
   max-width: 16rem;
   min-width: 16rem;
   margin: 0.5rem;
@@ -6141,11 +6202,10 @@ select.form-control {
   position: relative;
 }
 .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card .card-img-top {
-  padding: 1.5rem 1rem 1rem;
-  text-align: center;
-}
-.app-content.page-assignments .article-assignments .article-content .article-body .card-group .card .card-img-top .fas {
-  font-size: 8rem;
+  -webkit-align-self: center;
+  align-self: center;
+  margin: 1.5rem 1rem 1rem;
+  width: auto;
 }
 .app-content.page-assignments .article-assignments .article-content .article-body .card-group .card .card-body {
   display: -ms-flexbox;
@@ -8841,6 +8901,11 @@ select.form-control {
   user-select: none;
   margin-bottom: 0;
 }
+.app-content.page-announcements .article-announcements .article-content .article-body .table-head a,
+.app-content.page-announcements .article-announcements .article-content .article-body .table-body a {
+  color: #212529;
+  word-break: break-word;
+}
 @media (max-width: 991.98px) {
   .app-content.page-announcements .article-announcements .article-header {
     margin: 0 -0.5rem;
@@ -8986,6 +9051,9 @@ select.form-control {
 .app-content.page-announcements .article-create-announcement .article-header .navbar .navbar-nav .nav-item .item-text {
   font-size: 1.25rem;
   width: 16rem;
+}
+.app-content.page-announcements .article-create-announcement .article-header .navbar .navbar-nav .nav-item .btn-light .fas {
+  font-size: 1.5rem;
 }
 .app-content.page-announcements .article-create-announcement .article-content .article-body .form-announcement {
   padding: 1.5rem 0;

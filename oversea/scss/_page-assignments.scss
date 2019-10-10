@@ -132,6 +132,7 @@
             margin: 0 -.5rem;
 
             .card {
+              cursor: pointer;
               max-width: 16rem;
               min-width: 16rem;
               margin: .5rem;
@@ -139,12 +140,9 @@
               position: relative;
 
               .card-img-top {
-                padding: 1.5rem 1rem 1rem;
-                text-align: center;
-
-                .fas {
-                  font-size: 8rem;
-                }
+                @include align-self(center);
+                margin: 1.5rem 1rem 1rem;
+                width: auto;
               }
 
               .card-body {

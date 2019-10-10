@@ -108,6 +108,11 @@
           .table-body {
             @include user-select(none);
             margin-bottom: 0;
+
+            a {
+              color: $gray-900;
+              word-break: break-word;
+            }
           }
         }
       }
@@ -282,6 +287,12 @@
               .item-text {
                 font-size: 1.25rem;
                 width: 16rem;
+              }
+
+              .btn-light {
+                .fas {
+                  font-size: 1.5rem;
+                }
               }
             }
           }
