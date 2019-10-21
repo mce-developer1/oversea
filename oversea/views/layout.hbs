@@ -176,18 +176,6 @@
                         <i class="img img-sociallearningwall"></i> Social Learning Wall
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/{{userRole}}/notifications/notifications">
-                        <i class="img img-notifications"></i> Notifications
-                      </a>
-                    </li>
-                    {{#unless studentUser}}
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/announcements/announcements">
-                          <i class="img img-announcements"></i> Announcements
-                        </a>
-                      </li>
-                    {{/unless}}
                   </ul>
                 </div>
               </li>
@@ -198,6 +186,11 @@
                   </a>
                   <div class="dropdown-menu">
                     <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/announcements/announcements">
+                          <i class="img img-announcements"></i> Announcements
+                        </a>
+                      </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-manageschool"></i> Manage School
@@ -338,18 +331,6 @@
                         <i class="img img-sociallearningwall"></i> Social Learning Wall
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/{{userRole}}/notifications/notifications">
-                        <i class="img img-notifications"></i> Notifications
-                      </a>
-                    </li>
-                    {{#unless studentUser}}
-                      <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/announcements/announcements">
-                          <i class="img img-announcements"></i> Announcements
-                        </a>
-                      </li>
-                    {{/unless}}
                   </ul>
                   {{#if adminUser}}
                     <ul class="nav nav-administration">
@@ -357,6 +338,11 @@
                         <div class="nav-text">
                           <i class="img img-administration"></i> Administration
                         </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/{{userRole}}/announcements/announcements">
+                          <i class="img img-announcements"></i> Announcements
+                        </a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/{{userRole}}/administration/manage_school">
@@ -528,23 +514,31 @@
                       </div>
                     </div>
                   </div>
+                  <div class="dropdown-divider divider-school-matters"></div>
+                  <ul class="nav nav-school-matters">
+                    <li class="nav-item">
+                      <a class="nav-link" href="/{{userRole}}/notifications/notifications">
+                        <i class="fas fa-bell"></i> Notifications
+                      </a>
+                    </li>
+                  </ul>
                   <div class="dropdown-divider"></div>
                   <ul class="nav">
-                    <div class="nav-item">
+                    <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/profile/update_personal_particulars">
                         <i class="fas fa-user"></i> About Me
                       </a>
-                    </div>
-                    <div class="nav-item">
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="/{{userRole}}/profile/change_password">
                         <i class="fas fa-key"></i> Change Password
                       </a>
-                    </div>
-                    <div class="nav-item">
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="/signout">
                         <i class="fas fa-sign-out-alt"></i> Logout
                       </a>
-                    </div>
+                    </li>
                   </ul>
                 </div>
               </li>
@@ -693,18 +687,6 @@
                         <i class="img img-sociallearningwall"></i> Social Learning Wall
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link {{#if notificationsPage}}active{{/if}}" href="/{{userRole}}/notifications/notifications">
-                        <i class="img img-notifications"></i> Notifications
-                      </a>
-                    </li>
-                    {{#unless studentUser}}
-                      <li class="nav-item">
-                        <a class="nav-link {{#if announcementsPage}}active{{/if}}" href="/{{userRole}}/announcements/announcements">
-                          <i class="img img-announcements"></i> Announcements
-                        </a>
-                      </li>
-                    {{/unless}}
                   </ul>
                 </div>
               </li>
@@ -715,6 +697,11 @@
                   </a>
                   <div class="collapse" id="administration">
                     <ul class="nav">
+                      <li class="nav-item">
+                        <a class="nav-link {{#if announcementsPage}}active{{/if}}" href="/{{userRole}}/announcements/announcements">
+                          <i class="img img-announcements"></i> Announcements
+                        </a>
+                      </li>
                       <li class="nav-item">
                         <a class="nav-link {{#if schoolPage}}active{{/if}}" href="/{{userRole}}/administration/manage_school">
                           <i class="img img-manageschool"></i> Manage School
@@ -812,6 +799,7 @@
                   Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
                   Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
                 </p>
+                <img src="/static/images/channel.png"/>
                 <p>
                   In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
                   Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
@@ -821,7 +809,7 @@
                 <div class="text-muted">Attachments:</div>
                 <ul class="list-group list-group-light">
                   <li class="list-group-item">
-                    <img src="/static/images/channel.png"/>
+                    <a href="/static/images/channel.png">channel.png</a>
                   </li>
                   <li class="list-group-item">
                     <a href="/static/pdfs/teachers-portal-user-guide.pdf">teachers-portal-user-guide.pdf</a>
@@ -871,6 +859,7 @@
                   Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
                   Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. 
                 </p>
+                <img src="/static/images/channel.png"/>
                 <p>
                   In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
                   Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
@@ -880,7 +869,7 @@
                 <div class="text-muted">Attachments:</div>
                 <ul class="list-group list-group-light">
                   <li class="list-group-item">
-                    <img src="/static/images/channel.png"/>
+                    <a href="/static/images/channel.png">channel.png</a>
                   </li>
                   <li class="list-group-item">
                     <a href="/static/pdfs/teachers-portal-user-guide.pdf">teachers-portal-user-guide.pdf</a>
@@ -907,6 +896,7 @@
     <script src="/static/bootstrap/js/bootstrap.js"></script>
     <script src="/static/bootstrap-select/js/bootstrap-select.js"></script>
     <script src="/static/moment/moment.js"></script>
+    <script src="/static/moment-timezone/builds/moment-timezone-with-data.js"></script>
     <script src="/static/daterangepicker/daterangepicker.js"></script>
     <script src="/static/datatables/js/jquery.dataTables.js"></script>
     <script src="/static/autocomplete.js/autocomplete.jquery.js"></script>

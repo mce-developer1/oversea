@@ -29,6 +29,15 @@ $(document).ready(function() {
   }
 
   if ($container.hasClass('article-manage-school')) {
+    var allTimezones = moment.tz.names();
+    var timezoneOptions = [];
+    for (var i = 0; i < allTimezones.length; i++) {
+      var timezoneOption = '<option>' + allTimezones[i] + '</option>';
+      timezoneOptions.push(timezoneOption);
+    }
+    $('#selTimezone').append(timezoneOptions.join());
+    $('#selTimezone').selectpicker('refresh');
+
     $('#txtExpiryDate').val(moment().endOf("year").format('DD MMM YYYY'));
     $('#txtExpiryDate').daterangepicker({
       parentEl: '.form-school-group',

@@ -27,6 +27,7 @@ app.use('/static/fontawesome-free', express.static(path.join(__dirname, 'node_mo
 app.use('/static/chart.js', express.static(path.join(__dirname, 'node_modules/chart.js/dist')));
 app.use('/static/chartjs-plugin-datalabels', express.static(path.join(__dirname, 'node_modules/chartjs-plugin-datalabels/dist')));
 app.use('/static/moment', express.static(path.join(__dirname, 'node_modules/moment')));
+app.use('/static/moment-timezone', express.static(path.join(__dirname, 'node_modules/moment-timezone')));
 app.use('/static/daterangepicker', express.static(path.join(__dirname, 'node_modules/daterangepicker')));
 app.use('/static/datatables', express.static(path.join(__dirname, 'node_modules/datatables/media')));
 app.use('/static/autocomplete.js', express.static(path.join(__dirname, 'node_modules/autocomplete.js/dist')));

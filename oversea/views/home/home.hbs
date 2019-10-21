@@ -1,118 +1,53 @@
 <div class="app-content page-{{module}}">
   <div class="row no-gutters">
     <div class="col-sm">
-      <div class="article article-resources">
-        <div class="article-header">
-          <nav class="navbar navbar-expand">
-            <ul class="navbar-nav">
-              <li class="nav-item nav-item-drawer">
-                <button class="btn btn-light" type="button">
-                  <img src="/static/images/icon_module_resourcebank.png">
-                </button>
-                <span class="item-text text-truncate">My Library</span>
-              </li>
-              <li class="nav-item nav-item-submodule dropdown">
-                <button class="btn btn-light" type="button" data-toggle="dropdown">
-                  All Subjects <i class="fas fa-caret-down"></i>
-                </button>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">All Subjects</a>
-                  <a class="dropdown-item" href="#">Chemistry</a>
-                  <a class="dropdown-item" href="#">Mathematics</a>
-                  <a class="dropdown-item" href="#">Science</a>
-                </div>
-              </li>
-            </ul>
-            <ul class="navbar-nav nav-main">
-              <li class="nav-item dialog">
-                <div class="input-group input-group-search">
-                  <div class="input-group-prepend">
-                    <button class="btn btn-light btn-search" type="button">
-                      <i class="fas fa-search"></i>
-                    </button>
-                    <button class="btn btn-light btn-back" type="button">
-                      <i class="fas fa-arrow-left"></i>
-                    </button>
-                  </div>
-                  <input class="form-control form-input input-autocomplete" type="text" placeholder="Search channels">
-                  <div class="input-group-append">
-                    <button class="btn btn-light btn-clear d-none" type="button">
-                      <i class="fas fa-times"></i>
-                    </button>
-                    <button class="btn btn-light btn-toggle" type="button" data-toggle='dialog'>
-                      <i class="fas fa-caret-down"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="dialog-menu dialog-menu-search">
-                  <form class="form-advanced-search">
-                    <div class="form-group">
-                      <label class="form-label" for="selCurriculum">Curriculum</label>
-                      <select class="form-control selectpicker" id="selCurriculum">
-                        <option>All</option>
-                        <option>CAIE</option>
-                        <option>SG</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label" for="selGrade">Grade</label>
-                      <select class="form-control selectpicker" id="selGrade">
-                        <option>All</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label" for="selSubjet">Subject</label>
-                      <select class="form-control selectpicker" id="selSubjet">
-                        <option>All</option>
-                        <option>Chemistry</option>
-                        <option>Mathematics</option>
-                        <option>Physics</option>
-                        <option>Science</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label" for="txtKeyword">Keyword</label>
-                      <input class="form-control form-input" type="text" id="txtKeyword">
-                    </div>
-                    <div class="form-group form-group-actions">
-                      <button class="btn btn-light" type="button">Reset</button> 
-                      <button class="btn btn-primary" type="button">Search</button>
-                    </div>
-                  </form>
-                </div>
-              </li>
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <button class="btn btn-light btn-search" type="button" title="Search">
-                  <i class="fas fa-search"></i>
-                </button>
-              </li>
-            </ul>
-        </div>
+      <div class="article article-resources {{#if studentUser}}no-sidebar{{/if}}">
         <div class="article-content">
-          <div class="article-sidebar">
-            <ul class="nav nav-side">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">All Subjects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Chemistry</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Mathematics</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Science</a>
-              </li>
-            </ul>
-          </div>
+          {{#unless studentUser}}
+            <div class="article-sidebar dialog">
+              <div class="navbar">
+                <button class="btn btn-light btn-toggle" type="button" data-toggle="sidebar" data-target=".article-resources">
+                  <i class="fas fa-chevron-left"></i>
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+                <button class="btn btn-light btn-dialog" type="button" data-toggle="dialog">
+                  <i class="fas fa-filter"></i>
+                </button>
+              </div>
+              <form class="form-filters dialog-menu">
+                <div class="form-group">
+                  <label class="form-label" for="selGrade">Grade</label>
+                  <select class="form-control selectpicker" id="selGrade" data-container=".article-sidebar" data-dropdown-align-right="true">
+                    <option>All</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selSubjet">Subject</label>
+                  <select class="form-control selectpicker" id="selSubjet" data-container=".article-sidebar" data-dropdown-align-right="true">
+                    <option>All</option>
+                    <option>Chemistry</option>
+                    <option>Mathematics Mathematics Mathematics Mathematics</option>
+                    <option>Physics</option>
+                    <option>Science</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="selCurriculum">Curriculum</label>
+                  <select class="form-control selectpicker" id="selCurriculum" data-container=".article-sidebar" data-dropdown-align-right="true">
+                    <option>All</option>
+                    <option>CAIE</option>
+                    <option>SG</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          {{/unless}}
           <div class="article-body">
             <div class="loading-state d-none">
               <div class="spinner-border text-primary" role="status">
@@ -120,7 +55,7 @@
               </div>
             </div>
             <nav class="navbar navbar-expand">
-              <div class="navbar-text">5 records found</div>
+              <div class="navbar-text">Grade 1, Mathematics, CAIE</div>
             </nav>
             <div class="card-group">
               <div class="card">
@@ -259,18 +194,29 @@
 </div>
 
 <div class="toast-stack d-none">
-  <div class="toast" role="alert fade" data-delay="5000">
+  <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
       <button class="close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
       </button>
-    </div>    
+    </div>
+    <div class="toast-body">
+      <i class="img img-toast-warning"></i>
+      You are in differnt timezone but system will use "Asia/Singapore" timezone to display date and time.
+    </div>
+  </div>
+  <div class="toast d-none" role="alert fade" data-delay="5000">
+    <div class="toast-header">
+      <button class="close" type="button" title="Close" data-dismiss="toast">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
     <div class="toast-body">
       <i class="img img-toast-error"></i>
       Error occurred in retrieving resources. Error occurred in retrieving resources.
     </div>
   </div>
-  <div class="toast" role="alert fade" data-delay="5000">
+  <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
       <button class="close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
@@ -281,7 +227,7 @@
       Failed to retieve resources.
     </div>
   </div>
-  <div class="toast" role="alert fade" data-delay="5000">
+  <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
       <button class="close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
@@ -292,7 +238,7 @@
       Deleting resource(s).
     </div>
   </div>
-  <div class="toast" role="alert fade" data-delay="5000">
+  <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
       <button class="close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
@@ -303,7 +249,7 @@
       Preparing download...
     </div>
   </div>
-  <div class="toast" role="alert fade" data-delay="5000">
+  <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
       <button class="close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>

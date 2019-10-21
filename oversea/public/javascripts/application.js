@@ -454,9 +454,9 @@ $(document).ready(function() {
     };
   }
 
-  var userAgent = window.navigator.userAgent;
-  var isIE = /MSIE|Trident\//.test(userAgent);
-  if (isIE) $('body').addClass('msie');
-
   log.info("MY_RESOURCES", "SEARCH", { grade: 1, level: 1 });
 });
+
+var userAgent = window.navigator.userAgent;
+var isIE = /MSIE|Trident\//.test(userAgent);
+if (isIE) $('body').addClass('msie');

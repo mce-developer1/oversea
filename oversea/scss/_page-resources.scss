@@ -370,6 +370,25 @@
           }
         }
       }
+
+      @media (max-width: 768px) {
+        .article-content {
+          .article-body {
+            .card-group {
+              .card {
+                max-width: calc(30vw - 1.5rem);
+                min-width: calc(30vw - 1.5rem);
+
+                .card-img-top {
+                  .fas {
+                    font-size: 7rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
       
       @media (max-width: 576px) {
         .article-header {
@@ -394,6 +413,19 @@
                 th:nth-child(5),
                 td:nth-child(5) {
                   display: none;
+                }
+              }
+            }
+
+            .card-group {
+              .card {
+                max-width: calc(50vw - 1.5rem);
+                min-width: calc(50vw - 1.5rem);
+
+                .card-img-top {
+                  .fas {
+                    font-size: 6rem;
+                  }
                 }
               }
             }

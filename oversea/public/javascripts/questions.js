@@ -268,30 +268,50 @@ $(document).ready(function() {
     }
   });
 
-  $('#selGrade').on('changed.bs.select', function (e) {
-    if ($('#selCurriculum').selectpicker('val') === 'CAIE') {
-      if ($('#selGrade').selectpicker('val') === '1') {        
-        $('.form-group-stream').removeClass('d-none');
-        $('.form-group-syllabus').removeClass('d-none');
-        $('.form-group-language').removeClass('d-none');
-        $('.form-group-topic').removeClass('d-none');
-        $('.form-group-subtopic').removeClass('d-none');
-        $('.form-group-objective').removeClass('d-none');
-      } else {
-        $('.form-group-stream').addClass('d-none');
-        $('.form-group-syllabus').addClass('d-none');
-        $('.form-group-language').addClass('d-none');
-        $('.form-group-topic').addClass('d-none');
-        $('.form-group-subtopic').addClass('d-none');
-        $('.form-group-objective').addClass('d-none');
-      }
-    } else {
+  $('#selSubjet').on('changed.bs.select', function (e) {
+    if ($('#selSubjet').selectpicker('val') === 'None') {
       $('.form-group-stream').addClass('d-none');
       $('.form-group-syllabus').addClass('d-none');
       $('.form-group-language').addClass('d-none');
       $('.form-group-topic').addClass('d-none');
       $('.form-group-subtopic').addClass('d-none');
       $('.form-group-objective').addClass('d-none');
+      $('.form-group-difficulty').addClass('d-none');
+    } else if ($('#selGrade').selectpicker('val') === '1') { 
+      $('.form-group-stream').removeClass('d-none');
+      $('.form-group-syllabus').removeClass('d-none');
+      $('.form-group-language').removeClass('d-none');
+      $('.form-group-topic').removeClass('d-none');
+      $('.form-group-subtopic').removeClass('d-none');
+      $('.form-group-objective').removeClass('d-none');
+      $('.form-group-difficulty').removeClass('d-none');
+    }
+  });
+
+  $('#selGrade').on('changed.bs.select', function (e) {
+    if ($('#selGrade').selectpicker('val') === 'None') {
+      $('.form-group-stream').addClass('d-none');
+      $('.form-group-syllabus').addClass('d-none');
+      $('.form-group-language').addClass('d-none');
+      $('.form-group-topic').addClass('d-none');
+      $('.form-group-subtopic').addClass('d-none');
+      $('.form-group-objective').addClass('d-none');
+    } else if ($('#selSubjet').selectpicker('val') === 'Mathematics') { 
+      $('.form-group-stream').removeClass('d-none');
+      $('.form-group-syllabus').removeClass('d-none');
+      $('.form-group-language').removeClass('d-none');
+      $('.form-group-topic').removeClass('d-none');
+      $('.form-group-subtopic').removeClass('d-none');
+      $('.form-group-objective').removeClass('d-none');
+      $('.form-group-difficulty').removeClass('d-none');
+    }
+  });
+
+  $('#selTopic').on('changed.bs.select', function (e) {
+    if ($('#selTopic').selectpicker('val') === 'None') {
+      $('.form-group-objective').addClass('d-none');
+    } else {
+      $('.form-group-objective').removeClass('d-none');
     }
   });
 

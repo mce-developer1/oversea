@@ -198,6 +198,66 @@ $(document).ready(function() {
     log.info("MY_RESOURCES", "SEARCH", { grade: 1, level: 1 });
   });
 
+  $('#selCurriculum2').on('changed.bs.select', function (e) {
+    if ($('#selCurriculum2').selectpicker('val') === 'None') {
+      $('.form-edit-file-attributes .form-group-subject').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-grade').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-stream').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-syllabus').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-language').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-topic').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-subtopic').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-objective').addClass('d-none');
+    } else {
+      $('.form-edit-file-attributes .form-group-subject').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-grade').removeClass('d-none');
+    }
+  });
+
+  $('#selSubjet2').on('changed.bs.select', function (e) {
+    if ($('#selSubjet2').selectpicker('val') === 'None') {
+      $('.form-edit-file-attributes .form-group-stream').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-syllabus').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-language').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-topic').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-subtopic').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-objective').addClass('d-none');
+    } else if ($('#selGrade2').selectpicker('val') === '1') { 
+      $('.form-edit-file-attributes .form-group-stream').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-syllabus').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-language').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-topic').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-subtopic').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-objective').removeClass('d-none');
+    }
+  });
+
+  $('#selGrade2').on('changed.bs.select', function (e) {
+    if ($('#selGrade2').selectpicker('val') === 'None') {
+      $('.form-edit-file-attributes .form-group-stream').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-syllabus').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-language').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-topic').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-subtopic').addClass('d-none');
+      $('.form-edit-file-attributes .form-group-objective').addClass('d-none');
+    } else if ($('#selSubjet2').selectpicker('val') === 'Mathematics') { 
+      $('.form-edit-file-attributes .form-group-stream').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-syllabus').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-language').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-topic').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-subtopic').removeClass('d-none');
+      $('.form-edit-file-attributes .form-group-objective').removeClass('d-none');
+    }
+  });
+
+  $('#selTopic').on('changed.bs.select', function (e) {
+    if ($('#selTopic').selectpicker('val') === 'None') {
+      $('.form-edit-file-attributes .form-group-objective').addClass('d-none');
+    } else {
+      $('.form-edit-file-attributes .form-group-objective').removeClass('d-none');
+    }
+  });
+
   $container.find('.navbar-nav .btn-edit').on('click', function(e) {
     if ($container.find('.table-body .table-active').find('.fa-folder').length === 1) {
       var readonly = $('.modal-resource-folder-edit .form-input').prop('readonly');

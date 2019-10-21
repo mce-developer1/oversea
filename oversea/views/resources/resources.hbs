@@ -912,10 +912,31 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="selGrade">Grade</label>
+            <label class="form-label" for="selCurriculum2">Curriculum</label>
             <div class="form-group">
-              <select class="form-control selectpicker" id="selGrade">
-                <option>All</option>
+              <select class="form-control selectpicker" id="selCurriculum2">
+                <option>None</option>
+                <option>CAIE</option>
+                <option>SG</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group form-group-subject d-none">
+            <label class="form-label" for="selSubjet2">Subject</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selSubjet2">
+                <option>None</option>
+                <option>Mathematics</option>
+                <option>Physics</option>
+                <option>Science</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group form-group-grade d-none">
+            <label class="form-label" for="selGrade2">Grade</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selGrade2">
+                <option>None</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -925,57 +946,80 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="selSubjet">Subject</label>
+          <div class="form-group form-group-stream d-none">
+            <label class="form-label">Stream</label>
             <div class="form-group">
-              <select class="form-control selectpicker" id="selSubjet">
-                <option>All</option>
-                <option>Chemistry</option>
-                <option>Mathematics</option>
-                <option>Physics</option>
-                <option>Science</option>
+              <div class="checkbox-group">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="standard">
+                  <label class="custom-control-label" for="standard">Standard</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="foundation">
+                  <label class="custom-control-label" for="foundation">Foundation</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group form-group-syllabus d-none">
+            <label class="form-label" for="selSyllabus">Syllabus</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selSyllabus">
+                <option>None</option>
+                <option>0001</option>
+                <option>0002</option>
               </select>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group form-group-language d-none">
+            <label class="form-label" for="selLanguage">Language</label>
+            <div class="form-group">
+              <select class="form-control selectpicker" id="selLanguage">
+                <option>None</option>
+                <option>Bahasa Indonesia</option>
+                <option>English</option>
+                <option>Spanish</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group form-group-topic d-none">
             <label class="form-label" for="selTopic">Topic</label>
             <div class="form-group">
               <select class="form-control selectpicker" id="selTopic">
-                <option>Numbers to 10,000</option>
-                <option>Addition within 10,000</option>
-                <option>Subtraction within 10,000</option>
-                <option>Addition and Subtraction within 10,000</option>
+                <option selected>None</option>
+                <option>Numbers To 10</option>
+                <option>Number Bonds</option>
+                <option>Addition Within 10</option>
               </select>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group form-group-subtopic d-none">
             <label class="form-label" for="selSubtopic">Subtopic</label>
             <div class="form-group">
               <select class="form-control selectpicker" id="selSubtopic">
-                <option>Counting to 10,000</option>
-                <option>Place Values</option>
-                <option>Comparing and Ordering Numbers</option>
-                <option>Number Patterns</option>
+                <option selected>None</option>
+                <option>Counting To 10</option>
+                <option>Comparing Numbers</option>
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="selLearningObjectives">Learning Objectives</label>
+          <div class="form-group form-group-objective d-none">
+            <label class="form-label" for="selObjective">Learning Objective</label>
             <div class="form-group">
-              <select class="form-control selectpicker" id="selLearningObjectives">
+              <select class="form-control selectpicker" id="selObjective">
+                <option selected>None</option>
                 <option>1.1 Counting in hundreds/thousands</option>
-                <option>1.2 Number notation, representations and place values (thousands, hundreds)</option>
+                <option>1.2 Number notation, representations and place values (thousands, hundreds, tens, ones)</option>
                 <option>1.3 Reading and Writing numbers in Numerals and in words</option>
-                <option>1.4 Comparing and ordering numbers</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="txtAssociatedTerms">Associated Terms</label>
+            <label class="form-label" for="txtKeywords">Keywords</label>
             <div class="form-group">
-              <input class="form-control form-input" type="text" id="txtAssociatedTerms">
+              <input class="form-control form-input" type="text" id="txtKeywords">
               <small class="form-text text-muted">
-                Use commas to separate associated terms.
+                Use commas to separate keywords.
               </small>
             </div>
           </div>

@@ -116,5 +116,10 @@ $(document).ready(function() {
     $('.modal-announcement-view .btn-close').removeClass('d-none');
   });
 
+  $('.modal-announcement-view').on('hide.bs.modal', function() {
+    $('.toast-stack .toast:first-child').removeClass('d-none');
+    $('.toast-stack .toast:first-child').addClass('show');
+    $('.toast-stack').removeClass('d-none');
+  });
   $('.modal-announcement-view').modal('show');
 });
