@@ -184,6 +184,48 @@ select.form-control {
   }
 }
 
+.toast {
+  &.toast-notification {
+    @include display-flex(row-reverse);
+    @include align-items(center);
+    background-color: $white;
+    border: 0;
+    box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
+    width: 20rem;
+    margin-bottom: 0;
+    opacity: 1;
+    position: fixed;
+    top: -8rem;
+    left: calc(50vw - 10rem);
+    z-index: 980;
+    -webkit-transition: top .35s;
+    -moz-transition: top .35s;
+    -o-transition: top .35s;
+    transition: top .35s;
+
+    &.show {
+      top: 0;
+    }
+
+    .toast-header {
+      border-bottom: 0;
+      padding: 0;
+
+      button.close {
+        opacity: 1;
+        padding: .5rem .75rem;
+      }
+    }
+
+    .toast-body {
+      @include flex-grow(1);
+      font-size: 1.25rem;
+      padding: 1rem;
+      text-align: center;
+    }
+  }
+}
+
 .toast-stack {
   margin-right: 1rem;
   position: fixed;
@@ -539,43 +581,43 @@ select.form-control {
     &.active {
       .img {
         &.img-mylibrary {
-          background-image: url("../images/icon_topnav_selected_mylibrary.png");
+          background-image: url("../images/icon_nav_selected_mylibrary.svg");
         }
 
         &.img-myebooks {
-          background-image: url("../images/icon_topnav_selected_myebooks.png");
+          background-image: url("../images/icon_nav_selected_myebooks.svg");
         }
 
         &.img-myassignments {
-          background-image: url("../images/icon_topnav_selected_myassignments.png");
+          background-image: url("../images/icon_nav_selected_myassignments.svg");
         }
 
         &.img-myresources {
-          background-image: url("../images/icon_topnav_selected_myresources.png");
+          background-image: url("../images/icon_nav_selected_myresources.svg");
         }
 
         &.img-mytools {
-          background-image: url("../images/icon_topnav_selected_mytools.png");
+          background-image: url("../images/icon_nav_selected_mytools.svg");
         }
 
         &.img-myreports {
-          background-image: url("../images/icon_topnav_selected_myreports.png");
+          background-image: url("../images/icon_nav_selected_myreports.svg");
         }
 
         &.img-collaboration {
-          background-image: url("../images/icon_topnav_selected_collaboration.png");
+          background-image: url("../images/icon_nav_selected_collaboration.svg");
         }
 
         &.img-administration {
-          background-image: url("../images/icon_topnav_selected_administration.png");
+          background-image: url("../images/icon_nav_selected_administration.svg");
         }
 
         &.img-myachievements {
-          background-image: url("../images/icon_topnav_selected_myachievements.png");
+          background-image: url("../images/icon_nav_selected_myachievements.svg");
         }
 
         &.img-more {
-          background-image: url("../images/icon_topnav_selected_more.png");
+          background-image: url("../images/icon_nav_selected_more.svg");
         }
       }
     }
@@ -586,43 +628,43 @@ select.form-control {
     background-size: contain;
   
     &.img-mylibrary {
-      background-image: url("../images/icon_topnav_unselected_mylibrary.png");
+      background-image: url("../images/icon_nav_unselected_mylibrary.svg");
     }
 
     &.img-myebooks {
-      background-image: url("../images/icon_topnav_unselected_myebooks.png");
+      background-image: url("../images/icon_nav_unselected_myebooks.svg");
     }
 
     &.img-myassignments {
-      background-image: url("../images/icon_topnav_unselected_myassignments.png");
+      background-image: url("../images/icon_nav_unselected_myassignments.svg");
     }
   
     &.img-myresources {
-      background-image: url("../images/icon_topnav_unselected_myresources.png");
+      background-image: url("../images/icon_nav_unselected_myresources.svg");
     }
 
     &.img-mytools {
-      background-image: url("../images/icon_topnav_unselected_mytools.png");
+      background-image: url("../images/icon_nav_unselected_mytools.svg");
     }
   
     &.img-myreports {
-      background-image: url("../images/icon_topnav_unselected_myreports.png");
+      background-image: url("../images/icon_nav_unselected_myreports.svg");
     }
 
     &.img-collaboration {
-      background-image: url("../images/icon_topnav_unselected_collaboration.png");
+      background-image: url("../images/icon_nav_unselected_collaboration.svg");
     }
 
     &.img-administration {
-      background-image: url("../images/icon_topnav_unselected_administration.png");
+      background-image: url("../images/icon_nav_unselected_administration.svg");
     }
 
     &.img-myachievements {
-      background-image: url("../images/icon_topnav_unselected_myachievements.png");
+      background-image: url("../images/icon_nav_unselected_myachievements.svg");
     }
 
     &.img-more {
-      background-image: url("../images/icon_topnav_unselected_more.png");
+      background-image: url("../images/icon_nav_unselected_more.svg");
     }
 
     &.img-assessment {
@@ -1052,6 +1094,10 @@ select.form-control {
             height: 2rem;
             min-width: 2rem;
             width: 2rem;
+
+            fill {
+              color: $primary !important;
+            }
           }
         }
 
@@ -2259,6 +2305,18 @@ select.form-control {
     +.component {
       &.component-section {
         margin-top: 2rem;
+      }
+    }
+  }
+}
+
+.modal-alert-message {
+  .modal-dialog {
+    .modal-header {
+      .fas {
+        color: $red;
+        font-size: 1.75rem;
+        margin-right: .75rem;
       }
     }
   }

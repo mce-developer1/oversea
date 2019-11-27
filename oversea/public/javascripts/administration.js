@@ -32,7 +32,9 @@ $(document).ready(function() {
     var allTimezones = moment.tz.names();
     var timezoneOptions = [];
     for (var i = 0; i < allTimezones.length; i++) {
-      var timezoneOption = '<option>' + allTimezones[i] + '</option>';
+      var timezoneOffset  = moment.tz(allTimezones[i]).utcOffset();
+      var utcOffsetFormat = '(GMT' + moment.tz("1970-01-01", allTimezones[i]).format('Z') + ')';
+      var timezoneOption = '<option>' + allTimezones[i] + ' ' + utcOffsetFormat + '</option>';
       timezoneOptions.push(timezoneOption);
     }
     $('#selTimezone').append(timezoneOptions.join());

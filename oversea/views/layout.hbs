@@ -18,7 +18,7 @@
       {{#if infoPage}}
         <div class="navbar navbar-expand app-header">
           <div class="navbar-brand d-block">
-            <img src="/static/images/logo_mceduhub.png"/>
+            <img src="/static/images/logo_mceduhub.svg"/>
           </div>
           <ul class="navbar-nav nav-main"></ul>
         </div>
@@ -27,7 +27,7 @@
         {{#unless loggedIn}}
           <div class="navbar navbar-expand app-header">
             <a class="navbar-brand d-block" href="/">
-              <img src="/static/images/logo_mceduhub.png"/>
+              <img src="/static/images/logo_mceduhub.svg"/>
             </a>
             <ul class="navbar-nav nav-main"></ul>
           </div>
@@ -39,7 +39,7 @@
             <i class="fas fa-bars"></i>
           </button>
           <a class="navbar-brand" href="/{{userRole}}/home">
-            <img src="/static/images/logo_mceduhub.png"/>
+            <img src="/static/images/logo_mceduhub.svg"/>
           </a>
           <div class="navbar-text">
             {{#if homePage}}My Library{{/if}}
@@ -94,7 +94,7 @@
                         </a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="/{{userRole}}/lessons/lessons">
+                        <a class="nav-link active" href="/{{userRole}}/lessons/lessons">
                           <i class="img img-lessonbuilder"></i> Lesson Builder
                         </a>
                       </li>
@@ -565,14 +565,14 @@
           Copyright © 2019 Marshall Cavendish Education Pte. Ltd.
         </div>
         <a class="company-logo" href="http://www.mceducation.com">
-          <img src="/static/images/mce_logo_white.png"/>
+          <img src="/static/images/logo_mce.svg"/>
         </a>
       </div>
     </div>
     <div class="drawer">
       <nav class="navbar">
         <a class="navbar-brand" href="/{{userRole}}/home">
-          <img src="/static/images/logo_mceduhub.png"/>
+          <img src="/static/images/logo_mceduhub.svg"/>
         </a>
         <div class="navbar-content">
           <ul class="navbar-nav">
@@ -887,6 +887,17 @@
         </div>
       </div>
     </div>
+
+    <div class="toast toast-notification" role="alert">
+      <div class="toast-header">
+        <button class="close btn-close" type="button" title="Close" data-dismiss="toast">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>    
+      <div class="toast-body">
+      </div>
+    </div>
+
     <input id="userRole" type="hidden" value="{{userRole}}">
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -895,6 +906,8 @@
     <script src="/static/popper/popper.js"></script>
     <script src="/static/bootstrap/js/bootstrap.js"></script>
     <script src="/static/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="/static/i18next/i18next.js"></script>
+    <script src="/static/jquery-i18next/jquery-i18next.js"></script>
     <script src="/static/moment/moment.js"></script>
     <script src="/static/moment-timezone/builds/moment-timezone-with-data.js"></script>
     <script src="/static/daterangepicker/daterangepicker.js"></script>

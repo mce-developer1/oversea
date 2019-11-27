@@ -55,28 +55,27 @@
 
           .navbar {
             @include justify-content(flex-end);
-            background-color: $accent;
             height: 3rem;
             padding: 0;
 
             .btn-light {
-              background-color: $accent;
-              border-color: $accent;
+              background-color: $white;
+              border-color: $white;
               height: 3rem;
-              padding: .5rem 1rem;
+              padding: .5rem .75rem;
 
               &:hover {
                 .fa-chevron-left,
                 .fa-chevron-right,
                 .fa-filter {
-                  color: $white;
+                  color: $primary;
                 }
               }
     
               .fa-chevron-left,
               .fa-chevron-right,
               .fa-filter {
-                color: $gray-200;
+                color: $primary;
               }
 
               .fa-chevron-left,
@@ -108,20 +107,40 @@
             margin: -.5rem;
 
             .card {
+              background-color: transparent;
+              border: 0;
               cursor: pointer;
-              max-width: 16rem;
-              min-width: 16rem;
+              max-width: 10.5rem;
+              min-width: 10.5rem;
               margin: .5rem;
               padding: 0;
 
+              &:hover {
+                box-shadow: 0 1px 3px rgba($black, .16), 0 1px 3px rgba($black, .23);
+              }
+
               &:active {
-                background-color: $gray-200;
+                box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
               }
 
               .card-img-top {
                 @include align-self(center);
-                margin: .5rem auto 0;
-                width: auto;
+                border: 1px solid $gray-200;
+                height: 187px;
+                width: 147px;
+              }
+
+              .card-body {
+                padding: .75rem;
+
+                .card-title,
+                .card-text {
+                  text-align: center;                  
+                }
+
+                .card-title {
+                  margin-bottom: .5rem;
+                }
               }
             }
           }
@@ -135,19 +154,6 @@
             position: sticky;
             top: 5rem;
             z-index: 970;
-          }
-        }
-      }
-
-      @media (max-width: 768px) {
-        .article-content {
-          .article-body {
-            .card-group {
-              .card {
-                max-width: calc(30vw - 1.5rem);
-                min-width: calc(30vw - 1.5rem);
-              }
-            }
           }
         }
       }
@@ -242,19 +248,6 @@
         }
       }
 
-      @media (max-width: 576px) {
-        .article-content {
-          .article-body {
-            .card-group {
-              .card {
-                max-width: calc(50vw - 1.5rem);
-                min-width: calc(50vw - 1.5rem);
-              }
-            }
-          }
-        }
-      }
-
       @media (min-width: 768px) {
         .article-content {
           .article-sidebar {
@@ -276,7 +269,7 @@
             .form-filters {
               box-shadow: none;
               display: block;
-              height: calc(100vh - 12rem);
+              height: calc(100vh - 11rem);
               overflow-x: hidden;
               overflow-y: auto;
               position: static;
@@ -295,11 +288,15 @@
       @media (min-width: 992px) {
         .article-content {
           .article-sidebar {
-            height: calc(100vh - 9rem);
+            height: calc(100vh - 11rem);
             position: -webkit-sticky;
             position: sticky;
-            top: 6rem;
+            top: 8rem;
             z-index: 970;
+
+            .form-filters {
+              height: calc(100vh - 14rem);
+            }
           }
         }
       }

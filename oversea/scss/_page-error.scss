@@ -9,10 +9,10 @@
           @include display-flex(column);
           @include align-items(center);
           margin: -1.5rem;
-          min-height: calc(100vh - 9rem);
+          min-height: calc(100vh - 11rem);
 
           .error-img {
-            max-height: calc(100vh - 9rem);
+            max-height: calc(100vh - 11rem);
             max-width: 100vw;
           }
 

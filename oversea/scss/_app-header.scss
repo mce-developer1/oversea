@@ -1,9 +1,11 @@
 .app-header {
   @include flex-direction(row);
-  background-color: $white;
-  border-bottom: 3px solid $accent;
-  height: 6rem;
-  max-height: 6rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/img_topnav_header_bg.jpg");
+  border-bottom: 3px solid $primary;
+  height: 8rem;
+  max-height: 8rem;
   padding: 0 1rem;
   position: -webkit-sticky;
   position: sticky;
@@ -13,7 +15,13 @@
   .btn-menu {
     margin-right: 1rem;
 
+    &:not(:disabled):not(.disabled):active {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
     .fas {
+      color: $white;
       font-size: 1.5rem;      
     }
   }
@@ -28,6 +36,7 @@
   }
 
   .navbar-text {
+    color: $white;
     font-size: 1.5rem;
   }
 
@@ -38,27 +47,110 @@
     &.nav-main {
       @include flex-grow(1);
 
-      .nav-link {
-        @include display-flex(column);
-        @include align-items(center);
-        color: $gray-700;
-        min-width: 7rem;
-        padding: .5rem .75rem;
-
-        &:hover {
-          background-color: $gray-200;
-          color: $gray-900;
-        }
-
-        &.active {
-          background-color: $accent;
+      .nav-item {
+        .nav-link {
+          @include display-flex(column);
+          @include align-items(center);
+          border-bottom: 4px solid transparent;
           color: $white;
-        }
+          min-width: 7rem;
+          padding: 1.25rem .75rem .5rem;
 
-        .img {
-          margin-bottom: .325rem;
-          height: 3rem;
-          width: 3rem;
+          &:hover {
+            background-color: rgba($white, .23);
+          }
+
+          &.active {
+            border-bottom-color: $primary;
+
+            .img {
+              &.img-mylibrary {
+                background-image: url("../images/icon_topnav_selected_mylibrary.svg");
+              }
+      
+              &.img-myebooks {
+                background-image: url("../images/icon_topnav_selected_myebooks.svg");
+              }
+      
+              &.img-myassignments {
+                background-image: url("../images/icon_topnav_selected_myassignments.svg");
+              }
+      
+              &.img-myresources {
+                background-image: url("../images/icon_topnav_selected_myresources.svg");
+              }
+      
+              &.img-mytools {
+                background-image: url("../images/icon_topnav_selected_mytools.svg");
+              }
+      
+              &.img-myreports {
+                background-image: url("../images/icon_topnav_selected_myreports.svg");
+              }
+      
+              &.img-collaboration {
+                background-image: url("../images/icon_topnav_selected_collaboration.svg");
+              }
+      
+              &.img-administration {
+                background-image: url("../images/icon_topnav_selected_administration.svg");
+              }
+      
+              &.img-myachievements {
+                background-image: url("../images/icon_topnav_selected_myachievements.svg");
+              }
+      
+              &.img-more {
+                background-image: url("../images/icon_topnav_selected_more.svg");
+              }
+            }
+          }
+
+          .img {
+            margin-bottom: .325rem;
+            height: 4rem;
+            width: 4rem;
+
+            &.img-mylibrary {
+              background-image: url("../images/icon_topnav_unselected_mylibrary.svg");
+            }
+        
+            &.img-myebooks {
+              background-image: url("../images/icon_topnav_unselected_myebooks.svg");
+            }
+        
+            &.img-myassignments {
+              background-image: url("../images/icon_topnav_unselected_myassignments.svg");
+            }
+          
+            &.img-myresources {
+              background-image: url("../images/icon_topnav_unselected_myresources.svg");
+            }
+        
+            &.img-mytools {
+              background-image: url("../images/icon_topnav_unselected_mytools.svg");
+            }
+          
+            &.img-myreports {
+              background-image: url("../images/icon_topnav_unselected_myreports.svg");
+            }
+        
+            &.img-collaboration {
+              background-image: url("../images/icon_topnav_unselected_collaboration.svg");
+            }
+        
+            &.img-administration {
+              background-image: url("../images/icon_topnav_unselected_administration.svg");
+            }
+        
+            &.img-myachievements {
+              background-image: url("../images/icon_topnav_unselected_myachievements.svg");
+            }
+        
+            &.img-more {
+              background-image: url("../images/icon_topnav_unselected_more.svg");
+            }
+          }
         }
       }
     }
@@ -67,11 +159,16 @@
       margin-right: 1rem;
       position: relative;
 
+      &:not(:disabled):not(.disabled):active {
+        background-color: transparent;
+        border-color: transparent;
+      }
+
       .fas {
-        font-size: 1.75rem;
+        font-size: 2rem;
 
         &.fa-bell {
-          color: $accent;
+          color: $white;
         }
       }
 
@@ -183,14 +280,14 @@
 
         img {
           margin-right: 1rem;
-          max-height: 3rem;
-          max-width: 3rem;
+          max-height: 4rem;
+          max-width: 4rem;
           vertical-align: baseline;
         }
 
         .user-summary {
           @include display-flex(column);
-          color: $gray-700;
+          color: $white;
           
           .user-name,
           .user-role {
@@ -202,11 +299,18 @@
             @include align-items(center);
 
             .user-name {
-              color: $primary;
+              font-weight: 500;
               margin-left: .25rem;
               max-width: 8rem;
             }
           }
+        }
+      }
+
+      .btn-user {
+        &:not(:disabled):not(.disabled):active {
+          background-color: transparent;
+          border-color: transparent;
         }
       }
 
@@ -220,6 +324,7 @@
 
         .user-summary {
           @include flex-grow(1);
+          color: $gray-700;
 
           .user-info {
             text-align: right;
@@ -269,12 +374,26 @@
         .nav-link {
           @include display-flex(row);
           @include align-items(center);
+          color: $gray-700;
+          padding: .5rem .75rem;
 
           .img {
             margin-bottom: 0;
             margin-right: .75rem;
             height: 1.5rem;
             width: 1.5rem;
+          }
+        }
+
+        .nav-link {
+          border-bottom: 0;
+
+          &:hover {
+            background-color: $gray-200;
+          }
+
+          &.active {
+            border-bottom-color: transparent;
           }
         }
 
@@ -341,6 +460,12 @@
           display: none;
         }
       }
+
+      .btn-notifications {
+        .fas {
+          font-size: 1.75rem;
+        }
+      }
     }
 
     .dropdown {
@@ -348,6 +473,8 @@
         .btn-user {
           img {
             margin-right: 0;
+            max-height: 3rem;
+            max-width: 3rem;
           }
         }
       }
@@ -381,18 +508,6 @@
     .btn-menu {
       display: none;
     }
-
-    .dropdown {
-      &.dropdown-user {
-        .user-account {
-          display: none;
-        }
-
-        .dropdown-divider {
-          display: none;
-        }
-      }
-    }
   }
 
   @media (min-width: 1200px) {
@@ -404,6 +519,18 @@
               display: none;
             }
           }
+        }
+      }
+    }
+
+    .dropdown {
+      &.dropdown-user {
+        .user-account {
+          display: none;
+        }
+
+        .dropdown-divider {
+          display: none;
         }
       }
     }

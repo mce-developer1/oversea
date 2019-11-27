@@ -283,10 +283,10 @@
       @media (min-width: 992px) {
         .article-content {
           .article-sidebar {
-            height: calc(100vh - 9rem);
+            height: calc(100vh - 11rem);
             position: -webkit-sticky;
             position: sticky;
-            top: 6rem;
+            top: 8rem;
             z-index: 970;
           }
         }

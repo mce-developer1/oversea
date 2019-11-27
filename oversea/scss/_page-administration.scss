@@ -178,7 +178,7 @@
         .article-header {
           position: -webkit-sticky;
           position: sticky;
-          top: 6rem;
+          top: 8rem;
           z-index: 970;
   
           .navbar {
@@ -192,13 +192,13 @@
   
         .article-content {
           .article-sidebar {
-            height: calc(100vh - 13rem);
+            height: calc(100vh - 15rem);
             overflow-x: hidden;
             overflow-y: auto;
             padding: .5rem 0;
             position: -webkit-sticky;
             position: sticky;
-            top: 10rem;
+            top: 12rem;
 
             .navbar {
               display: none;
@@ -210,7 +210,7 @@
               .dataTables_scrollHead {
                 position: -webkit-sticky;
                 position: sticky;
-                top: 10rem;
+                top: 12rem;
                 z-index: 970;
   
                 .dataTables_scrollHeadInner {
@@ -291,7 +291,7 @@
 
               .col-auto {
                 margin: 0 .5rem;
-                min-width: 2.5rem;
+                min-width: 4rem;
               }
 
               .form-group {
@@ -499,7 +499,7 @@
         .article-header {
           position: -webkit-sticky;
           position: sticky;
-          top: 6rem;
+          top: 8rem;
           z-index: 970;
         }
       }

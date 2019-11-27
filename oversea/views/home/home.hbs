@@ -59,14 +59,13 @@
             </nav>
             <div class="card-group">
               <div class="card">
-                <img class="card-img-top" src="/static/images/icon_generic.png" alt="Card image cap">
+                <img class="card-img-top" src="/static/images/icon_channel_mb_p1.svg" alt="Card image cap">
                 <div class="card-body">
                   <h6 class="card-title">
-                    CAIE Maths<br/>
-                    Student Textbook
+                    Math Buddies SG
                   </h6>
                   <p class="card-text">
-                    Primary 1 to 6
+                    Primary 1
                   </p>
                   {{#if studentUser}}
                     <div class="progress">
@@ -79,14 +78,13 @@
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="/static/images/icon_mcmaths.png" alt="Card image cap">
+                <img class="card-img-top" src="/static/images/icon_channel_mb_p2.svg" alt="Card image cap">
                 <div class="card-body">
                   <h6 class="card-title">
-                    CAIE English<br/>
-                    Student Textbook
+                    Math Buddies SG
                   </h6>
                   <p class="card-text">
-                    Primary 1 to 6
+                    Primary 2
                   </p>
                   {{#if studentUser}}
                     <div class="progress">
@@ -99,14 +97,13 @@
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="/static/images/icon_mathbuddies.png" alt="Card image cap">
+                <img class="card-img-top" src="/static/images/icon_channel_icc_p1.svg" alt="Card image cap">
                 <div class="card-body">
                   <h6 class="card-title">
-                    My Pals Are Here! Maths<br/>
-                    Student Textbook
+                    I Can! Coders
                   </h6>
                   <p class="card-text">
-                    Primary 1 to 6
+                    Primary 1
                   </p>
                   {{#if studentUser}}
                     <div class="progress">
@@ -119,14 +116,13 @@
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="/static/images/icon_mcscience.png" alt="Card image cap">
+                <img class="card-img-top" src="/static/images/icon_channel_icc_p2.svg" alt="Card image cap">
                 <div class="card-body">
                   <h6 class="card-title">
-                    My Pals Are Here! Science<br/>
-                    Student Textbook
+                    I Can! Coders
                   </h6>
                   <p class="card-text">
-                    Primary 1 to 6
+                    Primary 2
                   </p>
                   {{#if studentUser}}
                     <div class="progress">
@@ -139,14 +135,13 @@
                 </div>
               </div>
               <div class="card">
-                <img class="card-img-top" src="/static/images/icon_generic.png" alt="Card image cap">
+                <img class="card-img-top" src="/static/images/icon_channel_icc_p3.svg" alt="Card image cap">
                 <div class="card-body">
                   <h6 class="card-title">
-                    Take Off with English<br/>
-                    Student Textbook
+                    I Can! Coders
                   </h6>
                   <p class="card-text">
-                    Primary 1 to 6
+                    Primary 3
                   </p>
                   {{#if studentUser}}
                     <div class="progress">
@@ -193,21 +188,64 @@
   </div>
 </div>
 
+<div class="modal modal-resource-preview fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-preview" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <nav class="navbar">
+          <div class="navbar-text text-truncate">Resource title</div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="btn btn-light btn-share" type="button" title="Share">
+                <i class="fas fa-share-alt"></i>
+              </button>
+            </li>
+            <li class="nav-divider"></li>
+            <li class="nav-item">
+              <button class="btn btn-light btn-close" type="button" title="Close" data-dismiss="modal">
+                <i class="fas fa-times"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="content">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-alert-message fade" tabindex="-1" role="dialog" data-backdrop="static">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <i class="fas fa-exclamation-triangle"></i>Timezone Mismatch
+        </h5>
+        <button type="button" class="close" title="Close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Timezone setting of your current device - Thailand (GMT+7)<br/>
+			    Timezone setting of your school on MCEduhub - Singapore (GMT+8)
+        </p>
+        <p class="text-danger">
+			    Take note that the date & time displays on MCEduhub will follow the timezone setting of your school.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="toast-stack d-none">
   <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
-      <button class="close" type="button" title="Close" data-dismiss="toast">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="toast-body">
-      <i class="img img-toast-warning"></i>
-      You are in differnt timezone but system will use "Asia/Singapore" timezone to display date and time.
-    </div>
-  </div>
-  <div class="toast d-none" role="alert fade" data-delay="5000">
-    <div class="toast-header">
-      <button class="close" type="button" title="Close" data-dismiss="toast">
+      <button class="close btn-close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -218,7 +256,7 @@
   </div>
   <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
-      <button class="close" type="button" title="Close" data-dismiss="toast">
+      <button class="close btn-close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>    
@@ -229,7 +267,7 @@
   </div>
   <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
-      <button class="close" type="button" title="Close" data-dismiss="toast">
+      <button class="close btn-close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>    
@@ -240,7 +278,7 @@
   </div>
   <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
-      <button class="close" type="button" title="Close" data-dismiss="toast">
+      <button class="close btn-close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>    
@@ -251,7 +289,7 @@
   </div>
   <div class="toast d-none" role="alert fade" data-delay="5000">
     <div class="toast-header">
-      <button class="close" type="button" title="Close" data-dismiss="toast">
+      <button class="close btn-close" type="button" title="Close" data-dismiss="toast">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>    

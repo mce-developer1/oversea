@@ -38,6 +38,12 @@ a {
 
 .toast {
   border-radius: 0;
+
+  .toast-header {
+    button.close {
+      outline: none;
+    }
+  }
 }
 
 .btn {
@@ -895,6 +901,10 @@ a {
       .modal-header {
         background-color: $gray-200;
         border-bottom: 0;
+
+        button.close {
+          outline: none;
+        }
       }
 
       .modal-body {

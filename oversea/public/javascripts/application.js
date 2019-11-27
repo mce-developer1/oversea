@@ -1,4 +1,65 @@
 window.Utils = {
+  initLocalization: function(language, translation, options) {
+    options = $.extend({
+      interpolation: true,
+      serverTimezoneOffset: 0
+    }, options);
+    moment.locale(language);
+
+    var resources = {};
+    resources[language] = {
+      translation: translation
+    };
+
+    i18next.init({
+      lng: language,
+      resources: resources,
+      interpolation: {
+        format: function (value, format, lng) {
+          function formatDatetime(datetime, defaultValue, dateonly) {
+            if (!datetime.isValid()) return defaultValue;
+            var clientTimezoneOffset = moment().utcOffset();
+            var differTimezoneOffset = clientTimezoneOffset - options.serverTimezoneOffset;
+            var timezoneOffset = clientTimezoneOffset + differTimezoneOffset;
+
+            if (datetime.isSame(moment(), 'day') && !dateonly) {
+              return datetime.utcOffset(timezoneOffset).local(true).fromNow();
+            } else if (format === 'DAYS') {
+              return datetime.utcOffset(timezoneOffset).local(true).fromNow();
+            } else {
+              var displayFormat = ((format === 'DATE') || (format === 'DATEONLY')) ? 'll' : 'lll';
+              return datetime.utcOffset(timezoneOffset).format(displayFormat);
+            }
+          }
+
+          if (!options.interpolation) return value;
+          switch (format) {
+            case "DAYS":
+            case "DATE":
+            case "DATETIME":
+              var pattern = "YYYY-MM-DDTHH:mm:ss";
+              var date = moment(value, pattern, true);
+              return formatDatetime(date, value, false);
+            case "DATEONLY":
+            case "DATETIMEONLY":
+              var pattern = "YYYY-MM-DDTHH:mm:ss";
+              var date = moment(value, pattern, true);
+              return formatDatetime(date, value, true);
+            default:
+              return value;
+          }
+        }
+      }
+    },
+    function (err, t) {
+      jqueryI18next.init(i18next, $, {
+        useOptionsAttr: true
+      });
+      if (options.initCallback) {
+        options.initCallback.call(null, err, t);
+      }
+    });
+  },
   initTextEditor: function(target, options) {
     options = options ? options : {};
     options = $.extend({
@@ -152,6 +213,17 @@ window.Utils = {
   },
   hideProcessingOverlay: function() {
     $('.processing-overlay').remove();
+  },
+  showNotificationToast: function(message, delay) {
+    $('.toast-notification .btn-close').off('click');
+    $('.toast-notification .btn-close').on('click', function(e) {
+      $('.toast-notification').removeClass('show');
+    });
+    $('.toast-notification .toast-body').html(message);
+    $('.toast-notification').addClass('show');
+    setTimeout(function() {
+      $('.toast-notification').removeClass('show');
+    }, (delay || 6000));
   }
 };
 
@@ -453,8 +525,6 @@ $(document).ready(function() {
       }
     };
   }
-
-  log.info("MY_RESOURCES", "SEARCH", { grade: 1, level: 1 });
 });
 
 var userAgent = window.navigator.userAgent;

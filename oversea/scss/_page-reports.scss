@@ -49,27 +49,26 @@
 
           .navbar {
             @include justify-content(flex-end);
-            background-color: $accent;
             height: 3rem;
             padding: 0;
 
             .btn-light {
-              background-color: $accent;
-              border-color: $accent;
+              background-color: $white;
+              border-color: $white;
               height: 3rem;
               padding: .5rem .75rem;
     
               &:hover {
                 .fa-chevron-left,
                 .fa-filter {
-                  color: $white;
+                  color: $primary;
                 }
               }
     
               .fa-chevron-left,
               .fa-chevron-right,
               .fa-filter {
-                color: $gray-200;
+                color: $primary;
               }
 
               .fa-chevron-left,
@@ -256,7 +255,7 @@
             .form-filters {
               box-shadow: none;
               display: block;
-              height: calc(100vh - 12rem);
+              height: calc(100vh - 11rem);
               overflow-x: hidden;
               overflow-y: auto;
               position: static;
@@ -283,11 +282,15 @@
       @media (min-width: 992px) {
         .article-content {
           .article-sidebar {
-            height: calc(100vh - 9rem);
+            height: calc(100vh - 11rem);
             position: -webkit-sticky;
             position: sticky;
-            top: 6rem;
+            top: 8rem;
             z-index: 970;
+
+            .form-filters {
+              height: calc(100vh - 14rem);
+            }
           }
         }
       }

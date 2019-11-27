@@ -116,10 +116,29 @@ $(document).ready(function() {
     $('.modal-announcement-view .btn-close').removeClass('d-none');
   });
 
+  $('.toast-stack .toast .btn-close').on('click', function() {
+    $(this).closest('.toast').addClass('d-none');
+    $('.toast-stack').addClass('d-none');
+  });  
+
   $('.modal-announcement-view').on('hide.bs.modal', function() {
-    $('.toast-stack .toast:first-child').removeClass('d-none');
-    $('.toast-stack .toast:first-child').addClass('show');
-    $('.toast-stack').removeClass('d-none');
+    window.Utils.showNotificationToast('You have earned <strong>5</strong> coins!');
   });
-  $('.modal-announcement-view').modal('show');
+
+  $('.modal-alert-message').on('hide.bs.modal', function() {
+    $('.modal-announcement-view').modal('show');
+  });
+  //$('.modal-alert-message').modal('show');
+
+  var translation = {
+    common_label_grade: "Grade",
+    common_label_subject: "Subject" 
+  }
+  window.Utils.initLocalization('en-GB', translation, {
+    interpolation: false,
+    initCallback: function(err, t) {
+      var localized = t('common_label_grade');
+      console.log(localized);
+    }
+  });
 });

@@ -15,8 +15,15 @@
 
         .article-content {
           .article-sidebar {
-            height: calc(100vh - 4rem) !important;
-            top: 4rem !important;
+            &:not(.dialog) {
+              height: calc(100vh - 4rem) !important;
+              top: 4rem !important;
+            }
+
+            &.dialog {
+              height: auto !important;
+              top: 0rem !important;
+            }
           }
 
           .article-body {

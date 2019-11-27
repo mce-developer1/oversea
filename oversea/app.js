@@ -26,6 +26,8 @@ app.use('/static/bootstrap-select', express.static(path.join(__dirname, 'node_mo
 app.use('/static/fontawesome-free', express.static(path.join(__dirname, 'node_modules/@fortawesome/fontawesome-free')));
 app.use('/static/chart.js', express.static(path.join(__dirname, 'node_modules/chart.js/dist')));
 app.use('/static/chartjs-plugin-datalabels', express.static(path.join(__dirname, 'node_modules/chartjs-plugin-datalabels/dist')));
+app.use('/static/i18next', express.static(path.join(__dirname, 'node_modules/i18next')));
+app.use('/static/jquery-i18next', express.static(path.join(__dirname, 'node_modules/jquery-i18next')));
 app.use('/static/moment', express.static(path.join(__dirname, 'node_modules/moment')));
 app.use('/static/moment-timezone', express.static(path.join(__dirname, 'node_modules/moment-timezone')));
 app.use('/static/daterangepicker', express.static(path.join(__dirname, 'node_modules/daterangepicker')));
