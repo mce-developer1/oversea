@@ -4,6 +4,7 @@
 
     .navbar {
       @include justify-content(flex-end);
+      margin-bottom: 1rem;
       padding: 1rem 1.5rem;
 
       .dropdown {
@@ -86,13 +87,13 @@
 
     .article-eduworld {
       color: $white;
-      margin: 3rem 2rem;
+      margin: 1rem 2rem;
       padding: 0;
 
       .article-header {
         @include display-flex(column);
         @include align-items(flex-end);
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
 
         img {
           width: 20rem;
@@ -176,10 +177,15 @@
       min-height: calc(100vh - 9rem);
     }
 
+    .article-access-code {
+      margin: 0 2rem;
+      padding: 1.5rem 0;
+    }
+
     .form-sign-in {
       background-color: $white;
       box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
-      margin: 3rem 2rem;
+      margin: 1rem 2rem;
       padding: 1.5rem;
       width: 20rem;
 

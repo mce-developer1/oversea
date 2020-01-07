@@ -2819,8 +2819,9 @@ select.form-control {
   justify-content: space-between;
   padding: 0;
 }
-.modal-announcement-view .modal-dialog .modal-body .navbar .text-muted,
-.modal-notification-view .modal-dialog .modal-body .navbar .text-muted {
+.modal-announcement-view .modal-dialog .modal-body .navbar .navbar-text.text-muted,
+.modal-notification-view .modal-dialog .modal-body .navbar .navbar-text.text-muted {
+  font-size: 0.875rem;
   padding: 0.5rem 0;
 }
 .modal-announcement-view .modal-dialog .modal-body .announcement .announcement-date,
@@ -2831,6 +2832,7 @@ select.form-control {
 .modal-notification-view .modal-dialog .modal-body .announcement .notification-date,
 .modal-notification-view .modal-dialog .modal-body .notification .announcement-date,
 .modal-notification-view .modal-dialog .modal-body .notification .notification-date {
+  font-size: 0.875rem;
   margin-bottom: 1rem;
 }
 .modal-announcement-view .modal-dialog .modal-body .announcement .announcement-message,
@@ -2871,6 +2873,11 @@ select.form-control {
     top: 0.5rem;
     right: 1rem;
   }
+}
+
+.notification-modal .modal-dialog .modal-body .posted-on,
+.notification-modal .modal-dialog .modal-body .posted-by {
+  font-size: 0.875rem;
 }
 
 .modal-resource-share .modal-dialog .modal-body {
@@ -3512,15 +3519,14 @@ select.form-control {
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  background-color: #ffffff;
-  border-top: 2px solid #ff6600;
+  background-color: #495057;
   font-size: 0.875rem;
   height: 3rem;
   max-height: 3rem;
   padding: 0.325rem 1.5rem;
 }
 .app-footer .copyright {
-  color: #495057;
+  color: #ffffff;
   font-size: 0.875rem;
   margin-right: 1rem;
   margin-left: auto;
@@ -3530,11 +3536,12 @@ select.form-control {
   width: 10rem;
 }
 .app-footer .nav .nav-link {
-  color: #495057;
+  color: #ffffff;
   font-size: 0.875rem;
   padding: 0.5rem;
 }
 .app-footer .nav .nav-link:not(:disabled):not(.disabled):hover, .app-footer .nav .nav-link:not(:disabled):not(.disabled):active {
+  color: #ffffff;
   text-decoration: underline;
 }
 .app-footer .nav .nav-divider {
@@ -5716,6 +5723,7 @@ select.form-control {
 .app-content.page-sign-in .navbar {
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
+  margin-bottom: 1rem;
   padding: 1rem 1.5rem;
 }
 .app-content.page-sign-in .navbar .dropdown {
@@ -5785,7 +5793,7 @@ select.form-control {
 }
 .app-content.page-sign-in .article-eduworld {
   color: #ffffff;
-  margin: 3rem 2rem;
+  margin: 1rem 2rem;
   padding: 0;
 }
 .app-content.page-sign-in .article-eduworld .article-header {
@@ -5795,7 +5803,7 @@ select.form-control {
   flex-direction: column;
   -webkit-align-items: flex-end;
   align-items: flex-end;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .app-content.page-sign-in .article-eduworld .article-header img {
   width: 20rem;
@@ -5862,10 +5870,14 @@ select.form-control {
 .app-content.page-sign-in .article-reset-password {
   min-height: calc(100vh - 9rem);
 }
+.app-content.page-sign-in .article-access-code {
+  margin: 0 2rem;
+  padding: 1.5rem 0;
+}
 .app-content.page-sign-in .form-sign-in {
   background-color: #ffffff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  margin: 3rem 2rem;
+  margin: 1rem 2rem;
   padding: 1.5rem;
   width: 20rem;
 }

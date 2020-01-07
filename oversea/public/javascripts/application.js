@@ -496,6 +496,15 @@ $(document).ready(function() {
     log.setLevel('info');
   }
 
+  // Hide dropdowns if user clicks inside iframe content window
+  if ($('#moduleIFrame').length === 1) {
+    var iframe = $('#moduleIFrame').get(0);
+    var contentWindow = (iframe.contentWindow || iframe);
+    $(contentWindow).on('focus', function(e) {
+      $('[data-toggle="dropdown"]').dropdown('hide');
+    });
+  }
+
   $(window).on('beforeunload', function(e) {
     if (window._pageDirty) return 'Changes you made may not be saved.';
   });

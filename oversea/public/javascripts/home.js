@@ -128,7 +128,7 @@ $(document).ready(function() {
   $('.modal-alert-message').on('hide.bs.modal', function() {
     $('.modal-announcement-view').modal('show');
   });
-  //$('.modal-alert-message').modal('show');
+  $('.modal-alert-message').modal('show');
 
   var translation = {
     common_label_grade: "Grade",

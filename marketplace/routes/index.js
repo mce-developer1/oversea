@@ -66,6 +66,25 @@ router.get('/:userRole/facilities/add_booking', function(req, res, next) {
   });
 });
 
+/* GET bookings page. */
+router.get('/:userRole/facilities/bookings', function(req, res, next) {
+  var userRole = req.params.userRole;
+  var studentUser = (userRole === 'student');
+  var teacherUser = (userRole === 'teacher');
+  var adminUser = (userRole === 'admin');
+  res.render('facilities/bookings', {
+    layout: 'layout',
+    title: 'Marshall Cavendish Education',
+    module: 'facilities',
+    loggedIn: true,
+    facilitiesPage: true,
+    userRole: userRole,
+    studentUser: studentUser,
+    teacherUser: teacherUser,
+    adminUser: adminUser
+  });
+});
+
 /* GET current visitors page. */
 router.get('/:userRole/visitors/current_visitors', function(req, res, next) {
   var userRole = req.params.userRole;

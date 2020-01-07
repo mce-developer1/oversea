@@ -266,6 +266,19 @@ $(document).ready(function() {
       $('.modal-resource-folder-edit .btn').toggleClass('d-none');
       $('.modal-resource-folder-edit').modal('show');
     } else {
+      if ($container.find('.table-body .table-active').length > 1) {
+        var title = 'Edit attributes (' + $container.find('.table-body .table-active').length + ' items)'
+        $('.modal-resource-file-edit-attributes .modal-title').text(title);
+        $('.modal-resource-file-edit-attributes .form-group-filename').addClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-description').addClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-keywords').addClass('d-none');
+      } else {
+        $('.modal-resource-file-edit-attributes .modal-title').text('Edit attributes');
+        $('.modal-resource-file-edit-attributes .form-group-filename').removeClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-description').removeClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-keywords').removeClass('d-none');
+      }
+
       $('.modal-resource-file-edit-attributes .btn-primary').on('click', function(e) {        
         $('.modal-resource-file-edit-attributes button').prop('disabled', true);
         window.Utils.showProcessingOverlay();
@@ -410,7 +423,37 @@ $(document).ready(function() {
   });
 
   $container.find('.dropdown-menu .item-edit').on('click', function(e) {
-    $('.modal-resource-file-edit-attributes').modal('show');
+    if ($container.find('.table-body .table-active').find('.fa-folder').length === 1) {
+      var readonly = $('.modal-resource-folder-edit .form-input').prop('readonly');
+      $('.modal-resource-folder-edit .form-input').prop('readonly', !readonly);
+      $('.modal-resource-folder-edit .text-muted').toggleClass('d-none');
+      $('.modal-resource-folder-edit .btn').toggleClass('d-none');
+      $('.modal-resource-folder-edit').modal('show');
+    } else {
+      if ($container.find('.table-body .table-active').length > 1) {
+        var title = 'Edit attributes (' + $container.find('.table-body .table-active').length + ' items)'
+        $('.modal-resource-file-edit-attributes .modal-title').text(title);
+        $('.modal-resource-file-edit-attributes .form-group-filename').addClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-description').addClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-keywords').addClass('d-none');
+      } else {
+        $('.modal-resource-file-edit-attributes .modal-title').text('Edit attributes');
+        $('.modal-resource-file-edit-attributes .form-group-filename').removeClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-description').removeClass('d-none');
+        $('.modal-resource-file-edit-attributes .form-group-keywords').removeClass('d-none');
+      }
+
+      $('.modal-resource-file-edit-attributes .btn-primary').on('click', function(e) {        
+        $('.modal-resource-file-edit-attributes button').prop('disabled', true);
+        window.Utils.showProcessingOverlay();
+  
+        setTimeout(function waitProcessing() {          
+          $('.modal-resource-file-edit-attributes button').prop('disabled', false);
+          window.Utils.hideProcessingOverlay();
+        }, 3000);
+      });
+      $('.modal-resource-file-edit-attributes').modal('show');
+    }
   });
 
   $container.find('.dropdown-menu .item-delete').on('click', function(e) {

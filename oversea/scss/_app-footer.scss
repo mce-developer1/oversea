@@ -2,15 +2,14 @@
   @include display-flex(row);
   @include align-items(center);
   @include flex-wrap(wrap);
-  background-color: $white;
-  border-top: 2px solid $primary;
+  background-color: $gray-700;
   font-size: .875rem;
   height: 3rem;
   max-height: 3rem;
   padding: .325rem 1.5rem;
 
   .copyright {
-    color: $gray-700;
+    color: $white;
     font-size: .875rem;
     margin-right: 1rem;
     margin-left: auto;
@@ -25,12 +24,13 @@
 
   .nav {
     .nav-link {
-      color: $gray-700;
+      color: $white;
       font-size: .875rem;
       padding: .5rem;
 
       &:not(:disabled):not(.disabled):hover,
       &:not(:disabled):not(.disabled):active {
+        color: $white;
         text-decoration: underline;
       }
     }

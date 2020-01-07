@@ -885,6 +885,15 @@ router.get('/:userRole/legacy/legacy', function(req, res, next) {
   });
 });
 
+/* GET legacy module page. */
+router.get('/shared/legacy', function(req, res, next) {
+  res.render('shared/legacy', {
+    layout: 'iframe_layout',
+    title: 'Marshall Cavendish Education',
+    module: 'shared'
+  });
+});
+
 /* GET 404 error page. */
 router.get('*', function(req, res) {
   var url = req.originalUrl;

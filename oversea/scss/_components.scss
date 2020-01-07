@@ -2330,8 +2330,11 @@ select.form-control {
         @include justify-content(space-between);
         padding: 0;
 
-        .text-muted {
-          padding: .5rem 0;
+        .navbar-text {
+          &.text-muted {
+            font-size: .875rem;
+            padding: .5rem 0;
+          }
         }
       }
 
@@ -2339,6 +2342,7 @@ select.form-control {
       .notification {
         .announcement-date,
         .notification-date {
+          font-size: .875rem;
           margin-bottom: 1rem;
         }
 
@@ -2368,6 +2372,17 @@ select.form-control {
             right: 1rem;
           }
         }
+      }
+    }
+  }
+}
+
+.notification-modal {
+  .modal-dialog {
+    .modal-body {
+      .posted-on,
+      .posted-by {
+        font-size: .875rem;
       }
     }
   }
